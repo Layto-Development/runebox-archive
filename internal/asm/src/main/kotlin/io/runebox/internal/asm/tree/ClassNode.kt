@@ -26,8 +26,10 @@ val ClassNode.childClasses: MutableSet<ClassNode> by identitySetField()
 val ClassNode.interfaceClasses: MutableSet<ClassNode> by identitySetField()
 val ClassNode.implementerClasses: MutableSet<ClassNode> by identitySetField()
 
-val ClassNode.ancestors get() = listOfNotNull(superClass) + interfaceClasses
+val ClassNode.methodTypeRefs: MutableSet<MethodNode> by identitySetField()
+val ClassNode.fieldTypeRefs: MutableSet<FieldNode> by identitySetField()
 
+val ClassNode.ancestors get() = listOfNotNull(superClass) + interfaceClasses
 val ClassNode.id get() = name
 
 fun ClassNode.isPublic() = (access and ACC_PUBLIC) != 0
@@ -50,7 +52,28 @@ fun ClassNode.resolveMethod(name: String, desc: String): MethodNode? {
         val cls = queue.poll()
         if(!visited.add(cls)) continue
 
-        ret = cls.getMethod(name, desc)
+        ret = cls.resolveMethod(name, desc)
+        if(ret != null) return ret
+
+        queue.addAll(cls.ancestors)
+    }
+
+    return null
+}
+
+fun ClassNode.resolveField(name: String, desc: String): FieldNode? {
+    var ret = getField(name, desc)
+    if(ret != null) return ret
+
+    val queue = ArrayDeque<ClassNode>()
+    val visited = hashSetOf<ClassNode>()
+
+    queue.addAll(ancestors)
+    while(queue.isNotEmpty()) {
+        val cls = queue.poll()
+        if(!visited.add(cls)) continue
+
+        ret = cls.getField(name, desc)
         if(ret != null) return ret
 
         queue.addAll(cls.ancestors)

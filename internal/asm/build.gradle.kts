@@ -8,5 +8,6 @@ dependencies {
     api("org.ow2.asm:asm-commons:_")
     api("org.ow2.asm:asm-util:_")
     api("org.ow2.asm:asm-tree:_")
-    implementation("com.google.guava:guava:_")
+    api("com.google.guava:guava:_")
+    implementation("info.leadinglight:jdot:_")
 }
