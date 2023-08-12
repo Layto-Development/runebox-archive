@@ -1,24 +1,43 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import de.fayard.refreshVersions.core.versionFor
 
 plugins {
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm")
 }
 
-group = "io.runebox"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
+tasks.wrapper {
+    gradleVersion = versionFor("version.gradle")
 }
 
-dependencies {
-    testImplementation(kotlin("test"))
+allprojects {
+    group = "io.runebox"
+    version = "0.0.1"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven(url = "https://jitpack.io")
+    }
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
+allprojects {
+    apply(plugin = "java")
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    dependencies {
+        implementation(kotlin("stdlib"))
+        implementation(kotlin("reflect"))
+
+        testImplementation(kotlin("test"))
+        testImplementation("com.willowtreeapps.assertk:assertk:_")
+    }
+
+    tasks.test {
+        useJUnitPlatform()
+    }
+
+    java {
+        toolchain {
+            vendor.set(JvmVendorSpec.ADOPTIUM)
+            languageVersion.set(JavaLanguageVersion.of(17))
+        }
+    }
 }
