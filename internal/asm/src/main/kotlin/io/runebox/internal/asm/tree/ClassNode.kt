@@ -82,13 +82,13 @@ fun ClassNode.resolveField(name: String, desc: String): FieldNode? {
     return null
 }
 
-fun ClassNode.toByteArray(flags: Int = ClassWriter.COMPUTE_FRAMES): ByteArray {
+fun ClassNode.toByteArray(flags: Int = ClassWriter.COMPUTE_MAXS): ByteArray {
     val writer = ClassWriter(flags)
     this.accept(writer)
     return writer.toByteArray()
 }
 
-fun ClassNode.fromByteArray(bytes: ByteArray, flags: Int = ClassReader.EXPAND_FRAMES): ClassNode {
+fun ClassNode.fromByteArray(bytes: ByteArray, flags: Int = ClassReader.SKIP_FRAMES): ClassNode {
     val reader = ClassReader(bytes)
     reader.accept(this, flags)
     return this

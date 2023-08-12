@@ -61,7 +61,6 @@ class ClassPool {
 
     fun writeJarFile(file: File, includeIgnoredClasses: Boolean = true, includeResources: Boolean = false) {
         if(file.exists()) file.deleteRecursively()
-        if(!file.parentFile.exists()) file.parentFile.mkdirs()
 
         val outClasses = mutableListOf<ClassNode>()
         outClasses.addAll(classes)
@@ -70,7 +69,7 @@ class ClassPool {
         JarOutputStream(file.outputStream()).use { jos ->
             outClasses.forEach { cls ->
                 val bytes = cls.toByteArray()
-                jos.putNextEntry(JarEntry(cls.name))
+                jos.putNextEntry(JarEntry("${cls.name}.class"))
                 jos.write(bytes)
                 jos.closeEntry()
             }
@@ -113,7 +112,11 @@ class ClassPool {
             return cls
         }
 
-        throw IllegalStateException("Class: $name")
+        val cls = ClassNode()
+        cls.name = name
+        addClass(cls, shared = true)
+
+        return cls
     }
 
     fun init(postLogic: ClassPool.() -> Unit = { }) {
@@ -148,11 +151,11 @@ class ClassPool {
 
     private fun processB(cls: ClassNode) {
         cls.methods.forEach { method ->
-            method.instructions.forEach { insn ->
+            method.instructions.forEach insnLoop@ { insn ->
                 when(insn) {
                     is MethodInsnNode -> {
                         val owner = getClass(insn.owner)
-                        val dst = owner.resolveMethod(insn.name, insn.desc)!!
+                        val dst = owner.resolveMethod(insn.name, insn.desc) ?: return@insnLoop
 
                         dst.refsIn.add(method)
                         method.refsOut.add(dst)
@@ -162,7 +165,7 @@ class ClassPool {
 
                     is FieldInsnNode -> {
                         val owner = getClass(insn.owner)
-                        val dst = owner.resolveField(insn.name, insn.desc)!!
+                        val dst = owner.resolveField(insn.name, insn.desc) ?: return@insnLoop
 
                         if(insn.opcode == GETSTATIC || insn.opcode == GETFIELD) {
                             dst.readRefs.add(method)
