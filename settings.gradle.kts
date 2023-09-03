@@ -13,7 +13,6 @@ gradleEnterprise {
     }
 }
 
-module("internal:asm")
 module("internal:deobfuscator")
 module(":logger")
 

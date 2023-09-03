@@ -6,9 +6,14 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":runebox-asm"))
     implementation(project(":runebox-logger"))
-    implementation("com.github.ajalt.clikt:clikt:_")
+    implementation("org.ow2.asm:asm:_")
+    implementation("org.ow2.asm:asm-commons:_")
+    implementation("org.ow2.asm:asm-util:_")
+    implementation("org.ow2.asm:asm-tree:_")
+    implementation("com.google.guava:guava:_")
+    runtimeOnly("org.bouncycastle:bcprov-jdk15on:1.52")
+    runtimeOnly("org.json:json:20220320")
 }
 
 tasks {
@@ -20,9 +25,9 @@ tasks {
     create<JavaExec>("deobfuscateGamepack") {
         dependsOn(compileKotlin.get())
         group = "internal"
-        mainClass.set("io.runebox.internal.deobfuscator.DeobfuscatorKt")
+        mainClass.set("io.runebox.internal.deobfuscator.Deobfuscator")
         workingDir = project.projectDir
-        args = listOf("gamepack.jar", "gamepack.deob.jar", "--test", "--dependencies")
+        args = listOf("gamepack.jar", "gamepack.deob.jar", "-t")
         classpath = sourceSets["main"].runtimeClasspath
     }
 }

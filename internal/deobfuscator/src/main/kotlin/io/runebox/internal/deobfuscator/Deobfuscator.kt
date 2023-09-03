@@ -1,66 +1,62 @@
 package io.runebox.internal.deobfuscator
 
-import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.parameters.arguments.argument
-import com.github.ajalt.clikt.parameters.options.flag
-import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.clikt.parameters.types.file
-import io.runebox.internal.asm.tree.ClassPool
-import io.runebox.internal.asm.tree.ignored
+import io.runebox.internal.deobfuscator.asm.ClassPool
+import io.runebox.internal.deobfuscator.asm.ignored
+import io.runebox.internal.deobfuscator.transformer.DeadCodeRemover
+import io.runebox.internal.deobfuscator.transformer.RuntimeExceptionRemover
+import io.runebox.internal.deobfuscator.transformer.UniqueRenamer
 import org.tinylog.kotlin.Logger
+import java.io.File
 import kotlin.reflect.full.createInstance
 
-class Deobfuscator : CliktCommand(
-    name = "deobfuscate",
-    invokeWithoutSubcommand = true,
-    printHelpOnEmptyArgs = true
+class Deobfuscator(
+    private val inputJar: File,
+    private val outputJar: File,
+    private val runTestClient: Boolean = false
 ) {
 
-    private val inputJar by argument("input-jar", help = "Obfuscated input jar").file(canBeDir = false, mustExist = true)
-    private val outputJar by argument("output-jar", help = "Deobfuscated output jar").file(canBeDir = false)
-    private val runTestClient by option("--test", "-t", help = "Run the test client after deob").flag(default = false)
-    private val includeDependencies by option("--dependencies", "-d", help = "Include gamepack dependencies when writing").flag(default = false)
-
-    private val transformers = mutableListOf<Transformer>()
     private val pool = ClassPool()
+    private val transformers = mutableListOf<Transformer>()
 
-    private fun init() {
-        Logger.info("Initializing.")
+    private fun registerTransformers() {
+        transformers.clear()
 
-        /*
-         * Register all transformers.
+        /**
+         * Register bytecode deob transformers in the order they will run.
          */
+        register<RuntimeExceptionRemover>()
+        register<DeadCodeRemover>()
+        register<UniqueRenamer>()
 
-        Logger.info("Found ${transformers.size} bytecode transformers.")
-
-        Logger.info("Loading classes from input jar: ${inputJar.path}.")
-
-        pool.addJarClasses(inputJar)
-        pool.classes.forEach { cls ->
-            if(cls.name.startsWith("org/")) {
-                cls.ignored = true
-            }
-        }
-        pool.init()
-
-        Logger.info("Successfully loaded ${pool.classes.size} classes from jar.")
+        Logger.info("Registered ${transformers.size} bytecode transformers.")
     }
 
-    override fun run() {
+    private fun init() {
+        Logger.info("Initializing deobfuscator.")
+
+        pool.clear()
+        registerTransformers()
+
+        Logger.info("Loading classes from input jar: ${inputJar.name}.")
+        pool.readJar(inputJar)
+        pool.init()
+        pool.classes.filter { it.name.startsWith("org/") }.forEach { it.ignored = true }
+        Logger.info("Loaded ${pool.classes.size} classes from jar.")
+    }
+
+    fun run() {
         this.init()
 
-        Logger.info("Starting deobfuscation.")
-
-        val start = System.currentTimeMillis()
+        Logger.info("Running bytecode transformers.")
         transformers.forEach { transformer ->
-            Logger.info("Running transformer: ${transformer::class.simpleName}.")
+            Logger.info("Running ${transformer::class.simpleName}.")
             transformer.run(pool)
         }
-        val delta = System.currentTimeMillis() - start
-        Logger.info("Completed deobfuscation of classes. (Time ${(delta / 1000)} seconds)")
+        Logger.info("Completed all bytecode transforms.")
 
-        Logger.info("Exporting deobfuscated classes to jar: ${outputJar.path}.")
-        pool.writeJarFile(outputJar)
+        Logger.info("Saving deobfuscated classes to output jar: ${outputJar.path}.")
+        pool.writeJar(outputJar)
+        Logger.info("Saved ${pool.classes.size} classes to jar.")
 
         if(runTestClient) {
             Logger.info("Starting test client using output jar file.")
@@ -70,9 +66,24 @@ class Deobfuscator : CliktCommand(
         Logger.info("Deobfuscator completed successfully.")
     }
 
+    @DslMarker
+    private annotation class RegisterDsl
+
+    @RegisterDsl
     private inline fun <reified T : Transformer> register() {
         transformers.add(T::class.createInstance())
     }
-}
 
-fun main(args: Array<String>) = Deobfuscator().main(args)
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            if(args.size < 2) error("Usage: <input-jar> <output-jar> [-t]")
+
+            val inputJar = File(args[0])
+            val outputJar = File(args[1])
+            val runTestClient = (args.size == 3 && args[2] == "-t")
+
+            Deobfuscator(inputJar, outputJar, runTestClient).run()
+        }
+    }
+}

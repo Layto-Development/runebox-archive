@@ -1,4 +1,4 @@
-package io.runebox.internal.asm
+package io.runebox.internal.deobfuscator.asm
 
 import org.objectweb.asm.Opcodes
 import org.objectweb.asm.tree.AbstractInsnNode
@@ -15,23 +15,19 @@ class InsnMatcher private constructor(private val regex: Regex) {
     fun match(list: InsnList): Sequence<List<AbstractInsnNode>> {
         val insns = ArrayList<AbstractInsnNode>(list.size())
         val builder = StringBuilder(list.size())
-
         for (instruction in list) {
             if (instruction.opcode != -1) {
                 insns += instruction
                 builder.append(opcodeToCodepoint(instruction.opcode))
             }
         }
-
         return regex.findAll(builder).map {
             insns.subList(it.range.first, it.range.last + 1)
         }
     }
 
     companion object {
-
         private const val PRIVATE_USE_AREA = 0xE000
-
         private val OPCODE_GROUPS = mapOf(
             "InsnNode" to intArrayOf(
                 Opcodes.NOP,
@@ -246,7 +242,6 @@ class InsnMatcher private constructor(private val regex: Regex) {
                 pattern.append(opcodeToCodepoint(i))
                 return
             }
-
             val group = OPCODE_GROUPS[opcode]
             if (group != null) {
                 pattern.append('(')
@@ -254,19 +249,16 @@ class InsnMatcher private constructor(private val regex: Regex) {
                 pattern.append(')')
                 return
             }
-
             if (opcode == "AbstractInsnNode") {
                 pattern.append('.')
                 return
             }
-
             throw IllegalArgumentException("$opcode is not a valid opcode or opcode group")
         }
 
         fun compile(regex: String): InsnMatcher {
             val pattern = StringBuilder()
             val opcode = StringBuilder()
-
             for (c in regex) {
                 if (c.isLetterOrDigit() || c == '_') {
                     opcode.append(c)
@@ -275,18 +267,15 @@ class InsnMatcher private constructor(private val regex: Regex) {
                         appendOpcodeRegex(pattern, opcode.toString())
                         opcode.delete(0, opcode.length)
                     }
-
                     if (!c.isWhitespace()) {
                         pattern.append(c)
                     }
                 }
             }
-
             if (opcode.isNotEmpty()) {
                 appendOpcodeRegex(pattern, opcode.toString())
                 opcode.delete(0, opcode.length)
             }
-
             return InsnMatcher(Regex(pattern.toString()))
         }
     }

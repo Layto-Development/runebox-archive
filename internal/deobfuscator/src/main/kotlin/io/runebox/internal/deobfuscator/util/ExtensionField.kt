@@ -1,9 +1,7 @@
-package io.runebox.internal.asm.util
+package io.runebox.internal.deobfuscator.util
 
 import java.lang.ref.ReferenceQueue
 import java.lang.ref.WeakReference
-import java.util.Collections
-import java.util.IdentityHashMap
 import kotlin.reflect.KProperty
 
 class ExtensionField<R, T>(private val init: (R) -> T = { throw IllegalStateException("Property not initialized!") }) {
@@ -25,9 +23,6 @@ class NullableExtensionField<R, T>(private val init: (R) -> T? = { null }) {
         store[self] = this
     }
 }
-
-@Suppress("UNCHECKED_CAST")
-fun <T, R> identitySetField(init: (R) -> T = { Collections.newSetFromMap<R>(IdentityHashMap()) as T}) = ExtensionField(init)
 
 fun <T, R> field(init: (R) -> T) = ExtensionField(init)
 fun <T, R> field() = ExtensionField<R, T>()
