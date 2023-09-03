@@ -2,9 +2,7 @@ package io.runebox.internal.deobfuscator
 
 import io.runebox.internal.deobfuscator.asm.ClassPool
 import io.runebox.internal.deobfuscator.asm.ignored
-import io.runebox.internal.deobfuscator.transformer.DeadCodeRemover
-import io.runebox.internal.deobfuscator.transformer.RuntimeExceptionRemover
-import io.runebox.internal.deobfuscator.transformer.UniqueRenamer
+import io.runebox.internal.deobfuscator.transformer.*
 import org.tinylog.kotlin.Logger
 import java.io.File
 import kotlin.reflect.full.createInstance
@@ -26,7 +24,14 @@ class Deobfuscator(
          */
         register<RuntimeExceptionRemover>()
         register<DeadCodeRemover>()
+        register<IllegalStateExceptionRemover>()
+        register<DeadCodeRemover>()
+        register<ControlFlowNormalizer>()
         register<UniqueRenamer>()
+        register<UnusedArgRemover>()
+        register<UnusedFieldRemover>()
+        register<UnusedMethodRemover>()
+        register<VariableExprFixer>()
 
         Logger.info("Registered ${transformers.size} bytecode transformers.")
     }

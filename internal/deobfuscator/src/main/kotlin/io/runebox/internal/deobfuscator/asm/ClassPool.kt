@@ -14,21 +14,21 @@ import java.util.jar.JarOutputStream
 
 class ClassPool {
 
-    private val classMap = hashMapOf<String, ClassNode>()
+    private val classMap = hashSetOf<ClassNode>()
 
-    val classes get() = classMap.values.filter { !it.ignored }
-    val ignoredClasses get() = classMap.values.filter { it.ignored }
-    val allClasses get() = classMap.values
+    val classes get() = classMap.filter { !it.ignored }
+    val ignoredClasses get() = classMap.filter { it.ignored }
+    val allClasses get() = classMap.toList()
 
     fun addClass(cls: ClassNode) {
-        if(classMap.containsKey(cls.id)) return
+        if(cls in classMap) return
         cls.init(this)
-        classMap[cls.id] = cls
+        classMap.add(cls)
     }
 
     fun removeClass(cls: ClassNode) {
-        if(!classMap.containsKey(cls.id)) return
-        classMap.remove(cls.id)
+        if(cls !in classMap) return
+        classMap.remove(cls)
     }
 
     fun replaceClass(old: ClassNode, new: ClassNode) {
@@ -65,10 +65,10 @@ class ClassPool {
         classMap.clear()
     }
 
-    fun getClass(name: String) = classMap[name]
+    fun getClass(name: String) = classMap.firstOrNull { it.name == name }
 
     fun remap(remapper: Remapper) {
-        classes.forEach { cls ->
+        allClasses.forEach { cls ->
             cls.remap(remapper)
         }
     }
