@@ -2,9 +2,18 @@ package io.runebox.internal.deobfuscator.asm
 
 import org.objectweb.asm.Opcodes
 import org.objectweb.asm.Opcodes.*
-import org.objectweb.asm.tree.AbstractInsnNode
-import org.objectweb.asm.tree.IntInsnNode
-import org.objectweb.asm.tree.LdcInsnNode
+import org.objectweb.asm.tree.*
+
+private val THROW_RETURN_OPCODES = listOf(
+    IRETURN,
+    LRETURN,
+    FRETURN,
+    DRETURN,
+    ARETURN,
+    RETURN,
+    RET,
+    ATHROW
+)
 
 val AbstractInsnNode.nextReal: AbstractInsnNode?
     get() {
@@ -69,4 +78,13 @@ val AbstractInsnNode.intConstant: Int?
             ICONST_5 -> 5
             else -> null
         }
+    }
+
+val AbstractInsnNode.isSequential: Boolean
+    get() = when (this) {
+        is LabelNode -> false
+        is JumpInsnNode -> false
+        is TableSwitchInsnNode -> false
+        is LookupSwitchInsnNode -> false
+        else -> opcode !in THROW_RETURN_OPCODES
     }

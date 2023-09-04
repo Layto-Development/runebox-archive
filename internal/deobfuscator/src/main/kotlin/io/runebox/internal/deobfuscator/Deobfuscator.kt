@@ -22,20 +22,24 @@ class Deobfuscator(
         /**
          * Register bytecode deob transformers in the order they will run.
          */
+        register<StaticFieldMover>()
         register<RuntimeExceptionRemover>()
         register<DeadCodeRemover>()
         register<IllegalStateExceptionRemover>()
         register<ControlFlowNormalizer>()
+        register<RedundantGotoRemover>()
         register<StaticMethodMover>()
-        register<StaticFieldMover>()
-        register<UniqueRenamer>()
-        register<UnusedArgRemover>()
         register<UnusedFieldRemover>()
         register<UnusedMethodRemover>()
+        register<UniqueRenamer>()
+        register<UnusedArgRemover>()
+        register<ErrorConstructorRemover>()
+        register<GetPathErrorFixer>()
         register<VariableExprFixer>()
         register<MultiplierRemover>()
-        register<MethodSorter>()
         register<FieldSorter>()
+        register<MethodSorter>()
+        register<EmptyClassRemover>()
 
         Logger.info("Registered ${transformers.size} bytecode transformers.")
     }

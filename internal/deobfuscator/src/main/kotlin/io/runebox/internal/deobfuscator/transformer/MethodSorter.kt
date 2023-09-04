@@ -8,6 +8,7 @@ import io.runebox.internal.deobfuscator.asm.isStatic
 import org.objectweb.asm.Type
 import org.objectweb.asm.tree.LineNumberNode
 import org.objectweb.asm.tree.MethodNode
+import org.tinylog.kotlin.Logger
 import java.lang.reflect.Modifier
 
 class MethodSorter : Transformer {
@@ -26,6 +27,8 @@ class MethodSorter : Transformer {
                 .thenBy { it.name }
             )
         }
+
+        Logger.info("Sorted $count methods.")
     }
 
     private val MethodNode.lineNumber: Int? get() {

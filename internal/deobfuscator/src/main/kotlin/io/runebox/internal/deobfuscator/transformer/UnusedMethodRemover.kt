@@ -85,6 +85,6 @@ class UnusedMethodRemover : Transformer {
     }
 
     private fun String.isObfuscatedName(): Boolean {
-        return arrayOf("class", "method", "field").any { this.startsWith(it) }
+        return (this.length <= 2) || (this.length == 3 && this !in listOf("add", "run", "put", "set", "get"))
     }
 }
