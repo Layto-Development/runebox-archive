@@ -24,11 +24,12 @@ allprojects {
     apply(plugin = "java")
 
     if(project.name !in listOf(
-        "runebox-gamepack",
-        "runebox-gamepack-api",
         "runebox-injector-annotations",
+        "runebox-gamepack",
         "runebox-mixins"
     )) {
+        apply(plugin = "org.jetbrains.kotlin.jvm")
+
         dependencies {
             implementation(kotlin("stdlib"))
             implementation(kotlin("reflect"))

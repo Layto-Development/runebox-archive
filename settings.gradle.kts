@@ -14,13 +14,13 @@ gradleEnterprise {
 }
 
 module("internal:deobfuscator")
-module("internal:gamepack")
 module("internal:injector")
 module("internal:injector:annotations")
 module("internal:updater")
-module("internal:gamepack-api")
-module("internal:mixins")
+module(":mixins")
+module(":gamepack")
 module(":logger")
+module(":api")
 
 fun module(path: String) {
     val split = path.split(":")

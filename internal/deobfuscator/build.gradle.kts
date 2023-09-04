@@ -2,11 +2,6 @@ import org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler
 import java.net.URL
 import java.util.jar.JarFile
 
-plugins {
-    kotlin("jvm")
-    java
-}
-
 dependencies {
     implementation(project(":runebox-logger"))
     implementation("org.ow2.asm:asm:_")

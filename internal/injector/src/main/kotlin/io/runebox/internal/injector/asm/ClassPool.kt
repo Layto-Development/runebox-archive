@@ -1,24 +1,28 @@
 package io.runebox.internal.injector.asm
 
+import io.runebox.internal.injector.Injector
 import org.objectweb.asm.tree.ClassNode
 import java.io.File
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
 import java.util.jar.JarOutputStream
 
-class ClassPool {
+class ClassPool(val injector: Injector) {
 
     private val classMap = hashSetOf<ClassNode>()
     val classes get() = classMap
 
+    fun containsClass(name: String) = classMap.any { it.name == name }
+    fun containsClass(cls: ClassNode) = containsClass(cls.name)
+
     fun addClass(cls: ClassNode) {
-        if(cls in classMap) return
+        if(containsClass(cls)) return
         cls.init(this)
         classMap.add(cls)
     }
 
     fun removeClass(cls: ClassNode) {
-        if(cls !in classMap) return
+        if(!containsClass(cls)) return
         classMap.remove(cls)
     }
 
