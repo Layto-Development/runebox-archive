@@ -1,44 +1,102 @@
-public abstract class class78 extends class83 implements class30 {
-   protected class78(class31 var1, class103 var2, int var3) {
-      super(var1, var2, var3);
+public class class78 extends class55 {
+   static class425 field1243;
+   static class79 field1242 = new class79(32);
+   int[] field1240 = new int[]{0};
+   int[] field1241 = new int[]{-1};
+
+   class78() {
    }
 
-   protected abstract class187 method313(int var1);
-
-   public int method312() {
-      return super.field562;
-   }
-
-   public Object method135(int var1) {
-      class187 var3 = this.method313(var1);
-      return null != var3 && var3.method986() ? var3.method985() : null;
-   }
-
-   public class374 method311(class366 var1) {
-      int var3 = var1.method1703();
-      class187 var4 = this.method313(var3);
-      class374 var5 = new class374(var3);
-      Class var6 = var4.field1489.field2693;
-      if (var6 == Integer.class) {
-         var5.field2675 = var1.method1658();
-      } else if (var6 == Long.class) {
-         var5.field2675 = var1.method1659();
-      } else if (var6 == String.class) {
-         var5.field2675 = var1.method1704();
+   static int method704(int var0, int var1) {
+      class78 var3 = (class78)field1242.method709((long)var0);
+      if (null == var3) {
+         return -1;
       } else {
-         if (!class541.class.isAssignableFrom(var6)) {
-            throw new IllegalStateException();
+         return var1 >= 0 && var1 < var3.field1241.length ? var3.field1241[var1] : -1;
+      }
+   }
+
+   static int method703(int var0, int var1) {
+      class78 var3 = (class78)field1242.method709((long)var0);
+      if (null == var3) {
+         return 0;
+      } else {
+         return var1 >= 0 && var1 < var3.field1240.length ? var3.field1240[var1] : 0;
+      }
+   }
+
+   static int method705(int var0, int var1) {
+      class78 var3 = (class78)field1242.method709((long)var0);
+      if (null == var3) {
+         return 0;
+      } else if (var1 == -1) {
+         return 0;
+      } else {
+         int var4 = 0;
+
+         for(int var5 = 0; var5 < var3.field1240.length; ++var5) {
+            if (var1 == var3.field1241[var5]) {
+               var4 += var3.field1240[var5];
+            }
          }
 
-         try {
-            class541 var7 = (class541)var6.newInstance();
-            var7.method2584(var1);
-            var5.field2675 = var7;
-         } catch (InstantiationException var8) {
-         } catch (IllegalAccessException var9) {
-         }
+         return var4;
+      }
+   }
+
+   static void method707(int var0, int var1, int var2, int var3) {
+      class78 var5 = (class78)field1242.method709((long)var0);
+      if (var5 == null) {
+         var5 = new class78();
+         field1242.method712(var5, (long)var0);
       }
 
-      return var5;
+      if (var5.field1241.length <= var1) {
+         int[] var6 = new int[var1 + 1];
+         int[] var7 = new int[var1 + 1];
+
+         int var8;
+         for(var8 = 0; var8 < var5.field1241.length; ++var8) {
+            var6[var8] = var5.field1241[var8];
+            var7[var8] = var5.field1240[var8];
+         }
+
+         for(var8 = var5.field1241.length; var8 < var1; ++var8) {
+            var6[var8] = -1;
+            var7[var8] = 0;
+         }
+
+         var5.field1241 = var6;
+         var5.field1240 = var7;
+      }
+
+      var5.field1241[var1] = var2;
+      var5.field1240[var1] = var3;
+   }
+
+   public static void method700() {
+      class293.field2472.clear();
+   }
+
+   static void method702(int var0) {
+      class78 var2 = (class78)field1242.method709((long)var0);
+      if (var2 != null) {
+         for(int var3 = 0; var3 < var2.field1241.length; ++var3) {
+            var2.field1241[var3] = -1;
+            var2.field1240[var3] = 0;
+         }
+
+      }
+   }
+
+   static void method701(int var0) {
+      class78 var2 = (class78)field1242.method709((long)var0);
+      if (null != var2) {
+         var2.method605();
+      }
+   }
+
+   static void method706() {
+      field1242 = new class79(32);
    }
 }

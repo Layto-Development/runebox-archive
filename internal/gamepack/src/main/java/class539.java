@@ -1,31 +1,27 @@
-public class class539 extends class124 {
-   static short[] field4290;
-   byte field4287;
-   int field4286;
-   int field4288;
-   String field4289;
-   // $FF: synthetic field
-   final class398 this$0;
+import java.net.URL;
 
-   class539(class398 var1) {
-      this.this$0 = var1;
-      this.field4288 = -1;
+public class class539 {
+   public static short[] field4264;
+   static int field4260 = -1;
+   static int field4261 = -2;
+   final URL field4259;
+   volatile byte[] field4263;
+   volatile int field4262;
+
+   class539(URL var1) {
+      this.field4262 = field4260;
+      this.field4259 = var1;
    }
 
-   void method472(class366 var1) {
-      var1.method1654();
-      this.field4288 = var1.method1703();
-      this.field4287 = var1.method1655();
-      this.field4286 = var1.method1703();
-      var1.method1659();
-      this.field4289 = var1.method1662();
-      var1.method1654();
+   public boolean method2563() {
+      return field4260 != this.field4262;
    }
 
-   void method473(class417 var1) {
-      class367 var3 = (class367)var1.field2933.get(this.field4288);
-      var3.field2657 = this.field4287;
-      var3.field2658 = this.field4286;
-      var3.field2656 = new class349(this.field4289);
+   public byte[] method2565() {
+      return this.field4263;
+   }
+
+   public String method2564() {
+      return this.field4259.toString();
    }
 }

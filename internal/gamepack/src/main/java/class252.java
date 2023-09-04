@@ -1,38 +1,60 @@
-public class class252 {
-   public static final class252 field1824;
-   public static final class252 field1826;
-   public static final class252 field1828;
-   public static final class252 field1831;
-   public static final class252 field1833;
-   public static final class252 field1834;
-   public static final class252 field1837;
-   static final class252 field1825 = new class252(1);
-   static final class252 field1827 = new class252(0);
-   static final class252 field1829;
-   static final class252 field1832 = new class252(3);
-   static final class252 field1835;
-   static final class252 field1836;
-   static final class252 field1838 = new class252(2);
-   public final int field1830;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-   static {
-      field1828 = new class252(4, class135.field846);
-      field1829 = new class252(5);
-      field1824 = new class252(6, class135.field847);
-      field1826 = new class252(7, class135.field850);
-      field1831 = new class252(8, class135.field851);
-      field1837 = new class252(9, class135.field848);
-      field1833 = new class252(10, class135.field849);
-      field1834 = new class252(11, class135.field845);
-      field1835 = new class252(12);
-      field1836 = new class252(13);
+public class class252 extends class358 {
+   ArrayList field2232;
+
+   public class252(class358 var1, ArrayList var2) {
+      super(var1);
+      super.field2810 = "ClearRequestTask";
+      this.field2232 = var2;
    }
 
-   class252(int var1, class135 var2) {
-      this.field1830 = var1;
-   }
+   public boolean method1831() {
+      if (this.field2232.isEmpty()) {
+         return true;
+      } else {
+         Iterator var2 = this.field2232.iterator();
 
-   class252(int var1) {
-      this(var1, (class135)null);
+         while(var2.hasNext()) {
+            class131 var3 = (class131)var2.next();
+
+            try {
+               if (class228.field2105.contains(var3)) {
+                  if (null == var3) {
+                     class228.field2105.remove(var3);
+                  } else {
+                     if (var3.field1551.field3433 > 0) {
+                        --var3.field1551.field3433;
+                     }
+
+                     if (var3.field1551.field3433 == 0) {
+                        var3.field1551.method2207();
+                        var3.field1551.method2205();
+                        var3.field1551.method2175(0);
+                     }
+
+                     int var4 = var3.field1545;
+                     int var5 = var3.field1546;
+                     Iterator var6 = class228.field2108.iterator();
+
+                     while(var6.hasNext()) {
+                        class285 var7 = (class285)var6.next();
+                        var7.method1598(var4, var5);
+                     }
+
+                     class228.field2105.remove(var3);
+                  }
+               }
+            } catch (Exception var8) {
+               class194.method1208((String)null, var8);
+               this.method1834(var8.getMessage());
+               class228.field2105.clear();
+               return true;
+            }
+         }
+
+         return true;
+      }
    }
 }

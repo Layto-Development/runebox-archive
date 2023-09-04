@@ -1,8 +1,18 @@
-public class class392 implements class465 {
-   class392() {
+public class class392 {
+   static class308 field3077;
+
+   class392() throws Throwable {
    }
 
-   public class62 method2204() {
-      return new class523();
+   public static int method1898(int var0) {
+      return var0 >> 11 & 63;
+   }
+
+   public static int method1900(int var0) {
+      return var0 >> 17 & 7;
+   }
+
+   public static boolean method1899(int var0) {
+      return (var0 >> 20 & 1) != 0;
    }
 }

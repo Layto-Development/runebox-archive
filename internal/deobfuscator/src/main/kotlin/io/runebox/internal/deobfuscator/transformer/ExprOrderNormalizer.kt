@@ -42,11 +42,10 @@ class ExprOrderNormalizer : Transformer {
 
                             leftInsns.forEach { insns.remove(it) }
                             rightInsns.forEach { insns.remove(it) }
-
                             insns.insertBefore(insn, newLeftInsns)
                             insns.insertBefore(insn, newRightInsns)
 
-                            continue
+                            count++
                         }
                     }
                 }
@@ -58,7 +57,7 @@ class ExprOrderNormalizer : Transformer {
     }
 
     private fun AbstractInsnNode.isOrderable(): Boolean {
-        return opcode in listOf(IF_ICMPEQ, IF_ICMPNE, IF_ACMPEQ, IF_ACMPNE) || opcode in IMUL..DMUL
+        return opcode in listOf(IF_ICMPEQ, IF_ICMPNE, IF_ACMPEQ, IF_ACMPNE)
     }
 
     private fun AbstractInsnNode.isConstant(): Boolean = opcode in ICONST_M1..SIPUSH || (opcode == LDC && (this as LdcInsnNode).cst is Number)

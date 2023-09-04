@@ -1,18 +1,28 @@
-public class class70 {
-   public class70 field530;
-   public class70 field532;
-   public long field531;
+import java.util.concurrent.Callable;
 
-   public void method295() {
-      if (this.field532 != null) {
-         this.field532.field530 = this.field530;
-         this.field530.field532 = this.field532;
-         this.field530 = null;
-         this.field532 = null;
-      }
+class class70 implements Callable {
+   static int field1135;
+   // $FF: synthetic field
+   final class382[] val$curveLoadJobs;
+   // $FF: synthetic field
+   final class495 this$0;
+   // $FF: synthetic field
+   final int val$workEnd;
+   // $FF: synthetic field
+   final int val$workStart;
+
+   class70(class495 var1, int var2, int var3, class382[] var4) {
+      this.this$0 = var1;
+      this.val$workStart = var2;
+      this.val$workEnd = var3;
+      this.val$curveLoadJobs = var4;
    }
 
-   public boolean method296() {
-      return this.field532 != null;
+   public Object call() {
+      for(int var1 = this.val$workStart; var1 < this.val$workEnd; ++var1) {
+         this.val$curveLoadJobs[var1].call();
+      }
+
+      return null;
    }
 }

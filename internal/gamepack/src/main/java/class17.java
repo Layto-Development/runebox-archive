@@ -1,124 +1,112 @@
-public final class class17 {
-   class257 field203;
-   class524 field204;
-   class72 field205;
-   int field202;
-   int field206;
+import java.util.Arrays;
 
-   public class17(int var1) {
-      this(var1, var1);
+public class class17 implements class203 {
+   boolean[] field174 = new boolean[112];
+   boolean[] field182 = new boolean[112];
+   boolean[] field183 = new boolean[112];
+   char[] field180 = new char[128];
+   int field178 = 0;
+   int field179 = 0;
+   int field181 = 0;
+   int field185 = 0;
+   int[] field177 = new int[128];
+   int[] field184 = new int[128];
+   public char field173;
+   public int field176 = 0;
+   public int field186;
+   public int[] field175 = new int[128];
+
+   public boolean method1246(int var1) {
+      this.method173(var1);
+      this.field182[var1] = true;
+      this.field183[var1] = true;
+      this.field174[var1] = false;
+      this.field175[++this.field176 - 1] = var1;
+      return true;
    }
 
-   public class17(int var1, int var2) {
-      this.field205 = new class72();
-      this.field206 = var1;
-      this.field202 = var1;
+   public boolean method1244(int var1) {
+      this.field182[var1] = false;
+      this.field183[var1] = false;
+      this.field174[var1] = true;
+      this.field177[++this.field178 - 1] = var1;
+      return true;
+   }
 
-      int var3;
-      for(var3 = 1; var3 + var3 < var1 && var3 < var2; var3 += var3) {
+   public boolean method1245(char var1) {
+      int var3 = 1 + this.field179 & 127;
+      if (this.field185 != var3) {
+         this.field184[this.field179] = -1;
+         this.field180[this.field179] = var1;
+         this.field179 = var3;
       }
 
-      this.field204 = new class524(var3);
+      return false;
    }
 
-   public Object method97(long var1) {
-      class69 var3 = (class69)this.field204.method2509(var1);
-      if (var3 == null) {
-         return null;
+   void method173(int var1) {
+      int var3 = this.field179 + 1 & 127;
+      if (this.field185 != var3) {
+         this.field184[this.field179] = var1;
+         this.field180[this.field179] = 0;
+         this.field179 = var3;
+      }
+
+   }
+
+   public boolean method1247(boolean var1) {
+      return false;
+   }
+
+   public void method166() {
+      this.field185 = this.field181;
+      this.field181 = this.field179;
+      this.field176 = 0;
+      this.field178 = 0;
+      Arrays.fill(this.field183, false);
+      Arrays.fill(this.field174, false);
+   }
+
+   public final boolean method172() {
+      if (this.field185 == this.field181) {
+         return false;
       } else {
-         Object var4 = var3.method294();
-         if (var4 == null) {
-            var3.method295();
-            var3.method1406();
-            this.field202 += var3.field529;
-            return null;
-         } else {
-            if (var3.method293()) {
-               class9 var5 = new class9(var4, var3.field529);
-               this.field204.method2513(var5, var3.field531);
-               this.field205.method297(var5);
-               var5.field2069 = 0L;
-               var3.method295();
-               var3.method1406();
-            } else {
-               this.field205.method297(var3);
-               var3.field2069 = 0L;
-            }
-
-            return var4;
-         }
+         this.field186 = this.field184[this.field185];
+         this.field173 = this.field180[this.field185];
+         this.field185 = 1 + this.field185 & 127;
+         return true;
       }
    }
 
-   void method103(long var1) {
-      class69 var3 = (class69)this.field204.method2509(var1);
-      this.method98(var3);
+   public boolean method167(int var1) {
+      return var1 >= 0 && var1 < 112 ? this.field183[var1] : false;
    }
 
-   void method98(class69 var1) {
-      if (var1 != null) {
-         var1.method295();
-         var1.method1406();
-         this.field202 += var1.field529;
+   public boolean method171(int var1) {
+      return var1 >= 0 && var1 < 112 ? this.field182[var1] : false;
+   }
+
+   public boolean method164(int var1) {
+      return var1 >= 0 && var1 < 112 ? this.field174[var1] : false;
+   }
+
+   public int[] method168() {
+      int[] var2 = new int[this.field176];
+
+      for(int var3 = 0; var3 < this.field176; ++var3) {
+         var2[var3] = this.field175[var3];
       }
 
+      return var2;
    }
 
-   public void method99(Object var1, long var2) {
-      this.method100(var1, var2, 1);
-   }
+   public int[] method169() {
+      int[] var2 = new int[this.field178];
 
-   public void method100(Object var1, long var2, int var4) {
-      if (var4 > this.field206) {
-         throw new IllegalStateException();
-      } else {
-         this.method103(var2);
-         this.field202 -= var4;
-
-         while(this.field202 < 0) {
-            class69 var5 = (class69)this.field205.method299();
-            if (var5 == null) {
-               throw new RuntimeException("");
-            }
-
-            if (!var5.method293()) {
-            }
-
-            this.method98(var5);
-            if (this.field203 != null) {
-               this.field203.method1200(var5.method294());
-            }
-         }
-
-         class9 var6 = new class9(var1, var4);
-         this.field204.method2513(var6, var2);
-         this.field205.method297(var6);
-         var6.field2069 = 0L;
-      }
-   }
-
-   public void method101(int var1) {
-      for(class69 var2 = (class69)this.field205.method300(); var2 != null; var2 = (class69)this.field205.method302()) {
-         if (var2.method293()) {
-            if (var2.method294() == null) {
-               var2.method295();
-               var2.method1406();
-               this.field202 += var2.field529;
-            }
-         } else if (++var2.field2069 > (long)var1) {
-            class335 var3 = new class335(var2.method294(), var2.field529);
-            this.field204.method2513(var3, var2.field531);
-            class72.method298(var3, var2);
-            var2.method295();
-            var2.method1406();
-         }
+      for(int var3 = 0; var3 < this.field178; ++var3) {
+         var2[var3] = this.field177[var3];
       }
 
-   }
-
-   public void method102() {
-      this.field205.method303();
-      this.field204.method2510();
-      this.field202 = this.field206;
+      return var2;
    }
 }

@@ -1,62 +1,70 @@
 public class class242 {
-   static class534 field1767;
-   static short[][][] field1766;
-   class54[] field1764;
-   int field1765;
+   int field2196;
+   int field2197;
+   final int field2198;
+   final int[] field2194;
+   final int[] field2200;
+   final int[][] field2195;
+   final int[][] field2199;
 
-   class242(class366 var1, int var2) {
-      this.field1764 = new class54[var2];
-      this.field1765 = var1.method1654();
-
-      for(int var3 = 0; var3 < this.field1764.length; ++var3) {
-         class54 var4 = new class54(this.field1765, var1, false);
-         this.field1764[var3] = var4;
-      }
-
-      this.method1171();
+   public class242(int var1, int var2) {
+      this.field2199 = new int[var1][var2];
+      this.field2195 = new int[var1][var2];
+      int var3 = var1 * var2;
+      int var4 = class349.method1808(var3 / 4);
+      this.field2200 = new int[var4];
+      this.field2194 = new int[var4];
+      this.field2198 = var4 - 1;
    }
 
-   void method1171() {
-      class54[] var2 = this.field1764;
-
-      for(int var3 = 0; var3 < var2.length; ++var3) {
-         class54 var4 = var2[var3];
-         if (var4.field439 >= 0) {
-            var4.field449 = this.field1764[var4.field439];
+   void method1443() {
+      for(int var2 = 0; var2 < this.field2199.length; ++var2) {
+         for(int var3 = 0; var3 < this.field2199[var2].length; ++var3) {
+            this.field2199[var2][var3] = 0;
+            this.field2195[var2][var3] = 99999999;
          }
       }
 
    }
 
-   public int method1166() {
-      return this.field1764.length;
+   void method1433(int var1, int var2) {
+      this.field2196 = var1;
+      this.field2197 = var2;
    }
 
-   class54 method1167(int var1) {
-      return var1 >= this.method1166() ? null : this.field1764[var1];
+   int method1434() {
+      return this.field2196;
    }
 
-   class54[] method1168() {
-      return this.field1764;
+   int method1435() {
+      return this.field2197;
    }
 
-   void method1169(class272 var1, int var2) {
-      this.method1170(var1, var2, (boolean[])null, false);
+   int method1436() {
+      return this.field2199.length;
    }
 
-   void method1170(class272 var1, int var2, boolean[] var3, boolean var4) {
-      int var6 = var1.method1275();
-      int var7 = 0;
-      class54[] var8 = this.method1168();
+   int method1441() {
+      return this.field2199[0].length;
+   }
 
-      for(int var9 = 0; var9 < var8.length; ++var9) {
-         class54 var10 = var8[var9];
-         if (null == var3 || var4 == var3[var7]) {
-            var1.method1277(var2, var10, var7, var6);
-         }
+   int[][] method1442() {
+      return this.field2199;
+   }
 
-         ++var7;
-      }
+   int[][] method1437() {
+      return this.field2195;
+   }
 
+   int[] method1438() {
+      return this.field2200;
+   }
+
+   int[] method1439() {
+      return this.field2194;
+   }
+
+   int method1440() {
+      return this.field2198;
    }
 }

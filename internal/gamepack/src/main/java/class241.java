@@ -1,123 +1,224 @@
-import java.util.Comparator;
+public class class241 {
+   public static class460 field2192;
+   static int field2193;
+   float[] field2190;
+   int field2191;
 
-public class class241 implements Comparator {
-   static class192 field1761;
-   static class501[] field1763;
-   static int field1760;
-   boolean field1762;
-
-   class241() {
+   class241(float[] var1, int var2) {
+      this.field2190 = var1;
+      this.field2191 = var2;
    }
 
-   int method1165(class199 var1, class199 var2) {
-      if (var2.field1548 == var1.field1548) {
-         return 0;
+   public static int method1431(float[] var0, int var1, float var2, boolean var3, float var4, boolean var5, float[] var6) {
+      float var8 = 0.0F;
+
+      for(int var9 = 0; var9 < var1 + 1; ++var9) {
+         var8 += Math.abs(var0[var9]);
+      }
+
+      float var42 = (Math.abs(var2) + Math.abs(var4)) * (float)(var1 + 1) * class146.field1608;
+      if (var8 <= var42) {
+         return -1;
       } else {
-         if (this.field1762) {
-            if (var1.field1548 == Client.field1116) {
-               return -1;
-            }
+         float[] var10 = new float[var1 + 1];
 
-            if (var2.field1548 == Client.field1116) {
-               return 1;
-            }
+         int var11;
+         for(var11 = 0; var11 < var1 + 1; ++var11) {
+            var10[var11] = 1.0F / var8 * var0[var11];
          }
 
-         return var1.field1548 < var2.field1548 ? -1 : 1;
+         while(Math.abs(var10[var1]) < var42) {
+            --var1;
+         }
+
+         var11 = 0;
+         if (var1 == 0) {
+            return var11;
+         } else if (var1 == 1) {
+            var6[0] = -var10[0] / var10[1];
+            boolean var43 = var3 ? var2 < var6[0] + var42 : var2 < var6[0] - var42;
+            boolean var44 = var5 ? var4 > var6[0] - var42 : var4 > var6[0] + var42;
+            var11 = var43 && var44 ? 1 : 0;
+            if (var11 > 0) {
+               if (var3 && var6[0] < var2) {
+                  var6[0] = var2;
+               } else if (var5 && var6[0] > var4) {
+                  var6[0] = var4;
+               }
+            }
+
+            return var11;
+         } else {
+            class241 var12 = new class241(var10, var1);
+            float[] var13 = new float[var1 + 1];
+
+            for(int var14 = 1; var14 <= var1; ++var14) {
+               var13[var14 - 1] = (float)var14 * var10[var14];
+            }
+
+            float[] var45 = new float[var1 + 1];
+            int var15 = method1431(var13, var1 - 1, var2, false, var4, false, var45);
+            if (var15 == -1) {
+               return 0;
+            } else {
+               boolean var16 = false;
+               float var18 = 0.0F;
+               float var19 = 0.0F;
+               float var20 = 0.0F;
+
+               for(int var21 = 0; var21 <= var15; ++var21) {
+                  if (var11 > var1) {
+                     return var11;
+                  }
+
+                  float var17;
+                  if (var21 == 0) {
+                     var17 = var2;
+                     var19 = method1432(var10, var1, var2);
+                     if (Math.abs(var19) <= var42 && var3) {
+                        var6[var11++] = var2;
+                     }
+                  } else {
+                     var17 = var20;
+                     var19 = var18;
+                  }
+
+                  if (var15 == var21) {
+                     var20 = var4;
+                     var16 = false;
+                  } else {
+                     var20 = var45[var21];
+                  }
+
+                  var18 = method1432(var10, var1, var20);
+                  if (var16) {
+                     var16 = false;
+                  } else if (Math.abs(var18) < var42) {
+                     if (var15 != var21 || var5) {
+                        var6[var11++] = var20;
+                        var16 = true;
+                     }
+                  } else if (var19 < 0.0F && var18 > 0.0F || var19 > 0.0F && var18 < 0.0F) {
+                     int var23 = var11++;
+                     float var25 = var17;
+                     float var26 = var20;
+                     float var27 = method1432(var12.field2190, var12.field2191, var17);
+                     float var24;
+                     if (Math.abs(var27) < class146.field1608) {
+                        var24 = var17;
+                     } else {
+                        float var28 = method1432(var12.field2190, var12.field2191, var20);
+                        if (Math.abs(var28) < class146.field1608) {
+                           var24 = var20;
+                        } else {
+                           float var29 = 0.0F;
+                           float var30 = 0.0F;
+                           float var31 = 0.0F;
+                           float var36 = 0.0F;
+                           boolean var37 = true;
+                           boolean var38 = false;
+
+                           do {
+                              var38 = false;
+                              if (var37) {
+                                 var29 = var25;
+                                 var36 = var27;
+                                 var30 = var26 - var25;
+                                 var31 = var30;
+                                 var37 = false;
+                              }
+
+                              if (Math.abs(var36) < Math.abs(var28)) {
+                                 var25 = var26;
+                                 var26 = var29;
+                                 var29 = var25;
+                                 var27 = var28;
+                                 var28 = var36;
+                                 var36 = var27;
+                              }
+
+                              float var39 = class146.field1609 * Math.abs(var26) + 0.0F;
+                              float var40 = 0.5F * (var29 - var26);
+                              boolean var41 = Math.abs(var40) > var39 && var28 != 0.0F;
+                              if (var41) {
+                                 if (!(Math.abs(var31) < var39) && !(Math.abs(var27) <= Math.abs(var28))) {
+                                    float var35 = var28 / var27;
+                                    float var32;
+                                    float var33;
+                                    if (var25 == var29) {
+                                       var32 = var40 * 2.0F * var35;
+                                       var33 = 1.0F - var35;
+                                    } else {
+                                       var33 = var27 / var36;
+                                       float var34 = var28 / var36;
+                                       var32 = var35 * (var40 * 2.0F * var33 * (var33 - var34) - (var34 - 1.0F) * (var26 - var25));
+                                       var33 = (var34 - 1.0F) * (var33 - 1.0F) * (var35 - 1.0F);
+                                    }
+
+                                    if ((double)var32 > 0.0) {
+                                       var33 = -var33;
+                                    } else {
+                                       var32 = -var32;
+                                    }
+
+                                    var35 = var31;
+                                    var31 = var30;
+                                    if (var32 * 2.0F < var40 * 3.0F * var33 - Math.abs(var33 * var39) && var32 < Math.abs(var33 * var35 * 0.5F)) {
+                                       var30 = var32 / var33;
+                                    } else {
+                                       var30 = var40;
+                                       var31 = var40;
+                                    }
+                                 } else {
+                                    var30 = var40;
+                                    var31 = var40;
+                                 }
+
+                                 var25 = var26;
+                                 var27 = var28;
+                                 if (Math.abs(var30) > var39) {
+                                    var26 += var30;
+                                 } else if ((double)var40 > 0.0) {
+                                    var26 += var39;
+                                 } else {
+                                    var26 -= var39;
+                                 }
+
+                                 var28 = method1432(var12.field2190, var12.field2191, var26);
+                                 if ((double)(var28 * (var36 / Math.abs(var36))) > 0.0) {
+                                    var37 = true;
+                                    var38 = true;
+                                 } else {
+                                    var38 = true;
+                                 }
+                              }
+                           } while(var38);
+
+                           var24 = var26;
+                        }
+                     }
+
+                     var6[var23] = var24;
+                     if (var11 > 1 && var6[var11 - 2] >= var6[var11 - 1] - var42) {
+                        var6[var11 - 2] = 0.5F * (var6[var11 - 2] + var6[var11 - 1]);
+                        --var11;
+                     }
+                  }
+               }
+
+               return var11;
+            }
+         }
       }
    }
 
-   public int compare(Object var1, Object var2) {
-      return this.method1165((class199)var1, (class199)var2);
-   }
+   static float method1432(float[] var0, int var1, float var2) {
+      float var4 = var0[var1];
 
-   public boolean equals(Object var1) {
-      return super.equals(var1);
-   }
-
-   static final void method1164(int var0, int var1, int var2, int var3, boolean var4) {
-      if (var2 < 1) {
-         var2 = 1;
+      for(int var5 = var1 - 1; var5 >= 0; --var5) {
+         var4 = var4 * var2 + var0[var5];
       }
 
-      if (var3 < 1) {
-         var3 = 1;
-      }
-
-      int var6 = var3 - 334;
-      int var7;
-      if (var6 < 0) {
-         var7 = Client.field1389;
-      } else if (var6 >= 100) {
-         var7 = Client.field1275;
-      } else {
-         var7 = Client.field1389 + var6 * (Client.field1275 - Client.field1389) / 100;
-      }
-
-      int var8 = 512 * var3 * var7 / (var2 * 334);
-      int var9;
-      int var10;
-      short var17;
-      if (var8 < Client.field1395) {
-         var17 = Client.field1395;
-         var7 = var2 * var17 * 334 / (var3 * 512);
-         if (var7 > Client.field1225) {
-            var7 = Client.field1225;
-            var9 = var3 * var7 * 512 / (var17 * 334);
-            var10 = (var2 - var9) / 2;
-            if (var4) {
-               class427.method1962();
-               class427.method1968(var0, var1, var10, var3, -16777216);
-               class427.method1968(var0 + var2 - var10, var1, var10, var3, -16777216);
-            }
-
-            var0 += var10;
-            var2 -= var10 * 2;
-         }
-      } else if (var8 > Client.field1396) {
-         var17 = Client.field1396;
-         var7 = var17 * var2 * 334 / (var3 * 512);
-         if (var7 < Client.field1393) {
-            var7 = Client.field1393;
-            var9 = var17 * var2 * 334 / (var7 * 512);
-            var10 = (var3 - var9) / 2;
-            if (var4) {
-               class427.method1962();
-               class427.method1968(var0, var1, var2, var10, -16777216);
-               class427.method1968(var0, var3 + var1 - var10, var2, var10, -16777216);
-            }
-
-            var1 += var10;
-            var3 -= var10 * 2;
-         }
-      }
-
-      Client.field1401 = var7 * var3 / 334;
-      if (var2 != Client.field1332 || Client.field1207 != var3) {
-         int[] var18 = new int[9];
-
-         for(var10 = 0; var10 < var18.length; ++var10) {
-            int var11 = var10 * 32 + 128 + 15;
-            int var12 = Client.method860(var11);
-            int var13 = class480.field3795[var11];
-            int var15 = var3 - 334;
-            if (var15 < 0) {
-               var15 = 0;
-            } else if (var15 > 100) {
-               var15 = 100;
-            }
-
-            int var16 = Client.field1391 + var15 * (Client.field1392 - Client.field1391) / 100;
-            int var14 = var16 * var12 / 256;
-            var18[var10] = var14 * var13 >> 16;
-         }
-
-         class408.method1872(var18, 500, 800, var2 * 334 / var3, 334);
-      }
-
-      Client.field1397 = var0;
-      Client.field1398 = var1;
-      Client.field1332 = var2;
-      Client.field1207 = var3;
+      return var4;
    }
 }

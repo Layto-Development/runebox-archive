@@ -1,16 +1,15 @@
-import java.util.concurrent.locks.ReentrantLock;
+public class class525 implements class182 {
+   public final class265 field4130;
 
-public class class525 {
-   public static class509 field4174;
-   static class483 field4173;
-   static int field4175;
-   class365 field4176;
-   class404 field4171;
-   ReentrantLock field4172;
+   public class525(class8 var1) {
+      this(new class445(var1));
+   }
 
-   class525(class365 var1, class404 var2) {
-      this.field4176 = var1;
-      this.field4171 = var2;
-      this.field4172 = new ReentrantLock();
+   class525(class445 var1) {
+      this.field4130 = var1;
+   }
+
+   public int method2490(int var1) {
+      return this.field4130.method1509(var1);
    }
 }

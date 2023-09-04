@@ -1,15 +1,13 @@
-import java.util.Comparator;
+public class class117 {
+   public class117 field1479;
+   public class117 field1480;
 
-final class class117 implements Comparator {
-   int method406(class199 var1, class199 var2) {
-      return var1.method1052().compareTo(var2.method1052());
-   }
-
-   public int compare(Object var1, Object var2) {
-      return this.method406((class199)var1, (class199)var2);
-   }
-
-   public boolean equals(Object var1) {
-      return super.equals(var1);
+   public void method824() {
+      if (this.field1479 != null) {
+         this.field1479.field1480 = this.field1480;
+         this.field1480.field1479 = this.field1479;
+         this.field1480 = null;
+         this.field1479 = null;
+      }
    }
 }

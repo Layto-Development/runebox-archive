@@ -1,22 +1,16 @@
+import java.util.concurrent.locks.ReentrantLock;
+
 public class class478 {
-   static {
-      int var0 = 0;
-      int var1 = 0;
-      class227[] var2 = class227.method1124();
+   public static class298 field3658;
+   static class299 field3657;
+   static int field3659;
+   class223 field3660;
+   class408 field3655;
+   ReentrantLock field3656;
 
-      for(int var3 = 0; var3 < var2.length; ++var3) {
-         class227 var4 = var2[var3];
-         if (var4.field1693 > var0) {
-            var0 = var4.field1693;
-         }
-
-         if (var4.field1692 > var1) {
-            var1 = var4.field1692;
-         }
-      }
-
-   }
-
-   class478() throws Throwable {
+   class478(class223 var1, class408 var2) {
+      this.field3660 = var1;
+      this.field3655 = var2;
+      this.field3656 = new ReentrantLock();
    }
 }

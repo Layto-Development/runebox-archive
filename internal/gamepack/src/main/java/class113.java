@@ -1,67 +1,156 @@
-public class class113 {
-   static byte[][] field729;
-   public int field726;
-   public int field727;
-   public int field728;
+import java.awt.Component;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 
-   public class113(int var1, int var2, int var3) {
-      this.field727 = var1;
-      this.field726 = var2;
-      this.field728 = var3;
+public class class113 implements KeyListener, FocusListener {
+   static class327 field1463;
+   static int field1456;
+   static int field1457;
+   boolean[] field1460 = new boolean[112];
+   class203[] field1459 = new class203[3];
+   Collection field1458 = new ArrayList(100);
+   Collection field1462 = new ArrayList(100);
+   volatile int field1461 = 0;
+
+   class113() {
    }
 
-   public class113(class113 var1) {
-      this.field727 = var1.field727;
-      this.field726 = var1.field726;
-      this.field728 = var1.field728;
+   void method810(class203 var1, int var2) {
+      this.field1459[var2] = var1;
    }
 
-   public class113(int var1) {
-      if (var1 == -1) {
-         this.field727 = -1;
-      } else {
-         this.field727 = var1 >> 28 & 3;
-         this.field726 = var1 >> 14 & 16383;
-         this.field728 = var1 & 16383;
-      }
-
+   public int method811() {
+      return this.field1461;
    }
 
-   public int method403() {
-      int var3 = this.field727;
-      int var4 = this.field726;
-      int var5 = this.field728;
-      int var2 = var3 << 28 | var4 << 14 | var5;
-      return var2;
+   void method809(Component var1) {
+      var1.setFocusTraversalKeysEnabled(false);
+      var1.addKeyListener(this);
+      var1.addFocusListener(this);
    }
 
-   public boolean equals(Object var1) {
-      if (this == var1) {
-         return true;
-      } else {
-         return !(var1 instanceof class113) ? false : this.method401((class113)var1);
-      }
-   }
-
-   boolean method401(class113 var1) {
-      if (var1.field727 != this.field727) {
-         return false;
-      } else if (this.field726 != var1.field726) {
-         return false;
-      } else {
-         return var1.field728 == this.field728;
+   synchronized void method812(Component var1) {
+      var1.removeKeyListener(this);
+      var1.removeFocusListener(this);
+      synchronized(this) {
+         this.field1462.add(new class180(4, 0));
       }
    }
 
-   public int hashCode() {
-      return this.method403();
+   void method813() {
+      ++this.field1461;
+      this.method814();
+      Iterator var2 = this.field1458.iterator();
+
+      while(var2.hasNext()) {
+         class180 var3 = (class180)var2.next();
+
+         for(int var4 = 0; var4 < this.field1459.length && !var3.method1109(this.field1459[var4]); ++var4) {
+         }
+      }
+
+      this.field1458.clear();
    }
 
-   public String toString() {
-      return this.method402(",");
+   public final synchronized void keyPressed(KeyEvent var1) {
+      int var2 = var1.getKeyCode();
+      if (var2 >= 0 && var2 < class57.method609()) {
+         var2 = class57.method610(var2);
+         boolean var3 = (var2 & 128) != 0;
+         if (var3) {
+            var2 = -1;
+         }
+      } else {
+         var2 = -1;
+      }
+
+      if (var2 >= 0) {
+         this.field1460[var2] = true;
+         this.field1462.add(new class180(1, var2));
+         this.field1461 = 0;
+      }
+
+      var1.consume();
    }
 
-   String method402(String var1) {
-      return this.field727 + var1 + (this.field726 >> 6) + var1 + (this.field728 >> 6) + var1 + (this.field726 & 63) + var1 + (this.field728 & 63);
+   public final synchronized void keyReleased(KeyEvent var1) {
+      int var2;
+      label16: {
+         var2 = var1.getKeyCode();
+         if (var2 >= 0) {
+            int var4 = class57.field1080.length;
+            if (var2 < var4) {
+               var2 = class57.method610(var2) & -129;
+               break label16;
+            }
+         }
+
+         var2 = -1;
+      }
+
+      if (var2 >= 0) {
+         this.field1460[var2] = false;
+         this.field1462.add(new class180(2, var2));
+      }
+
+      var1.consume();
+   }
+
+   public final synchronized void keyTyped(KeyEvent var1) {
+      char var2 = var1.getKeyChar();
+      if (var2 != 0 && var2 != '\uffff') {
+         boolean var3;
+         if ((var2 <= 0 || var2 >= 128) && (var2 < 160 || var2 > 255)) {
+            label47: {
+               if (var2 != 0) {
+                  char[] var4 = class162.field1691;
+
+                  for(int var5 = 0; var5 < var4.length; ++var5) {
+                     char var6 = var4[var5];
+                     if (var6 == var2) {
+                        var3 = true;
+                        break label47;
+                     }
+                  }
+               }
+
+               var3 = false;
+            }
+         } else {
+            var3 = true;
+         }
+
+         if (var3) {
+            this.field1462.add(new class180(3, var2));
+         }
+      }
+
+      var1.consume();
+   }
+
+   synchronized void method814() {
+      Collection var2 = this.field1458;
+      this.field1458 = this.field1462;
+      this.field1462 = var2;
+   }
+
+   public final synchronized void focusGained(FocusEvent var1) {
+      this.field1462.add(new class180(4, 1));
+   }
+
+   public final synchronized void focusLost(FocusEvent var1) {
+      for(int var2 = 0; var2 < 112; ++var2) {
+         if (this.field1460[var2]) {
+            this.field1460[var2] = false;
+            this.field1462.add(new class180(2, var2));
+         }
+      }
+
+      this.field1462.add(new class180(4, 0));
    }
 }

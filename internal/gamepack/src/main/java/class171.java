@@ -1,21 +1,18 @@
-public class class171 {
-   static byte[][][] field1082;
-   int field1083;
-   int field1084;
-   int field1085;
-   int field1086;
-
-   class171() throws Throwable {
+public class class171 implements class390 {
+   public class184 method1897(class184 var1) {
+      class184 var2 = new class184(100);
+      this.method1022(var1, var2);
+      return var2;
    }
 
-   public String toString() {
-      boolean var1 = true;
-      int var2 = 10 - Integer.toString(this.field1086).length();
-      int var3 = 10 - Integer.toString(this.field1084).length();
-      int var4 = 10 - Integer.toString(this.field1083).length();
-      String var5 = "          ".substring(10 - var2);
-      String var6 = "          ".substring(10 - var3);
-      String var7 = "          ".substring(10 - var4);
-      return "    Size: " + this.field1086 + var5 + "Created: " + this.field1083 + var7 + "Total used: " + this.field1084 + var6 + "Max-In-Use: " + this.field1085;
+   void method1022(class184 var1, class184 var2) {
+      class100 var3 = new class100(var1);
+      class47 var4 = new class47(var3);
+
+      long var5;
+      for(var5 = 0L; !var4.method591(var3.method746(), var3.method747(), var5); ++var5) {
+      }
+
+      var2.method1151(var5);
    }
 }

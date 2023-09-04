@@ -1,39 +1,43 @@
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.util.Hashtable;
-import org.bouncycastle.crypto.tls.DefaultTlsClient;
-import org.bouncycastle.crypto.tls.TlsAuthentication;
+public class class128 {
+   int[] field1528;
 
-class class128 extends DefaultTlsClient {
-   static class501[] field805;
-   static class509 field804;
-   // $FF: synthetic field
-   final class268 this$1;
-
-   class128(class268 var1) {
-      this.this$1 = var1;
-   }
-
-   public Hashtable getClientExtensions() throws IOException {
-      Hashtable var1 = super.getClientExtensions();
-      if (var1 == null) {
-         var1 = new Hashtable();
+   public class128(int[] var1) {
+      int var2;
+      for(var2 = 1; var2 <= (var1.length >> 1) + var1.length; var2 <<= 1) {
       }
 
-      byte[] var2 = this.this$1.val$host.getBytes();
-      ByteArrayOutputStream var3 = new ByteArrayOutputStream();
-      DataOutputStream var4 = new DataOutputStream(var3);
-      var4.writeShort(var2.length + 3);
-      var4.writeByte(0);
-      var4.writeShort(var2.length);
-      var4.write(var2);
-      var4.close();
-      var1.put(0, var3.toByteArray());
-      return var1;
+      this.field1528 = new int[var2 + var2];
+
+      int var3;
+      for(var3 = 0; var3 < var2 + var2; ++var3) {
+         this.field1528[var3] = -1;
+      }
+
+      int var4;
+      for(var3 = 0; var3 < var1.length; this.field1528[1 + var4 + var4] = var3++) {
+         for(var4 = var1[var3] & var2 - 1; this.field1528[1 + var4 + var4] != -1; var4 = var4 + 1 & var2 - 1) {
+         }
+
+         this.field1528[var4 + var4] = var1[var3];
+      }
+
    }
 
-   public TlsAuthentication getAuthentication() throws IOException {
-      return new class219(this);
+   public int method879(int var1) {
+      int var3 = (this.field1528.length >> 1) - 1;
+      int var4 = var1 & var3;
+
+      while(true) {
+         int var5 = this.field1528[1 + var4 + var4];
+         if (var5 == -1) {
+            return -1;
+         }
+
+         if (this.field1528[var4 + var4] == var1) {
+            return var5;
+         }
+
+         var4 = var4 + 1 & var3;
+      }
    }
 }

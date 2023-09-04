@@ -1,16 +1,15 @@
-public class class9 extends class69 {
-   Object field78;
+final class class9 implements class376 {
+   static class22 field105;
 
-   class9(Object var1, int var2) {
-      super(var2);
-      this.field78 = var1;
+   void method122(Integer var1, class184 var2) {
+      var2.method1180(var1);
    }
 
-   Object method294() {
-      return this.field78;
+   public Object method1879(class184 var1) {
+      return var1.method1129();
    }
 
-   boolean method293() {
-      return false;
+   public void method1880(Object var1, class184 var2) {
+      this.method122((Integer)var1, var2);
    }
 }

@@ -1,29 +1,38 @@
-public abstract class class68 {
-   class68() {
+public class class68 {
+   static class173 field1129;
+
+   class68() throws Throwable {
    }
 
-   abstract byte[] method291();
+   public static void method651(class173 var0) {
+      field1129 = var0;
+   }
 
-   public abstract void method290(byte[] var1);
+   public static int method653(class184 var0, String var1) {
+      int var3 = var0.field1818;
+      byte[] var4 = class162.method993(var1);
+      var0.method1169(var4.length);
+      var0.field1818 += field1129.method1024(var4, 0, var4.length, var0.field1816, var0.field1818);
+      return var0.field1818 - var3;
+   }
 
-   public static byte[] method292(Object var0, boolean var1) {
-      if (var0 == null) {
-         return null;
-      } else if (var0 instanceof byte[]) {
-         byte[] var7 = (byte[])((byte[])var0);
-         if (var1) {
-            int var5 = var7.length;
-            byte[] var6 = new byte[var5];
-            System.arraycopy(var7, 0, var6, 0, var5);
-            return var6;
-         } else {
-            return var7;
+   public static String method654(class184 var0) {
+      return method652(var0, 32767);
+   }
+
+   static String method652(class184 var0, int var1) {
+      try {
+         int var3 = var0.method1172();
+         if (var3 > var1) {
+            var3 = var1;
          }
-      } else if (var0 instanceof class68) {
-         class68 var3 = (class68)var0;
-         return var3.method291();
-      } else {
-         throw new IllegalArgumentException();
+
+         byte[] var4 = new byte[var3];
+         var0.field1818 += field1129.method1025(var0.field1816, var0.field1818, var4, 0, var3);
+         String var5 = class162.method995(var4, 0, var3);
+         return var5;
+      } catch (Exception var6) {
+         return "Cabbage";
       }
    }
 }

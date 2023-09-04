@@ -1,19 +1,35 @@
-public class class304 extends class434 {
-   final boolean field2066;
+public final class class304 {
+   class151 field2521 = new class151();
 
-   public class304(boolean var1) {
-      this.field2066 = var1;
+   public class304() {
+      this.field2521.field1623 = this.field2521;
+      this.field2521.field1624 = this.field2521;
    }
 
-   int method1388(class538 var1, class538 var2) {
-      if (var1.field4284 != var2.field4284) {
-         return this.field2066 ? var1.field4284 - var2.field4284 : var2.field4284 - var1.field4284;
-      } else {
-         return this.method2028(var1, var2);
+   public void method1666(class151 var1) {
+      if (var1.field1624 != null) {
+         var1.method938();
       }
+
+      var1.field1624 = this.field2521.field1624;
+      var1.field1623 = this.field2521;
+      var1.field1624.field1623 = var1;
+      var1.field1623.field1624 = var1;
    }
 
-   public int compare(Object var1, Object var2) {
-      return this.method1388((class538)var1, (class538)var2);
+   public void method1664(class151 var1) {
+      if (var1.field1624 != null) {
+         var1.method938();
+      }
+
+      var1.field1624 = this.field2521;
+      var1.field1623 = this.field2521.field1623;
+      var1.field1624.field1623 = var1;
+      var1.field1623.field1624 = var1;
+   }
+
+   public class151 method1665() {
+      class151 var1 = this.field2521.field1623;
+      return var1 == this.field2521 ? null : var1;
    }
 }

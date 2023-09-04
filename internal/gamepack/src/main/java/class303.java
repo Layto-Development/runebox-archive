@@ -1,112 +1,107 @@
-import java.util.Arrays;
+public class class303 {
+   static char[] field2517;
+   static char[] field2518 = new char[64];
+   static char[] field2519;
+   static class22 field2520;
+   static int[] field2516;
 
-public class class303 implements class44 {
-   boolean[] field2053 = new boolean[112];
-   boolean[] field2061 = new boolean[112];
-   boolean[] field2062 = new boolean[112];
-   char[] field2059 = new char[128];
-   int field2057 = 0;
-   int field2058 = 0;
-   int field2060 = 0;
-   int field2064 = 0;
-   int[] field2056 = new int[128];
-   int[] field2063 = new int[128];
-   public char field2052;
-   public int field2055 = 0;
-   public int field2065;
-   public int[] field2054 = new int[128];
-
-   public boolean method183(int var1) {
-      this.method1387(var1);
-      this.field2061[var1] = true;
-      this.field2062[var1] = true;
-      this.field2053[var1] = false;
-      this.field2054[++this.field2055 - 1] = var1;
-      return true;
-   }
-
-   public boolean method181(int var1) {
-      this.field2061[var1] = false;
-      this.field2062[var1] = false;
-      this.field2053[var1] = true;
-      this.field2056[++this.field2057 - 1] = var1;
-      return true;
-   }
-
-   public boolean method182(char var1) {
-      int var3 = 1 + this.field2058 & 127;
-      if (this.field2064 != var3) {
-         this.field2063[this.field2058] = -1;
-         this.field2059[this.field2058] = var1;
-         this.field2058 = var3;
+   static {
+      int var0;
+      for(var0 = 0; var0 < 26; ++var0) {
+         field2518[var0] = (char)(var0 + 65);
       }
 
-      return false;
-   }
-
-   void method1387(int var1) {
-      int var3 = this.field2058 + 1 & 127;
-      if (this.field2064 != var3) {
-         this.field2063[this.field2058] = var1;
-         this.field2059[this.field2058] = 0;
-         this.field2058 = var3;
+      for(var0 = 26; var0 < 52; ++var0) {
+         field2518[var0] = (char)(var0 + 97 - 26);
       }
 
-   }
-
-   public boolean method184(boolean var1) {
-      return false;
-   }
-
-   public void method1381() {
-      this.field2064 = this.field2060;
-      this.field2060 = this.field2058;
-      this.field2055 = 0;
-      this.field2057 = 0;
-      Arrays.fill(this.field2062, false);
-      Arrays.fill(this.field2053, false);
-   }
-
-   public final boolean method1386() {
-      if (this.field2064 == this.field2060) {
-         return false;
-      } else {
-         this.field2065 = this.field2063[this.field2064];
-         this.field2052 = this.field2059[this.field2064];
-         this.field2064 = 1 + this.field2064 & 127;
-         return true;
-      }
-   }
-
-   public boolean method1382(int var1) {
-      return var1 >= 0 && var1 < 112 ? this.field2062[var1] : false;
-   }
-
-   public boolean method1385(int var1) {
-      return var1 >= 0 && var1 < 112 ? this.field2061[var1] : false;
-   }
-
-   public boolean method1380(int var1) {
-      return var1 >= 0 && var1 < 112 ? this.field2053[var1] : false;
-   }
-
-   public int[] method1383() {
-      int[] var2 = new int[this.field2055];
-
-      for(int var3 = 0; var3 < this.field2055; ++var3) {
-         var2[var3] = this.field2054[var3];
+      for(var0 = 52; var0 < 62; ++var0) {
+         field2518[var0] = (char)(var0 + 48 - 52);
       }
 
-      return var2;
-   }
+      field2518[62] = '+';
+      field2518[63] = '/';
+      field2519 = new char[64];
 
-   public int[] method1384() {
-      int[] var2 = new int[this.field2057];
-
-      for(int var3 = 0; var3 < this.field2057; ++var3) {
-         var2[var3] = this.field2056[var3];
+      for(var0 = 0; var0 < 26; ++var0) {
+         field2519[var0] = (char)(var0 + 65);
       }
 
-      return var2;
+      for(var0 = 26; var0 < 52; ++var0) {
+         field2519[var0] = (char)(var0 + 97 - 26);
+      }
+
+      for(var0 = 52; var0 < 62; ++var0) {
+         field2519[var0] = (char)(var0 + 48 - 52);
+      }
+
+      field2519[62] = '*';
+      field2519[63] = '-';
+      field2517 = new char[64];
+
+      for(var0 = 0; var0 < 26; ++var0) {
+         field2517[var0] = (char)(var0 + 65);
+      }
+
+      for(var0 = 26; var0 < 52; ++var0) {
+         field2517[var0] = (char)(var0 + 97 - 26);
+      }
+
+      for(var0 = 52; var0 < 62; ++var0) {
+         field2517[var0] = (char)(var0 + 48 - 52);
+      }
+
+      field2517[62] = '-';
+      field2517[63] = '_';
+      field2516 = new int[128];
+
+      for(var0 = 0; var0 < field2516.length; ++var0) {
+         field2516[var0] = -1;
+      }
+
+      for(var0 = 65; var0 <= 90; ++var0) {
+         field2516[var0] = var0 - 65;
+      }
+
+      for(var0 = 97; var0 <= 122; ++var0) {
+         field2516[var0] = var0 - 97 + 26;
+      }
+
+      for(var0 = 48; var0 <= 57; ++var0) {
+         field2516[var0] = 52 + (var0 - 48);
+      }
+
+      int[] var2 = field2516;
+      field2516[43] = 62;
+      var2[42] = 62;
+      int[] var1 = field2516;
+      field2516[47] = 63;
+      var1[45] = 63;
+   }
+
+   class303() throws Throwable {
+   }
+
+   public static String method1663(byte[] var0, int var1, int var2) {
+      StringBuilder var4 = new StringBuilder();
+
+      for(int var5 = var1; var5 < var1 + var2; var5 += 3) {
+         int var6 = var0[var5] & 255;
+         var4.append(field2518[var6 >>> 2]);
+         if (var5 < var2 - 1) {
+            int var7 = var0[var5 + 1] & 255;
+            var4.append(field2518[(var6 & 3) << 4 | var7 >>> 4]);
+            if (var5 < var2 - 2) {
+               int var8 = var0[var5 + 2] & 255;
+               var4.append(field2518[(var7 & 15) << 2 | var8 >>> 6]).append(field2518[var8 & 63]);
+            } else {
+               var4.append(field2518[(var7 & 15) << 2]).append("=");
+            }
+         } else {
+            var4.append(field2518[(var6 & 3) << 4]).append("==");
+         }
+      }
+
+      return var4.toString();
    }
 }

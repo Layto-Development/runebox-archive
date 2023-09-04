@@ -1,32 +1,39 @@
-public class class199 {
-   String field1545;
-   String field1547;
-   public final class517 field1544;
-   public final int field1548;
-   public final long field1546;
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.util.Hashtable;
+import org.bouncycastle.crypto.tls.DefaultTlsClient;
+import org.bouncycastle.crypto.tls.TlsAuthentication;
 
-   class199(class366 var1, byte var2, int var3) {
-      this.field1547 = var1.method1662();
-      this.field1545 = var1.method1662();
-      this.field1548 = var1.method1703();
-      this.field1546 = var1.method1659();
-      int var4 = var1.method1658();
-      int var5 = var1.method1658();
-      this.field1544 = new class517();
-      this.field1544.method2475(2);
-      this.field1544.method2479(var2);
-      this.field1544.field4140 = var4;
-      this.field1544.field4138 = var5;
-      this.field1544.field4139 = 0;
-      this.field1544.field4135 = 0;
-      this.field1544.field4136 = var3;
+class class199 extends DefaultTlsClient {
+   static class298 field1929;
+   static class425[] field1930;
+   // $FF: synthetic field
+   final class317 this$1;
+
+   class199(class317 var1) {
+      this.this$1 = var1;
    }
 
-   public String method1052() {
-      return this.field1547;
+   public Hashtable getClientExtensions() throws IOException {
+      Hashtable var1 = super.getClientExtensions();
+      if (var1 == null) {
+         var1 = new Hashtable();
+      }
+
+      byte[] var2 = this.this$1.val$host.getBytes();
+      ByteArrayOutputStream var3 = new ByteArrayOutputStream();
+      DataOutputStream var4 = new DataOutputStream(var3);
+      var4.writeShort(var2.length + 3);
+      var4.writeByte(0);
+      var4.writeShort(var2.length);
+      var4.write(var2);
+      var4.close();
+      var1.put(0, var3.toByteArray());
+      return var1;
    }
 
-   public String method1051() {
-      return this.field1545;
+   public TlsAuthentication getAuthentication() throws IOException {
+      return new class234(this);
    }
 }

@@ -1,8 +1,7 @@
-public class class118 extends class187 {
-   public class118(int var1) {
-      super(var1);
-   }
+public class class118 extends class55 {
+   public int field1481;
 
-   void method984(class366 var1, int var2) {
+   public class118(int var1) {
+      this.field1481 = var1;
    }
 }

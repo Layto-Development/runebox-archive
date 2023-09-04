@@ -1,19 +1,10 @@
-public class class318 extends class316 {
-   int field2139;
-   String field2138;
-   // $FF: synthetic field
-   final class207 this$0;
+public final class class318 {
+   public static class470 field2587;
+   int field2585;
+   final Object field2586;
 
-   class318(class207 var1) {
-      this.this$0 = var1;
-   }
-
-   void method1441(class366 var1) {
-      this.field2139 = var1.method1658();
-      this.field2138 = var1.method1662();
-   }
-
-   void method1440(class8 var1) {
-      var1.method69(this.field2139, this.field2138);
+   class318(Object var1, int var2) {
+      this.field2586 = var1;
+      this.field2585 = var2;
    }
 }

@@ -1,24 +1,22 @@
-import java.util.Comparator;
-import java.util.Map;
+public class class33 {
+   static {
+      int var0 = 0;
+      int var1 = 0;
+      class503[] var2 = class503.method2445();
 
-class class33 implements Comparator {
-   static int field305;
-   // $FF: synthetic field
-   final class233 this$0;
+      for(int var3 = 0; var3 < var2.length; ++var3) {
+         class503 var4 = var2[var3];
+         if (var4.field3958 > var0) {
+            var0 = var4.field3958;
+         }
 
-   class33(class233 var1) {
-      this.this$0 = var1;
+         if (var4.field3957 > var1) {
+            var1 = var4.field3957;
+         }
+      }
+
    }
 
-   int method145(Map.Entry var1, Map.Entry var2) {
-      return ((Float)var2.getValue()).compareTo((Float)var1.getValue());
-   }
-
-   public int compare(Object var1, Object var2) {
-      return this.method145((Map.Entry)var1, (Map.Entry)var2);
-   }
-
-   public boolean equals(Object var1) {
-      return super.equals(var1);
+   class33() throws Throwable {
    }
 }

@@ -1,37 +1,41 @@
-public class class20 extends class538 {
-   boolean field213;
-   boolean field214;
+import java.util.ArrayList;
 
-   class20() {
+public class class20 extends class358 {
+   ArrayList field210;
+
+   public class20(class358 var1, ArrayList var2) {
+      super(var1);
+      this.field210 = var2;
+      super.field2810 = "ConcurrentMidiTask";
    }
 
-   int method108(class20 var1) {
-      if (super.field4284 == Client.field1116 && var1.field4284 != Client.field1116) {
-         return -1;
-      } else if (var1.field4284 == Client.field1116 && Client.field1116 != super.field4284) {
-         return 1;
-      } else if (super.field4284 != 0 && var1.field4284 == 0) {
-         return -1;
-      } else if (0 != var1.field4284 && super.field4284 == 0) {
-         return 1;
-      } else if (this.field213 && !var1.field213) {
-         return -1;
-      } else if (!this.field213 && var1.field213) {
-         return 1;
-      } else if (this.field214 && !var1.field214) {
-         return -1;
-      } else if (!this.field214 && var1.field214) {
-         return 1;
-      } else {
-         return 0 != super.field4284 ? super.field4283 - var1.field4283 : var1.field4283 - super.field4283;
+   public boolean method1831() {
+      for(int var2 = 0; var2 < this.field210.size(); ++var2) {
+         class358 var3 = (class358)this.field210.get(var2);
+         if (var3 == null) {
+            this.field210.remove(var2);
+            --var2;
+         } else if (var3.method1831()) {
+            if (var3.method1832()) {
+               this.method1834(var3.method1830());
+               this.field210.clear();
+               return true;
+            }
+
+            if (var3.method1833() != null) {
+               this.field210.add(var3.method1833());
+            }
+
+            super.field2812 = var3.field2812;
+            this.field210.remove(var2);
+            --var2;
+         }
       }
-   }
 
-   public int method246(class57 var1) {
-      return this.method108((class20)var1);
-   }
-
-   public int compareTo(Object var1) {
-      return this.method108((class20)var1);
+      if (this.field210.isEmpty()) {
+         return true;
+      } else {
+         return false;
+      }
    }
 }

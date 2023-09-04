@@ -1,18 +1,20 @@
-import java.nio.ByteBuffer;
+public class class26 extends class204 {
+   static class427[] field233;
+   int field232;
+   // $FF: synthetic field
+   final class281 this$0;
 
-public class class26 extends class68 {
-   ByteBuffer field262;
-
-   byte[] method291() {
-      byte[] var2 = new byte[this.field262.capacity()];
-      this.field262.position(0);
-      this.field262.get(var2);
-      return var2;
+   class26(class281 var1, String var2, int var3) {
+      super(var1, var2);
+      this.this$0 = var1;
+      this.field232 = var3;
    }
 
-   public void method290(byte[] var1) {
-      this.field262 = ByteBuffer.allocateDirect(var1.length);
-      this.field262.position(0);
-      this.field262.put(var1);
+   public int method1251() {
+      return 0;
+   }
+
+   public int method1250() {
+      return this.field232;
    }
 }

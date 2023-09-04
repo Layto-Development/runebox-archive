@@ -1,46 +1,54 @@
-public class class217 extends class368 {
-   class260 field1658;
-   int field1655;
-   int field1659;
-   int field1660;
-   final class328 field1657;
-   final int field1656;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-   class217(class113 var1, class113 var2, int var3, class328 var4) {
-      super(var1, var2);
-      this.field1656 = var3;
-      this.field1657 = var4;
-      this.method1107();
+public class class217 {
+   static int field2020;
+
+   class217() throws Throwable {
    }
 
-   void method1107() {
-      this.field1655 = class430.method2004(this.field1656, (byte)-56).method2155().field3629;
-      this.field1658 = this.field1657.method1537(class430.method2005(this.field1655));
-      class430 var2 = class430.method2005(this.method1720());
-      class296 var3 = var2.method2001(false);
-      if (null != var3) {
-         this.field1659 = var3.field2032;
-         this.field1660 = var3.field2028;
+   static class495 method1313(int var0) {
+      class495 var2 = (class495)class157.field1665.method1851((long)var0);
+      if (var2 != null) {
+         return var2;
       } else {
-         this.field1659 = 0;
-         this.field1660 = 0;
+         class298 var4 = class12.field115;
+         class298 var5 = class467.field3604;
+         boolean var6 = true;
+         byte[] var7 = var4.method1637(var0 >> 16 & '\uffff', var0 & '\uffff');
+         class495 var3;
+         if (var7 == null) {
+            var6 = false;
+            var3 = null;
+         } else {
+            int var8 = (var7[1] & 255) << 8 | var7[2] & 255;
+            byte[] var9 = var5.method1637(var8, 0);
+            if (var9 == null) {
+               var6 = false;
+            }
+
+            if (!var6) {
+               var3 = null;
+            } else {
+               if (class495.field3921 == null) {
+                  class264.field2291 = Runtime.getRuntime().availableProcessors();
+                  class495.field3921 = new ThreadPoolExecutor(0, class264.field2291, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue(100 + class264.field2291 * 100), new class306());
+               }
+
+               try {
+                  var3 = new class495(var4, var5, var0, false);
+               } catch (Exception var11) {
+                  var3 = null;
+               }
+            }
+         }
+
+         if (var3 != null) {
+            class157.field1665.method1850(var3, (long)var0);
+         }
+
+         return var3;
       }
-
-   }
-
-   public int method1720() {
-      return this.field1655;
-   }
-
-   class260 method1725() {
-      return this.field1658;
-   }
-
-   int method1726() {
-      return this.field1659;
-   }
-
-   int method1721() {
-      return this.field1660;
    }
 }

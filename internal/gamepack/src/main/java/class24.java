@@ -1,39 +1,44 @@
 public class class24 {
-   static int[] field253;
+   static int field229;
 
    class24() throws Throwable {
    }
 
-   static final class524 method121(class366 var0, class524 var1) {
-      int var3 = var0.method1654();
+   static void method262(int var0, int var1) {
+      int var3 = class112.field1452.method1566(class27.field401);
+
       int var4;
-      if (null == var1) {
-         var4 = class32.method143(var3);
-         var1 = new class524(var4);
-      }
-
-      for(var4 = 0; var4 < var3; ++var4) {
-         boolean var5 = var0.method1654() == 1;
-         int var6 = var0.method1710();
-         Object var7;
-         if (var5) {
-            var7 = new class88(var0.method1662());
-         } else {
-            var7 = new class323(var0.method1658());
+      int var5;
+      for(var4 = 0; var4 < Client.field725; ++var4) {
+         var5 = class112.field1452.method1566(Client.method471(var4));
+         if (var5 > var3) {
+            var3 = var5;
          }
-
-         var1.method2513((class70)var7, (long)var6);
       }
 
-      return var1;
-   }
-
-   static int method120(class524 var0, int var1, int var2) {
-      if (null == var0) {
-         return var2;
-      } else {
-         class323 var4 = (class323)var0.method2509((long)var1);
-         return var4 == null ? var2 : var4.field2304;
+      var3 += 8;
+      var4 = Client.field725 * 15 + 22;
+      var5 = var0 - var3 / 2;
+      if (var5 + var3 > class426.field3228) {
+         var5 = class426.field3228 - var3;
       }
+
+      if (var5 < 0) {
+         var5 = 0;
+      }
+
+      int var6 = var1;
+      if (var1 + var4 > class456.field3562) {
+         var6 = class456.field3562 - var4;
+      }
+
+      if (var6 < 0) {
+         var6 = 0;
+      }
+
+      class317.field2582 = var5;
+      class98.field1320 = var6;
+      class484.field3839 = var3;
+      class185.field1823 = Client.field725 * 15 + 22;
    }
 }

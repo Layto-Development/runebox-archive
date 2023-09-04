@@ -1,10 +1,20 @@
-import java.math.BigInteger;
+public final class class154 {
+   static class480 field1646;
+   int field1632;
+   int field1633;
+   int field1634;
+   int field1635;
+   int field1636 = 0;
+   int field1637;
+   int field1638;
+   int field1640;
+   int field1641;
+   int field1642;
+   int field1643;
+   int field1645;
+   public class496 field1639;
+   public long field1644 = 0L;
 
-public class class154 {
-   static class296[] field973;
-   static final BigInteger field974 = new BigInteger("10001", 16);
-   static final BigInteger field975 = new BigInteger("9d65aa39691f5fadd6296eeee7726eab566ecc003adda321a1bf18f94cce90d5198fcdf30dca1deef73fa1deb8c1ed0731e3f4712b23ab9f180de4946043ea93a3fef2c0099f69c64d0be204a1415322032e6f60aca9aa2a420c696627b2ed49a7970bdfe1cdcf1446fa65530a3bb0b1573a3effc1086fa29016ff9cc35e8951", 16);
-
-   class154() throws Throwable {
+   class154() {
    }
 }

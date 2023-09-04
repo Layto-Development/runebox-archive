@@ -1,53 +1,25 @@
-import java.util.ArrayList;
-import java.util.Iterator;
+public class class37 extends class531 {
+   static String field888;
+   int field887;
+   // $FF: synthetic field
+   final class474 this$0;
 
-public class class37 {
-   static long field318;
-   static final class37 field315 = new class37(0);
-   static final class37 field317 = new class37(1);
-   final int field316;
-
-   class37(int var1) {
-      this.field316 = var1;
+   class37(class474 var1) {
+      this.this$0 = var1;
+      this.field887 = -1;
    }
 
-   static void method157(ArrayList var0, boolean var1) {
-      if (!var1) {
-         class469.field3717.clear();
-      }
-
-      Iterator var3 = var0.iterator();
-
-      while(var3.hasNext()) {
-         class468 var4 = (class468)var3.next();
-         if (var4.field3699 != -1 && -1 != var4.field3700) {
-            if (!var1) {
-               class469.field3717.add(var4);
-            }
-
-            class469.field3723.add(var4);
-         }
+   void method2516(class184 var1) {
+      this.field887 = var1.method1174();
+      var1.method1125();
+      if (var1.method1125() != 255) {
+         --var1.field1818;
+         var1.method1130();
       }
 
    }
 
-   static void method158(int var0) {
-      Client.field1346 = 0L;
-      if (var0 >= 2) {
-         Client.field1347 = true;
-      } else {
-         Client.field1347 = false;
-      }
-
-      if (Client.method868() == 1) {
-         class530.field4182.method2536(765, 503);
-      } else {
-         class530.field4182.method2536(7680, 2160);
-      }
-
-      if (Client.field1200 >= 25) {
-         Client.method806();
-      }
-
+   void method2517(class290 var1) {
+      var1.method1603(this.field887);
    }
 }

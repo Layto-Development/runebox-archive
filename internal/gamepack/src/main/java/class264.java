@@ -1,7 +1,6 @@
-public class class264 extends class70 {
-   public long field1864;
+public class class264 {
+   public static int field2291;
 
-   public class264(long var1) {
-      this.field1864 = var1;
+   class264() throws Throwable {
    }
 }

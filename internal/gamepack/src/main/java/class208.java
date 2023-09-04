@@ -1,27 +1,26 @@
-import java.net.URL;
+public class class208 extends class55 {
+   boolean field1962;
+   class480 field1951;
+   class480 field1957;
+   int field1952;
+   int field1953;
+   int field1955;
+   int field1956;
+   int field1958 = 76;
+   int field1959;
+   int field1961;
+   Object[] field1954;
+   String field1960;
 
-public class class208 {
-   public static short[] field1605;
-   static int field1601 = -1;
-   static int field1602 = -2;
-   final URL field1600;
-   volatile byte[] field1604;
-   volatile int field1603;
-
-   class208(URL var1) {
-      this.field1603 = field1601;
-      this.field1600 = var1;
+   public void method1263(Object[] var1) {
+      this.field1954 = var1;
    }
 
-   public boolean method1086() {
-      return field1601 != this.field1603;
+   public void method1261(int var1) {
+      this.field1958 = var1;
    }
 
-   public byte[] method1088() {
-      return this.field1604;
-   }
-
-   public String method1087() {
-      return this.field1600.toString();
+   public void method1262(class480 var1) {
+      this.field1951 = var1;
    }
 }

@@ -1,22 +1,13 @@
-public class class174 extends class70 {
-   static class396 field1423;
-   static int[] field1425;
-   int field1420;
-   int field1421;
-   int field1422;
-   int field1424;
+public class class174 {
+   class238 field1734;
+   int field1733;
+   int field1735;
+   String field1732;
 
-   class174(int var1, int var2, int var3, int var4) {
-      this.field1424 = var1;
-      this.field1420 = var2;
-      this.field1421 = var3;
-      this.field1422 = var4;
-   }
-
-   void method941(int var1, int var2, int var3, int var4) {
-      this.field1424 = var1;
-      this.field1420 = var2;
-      this.field1421 = var3;
-      this.field1422 = var4;
+   class174(String var1, int var2, int var3, class238 var4) {
+      this.field1732 = var1;
+      this.field1735 = var2;
+      this.field1733 = var3;
+      this.field1734 = var4;
    }
 }

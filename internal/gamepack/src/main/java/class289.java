@@ -1,42 +1,24 @@
-public class class289 {
-   class188 field1977;
-   class188 field1978 = new class188();
+public class class289 extends class56 {
+   static int[] field2454;
+   int field2450;
+   int field2451;
+   int field2452;
+   int field2453;
+   // $FF: synthetic field
+   final class315 this$0;
 
-   public class289() {
-      this.field1978.field1491 = this.field1978;
-      this.field1978.field1490 = this.field1978;
+   class289(class315 var1) {
+      this.this$0 = var1;
    }
 
-   public void method1312(class188 var1) {
-      if (var1.field1490 != null) {
-         var1.method987();
-      }
-
-      var1.field1490 = this.field1978.field1490;
-      var1.field1491 = this.field1978;
-      var1.field1490.field1491 = var1;
-      var1.field1491.field1490 = var1;
+   void method608(class184 var1) {
+      this.field2450 = var1.method1129();
+      this.field2453 = var1.method1129();
+      this.field2451 = var1.method1125();
+      this.field2452 = var1.method1125();
    }
 
-   public class188 method1314() {
-      class188 var1 = this.field1978.field1491;
-      if (var1 == this.field1978) {
-         this.field1977 = null;
-         return null;
-      } else {
-         this.field1977 = var1.field1491;
-         return var1;
-      }
-   }
-
-   public class188 method1313() {
-      class188 var1 = this.field1977;
-      if (var1 == this.field1978) {
-         this.field1977 = null;
-         return null;
-      } else {
-         this.field1977 = var1.field1491;
-         return var1;
-      }
+   void method607(class15 var1) {
+      var1.method154(this.field2450, this.field2453, this.field2451, this.field2452);
    }
 }

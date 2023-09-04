@@ -1,69 +1,92 @@
-public class class426 {
-   int field3324 = 0;
-   int field3326 = 0;
-   int field3327 = 0;
-   int field3328 = 0;
-   long field3320 = -1L;
-   long field3321 = -1L;
-   long field3322 = 0L;
-   long field3323 = 0L;
-   long field3329 = 0L;
-   public boolean field3325 = false;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URLConnection;
+import javax.net.ssl.HttpsURLConnection;
 
-   public void method1954() {
-      this.field3321 = class123.method471();
+public class class426 extends class69 {
+   public static int field3228;
+   static int field3230;
+   final boolean field3229;
+
+   public class426(boolean var1, int var2) {
+      super(var2);
+      this.field3229 = var1;
    }
 
-   public void method1959() {
-      if (-1L != this.field3321) {
-         this.field3323 = class123.method471() - this.field3321;
-         this.field3321 = -1L;
+   void method655(class539 var1) throws IOException {
+      URLConnection var3 = null;
+      boolean var10 = false;
+
+      label124: {
+         HttpURLConnection var13;
+         label125: {
+            try {
+               var10 = true;
+               String var4 = var1.field4259.getProtocol();
+               if (var4.equals("http")) {
+                  var3 = this.method2001(var1);
+               } else {
+                  if (!var4.equals("https")) {
+                     var1.field4262 = class539.field4261;
+                     var10 = false;
+                     break label124;
+                  }
+
+                  var3 = this.method2002(var1);
+               }
+
+               this.method656(var3, var1);
+               var10 = false;
+               break label125;
+            } catch (IOException var11) {
+               var1.field4262 = class539.field4261;
+               var10 = false;
+            } finally {
+               if (var10) {
+                  if (null != var3 && var3 instanceof HttpURLConnection) {
+                     HttpURLConnection var7 = (HttpURLConnection)var3;
+                     var7.disconnect();
+                  }
+
+               }
+            }
+
+            if (null != var3 && var3 instanceof HttpURLConnection) {
+               var13 = (HttpURLConnection)var3;
+               var13.disconnect();
+            }
+
+            return;
+         }
+
+         if (null != var3 && var3 instanceof HttpURLConnection) {
+            var13 = (HttpURLConnection)var3;
+            var13.disconnect();
+         }
+
+         return;
+      }
+
+      if (null != var3 && var3 instanceof HttpURLConnection) {
+         HttpURLConnection var5 = (HttpURLConnection)var3;
+         var5.disconnect();
       }
 
    }
 
-   public void method1955(int var1) {
-      this.field3320 = class123.method471();
-      this.field3324 = var1;
+   URLConnection method2001(class539 var1) throws IOException {
+      URLConnection var3 = var1.field4259.openConnection();
+      this.method660(var3);
+      return var3;
    }
 
-   public void method1956() {
-      if (-1L != this.field3320) {
-         this.field3322 = class123.method471() - this.field3320;
-         this.field3320 = -1L;
+   URLConnection method2002(class539 var1) throws IOException {
+      HttpsURLConnection var3 = (HttpsURLConnection)var1.field4259.openConnection();
+      if (!this.field3229) {
+         var3.setSSLSocketFactory(class538.method2561());
       }
 
-      ++this.field3327;
-      this.field3325 = true;
-   }
-
-   public void method1957() {
-      this.field3325 = false;
-      this.field3326 = 0;
-   }
-
-   public void method1953() {
-      this.method1956();
-   }
-
-   public void method1958(class366 var1) {
-      method1960(var1, this.field3323);
-      method1960(var1, this.field3322);
-      method1960(var1, this.field3329);
-      var1.method1684(this.field3324);
-      var1.method1684(this.field3326);
-      var1.method1684(this.field3327);
-      var1.method1684(this.field3328);
-   }
-
-   static void method1960(class366 var0, long var1) {
-      var1 /= 10L;
-      if (var1 < 0L) {
-         var1 = 0L;
-      } else if (var1 > 65535L) {
-         var1 = 65535L;
-      }
-
-      var0.method1684((int)var1);
+      this.method660(var3);
+      return var3;
    }
 }

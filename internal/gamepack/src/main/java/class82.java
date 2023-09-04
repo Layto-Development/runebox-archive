@@ -1,16 +1,32 @@
-public class class82 implements class42 {
-   public static final class82 field556 = new class82((byte)-1);
-   public static final class82 field557 = new class82((byte)0);
-   public static final class82 field558 = new class82((byte)2);
-   public static final class82 field561 = new class82((byte)1);
-   static byte[][][] field560;
-   public byte field559;
+public class class82 {
+   String field1254;
+   String field1256;
+   public final class177 field1253;
+   public final int field1257;
+   public final long field1255;
 
-   class82(byte var1) {
-      this.field559 = var1;
+   class82(class184 var1, byte var2, int var3) {
+      this.field1256 = var1.method1133();
+      this.field1254 = var1.method1133();
+      this.field1257 = var1.method1174();
+      this.field1255 = var1.method1130();
+      int var4 = var1.method1129();
+      int var5 = var1.method1129();
+      this.field1253 = new class177();
+      this.field1253.method1098(2);
+      this.field1253.method1102(var2);
+      this.field1253.field1798 = var4;
+      this.field1253.field1796 = var5;
+      this.field1253.field1797 = 0;
+      this.field1253.field1793 = 0;
+      this.field1253.field1794 = var3;
    }
 
-   public int method180() {
-      return this.field559;
+   public String method715() {
+      return this.field1256;
+   }
+
+   public String method714() {
+      return this.field1254;
    }
 }

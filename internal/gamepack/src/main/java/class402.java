@@ -1,35 +1,48 @@
-public final class class402 extends class70 {
-   boolean field2783;
-   boolean field2798;
-   boolean field2799;
-   class23 field2788;
-   class276[] field2801 = new class276[5];
-   class385 field2793;
-   class402 field2805;
-   class48 field2787;
-   class495 field2784;
-   class514 field2791;
-   class71 field2794;
-   int field2785;
-   int field2786;
-   int field2789;
-   int field2790;
-   int field2792;
-   int field2796 = 0;
-   int field2797;
-   int field2800;
-   int field2802;
-   int field2803;
-   int field2804;
-   int[] field2795 = new int[5];
-
-   class402(int var1, int var2, int var3) {
-      this.field2786 = this.field2802 = var1;
-      this.field2789 = var2;
-      this.field2785 = var3;
+public class class402 extends class326 {
+   class402() {
    }
 
-   static String method1827(int var0) {
-      return "<img=" + var0 + ">";
+   protected boolean method1714(int var1, int var2, int var3, class278 var4) {
+      return super.field2631 == var2 && var3 == super.field2630;
+   }
+
+   static int method1968(int var0, int var1) {
+      if (var0 == -2) {
+         return 12345678;
+      } else if (var0 == -1) {
+         if (var1 < 0) {
+            var1 = 0;
+         } else if (var1 > 127) {
+            var1 = 127;
+         }
+
+         var1 = 127 - var1;
+         return var1;
+      } else {
+         var1 = (var0 & 127) * var1 / 128;
+         if (var1 < 2) {
+            var1 = 2;
+         } else if (var1 > 126) {
+            var1 = 126;
+         }
+
+         return var1 + (var0 & '\uff80');
+      }
+   }
+
+   public static class12 method1967(int var0) {
+      class12 var2 = (class12)class12.field113.method1851((long)var0);
+      if (var2 != null) {
+         return var2;
+      } else {
+         byte[] var3 = class12.field114.method1629(16, var0);
+         var2 = new class12();
+         if (null != var3) {
+            var2.method127(new class184(var3));
+         }
+
+         class12.field113.method1850(var2, (long)var0);
+         return var2;
+      }
    }
 }

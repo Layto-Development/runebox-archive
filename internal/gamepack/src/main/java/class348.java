@@ -1,58 +1,76 @@
-import java.io.File;
 import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.util.Hashtable;
 
 public class class348 {
-   static boolean field2565 = false;
-   static File field2566;
-   static Hashtable field2567 = new Hashtable(16);
+   static int field2754;
+   boolean field2762 = true;
+   class164 field2759 = new class164(40000);
+   class168 field2768;
+   class184 field2757 = new class184(5000);
+   class375 field2755 = null;
+   class375 field2760;
+   class375 field2766;
+   class375 field2767;
+   class45 field2763 = new class45();
+   int field2756 = 0;
+   int field2761 = 0;
+   int field2764 = 0;
+   int field2765 = 0;
+   public class152 field2758;
 
-   class348() throws Throwable {
+   class348() {
    }
 
-   static void method1595(byte var0) {
-      try {
-         File var1 = new File(class177.field1432, "random.dat");
-         int var3;
-         if (var1.exists()) {
-            class269.field1883 = new class493(new class390(var1, "rw", 25L), 24, 0);
-         } else {
-            label46:
-            for(int var2 = 0; var2 < class269.field1887.length; ++var2) {
-               if (var0 != -1) {
-                  throw new IllegalStateException();
-               }
+   final void method1802() {
+      this.field2763.method576();
+      this.field2756 = 0;
+   }
 
-               for(var3 = 0; var3 < class407.field2819.length; ++var3) {
-                  if (var0 != -1) {
-                     throw new IllegalStateException();
-                  }
+   final void method1796() throws IOException {
+      if (this.field2768 != null && this.field2756 > 0) {
+         this.field2757.field1818 = 0;
 
-                  File var4 = new File(class407.field2819[var3] + class269.field1887[var2] + File.separatorChar + "random.dat");
-                  if (var4.exists()) {
-                     if (var0 != -1) {
-                        throw new IllegalStateException();
-                     }
-
-                     class269.field1883 = new class493(new class390(var4, "rw", 25L), 24, 0);
-                     break label46;
-                  }
-               }
+         while(true) {
+            class335 var2 = (class335)this.field2763.method583();
+            if (null == var2 || var2.field2683 > this.field2757.field1816.length - this.field2757.field1818) {
+               this.field2768.method1015(this.field2757.field1816, 0, this.field2757.field1818);
+               this.field2764 = 0;
+               break;
             }
-         }
 
-         if (null == class269.field1883) {
-            RandomAccessFile var6 = new RandomAccessFile(var1, "rw");
-            var3 = var6.read();
-            var6.seek(0L);
-            var6.write(var3);
-            var6.seek(0L);
-            var6.close();
-            class269.field1883 = new class493(new class390(var1, "rw", 25L), 24, 0);
+            this.field2757.method1119(var2.field2686.field1816, 0, var2.field2683);
+            this.field2756 -= var2.field2683;
+            var2.method605();
+            var2.field2686.method1113();
+            var2.method1771();
          }
-      } catch (IOException var5) {
       }
 
+   }
+
+   public final void method1797(class335 var1) {
+      this.field2763.method577(var1);
+      var1.field2683 = var1.field2686.field1818;
+      var1.field2686.field1818 = 0;
+      this.field2756 += var1.field2683;
+   }
+
+   void method1798(class168 var1) {
+      this.field2768 = var1;
+   }
+
+   void method1801() {
+      if (this.field2768 != null) {
+         this.field2768.method1017();
+         this.field2768 = null;
+      }
+
+   }
+
+   void method1799() {
+      this.field2768 = null;
+   }
+
+   class168 method1800() {
+      return this.field2768;
    }
 }

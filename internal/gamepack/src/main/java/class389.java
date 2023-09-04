@@ -1,17 +1,25 @@
-public class class389 {
-   static String field2745 = " (";
-   static String field2746 = "true";
-   static String field2747 = ")";
-   static String field2748 = "|";
-   static String field2749 = ",";
-   static String field2750 = "->";
-   static String field2751 = "<br>";
-   static String field2752 = "</col>";
+import java.util.Iterator;
 
-   class389() throws Throwable {
+class class389 implements Iterator {
+   int field3075;
+   // $FF: synthetic field
+   final class299 this$0;
+
+   class389(class299 var1) {
+      this.this$0 = var1;
    }
 
-   static String method1778(int var0) {
-      return "<col=" + Integer.toHexString(var0) + ">";
+   public boolean hasNext() {
+      return this.field3075 < this.this$0.method118();
+   }
+
+   public Object next() {
+      int var1 = ++this.field3075 - 1;
+      class350 var2 = (class350)this.this$0.field2502.method255((long)var1);
+      return null != var2 ? var2 : this.this$0.method1659(var1);
+   }
+
+   public void remove() {
+      throw new UnsupportedOperationException();
    }
 }

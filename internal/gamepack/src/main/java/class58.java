@@ -1,68 +1,61 @@
-public class class58 extends class306 {
-   static class245 field466 = new class245(64);
-   static class509 field468;
-   static int field469;
-   boolean field464 = true;
-   char field465;
-   public int field463;
-   public String field467;
+public class class58 extends class151 {
+   static class364 field1084 = new class364(64);
+   public int field1083 = 0;
 
    class58() {
    }
 
-   void method247() {
-   }
-
-   void method248(class366 var1) {
+   void method611(class184 var1) {
       while(true) {
-         int var3 = var1.method1654();
+         int var3 = var1.method1125();
          if (var3 == 0) {
             return;
          }
 
-         this.method249(var1, var3);
+         this.method612(var1, var3);
       }
    }
 
-   void method249(class366 var1, int var2) {
-      if (var2 == 1) {
-         this.field465 = class459.method2161(var1.method1655());
-      } else if (var2 == 2) {
-         this.field463 = var1.method1658();
-      } else if (var2 == 4) {
-         this.field464 = false;
-      } else if (var2 == 5) {
-         this.field467 = var1.method1662();
+   void method612(class184 var1, int var2) {
+      if (var2 == 2) {
+         this.field1083 = var1.method1174();
       }
 
    }
 
-   public boolean method250() {
-      return this.field465 == 's';
+   public static void method615(class298 var0) {
+      class199.field1929 = var0;
    }
 
-   public static void method252(class509 var0) {
-      field468 = var0;
-   }
-
-   public static class58 method253(int var0) {
-      class58 var2 = (class58)field466.method1183((long)var0);
+   public static class58 method614(int var0) {
+      class58 var2 = (class58)field1084.method1851((long)var0);
       if (null != var2) {
          return var2;
       } else {
-         byte[] var3 = field468.method2422(11, var0);
+         byte[] var3 = class199.field1929.method1629(5, var0);
          var2 = new class58();
          if (var3 != null) {
-            var2.method248(new class366(var3));
+            var2.method611(new class184(var3));
          }
 
-         var2.method247();
-         field466.method1182(var2, (long)var0);
+         field1084.method1850(var2, (long)var0);
          return var2;
       }
    }
 
-   public static void method251() {
-      field466.method1180();
+   static void method613() {
+      if (Client.field668) {
+         class480 var1 = class480.method2352(class325.field2628, Client.field744);
+         if (null != var1 && var1.field3769 != null) {
+            class208 var2 = new class208();
+            var2.field1951 = var1;
+            var2.field1954 = var1.field3769;
+            class18.method216(var2);
+         }
+
+         Client.field710 = -1;
+         Client.field668 = false;
+         Client.method485(var1);
+      }
    }
 }

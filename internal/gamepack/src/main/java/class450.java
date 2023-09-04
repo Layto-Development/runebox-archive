@@ -1,34 +1,14 @@
-public abstract class class450 {
-   boolean field3556;
-   boolean field3557;
-   class450 field3553;
-   String field3554;
-   String field3555;
+public final class class450 {
+   int field3486;
+   int field3487;
+   int field3488;
+   int field3489;
+   int field3490;
+   int field3494 = 0;
+   public class496 field3491;
+   public class496 field3493;
+   public long field3492 = 0L;
 
-   class450(class450 var1) {
-      this.field3553 = var1;
-   }
-
-   public abstract boolean method2101();
-
-   public boolean method2102() {
-      return this.field3556;
-   }
-
-   public boolean method2105() {
-      return this.field3557;
-   }
-
-   public String method2100() {
-      return "Error in task: " + this.field3555 + ", Error message: " + this.field3554;
-   }
-
-   public class450 method2103() {
-      return this.field3553;
-   }
-
-   void method2104(String var1) {
-      this.field3556 = true;
-      this.field3554 = var1;
+   class450() {
    }
 }

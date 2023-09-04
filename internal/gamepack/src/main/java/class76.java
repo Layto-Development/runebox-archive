@@ -1,18 +1,24 @@
-public class class76 implements class345 {
-   public class366 method1594(class366 var1) {
-      class366 var2 = new class366(100);
-      this.method309(var1, var2);
-      return var2;
+public class class76 implements class188 {
+   static class119 field1226;
+   static final class76 field1227 = new class76(1, 2);
+   static final class76 field1228 = new class76(2, 3);
+   static final class76 field1229 = new class76(3, 4);
+   static final class76 field1230 = new class76(5, 6);
+   static final class76 field1233 = new class76(4, 5);
+   static final class76 field1234 = new class76(0, -1);
+   final int field1231;
+   final int field1232;
+
+   class76(int var1, int var2) {
+      this.field1231 = var1;
+      this.field1232 = var2;
    }
 
-   void method309(class366 var1, class366 var2) {
-      class66 var3 = new class66(var1);
-      class74 var4 = new class74(var3);
+   public int method1195() {
+      return this.field1232;
+   }
 
-      long var5;
-      for(var5 = 0L; !var4.method308(var3.method287(), var3.method288(), var5); ++var5) {
-      }
-
-      var2.method1680(var5);
+   static class76[] method697() {
+      return new class76[]{field1227, field1229, field1233, field1234, field1228, field1230};
    }
 }

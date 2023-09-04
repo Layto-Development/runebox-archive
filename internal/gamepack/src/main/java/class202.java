@@ -1,73 +1,24 @@
-public class class202 extends class70 {
-   class525 field1562;
+import java.util.Comparator;
+import java.util.Map;
 
-   public class202() {
-      this.field1562 = null;
+class class202 implements Comparator {
+   static int field1936;
+   // $FF: synthetic field
+   final class98 this$0;
+
+   class202(class98 var1) {
+      this.this$0 = var1;
    }
 
-   class202(class365 var1) {
-      if (var1 != null) {
-         this.field1562 = new class525(var1, (class404)null);
-      }
+   int method1243(Map.Entry var1, Map.Entry var2) {
+      return ((Float)var2.getValue()).compareTo((Float)var1.getValue());
    }
 
-   public class202(class404 var1) {
-      this.field1562 = new class525((class365)null, var1);
+   public int compare(Object var1, Object var2) {
+      return this.method1243((Map.Entry)var1, (Map.Entry)var2);
    }
 
-   public boolean method1057(byte var1) {
-      boolean var10000;
-      if (null == this.field1562) {
-         if (var1 == -1) {
-            throw new IllegalStateException();
-         }
-
-         var10000 = true;
-      } else {
-         var10000 = false;
-      }
-
-      return var10000;
-   }
-
-   public class404 method1059() {
-      if (null != this.field1562 && this.field1562.field4172.tryLock()) {
-         class404 var2;
-         try {
-            var2 = this.method1056();
-         } finally {
-            this.field1562.field4172.unlock();
-         }
-
-         return var2;
-      } else {
-         return null;
-      }
-   }
-
-   public class404 method1058() {
-      if (this.field1562 != null) {
-         this.field1562.field4172.lock();
-
-         class404 var2;
-         try {
-            var2 = this.method1056();
-         } finally {
-            this.field1562.field4172.unlock();
-         }
-
-         return var2;
-      } else {
-         return null;
-      }
-   }
-
-   class404 method1056() {
-      if (this.field1562.field4171 == null) {
-         this.field1562.field4171 = this.field1562.field4176.method1638((int[])null);
-         this.field1562.field4176 = null;
-      }
-
-      return this.field1562.field4171;
+   public boolean equals(Object var1) {
+      return super.equals(var1);
    }
 }

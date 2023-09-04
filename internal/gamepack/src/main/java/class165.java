@@ -1,19 +1,28 @@
-public abstract class class165 extends class306 {
-   public int field1058 = 1000;
+public class class165 extends class56 {
+   int field1701;
+   String field1700;
+   long field1702;
+   // $FF: synthetic field
+   final class315 this$0;
 
-   protected class165() {
+   class165(class315 var1) {
+      this.this$0 = var1;
+      this.field1702 = -1L;
+      this.field1700 = null;
+      this.field1701 = 0;
    }
 
-   void method631(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, long var9) {
-      class485 var11 = this.method632();
-      if (var11 != null) {
-         this.field1058 = var11.field1058;
-         var11.method631(var1, var2, var3, var4, var5, var6, var7, var8, var9);
+   void method608(class184 var1) {
+      if (var1.method1125() != 255) {
+         --var1.field1818;
+         this.field1702 = var1.method1130();
       }
 
+      this.field1700 = var1.method1184();
+      this.field1701 = var1.method1174();
    }
 
-   protected class485 method632() {
-      return null;
+   void method607(class15 var1) {
+      var1.method158(this.field1702, this.field1700, this.field1701);
    }
 }

@@ -1,75 +1,47 @@
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
-import java.security.SecureRandom;
-import java.security.Security;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
-import org.bouncycastle.crypto.tls.TlsClientProtocol;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import java.util.List;
 
-public class class395 extends SSLSocketFactory {
-   static class395 field2764;
-   SecureRandom field2763 = new SecureRandom();
-
-   static {
-      if (Security.getProvider("BC") == null) {
-         Security.addProvider(new BouncyCastleProvider());
-      }
-
-   }
+public class class395 extends class151 {
+   public static class298 field3088;
+   static class294 field3089;
+   static class364 field3085 = new class364(64);
+   static class425 field3084;
+   static List field3087;
+   public boolean field3086 = false;
 
    class395() {
    }
 
-   public Socket createSocket(Socket var1, String var2, int var3, boolean var4) throws IOException {
-      if (null == var1) {
-         var1 = new Socket();
+   void method1906(class184 var1) {
+      while(true) {
+         int var3 = var1.method1125();
+         if (var3 == 0) {
+            return;
+         }
+
+         this.method1905(var1, var3);
+      }
+   }
+
+   void method1905(class184 var1, int var2) {
+      if (var2 == 2) {
+         this.field3086 = true;
       }
 
-      if (!var1.isConnected()) {
-         var1.connect(new InetSocketAddress(var2, var3));
+   }
+
+   public static class395 method1907(int var0) {
+      class395 var2 = (class395)field3085.method1851((long)var0);
+      if (var2 != null) {
+         return var2;
+      } else {
+         byte[] var3 = field3088.method1629(19, var0);
+         var2 = new class395();
+         if (null != var3) {
+            var2.method1906(new class184(var3));
+         }
+
+         field3085.method1850(var2, (long)var0);
+         return var2;
       }
-
-      TlsClientProtocol var5 = new TlsClientProtocol(var1.getInputStream(), var1.getOutputStream(), this.field2763);
-      return this.method1790(var2, var5);
-   }
-
-   public String[] getDefaultCipherSuites() {
-      return null;
-   }
-
-   public String[] getSupportedCipherSuites() {
-      return null;
-   }
-
-   public Socket createSocket(String var1, int var2) throws IOException, UnknownHostException {
-      return null;
-   }
-
-   public Socket createSocket(InetAddress var1, int var2) throws IOException {
-      return null;
-   }
-
-   public Socket createSocket(String var1, int var2, InetAddress var3, int var4) throws IOException, UnknownHostException {
-      return null;
-   }
-
-   public Socket createSocket(InetAddress var1, int var2, InetAddress var3, int var4) throws IOException {
-      return null;
-   }
-
-   SSLSocket method1790(String var1, TlsClientProtocol var2) {
-      return new class268(this, var2, var1);
-   }
-
-   public static class395 method1789() {
-      if (field2764 == null) {
-         field2764 = new class395();
-      }
-
-      return field2764;
    }
 }

@@ -1,20 +1,47 @@
-public class class504 implements class42 {
-   static final class504 field4038 = new class504(1, 2);
-   static final class504 field4039 = new class504(0, 0);
-   static final class504 field4042 = new class504(2, 1);
-   final int field4041;
-   public final int field4040;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
-   class504(int var1, int var2) {
-      this.field4040 = var1;
-      this.field4041 = var2;
+public class class504 {
+   public static Comparator field3961 = new class88();
+   public static Comparator field3963;
+   public static Comparator field3964;
+   public static Comparator field3965;
+   public final List field3962;
+
+   static {
+      new class53();
+      field3965 = new class110();
+      field3963 = new class378();
+      field3964 = new class102();
    }
 
-   public int method180() {
-      return this.field4041;
+   public class504(class184 var1, boolean var2) {
+      int var3 = var1.method1174();
+      boolean var4 = var1.method1125() == 1;
+      byte var5;
+      if (var4) {
+         var5 = 1;
+      } else {
+         var5 = 0;
+      }
+
+      int var6 = var1.method1174();
+      this.field3962 = new ArrayList(var6);
+
+      for(int var7 = 0; var7 < var6; ++var7) {
+         this.field3962.add(new class82(var1, var5, var3));
+      }
+
    }
 
-   static class504[] method2398() {
-      return new class504[]{field4039, field4038, field4042};
+   public void method2446(Comparator var1, boolean var2) {
+      if (var2) {
+         Collections.sort(this.field3962, var1);
+      } else {
+         Collections.sort(this.field3962, Collections.reverseOrder(var1));
+      }
+
    }
 }

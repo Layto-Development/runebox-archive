@@ -1,125 +1,139 @@
-public class class477 implements class214 {
-   class409[] field3774;
-   class429 field3775 = new class429();
-   class509 field3772;
-   double field3773 = 1.0;
-   int field3770;
-   int field3771 = 0;
-   int field3776 = 128;
+import java.awt.Canvas;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-   public class477(class509 var1, class509 var2, int var3, double var4, int var6) {
-      this.field3772 = var2;
-      this.field3770 = var3;
-      this.field3771 = this.field3770;
-      this.field3773 = var4;
-      this.field3776 = var6;
-      int[] var7 = var1.method2433(0);
-      if (var7 != null) {
-         int var8 = var7.length;
-         this.field3774 = new class409[var1.method2448(0)];
+public final class class477 extends Canvas {
+   static class409 field3653;
+   static class6 field3650;
+   static int field3652;
+   static long field3651;
+   Component field3654;
 
-         for(int var9 = 0; var9 < var8; ++var9) {
-            class366 var10 = new class366(var1.method2422(0, var7[var9]));
-            this.field3774[var7[var9]] = new class409(var10);
-         }
-      } else {
-         this.field3774 = new class409[0];
-      }
-
+   class477(Component var1) {
+      this.field3654 = var1;
    }
 
-   public int method2249() {
-      if (this.field3774.length == 0) {
-         return 100;
-      } else {
-         int var2 = 0;
-         int var3 = 0;
-         class409[] var4 = this.field3774;
+   public final void update(Graphics var1) {
+      this.field3654.update(var1);
+   }
 
-         for(int var5 = 0; var5 < var4.length; ++var5) {
-            class409 var6 = var4[var5];
-            if (var6 != null && var6.field2879 != null) {
-               var2 += var6.field2879.length;
-               int[] var7 = var6.field2879;
+   public final void paint(Graphics var1) {
+      this.field3654.paint(var1);
+   }
 
-               for(int var8 = 0; var8 < var7.length; ++var8) {
-                  int var9 = var7[var8];
-                  if (this.field3772.method2425(var9)) {
-                     ++var3;
+   static final void method2312() {
+      int var4;
+      for(int var1 = 0; var1 < Client.field831; ++var1) {
+         int var10002 = Client.field788[var1]--;
+         if (Client.field788[var1] >= -10) {
+            class404 var11 = Client.field620[var1];
+            if (var11 == null) {
+               class404 var10000 = (class404)null;
+               var11 = class404.method1975(class57.field1081, Client.field832[var1], 0);
+               if (null == var11) {
+                  continue;
+               }
+
+               int[] var19 = Client.field788;
+               var19[var1] += var11.method1974();
+               Client.field620[var1] = var11;
+            }
+
+            if (Client.field788[var1] < 0) {
+               int var3;
+               if (Client.field583[var1] != 0) {
+                  var4 = 128 * (Client.field583[var1] & 255);
+                  int var5 = Client.field583[var1] >> 16 & 255;
+                  int var6 = var5 * 128 + 64 - class259.field2281.field4028;
+                  if (var6 < 0) {
+                     var6 = -var6;
+                  }
+
+                  int var7 = Client.field583[var1] >> 8 & 255;
+                  int var8 = 64 + var7 * 128 - class259.field2281.field3999;
+                  if (var8 < 0) {
+                     var8 = -var8;
+                  }
+
+                  int var9 = var8 + var6 - 128;
+                  if (var9 > var4) {
+                     Client.field788[var1] = -100;
+                     continue;
+                  }
+
+                  if (var9 < 0) {
+                     var9 = 0;
+                  }
+
+                  var3 = (var4 - var9) * class4.field36.method2432() / var4;
+               } else {
+                  var3 = class4.field36.method2414();
+               }
+
+               if (var3 > 0) {
+                  class408 var14 = var11.method1973().method1981(class519.field4079);
+                  class432 var15 = class432.method2105(var14, 100, var3);
+                  var15.method2075(Client.field833[var1] - 1);
+                  class514.field3985.method1525(var15);
+               }
+
+               Client.field788[var1] = -100;
+            }
+         } else {
+            --Client.field831;
+
+            for(int var2 = var1; var2 < Client.field831; ++var2) {
+               Client.field832[var2] = Client.field832[var2 + 1];
+               Client.field620[var2] = Client.field620[var2 + 1];
+               Client.field833[var2] = Client.field833[var2 + 1];
+               Client.field788[var2] = Client.field788[var2 + 1];
+               Client.field583[var2] = Client.field583[var2 + 1];
+            }
+
+            --var1;
+         }
+      }
+
+      if (Client.field848) {
+         boolean var10;
+         if (!class228.field2107.isEmpty()) {
+            var10 = true;
+         } else if (!class228.field2105.isEmpty() && class228.field2105.get(0) != null && ((class131)class228.field2105.get(0)).field1551 != null) {
+            var10 = ((class131)class228.field2105.get(0)).field1551.method2203();
+         } else {
+            var10 = false;
+         }
+
+         if (!var10) {
+            if (class4.field36.method2406() != 0) {
+               boolean var12 = !class228.field2106.isEmpty();
+               if (var12) {
+                  class22 var13 = class303.field2520;
+                  var4 = class4.field36.method2406();
+                  if (!class228.field2106.isEmpty()) {
+                     ArrayList var16 = new ArrayList();
+                     Iterator var17 = class228.field2106.iterator();
+
+                     while(var17.hasNext()) {
+                        class131 var18 = (class131)var17.next();
+                        var18.field1552 = false;
+                        var18.field1550 = false;
+                        var18.field1556 = false;
+                        var18.field1553 = false;
+                        var18.field1548 = var13;
+                        var18.field1547 = var4;
+                        var18.field1544 = 0.0F;
+                        var16.add(var18);
+                     }
+
+                     class228.method1377(var16, class228.field2109, class228.field2110, class228.field2111, class228.field2102, false);
                   }
                }
             }
-         }
 
-         if (var2 == 0) {
-            return 0;
-         } else {
-            return var3 * 100 / var2;
-         }
-      }
-   }
-
-   public void method2250(double var1) {
-      this.field3773 = var1;
-      this.method2252();
-   }
-
-   public int[] method1099(int var1) {
-      class409 var3 = this.field3774[var1];
-      if (null != var3) {
-         if (var3.field2885 != null) {
-            this.field3775.method1996(var3);
-            var3.field2884 = true;
-            return var3.field2885;
-         }
-
-         boolean var4 = var3.method1892(this.field3773, this.field3776, this.field3772);
-         if (var4) {
-            if (this.field3771 == 0) {
-               class409 var5 = (class409)this.field3775.method1990();
-               var5.method1890();
-            } else {
-               --this.field3771;
-            }
-
-            this.field3775.method1996(var3);
-            var3.field2884 = true;
-            return var3.field2885;
-         }
-      }
-
-      return null;
-   }
-
-   public int method1096(int var1) {
-      return this.field3774[var1] != null ? this.field3774[var1].field2877 : 0;
-   }
-
-   public boolean method1098(int var1) {
-      return this.field3774[var1].field2878;
-   }
-
-   public boolean method1097(int var1) {
-      return 64 == this.field3776;
-   }
-
-   public void method2252() {
-      for(int var2 = 0; var2 < this.field3774.length; ++var2) {
-         if (null != this.field3774[var2]) {
-            this.field3774[var2].method1890();
-         }
-      }
-
-      this.field3775 = new class429();
-      this.field3771 = this.field3770;
-   }
-
-   public void method2251(int var1) {
-      for(int var3 = 0; var3 < this.field3774.length; ++var3) {
-         class409 var4 = this.field3774[var3];
-         if (null != var4 && var4.field2883 != 0 && var4.field2884) {
-            var4.method1891(var1);
-            var4.field2884 = false;
+            Client.field848 = false;
          }
       }
 

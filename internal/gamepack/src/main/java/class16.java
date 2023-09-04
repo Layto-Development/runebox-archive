@@ -1,22 +1,20 @@
-import java.util.Comparator;
+public class class16 implements class188 {
+   public static final class16 field171 = new class16(0, 0);
+   static final class16 field169 = new class16(1, 1);
+   static final class16 field172 = new class16(2, 2);
+   final int field170;
+   public final int field168;
 
-public class class16 implements Comparator {
-   static int field200;
-   final boolean field201;
-
-   public class16(boolean var1) {
-      this.field201 = var1;
+   class16(int var1, int var2) {
+      this.field168 = var1;
+      this.field170 = var2;
    }
 
-   int method96(class538 var1, class538 var2) {
-      return this.field201 ? var1.field4283 - var2.field4283 : var2.field4283 - var1.field4283;
+   public int method1195() {
+      return this.field170;
    }
 
-   public int compare(Object var1, Object var2) {
-      return this.method96((class538)var1, (class538)var2);
-   }
-
-   public boolean equals(Object var1) {
-      return super.equals(var1);
+   public static class16[] method163() {
+      return new class16[]{field169, field172, field171};
    }
 }

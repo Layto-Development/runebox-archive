@@ -1,15 +1,19 @@
-public class class65 implements class224 {
-   public final class297 field516;
+public class class65 extends class3 {
+   final boolean field1122;
 
-   public class65(class78 var1) {
-      this(new class277(var1));
+   public class65(boolean var1) {
+      this.field1122 = var1;
    }
 
-   class65(class277 var1) {
-      this.field516 = var1;
+   int method648(class410 var1, class410 var2) {
+      if (var1.field3157 != 0 && var2.field3157 != 0) {
+         return this.field1122 ? var1.field3156 - var2.field3156 : var2.field3156 - var1.field3156;
+      } else {
+         return this.method6(var1, var2);
+      }
    }
 
-   public int method286(int var1) {
-      return this.field516.method1372(var1);
+   public int compare(Object var1, Object var2) {
+      return this.method648((class410)var1, (class410)var2);
    }
 }

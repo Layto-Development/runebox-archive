@@ -1,135 +1,214 @@
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.LinkedList;
-import java.util.Queue;
+public class class36 {
+   float[][] field885;
+   int field884;
+   int field886;
+   int[] field881;
+   int[] field882;
+   int[] field883;
 
-public abstract class class36 implements Runnable {
-   static int field314;
-   int field312;
-   Queue field310 = new LinkedList();
-   final Thread field313 = new Thread(this);
-   volatile boolean field311;
+   class36() {
+      class225 var1 = class223.field2050;
+      var1.method1332(24);
+      this.field886 = var1.method1332(16);
+      this.field884 = var1.method1332(24);
+      this.field883 = new int[this.field884];
+      boolean var2 = var1.method1333() != 0;
+      int var3;
+      int var4;
+      int var6;
+      if (var2) {
+         var3 = 0;
 
-   class36(int var1) {
-      this.field313.setPriority(1);
-      this.field313.start();
-      this.field312 = var1;
+         for(var4 = var1.method1332(5) + 1; var3 < this.field884; ++var4) {
+            int var5 = var1.method1332(class349.method1803(this.field884 - var3));
+
+            for(var6 = 0; var6 < var5; ++var6) {
+               this.field883[var3++] = var4;
+            }
+         }
+      } else {
+         boolean var15 = var1.method1333() != 0;
+
+         for(var4 = 0; var4 < this.field884; ++var4) {
+            if (var15 && var1.method1333() == 0) {
+               this.field883[var4] = 0;
+            } else {
+               this.field883[var4] = var1.method1332(5) + 1;
+            }
+         }
+      }
+
+      this.method559();
+      var3 = var1.method1332(4);
+      if (var3 > 0) {
+         float var16 = class223.method1330(var1.method1332(32));
+         float var17 = class223.method1330(var1.method1332(32));
+         var6 = var1.method1332(4) + 1;
+         boolean var7 = var1.method1333() != 0;
+         int var8;
+         if (var3 == 1) {
+            var8 = method562(this.field884, this.field886);
+         } else {
+            var8 = this.field884 * this.field886;
+         }
+
+         this.field881 = new int[var8];
+
+         int var9;
+         for(var9 = 0; var9 < var8; ++var9) {
+            this.field881[var9] = var1.method1332(var6);
+         }
+
+         this.field885 = new float[this.field884][this.field886];
+         float var10;
+         int var11;
+         int var12;
+         if (var3 == 1) {
+            for(var9 = 0; var9 < this.field884; ++var9) {
+               var10 = 0.0F;
+               var11 = 1;
+
+               for(var12 = 0; var12 < this.field886; ++var12) {
+                  int var13 = var9 / var11 % var8;
+                  float var14 = (float)this.field881[var13] * var17 + var16 + var10;
+                  this.field885[var9][var12] = var14;
+                  if (var7) {
+                     var10 = var14;
+                  }
+
+                  var11 *= var8;
+               }
+            }
+         } else {
+            for(var9 = 0; var9 < this.field884; ++var9) {
+               var10 = 0.0F;
+               var11 = var9 * this.field886;
+
+               for(var12 = 0; var12 < this.field886; ++var12) {
+                  float var18 = (float)this.field881[var11] * var17 + var16 + var10;
+                  this.field885[var9][var12] = var18;
+                  if (var7) {
+                     var10 = var18;
+                  }
+
+                  ++var11;
+               }
+            }
+         }
+      }
+
    }
 
-   abstract void method150(class208 var1) throws IOException;
+   void method559() {
+      int[] var1 = new int[this.field884];
+      int[] var2 = new int[33];
 
-   public void run() {
-      while(!this.field311) {
-         try {
-            class208 var1;
-            synchronized(this) {
-               var1 = (class208)this.field310.poll();
-               if (var1 == null) {
-                  try {
-                     this.wait();
-                  } catch (InterruptedException var5) {
+      int var3;
+      int var4;
+      int var5;
+      int var6;
+      int var7;
+      int var8;
+      int var10;
+      for(var3 = 0; var3 < this.field884; ++var3) {
+         var4 = this.field883[var3];
+         if (var4 != 0) {
+            var5 = 1 << 32 - var4;
+            var6 = var2[var4];
+            var1[var3] = var6;
+            int var9;
+            if ((var6 & var5) != 0) {
+               var7 = var2[var4 - 1];
+            } else {
+               var7 = var6 | var5;
+
+               for(var8 = var4 - 1; var8 >= 1; --var8) {
+                  var9 = var2[var8];
+                  if (var9 != var6) {
+                     break;
                   }
-                  continue;
+
+                  var10 = 1 << 32 - var8;
+                  if ((var9 & var10) != 0) {
+                     var2[var8] = var2[var8 - 1];
+                     break;
+                  }
+
+                  var2[var8] = var9 | var10;
                }
             }
 
-            this.method150(var1);
-         } catch (Exception var7) {
-            class431.method2006((String)null, var7);
-         }
-      }
+            var2[var4] = var7;
 
-   }
-
-   int method154(URLConnection var1) {
-      int var3 = class208.field1602;
-      if (var1 != null) {
-         try {
-            if (var1 instanceof HttpURLConnection) {
-               var3 = ((HttpURLConnection)var1).getResponseCode();
+            for(var8 = var4 + 1; var8 <= 32; ++var8) {
+               var9 = var2[var8];
+               if (var9 == var6) {
+                  var2[var8] = var7;
+               }
             }
-         } catch (IOException var5) {
          }
       }
 
-      return var3;
-   }
+      this.field882 = new int[8];
+      int var11 = 0;
 
-   void method155(URLConnection var1) {
-      var1.setConnectTimeout(5000);
-      var1.setReadTimeout(5000);
-      var1.setUseCaches(false);
-      var1.setRequestProperty("Connection", "close");
-      var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.field312);
-   }
+      for(var3 = 0; var3 < this.field884; ++var3) {
+         var4 = this.field883[var3];
+         if (var4 != 0) {
+            var5 = var1[var3];
+            var6 = 0;
 
-   void method151(URLConnection var1, class208 var2) {
-      DataInputStream var4 = null;
+            for(var7 = 0; var7 < var4; ++var7) {
+               var8 = Integer.MIN_VALUE >>> var7;
+               if ((var5 & var8) != 0) {
+                  if (this.field882[var6] == 0) {
+                     this.field882[var6] = var11;
+                  }
 
-      try {
-         int var6 = var1.getContentLength();
-         var4 = new DataInputStream(var1.getInputStream());
-         byte[] var5;
-         if (var6 >= 0) {
-            var5 = new byte[var6];
-            var4.readFully(var5);
-         } else {
-            var5 = new byte[0];
-            byte[] var7 = class159.method610(5000);
+                  var6 = this.field882[var6];
+               } else {
+                  ++var6;
+               }
 
-            byte[] var9;
-            for(int var8 = var4.read(var7, 0, var7.length); var8 > -1; var5 = var9) {
-               var9 = new byte[var5.length + var8];
-               System.arraycopy(var5, 0, var9, 0, var5.length);
-               System.arraycopy(var7, 0, var9, var5.length, var8);
+               if (var6 >= this.field882.length) {
+                  int[] var12 = new int[this.field882.length * 2];
+
+                  for(var10 = 0; var10 < this.field882.length; ++var10) {
+                     var12[var10] = this.field882[var10];
+                  }
+
+                  this.field882 = var12;
+               }
+
+               var8 >>>= 1;
             }
 
-            class159.method612(var7);
-         }
-
-         var2.field1604 = var5;
-      } catch (IOException var15) {
-         var2.field1604 = null;
-      } finally {
-         var2.field1603 = this.method154(var1);
-      }
-
-      if (var4 != null) {
-         try {
-            var4.close();
-         } catch (IOException var14) {
+            this.field882[var6] = ~var3;
+            if (var6 >= var11) {
+               var11 = var6 + 1;
+            }
          }
       }
 
    }
 
-   public class208 method152(URL var1) {
-      class208 var3 = new class208(var1);
-      synchronized(this) {
-         this.field310.add(var3);
-         this.notify();
-         return var3;
-      }
-   }
-
-   public void method153() {
-      this.field311 = true;
-
-      try {
-         synchronized(this) {
-            this.notify();
-         }
-
-         this.field313.join();
-      } catch (InterruptedException var5) {
+   int method561(class225 var1) {
+      int var2;
+      for(var2 = 0; this.field882[var2] >= 0; var2 = var1.method1333() != 0 ? this.field882[var2] : var2 + 1) {
       }
 
+      return ~this.field882[var2];
    }
 
-   public static void method156() {
-      class469.field3717.clear();
+   float[] method560(class225 var1) {
+      return this.field885[this.method561(var1)];
+   }
+
+   static int method562(int var0, int var1) {
+      int var2;
+      for(var2 = (int)Math.pow((double)var0, 1.0 / (double)var1) + 1; class349.method1806(var2, var1) > var0; --var2) {
+      }
+
+      return var2;
    }
 }

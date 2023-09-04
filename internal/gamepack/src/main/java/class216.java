@@ -1,45 +1,25 @@
-public class class216 {
-   byte[] field1653 = null;
-   int field1652 = 0;
-   int field1654 = 0;
+public class class216 extends class56 {
+   String field2018;
+   long field2019;
+   // $FF: synthetic field
+   final class315 this$0;
 
-   class216() {
+   class216(class315 var1) {
+      this.this$0 = var1;
+      this.field2019 = -1L;
+      this.field2018 = null;
    }
 
-   int method1100(int var1) {
-      int var3 = 0;
-
-      int var4;
-      int var5;
-      for(var4 = 0; var1 >= 8 - this.field1654; var1 -= var5) {
-         var5 = 8 - this.field1654;
-         int var6 = (1 << var5) - 1;
-         var3 += (this.field1653[this.field1652] >> this.field1654 & var6) << var4;
-         this.field1654 = 0;
-         ++this.field1652;
-         var4 += var5;
+   void method608(class184 var1) {
+      if (var1.method1125() != 255) {
+         --var1.field1818;
+         this.field2019 = var1.method1130();
       }
 
-      if (var1 > 0) {
-         var5 = (1 << var1) - 1;
-         var3 += (this.field1653[this.field1652] >> this.field1654 & var5) << var4;
-         this.field1654 += var1;
-      }
-
-      return var3;
+      this.field2018 = var1.method1184();
    }
 
-   int method1101() {
-      int var2 = this.field1653[this.field1652] >> this.field1654 & 1;
-      ++this.field1654;
-      this.field1652 += this.field1654 >> 3;
-      this.field1654 &= 7;
-      return var2;
-   }
-
-   void method1102(byte[] var1, int var2) {
-      this.field1653 = var1;
-      this.field1652 = var2;
-      this.field1654 = 0;
+   void method607(class15 var1) {
+      var1.method148(this.field2019, this.field2018);
    }
 }

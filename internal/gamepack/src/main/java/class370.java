@@ -1,21 +1,47 @@
-public class class370 {
-   class370() throws Throwable {
+public class class370 extends class55 {
+   static class425 field2901;
+   class226 field2900;
+   int field2896;
+   int field2897;
+   int[] field2898;
+   int[][] field2899;
+
+   public class370(int var1, byte[] var2) {
+      this.field2896 = var1;
+      class184 var3 = new class184(var2);
+      this.field2897 = var3.method1125();
+      this.field2898 = new int[this.field2897];
+      this.field2899 = new int[this.field2897][];
+
+      int var4;
+      for(var4 = 0; var4 < this.field2897; ++var4) {
+         this.field2898[var4] = var3.method1125();
+      }
+
+      for(var4 = 0; var4 < this.field2897; ++var4) {
+         this.field2899[var4] = new int[var3.method1125()];
+      }
+
+      for(var4 = 0; var4 < this.field2897; ++var4) {
+         for(int var5 = 0; var5 < this.field2899[var4].length; ++var5) {
+            this.field2899[var4][var5] = var3.method1125();
+         }
+      }
+
+      if (var3.field1818 < var3.field1816.length) {
+         var4 = var3.method1174();
+         if (var4 > 0) {
+            this.field2900 = new class226(var3, var4);
+         }
+      }
+
    }
 
-   static final int method1732(int var0, int var1, int var2, int var3) {
-      return var2 * var0 - var3 * var1 >> 16;
+   public int method1862() {
+      return this.field2897;
    }
 
-   static final int method1733(int var0, int var1, int var2, int var3) {
-      return var1 * var2 + var0 * var3 >> 16;
-   }
-
-   static final int method1731(int var0, int var1, int var2, int var3) {
-      return var2 * var0 + var1 * var3 >> 16;
-   }
-
-   static final float method1734(int var0) {
-      float var2 = 10075.0F - (float)var0;
-      return (var2 * 1.0075567F - 75.56675F) / var2;
+   public class226 method1861() {
+      return this.field2900;
    }
 }

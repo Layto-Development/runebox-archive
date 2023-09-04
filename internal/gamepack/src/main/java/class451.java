@@ -1,97 +1,120 @@
-import java.util.HashSet;
-import java.util.Set;
+public class class451 extends class151 {
+   public static class298 field3507;
+   public static class364 field3502 = new class364(64);
+   static class427[] field3497;
+   public boolean field3498 = true;
+   public int field3495 = -1;
+   public int field3496 = 0;
+   public int field3499 = -1;
+   public int field3500;
+   public int field3501;
+   public int field3503;
+   public int field3504;
+   public int field3505;
+   public int field3506;
 
-public class class451 implements class42 {
-   static boolean field3572;
-   static int field3573;
-   static final class451 field3558;
-   static final class451 field3559;
-   static final class451 field3560;
-   static final class451 field3561;
-   static final class451 field3562;
-   static final class451 field3563;
-   static final class451 field3564;
-   static final class451 field3565;
-   static final class451 field3566;
-   static final class451 field3567;
-   static final class451 field3568;
-   static final class451 field3569;
-   static final class451 field3574;
-   final int field3570;
-   final Set field3571 = new HashSet();
+   public void method2222() {
+      if (this.field3499 != -1) {
+         this.method2224(this.field3499);
+         this.field3504 = this.field3500;
+         this.field3503 = this.field3501;
+         this.field3505 = this.field3506;
+      }
 
-   static {
-      field3562 = new class451("", 0, new class28[]{class28.field269, class28.field267});
-      field3558 = new class451("", 1, new class28[]{class28.field266, class28.field269, class28.field267});
-      field3559 = new class451("", 2, new class28[]{class28.field266, class28.field270, class28.field269});
-      field3574 = new class451("", 3, new class28[]{class28.field266});
-      field3561 = new class451("", 4);
-      field3563 = new class451("", 5, new class28[]{class28.field266, class28.field269});
-      field3564 = new class451("", 6, new class28[]{class28.field269});
-      field3567 = new class451("", 8, new class28[]{class28.field266, class28.field269});
-      field3565 = new class451("", 9, new class28[]{class28.field266, class28.field270});
-      field3566 = new class451("", 10, new class28[]{class28.field266});
-      field3560 = new class451("", 11, new class28[]{class28.field266});
-      field3568 = new class451("", 12, new class28[]{class28.field266, class28.field269});
-      field3569 = new class451("", 13, new class28[]{class28.field266});
-      method2107();
+      this.method2224(this.field3496);
    }
 
-   class451(String var1, int var2) {
-      this.field3570 = var2;
+   public void method2223(class184 var1, int var2) {
+      while(true) {
+         int var4 = var1.method1125();
+         if (var4 == 0) {
+            return;
+         }
+
+         this.method2221(var1, var4, var2);
+      }
    }
 
-   class451(String var1, int var2, class28[] var3) {
-      this.field3570 = var2;
-      class28[] var4 = var3;
-
-      for(int var5 = 0; var5 < var4.length; ++var5) {
-         class28 var6 = var4[var5];
-         this.field3571.add(var6);
+   void method2221(class184 var1, int var2, int var3) {
+      if (var2 == 1) {
+         this.field3496 = var1.method1181();
+      } else if (var2 == 2) {
+         this.field3495 = var1.method1125();
+      } else if (var2 == 5) {
+         this.field3498 = false;
+      } else if (var2 == 7) {
+         this.field3499 = var1.method1181();
+      } else if (var2 == 8) {
       }
 
    }
 
-   public int method180() {
-      return this.field3570;
-   }
+   void method2224(int var1) {
+      double var3 = (double)(var1 >> 16 & 255) / 256.0;
+      double var5 = (double)(var1 >> 8 & 255) / 256.0;
+      double var7 = (double)(var1 & 255) / 256.0;
+      double var9 = var3;
+      if (var5 < var3) {
+         var9 = var5;
+      }
 
-   static class451[] method2107() {
-      return new class451[]{field3560, field3569, field3561, field3565, field3567, field3574, field3566, field3568, field3563, field3558, field3564, field3559, field3562};
-   }
+      if (var7 < var9) {
+         var9 = var7;
+      }
 
-   static void method2106(class518 var0) {
-      if (var0.method2480() != Client.field1143) {
-         Client.field1143 = var0.method2480();
-         boolean var2 = var0.method2480();
-         if (class47.field360 != var2) {
-            class47.field361.method1180();
-            class47.field406.method1180();
-            class47.field363.method1180();
-            class47.field360 = var2;
+      double var11 = var3;
+      if (var5 > var3) {
+         var11 = var5;
+      }
+
+      if (var7 > var11) {
+         var11 = var7;
+      }
+
+      double var13 = 0.0;
+      double var15 = 0.0;
+      double var17 = (var9 + var11) / 2.0;
+      if (var11 != var9) {
+         if (var17 < 0.5) {
+            var15 = (var11 - var9) / (var11 + var9);
+         }
+
+         if (var17 >= 0.5) {
+            var15 = (var11 - var9) / (2.0 - var11 - var9);
+         }
+
+         if (var11 == var3) {
+            var13 = (var5 - var7) / (var11 - var9);
+         } else if (var11 == var5) {
+            var13 = 2.0 + (var7 - var3) / (var11 - var9);
+         } else if (var11 == var7) {
+            var13 = (var3 - var5) / (var11 - var9) + 4.0;
          }
       }
 
-      if (var0.field4142 != Client.field1117) {
-         class534 var4 = class62.field492;
-         int var3 = var0.field4142;
-         if ((var3 & class145.field931.method180()) != 0) {
-            class35.field308 = class382.method1766(var4, "logo_deadman_mode", "");
-         } else if ((var3 & class145.field932.method180()) != 0) {
-            class35.field308 = class382.method1766(var4, "logo_seasonal_mode", "");
-         } else if ((var3 & class145.field910.method180()) != 0) {
-            class35.field308 = class382.method1766(var4, "logo_speedrunning", "");
-         } else {
-            class35.field308 = class382.method1766(var4, "logo", "");
-         }
+      var13 /= 6.0;
+      this.field3500 = (int)(var13 * 256.0);
+      this.field3501 = (int)(var15 * 256.0);
+      this.field3506 = (int)(var17 * 256.0);
+      if (this.field3501 < 0) {
+         this.field3501 = 0;
+      } else if (this.field3501 > 255) {
+         this.field3501 = 255;
       }
 
-      class80.field555 = var0.field4149;
-      Client.field1116 = var0.field4146;
-      Client.field1117 = var0.field4142;
-      class298.field2033 = var0.field4153;
-      class12.field183 = 0 == Client.field1141 ? '\uaa4a' : '\u9c40' + var0.field4146;
-      class249.field1797 = 0 == Client.field1141 ? 443 : '\uc350' + var0.field4146;
-      class136.field853 = class12.field183;
+      if (this.field3506 < 0) {
+         this.field3506 = 0;
+      } else if (this.field3506 > 255) {
+         this.field3506 = 255;
+      }
+
+   }
+
+   public static void method2226(class298 var0) {
+      field3507 = var0;
+   }
+
+   public static void method2225() {
+      field3502.method1848();
    }
 }

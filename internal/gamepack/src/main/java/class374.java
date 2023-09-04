@@ -1,32 +1,10 @@
+import java.math.BigInteger;
+
 public class class374 {
-   public Object field2675;
-   public final int field2676;
+   static class427[] field2926;
+   static final BigInteger field2927 = new BigInteger("10001", 16);
+   static final BigInteger field2928 = new BigInteger("9d65aa39691f5fadd6296eeee7726eab566ecc003adda321a1bf18f94cce90d5198fcdf30dca1deef73fa1deb8c1ed0731e3f4712b23ab9f180de4946043ea93a3fef2c0099f69c64d0be204a1415322032e6f60aca9aa2a420c696627b2ed49a7970bdfe1cdcf1446fa65530a3bb0b1573a3effc1086fa29016ff9cc35e8951", 16);
 
-   public class374(int var1) {
-      this.field2676 = var1;
-   }
-
-   public class374(int var1, Object var2) {
-      this.field2676 = var1;
-      this.field2675 = var2;
-   }
-
-   public int hashCode() {
-      return super.hashCode();
-   }
-
-   public boolean equals(Object var1) {
-      if (!(var1 instanceof class374)) {
-         return false;
-      } else {
-         class374 var2 = (class374)var1;
-         if (null == var2.field2675 && null != this.field2675) {
-            return false;
-         } else if (null == this.field2675 && var2.field2675 != null) {
-            return false;
-         } else {
-            return var2.field2676 == this.field2676 && var2.field2675.equals(this.field2675);
-         }
-      }
+   class374() throws Throwable {
    }
 }

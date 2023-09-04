@@ -1,22 +1,63 @@
-public class class143 implements class42 {
-   public static class317 field899;
-   static class534 field894;
-   static final class143 field895 = new class143(1);
-   static final class143 field896 = new class143(3);
-   static final class143 field897 = new class143(4);
-   static final class143 field898 = new class143(2);
-   static final class143 field900 = new class143(0);
-   final int field901;
+public class class143 {
+   boolean field1599 = false;
+   class298 field1597;
+   int field1598 = 0;
+   String field1596;
 
-   class143(int var1) {
-      this.field901 = var1;
+   class143(class298 var1) {
+      this.field1597 = var1;
    }
 
-   public int method180() {
-      return this.field901;
+   void method915(String var1) {
+      if (null != var1 && !var1.isEmpty()) {
+         if (this.field1596 != var1) {
+            this.field1596 = var1;
+            this.field1598 = 0;
+            this.field1599 = false;
+            this.method916();
+         }
+      }
    }
 
-   static class143[] method539() {
-      return new class143[]{field898, field900, field896, field895, field897};
+   int method916() {
+      if (this.field1596 == null) {
+         this.field1598 = 100;
+         this.field1599 = true;
+      } else {
+         if (this.field1598 < 33) {
+            if (!this.field1597.method1649(class511.field3978.field3981, this.field1596)) {
+               return this.field1598;
+            }
+
+            this.field1598 = 33;
+         }
+
+         if (this.field1598 == 33) {
+            if (this.field1597.method1651(class511.field3977.field3981, this.field1596) && !this.field1597.method1649(class511.field3977.field3981, this.field1596)) {
+               return this.field1598;
+            }
+
+            this.field1598 = 66;
+         }
+
+         if (this.field1598 == 66) {
+            if (!this.field1597.method1649(this.field1596, class511.field3980.field3981)) {
+               return this.field1598;
+            }
+
+            this.field1598 = 100;
+            this.field1599 = true;
+         }
+      }
+
+      return this.field1598;
+   }
+
+   boolean method917() {
+      return this.field1599;
+   }
+
+   int method918() {
+      return this.field1598;
    }
 }

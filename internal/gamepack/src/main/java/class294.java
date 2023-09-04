@@ -1,10 +1,11 @@
-public final class class294 {
-   public static class95 field2020;
-   int field2018;
-   final Object field2019;
+public class class294 {
+   class294 field2476;
+   int field2475;
+   Object field2477;
+   public int field2478;
+   public volatile int field2473 = 0;
+   public volatile Object field2474;
 
-   class294(Object var1, int var2) {
-      this.field2019 = var1;
-      this.field2018 = var2;
+   class294() {
    }
 }

@@ -1,7 +1,6 @@
-import java.io.UnsupportedEncodingException;
+public class class141 {
+   static byte[][][] field1592;
 
-public interface class141 {
-   byte[] method504() throws UnsupportedEncodingException;
-
-   class181 method505();
+   class141() {
+   }
 }

@@ -1,26 +1,11 @@
-public class class64 extends class70 {
-   boolean field515;
-   class322 field504;
-   class322 field510;
-   int field505;
-   int field506;
-   int field508;
-   int field509;
-   int field511 = 76;
-   int field512;
-   int field514;
-   Object[] field507;
-   String field513;
+public class class64 {
+   public class89 field1119;
+   public class89 field1120;
+   public int field1121;
 
-   public void method285(Object[] var1) {
-      this.field507 = var1;
-   }
-
-   public void method283(int var1) {
-      this.field511 = var1;
-   }
-
-   public void method284(class322 var1) {
-      this.field504 = var1;
+   public class64(int var1, class89 var2, class89 var3) {
+      this.field1121 = var1;
+      this.field1119 = var2;
+      this.field1120 = var3;
    }
 }

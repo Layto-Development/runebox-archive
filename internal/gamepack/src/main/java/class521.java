@@ -1,29 +1,19 @@
-public class class521 extends class454 {
-   long field4159 = System.nanoTime();
+public class class521 implements class188 {
+   static class442 field4093;
+   static int field4092;
+   static final class521 field4087 = new class521(3, (byte)1);
+   static final class521 field4088 = new class521(1, (byte)2);
+   static final class521 field4089 = new class521(2, (byte)0);
+   static final class521 field4094 = new class521(0, (byte)3);
+   final byte field4091;
+   final int field4090;
 
-   public void method2112() {
-      this.field4159 = System.nanoTime();
+   class521(int var1, byte var2) {
+      this.field4090 = var1;
+      this.field4091 = var2;
    }
 
-   public int method2113(int var1, int var2) {
-      long var4 = 1000000L * (long)var2;
-      long var6 = this.field4159 - System.nanoTime();
-      if (var6 < var4) {
-         var6 = var4;
-      }
-
-      class415.method1902(var6 / 1000000L);
-      long var8 = System.nanoTime();
-
-      int var10;
-      for(var10 = 0; var10 < 10 && (var10 < 1 || this.field4159 < var8); this.field4159 += 1000000L * (long)var1) {
-         ++var10;
-      }
-
-      if (this.field4159 < var8) {
-         this.field4159 = var8;
-      }
-
-      return var10;
+   public int method1195() {
+      return this.field4091;
    }
 }

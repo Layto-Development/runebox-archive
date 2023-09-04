@@ -1,34 +1,21 @@
-public class class107 extends class306 {
-   public static class245 field701 = new class245(64);
-   public static int field700;
-   static class509 field702;
-   static class509 field703;
-   static int field704;
-   public int field699 = 0;
+public class class107 implements class188 {
+   static final class107 field1431 = new class107(2, 2);
+   static final class107 field1432 = new class107(1, 10);
+   static final class107 field1433 = new class107(0, 1);
+   static final class107 field1434 = new class107(3, 3);
+   final int field1430;
+   final int field1435;
 
-   class107() {
+   class107(int var1, int var2) {
+      this.field1430 = var1;
+      this.field1435 = var2;
    }
 
-   void method390(class366 var1) {
-      while(true) {
-         int var3 = var1.method1654();
-         if (var3 == 0) {
-            return;
-         }
-
-         this.method389(var1, var3);
-      }
+   public int method1195() {
+      return this.field1435;
    }
 
-   void method389(class366 var1, int var2) {
-      if (var2 == 5) {
-         this.field699 = var1.method1703();
-      }
-
-   }
-
-   public static void method391(class509 var0) {
-      field702 = var0;
-      field700 = field702.method2448(16);
+   static class107[] method798() {
+      return new class107[]{field1433, field1431, field1434, field1432};
    }
 }

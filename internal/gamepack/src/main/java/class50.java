@@ -1,111 +1,138 @@
-public class class50 {
-   int field422;
-   int field423;
-   int field424;
-   int field425;
-   int field426;
-   int field427;
-   int[] field428;
+public class class50 extends class496 {
+   class157 field1048;
+   int field1049;
+   int field1050;
+   int field1051;
+   int field1052;
+   int field1053;
+   int field1054;
+   int field1055;
+   int field1056;
 
-   class50() {
-      class216 var1 = class365.field2624;
-      this.field425 = var1.method1100(16);
-      this.field423 = var1.method1100(24);
-      this.field422 = var1.method1100(24);
-      this.field424 = var1.method1100(24) + 1;
-      this.field426 = var1.method1100(6) + 1;
-      this.field427 = var1.method1100(8);
-      int[] var2 = new int[this.field426];
-
-      int var3;
-      for(var3 = 0; var3 < this.field426; ++var3) {
-         int var4 = 0;
-         int var5 = var1.method1100(3);
-         boolean var6 = var1.method1101() != 0;
-         if (var6) {
-            var4 = var1.method1100(5);
+   class50(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, class496 var9) {
+      this.field1051 = var1;
+      this.field1049 = var2;
+      this.field1050 = var3;
+      this.field1054 = var4;
+      this.field1052 = var5;
+      this.field1053 = var6;
+      if (var7 != -1) {
+         this.field1048 = class157.method984(var7);
+         this.field1055 = 0;
+         this.field1056 = Client.field879 - 1;
+         if (this.field1048.field1678 == 0 && null != var9 && var9 instanceof class50) {
+            class50 var10 = (class50)var9;
+            if (this.field1048 == var10.field1048) {
+               this.field1055 = var10.field1055;
+               this.field1056 = var10.field1056;
+               return;
+            }
          }
 
-         var2[var3] = var4 << 3 | var5;
-      }
-
-      this.field428 = new int[this.field426 * 8];
-
-      for(var3 = 0; var3 < this.field426 * 8; ++var3) {
-         this.field428[var3] = (var2[var3 >> 3] & 1 << (var3 & 7)) != 0 ? var1.method1100(8) : -1;
+         if (var8 && this.field1048.field1667 != -1) {
+            if (!this.field1048.method983()) {
+               this.field1055 = (int)(Math.random() * (double)this.field1048.field1663.length);
+               this.field1056 -= (int)(Math.random() * (double)this.field1048.field1674[this.field1055]);
+            } else {
+               this.field1055 = (int)(Math.random() * (double)this.field1048.method980());
+            }
+         }
       }
 
    }
 
-   void method217(float[] var1, int var2, boolean var3, class216 var4) {
-      int var5;
-      for(var5 = 0; var5 < var2; ++var5) {
-         var1[var5] = 0.0F;
-      }
+   protected final class104 method2401() {
+      int var3;
+      if (null != this.field1048) {
+         int var2 = Client.field879 - this.field1056;
+         if (var2 > 100 && this.field1048.field1667 > 0) {
+            var2 = 100;
+         }
 
-      if (!var3) {
-         var5 = class365.field2627[this.field427].field947;
-         int var6 = this.field422 - this.field423;
-         int var7 = var6 / this.field424;
-         int[] var8 = new int[var7];
-
-         for(int var9 = 0; var9 < 8; ++var9) {
-            int var10 = 0;
-
-            while(var10 < var7) {
-               int var11;
-               int var12;
-               if (var9 == 0) {
-                  var11 = class365.field2627[this.field427].method565(var4);
-
-                  for(var12 = var5 - 1; var12 >= 0; --var12) {
-                     if (var10 + var12 < var7) {
-                        var8[var10 + var12] = var11 % this.field426;
+         if (this.field1048.method983()) {
+            var3 = this.field1048.method980();
+            this.field1055 += var2;
+            var2 = 0;
+            if (this.field1055 >= var3) {
+               this.field1055 = var3 - this.field1048.field1667;
+               if (this.field1055 < 0 || this.field1055 > var3) {
+                  this.field1048 = null;
+               }
+            }
+         } else {
+            label69: {
+               do {
+                  do {
+                     if (var2 <= this.field1048.field1674[this.field1055]) {
+                        break label69;
                      }
 
-                     var11 /= this.field426;
-                  }
-               }
+                     var2 -= this.field1048.field1674[this.field1055];
+                     ++this.field1055;
+                  } while(this.field1055 < this.field1048.field1663.length);
 
-               for(var11 = 0; var11 < var5; ++var11) {
-                  var12 = var8[var10];
-                  int var13 = this.field428[var12 * 8 + var9];
-                  if (var13 >= 0) {
-                     int var14 = this.field423 + var10 * this.field424;
-                     class148 var15 = class365.field2627[var13];
-                     int var16;
-                     if (this.field425 == 0) {
-                        var16 = this.field424 / var15.field947;
+                  this.field1055 -= this.field1048.field1667;
+               } while(this.field1055 >= 0 && this.field1055 < this.field1048.field1663.length);
 
-                        for(int var20 = 0; var20 < var16; ++var20) {
-                           float[] var21 = var15.method564(var4);
-
-                           for(int var19 = 0; var19 < var15.field947; ++var19) {
-                              var1[var14 + var20 + var19 * var16] += var21[var19];
-                           }
-                        }
-                     } else {
-                        var16 = 0;
-
-                        while(var16 < this.field424) {
-                           float[] var17 = var15.method564(var4);
-
-                           for(int var18 = 0; var18 < var15.field947; ++var18) {
-                              var1[var14 + var16] += var17[var18];
-                              ++var16;
-                           }
-                        }
-                     }
-                  }
-
-                  ++var10;
-                  if (var10 >= var7) {
-                     break;
-                  }
-               }
+               this.field1048 = null;
             }
          }
 
+         this.field1056 = Client.field879 - var2;
+      }
+
+      class449 var13 = class444.method2172(this.field1051, (byte)42);
+      if (var13.field3476 != null) {
+         var13 = var13.method2215();
+      }
+
+      if (null == var13) {
+         return null;
+      } else {
+         int var4;
+         if (this.field1050 != 1 && this.field1050 != 3) {
+            var3 = var13.field3450;
+            var4 = var13.field3435;
+         } else {
+            var3 = var13.field3435;
+            var4 = var13.field3450;
+         }
+
+         int var5 = this.field1052 + (var3 >> 1);
+         int var6 = (var3 + 1 >> 1) + this.field1052;
+         int var7 = this.field1053 + (var4 >> 1);
+         int var8 = this.field1053 + (var4 + 1 >> 1);
+         int[][] var9 = class526.field4141[this.field1054];
+         int var10 = var9[var5][var8] + var9[var5][var7] + var9[var6][var7] + var9[var6][var8] >> 2;
+         int var11 = (this.field1052 << 7) + (var3 << 6);
+         int var12 = (this.field1053 << 7) + (var4 << 6);
+         return var13.method2213(this.field1049, this.field1050, var9, var11, var10, var12, this.field1048, this.field1055);
+      }
+   }
+
+   static int method599(int var0, class106 var1, boolean var2) {
+      class480 var4 = var2 ? class154.field1646 : class273.field2334;
+      if (var0 == 1700) {
+         class18.field200[++class482.field3830 - 1] = var4.field3802;
+         return 1;
+      } else if (var0 == 1701) {
+         if (var4.field3802 != -1) {
+            class18.field200[++class482.field3830 - 1] = var4.field3803;
+         } else {
+            class18.field200[++class482.field3830 - 1] = 0;
+         }
+
+         return 1;
+      } else if (var0 == 1702) {
+         class18.field200[++class482.field3830 - 1] = var4.field3793;
+         return 1;
+      } else if (var0 == 1707) {
+         class18.field200[++class482.field3830 - 1] = var4.method2347() ? 1 : 0;
+         return 1;
+      } else if (var0 == 1708) {
+         return class18.method213(var4);
+      } else {
+         return var0 == 1709 ? class18.method223(var4) : 2;
       }
    }
 }

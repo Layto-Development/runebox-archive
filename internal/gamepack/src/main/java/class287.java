@@ -1,39 +1,67 @@
-import java.util.Iterator;
+public class class287 {
+   static int field2444;
 
-public class class287 extends class450 {
-   static boolean field1972;
-
-   public class287(class450 var1) {
-      super(var1);
-      super.field3555 = "StartSongTask";
+   class287() throws Throwable {
    }
 
-   public boolean method2101() {
-      Iterator var2 = class469.field3716.iterator();
+   public static final int method1600(double var0, double var2, double var4) {
+      double var6 = var4;
+      double var8 = var4;
+      double var10 = var4;
+      if (var2 != 0.0) {
+         double var12;
+         if (var4 < 0.5) {
+            var12 = var4 * (var2 + 1.0);
+         } else {
+            var12 = var4 + var2 - var4 * var2;
+         }
 
-      while(var2.hasNext()) {
-         class468 var3 = (class468)var2.next();
-         if (null != var3 && !var3.field3706 && null != var3.field3705) {
-            try {
-               var3.field3705.method13();
-               var3.field3705.method10(0);
-               if (var3.field3709 != null) {
-                  var3.field3705.method15(var3.field3709, var3.field3703);
-               }
+         double var14 = var4 * 2.0 - var12;
+         double var16 = var0 + 0.3333333333333333;
+         if (var16 > 1.0) {
+            --var16;
+         }
 
-               var3.field3709 = null;
-               var3.field3708 = null;
-               var3.field3702 = null;
-               var3.field3706 = true;
-            } catch (Exception var5) {
-               class431.method2006((String)null, var5);
-               this.method2104(var5.getMessage());
-               return true;
-            }
+         double var20 = var0 - 0.3333333333333333;
+         if (var20 < 0.0) {
+            ++var20;
+         }
+
+         if (var16 * 6.0 < 1.0) {
+            var6 = var16 * (var12 - var14) * 6.0 + var14;
+         } else if (var16 * 2.0 < 1.0) {
+            var6 = var12;
+         } else if (var16 * 3.0 < 2.0) {
+            var6 = 6.0 * (0.6666666666666666 - var16) * (var12 - var14) + var14;
+         } else {
+            var6 = var14;
+         }
+
+         if (var0 * 6.0 < 1.0) {
+            var8 = var0 * 6.0 * (var12 - var14) + var14;
+         } else if (var0 * 2.0 < 1.0) {
+            var8 = var12;
+         } else if (var0 * 3.0 < 2.0) {
+            var8 = (var12 - var14) * (0.6666666666666666 - var0) * 6.0 + var14;
+         } else {
+            var8 = var14;
+         }
+
+         if (var20 * 6.0 < 1.0) {
+            var10 = var20 * 6.0 * (var12 - var14) + var14;
+         } else if (var20 * 2.0 < 1.0) {
+            var10 = var12;
+         } else if (var20 * 3.0 < 2.0) {
+            var10 = (var12 - var14) * (0.6666666666666666 - var20) * 6.0 + var14;
+         } else {
+            var10 = var14;
          }
       }
 
-      super.field3557 = true;
-      return true;
+      int var22 = (int)(var6 * 256.0);
+      int var13 = (int)(var8 * 256.0);
+      int var23 = (int)(var10 * 256.0);
+      int var15 = var23 + (var13 << 8) + (var22 << 16);
+      return var15;
    }
 }

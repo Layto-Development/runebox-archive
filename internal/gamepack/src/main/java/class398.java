@@ -1,96 +1,254 @@
-import java.util.Arrays;
-
 public class class398 {
-   class457 field2771 = new class457();
-   long field2773;
-   public long field2772 = -1L;
+   static int field3104;
+   static int field3105;
+   static int[] field3103;
 
-   public class398(class366 var1) {
-      this.method1816(var1);
+   class398() throws Throwable {
    }
 
-   void method1816(class366 var1) {
-      this.field2773 = var1.method1659();
-      this.field2772 = var1.method1659();
-
-      for(int var3 = var1.method1654(); var3 != 0; var3 = var1.method1654()) {
-         Object var4;
-         if (var3 == 1) {
-            var4 = new class279(this);
-         } else if (var3 == 4) {
-            var4 = new class420(this);
-         } else if (var3 == 3) {
-            var4 = new class380(this);
-         } else if (var3 == 2) {
-            var4 = new class319(this);
-         } else {
-            if (var3 != 5) {
-               throw new RuntimeException("");
-            }
-
-            var4 = new class539(this);
-         }
-
-         ((class124)var4).method472(var1);
-         this.field2771.method2138((class70)var4);
-      }
-
+   public static class425[] method1920(class298 var0, int var1, int var2) {
+      return !method1922(var0, var1, var2) ? null : method1921();
    }
 
-   public void method1817(class417 var1) {
-      if (var1.field531 == this.field2773 && var1.field2938 == this.field2772) {
-         for(class124 var3 = (class124)this.field2771.method2144(); null != var3; var3 = (class124)this.field2771.method2140()) {
-            var3.method473(var1);
-         }
+   public static class427[] method1931(class298 var0, int var1, int var2) {
+      return !method1922(var0, var1, var2) ? null : method1930();
+   }
 
-         ++var1.field2938;
+   public static class460 method1929(class298 var0, class298 var1, int var2, int var3) {
+      return !method1922(var0, var2, var3) ? null : method1927(var1.method1629(var2, var3));
+   }
+
+   public static class425[] method1928(class298 var0, String var1, String var2) {
+      if (!var0.method1651(var1, var2)) {
+         return null;
       } else {
-         throw new RuntimeException("");
+         int var4 = var0.method1654(var1);
+         int var5 = var0.method1646(var4, var2);
+         return method1920(var0, var4, var5);
       }
    }
 
-   static void method1819(float[] var0) {
-      var0[1] = 1.0F - var0[1];
-      if (var0[0] < 0.0F) {
-         var0[0] = 0.0F;
+   public static class425 method1926(class298 var0, String var1, String var2) {
+      if (!var0.method1651(var1, var2)) {
+         return null;
+      } else {
+         int var4 = var0.method1654(var1);
+         int var5 = var0.method1646(var4, var2);
+         class425 var6;
+         if (!method1922(var0, var4, var5)) {
+            var6 = null;
+         } else {
+            var6 = method1932();
+         }
+
+         return var6;
+      }
+   }
+
+   public static class427[] method1919(class298 var0, String var1, String var2) {
+      if (!var0.method1651(var1, var2)) {
+         return null;
+      } else {
+         int var4 = var0.method1654(var1);
+         int var5 = var0.method1646(var4, var2);
+         return method1931(var0, var4, var5);
+      }
+   }
+
+   static class425[] method1921() {
+      class425[] var1 = new class425[field3104];
+
+      for(int var2 = 0; var2 < field3104; ++var2) {
+         class425 var3 = var1[var2] = new class425();
+         var3.field3221 = field3105;
+         var3.field3226 = class202.field1936;
+         var3.field3220 = field3103[var2];
+         var3.field3225 = class465.field3601[var2];
+         var3.field3222 = class103.field1343[var2];
+         var3.field3223 = class288.field2445[var2];
+         var3.field3227 = class150.field1622;
+         var3.field3224 = class89.field1276[var2];
       }
 
-      if (var0[1] < 0.0F) {
-         var0[1] = 0.0F;
-      }
+      field3103 = null;
+      class465.field3601 = null;
+      class103.field1343 = null;
+      class288.field2445 = null;
+      class150.field1622 = null;
+      class89.field1276 = (byte[][])null;
+      return var1;
+   }
 
-      if (var0[0] > 1.0F || var0[1] > 1.0F) {
-         float var2 = (float)(1.0 + (double)(var0[0] * (var0[0] - 2.0F + var0[1])) + ((double)var0[1] - 2.0) * (double)var0[1]);
-         if (var2 + class129.field807 > 0.0F) {
-            if (class129.field807 + var0[0] < 1.3333334F) {
-               float var3 = var0[0] - 2.0F;
-               float var4 = var0[0] - 1.0F;
-               float var5 = (float)Math.sqrt((double)(var3 * var3 - var4 * 4.0F * var4));
-               float var6 = 0.5F * (var5 + -var3);
-               if (var0[1] + class129.field807 > var6) {
-                  var0[1] = var6 - class129.field807;
-               } else {
-                  var6 = (-var3 - var5) * 0.5F;
-                  if (var0[1] < var6 + class129.field807) {
-                     var0[1] = class129.field807 + var6;
-                  }
-               }
-            } else {
-               var0[0] = 1.3333334F - class129.field807;
-               var0[1] = 0.33333334F - class129.field807;
-            }
+   public static class425 method1932() {
+      class425 var1 = new class425();
+      var1.field3221 = field3105;
+      var1.field3226 = class202.field1936;
+      var1.field3220 = field3103[0];
+      var1.field3225 = class465.field3601[0];
+      var1.field3222 = class103.field1343[0];
+      var1.field3223 = class288.field2445[0];
+      var1.field3227 = class150.field1622;
+      var1.field3224 = class89.field1276[0];
+      field3103 = null;
+      class465.field3601 = null;
+      class103.field1343 = null;
+      class288.field2445 = null;
+      class150.field1622 = null;
+      class89.field1276 = (byte[][])null;
+      return var1;
+   }
+
+   static class427[] method1930() {
+      class427[] var1 = new class427[field3104];
+
+      for(int var2 = 0; var2 < field3104; ++var2) {
+         class427 var3 = var1[var2] = new class427();
+         var3.field3234 = field3105;
+         var3.field3235 = class202.field1936;
+         var3.field3231 = field3103[var2];
+         var3.field3232 = class465.field3601[var2];
+         var3.field3237 = class103.field1343[var2];
+         var3.field3233 = class288.field2445[var2];
+         int var4 = var3.field3237 * var3.field3233;
+         byte[] var5 = class89.field1276[var2];
+         var3.field3236 = new int[var4];
+
+         for(int var6 = 0; var6 < var4; ++var6) {
+            var3.field3236[var6] = class150.field1622[var5[var6] & 255];
          }
       }
 
-      var0[1] = 1.0F - var0[1];
+      field3103 = null;
+      class465.field3601 = null;
+      class103.field1343 = null;
+      class288.field2445 = null;
+      class150.field1622 = null;
+      class89.field1276 = (byte[][])null;
+      return var1;
    }
 
-   public static void method1818(class322 var0, class206 var1, boolean var2) {
-      var0.field2200 = 7;
-      var0.field2214 = new class206(var1);
-      if (!var2) {
-         var0.field2214.field1581 = Arrays.copyOf(var0.field2214.field1594, var0.field2214.field1594.length);
-         var0.field2214.method1079();
+   static class427 method1924() {
+      class427 var1 = new class427();
+      var1.field3234 = field3105;
+      var1.field3235 = class202.field1936;
+      var1.field3231 = field3103[0];
+      var1.field3232 = class465.field3601[0];
+      var1.field3237 = class103.field1343[0];
+      var1.field3233 = class288.field2445[0];
+      int var2 = var1.field3233 * var1.field3237;
+      byte[] var3 = class89.field1276[0];
+      var1.field3236 = new int[var2];
+
+      for(int var4 = 0; var4 < var2; ++var4) {
+         var1.field3236[var4] = class150.field1622[var3[var4] & 255];
+      }
+
+      field3103 = null;
+      class465.field3601 = null;
+      class103.field1343 = null;
+      class288.field2445 = null;
+      class150.field1622 = null;
+      class89.field1276 = (byte[][])null;
+      return var1;
+   }
+
+   static class460 method1927(byte[] var0) {
+      if (null == var0) {
+         return null;
+      } else {
+         class460 var2 = new class460(var0, field3103, class465.field3601, class103.field1343, class288.field2445, class150.field1622, class89.field1276);
+         field3103 = null;
+         class465.field3601 = null;
+         class103.field1343 = null;
+         class288.field2445 = null;
+         class150.field1622 = null;
+         class89.field1276 = (byte[][])null;
+         return var2;
+      }
+   }
+
+   static boolean method1922(class298 var0, int var1, int var2) {
+      byte[] var4 = var0.method1629(var1, var2);
+      if (null == var4) {
+         return false;
+      } else {
+         method1925(var4);
+         return true;
+      }
+   }
+
+   public static boolean method1923(class298 var0, int var1) {
+      byte[] var3 = var0.method1636(var1);
+      if (null == var3) {
+         return false;
+      } else {
+         method1925(var3);
+         return true;
+      }
+   }
+
+   static void method1925(byte[] var0) {
+      class184 var2 = new class184(var0);
+      var2.field1818 = var0.length - 2;
+      field3104 = var2.method1174();
+      field3103 = new int[field3104];
+      class465.field3601 = new int[field3104];
+      class103.field1343 = new int[field3104];
+      class288.field2445 = new int[field3104];
+      class89.field1276 = new byte[field3104][];
+      var2.field1818 = var0.length - 7 - field3104 * 8;
+      field3105 = var2.method1174();
+      class202.field1936 = var2.method1174();
+      int var3 = (var2.method1125() & 255) + 1;
+
+      int var4;
+      for(var4 = 0; var4 < field3104; ++var4) {
+         field3103[var4] = var2.method1174();
+      }
+
+      for(var4 = 0; var4 < field3104; ++var4) {
+         class465.field3601[var4] = var2.method1174();
+      }
+
+      for(var4 = 0; var4 < field3104; ++var4) {
+         class103.field1343[var4] = var2.method1174();
+      }
+
+      for(var4 = 0; var4 < field3104; ++var4) {
+         class288.field2445[var4] = var2.method1174();
+      }
+
+      var2.field1818 = var0.length - 7 - field3104 * 8 - (var3 - 1) * 3;
+      class150.field1622 = new int[var3];
+
+      for(var4 = 1; var4 < var3; ++var4) {
+         class150.field1622[var4] = var2.method1181();
+         if (class150.field1622[var4] == 0) {
+            class150.field1622[var4] = 1;
+         }
+      }
+
+      var2.field1818 = 0;
+
+      for(var4 = 0; var4 < field3104; ++var4) {
+         int var5 = class103.field1343[var4];
+         int var6 = class288.field2445[var4];
+         int var7 = var5 * var6;
+         byte[] var8 = new byte[var7];
+         class89.field1276[var4] = var8;
+         int var9 = var2.method1125();
+         int var10;
+         if (var9 == 0) {
+            for(var10 = 0; var10 < var7; ++var10) {
+               var8[var10] = var2.method1126();
+            }
+         } else if (var9 == 1) {
+            for(var10 = 0; var10 < var5; ++var10) {
+               for(int var11 = 0; var11 < var6; ++var11) {
+                  var8[var10 + var5 * var11] = var2.method1126();
+               }
+            }
+         }
       }
 
    }

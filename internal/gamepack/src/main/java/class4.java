@@ -1,271 +1,94 @@
-public class class4 {
-   byte[] field8;
-   int[] field10;
-   int[] field9;
+public final class class4 {
+   static class497 field36;
+   static class4[] field32 = new class4[0];
+   static int field31;
+   float field30;
+   float field33;
+   float field34;
+   float field35;
 
-   public class4(byte[] var1) {
-      int var2 = var1.length;
-      this.field9 = new int[var2];
-      this.field8 = var1;
-      int[] var3 = new int[33];
-      this.field10 = new int[8];
-      int var4 = 0;
-
-      for(int var5 = 0; var5 < var2; ++var5) {
-         byte var6 = var1[var5];
-         if (var6 != 0) {
-            int var7 = 1 << 32 - var6;
-            int var8 = var3[var6];
-            this.field9[var5] = var8;
-            int var9;
-            int var10;
-            int var11;
-            int var12;
-            if (0 != (var8 & var7)) {
-               var9 = var3[var6 - 1];
-            } else {
-               var9 = var8 | var7;
-
-               for(var10 = var6 - 1; var10 >= 1; --var10) {
-                  var11 = var3[var10];
-                  if (var11 != var8) {
-                     break;
-                  }
-
-                  var12 = 1 << 32 - var10;
-                  if ((var11 & var12) != 0) {
-                     var3[var10] = var3[var10 - 1];
-                     break;
-                  }
-
-                  var3[var10] = var11 | var12;
-               }
-            }
-
-            var3[var6] = var9;
-
-            for(var10 = var6 + 1; var10 <= 32; ++var10) {
-               if (var3[var10] == var8) {
-                  var3[var10] = var9;
-               }
-            }
-
-            var10 = 0;
-
-            for(var11 = 0; var11 < var6; ++var11) {
-               var12 = Integer.MIN_VALUE >>> var11;
-               if (0 != (var8 & var12)) {
-                  if (0 == this.field10[var10]) {
-                     this.field10[var10] = var4;
-                  }
-
-                  var10 = this.field10[var10];
-               } else {
-                  ++var10;
-               }
-
-               if (var10 >= this.field10.length) {
-                  int[] var13 = new int[2 * this.field10.length];
-
-                  for(int var14 = 0; var14 < this.field10.length; ++var14) {
-                     var13[var14] = this.field10[var14];
-                  }
-
-                  this.field10 = var13;
-               }
-
-               var12 >>>= 1;
-            }
-
-            this.field10[var10] = ~var5;
-            if (var10 >= var4) {
-               var4 = var10 + 1;
-            }
-         }
-      }
-
+   static {
+      method13(100);
+      new class4();
    }
 
-   int method8(byte[] var1, int var2, int var3, byte[] var4, int var5) {
-      int var7 = 0;
-      int var8 = var5 << 3;
-
-      for(var3 += var2; var2 < var3; ++var2) {
-         int var9 = var1[var2] & 255;
-         int var10 = this.field9[var9];
-         byte var11 = this.field8[var9];
-         if (var11 == 0) {
-            throw new RuntimeException("" + var9);
-         }
-
-         int var12 = var8 >> 3;
-         int var13 = var8 & 7;
-         var7 &= -var13 >> 31;
-         int var14 = (var13 + var11 - 1 >> 3) + var12;
-         var13 += 24;
-         var4[var12] = (byte)(var7 |= var10 >>> var13);
-         if (var12 < var14) {
-            ++var12;
-            var13 -= 8;
-            var4[var12] = (byte)(var7 = var10 >>> var13);
-            if (var12 < var14) {
-               ++var12;
-               var13 -= 8;
-               var4[var12] = (byte)(var7 = var10 >>> var13);
-               if (var12 < var14) {
-                  ++var12;
-                  var13 -= 8;
-                  var4[var12] = (byte)(var7 = var10 >>> var13);
-                  if (var12 < var14) {
-                     ++var12;
-                     var13 -= 8;
-                     var4[var12] = (byte)(var7 = var10 << -var13);
-                  }
-               }
-            }
-         }
-
-         var8 += var11;
-      }
-
-      return (var8 + 7 >> 3) - var5;
+   class4() {
+      this.method9();
    }
 
-   int method9(byte[] var1, int var2, byte[] var3, int var4, int var5) {
-      if (var5 == 0) {
-         return 0;
+   public void method11() {
+      synchronized(field32) {
+         if (class217.field2020 < field31 - 1) {
+            field32[++class217.field2020 - 1] = this;
+         }
+
+      }
+   }
+
+   void method7(float var1, float var2, float var3, float var4) {
+      this.field34 = var1;
+      this.field33 = var2;
+      this.field35 = var3;
+      this.field30 = var4;
+   }
+
+   public void method8(float var1, float var2, float var3, float var4) {
+      float var6 = (float)Math.sin((double)(var4 * 0.5F));
+      float var7 = (float)Math.cos((double)(var4 * 0.5F));
+      this.field34 = var6 * var1;
+      this.field33 = var2 * var6;
+      this.field35 = var6 * var3;
+      this.field30 = var7;
+   }
+
+   final void method9() {
+      this.field35 = 0.0F;
+      this.field33 = 0.0F;
+      this.field34 = 0.0F;
+      this.field30 = 1.0F;
+   }
+
+   public final void method10(class4 var1) {
+      this.method7(this.field34 * var1.field30 + this.field30 * var1.field34 + this.field35 * var1.field33 - this.field33 * var1.field35, var1.field35 * this.field34 + this.field30 * var1.field33 + (var1.field30 * this.field33 - this.field35 * var1.field34), var1.field35 * this.field30 + (this.field35 * var1.field30 + this.field33 * var1.field34 - var1.field33 * this.field34), this.field30 * var1.field30 - this.field34 * var1.field34 - this.field33 * var1.field33 - var1.field35 * this.field35);
+   }
+
+   public boolean equals(Object var1) {
+      if (!(var1 instanceof class4)) {
+         return false;
       } else {
-         int var7 = 0;
-         var5 += var4;
-         int var8 = var2;
+         class4 var2 = (class4)var1;
+         return var2.field34 == this.field34 && var2.field33 == this.field33 && var2.field35 == this.field35 && this.field30 == var2.field30;
+      }
+   }
 
-         while(true) {
-            byte var9 = var1[var8];
-            if (var9 < 0) {
-               var7 = this.field10[var7];
-            } else {
-               ++var7;
-            }
+   public int hashCode() {
+      boolean var1 = true;
+      float var2 = 1.0F;
+      var2 = this.field34 + var2 * 31.0F;
+      var2 = this.field33 + var2 * 31.0F;
+      var2 = this.field35 + var2 * 31.0F;
+      var2 = this.field30 + var2 * 31.0F;
+      return (int)var2;
+   }
 
-            int var10;
-            if ((var10 = this.field10[var7]) < 0) {
-               var3[var4++] = (byte)(~var10);
-               if (var4 >= var5) {
-                  break;
-               }
+   public String toString() {
+      return this.field34 + "," + this.field33 + "," + this.field35 + "," + this.field30;
+   }
 
-               var7 = 0;
-            }
+   static void method13(int var0) {
+      field31 = var0;
+      field32 = new class4[var0];
+      class217.field2020 = 0;
+   }
 
-            if (0 != (var9 & 64)) {
-               var7 = this.field10[var7];
-            } else {
-               ++var7;
-            }
-
-            if ((var10 = this.field10[var7]) < 0) {
-               var3[var4++] = (byte)(~var10);
-               if (var4 >= var5) {
-                  break;
-               }
-
-               var7 = 0;
-            }
-
-            if (0 != (var9 & 32)) {
-               var7 = this.field10[var7];
-            } else {
-               ++var7;
-            }
-
-            if ((var10 = this.field10[var7]) < 0) {
-               var3[var4++] = (byte)(~var10);
-               if (var4 >= var5) {
-                  break;
-               }
-
-               var7 = 0;
-            }
-
-            if ((var9 & 16) != 0) {
-               var7 = this.field10[var7];
-            } else {
-               ++var7;
-            }
-
-            if ((var10 = this.field10[var7]) < 0) {
-               var3[var4++] = (byte)(~var10);
-               if (var4 >= var5) {
-                  break;
-               }
-
-               var7 = 0;
-            }
-
-            if (0 != (var9 & 8)) {
-               var7 = this.field10[var7];
-            } else {
-               ++var7;
-            }
-
-            if ((var10 = this.field10[var7]) < 0) {
-               var3[var4++] = (byte)(~var10);
-               if (var4 >= var5) {
-                  break;
-               }
-
-               var7 = 0;
-            }
-
-            if (0 != (var9 & 4)) {
-               var7 = this.field10[var7];
-            } else {
-               ++var7;
-            }
-
-            if ((var10 = this.field10[var7]) < 0) {
-               var3[var4++] = (byte)(~var10);
-               if (var4 >= var5) {
-                  break;
-               }
-
-               var7 = 0;
-            }
-
-            if (0 != (var9 & 2)) {
-               var7 = this.field10[var7];
-            } else {
-               ++var7;
-            }
-
-            if ((var10 = this.field10[var7]) < 0) {
-               var3[var4++] = (byte)(~var10);
-               if (var4 >= var5) {
-                  break;
-               }
-
-               var7 = 0;
-            }
-
-            if (0 != (var9 & 1)) {
-               var7 = this.field10[var7];
-            } else {
-               ++var7;
-            }
-
-            if ((var10 = this.field10[var7]) < 0) {
-               var3[var4++] = (byte)(~var10);
-               if (var4 >= var5) {
-                  break;
-               }
-
-               var7 = 0;
-            }
-
-            ++var8;
+   public static class4 method12() {
+      synchronized(field32) {
+         if (class217.field2020 == 0) {
+            return new class4();
+         } else {
+            field32[--class217.field2020].method9();
+            return field32[class217.field2020];
          }
-
-         return var8 + 1 - var2;
       }
    }
 }

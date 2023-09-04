@@ -1,43 +1,38 @@
-public final class class94 {
-   class94() throws Throwable {
+public class class94 {
+   public static final class94 field1299;
+   public static final class94 field1301;
+   public static final class94 field1303;
+   public static final class94 field1306;
+   public static final class94 field1308;
+   public static final class94 field1309;
+   public static final class94 field1312;
+   static final class94 field1300 = new class94(1);
+   static final class94 field1302 = new class94(0);
+   static final class94 field1304;
+   static final class94 field1307 = new class94(3);
+   static final class94 field1310;
+   static final class94 field1311;
+   static final class94 field1313 = new class94(2);
+   public final int field1305;
+
+   static {
+      field1303 = new class94(4, class406.field3137);
+      field1304 = new class94(5);
+      field1299 = new class94(6, class406.field3138);
+      field1301 = new class94(7, class406.field3141);
+      field1306 = new class94(8, class406.field3142);
+      field1312 = new class94(9, class406.field3139);
+      field1308 = new class94(10, class406.field3140);
+      field1309 = new class94(11, class406.field3136);
+      field1310 = new class94(12);
+      field1311 = new class94(13);
    }
 
-   public static int method363(CharSequence var0) {
-      int var2 = var0.length();
-      int var3 = 0;
-
-      for(int var4 = 0; var4 < var2; ++var4) {
-         char var5 = var0.charAt(var4);
-         if (var5 <= 127) {
-            ++var3;
-         } else if (var5 <= 2047) {
-            var3 += 2;
-         } else {
-            var3 += 3;
-         }
-      }
-
-      return var3;
+   class94(int var1, class406 var2) {
+      this.field1305 = var1;
    }
 
-   public static int method364(byte[] var0, int var1, CharSequence var2) {
-      int var4 = var2.length();
-      int var5 = var1;
-
-      for(int var6 = 0; var6 < var4; ++var6) {
-         char var7 = var2.charAt(var6);
-         if (var7 <= 127) {
-            var0[var5++] = (byte)var7;
-         } else if (var7 <= 2047) {
-            var0[var5++] = (byte)(192 | var7 >> 6);
-            var0[var5++] = (byte)(128 | var7 & 63);
-         } else {
-            var0[var5++] = (byte)(224 | var7 >> 12);
-            var0[var5++] = (byte)(128 | var7 >> 6 & 63);
-            var0[var5++] = (byte)(128 | var7 & 63);
-         }
-      }
-
-      return var5 - var1;
+   class94(int var1) {
+      this(var1, (class406)null);
    }
 }

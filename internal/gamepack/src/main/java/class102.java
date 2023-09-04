@@ -1,40 +1,15 @@
-public class class102 {
-   class243[] field682 = new class243[100];
-   int field681;
+import java.util.Comparator;
 
-   class102() {
+final class class102 implements Comparator {
+   int method752(class82 var1, class82 var2) {
+      return var1.field1253.field1796 < var2.field1253.field1796 ? -1 : (var1.field1253.field1796 == var2.field1253.field1796 ? 0 : 1);
    }
 
-   class243 method380(int var1, String var2, String var3, String var4) {
-      class243 var6 = this.field682[99];
-
-      for(int var7 = this.field681; var7 > 0; --var7) {
-         if (var7 != 100) {
-            this.field682[var7] = this.field682[var7 - 1];
-         }
-      }
-
-      if (null == var6) {
-         var6 = new class243(var1, var2, var4, var3);
-      } else {
-         var6.method295();
-         var6.method1406();
-         var6.method1174(var1, var2, var4, var3);
-      }
-
-      this.field682[0] = var6;
-      if (this.field681 < 100) {
-         ++this.field681;
-      }
-
-      return var6;
+   public int compare(Object var1, Object var2) {
+      return this.method752((class82)var1, (class82)var2);
    }
 
-   class243 method381(int var1) {
-      return var1 >= 0 && var1 < this.field681 ? this.field682[var1] : null;
-   }
-
-   int method379() {
-      return this.field681;
+   public boolean equals(Object var1) {
+      return super.equals(var1);
    }
 }

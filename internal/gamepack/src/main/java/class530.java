@@ -1,21 +1,9 @@
-import java.util.Comparator;
-
-public class class530 implements Comparator {
-   static Client field4182;
-   static class501 field4183;
+public class class530 {
+   static class290 field4171;
+   public char field4170;
+   public int field4169 = 0;
+   public int field4172 = 0;
 
    class530() {
-   }
-
-   int method2515(class441 var1, class441 var2) {
-      return var1.method2044() - var2.method2044();
-   }
-
-   public int compare(Object var1, Object var2) {
-      return this.method2515((class441)var1, (class441)var2);
-   }
-
-   public boolean equals(Object var1) {
-      return super.equals(var1);
    }
 }

@@ -1,13 +1,18 @@
-public class class55 extends class70 {
-   public class322 field455;
-   public int field452;
-   public int field453;
-   public int field454;
+public class class55 {
+   public class55 field1077;
+   public class55 field1079;
+   public long field1078;
 
-   public class55(int var1, int var2, int var3, class322 var4) {
-      this.field452 = var1;
-      this.field453 = var2;
-      this.field454 = var3;
-      this.field455 = var4;
+   public void method605() {
+      if (this.field1079 != null) {
+         this.field1079.field1077 = this.field1077;
+         this.field1077.field1079 = this.field1079;
+         this.field1077 = null;
+         this.field1079 = null;
+      }
+   }
+
+   public boolean method606() {
+      return this.field1079 != null;
    }
 }

@@ -1,9 +1,18 @@
-public class class418 {
-   public static final class418 field2939 = new class418(0);
-   static final class418 field2941 = new class418(1);
-   final int field2940;
+public final class class418 {
+   class418() throws Throwable {
+   }
 
-   class418(int var1) {
-      this.field2940 = var1;
+   static void method1990() {
+      if (null != class318.field2587) {
+         Client.field699 = Client.field879;
+         class318.field2587.method2271();
+
+         for(int var1 = 0; var1 < Client.field749.length; ++var1) {
+            if (null != Client.field749[var1]) {
+               class318.field2587.method2270((Client.field749[var1].field4028 >> 7) + class69.field1134, class478.field3659 + (Client.field749[var1].field3999 >> 7));
+            }
+         }
+      }
+
    }
 }

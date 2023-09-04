@@ -1,28 +1,43 @@
-public class class319 extends class124 {
-   byte field2140;
-   int field2141;
-   int field2143;
-   String field2142;
-   // $FF: synthetic field
-   final class398 this$0;
-
-   class319(class398 var1) {
-      this.this$0 = var1;
-      this.field2143 = -1;
+public final class class319 {
+   class319() throws Throwable {
    }
 
-   void method472(class366 var1) {
-      this.field2143 = var1.method1703();
-      this.field2140 = var1.method1655();
-      this.field2141 = var1.method1703();
-      var1.method1659();
-      this.field2142 = var1.method1662();
+   public static int method1693(CharSequence var0) {
+      int var2 = var0.length();
+      int var3 = 0;
+
+      for(int var4 = 0; var4 < var2; ++var4) {
+         char var5 = var0.charAt(var4);
+         if (var5 <= 127) {
+            ++var3;
+         } else if (var5 <= 2047) {
+            var3 += 2;
+         } else {
+            var3 += 3;
+         }
+      }
+
+      return var3;
    }
 
-   void method473(class417 var1) {
-      class367 var3 = (class367)var1.field2933.get(this.field2143);
-      var3.field2657 = this.field2140;
-      var3.field2658 = this.field2141;
-      var3.field2656 = new class349(this.field2142);
+   public static int method1694(byte[] var0, int var1, CharSequence var2) {
+      int var4 = var2.length();
+      int var5 = var1;
+
+      for(int var6 = 0; var6 < var4; ++var6) {
+         char var7 = var2.charAt(var6);
+         if (var7 <= 127) {
+            var0[var5++] = (byte)var7;
+         } else if (var7 <= 2047) {
+            var0[var5++] = (byte)(192 | var7 >> 6);
+            var0[var5++] = (byte)(128 | var7 & 63);
+         } else {
+            var0[var5++] = (byte)(224 | var7 >> 12);
+            var0[var5++] = (byte)(128 | var7 >> 6 & 63);
+            var0[var5++] = (byte)(128 | var7 & 63);
+         }
+      }
+
+      return var5 - var1;
    }
 }

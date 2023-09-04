@@ -1,28 +1,16 @@
-import java.awt.Component;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
+import java.security.SecureRandom;
+import java.util.concurrent.Callable;
 
-public final class class253 implements class45, MouseWheelListener {
-   int field1839 = 0;
+public class class253 implements Callable {
+   static class425[] field2233;
+   static class460 field2234;
 
    class253() {
    }
 
-   void method1195(Component var1) {
-      var1.addMouseWheelListener(this);
-   }
-
-   void method1196(Component var1) {
-      var1.removeMouseWheelListener(this);
-   }
-
-   public synchronized void mouseWheelMoved(MouseWheelEvent var1) {
-      this.field1839 += var1.getWheelRotation();
-   }
-
-   public synchronized int method185() {
-      int var2 = this.field1839;
-      this.field1839 = 0;
+   public Object call() {
+      SecureRandom var2 = new SecureRandom();
+      var2.nextInt();
       return var2;
    }
 }

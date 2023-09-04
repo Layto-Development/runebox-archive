@@ -1,28 +1,22 @@
-import java.util.concurrent.Callable;
+public class class300 implements class188 {
+   public static class148 field2508;
+   static class22 field2503;
+   static final class300 field2504 = new class300(1);
+   static final class300 field2505 = new class300(3);
+   static final class300 field2506 = new class300(4);
+   static final class300 field2507 = new class300(2);
+   static final class300 field2509 = new class300(0);
+   final int field2510;
 
-class class300 implements Callable {
-   static int field2046;
-   // $FF: synthetic field
-   final class249[] val$curveLoadJobs;
-   // $FF: synthetic field
-   final class272 this$0;
-   // $FF: synthetic field
-   final int val$workEnd;
-   // $FF: synthetic field
-   final int val$workStart;
-
-   class300(class272 var1, int var2, int var3, class249[] var4) {
-      this.this$0 = var1;
-      this.val$workStart = var2;
-      this.val$workEnd = var3;
-      this.val$curveLoadJobs = var4;
+   class300(int var1) {
+      this.field2510 = var1;
    }
 
-   public Object call() {
-      for(int var1 = this.val$workStart; var1 < this.val$workEnd; ++var1) {
-         this.val$curveLoadJobs[var1].call();
-      }
+   public int method1195() {
+      return this.field2510;
+   }
 
-      return null;
+   static class300[] method1660() {
+      return new class300[]{field2507, field2509, field2505, field2504, field2506};
    }
 }

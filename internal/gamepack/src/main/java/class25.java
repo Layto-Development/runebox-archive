@@ -1,24 +1,37 @@
-public class class25 implements class497 {
-   public static final class25 field255 = new class25(16, -2);
-   public static final class25 field256 = new class25(18, -2);
-   public static final class25 field257 = new class25(19, -2);
-   public static final class25 field261 = new class25(14, 0);
-   static final class25 field258 = new class25(27, 0);
-   static final class25 field260 = new class25(15, 4);
-   static final class25[] field254 = new class25[32];
-   public final int field259;
+public class class25 {
+   int[] field230 = new int[8];
+   short[] field231 = new short[8];
 
-   static {
-      class25[] var0 = new class25[]{field261, field260, field256, field258, field257, field255};
-      class25[] var1 = var0;
+   public class25(class453 var1) {
+      int var2 = 0;
+      if (var1.method2234()) {
+         var2 = var1.method2235().length;
+         System.arraycopy(var1.method2235(), 0, this.field230, 0, var2);
+         System.arraycopy(var1.method2237(), 0, this.field231, 0, var2);
+      }
 
-      for(int var2 = 0; var2 < var1.length; ++var2) {
-         field254[var1[var2].field259] = var1[var2];
+      for(int var3 = var2; var3 < 8; ++var3) {
+         this.field230[var3] = -1;
+         this.field231[var3] = -1;
       }
 
    }
 
-   class25(int var1, int var2) {
-      this.field259 = var1;
+   public int[] method263() {
+      return this.field230;
+   }
+
+   public short[] method264() {
+      return this.field231;
+   }
+
+   public void method265(int var1, int var2, short var3) {
+      this.field230[var1] = var2;
+      this.field231[var1] = var3;
+   }
+
+   public void method266(int[] var1, short[] var2) {
+      this.field230 = var1;
+      this.field231 = var2;
    }
 }

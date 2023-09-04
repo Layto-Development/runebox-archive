@@ -1,22 +1,25 @@
-public class class384 implements class42 {
-   static final class384 field2714 = new class384(2, 7);
-   static final class384 field2715 = new class384(1, 1);
-   static final class384 field2716 = new class384(3, 8);
-   static final class384 field2719 = new class384(0, -1);
-   static final class384 field2720 = new class384(4, 9);
-   final int field2717;
-   final int field2718;
-
-   class384(int var1, int var2) {
-      this.field2718 = var1;
-      this.field2717 = var2;
+public class class384 {
+   class384() throws Throwable {
    }
 
-   public int method180() {
-      return this.field2717;
-   }
+   static int method1895(int var0, int var1, int var2) {
+      if (var2 > 179) {
+         var1 /= 2;
+      }
 
-   static class384[] method1774() {
-      return new class384[]{field2715, field2716, field2714, field2720, field2719};
+      if (var2 > 192) {
+         var1 /= 2;
+      }
+
+      if (var2 > 217) {
+         var1 /= 2;
+      }
+
+      if (var2 > 243) {
+         var1 /= 2;
+      }
+
+      int var4 = var2 / 2 + (var1 / 32 << 7) + (var0 / 4 << 10);
+      return var4;
    }
 }

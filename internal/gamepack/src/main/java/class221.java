@@ -1,8 +1,11 @@
-public class class221 {
-   class221() throws Throwable {
+public abstract class class221 extends class91 {
+   class221(int var1, int var2) {
+      super(var1, var2);
    }
 
-   public static boolean method1109(int var0) {
-      return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
-   }
+   public abstract int method1320();
+
+   public abstract int method1321();
+
+   public abstract int method1322();
 }

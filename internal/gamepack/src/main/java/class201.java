@@ -1,33 +1,122 @@
-public class class201 extends class285 {
-   int field1556 = 0;
-   int field1557 = 0;
-   int field1558 = 0;
-   int field1559 = 0;
-   int field1560 = 0;
-   int field1561 = 0;
+public class class201 {
+   class55 field1934;
+   public class55 field1935 = new class55();
 
-   public class201(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-      super(var7, var8);
-      this.field1560 = var1;
-      this.field1557 = var2;
-      this.field1558 = var3;
-      this.field1559 = var4;
-      this.field1556 = var5;
-      this.field1561 = var6;
+   public class201() {
+      this.field1935.field1077 = this.field1935;
+      this.field1935.field1079 = this.field1935;
    }
 
-   public int method1305() {
-      double var2 = this.method77();
-      return (int)Math.round((double)(this.field1559 - this.field1560) * var2 + (double)this.field1560);
+   public void method1232() {
+      while(true) {
+         class55 var1 = this.field1935.field1077;
+         if (var1 == this.field1935) {
+            this.field1934 = null;
+            return;
+         }
+
+         var1.method605();
+      }
    }
 
-   public int method1306() {
-      double var2 = this.method77();
-      return (int)Math.round(var2 * (double)(this.field1556 - this.field1557) + (double)this.field1557);
+   public void method1240(class55 var1) {
+      if (var1.field1079 != null) {
+         var1.method605();
+      }
+
+      var1.field1079 = this.field1935.field1079;
+      var1.field1077 = this.field1935;
+      var1.field1079.field1077 = var1;
+      var1.field1077.field1079 = var1;
    }
 
-   public int method1307() {
-      double var2 = this.method77();
-      return (int)Math.round((double)this.field1558 + (double)(this.field1561 - this.field1558) * var2);
+   public void method1241(class55 var1) {
+      if (var1.field1079 != null) {
+         var1.method605();
+      }
+
+      var1.field1079 = this.field1935;
+      var1.field1077 = this.field1935.field1077;
+      var1.field1079.field1077 = var1;
+      var1.field1077.field1079 = var1;
+   }
+
+   public class55 method1234() {
+      class55 var1 = this.field1935.field1077;
+      if (var1 == this.field1935) {
+         return null;
+      } else {
+         var1.method605();
+         return var1;
+      }
+   }
+
+   public class55 method1235() {
+      class55 var1 = this.field1935.field1079;
+      if (var1 == this.field1935) {
+         return null;
+      } else {
+         var1.method605();
+         return var1;
+      }
+   }
+
+   public class55 method1236() {
+      class55 var1 = this.field1935.field1077;
+      if (var1 == this.field1935) {
+         this.field1934 = null;
+         return null;
+      } else {
+         this.field1934 = var1.field1077;
+         return var1;
+      }
+   }
+
+   public class55 method1237() {
+      class55 var1 = this.field1935.field1079;
+      if (var1 == this.field1935) {
+         this.field1934 = null;
+         return null;
+      } else {
+         this.field1934 = var1.field1079;
+         return var1;
+      }
+   }
+
+   public class55 method1238() {
+      class55 var1 = this.field1934;
+      if (var1 == this.field1935) {
+         this.field1934 = null;
+         return null;
+      } else {
+         this.field1934 = var1.field1077;
+         return var1;
+      }
+   }
+
+   public class55 method1242() {
+      class55 var1 = this.field1934;
+      if (var1 == this.field1935) {
+         this.field1934 = null;
+         return null;
+      } else {
+         this.field1934 = var1.field1079;
+         return var1;
+      }
+   }
+
+   public boolean method1239() {
+      return this.field1935.field1077 == this.field1935;
+   }
+
+   public static void method1233(class55 var0, class55 var1) {
+      if (var0.field1079 != null) {
+         var0.method605();
+      }
+
+      var0.field1079 = var1.field1079;
+      var0.field1077 = var1;
+      var0.field1079.field1077 = var0;
+      var0.field1077.field1079 = var0;
    }
 }

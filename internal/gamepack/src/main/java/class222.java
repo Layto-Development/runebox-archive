@@ -1,18 +1,19 @@
-public class class222 extends class316 {
-   int field1665;
-   // $FF: synthetic field
-   final class207 this$0;
+public class class222 implements class188 {
+   static class347 field2041;
+   static final class222 field2043 = new class222(0, 0);
+   final int field2040;
+   public final int field2042;
 
-   class222(class207 var1) {
-      this.this$0 = var1;
-      this.field1665 = -1;
+   class222(int var1, int var2) {
+      this.field2042 = var1;
+      this.field2040 = var2;
    }
 
-   void method1441(class366 var1) {
-      this.field1665 = var1.method1703();
+   public int method1195() {
+      return this.field2040;
    }
 
-   void method1440(class8 var1) {
-      var1.method60(this.field1665);
+   public static class222[] method1323() {
+      return new class222[]{field2043};
    }
 }

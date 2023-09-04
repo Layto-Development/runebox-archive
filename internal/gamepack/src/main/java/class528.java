@@ -1,23 +1,25 @@
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.io.IOException;
+import java.util.concurrent.Callable;
 
-public class class528 implements ThreadFactory {
+public class class528 implements Callable {
    // $FF: synthetic field
-   final class151 this$0;
-   final ThreadGroup field4179;
-   final AtomicInteger field4178;
+   final class248 this$0;
+   final class383 field4151;
 
-   class528(class151 var1) {
+   class528(class248 var1, class383 var2) {
       this.this$0 = var1;
-      this.field4178 = new AtomicInteger(1);
-      SecurityManager var2 = System.getSecurityManager();
-      this.field4179 = var2 != null ? var2.getThreadGroup() : Thread.currentThread().getThreadGroup();
+      this.field4151 = var2;
    }
 
-   public Thread newThread(Runnable var1) {
-      Thread var2 = new Thread(this.field4179, var1, this.this$0.field962 + "-rest-request-" + this.field4178.getAndIncrement(), 0L);
-      var2.setDaemon(true);
-      var2.setPriority(5);
-      return var2;
+   public Object call() throws Exception {
+      try {
+         while(this.field4151.method1893()) {
+            class51.method602(10L);
+         }
+      } catch (IOException var2) {
+         return new class329("Error servicing REST query: " + var2.getMessage());
+      }
+
+      return this.field4151.method1892();
    }
 }

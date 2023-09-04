@@ -1,103 +1,122 @@
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.security.cert.Certificate;
-import javax.net.ssl.HandshakeCompletedListener;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocket;
-import org.bouncycastle.crypto.tls.TlsClientProtocol;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
-class class268 extends SSLSocket {
-   static class45 field1879;
-   static int field1877;
-   static int field1878;
-   Certificate[] field1880;
-   // $FF: synthetic field
-   final class395 this$0;
-   // $FF: synthetic field
-   final String val$host;
-   // $FF: synthetic field
-   final TlsClientProtocol val$tlsClientProtocol;
+public class class268 extends class475 {
+   HashSet field2303;
+   HashSet field2304;
+   List field2305;
 
-   class268(class395 var1, TlsClientProtocol var2, String var3) {
-      this.this$0 = var1;
-      this.val$tlsClientProtocol = var2;
-      this.val$host = var3;
+   class268() {
    }
 
-   public InputStream getInputStream() throws IOException {
-      return this.val$tlsClientProtocol.getInputStream();
+   void method1513(class184 var1, class184 var2, int var3, boolean var4) {
+      this.method2292(var1, var3);
+      int var6 = var2.method1174();
+      this.field2303 = new HashSet(var6);
+
+      int var7;
+      for(var7 = 0; var7 < var6; ++var7) {
+         class430 var8 = new class430();
+
+         try {
+            var8.method2071(var2);
+         } catch (IllegalStateException var12) {
+            continue;
+         }
+
+         this.field2303.add(var8);
+      }
+
+      var7 = var2.method1174();
+      this.field2304 = new HashSet(var7);
+
+      for(int var13 = 0; var13 < var7; ++var13) {
+         class198 var9 = new class198();
+
+         try {
+            var9.method1227(var2);
+         } catch (IllegalStateException var11) {
+            continue;
+         }
+
+         this.field2304.add(var9);
+      }
+
+      this.method1512(var2, var4);
    }
 
-   public OutputStream getOutputStream() throws IOException {
-      return this.val$tlsClientProtocol.getOutputStream();
+   void method1512(class184 var1, boolean var2) {
+      this.field2305 = new LinkedList();
+      int var4 = var1.method1174();
+
+      for(int var5 = 0; var5 < var4; ++var5) {
+         int var6 = var1.method1173();
+         class89 var7 = new class89(var1.method1129());
+         boolean var8 = var1.method1125() == 1;
+         if (var2 || !var8) {
+            this.field2305.add(new class108((class89)null, var7, var6, (class174)null));
+         }
+      }
+
    }
 
-   public synchronized void close() throws IOException {
-      this.val$tlsClientProtocol.close();
+   static void method1515(boolean var0) {
+      if (!class191.field1877.method360() && !class191.field1877.method361() && !class191.field1877.method383((byte)116)) {
+         class534.field4234 = class27.field444;
+         class534.field4232 = class27.field445;
+         class534.field4233 = class27.field407;
+         class534.method2543(2);
+         if (var0) {
+            class534.field4236 = "";
+         }
+
+         if (null == class534.field4243 || class534.field4243.length() <= 0) {
+            if (class4.field36.method2417() != null) {
+               class534.field4243 = class4.field36.method2417();
+               Client.field630 = true;
+            } else {
+               Client.field630 = false;
+            }
+         }
+
+         class534.method2549();
+      } else {
+         class534.method2543(10);
+      }
    }
 
-   public void addHandshakeCompletedListener(HandshakeCompletedListener var1) {
-   }
+   static void method1514(boolean var0) {
+      byte var2 = 0;
+      boolean var3 = class4.field36.method2418() >= Client.field581;
+      if (!var3) {
+         var2 = 12;
+      } else if (class191.field1877.method360() || class191.field1877.method361() || class191.field1877.method383((byte)106)) {
+         var2 = 10;
+      }
 
-   public boolean getEnableSessionCreation() {
-      return false;
-   }
+      class534.method2543(var2);
+      if (var0) {
+         class534.field4243 = "";
+         class534.field4236 = "";
+         class13.field117 = 0;
+         class470.field3619 = "";
+      }
 
-   public String[] getEnabledCipherSuites() {
-      return null;
-   }
+      if (null == class534.field4243 || class534.field4243.length() <= 0) {
+         if (class4.field36.method2417() != null) {
+            class534.field4243 = class4.field36.method2417();
+            Client.field630 = true;
+         } else {
+            Client.field630 = false;
+         }
+      }
 
-   public String[] getEnabledProtocols() {
-      return null;
-   }
+      if (Client.field630 && class534.field4243 != null && class534.field4243.length() > 0) {
+         class534.field4241 = 1;
+      } else {
+         class534.field4241 = 0;
+      }
 
-   public boolean getNeedClientAuth() {
-      return false;
-   }
-
-   public SSLSession getSession() {
-      return new class481(this);
-   }
-
-   public String[] getSupportedProtocols() {
-      return null;
-   }
-
-   public String[] getSupportedCipherSuites() {
-      return null;
-   }
-
-   public boolean getUseClientMode() {
-      return false;
-   }
-
-   public boolean getWantClientAuth() {
-      return false;
-   }
-
-   public void removeHandshakeCompletedListener(HandshakeCompletedListener var1) {
-   }
-
-   public void setEnableSessionCreation(boolean var1) {
-   }
-
-   public void setEnabledCipherSuites(String[] var1) {
-   }
-
-   public void setEnabledProtocols(String[] var1) {
-   }
-
-   public void setNeedClientAuth(boolean var1) {
-   }
-
-   public void setUseClientMode(boolean var1) {
-   }
-
-   public void setWantClientAuth(boolean var1) {
-   }
-
-   public void startHandshake() throws IOException {
-      this.val$tlsClientProtocol.connect(new class128(this));
    }
 }

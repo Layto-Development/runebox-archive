@@ -1,82 +1,107 @@
-public class class46 implements class51 {
-   int field346;
-   int field347;
-   int field348;
-   int field349;
-   int field350;
-   int field351;
-   int field352;
-   int field353;
-   int field354;
-   int field355;
+public class class46 implements class414 {
+   public static final class46 field1000 = new class46(69, 11);
+   public static final class46 field1002 = new class46(71, 7);
+   public static final class46 field1003 = new class46(72, -1);
+   public static final class46 field1004 = new class46(73, 7);
+   public static final class46 field1005 = new class46(74, -1);
+   public static final class46 field1006 = new class46(75, 0);
+   public static final class46 field1007 = new class46(76, 8);
+   public static final class46 field1008 = new class46(7, 4);
+   public static final class46 field1009 = new class46(78, 11);
+   public static final class46 field1010 = new class46(79, 7);
+   public static final class46 field1011 = new class46(80, 3);
+   public static final class46 field1012 = new class46(81, 3);
+   public static final class46 field1013 = new class46(82, 10);
+   public static final class46 field1014 = new class46(11, -1);
+   public static final class46 field1015 = new class46(84, -1);
+   public static final class46 field1016 = new class46(85, -2);
+   public static final class46 field1017 = new class46(62, 2);
+   public static final class46 field1018 = new class46(87, -1);
+   public static final class46 field1019 = new class46(21, -1);
+   public static final class46 field1020 = new class46(34, 3);
+   public static final class46 field1021 = new class46(90, 5);
+   public static final class46 field1022 = new class46(91, 2);
+   public static final class46 field1023 = new class46(77, 15);
+   public static final class46 field1024 = new class46(92, 4);
+   public static final class46 field1025 = new class46(94, 4);
+   public static final class46 field1026 = new class46(61, 3);
+   public static final class46 field1027 = new class46(96, 1);
+   public static final class46 field1028 = new class46(97, 1);
+   public static final class46 field1029 = new class46(49, -1);
+   public static final class46 field1030 = new class46(20, 3);
+   public static final class46 field931 = new class46(29, -2);
+   public static final class46 field932 = new class46(1, 8);
+   public static final class46 field933 = new class46(2, -1);
+   public static final class46 field934 = new class46(3, 7);
+   public static final class46 field935 = new class46(43, -1);
+   public static final class46 field936 = new class46(6, 8);
+   public static final class46 field937 = new class46(38, -1);
+   public static final class46 field938 = new class46(19, -1);
+   public static final class46 field939 = new class46(8, 0);
+   public static final class46 field941 = new class46(10, 3);
+   public static final class46 field942 = new class46(51, 11);
+   public static final class46 field943 = new class46(15, -1);
+   public static final class46 field944 = new class46(13, 3);
+   public static final class46 field945 = new class46(14, 16);
+   public static final class46 field946 = new class46(52, 4);
+   public static final class46 field947 = new class46(16, 8);
+   public static final class46 field948 = new class46(95, 22);
+   public static final class46 field949 = new class46(18, 15);
+   public static final class46 field951 = new class46(70, -1);
+   public static final class46 field953 = new class46(22, -2);
+   public static final class46 field954 = new class46(23, 4);
+   public static final class46 field955 = new class46(24, 0);
+   public static final class46 field956 = new class46(88, 4);
+   public static final class46 field957 = new class46(26, 8);
+   public static final class46 field958 = new class46(27, 9);
+   public static final class46 field959 = new class46(28, 7);
+   public static final class46 field960 = new class46(83, -1);
+   public static final class46 field961 = new class46(93, 16);
+   public static final class46 field963 = new class46(32, 8);
+   public static final class46 field964 = new class46(5, 8);
+   public static final class46 field965 = new class46(25, 7);
+   public static final class46 field966 = new class46(86, -1);
+   public static final class46 field967 = new class46(36, 7);
+   public static final class46 field968 = new class46(37, -1);
+   public static final class46 field969 = new class46(33, 6);
+   public static final class46 field970 = new class46(39, 7);
+   public static final class46 field971 = new class46(40, 0);
+   public static final class46 field972 = new class46(41, -1);
+   public static final class46 field974 = new class46(46, 6);
+   public static final class46 field975 = new class46(44, 7);
+   public static final class46 field976 = new class46(35, 3);
+   public static final class46 field977 = new class46(17, 0);
+   public static final class46 field978 = new class46(55, 8);
+   public static final class46 field979 = new class46(48, 3);
+   public static final class46 field980 = new class46(89, 8);
+   public static final class46 field981 = new class46(50, 7);
+   public static final class46 field982 = new class46(31, 3);
+   public static final class46 field983 = new class46(47, 1);
+   public static final class46 field984 = new class46(53, 3);
+   public static final class46 field985 = new class46(54, 15);
+   public static final class46 field986 = new class46(4, -1);
+   public static final class46 field987 = new class46(56, 6);
+   public static final class46 field988 = new class46(57, -1);
+   public static final class46 field989 = new class46(58, 11);
+   public static final class46 field990 = new class46(59, 3);
+   public static final class46 field992 = new class46(60, 13);
+   public static final class46 field993 = new class46(12, 15);
+   public static final class46 field994 = new class46(63, 3);
+   public static final class46 field995 = new class46(64, 2);
+   public static final class46 field996 = new class46(65, 2);
+   public static final class46 field997 = new class46(66, 3);
+   public static final class46 field998 = new class46(67, -1);
+   public static final class46 field999 = new class46(68, 8);
+   static final class46 field940 = new class46(9, -1);
+   static final class46 field952 = new class46(45, 7);
+   static final class46 field962 = new class46(30, 2);
+   static final class46 field973 = new class46(42, -1);
+   static final class46 field991 = new class46(0, 2);
+   final int field1001;
+   final int field950;
 
-   class46() {
-   }
-
-   public void method223(class456 var1) {
-      if (var1.field3585 > this.field350) {
-         var1.field3585 = this.field350;
-      }
-
-      if (var1.field3579 < this.field350) {
-         var1.field3579 = this.field350;
-      }
-
-      if (var1.field3587 > this.field351) {
-         var1.field3587 = this.field351;
-      }
-
-      if (var1.field3581 < this.field351) {
-         var1.field3581 = this.field351;
-      }
-
-   }
-
-   public boolean method218(int var1, int var2, int var3) {
-      if (var1 >= this.field353 && var1 < this.field353 + this.field346) {
-         return var2 >= (this.field348 << 3) + (this.field355 << 6) && var2 <= (this.field355 << 6) + (this.field348 << 3) + 7 && var3 >= (this.field349 << 6) + (this.field352 << 3) && var3 <= (this.field349 << 6) + (this.field352 << 3) + 7;
-      } else {
-         return false;
-      }
-   }
-
-   public boolean method219(int var1, int var2) {
-      return var1 >= (this.field350 << 6) + (this.field347 << 3) && var1 <= (this.field347 << 3) + (this.field350 << 6) + 7 && var2 >= (this.field351 << 6) + (this.field354 << 3) && var2 <= (this.field354 << 3) + (this.field351 << 6) + 7;
-   }
-
-   public int[] method221(int var1, int var2, int var3) {
-      if (!this.method218(var1, var2, var3)) {
-         return null;
-      } else {
-         int[] var5 = new int[]{var2 + (this.field350 * 64 - this.field355 * 64) + (this.field347 * 8 - this.field348 * 8), this.field354 * 8 - this.field352 * 8 + this.field351 * 64 - this.field349 * 64 + var3};
-         return var5;
-      }
-   }
-
-   public class113 method222(int var1, int var2) {
-      if (!this.method219(var1, var2)) {
-         return null;
-      } else {
-         int var4 = this.field355 * 64 - this.field350 * 64 + var1 + (this.field348 * 8 - this.field347 * 8);
-         int var5 = this.field352 * 8 - this.field354 * 8 + var2 + (this.field349 * 64 - this.field351 * 64);
-         return new class113(this.field353, var4, var5);
-      }
-   }
-
-   public void method220(class366 var1) {
-      this.field353 = var1.method1654();
-      this.field346 = var1.method1654();
-      this.field355 = var1.method1703();
-      this.field348 = var1.method1654();
-      this.field349 = var1.method1703();
-      this.field352 = var1.method1654();
-      this.field350 = var1.method1703();
-      this.field347 = var1.method1654();
-      this.field351 = var1.method1703();
-      this.field354 = var1.method1654();
-      this.method190();
-   }
-
-   void method190() {
+   class46(int var1, int var2) {
+      this.field950 = var1;
+      this.field1001 = var2;
    }
 }

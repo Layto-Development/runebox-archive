@@ -1,174 +1,98 @@
-public class class349 implements Comparable {
-   String field2568;
-   String field2569;
+public class class349 {
+   static int[] field2769;
 
-   public class349(String var1) {
-      this.field2569 = var1;
-      class516 var4 = class516.field4132;
-      String var3;
-      if (null == var1) {
-         var3 = null;
-      } else {
-         label66: {
-            int var5 = 0;
+   static {
+      new Object();
+      field2769 = new int[33];
+      field2769[0] = 0;
+      int var0 = 2;
 
-            int var6;
-            for(var6 = var1.length(); var5 < var6 && class462.method2177(var1.charAt(var5)); ++var5) {
-            }
+      for(int var1 = 1; var1 < 33; ++var1) {
+         field2769[var1] = var0 - 1;
+         var0 += var0;
+      }
 
-            while(var6 > var5 && class462.method2177(var1.charAt(var6 - 1))) {
-               --var6;
-            }
+   }
 
-            int var7 = var6 - var5;
-            if (var7 >= 1) {
-               int var9;
-               if (var4 == null) {
-                  var9 = 12;
-               } else {
-                  switch (var4.field4125) {
-                     case 0:
-                        var9 = 20;
-                        break;
-                     default:
-                        var9 = 12;
-                  }
-               }
+   class349() throws Throwable {
+   }
 
-               if (var7 <= var9) {
-                  StringBuilder var8 = new StringBuilder(var7);
-
-                  for(var9 = var5; var9 < var6; ++var9) {
-                     char var10 = var1.charAt(var9);
-                     if (class462.method2175(var10)) {
-                        char var11 = class462.method2174(var10);
-                        if (var11 != 0) {
-                           var8.append(var11);
-                        }
-                     }
-                  }
-
-                  if (var8.length() == 0) {
-                     var3 = null;
-                  } else {
-                     var3 = var8.toString();
-                  }
-                  break label66;
-               }
-            }
-
-            var3 = null;
+   public static int method1806(int var0, int var1) {
+      int var3;
+      for(var3 = 1; var1 > 1; var1 >>= 1) {
+         if ((var1 & 1) != 0) {
+            var3 *= var0;
          }
+
+         var0 *= var0;
       }
 
-      this.field2568 = var3;
-   }
-
-   public class349(String var1, class516 var2) {
-      this.field2569 = var1;
-      String var4;
-      if (null == var1) {
-         var4 = null;
+      if (var1 == 1) {
+         return var0 * var3;
       } else {
-         label66: {
-            int var5 = 0;
-
-            int var6;
-            for(var6 = var1.length(); var5 < var6 && class462.method2177(var1.charAt(var5)); ++var5) {
-            }
-
-            while(var6 > var5 && class462.method2177(var1.charAt(var6 - 1))) {
-               --var6;
-            }
-
-            int var7 = var6 - var5;
-            if (var7 >= 1) {
-               int var9;
-               if (null == var2) {
-                  var9 = 12;
-               } else {
-                  switch (var2.field4125) {
-                     case 0:
-                        var9 = 20;
-                        break;
-                     default:
-                        var9 = 12;
-                  }
-               }
-
-               if (var7 <= var9) {
-                  StringBuilder var8 = new StringBuilder(var7);
-
-                  for(var9 = var5; var9 < var6; ++var9) {
-                     char var10 = var1.charAt(var9);
-                     if (class462.method2175(var10)) {
-                        char var11 = class462.method2174(var10);
-                        if (var11 != 0) {
-                           var8.append(var11);
-                        }
-                     }
-                  }
-
-                  if (var8.length() == 0) {
-                     var4 = null;
-                  } else {
-                     var4 = var8.toString();
-                  }
-                  break label66;
-               }
-            }
-
-            var4 = null;
-         }
-      }
-
-      this.field2568 = var4;
-   }
-
-   public String method1598() {
-      return this.field2569;
-   }
-
-   public String method1596() {
-      return this.field2568;
-   }
-
-   public boolean method1599() {
-      return null != this.field2568;
-   }
-
-   public boolean equals(Object var1) {
-      if (var1 instanceof class349) {
-         class349 var2 = (class349)var1;
-         if (null == this.field2568) {
-            return null == var2.field2568;
-         } else if (null == var2.field2568) {
-            return false;
-         } else {
-            return this.hashCode() != var2.hashCode() ? false : this.field2568.equals(var2.field2568);
-         }
-      } else {
-         return false;
+         return var3;
       }
    }
 
-   public int hashCode() {
-      return this.field2568 == null ? 0 : this.field2568.hashCode();
+   public static int method1805(int var0) {
+      return field2769[var0];
    }
 
-   public String toString() {
-      return this.method1598();
+   public static int method1807(int var0, int var1, int var2) {
+      int var4 = method1805(var2 - var1 + 1);
+      var4 <<= var1;
+      return var0 & ~var4;
    }
 
-   public int method1597(class349 var1) {
-      if (this.field2568 == null) {
-         return null == var1.field2568 ? 0 : 1;
-      } else {
-         return null == var1.field2568 ? -1 : this.field2568.compareTo(var1.field2568);
+   public static int method1809(int var0, int var1, int var2) {
+      int var4 = method1805(var2 - var1 + 1);
+      var4 <<= var1;
+      var0 |= var4;
+      return var0;
+   }
+
+   public static int method1808(int var0) {
+      --var0;
+      var0 |= var0 >>> 1;
+      var0 |= var0 >>> 2;
+      var0 |= var0 >>> 4;
+      var0 |= var0 >>> 8;
+      var0 |= var0 >>> 16;
+      return var0 + 1;
+   }
+
+   public static int method1803(int var0) {
+      int var2 = 0;
+      if (var0 < 0 || var0 >= 65536) {
+         var0 >>>= 16;
+         var2 += 16;
       }
+
+      if (var0 >= 256) {
+         var0 >>>= 8;
+         var2 += 8;
+      }
+
+      if (var0 >= 16) {
+         var0 >>>= 4;
+         var2 += 4;
+      }
+
+      if (var0 >= 4) {
+         var0 >>>= 2;
+         var2 += 2;
+      }
+
+      if (var0 >= 1) {
+         var0 >>>= 1;
+         ++var2;
+      }
+
+      return var2 + var0;
    }
 
-   public int compareTo(Object var1) {
-      return this.method1597((class349)var1);
+   public static int method1804(int var0, int var1) {
+      int var3 = var0 >>> 31;
+      return (var0 + var3) / var1 - var3;
    }
 }
