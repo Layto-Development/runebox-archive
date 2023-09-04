@@ -3,6 +3,7 @@ package io.runebox.internal.deobfuscator.asm
 import org.objectweb.asm.commons.Remapper
 import org.objectweb.asm.commons.SimpleRemapper
 import org.objectweb.asm.tree.AbstractInsnNode
+import org.objectweb.asm.tree.AnnotationNode
 import org.objectweb.asm.tree.ClassNode
 import org.objectweb.asm.tree.FieldInsnNode
 import org.objectweb.asm.tree.FieldNode
@@ -40,6 +41,9 @@ fun ClassNode.remap(remapper: Remapper) {
     methods.forEach { method ->
         method.remap(remapper, origName)
     }
+
+    visibleAnnotations?.forEach { it.remap(remapper) }
+    invisibleAnnotations?.forEach { it.remap(remapper) }
 }
 
 fun InnerClassNode.remap(remapper: Remapper) {
@@ -53,6 +57,8 @@ fun FieldNode.remap(remapper: Remapper, owner: String) {
     desc = remapper.mapDesc(desc)
     signature = remapper.mapSignature(signature, true)
     value = remapper.mapValue(value)
+    visibleAnnotations?.forEach { it.remap(remapper) }
+    invisibleAnnotations?.forEach { it.remap(remapper) }
 }
 
 fun MethodNode.remap(remapper: Remapper, owner: String) {
@@ -68,6 +74,9 @@ fun MethodNode.remap(remapper: Remapper, owner: String) {
     tryCatchBlocks.forEach { tcb ->
         tcb.remap(remapper)
     }
+
+    visibleAnnotations?.forEach { it.remap(remapper) }
+    invisibleAnnotations?.forEach { it.remap(remapper) }
 }
 
 fun TryCatchBlockNode.remap(remapper: Remapper) {
@@ -96,3 +105,6 @@ fun AbstractInsnNode.remap(remapper: Remapper) {
     }
 }
 
+fun AnnotationNode.remap(remapper: Remapper) {
+    desc = remapper.mapDesc(desc)
+}

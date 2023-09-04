@@ -14,6 +14,7 @@ gradleEnterprise {
 }
 
 module("internal:deobfuscator")
+module("internal:gamepack")
 module(":logger")
 
 fun module(path: String) {

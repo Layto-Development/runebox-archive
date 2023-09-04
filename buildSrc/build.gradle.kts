@@ -10,12 +10,14 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven(url = "https://jitpack.io")
+    maven(url = "https://maven.fabricmc.net/")
 }
 
 dependencies {
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
     implementation(gradleApi())
+    implementation("net.fabricmc:fabric-fernflower:2.0.0")
 }
 
 tasks {

@@ -73,7 +73,7 @@ class Deobfuscator(
 
         if(runTestClient) {
             Logger.info("Starting test client using output jar file.")
-            TestClient(outputJar).start()
+            TestClient(outputJar, inputJar).start()
         }
 
         Logger.info("Deobfuscator completed successfully.")

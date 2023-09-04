@@ -16,22 +16,25 @@ allprojects {
         mavenLocal()
         mavenCentral()
         maven(url = "https://jitpack.io")
+        maven(url = "https://maven.fabricmc.net")
     }
 }
 
 allprojects {
     apply(plugin = "java")
 
-    dependencies {
-        implementation(kotlin("stdlib"))
-        implementation(kotlin("reflect"))
+    if(project.name !in listOf("runebox-gamepack")) {
+        dependencies {
+            implementation(kotlin("stdlib"))
+            implementation(kotlin("reflect"))
 
-        testImplementation(kotlin("test"))
-        testImplementation("com.willowtreeapps.assertk:assertk:_")
-    }
+            testImplementation(kotlin("test"))
+            testImplementation("com.willowtreeapps.assertk:assertk:_")
+        }
 
-    tasks.test {
-        useJUnitPlatform()
+        tasks.test {
+            useJUnitPlatform()
+        }
     }
 
     java {

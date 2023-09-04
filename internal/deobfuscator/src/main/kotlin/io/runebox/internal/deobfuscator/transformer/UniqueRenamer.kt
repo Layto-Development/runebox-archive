@@ -17,6 +17,7 @@ class UniqueRenamer : Transformer {
         /*
          * Generate name mappings.
          */
+        mappings["client"] = "Client"
         pool.classes.forEach { cls ->
             if(!cls.name.isObfuscatedName()) return@forEach
             mappings[cls.id] = "class${++classCount}"

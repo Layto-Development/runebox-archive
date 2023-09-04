@@ -13,7 +13,7 @@ import java.net.URLClassLoader
 import javax.swing.JFrame
 import kotlin.reflect.full.createInstance
 
-class TestClient(private val file: File) {
+class TestClient(private val file: File, private val vanillaFile: File) {
 
     private val params = hashMapOf<String, String>()
 
@@ -33,8 +33,8 @@ class TestClient(private val file: File) {
             }
         }
 
-        val classloader = URLClassLoader(arrayOf(file.toURI().toURL()))
-        val main = params["initial_class"]!!.replace(".class", "")
+        val classloader = URLClassLoader(arrayOf(file.toURI().toURL(), vanillaFile.toURI().toURL()))
+        val main = params["initial_class"]!!.replace(".class", "").replaceFirstChar { it.uppercase() }
         val applet = classloader.loadClass(main).newInstance() as Applet
 
         applet.background = Color.BLACK
