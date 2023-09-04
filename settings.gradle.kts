@@ -15,11 +15,16 @@ gradleEnterprise {
 
 module("internal:deobfuscator")
 module("internal:gamepack")
+module("internal:injector")
+module("internal:injector:annotations")
+module("internal:updater")
+module("internal:gamepack-api")
+module("internal:mixins")
 module(":logger")
 
 fun module(path: String) {
     val split = path.split(":")
-    val moduleName = split.lastOrNull() ?: path
+    val moduleName = split.drop(1).joinToString("-") { it }
 
     include(moduleName)
 

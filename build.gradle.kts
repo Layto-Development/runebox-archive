@@ -23,7 +23,12 @@ allprojects {
 allprojects {
     apply(plugin = "java")
 
-    if(project.name !in listOf("runebox-gamepack")) {
+    if(project.name !in listOf(
+        "runebox-gamepack",
+        "runebox-gamepack-api",
+        "runebox-injector-annotations",
+        "runebox-mixins"
+    )) {
         dependencies {
             implementation(kotlin("stdlib"))
             implementation(kotlin("reflect"))
