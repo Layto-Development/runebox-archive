@@ -25,13 +25,17 @@ class Deobfuscator(
         register<RuntimeExceptionRemover>()
         register<DeadCodeRemover>()
         register<IllegalStateExceptionRemover>()
-        register<DeadCodeRemover>()
         register<ControlFlowNormalizer>()
+        register<StaticMethodMover>()
+        register<StaticFieldMover>()
         register<UniqueRenamer>()
         register<UnusedArgRemover>()
         register<UnusedFieldRemover>()
         register<UnusedMethodRemover>()
         register<VariableExprFixer>()
+        register<MultiplierRemover>()
+        register<MethodSorter>()
+        register<FieldSorter>()
 
         Logger.info("Registered ${transformers.size} bytecode transformers.")
     }
