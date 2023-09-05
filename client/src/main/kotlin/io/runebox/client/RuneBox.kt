@@ -1,24 +1,39 @@
 package io.runebox.client
 
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatAtomOneDarkContrastIJTheme
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatAtomOneDarkIJTheme
 import io.runebox.api.Client
+import io.runebox.client.rs.ClientLoader
+import io.runebox.client.ui.ClientUI
 import io.runebox.common.RuneboxPaths
 import io.runebox.common.get
 import io.runebox.common.inject
 import org.koin.core.context.startKoin
 import org.koin.core.parameter.parametersOf
 import org.tinylog.kotlin.Logger
-import java.awt.GridLayout
-import java.io.File
+import java.awt.Dimension
+import java.awt.Insets
 import java.math.BigInteger
 import java.net.URL
 import java.security.MessageDigest
-import java.util.concurrent.Executors
+import javax.swing.JDialog
 import javax.swing.JFrame
+import javax.swing.UIManager
 
 class RuneBox {
 
     private val clientLoader: ClientLoader by inject()
+    private val ui: ClientUI by inject()
 
+    /**
+     * The RuneBox Client api instance.
+     * This is the cast client applet with our api interfaces injected.
+     */
+    val client: Client by inject { parametersOf(clientLoader.applet) }
+
+    /**
+     * Starts the runebox client.
+     */
     fun start() {
         Logger.info("Starting RuneBox client.")
 
@@ -26,15 +41,11 @@ class RuneBox {
         this.checkGamepacks()
         clientLoader.load()
 
-        val frame = JFrame("RuneBox")
-        frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        frame.layout = GridLayout(1, 0)
-        frame.setLocationRelativeTo(null)
-        frame.add(clientLoader.applet)
-        frame.pack()
-        frame.isVisible = true
-
-        val client = get<Client> { parametersOf(clientLoader.applet) }
+        /*
+         * Open the client UI.
+         */
+        this.setupSwingDefaults()
+        ui.init()
     }
 
     private fun checkDirs() {
@@ -84,6 +95,11 @@ class RuneBox {
 
     private fun ByteArray.checksum(): String {
         return BigInteger(1, MessageDigest.getInstance("MD5").digest(this)).toString(16).padStart(32, '0')
+    }
+
+    private fun setupSwingDefaults() {
+        FlatAtomOneDarkContrastIJTheme.setUseNativeWindowDecorations(true)
+        FlatAtomOneDarkContrastIJTheme.setup()
     }
 
     companion object {

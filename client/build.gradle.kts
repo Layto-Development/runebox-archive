@@ -7,8 +7,8 @@ dependencies {
     implementation(project(":runebox-common"))
     implementation(project(":runebox-util"))
     implementation(project(":runebox-logger"))
-    runtimeOnly("org.bouncycastle:bcprov-jdk15on:1.52")
-    runtimeOnly("org.json:json:20220320")
+    implementation("com.formdev:flatlaf:_")
+    implementation("com.formdev:flatlaf-intellij-themes:_")
 }
 
 tasks {
@@ -27,6 +27,7 @@ tasks {
     }
 
     create<JavaExec>("run") {
+        dependsOn(build.get())
         group = "application"
         mainClass.set("io.runebox.client.RuneBox")
         workingDir = project.projectDir
