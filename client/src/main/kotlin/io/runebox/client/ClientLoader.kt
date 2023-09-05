@@ -12,7 +12,6 @@ import java.net.URLClassLoader
 
 class ClientLoader {
 
-    lateinit var client: Any private set
     lateinit var applet: Applet private set
     lateinit var classLoader: ClassLoader private set
     lateinit var javConfig: JavConfig private set
@@ -22,7 +21,7 @@ class ClientLoader {
         javConfig = JavConfig.load()
 
         Logger.info("Loading runescape client.")
-        classLoader = URLClassLoader(arrayOf(INJECTED_GAMEPACK.toURI().toURL(), VANILLA_GAMEPACK.toURI().toURL()), ClassLoader.getSystemClassLoader())
+        classLoader = URLClassLoader(arrayOf(INJECTED_GAMEPACK.toURI().toURL(), VANILLA_GAMEPACK.toURI().toURL()))
 
         val initialClass = javConfig["initial_class"]!!.replace(".class", "").replaceFirstChar { it.uppercase() }
         applet = classLoader.loadClass(initialClass).newInstance() as Applet

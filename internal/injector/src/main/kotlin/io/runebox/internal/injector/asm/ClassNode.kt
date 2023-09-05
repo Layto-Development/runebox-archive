@@ -85,8 +85,7 @@ fun ClassNode.toBytes(flags: Int = ClassWriter.COMPUTE_MAXS): ByteArray {
     val writer = ClassWriter(flags)
     val checker = CheckClassAdapter(writer, false)
     this.accept(checker)
-    val bytes = writer.toByteArray()
-    return bytes
+    return writer.toByteArray()
 }
 
 private fun ByteArray.validateDataFlow(name: String) {

@@ -5,12 +5,14 @@ import io.runebox.common.RuneboxPaths
 import io.runebox.common.get
 import io.runebox.common.inject
 import org.koin.core.context.startKoin
+import org.koin.core.parameter.parametersOf
 import org.tinylog.kotlin.Logger
 import java.awt.GridLayout
 import java.io.File
 import java.math.BigInteger
 import java.net.URL
 import java.security.MessageDigest
+import java.util.concurrent.Executors
 import javax.swing.JFrame
 
 class RuneBox {
@@ -32,8 +34,13 @@ class RuneBox {
         frame.pack()
         frame.isVisible = true
 
-        val client = clientLoader.applet as Client
-        client.test()
+        val client = get<Client> { parametersOf(clientLoader.applet) }
+        Executors.newSingleThreadExecutor().execute {
+            while(true) {
+                println("GameState: ${client.gameState}")
+                Thread.sleep(1000)
+            }
+        }
     }
 
     private fun checkDirs() {
