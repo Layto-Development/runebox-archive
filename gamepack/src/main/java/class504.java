@@ -19,7 +19,7 @@ public class class504 {
 
    public class504(class184 var1, boolean var2) {
       int var3 = var1.method1174();
-      boolean var4 = var1.method1125() == 1;
+      boolean var4 = var1.readUnsignedByte() == 1;
       byte var5;
       if (var4) {
          var5 = 1;

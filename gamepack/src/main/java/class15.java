@@ -450,9 +450,9 @@ public class class15 {
    }
 
    void method157(class184 var1) {
-      int var3 = var1.method1125();
+      int var3 = var1.readUnsignedByte();
       if (var3 >= 1 && var3 <= 6) {
-         int var4 = var1.method1125();
+         int var4 = var1.readUnsignedByte();
          if ((var4 & 1) != 0) {
             this.field144 = true;
          }
@@ -471,20 +471,20 @@ public class class15 {
             this.field166 = null;
          }
 
-         this.field162 = var1.method1129();
-         this.field148 = var1.method1129();
+         this.field162 = var1.readInt();
+         this.field148 = var1.readInt();
          if (var3 <= 3 && this.field148 != 0) {
             this.field148 += 16912800;
          }
 
          this.field154 = var1.method1174();
-         this.field147 = var1.method1125();
-         this.field150 = var1.method1133();
+         this.field147 = var1.readUnsignedByte();
+         this.field150 = var1.readString();
          if (var3 >= 4) {
-            var1.method1129();
+            var1.readInt();
          }
 
-         this.field149 = var1.method1125() == 1;
+         this.field149 = var1.readUnsignedByte() == 1;
          this.field163 = var1.method1126();
          this.field151 = var1.method1126();
          this.field152 = var1.method1126();
@@ -526,7 +526,7 @@ public class class15 {
 
                this.field156[var5] = var1.method1126();
                if (var3 >= 2) {
-                  this.field158[var5] = var1.method1129();
+                  this.field158[var5] = var1.readInt();
                }
 
                if (var3 >= 5) {
@@ -536,7 +536,7 @@ public class class15 {
                }
 
                if (var3 >= 6) {
-                  this.field160[var5] = var1.method1125() == 1;
+                  this.field160[var5] = var1.readUnsignedByte() == 1;
                } else {
                   this.field160[var5] = false;
                }
@@ -571,17 +571,17 @@ public class class15 {
                this.field167 = new class197(var5 < 16 ? class349.method1808(var5) : 16);
 
                while(var5-- > 0) {
-                  int var6 = var1.method1129();
+                  int var6 = var1.readInt();
                   int var7 = var6 & 1073741823;
                   int var8 = var6 >>> 30;
                   if (var8 == 0) {
-                     int var9 = var1.method1129();
+                     int var9 = var1.readInt();
                      this.field167.method1226(new class118(var9), (long)var7);
                   } else if (var8 == 1) {
                      long var11 = var1.method1130();
                      this.field167.method1226(new class391(var11), (long)var7);
                   } else if (var8 == 2) {
-                     String var12 = var1.method1133();
+                     String var12 = var1.readString();
                      this.field167.method1226(new class183(var12), (long)var7);
                   }
                }

@@ -10,6 +10,7 @@ fun ClassNode.init(pool: ClassPool) {
     this.pool = pool
     methods.forEach { it.init(this) }
     fields.forEach { it.init(this) }
+    origName
 }
 
 fun ClassNode.reset() {
@@ -22,6 +23,8 @@ fun ClassNode.reset() {
 
 var ClassNode.pool: ClassPool by field()
 var ClassNode.ignored: Boolean by field { false }
+
+var ClassNode.origName: String by field { it.name }
 
 var ClassNode.superClass: ClassNode? by nullField()
 val ClassNode.interfaceClasses: HashSet<ClassNode> by field { hashSetOf() }

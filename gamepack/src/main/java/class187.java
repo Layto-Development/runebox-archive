@@ -13,8 +13,8 @@ public class class187 extends class55 {
 
    class187(class184 var1) {
       this.field1844 = var1.method1174();
-      this.field1845 = var1.method1125() == 1;
-      int var2 = var1.method1125();
+      this.field1845 = var1.readUnsignedByte() == 1;
+      int var2 = var1.readUnsignedByte();
       if (var2 >= 1 && var2 > 4) {
       }
 
@@ -29,7 +29,7 @@ public class class187 extends class55 {
          this.field1847 = new int[var2 - 1];
 
          for(var3 = 0; var3 < var2 - 1; ++var3) {
-            this.field1847[var3] = var1.method1125();
+            this.field1847[var3] = var1.readUnsignedByte();
          }
       }
 
@@ -37,18 +37,18 @@ public class class187 extends class55 {
          this.field1848 = new int[var2 - 1];
 
          for(var3 = 0; var3 < var2 - 1; ++var3) {
-            this.field1848[var3] = var1.method1125();
+            this.field1848[var3] = var1.readUnsignedByte();
          }
       }
 
       this.field1849 = new int[var2];
 
       for(var3 = 0; var3 < var2; ++var3) {
-         this.field1849[var3] = var1.method1129();
+         this.field1849[var3] = var1.readInt();
       }
 
-      this.field1850 = var1.method1125();
-      this.field1853 = var1.method1125();
+      this.field1850 = var1.readUnsignedByte();
+      this.field1853 = var1.readUnsignedByte();
       this.field1852 = null;
    }
 

@@ -35,7 +35,7 @@ public class class444 extends class151 {
 
    public void method2166(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -50,17 +50,17 @@ public class class444 extends class151 {
       } else if (var2 == 2) {
          this.field3368 = var1.method1173();
       } else if (var2 == 3) {
-         this.field3369 = var1.method1133();
+         this.field3369 = var1.readString();
       } else if (var2 == 4) {
          this.field3376 = var1.method1181();
       } else if (var2 == 5) {
          var1.method1181();
       } else if (var2 == 6) {
-         this.field3371 = var1.method1125();
+         this.field3371 = var1.readUnsignedByte();
       } else {
          int var4;
          if (var2 == 7) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             if ((var4 & 1) == 0) {
                this.field3372 = false;
             }
@@ -69,11 +69,11 @@ public class class444 extends class151 {
                this.field3373 = true;
             }
          } else if (var2 == 8) {
-            var1.method1125();
+            var1.readUnsignedByte();
          } else if (var2 >= 10 && var2 <= 14) {
-            this.field3374[var2 - 10] = var1.method1133();
+            this.field3374[var2 - 10] = var1.readString();
          } else if (var2 == 15) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             this.field3381 = new int[var4 * 2];
 
             int var5;
@@ -81,13 +81,13 @@ public class class444 extends class151 {
                this.field3381[var5] = var1.method1127();
             }
 
-            var1.method1129();
-            var5 = var1.method1125();
+            var1.readInt();
+            var5 = var1.readUnsignedByte();
             this.field3379 = new int[var5];
 
             int var6;
             for(var6 = 0; var6 < this.field3379.length; ++var6) {
-               this.field3379[var6] = var1.method1129();
+               this.field3379[var6] = var1.readInt();
             }
 
             this.field3383 = new byte[var4];
@@ -97,30 +97,30 @@ public class class444 extends class151 {
             }
          } else if (var2 != 16) {
             if (var2 == 17) {
-               this.field3366 = var1.method1133();
+               this.field3366 = var1.readString();
             } else if (var2 == 18) {
                var1.method1173();
             } else if (var2 == 19) {
                this.field3384 = var1.method1174();
             } else if (var2 == 21) {
-               var1.method1129();
+               var1.readInt();
             } else if (var2 == 22) {
-               var1.method1129();
+               var1.readInt();
             } else if (var2 == 23) {
-               var1.method1125();
-               var1.method1125();
-               var1.method1125();
+               var1.readUnsignedByte();
+               var1.readUnsignedByte();
+               var1.readUnsignedByte();
             } else if (var2 == 24) {
                var1.method1127();
                var1.method1127();
             } else if (var2 == 25) {
                var1.method1173();
             } else if (var2 == 28) {
-               var1.method1125();
+               var1.readUnsignedByte();
             } else if (var2 == 29) {
-               this.field3387 = (class77)class341.method1788(class77.method699(), var1.method1125());
+               this.field3387 = (class77)class341.method1788(class77.method699(), var1.readUnsignedByte());
             } else if (var2 == 30) {
-               this.field3382 = (class132)class341.method1788(class132.method892(), var1.method1125());
+               this.field3382 = (class132)class341.method1788(class132.method892(), var1.readUnsignedByte());
             }
          }
       }

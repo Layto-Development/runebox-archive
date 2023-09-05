@@ -32,7 +32,7 @@ public class class157 extends class151 {
 
    void method972(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -64,33 +64,33 @@ public class class157 extends class151 {
       } else if (var2 == 2) {
          this.field1667 = var1.method1174();
       } else if (var2 == 3) {
-         var4 = var1.method1125();
+         var4 = var1.readUnsignedByte();
          this.field1669 = new int[var4 + 1];
 
          for(var5 = 0; var5 < var4; ++var5) {
-            this.field1669[var5] = var1.method1125();
+            this.field1669[var5] = var1.readUnsignedByte();
          }
 
          this.field1669[var4] = 9999999;
       } else if (var2 == 4) {
          this.field1670 = true;
       } else if (var2 == 5) {
-         this.field1671 = var1.method1125();
+         this.field1671 = var1.readUnsignedByte();
       } else if (var2 == 6) {
          this.field1668 = var1.method1174();
       } else if (var2 == 7) {
          this.field1673 = var1.method1174();
       } else if (var2 == 8) {
-         this.field1656 = var1.method1125();
+         this.field1656 = var1.readUnsignedByte();
          this.field1675 = true;
       } else if (var2 == 9) {
-         this.field1676 = var1.method1125();
+         this.field1676 = var1.readUnsignedByte();
       } else if (var2 == 10) {
-         this.field1677 = var1.method1125();
+         this.field1677 = var1.readUnsignedByte();
       } else if (var2 == 11) {
-         this.field1678 = var1.method1125();
+         this.field1678 = var1.readUnsignedByte();
       } else if (var2 == 12) {
-         var4 = var1.method1125();
+         var4 = var1.readUnsignedByte();
          this.field1664 = new int[var4];
 
          for(var5 = 0; var5 < var4; ++var5) {
@@ -101,14 +101,14 @@ public class class157 extends class151 {
             this.field1664[var5] += var1.method1174() << 16;
          }
       } else if (var2 == 13) {
-         var4 = var1.method1125();
+         var4 = var1.readUnsignedByte();
          this.field1658 = new int[var4];
 
          for(var5 = 0; var5 < var4; ++var5) {
             this.field1658[var5] = var1.method1181();
          }
       } else if (var2 == 14) {
-         this.field1659 = var1.method1129();
+         this.field1659 = var1.readInt();
       } else if (var2 == 15) {
          var4 = var1.method1174();
          this.field1672 = new HashMap();
@@ -128,10 +128,10 @@ public class class157 extends class151 {
             this.field1660[var4] = false;
          }
 
-         var4 = var1.method1125();
+         var4 = var1.readUnsignedByte();
 
          for(var5 = 0; var5 < var4; ++var5) {
-            this.field1660[var1.method1125()] = true;
+            this.field1660[var1.readUnsignedByte()] = true;
          }
       }
 

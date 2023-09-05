@@ -12,7 +12,7 @@ public class class43 extends class56 {
    }
 
    void method608(class184 var1) {
-      if (var1.method1125() != 255) {
+      if (var1.readUnsignedByte() != 255) {
          --var1.field1818;
          this.field927 = var1.method1130();
       }

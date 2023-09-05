@@ -94,14 +94,14 @@ public class class237 {
                }
 
                var13.field1818 = 0;
-               var14 = var13.method1125();
+               var14 = var13.readUnsignedByte();
                if (var14 < 1 || var14 > 3) {
                   throw new IOException("" + var14);
                }
 
                int var15 = 0;
                if (var14 > 1) {
-                  var15 = var13.method1125();
+                  var15 = var13.readUnsignedByte();
                }
 
                if (var14 <= 2) {

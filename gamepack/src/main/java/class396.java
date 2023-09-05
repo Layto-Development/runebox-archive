@@ -17,7 +17,7 @@ public class class396 extends class151 {
 
    void method1911(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -28,12 +28,12 @@ public class class396 extends class151 {
 
    void method1910(class184 var1, int var2) {
       if (var2 == 1) {
-         this.field3094 = var1.method1125();
+         this.field3094 = var1.readUnsignedByte();
       } else {
          int var4;
          int var5;
          if (var2 == 2) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             this.field3095 = new int[var4];
 
             for(var5 = 0; var5 < var4; ++var5) {
@@ -42,7 +42,7 @@ public class class396 extends class151 {
          } else if (var2 == 3) {
             this.field3100 = true;
          } else if (var2 == 40) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             this.field3096 = new short[var4];
             this.field3097 = new short[var4];
 
@@ -51,7 +51,7 @@ public class class396 extends class151 {
                this.field3097[var5] = (short)var1.method1174();
             }
          } else if (var2 == 41) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             this.field3098 = new short[var4];
             this.field3092 = new short[var4];
 

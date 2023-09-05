@@ -64,16 +64,16 @@ public class class114 implements class39 {
    }
 
    public void method568(class184 var1) {
-      this.field1471 = var1.method1125();
-      this.field1464 = var1.method1125();
+      this.field1471 = var1.readUnsignedByte();
+      this.field1464 = var1.readUnsignedByte();
       this.field1473 = var1.method1174();
-      this.field1466 = var1.method1125();
+      this.field1466 = var1.readUnsignedByte();
       this.field1467 = var1.method1174();
-      this.field1470 = var1.method1125();
+      this.field1470 = var1.readUnsignedByte();
       this.field1468 = var1.method1174();
-      this.field1465 = var1.method1125();
+      this.field1465 = var1.readUnsignedByte();
       this.field1469 = var1.method1174();
-      this.field1472 = var1.method1125();
+      this.field1472 = var1.readUnsignedByte();
       this.method815();
    }
 

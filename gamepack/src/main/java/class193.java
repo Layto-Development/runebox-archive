@@ -12,7 +12,7 @@ public class class193 extends class531 {
    void method2516(class184 var1) {
       this.field1886 = var1.method1184();
       if (null != this.field1886) {
-         var1.method1125();
+         var1.readUnsignedByte();
          this.field1884 = var1.method1126();
          this.field1885 = var1.method1126();
       }

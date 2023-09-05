@@ -1668,7 +1668,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          if (field612 == 8 && ((class168)var2).method1014() >= class317.field2581) {
             var3.field1818 = 0;
             ((class168)var2).method1013(var3.field1816, var3.field1818, class317.field2581);
-            class222 var38 = class222.method1323()[var3.method1125()];
+            class222 var38 = class222.method1323()[var3.readUnsignedByte()];
 
             try {
                switch (var38.field2042) {
@@ -1812,9 +1812,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   var3.field1818 = 0;
                   ((class168)var2).method1013(var3.field1816, 0, class24.field229);
                   var3.field1818 = 0;
-                  String var45 = var3.method1133();
-                  String var43 = var3.method1133();
-                  String var36 = var3.method1133();
+                  String var45 = var3.readString();
+                  String var43 = var3.readString();
+                  String var36 = var3.readString();
                   class534.method2555(var45, var43, var36);
                   updateGameState(10);
                   if (field621.method912()) {
@@ -2792,7 +2792,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             var1.field2766 = var1.field2760;
             var1.field2760 = var1.field2755;
             if (class375.field2990 == var1.field2755) {
-               class169.field1723 = class321.method1696(var4.method1125());
+               class169.field1723 = class321.method1696(var4.readUnsignedByte());
                var1.field2755 = null;
                return true;
             }
@@ -2869,7 +2869,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
             class480 var85;
             if (var1.field2755 == class375.field2987) {
-               var23 = var4.method1129();
+               var23 = var4.readInt();
                var85 = class480.method2355(var23);
                var85.field3716 = 3;
                var85.field3717 = class259.field2281.field4096.method1392();
@@ -2913,8 +2913,8 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field3014) {
-               var23 = var4.method1129();
-               var25 = var4.method1129();
+               var23 = var4.readInt();
+               var25 = var4.readInt();
                var7 = class210.method1302();
                class335 var83 = class335.createPacket(ClientPacket.field1013, field641.field2758);
                var83.buffer.method1114(class210.field1974);
@@ -3002,11 +3002,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                field837 = true;
                field843 = false;
                field839 = true;
-               class51.field1058 = var4.method1125();
-               class259.field2278 = var4.method1125();
+               class51.field1058 = var4.readUnsignedByte();
+               class259.field2278 = var4.readUnsignedByte();
                class84.field1267 = var4.method1174();
                var23 = var4.method1174();
-               var25 = var4.method1125();
+               var25 = var4.readUnsignedByte();
                var7 = 64 + class51.field1058 * 128;
                var8 = 64 + class259.field2278 * 128;
                var9 = method403(var7, var8, class192.field1881) - class84.field1267;
@@ -3045,9 +3045,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
                class49 var69;
                for(; var7-- > 0; var69.field1046 = true) {
-                  var8 = var4.method1129();
+                  var8 = var4.readInt();
                   var9 = var4.method1174();
-                  var10 = var4.method1125();
+                  var10 = var4.readUnsignedByte();
                   var69 = (class49)field597.method709((long)var8);
                   if (null != var69 && var9 != var69.field1047) {
                      method437(var69, true);
@@ -3070,10 +3070,10 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                field795 = new class79(512);
 
                while(var4.field1818 < var23) {
-                  var8 = var4.method1129();
+                  var8 = var4.readInt();
                   var9 = var4.method1174();
                   var10 = var4.method1174();
-                  var11 = var4.method1129();
+                  var11 = var4.readInt();
 
                   for(var36 = var9; var36 <= var10; ++var36) {
                      var52 = ((long)var8 << 32) + (long)var36;
@@ -3087,7 +3087,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
             class480 var65;
             if (var1.field2755 == class375.field3039) {
-               var23 = var4.method1129();
+               var23 = var4.readInt();
                var25 = var4.method1170();
                class49 var88 = (class49)field597.method709((long)var25);
                var78 = (class49)field597.method709((long)var23);
@@ -3144,7 +3144,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field3007) {
-               var23 = var4.method1129();
+               var23 = var4.readInt();
                class49 var90 = (class49)field597.method709((long)var23);
                if (null != var90) {
                   method437(var90, true);
@@ -3254,7 +3254,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (class375.field3019 == var1.field2755) {
-               field829 = var4.method1125();
+               field829 = var4.readUnsignedByte();
                var1.field2755 = null;
                return true;
             }
@@ -3263,10 +3263,10 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             String var67;
             if (class375.field3031 == var1.field2755) {
                var76 = var4.method1126();
-               var6 = var4.method1133();
+               var6 = var4.readString();
                long var86 = (long)var4.method1174();
                long var70 = (long)var4.method1181();
-               class363 var62 = (class363)class341.method1788(class363.method1847(), var4.method1125());
+               class363 var62 = (class363)class341.method1788(class363.method1847(), var4.readUnsignedByte());
                long var50 = (var86 << 32) + var70;
                boolean var56 = false;
                class290 var75 = null;
@@ -3321,7 +3321,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
             String var28;
             if (class375.field3025 == var1.field2755) {
-               var28 = var4.method1133();
+               var28 = var4.readString();
                var25 = var4.method1146();
                var7 = var4.method1147();
                if (var7 >= 1 && var7 <= 8) {
@@ -3384,7 +3384,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             boolean var57;
             if (class375.field3002 == var1.field2755) {
                var57 = var4.method1185() == 1;
-               var25 = var4.method1129();
+               var25 = var4.readInt();
                var29 = class480.method2355(var25);
                if (var57 != var29.field3692) {
                   var29.field3692 = var57;
@@ -3467,7 +3467,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                byte[] var91 = new byte[var1.field2761];
                var4.method1002(var91, 0, var91.length);
                class184 var87 = new class184(var91);
-               var54 = var87.method1133();
+               var54 = var87.readString();
                class352.method1812(var54, true, false);
                var1.field2755 = null;
                return true;
@@ -3475,9 +3475,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
             if (var1.field2755 == class375.field3009) {
                class230 var89 = new class230();
-               var89.field2136 = var4.method1133();
+               var89.field2136 = var4.readString();
                var89.field2133 = var4.method1174();
-               var25 = var4.method1129();
+               var25 = var4.readInt();
                var89.field2129 = var25;
                if (var89.method1398()) {
                   var89.field2140 = "beta";
@@ -3521,12 +3521,12 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                field837 = true;
                field843 = false;
                field838 = true;
-               class190.field1862 = var4.method1125();
-               class180.field1807 = var4.method1125();
+               class190.field1862 = var4.readUnsignedByte();
+               class180.field1807 = var4.readUnsignedByte();
                var23 = var4.method1174();
                var25 = var4.method1174();
                field840 = var4.method1132();
-               var7 = var4.method1125();
+               var7 = var4.readUnsignedByte();
                var8 = class190.field1862 * 128 + 64;
                var9 = 64 + class180.field1807 * 128;
                boolean var58 = false;
@@ -3588,7 +3588,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field3023) {
-               field810 = var4.method1125();
+               field810 = var4.readUnsignedByte();
                field809 = var4.method1146();
                var1.field2755 = null;
                return true;
@@ -3598,11 +3598,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                field837 = true;
                field843 = false;
                field839 = false;
-               class51.field1058 = var4.method1125();
-               class259.field2278 = var4.method1125();
+               class51.field1058 = var4.readUnsignedByte();
+               class259.field2278 = var4.readUnsignedByte();
                class84.field1267 = var4.method1174();
-               class180.field1809 = var4.method1125();
-               class444.field3385 = var4.method1125();
+               class180.field1809 = var4.readUnsignedByte();
+               class444.field3385 = var4.readUnsignedByte();
                if (class444.field3385 >= 100) {
                   var23 = 64 + class51.field1058 * 128;
                   var25 = 64 + class259.field2278 * 128;
@@ -3631,7 +3631,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field2988) {
-               field654 = var4.method1125();
+               field654 = var4.readUnsignedByte();
                if (field654 == 1) {
                   field598 = var4.method1174();
                }
@@ -3665,7 +3665,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   field654 = 2;
                   field600 = var4.method1174();
                   field743 = var4.method1174();
-                  field607 = var4.method1125();
+                  field607 = var4.readUnsignedByte();
                }
 
                if (field654 == 10) {
@@ -3717,7 +3717,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
             if (class375.field2965 == var1.field2755) {
                var23 = var4.method1128();
-               var25 = var4.method1129();
+               var25 = var4.readInt();
                var7 = var4.method1127();
                var34 = class480.method2355(var25);
                if (var34.field3683 != var7 || var34.field3684 != var23 || var34.field3679 != 0 || var34.field3680 != 0) {
@@ -3774,7 +3774,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                var25 = var7 >> 8 & 255;
                var8 = var23 + (var7 >> 4 & 7);
                var9 = var25 + (var7 & 7);
-               int var19 = var4.method1125();
+               int var19 = var4.readUnsignedByte();
                int var18 = var4.method1147();
                var10 = var51 + var8;
                var11 = var47 + var9;
@@ -3880,7 +3880,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                var23 = method397(var4.method1127() & 2027);
                var25 = method438(var4.method1127() & 2027);
                var7 = var4.method1174();
-               var8 = var4.method1125();
+               var8 = var4.readUnsignedByte();
                field658 = new class74(class382.field3061, var25, var7, var8);
                field632 = new class74(class333.field2680, var23, var7, var8);
                var1.field2755 = null;
@@ -3969,7 +3969,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
             if (var1.field2755 == class375.field3038) {
                var23 = var4.method1174();
-               var25 = var4.method1125();
+               var25 = var4.readUnsignedByte();
                var7 = var4.method1174();
                method407(var23, var25, var7);
                var1.field2755 = null;
@@ -3977,7 +3977,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (class375.field2992 == var1.field2755) {
-               var23 = var4.method1125();
+               var23 = var4.readUnsignedByte();
                var25 = var4.method1165();
                var29 = class480.method2355(var25);
                class480.method2356(var29, class259.field2281.field4096.field2116, var23);
@@ -4001,7 +4001,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field2931) {
-               var23 = var4.method1125();
+               var23 = var4.readUnsignedByte();
                class106.method791(var23);
                var1.field2755 = null;
                return false;
@@ -4018,7 +4018,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             boolean var59;
             if (var1.field2755 == class375.field3043) {
                var23 = var4.method1165();
-               var59 = var4.method1125() == 1;
+               var59 = var4.readUnsignedByte() == 1;
                var29 = class480.method2355(var23);
                class474.method2289(var29, class259.field2281.field4096, var59);
                method485(var29);
@@ -4042,10 +4042,10 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
             boolean var13;
             if (class375.field2953 == var1.field2755) {
-               var28 = var4.method1133();
+               var28 = var4.readString();
                var49 = (long)var4.method1174();
                var32 = (long)var4.method1181();
-               class363 var43 = (class363)class341.method1788(class363.method1847(), var4.method1125());
+               class363 var43 = (class363)class341.method1788(class363.method1847(), var4.readUnsignedByte());
                long var39 = (var49 << 32) + var32;
                var13 = false;
 
@@ -4101,7 +4101,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             class433 var40;
             if (var1.field2755 == class375.field2956) {
                short var73 = (short)var4.method1128();
-               var25 = var4.method1125();
+               var25 = var4.readUnsignedByte();
                var7 = var4.method1174();
                var8 = var4.method1164();
                var40 = field636[var7];
@@ -4114,7 +4114,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (class375.field2969 == var1.field2755) {
-               var23 = var4.method1129();
+               var23 = var4.readInt();
                if (field676 != var23) {
                   field676 = var23;
                   method497();
@@ -4140,18 +4140,18 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field3020) {
-               var28 = var4.method1133();
+               var28 = var4.readString();
                Object[] var63 = new Object[var28.length() + 1];
 
                for(var7 = var28.length() - 1; var7 >= 0; --var7) {
                   if (var28.charAt(var7) == 's') {
-                     var63[var7 + 1] = var4.method1133();
+                     var63[var7 + 1] = var4.readString();
                   } else {
-                     var63[var7 + 1] = new Integer(var4.method1129());
+                     var63[var7 + 1] = new Integer(var4.readInt());
                   }
                }
 
-               var63[0] = new Integer(var4.method1129());
+               var63[0] = new Integer(var4.readInt());
                class208 var64 = new class208();
                var64.field1954 = var63;
                class18.method216(var64);
@@ -4160,7 +4160,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (class375.field3008 == var1.field2755) {
-               var28 = var4.method1133();
+               var28 = var4.readString();
                var6 = class282.method1579(class330.method1733(class68.method654(var4)));
                class194.method1209(6, var28, var6);
                var1.field2755 = null;
@@ -4177,17 +4177,17 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
             if (var1.field2755 == class375.field2952) {
                var23 = var4.method1172();
-               var59 = var4.method1125() == 1;
+               var59 = var4.readUnsignedByte() == 1;
                var54 = "";
                boolean var38 = false;
                if (var59) {
-                  var54 = var4.method1133();
+                  var54 = var4.readString();
                   if (class314.field2562.method1482(new class251(var54, class121.field1501))) {
                      var38 = true;
                   }
                }
 
-               String var44 = var4.method1133();
+               String var44 = var4.readString();
                if (!var38) {
                   class194.method1209(var23, var54, var44);
                }
@@ -4197,7 +4197,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field3011) {
-               var57 = var4.method1125() == 1;
+               var57 = var4.readUnsignedByte() == 1;
                if (var57) {
                   class236.field2168 = class80.method713() - var4.method1130();
                   class489.field3859 = new class504(var4, true);
@@ -4230,7 +4230,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   var23 = -1;
                }
 
-               var25 = var4.method1129();
+               var25 = var4.readInt();
                var7 = var4.method1165();
                var34 = class480.method2355(var25);
                class71 var35;
@@ -4312,11 +4312,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field2943) {
-               var28 = var4.method1133();
+               var28 = var4.readString();
                var49 = var4.method1130();
                var32 = (long)var4.method1174();
                var41 = (long)var4.method1181();
-               class363 var45 = (class363)class341.method1788(class363.method1847(), var4.method1125());
+               class363 var45 = (class363)class341.method1788(class363.method1847(), var4.readUnsignedByte());
                var52 = var41 + (var32 << 32);
                boolean var15 = false;
 
@@ -4347,17 +4347,17 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (class375.field2998 == var1.field2755) {
-               var23 = var4.method1125();
+               var23 = var4.readUnsignedByte();
                method512(var23);
                var1.field2755 = null;
                return true;
             }
 
             if (class375.field2959 == var1.field2755) {
-               var23 = var4.method1125();
-               var25 = var4.method1125();
-               var7 = var4.method1125();
-               var8 = var4.method1125();
+               var23 = var4.readUnsignedByte();
+               var25 = var4.readUnsignedByte();
+               var7 = var4.readUnsignedByte();
+               var8 = var4.readUnsignedByte();
                field844[var23] = true;
                field638[var23] = var25;
                field798[var23] = var7;
@@ -4368,7 +4368,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (class375.field2982 == var1.field2755) {
-               var23 = var4.method1129();
+               var23 = var4.readInt();
                var25 = var4.method1174();
                if (var23 < -70000) {
                   var25 += 32768;
@@ -4385,9 +4385,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   var9 = var4.method1174();
                   var10 = 0;
                   if (var9 != 0) {
-                     var10 = var4.method1125();
+                     var10 = var4.readUnsignedByte();
                      if (var10 == 255) {
-                        var10 = var4.method1129();
+                        var10 = var4.readInt();
                      }
                   }
 
@@ -4416,7 +4416,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                var7 = method438(class382.field3061 + var25 & 2027);
                var8 = class333.field2680 + var23;
                var9 = var4.method1174();
-               var10 = var4.method1125();
+               var10 = var4.readUnsignedByte();
                field658 = new class74(class382.field3061, var7, var9, var10);
                field632 = new class74(class333.field2680, var8, var9, var10);
                var1.field2755 = null;
@@ -4457,7 +4457,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (class375.field2948 == var1.field2755) {
-               method416(var4.method1133());
+               method416(var4.readString());
                var1.field2755 = null;
                return true;
             }
@@ -4478,11 +4478,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field2997) {
-               class372.field2904 = var4.method1125();
+               class372.field2904 = var4.readUnsignedByte();
                class359.field2820 = var4.method1147();
 
                while(var4.field1818 < var1.field2761) {
-                  var23 = var4.method1125();
+                  var23 = var4.readUnsignedByte();
                   class413 var31 = class413.method1989()[var23];
                   class230.method1400(var31);
                }
@@ -4505,14 +4505,14 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                field837 = true;
                field843 = false;
                field838 = true;
-               class190.field1862 = var4.method1125();
-               class180.field1807 = var4.method1125();
+               class190.field1862 = var4.readUnsignedByte();
+               class180.field1807 = var4.readUnsignedByte();
                var23 = var4.method1174();
-               var25 = var4.method1125() * 128 + 64;
-               var7 = var4.method1125() * 128 + 64;
+               var25 = var4.readUnsignedByte() * 128 + 64;
+               var7 = var4.readUnsignedByte() * 128 + 64;
                var8 = var4.method1174();
                field840 = var4.method1132();
-               var9 = var4.method1125();
+               var9 = var4.readUnsignedByte();
                var10 = class190.field1862 * 128 + 64;
                var11 = class180.field1807 * 128 + 64;
                var12 = false;
@@ -4541,11 +4541,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                field837 = true;
                field843 = false;
                field838 = false;
-               class190.field1862 = var4.method1125();
-               class180.field1807 = var4.method1125();
+               class190.field1862 = var4.readUnsignedByte();
+               class180.field1807 = var4.readUnsignedByte();
                class12.field116 = var4.method1174();
-               class262.field2287 = var4.method1125();
-               class441.field3347 = var4.method1125();
+               class262.field2287 = var4.readUnsignedByte();
+               class441.field3347 = var4.readUnsignedByte();
                if (class441.field3347 >= 100) {
                   class453.field3545 = 64 + class190.field1862 * 128;
                   class158.field1688 = class180.field1807 * 128 + 64;
@@ -4574,7 +4574,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field2985) {
-               var28 = var4.method1133();
+               var28 = var4.readString();
                var25 = var4.method1170();
                var29 = class480.method2355(var25);
                if (!var28.equals(var29.field3734)) {
@@ -4587,7 +4587,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (class375.field3034 == var1.field2755) {
-               var23 = var4.method1129();
+               var23 = var4.readInt();
                var25 = var4.method1174();
                if (var23 < -70000) {
                   var25 += 32768;
@@ -4667,8 +4667,8 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field3027) {
-               var23 = var4.method1125();
-               if (var4.method1125() == 0) {
+               var23 = var4.readUnsignedByte();
+               if (var4.readUnsignedByte() == 0) {
                   field854[var23] = new class177();
                   var4.field1818 += 18;
                } else {
@@ -4722,12 +4722,12 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var1.field2755 == class375.field3032) {
-               field827 = var4.method1125();
+               field827 = var4.readUnsignedByte();
                if (field827 == 255) {
                   field827 = 0;
                }
 
-               field750 = var4.method1125();
+               field750 = var4.readUnsignedByte();
                if (field750 == 255) {
                   field750 = 0;
                }
@@ -7470,7 +7470,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
          for(var6 = 0; var6 < var5; ++var6) {
             for(var7 = 0; var7 < 4; ++var7) {
-               class340.field2725[var6][var7] = var1.method1129();
+               class340.field2725[var6][var7] = var1.readInt();
             }
          }
 
@@ -7493,7 +7493,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
          method516(var3, var4, true);
       } else {
-         boolean var16 = var1.method1125() == 1;
+         boolean var16 = var1.readUnsignedByte() == 1;
          var4 = var1.method1174();
          var5 = var1.method1174();
          var6 = var1.method1174();
@@ -7519,7 +7519,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
          for(var7 = 0; var7 < var6; ++var7) {
             for(var8 = 0; var8 < 4; ++var8) {
-               class340.field2725[var7][var8] = var1.method1129();
+               class340.field2725[var7][var8] = var1.readInt();
             }
          }
 
@@ -8828,15 +8828,15 @@ public final class Client extends class210 implements class161, OAuthApi, class2
       for(int var2 = 0; var2 < field690; ++var2) {
          int var3 = field787[var2];
          class433 var4 = field636[var3];
-         int var5 = var0.method1125();
+         int var5 = var0.readUnsignedByte();
          int var6;
          if ((var5 & 8) != 0) {
-            var6 = var0.method1125();
+            var6 = var0.readUnsignedByte();
             var5 += var6 << 8;
          }
 
          if ((var5 & 2048) != 0) {
-            var6 = var0.method1125();
+            var6 = var0.readUnsignedByte();
             var5 += var6 << 16;
          }
 
@@ -8893,7 +8893,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          long var17;
          boolean var18;
          if ((var5 & 512) != 0) {
-            var6 = var0.method1125();
+            var6 = var0.readUnsignedByte();
             if ((var6 & 1) == 1) {
                var4.method2123();
             } else {
@@ -9055,7 +9055,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          }
 
          if ((var5 & 262144) != 0) {
-            var6 = var0.method1125();
+            var6 = var0.readUnsignedByte();
             var14 = new int[8];
             var15 = new short[8];
 
@@ -9073,16 +9073,16 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          }
 
          if ((var5 & '\u8000') != 0) {
-            var4.method2112(var0.method1133());
+            var4.method2112(var0.readString());
          }
 
          if ((var5 & 2) != 0) {
             var0.method1174();
-            var0.method1129();
+            var0.readInt();
          }
 
          if ((var5 & 1) != 0) {
-            var4.field4069 = var0.method1133();
+            var4.field4069 = var0.readString();
             var4.field4022 = 100;
          }
 
@@ -9092,7 +9092,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             var4.field4061 = var0.method1148();
             var4.field4019 = var0.method1148();
             var4.field4013 = var0.method1148();
-            var4.field4051 = (byte)var0.method1125();
+            var4.field4051 = (byte)var0.readUnsignedByte();
          }
 
          if ((var5 & 256) != 0) {
@@ -9155,7 +9155,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          }
 
          if ((var5 & 1024) != 0) {
-            var4.field4074 = var0.method1129();
+            var4.field4074 = var0.readInt();
          }
       }
 

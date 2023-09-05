@@ -27,7 +27,7 @@ public class class337 extends class151 {
 
    void method1776(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -104,7 +104,7 @@ public class class337 extends class151 {
             throw new IllegalStateException();
          }
 
-         this.field2700 = var1.method1125();
+         this.field2700 = var1.readUnsignedByte();
       } else if (var2 == 13) {
          if (var3 >= -1) {
             return;
@@ -158,7 +158,7 @@ public class class337 extends class151 {
             }
          }
 
-         int var5 = var1.method1125();
+         int var5 = var1.readUnsignedByte();
          this.field2711 = new int[var5 + 2];
 
          for(int var6 = 0; var6 <= var5; ++var6) {

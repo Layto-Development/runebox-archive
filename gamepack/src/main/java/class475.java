@@ -18,14 +18,14 @@ public class class475 {
 
    public void method2292(class184 var1, int var2) {
       this.field3646 = var2;
-      this.field3638 = var1.method1133();
-      this.field3640 = var1.method1133();
-      this.field3642 = new class89(var1.method1129());
-      this.field3644 = var1.method1129();
-      var1.method1125();
-      this.field3647 = var1.method1125() == 1;
-      this.field3641 = var1.method1125();
-      int var4 = var1.method1125();
+      this.field3638 = var1.readString();
+      this.field3640 = var1.readString();
+      this.field3642 = new class89(var1.readInt());
+      this.field3644 = var1.readInt();
+      var1.readUnsignedByte();
+      this.field3647 = var1.readUnsignedByte() == 1;
+      this.field3641 = var1.readUnsignedByte();
+      int var4 = var1.readUnsignedByte();
       this.field3648 = new LinkedList();
 
       for(int var5 = 0; var5 < var4; ++var5) {
@@ -36,7 +36,7 @@ public class class475 {
    }
 
    class39 method2308(class184 var1) {
-      int var3 = var1.method1125();
+      int var3 = var1.readUnsignedByte();
       class521[] var4 = new class521[]{class521.field4087, class521.field4089, class521.field4088, class521.field4094};
       class521 var5 = (class521)class341.method1788(var4, var3);
       Object var6 = null;

@@ -31,7 +31,7 @@ public class class19 extends class428 {
    }
 
    public final void method232(class184 var1, int var2) {
-      this.method231(var1.method1133());
+      this.method231(var1.readString());
       long var4 = var1.method1130();
       long var7 = var4;
       String var6;
@@ -64,7 +64,7 @@ public class class19 extends class428 {
       this.field206 = var1.method1126();
       short var15;
       if (var2 == 1) {
-         var9 = var1.method1125();
+         var9 = var1.readUnsignedByte();
          var15 = 255;
       } else {
          if (var2 != 2) {
@@ -80,11 +80,11 @@ public class class19 extends class428 {
          this.method2037();
 
          for(int var16 = 0; var16 < var11; ++var16) {
-            class498 var17 = (class498)this.method2052(new class251(var1.method1133(), this.field203));
+            class498 var17 = (class498)this.method2052(new class251(var1.readString(), this.field203));
             int var14 = var1.method1174();
             var17.method1983(var14, ++this.field204 - 1);
             var17.field3158 = var1.method1126();
-            var1.method1133();
+            var1.readString();
             this.method235(var17);
          }
 
@@ -92,7 +92,7 @@ public class class19 extends class428 {
    }
 
    public final void method233(class184 var1, byte var2) {
-      class251 var3 = new class251(var1.method1133(), this.field203);
+      class251 var3 = new class251(var1.readString(), this.field203);
       int var4 = var1.method1174();
       byte var5 = var1.method1126();
       boolean var6 = false;
@@ -133,7 +133,7 @@ public class class19 extends class428 {
             }
          }
       } else {
-         var1.method1133();
+         var1.readString();
          var7 = (class498)this.method2040(var3);
          if (null == var7) {
             if (var2 == -1) {

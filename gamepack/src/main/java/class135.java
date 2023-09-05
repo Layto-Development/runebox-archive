@@ -12,7 +12,7 @@ public class class135 extends class151 {
 
    void method897(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }

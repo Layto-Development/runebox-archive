@@ -6,7 +6,7 @@ public class class226 {
 
    class226(class184 var1, int var2) {
       this.field2086 = new class322[var2];
-      this.field2087 = var1.method1125();
+      this.field2087 = var1.readUnsignedByte();
 
       for(int var3 = 0; var3 < this.field2086.length; ++var3) {
          class322 var4 = new class322(this.field2087, var1, false);

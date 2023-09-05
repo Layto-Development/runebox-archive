@@ -10,9 +10,9 @@ public class class315 {
 
    void method1686(class184 var1) {
       this.field2567 = var1.method1130();
-      this.field2565 = var1.method1129();
+      this.field2565 = var1.readInt();
 
-      for(int var3 = var1.method1125(); var3 != 0; var3 = var1.method1125()) {
+      for(int var3 = var1.readUnsignedByte(); var3 != 0; var3 = var1.readUnsignedByte()) {
          Object var4;
          if (var3 == 3) {
             var4 = new class216(this);

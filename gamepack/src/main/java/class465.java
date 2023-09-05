@@ -10,8 +10,8 @@ public class class465 extends class56 {
    }
 
    void method608(class184 var1) {
-      this.field3602 = var1.method1133();
-      var1.method1129();
+      this.field3602 = var1.readString();
+      var1.readInt();
    }
 
    void method607(class15 var1) {

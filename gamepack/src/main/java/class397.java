@@ -16,9 +16,9 @@ public class class397 extends class428 {
 
    public void method1917(class184 var1, int var2) {
       while(var1.field1818 < var2) {
-         int var4 = var1.method1125();
+         int var4 = var1.readUnsignedByte();
          if (var4 == 4) {
-            class251 var10 = new class251(var1.method1133(), this.field3102);
+            class251 var10 = new class251(var1.readString(), this.field3102);
             if (!var10.method1459()) {
                throw new IllegalStateException();
             }
@@ -27,9 +27,9 @@ public class class397 extends class428 {
             class314.field2562.method1487(var10.method1458(), var11);
          } else {
             boolean var5 = (var4 & 1) != 0;
-            class251 var6 = new class251(var1.method1133(), this.field3102);
-            class251 var7 = new class251(var1.method1133(), this.field3102);
-            var1.method1133();
+            class251 var6 = new class251(var1.readString(), this.field3102);
+            class251 var7 = new class251(var1.readString(), this.field3102);
+            var1.readString();
             if (!var6.method1459()) {
                throw new IllegalStateException();
             }

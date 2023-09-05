@@ -309,14 +309,14 @@ public class class533 extends class496 {
       var2.field1818 = var1.length - 26;
       int var9 = var2.method1174();
       int var10 = var2.method1174();
-      int var11 = var2.method1125();
-      int var12 = var2.method1125();
-      int var13 = var2.method1125();
-      int var14 = var2.method1125();
-      int var15 = var2.method1125();
-      int var16 = var2.method1125();
-      int var17 = var2.method1125();
-      int var18 = var2.method1125();
+      int var11 = var2.readUnsignedByte();
+      int var12 = var2.readUnsignedByte();
+      int var13 = var2.readUnsignedByte();
+      int var14 = var2.readUnsignedByte();
+      int var15 = var2.readUnsignedByte();
+      int var16 = var2.readUnsignedByte();
+      int var17 = var2.readUnsignedByte();
+      int var18 = var2.readUnsignedByte();
       int var19 = var2.method1174();
       int var20 = var2.method1174();
       int var21 = var2.method1174();
@@ -467,7 +467,7 @@ public class class533 extends class496 {
       int var56;
       int var57;
       for(var53 = 0; var53 < var9; ++var53) {
-         var54 = var2.method1125();
+         var54 = var2.readUnsignedByte();
          var55 = 0;
          if ((var54 & 1) != 0) {
             var55 = var3.method1136();
@@ -490,19 +490,19 @@ public class class533 extends class496 {
          var51 = this.field4180[var53];
          var52 = this.field4181[var53];
          if (var17 == 1) {
-            this.field4203[var53] = var6.method1125();
+            this.field4203[var53] = var6.readUnsignedByte();
          }
       }
 
       if (var18 == 1) {
          for(var53 = 0; var53 < var9; ++var53) {
-            var54 = var6.method1125();
+            var54 = var6.readUnsignedByte();
             this.field4197[var53] = new int[var54];
             this.field4201[var53] = new int[var54];
 
             for(var55 = 0; var55 < var54; ++var55) {
-               this.field4197[var53][var55] = var6.method1125();
-               this.field4201[var53][var55] = var6.method1125();
+               this.field4197[var53][var55] = var6.readUnsignedByte();
+               this.field4201[var53][var55] = var6.readUnsignedByte();
             }
          }
       }
@@ -530,7 +530,7 @@ public class class533 extends class496 {
          }
 
          if (var15 == 1) {
-            this.field4216[var53] = var6.method1125();
+            this.field4216[var53] = var6.readUnsignedByte();
          }
 
          if (var16 == 1) {
@@ -538,7 +538,7 @@ public class class533 extends class496 {
          }
 
          if (this.field4176 != null && this.field4190[var53] != -1) {
-            this.field4176[var53] = (byte)(var8.method1125() - 1);
+            this.field4176[var53] = (byte)(var8.readUnsignedByte() - 1);
          }
       }
 
@@ -551,7 +551,7 @@ public class class533 extends class496 {
 
       int var58;
       for(var57 = 0; var57 < var10; ++var57) {
-         var58 = var3.method1125();
+         var58 = var3.readUnsignedByte();
          if (var58 == 1) {
             var53 = var2.method1136() + var56;
             var54 = var2.method1136() + var53;
@@ -609,13 +609,13 @@ public class class533 extends class496 {
       }
 
       var2.field1818 = var28;
-      var57 = var2.method1125();
+      var57 = var2.readUnsignedByte();
       if (var57 != 0) {
          new class141();
          var2.method1174();
          var2.method1174();
          var2.method1174();
-         var2.method1129();
+         var2.readInt();
       }
 
    }
@@ -631,13 +631,13 @@ public class class533 extends class496 {
       var4.field1818 = var1.length - 23;
       int var9 = var4.method1174();
       int var10 = var4.method1174();
-      int var11 = var4.method1125();
-      int var12 = var4.method1125();
-      int var13 = var4.method1125();
-      int var14 = var4.method1125();
-      int var15 = var4.method1125();
-      int var16 = var4.method1125();
-      int var17 = var4.method1125();
+      int var11 = var4.readUnsignedByte();
+      int var12 = var4.readUnsignedByte();
+      int var13 = var4.readUnsignedByte();
+      int var14 = var4.readUnsignedByte();
+      int var15 = var4.readUnsignedByte();
+      int var16 = var4.readUnsignedByte();
+      int var17 = var4.readUnsignedByte();
       int var18 = var4.method1174();
       int var19 = var4.method1174();
       int var20 = var4.method1174();
@@ -742,7 +742,7 @@ public class class533 extends class496 {
       int var43;
       int var44;
       for(var40 = 0; var40 < var9; ++var40) {
-         var41 = var4.method1125();
+         var41 = var4.readUnsignedByte();
          var42 = 0;
          if ((var41 & 1) != 0) {
             var42 = var5.method1136();
@@ -765,19 +765,19 @@ public class class533 extends class496 {
          var38 = this.field4180[var40];
          var39 = this.field4181[var40];
          if (var16 == 1) {
-            this.field4203[var40] = var8.method1125();
+            this.field4203[var40] = var8.readUnsignedByte();
          }
       }
 
       if (var17 == 1) {
          for(var40 = 0; var40 < var9; ++var40) {
-            var41 = var8.method1125();
+            var41 = var8.readUnsignedByte();
             this.field4197[var40] = new int[var41];
             this.field4201[var40] = new int[var41];
 
             for(var42 = 0; var42 < var41; ++var42) {
-               this.field4197[var40][var42] = var8.method1125();
-               this.field4201[var40][var42] = var8.method1125();
+               this.field4197[var40][var42] = var8.readUnsignedByte();
+               this.field4201[var40][var42] = var8.readUnsignedByte();
             }
          }
       }
@@ -791,7 +791,7 @@ public class class533 extends class496 {
       for(var40 = 0; var40 < var10; ++var40) {
          this.field4189[var40] = (short)var4.method1174();
          if (var12 == 1) {
-            var41 = var5.method1125();
+            var41 = var5.readUnsignedByte();
             if ((var41 & 1) == 1) {
                this.field4208[var40] = 1;
                var2 = true;
@@ -821,7 +821,7 @@ public class class533 extends class496 {
          }
 
          if (var15 == 1) {
-            this.field4216[var40] = var8.method1125();
+            this.field4216[var40] = var8.readUnsignedByte();
          }
       }
 
@@ -835,7 +835,7 @@ public class class533 extends class496 {
       int var45;
       int var46;
       for(var44 = 0; var44 < var10; ++var44) {
-         var45 = var5.method1125();
+         var45 = var5.readUnsignedByte();
          if (var45 == 1) {
             var40 = var4.method1136() + var43;
             var41 = var4.method1136() + var40;
@@ -925,13 +925,13 @@ public class class533 extends class496 {
       var2.field1818 = var1.length - 23;
       int var9 = var2.method1174();
       int var10 = var2.method1174();
-      int var11 = var2.method1125();
-      int var12 = var2.method1125();
-      int var13 = var2.method1125();
-      int var14 = var2.method1125();
-      int var15 = var2.method1125();
-      int var16 = var2.method1125();
-      int var17 = var2.method1125();
+      int var11 = var2.readUnsignedByte();
+      int var12 = var2.readUnsignedByte();
+      int var13 = var2.readUnsignedByte();
+      int var14 = var2.readUnsignedByte();
+      int var15 = var2.readUnsignedByte();
+      int var16 = var2.readUnsignedByte();
+      int var17 = var2.readUnsignedByte();
       int var18 = var2.method1174();
       int var19 = var2.method1174();
       int var20 = var2.method1174();
@@ -1079,7 +1079,7 @@ public class class533 extends class496 {
       int var54;
       int var55;
       for(var51 = 0; var51 < var9; ++var51) {
-         var52 = var2.method1125();
+         var52 = var2.readUnsignedByte();
          var53 = 0;
          if ((var52 & 1) != 0) {
             var53 = var3.method1136();
@@ -1102,7 +1102,7 @@ public class class533 extends class496 {
          var49 = this.field4180[var51];
          var50 = this.field4181[var51];
          if (var17 == 1) {
-            this.field4203[var51] = var6.method1125();
+            this.field4203[var51] = var6.readUnsignedByte();
          }
       }
 
@@ -1129,7 +1129,7 @@ public class class533 extends class496 {
          }
 
          if (var15 == 1) {
-            this.field4216[var51] = var6.method1125();
+            this.field4216[var51] = var6.readUnsignedByte();
          }
 
          if (var16 == 1) {
@@ -1137,7 +1137,7 @@ public class class533 extends class496 {
          }
 
          if (this.field4176 != null && this.field4190[var51] != -1) {
-            this.field4176[var51] = (byte)(var8.method1125() - 1);
+            this.field4176[var51] = (byte)(var8.readUnsignedByte() - 1);
          }
       }
 
@@ -1150,7 +1150,7 @@ public class class533 extends class496 {
 
       int var56;
       for(var55 = 0; var55 < var10; ++var55) {
-         var56 = var3.method1125();
+         var56 = var3.readUnsignedByte();
          if (var56 == 1) {
             var51 = var2.method1136() + var54;
             var52 = var2.method1136() + var51;
@@ -1208,13 +1208,13 @@ public class class533 extends class496 {
       }
 
       var2.field1818 = var26;
-      var55 = var2.method1125();
+      var55 = var2.readUnsignedByte();
       if (var55 != 0) {
          new class141();
          var2.method1174();
          var2.method1174();
          var2.method1174();
-         var2.method1129();
+         var2.readInt();
       }
 
    }
@@ -1230,12 +1230,12 @@ public class class533 extends class496 {
       var4.field1818 = var1.length - 18;
       int var9 = var4.method1174();
       int var10 = var4.method1174();
-      int var11 = var4.method1125();
-      int var12 = var4.method1125();
-      int var13 = var4.method1125();
-      int var14 = var4.method1125();
-      int var15 = var4.method1125();
-      int var16 = var4.method1125();
+      int var11 = var4.readUnsignedByte();
+      int var12 = var4.readUnsignedByte();
+      int var13 = var4.readUnsignedByte();
+      int var14 = var4.readUnsignedByte();
+      int var15 = var4.readUnsignedByte();
+      int var16 = var4.readUnsignedByte();
       int var17 = var4.method1174();
       int var18 = var4.method1174();
       int var19 = var4.method1174();
@@ -1337,7 +1337,7 @@ public class class533 extends class496 {
       int var41;
       int var42;
       for(var38 = 0; var38 < var9; ++var38) {
-         var39 = var4.method1125();
+         var39 = var4.readUnsignedByte();
          var40 = 0;
          if ((var39 & 1) != 0) {
             var40 = var5.method1136();
@@ -1360,7 +1360,7 @@ public class class533 extends class496 {
          var36 = this.field4180[var38];
          var37 = this.field4181[var38];
          if (var16 == 1) {
-            this.field4203[var38] = var8.method1125();
+            this.field4203[var38] = var8.readUnsignedByte();
          }
       }
 
@@ -1373,7 +1373,7 @@ public class class533 extends class496 {
       for(var38 = 0; var38 < var10; ++var38) {
          this.field4189[var38] = (short)var4.method1174();
          if (var12 == 1) {
-            var39 = var5.method1125();
+            var39 = var5.readUnsignedByte();
             if ((var39 & 1) == 1) {
                this.field4208[var38] = 1;
                var2 = true;
@@ -1403,7 +1403,7 @@ public class class533 extends class496 {
          }
 
          if (var15 == 1) {
-            this.field4216[var38] = var8.method1125();
+            this.field4216[var38] = var8.readUnsignedByte();
          }
       }
 
@@ -1417,7 +1417,7 @@ public class class533 extends class496 {
       int var43;
       int var44;
       for(var42 = 0; var42 < var10; ++var42) {
-         var43 = var5.method1125();
+         var43 = var5.readUnsignedByte();
          if (var43 == 1) {
             var38 = var4.method1136() + var41;
             var39 = var4.method1136() + var38;

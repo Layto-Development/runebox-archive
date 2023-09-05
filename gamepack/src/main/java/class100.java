@@ -10,7 +10,7 @@ public class class100 {
    }
 
    class100(class184 var1) {
-      this(var1.method1125(), var1.method1125(), var1.method1133());
+      this(var1.readUnsignedByte(), var1.readUnsignedByte(), var1.readString());
    }
 
    String method747() {

@@ -118,10 +118,10 @@ public class class14 {
 
                      if (null == this.field127) {
                         this.field119.field1818 = 0;
-                        var9 = this.field119.method1125();
+                        var9 = this.field119.readUnsignedByte();
                         var10 = this.field119.method1174();
-                        int var11 = this.field119.method1125();
-                        int var12 = this.field119.method1129();
+                        int var11 = this.field119.readUnsignedByte();
+                        int var12 = this.field119.readInt();
                         long var13 = (long)(var10 + (var9 << 16));
                         class133 var15 = (class133)this.field123.method709(var13);
                         this.field130 = true;
@@ -353,8 +353,8 @@ public class class14 {
             throw new RuntimeException("");
          }
       } else {
-         int var4 = this.field122.method1129();
-         int var5 = this.field122.method1129();
+         int var4 = this.field122.readInt();
+         int var5 = this.field122.readInt();
          var1.method245(var4, var5, (byte)18);
       }
    }

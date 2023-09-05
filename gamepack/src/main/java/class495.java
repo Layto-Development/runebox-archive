@@ -19,7 +19,7 @@ public class class495 extends class151 {
       this.field3924 = var3;
       byte[] var5 = var1.method1629(this.field3924 >> 16 & '\uffff', this.field3924 & '\uffff');
       class184 var6 = new class184(var5);
-      int var7 = var6.method1125();
+      int var7 = var6.readUnsignedByte();
       int var8 = var6.method1174();
       byte[] var9;
       if (var4) {
@@ -36,7 +36,7 @@ public class class495 extends class151 {
    void method2393(class184 var1, int var2) {
       var1.method1174();
       var1.method1174();
-      this.field3919 = var1.method1125();
+      this.field3919 = var1.readUnsignedByte();
       int var4 = var1.method1174();
       this.field3917 = new class75[this.field3918.method1861().method1335()][];
       this.field3923 = new class75[this.field3918.method1862()][];
@@ -46,14 +46,14 @@ public class class495 extends class151 {
       int var8;
       int var10;
       for(var6 = 0; var6 < var4; ++var6) {
-         var8 = var1.method1125();
+         var8 = var1.readUnsignedByte();
          class424 var9 = (class424)class341.method1788(class424.method1994(), var8);
          if (var9 == null) {
             var9 = class424.field3216;
          }
 
          var10 = var1.method1136();
-         int var12 = var1.method1125();
+         int var12 = var1.readUnsignedByte();
          class236[] var13 = new class236[]{class236.field2153, class236.field2149, class236.field2150, class236.field2151, class236.field2157, class236.field2167, class236.field2154, class236.field2155, class236.field2165, class236.field2159, class236.field2158, class236.field2156, class236.field2160, class236.field2152, class236.field2161, class236.field2162, class236.field2163};
          class236 var14 = (class236)class341.method1788(var13, var12);
          if (var14 == null) {

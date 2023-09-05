@@ -60,8 +60,8 @@ public class class92 implements class39 {
    }
 
    public void method568(class184 var1) {
-      this.field1290 = var1.method1125();
-      this.field1292 = var1.method1125();
+      this.field1290 = var1.readUnsignedByte();
+      this.field1292 = var1.readUnsignedByte();
       this.field1289 = var1.method1174();
       this.field1291 = var1.method1174();
       this.field1293 = var1.method1174();

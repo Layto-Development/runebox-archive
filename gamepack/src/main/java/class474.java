@@ -13,7 +13,7 @@ public class class474 {
       this.field3636 = var1.method1130();
       this.field3635 = var1.method1130();
 
-      for(int var3 = var1.method1125(); var3 != 0; var3 = var1.method1125()) {
+      for(int var3 = var1.readUnsignedByte(); var3 != 0; var3 = var1.readUnsignedByte()) {
          Object var4;
          if (var3 == 1) {
             var4 = new class212(this);

@@ -75,13 +75,13 @@ public class class486 {
    }
 
    final void method2375(class184 var1, class471 var2) {
-      int var3 = var1.method1125();
+      int var3 = var1.readUnsignedByte();
       this.field3844[0] = var3 >> 4;
       this.field3844[1] = var3 & 15;
       if (var3 != 0) {
          this.field3845[0] = var1.method1174();
          this.field3845[1] = var1.method1174();
-         int var4 = var1.method1125();
+         int var4 = var1.readUnsignedByte();
 
          int var5;
          int var6;

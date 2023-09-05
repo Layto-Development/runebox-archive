@@ -65,7 +65,7 @@ public class class290 extends class55 {
    }
 
    void method1607(class184 var1) {
-      int var3 = var1.method1125();
+      int var3 = var1.readUnsignedByte();
       if ((var3 & 1) != 0) {
          this.field2461 = true;
       }
@@ -76,12 +76,12 @@ public class class290 extends class55 {
 
       int var4 = 2;
       if ((var3 & 4) != 0) {
-         var4 = var1.method1125();
+         var4 = var1.readUnsignedByte();
       }
 
       super.field1078 = var1.method1130();
       this.field2462 = var1.method1130();
-      this.field2460 = var1.method1133();
+      this.field2460 = var1.readString();
       var1.method1132();
       this.field2459 = var1.method1126();
       this.field2455 = var1.method1126();
@@ -96,7 +96,7 @@ public class class290 extends class55 {
             }
 
             if (this.field2456) {
-               var7.field2036 = new class251(var1.method1133());
+               var7.field2036 = new class251(var1.readString());
             }
 
             var7.field2037 = var1.method1126();

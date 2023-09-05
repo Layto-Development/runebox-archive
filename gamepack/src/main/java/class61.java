@@ -24,8 +24,8 @@ public class class61 {
       int var3;
       int var5;
       for(var3 = 0; var3 < var2; var10000.field1818 += var5) {
-         int var4 = this.field1111.method1129();
-         var5 = this.field1111.method1129();
+         int var4 = this.field1111.readInt();
+         var5 = this.field1111.readInt();
          if (var4 == 1297379947) {
             this.field1112[var3] = this.field1111.field1818;
             ++var3;
@@ -117,7 +117,7 @@ public class class61 {
       int var3;
       int var4;
       if (var2 == 255) {
-         var3 = this.field1111.method1125();
+         var3 = this.field1111.readUnsignedByte();
          var4 = this.field1111.method1112();
          class184 var10000;
          if (var3 == 47) {
@@ -142,11 +142,11 @@ public class class61 {
          var3 = field1113[var2 - 128];
          var4 = var2;
          if (var3 >= 1) {
-            var4 = var2 | this.field1111.method1125() << 8;
+            var4 = var2 | this.field1111.readUnsignedByte() << 8;
          }
 
          if (var3 >= 2) {
-            var4 |= this.field1111.method1125() << 16;
+            var4 |= this.field1111.readUnsignedByte() << 16;
          }
 
          return var4;

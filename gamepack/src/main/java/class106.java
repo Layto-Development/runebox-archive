@@ -111,12 +111,12 @@ public class class106 extends class151 {
       int var4 = var3.method1174();
       int var5 = var3.field1816.length - 2 - var4 - 12;
       var3.field1818 = var5;
-      int var6 = var3.method1129();
+      int var6 = var3.readInt();
       var2.field1424 = var3.method1174();
       var2.field1428 = var3.method1174();
       var2.field1426 = var3.method1174();
       var2.field1427 = var3.method1174();
-      int var7 = var3.method1125();
+      int var7 = var3.readUnsignedByte();
       int var8;
       int var9;
       if (var7 > 0) {
@@ -128,8 +128,8 @@ public class class106 extends class151 {
             var2.field1429[var8] = var10;
 
             while(var9-- > 0) {
-               int var11 = var3.method1129();
-               int var12 = var3.method1129();
+               int var11 = var3.readInt();
+               int var12 = var3.readInt();
                var10.method1226(new class118(var12), (long)var11);
             }
          }
@@ -144,11 +144,11 @@ public class class106 extends class151 {
       for(var8 = 0; var3.field1818 < var5; var2.field1421[var8++] = var9) {
          var9 = var3.method1174();
          if (var9 == 3) {
-            var2.field1423[var8] = var3.method1133();
+            var2.field1423[var8] = var3.readString();
          } else if (var9 < 100 && var9 != 21 && var9 != 38 && var9 != 39) {
-            var2.field1422[var8] = var3.method1129();
+            var2.field1422[var8] = var3.readInt();
          } else {
-            var2.field1422[var8] = var3.method1125();
+            var2.field1422[var8] = var3.readUnsignedByte();
          }
       }
 

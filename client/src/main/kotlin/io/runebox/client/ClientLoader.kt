@@ -1,6 +1,7 @@
 package io.runebox.client
 
 import io.runebox.common.RuneboxPaths
+import org.tinylog.ThreadContext
 import org.tinylog.kotlin.Logger
 import java.applet.Applet
 import java.applet.AppletContext
@@ -21,7 +22,7 @@ class ClientLoader {
         javConfig = JavConfig.load()
 
         Logger.info("Loading runescape client.")
-        classLoader = URLClassLoader(arrayOf(INJECTED_GAMEPACK.toURI().toURL(), VANILLA_GAMEPACK.toURI().toURL()))
+        classLoader = URLClassLoader(arrayOf(INJECTED_GAMEPACK.toURI().toURL(), VANILLA_GAMEPACK.toURI().toURL()), ClassLoader.getSystemClassLoader())
 
         val initialClass = javConfig["initial_class"]!!.replace(".class", "").replaceFirstChar { it.uppercase() }
         applet = classLoader.loadClass(initialClass).newInstance() as Applet

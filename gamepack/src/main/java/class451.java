@@ -26,7 +26,7 @@ public class class451 extends class151 {
 
    public void method2223(class184 var1, int var2) {
       while(true) {
-         int var4 = var1.method1125();
+         int var4 = var1.readUnsignedByte();
          if (var4 == 0) {
             return;
          }
@@ -39,7 +39,7 @@ public class class451 extends class151 {
       if (var2 == 1) {
          this.field3496 = var1.method1181();
       } else if (var2 == 2) {
-         this.field3495 = var1.method1125();
+         this.field3495 = var1.readUnsignedByte();
       } else if (var2 == 5) {
          this.field3498 = false;
       } else if (var2 == 7) {

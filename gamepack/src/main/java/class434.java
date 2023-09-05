@@ -275,7 +275,7 @@ public class class434 {
       this.field3295.method2278(var1);
       this.field3306 = new class471();
       this.field3306.method2278(var1);
-      int var2 = var1.method1125();
+      int var2 = var1.readUnsignedByte();
       if (var2 != 0) {
          --var1.field1818;
          this.field3287 = new class471();
@@ -284,7 +284,7 @@ public class class434 {
          this.field3288.method2278(var1);
       }
 
-      var2 = var1.method1125();
+      var2 = var1.readUnsignedByte();
       if (var2 != 0) {
          --var1.field1818;
          this.field3294 = new class471();
@@ -293,7 +293,7 @@ public class class434 {
          this.field3290.method2278(var1);
       }
 
-      var2 = var1.method1125();
+      var2 = var1.readUnsignedByte();
       if (var2 != 0) {
          --var1.field1818;
          this.field3291 = new class471();

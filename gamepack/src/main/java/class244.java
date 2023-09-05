@@ -12,7 +12,7 @@ public class class244 extends class56 {
    }
 
    void method608(class184 var1) {
-      this.field2205 = var1.method1125() == 1;
+      this.field2205 = var1.readUnsignedByte() == 1;
       this.field2202 = var1.method1126();
       this.field2203 = var1.method1126();
       this.field2201 = var1.method1126();

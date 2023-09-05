@@ -4,7 +4,7 @@ public class class362 extends class55 {
 
    class362(class184 var1) {
       var1.field1818 = var1.field1816.length - 3;
-      int var2 = var1.method1125();
+      int var2 = var1.readUnsignedByte();
       int var3 = var1.method1174();
       int var4 = 14 + var2 * 10;
       var1.field1818 = 0;
@@ -25,7 +25,7 @@ public class class362 extends class55 {
          var14 = -1;
 
          while(true) {
-            var15 = var1.method1125();
+            var15 = var1.readUnsignedByte();
             if (var15 != var14) {
                ++var4;
             }
@@ -88,7 +88,7 @@ public class class362 extends class55 {
 
       int var29;
       for(var29 = 0; var29 < var6; ++var29) {
-         var28 = var28 + var1.method1125() & 127;
+         var28 = var28 + var1.readUnsignedByte() & 127;
          if (var28 != 0 && var28 != 32) {
             if (var28 == 1) {
                ++var16;

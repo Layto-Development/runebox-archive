@@ -15,7 +15,7 @@ public class class316 extends class151 {
 
    public void method1691(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -28,15 +28,15 @@ public class class316 extends class151 {
       if (var2 == 1) {
          var1.method1174();
       } else if (var2 == 2) {
-         this.field2574 = var1.method1125();
+         this.field2574 = var1.readUnsignedByte();
       } else if (var2 == 3) {
-         this.field2573 = var1.method1125();
+         this.field2573 = var1.readUnsignedByte();
       } else if (var2 == 4) {
          this.field2576 = 0;
       } else if (var2 == 5) {
          this.field2572 = var1.method1174();
       } else if (var2 == 6) {
-         var1.method1125();
+         var1.readUnsignedByte();
       } else if (var2 == 7) {
          this.field2577 = var1.method1173();
       } else if (var2 == 8) {
@@ -44,9 +44,9 @@ public class class316 extends class151 {
       } else if (var2 == 11) {
          this.field2576 = var1.method1174();
       } else if (var2 == 14) {
-         this.field2579 = var1.method1125();
+         this.field2579 = var1.readUnsignedByte();
       } else if (var2 == 15) {
-         this.field2580 = var1.method1125();
+         this.field2580 = var1.readUnsignedByte();
       }
 
    }

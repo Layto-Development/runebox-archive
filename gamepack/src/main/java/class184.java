@@ -205,7 +205,7 @@ public class class184 extends class55 {
       this.method1114(var1 & 127);
    }
 
-   public int method1125() {
+   public int readUnsignedByte() {
       return this.field1816[++this.field1818 - 1] & 255;
    }
 
@@ -243,23 +243,23 @@ public class class184 extends class55 {
       return var2;
    }
 
-   public int method1129() {
+   public int readInt() {
       this.field1818 += 4;
       return ((this.field1816[this.field1818 - 3] & 255) << 16) + ((this.field1816[this.field1818 - 4] & 255) << 24) + ((this.field1816[this.field1818 - 2] & 255) << 8) + (this.field1816[this.field1818 - 1] & 255);
    }
 
    public long method1130() {
-      long var2 = (long)this.method1129() & 4294967295L;
-      long var4 = (long)this.method1129() & 4294967295L;
+      long var2 = (long)this.readInt() & 4294967295L;
+      long var4 = (long)this.readInt() & 4294967295L;
       return var4 + (var2 << 32);
    }
 
    public float method1131() {
-      return Float.intBitsToFloat(this.method1129());
+      return Float.intBitsToFloat(this.readInt());
    }
 
    public boolean method1132() {
-      return (this.method1125() & 1) == 1;
+      return (this.readUnsignedByte() & 1) == 1;
    }
 
    public String method1184() {
@@ -267,11 +267,11 @@ public class class184 extends class55 {
          ++this.field1818;
          return null;
       } else {
-         return this.method1133();
+         return this.readString();
       }
    }
 
-   public String method1133() {
+   public String readString() {
       int var2 = this.field1818;
 
       while(this.field1816[++this.field1818 - 1] != 0) {
@@ -363,7 +363,7 @@ public class class184 extends class55 {
       }
    }
 
-   public void method1135(byte[] var1, int var2, int var3) {
+   public void readBytes(byte[] var1, int var2, int var3) {
       for(int var5 = var2; var5 < var3 + var2; ++var5) {
          var1[var5] = this.field1816[++this.field1818 - 1];
       }
@@ -372,17 +372,17 @@ public class class184 extends class55 {
 
    public int method1136() {
       int var2 = this.field1816[this.field1818] & 255;
-      return var2 < 128 ? this.method1125() - 64 : this.method1174() - '\uc000';
+      return var2 < 128 ? this.readUnsignedByte() - 64 : this.method1174() - '\uc000';
    }
 
    public int method1172() {
       int var2 = this.field1816[this.field1818] & 255;
-      return var2 < 128 ? this.method1125() : this.method1174() - '\u8000';
+      return var2 < 128 ? this.readUnsignedByte() : this.method1174() - '\u8000';
    }
 
    public int method1137() {
       int var2 = this.field1816[this.field1818] & 255;
-      return var2 < 128 ? this.method1125() - 1 : this.method1174() - '\u8001';
+      return var2 < 128 ? this.readUnsignedByte() - 1 : this.method1174() - '\u8001';
    }
 
    public int method1138() {
@@ -398,12 +398,12 @@ public class class184 extends class55 {
    }
 
    public int method1139() {
-      return this.field1816[this.field1818] < 0 ? this.method1129() & Integer.MAX_VALUE : this.method1174();
+      return this.field1816[this.field1818] < 0 ? this.readInt() & Integer.MAX_VALUE : this.method1174();
    }
 
    public int method1173() {
       if (this.field1816[this.field1818] < 0) {
-         return this.method1129() & Integer.MAX_VALUE;
+         return this.readInt() & Integer.MAX_VALUE;
       } else {
          int var2 = this.method1174();
          return var2 == 32767 ? -1 : var2;
@@ -427,7 +427,7 @@ public class class184 extends class55 {
 
       int var2;
       do {
-         var2 = this.method1125();
+         var2 = this.readUnsignedByte();
          var3 |= (var2 & 127) << var4;
          var4 += 7;
       } while(var2 > 127);
@@ -440,8 +440,8 @@ public class class184 extends class55 {
       this.field1818 = 0;
 
       for(int var4 = 0; var4 < var3; ++var4) {
-         int var5 = this.method1129();
-         int var6 = this.method1129();
+         int var5 = this.readInt();
+         int var6 = this.readInt();
          int var7 = 0;
          int var8 = -1640531527;
 
@@ -462,8 +462,8 @@ public class class184 extends class55 {
       this.field1818 = 0;
 
       for(int var4 = 0; var4 < var3; ++var4) {
-         int var5 = this.method1129();
-         int var6 = this.method1129();
+         int var5 = this.readInt();
+         int var6 = this.readInt();
          int var7 = -957401312;
          int var8 = -1640531527;
 
@@ -485,8 +485,8 @@ public class class184 extends class55 {
       int var6 = (var3 - var2) / 8;
 
       for(int var7 = 0; var7 < var6; ++var7) {
-         int var8 = this.method1129();
-         int var9 = this.method1129();
+         int var8 = this.readInt();
+         int var9 = this.readInt();
          int var10 = 0;
          int var11 = -1640531527;
 
@@ -509,8 +509,8 @@ public class class184 extends class55 {
       int var6 = (var3 - var2) / 8;
 
       for(int var7 = 0; var7 < var6; ++var7) {
-         int var8 = this.method1129();
-         int var9 = this.method1129();
+         int var8 = this.readInt();
+         int var9 = this.readInt();
          int var10 = -957401312;
          int var11 = -1640531527;
 
@@ -531,7 +531,7 @@ public class class184 extends class55 {
       int var4 = this.field1818;
       this.field1818 = 0;
       byte[] var5 = new byte[var4];
-      this.method1135(var5, 0, var4);
+      this.readBytes(var5, 0, var4);
       BigInteger var6 = new BigInteger(var5);
       BigInteger var7 = var6.modPow(var1, var2);
       byte[] var8 = var7.toByteArray();
@@ -566,7 +566,7 @@ public class class184 extends class55 {
       }
 
       var5 = ~var5;
-      var6 = this.method1129();
+      var6 = this.readInt();
       return var6 == var5;
    }
 

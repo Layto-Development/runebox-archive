@@ -21,6 +21,16 @@ class MultiplierRemover : Transformer {
         Logger.info("Calculating multiplier decoders...")
 
         val multipliers = EuclideanMultipliers(pool).calculateDecoders()
+
+        val fieldMap = pool.classes.flatMap { it.fields }.associateBy { it.id }
+        multipliers.decoders.mapKeys { fieldMap[it.key]!! }.forEach { (field, number) ->
+            when (number) {
+                is Int -> field.intMultiplier = number.toInt()
+                is Long -> field.longMultiplier = number.toLong()
+                else -> error("Field: ${field.id}, Number: $number")
+            }
+        }
+
         val decoders = multipliers.decoders.mapKeys { it.key }.mapValues { it.value.toLong() }
 
         pool.allClasses.forEach { c ->

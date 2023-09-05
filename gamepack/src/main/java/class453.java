@@ -88,7 +88,7 @@ public class class453 extends class151 {
 
    void method2228(class184 var1, byte var2) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             if (var2 <= -1) {
                throw new IllegalStateException();
@@ -105,16 +105,16 @@ public class class453 extends class151 {
       int var4;
       int var5;
       if (var2 == 1) {
-         var4 = var1.method1125();
+         var4 = var1.readUnsignedByte();
          this.field3532 = new int[var4];
 
          for(var5 = 0; var5 < var4; ++var5) {
             this.field3532[var5] = var1.method1174();
          }
       } else if (var2 == 2) {
-         this.field3514 = var1.method1133();
+         this.field3514 = var1.readString();
       } else if (var2 == 12) {
-         this.field3515 = var1.method1125();
+         this.field3515 = var1.readUnsignedByte();
       } else if (var2 == 13) {
          this.field3518 = var1.method1174();
       } else if (var2 == 14) {
@@ -131,12 +131,12 @@ public class class453 extends class151 {
       } else if (var2 == 18) {
          var1.method1174();
       } else if (var2 >= 30 && var2 < 35) {
-         this.field3512[var2 - 30] = var1.method1133();
+         this.field3512[var2 - 30] = var1.readString();
          if (this.field3512[var2 - 30].equalsIgnoreCase(class27.field486)) {
             this.field3512[var2 - 30] = null;
          }
       } else if (var2 == 40) {
-         var4 = var1.method1125();
+         var4 = var1.readUnsignedByte();
          this.field3554 = new short[var4];
          this.field3533 = new short[var4];
 
@@ -145,7 +145,7 @@ public class class453 extends class151 {
             this.field3533[var5] = (short)var1.method1174();
          }
       } else if (var2 == 41) {
-         var4 = var1.method1125();
+         var4 = var1.readUnsignedByte();
          this.field3534 = new short[var4];
          this.field3529 = new short[var4];
 
@@ -154,7 +154,7 @@ public class class453 extends class151 {
             this.field3529[var5] = (short)var1.method1174();
          }
       } else if (var2 == 60) {
-         var4 = var1.method1125();
+         var4 = var1.readUnsignedByte();
          this.field3516 = new int[var4];
 
          for(var5 = 0; var5 < var4; ++var5) {
@@ -177,7 +177,7 @@ public class class453 extends class151 {
       } else {
          int var6;
          if (var2 == 102) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             var5 = 0;
 
             for(var6 = var4; var6 != 0; var6 >>= 1) {
@@ -241,7 +241,7 @@ public class class453 extends class151 {
                }
             }
 
-            var5 = var1.method1125();
+            var5 = var1.readUnsignedByte();
             this.field3542 = new int[var5 + 2];
 
             for(var6 = 0; var6 <= var5; ++var6) {

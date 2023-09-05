@@ -9,6 +9,11 @@ import org.objectweb.asm.tree.MethodNode
 
 fun FieldNode.init(cls: ClassNode) {
     this.cls = cls
+    origOwner
+    origName
+    origDesc
+    intMultiplier
+    longMultiplier
 }
 
 fun FieldNode.reset() {
@@ -17,6 +22,12 @@ fun FieldNode.reset() {
 
 var FieldNode.cls: ClassNode by field()
 val FieldNode.pool get() = cls.pool
+
+var FieldNode.origOwner: String by field { it.cls.name }
+var FieldNode.origName: String by field { it.name }
+var FieldNode.origDesc: String by field { it.desc }
+var FieldNode.intMultiplier: Int by field { 0 }
+var FieldNode.longMultiplier: Long by field { 0L }
 
 var FieldNode.hierarchy: HashSet<FieldNode> by field { hashSetOf() }
 

@@ -32,7 +32,7 @@ public class class215 extends class428 {
          }
 
          boolean var10000;
-         if (var1.method1125() == 1) {
+         if (var1.readUnsignedByte() == 1) {
             if (var3 != -1) {
                return;
             }
@@ -43,11 +43,11 @@ public class class215 extends class428 {
          }
 
          boolean var4 = var10000;
-         class251 var5 = new class251(var1.method1133(), this.field2016);
-         class251 var6 = new class251(var1.method1133(), this.field2016);
+         class251 var5 = new class251(var1.readString(), this.field2016);
+         class251 var6 = new class251(var1.readString(), this.field2016);
          int var7 = var1.method1174();
-         int var8 = var1.method1125();
-         int var9 = var1.method1125();
+         int var8 = var1.readUnsignedByte();
+         int var9 = var1.readUnsignedByte();
          if ((var9 & 2) != 0) {
             if (var3 != -1) {
                return;
@@ -75,12 +75,12 @@ public class class215 extends class428 {
                throw new IllegalStateException();
             }
 
-            var1.method1133();
-            var1.method1125();
-            var1.method1129();
+            var1.readString();
+            var1.readUnsignedByte();
+            var1.readInt();
          }
 
-         var1.method1133();
+         var1.readString();
          if (var5 != null) {
             if (var3 != -1) {
                throw new IllegalStateException();

@@ -17,7 +17,7 @@ public class class101 extends class151 {
 
    void method749(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -28,13 +28,13 @@ public class class101 extends class151 {
 
    void method750(class184 var1, int var2) {
       if (var2 == 1) {
-         this.field1330 = (char)var1.method1125();
+         this.field1330 = (char)var1.readUnsignedByte();
       } else if (var2 == 2) {
-         this.field1331 = (char)var1.method1125();
+         this.field1331 = (char)var1.readUnsignedByte();
       } else if (var2 == 3) {
-         this.field1332 = var1.method1133();
+         this.field1332 = var1.readString();
       } else if (var2 == 4) {
-         this.field1329 = var1.method1129();
+         this.field1329 = var1.readInt();
       } else {
          int var4;
          if (var2 == 5) {
@@ -43,8 +43,8 @@ public class class101 extends class151 {
             this.field1335 = new String[this.field1334];
 
             for(var4 = 0; var4 < this.field1334; ++var4) {
-               this.field1328[var4] = var1.method1129();
-               this.field1335[var4] = var1.method1133();
+               this.field1328[var4] = var1.readInt();
+               this.field1335[var4] = var1.readString();
             }
          } else if (var2 == 6) {
             this.field1334 = var1.method1174();
@@ -52,8 +52,8 @@ public class class101 extends class151 {
             this.field1337 = new int[this.field1334];
 
             for(var4 = 0; var4 < this.field1334; ++var4) {
-               this.field1328[var4] = var1.method1129();
-               this.field1337[var4] = var1.method1129();
+               this.field1328[var4] = var1.readInt();
+               this.field1337[var4] = var1.readInt();
             }
          }
       }

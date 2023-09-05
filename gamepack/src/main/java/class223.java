@@ -38,16 +38,16 @@ public class class223 extends class55 {
 
    void method1324(byte[] var1) {
       class184 var2 = new class184(var1);
-      this.field2072 = var2.method1129();
-      this.field2045 = var2.method1129();
-      this.field2047 = var2.method1129();
-      this.field2048 = var2.method1129();
+      this.field2072 = var2.readInt();
+      this.field2045 = var2.readInt();
+      this.field2047 = var2.readInt();
+      this.field2048 = var2.readInt();
       if (this.field2048 < 0) {
          this.field2048 = ~this.field2048;
          this.field2049 = true;
       }
 
-      int var3 = var2.method1129();
+      int var3 = var2.readInt();
       this.field2063 = new byte[var3][];
 
       for(int var4 = 0; var4 < var3; ++var4) {
@@ -55,12 +55,12 @@ public class class223 extends class55 {
 
          int var6;
          do {
-            var6 = var2.method1125();
+            var6 = var2.readUnsignedByte();
             var5 += var6;
          } while(var6 >= 255);
 
          byte[] var7 = new byte[var5];
-         var2.method1135(var7, 0, var5);
+         var2.readBytes(var7, 0, var5);
          this.field2063[var4] = var7;
       }
 

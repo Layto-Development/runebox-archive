@@ -27,7 +27,7 @@ public class class529 extends class151 {
 
    void method2513(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -48,14 +48,14 @@ public class class529 extends class151 {
       } else if (var2 == 6) {
          this.field4165 = var1.method1174();
       } else if (var2 == 7) {
-         this.field4157 = var1.method1125();
+         this.field4157 = var1.readUnsignedByte();
       } else if (var2 == 8) {
-         this.field4167 = var1.method1125();
+         this.field4167 = var1.readUnsignedByte();
       } else {
          int var4;
          int var5;
          if (var2 == 40) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             this.field4163 = new short[var4];
             this.field4160 = new short[var4];
 
@@ -64,7 +64,7 @@ public class class529 extends class151 {
                this.field4160[var5] = (short)var1.method1174();
             }
          } else if (var2 == 41) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             this.field4161 = new short[var4];
             this.field4162 = new short[var4];
 

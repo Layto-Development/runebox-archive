@@ -8,20 +8,20 @@ public class class198 extends class129 {
    }
 
    void method1227(class184 var1) {
-      int var3 = var1.method1125();
+      int var3 = var1.readUnsignedByte();
       if (class483.field3836.field3837 != var3) {
          throw new IllegalStateException("");
       } else {
-         super.field1532 = var1.method1125();
-         super.field1533 = var1.method1125();
+         super.field1532 = var1.readUnsignedByte();
+         super.field1533 = var1.readUnsignedByte();
          super.field1537 = var1.method1174();
          super.field1535 = var1.method1174();
-         this.field1926 = var1.method1125();
-         this.field1927 = var1.method1125();
+         this.field1926 = var1.readUnsignedByte();
+         this.field1927 = var1.readUnsignedByte();
          super.field1531 = var1.method1174();
          super.field1538 = var1.method1174();
-         this.field1925 = var1.method1125();
-         this.field1928 = var1.method1125();
+         this.field1925 = var1.readUnsignedByte();
+         this.field1928 = var1.readUnsignedByte();
          super.field1539 = var1.method1173();
          super.field1529 = var1.method1173();
       }
@@ -34,14 +34,14 @@ public class class198 extends class129 {
       super.field1543 = new byte[super.field1533][64][64];
       super.field1530 = new byte[super.field1533][64][64];
       super.field1540 = new class207[super.field1533][64][64][];
-      int var3 = var1.method1125();
+      int var3 = var1.readUnsignedByte();
       if (class353.field2776.field2775 != var3) {
          throw new IllegalStateException("");
       } else {
-         int var4 = var1.method1125();
-         int var5 = var1.method1125();
-         int var6 = var1.method1125();
-         int var7 = var1.method1125();
+         int var4 = var1.readUnsignedByte();
+         int var5 = var1.readUnsignedByte();
+         int var6 = var1.readUnsignedByte();
+         int var7 = var1.readUnsignedByte();
          if (super.field1531 == var4 && var5 == super.field1538 && var6 == this.field1925 && this.field1928 == var7) {
             for(int var8 = 0; var8 < 8; ++var8) {
                for(int var9 = 0; var9 < 8; ++var9) {

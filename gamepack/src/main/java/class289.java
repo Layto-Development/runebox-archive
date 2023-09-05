@@ -12,10 +12,10 @@ public class class289 extends class56 {
    }
 
    void method608(class184 var1) {
-      this.field2450 = var1.method1129();
-      this.field2453 = var1.method1129();
-      this.field2451 = var1.method1125();
-      this.field2452 = var1.method1125();
+      this.field2450 = var1.readInt();
+      this.field2453 = var1.readInt();
+      this.field2451 = var1.readUnsignedByte();
+      this.field2452 = var1.readUnsignedByte();
    }
 
    void method607(class15 var1) {

@@ -1,11 +1,8 @@
 package io.runebox.internal.deobfuscator.transformer
 
 import io.runebox.internal.deobfuscator.Transformer
-import io.runebox.internal.deobfuscator.asm.ClassPool
-import io.runebox.internal.deobfuscator.asm.InsnMatcher
-import io.runebox.internal.deobfuscator.asm.intConstant
-import io.runebox.internal.deobfuscator.asm.isStatic
-import org.objectweb.asm.Opcodes.GOTO
+import io.runebox.internal.deobfuscator.asm.*
+import org.objectweb.asm.Opcodes.*
 import org.objectweb.asm.Type
 import org.objectweb.asm.tree.*
 import org.tinylog.kotlin.Logger
@@ -34,6 +31,11 @@ class IllegalStateExceptionRemover : Transformer {
 
     private fun MethodNode.removeMatchedInsns(insns: List<AbstractInsnNode>) {
         val jump = insns[2] as JumpInsnNode
+        val jumpOpcode = jump.opcode
+
+        opaqueValue = passingVal(insns[1].intValue, jumpOpcode).toString()
+        opaqueDesc = desc
+
         val goto = JumpInsnNode(GOTO, jump.label)
         instructions.insert(insns.last(), goto)
         insns.forEach(instructions::remove)
@@ -59,6 +61,25 @@ class IllegalStateExceptionRemover : Transformer {
     private val MethodNode.lastArgIndex: Int get() {
         val offset = if(isStatic()) 1 else 0
         return (Type.getArgumentsAndReturnSizes(desc) shr 2) - offset - 1
+    }
+
+    private fun passingVal(pushed: Int, ifOpcode: Int): Int {
+        return when(ifOpcode) {
+            IF_ICMPEQ -> pushed
+            IF_ICMPGE,
+            IF_ICMPGT -> pushed + 1
+            IF_ICMPLE,
+            IF_ICMPLT,
+            IF_ICMPNE -> pushed - 1
+            else -> error(ifOpcode)
+        }
+    }
+
+    private val AbstractInsnNode.intValue: Int get() {
+        if (opcode in 2..8) return opcode - 3
+        if (opcode == BIPUSH || opcode == SIPUSH) return (this as IntInsnNode).operand
+        if (this is LdcInsnNode && cst is Int) return cst as Int
+        error(this)
     }
 
     companion object {

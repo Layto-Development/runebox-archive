@@ -50,7 +50,7 @@ public final class class522 extends class518 {
 
    final void method2476(class184 var1) {
       var1.field1818 = 0;
-      int var3 = var1.method1125();
+      int var3 = var1.readUnsignedByte();
       boolean var4 = true;
       this.field4097 = var1.method1126();
       this.field4098 = var1.method1126();
@@ -62,11 +62,11 @@ public final class class522 extends class518 {
       int var9;
       int var10;
       for(int var7 = 0; var7 < 12; ++var7) {
-         var8 = var1.method1125();
+         var8 = var1.readUnsignedByte();
          if (var8 == 0) {
             var6[var7] = 0;
          } else {
-            var9 = var1.method1125();
+            var9 = var1.readUnsignedByte();
             var6[var7] = var9 + (var8 << 8);
             if (var7 == 0 && var6[0] == 65535) {
                var5 = var1.method1174();
@@ -87,11 +87,11 @@ public final class class522 extends class518 {
          var28 = new int[12];
 
          for(var8 = 0; var8 < 12; ++var8) {
-            var9 = var1.method1125();
+            var9 = var1.readUnsignedByte();
             if (var9 == 0) {
                var28[var8] = 0;
             } else {
-               var10 = var1.method1125();
+               var10 = var1.readUnsignedByte();
                var28[var8] = var10 + (var9 << 8);
             }
          }
@@ -100,7 +100,7 @@ public final class class522 extends class518 {
       int[] var29 = new int[5];
 
       for(var9 = 0; var9 < 5; ++var9) {
-         var10 = var1.method1125();
+         var10 = var1.readUnsignedByte();
          if (var10 < 0 || var10 >= class527.field4149[var9].length) {
             var10 = 0;
          }
@@ -144,7 +144,7 @@ public final class class522 extends class518 {
          super.field4068 = -1;
       }
 
-      this.field4112 = new class251(var1.method1133(), class121.field1501);
+      this.field4112 = new class251(var1.readString(), class121.field1501);
       this.method2478();
       this.method2481();
       this.method2489();
@@ -152,9 +152,9 @@ public final class class522 extends class518 {
          class340.field2720 = this.field4112.method1458();
       }
 
-      this.field4101 = var1.method1125();
+      this.field4101 = var1.readUnsignedByte();
       this.field4109 = var1.method1174();
-      this.field4115 = var1.method1125() == 1;
+      this.field4115 = var1.readUnsignedByte() == 1;
       if (Client.field601 == 0 && Client.field664 >= 2) {
          this.field4115 = false;
       }
@@ -171,7 +171,7 @@ public final class class522 extends class518 {
             int var13 = var11 >> 12 - var12 & 1;
             if (var13 == 1) {
                int var17 = var6[var12] - 512;
-               int var18 = var1.method1125();
+               int var18 = var1.readUnsignedByte();
                boolean var19 = (var18 & 1) != 0;
                boolean var20 = (var18 & 2) != 0;
                class136 var21 = new class136(var17);
@@ -181,7 +181,7 @@ public final class class522 extends class518 {
                int var25;
                short var26;
                if (var19) {
-                  var22 = var1.method1125();
+                  var22 = var1.readUnsignedByte();
                   var23 = new int[]{var22 & 15, var22 >> 4 & 15};
                   var24 = null != var21.field1572 && var23.length == var21.field1572.length;
 
@@ -196,7 +196,7 @@ public final class class522 extends class518 {
                }
 
                if (var20) {
-                  var22 = var1.method1125();
+                  var22 = var1.readUnsignedByte();
                   var23 = new int[]{var22 & 15, var22 >> 4 & 15};
                   var24 = var21.field1573 != null && var21.field1573.length == var23.length;
 
@@ -216,10 +216,10 @@ public final class class522 extends class518 {
       }
 
       for(var12 = 0; var12 < 3; ++var12) {
-         this.field4099[var12] = var1.method1133();
+         this.field4099[var12] = var1.readString();
       }
 
-      int var27 = var1.method1125();
+      int var27 = var1.readUnsignedByte();
       if (this.field4096 == null) {
          this.field4096 = new class229();
       }

@@ -29,17 +29,17 @@ public class class75 {
 
    int method688(class184 var1, int var2, byte var3) {
       int var4 = var1.method1174();
-      int var5 = var1.method1125();
+      int var5 = var1.readUnsignedByte();
       class328[] var6 = new class328[]{class328.field2643, class328.field2641, class328.field2642, class328.field2646, class328.field2644, class328.field2645, class328.field2640, class328.field2647, class328.field2648};
       class328 var7 = (class328)class341.method1788(var6, var5);
       if (null == var7) {
          var7 = class328.field2648;
       }
 
-      this.field1204 = class169.method1020(var1.method1125());
-      this.field1224 = class169.method1020(var1.method1125());
+      this.field1204 = class169.method1020(var1.readUnsignedByte());
+      this.field1224 = class169.method1020(var1.readUnsignedByte());
       boolean var10001;
-      if (var1.method1125() != 0) {
+      if (var1.readUnsignedByte() != 0) {
          if (var3 >= -1) {
             throw new IllegalStateException();
          }

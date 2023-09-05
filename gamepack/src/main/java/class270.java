@@ -23,7 +23,7 @@ public class class270 extends class151 {
       this.field2314 = new ArrayList(var3);
 
       for(int var4 = 0; var4 < var3; ++var4) {
-         this.field2313[var4] = (class247)class341.method1788(class247.method1450(), var1.method1125());
+         this.field2313[var4] = (class247)class341.method1788(class247.method1450(), var1.readUnsignedByte());
          int var5 = var1.method1141();
          HashMap var6 = new HashMap(var5);
 

@@ -8,7 +8,7 @@ public abstract class class455 implements class86 {
 
    public void method2246(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -17,7 +17,7 @@ public abstract class class455 implements class86 {
          if (var4 != null) {
             switch (var4.field1430) {
                case 0:
-                  int var5 = var1.method1125();
+                  int var5 = var1.readUnsignedByte();
                   this.field3557 = class302.method1662(var5);
                   if (this.field3557 != null) {
                      break;
@@ -29,7 +29,7 @@ public abstract class class455 implements class86 {
                   break;
                case 2:
                   class339[] var6 = new class339[]{class339.field2719, class339.field2716, class339.field2717, class339.field2715};
-                  class341.method1788(var6, var1.method1125());
+                  class341.method1788(var6, var1.readUnsignedByte());
                   break;
                default:
                   throw new IllegalStateException("Unrecognised VarTypeEncodingKey - " + var4);

@@ -23,26 +23,26 @@ public class class497 {
 
    class497(class184 var1) {
       if (var1 != null && var1.field1816 != null) {
-         int var2 = var1.method1125();
+         int var2 = var1.readUnsignedByte();
          if (var2 >= 0 && var2 <= 10) {
-            if (var1.method1125() == 1) {
+            if (var1.readUnsignedByte() == 1) {
                this.field3937 = true;
             }
 
             if (var2 > 1) {
-               this.field3936 = var1.method1125() == 1;
+               this.field3936 = var1.readUnsignedByte() == 1;
             }
 
             if (var2 > 3) {
-               this.field3938 = var1.method1125();
+               this.field3938 = var1.readUnsignedByte();
             }
 
             if (var2 > 2) {
-               int var3 = var1.method1125();
+               int var3 = var1.readUnsignedByte();
 
                for(int var4 = 0; var4 < var3; ++var4) {
-                  int var5 = var1.method1129();
-                  int var6 = var1.method1129();
+                  int var5 = var1.readInt();
+                  int var6 = var1.readInt();
                   this.field3939.put(var5, var6);
                }
             }
@@ -56,22 +56,22 @@ public class class497 {
             }
 
             if (var2 > 6) {
-               this.field3932 = (double)var1.method1125() / 100.0;
-               this.field3927 = var1.method1125();
-               this.field3934 = var1.method1125();
-               this.field3935 = var1.method1125();
+               this.field3932 = (double)var1.readUnsignedByte() / 100.0;
+               this.field3927 = var1.readUnsignedByte();
+               this.field3934 = var1.readUnsignedByte();
+               this.field3935 = var1.readUnsignedByte();
             }
 
             if (var2 > 7) {
-               this.field3933 = var1.method1125();
+               this.field3933 = var1.readUnsignedByte();
             }
 
             if (var2 > 8) {
-               this.field3931 = var1.method1125() == 1;
+               this.field3931 = var1.readUnsignedByte() == 1;
             }
 
             if (var2 > 9) {
-               this.field3929 = var1.method1129();
+               this.field3929 = var1.readInt();
             }
          } else {
             this.method2402(true);

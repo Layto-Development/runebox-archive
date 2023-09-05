@@ -2,6 +2,10 @@ import org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler
 import java.net.URL
 import java.util.jar.JarFile
 
+plugins {
+    java
+}
+
 dependencies {
     implementation(project(":runebox-logger"))
     implementation("org.ow2.asm:asm:_")
@@ -25,7 +29,7 @@ tasks {
     }
 
     create<JavaExec>("deobfuscateGamepack") {
-        dependsOn(compileKotlin.get())
+        dependsOn(build.get())
         group = "internal"
         mainClass.set("io.runebox.internal.deobfuscator.Deobfuscator")
         workingDir = project.projectDir

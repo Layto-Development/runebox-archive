@@ -52,8 +52,8 @@ public class class268 extends class475 {
 
       for(int var5 = 0; var5 < var4; ++var5) {
          int var6 = var1.method1173();
-         class89 var7 = new class89(var1.method1129());
-         boolean var8 = var1.method1125() == 1;
+         class89 var7 = new class89(var1.readInt());
+         boolean var8 = var1.readUnsignedByte() == 1;
          if (var2 || !var8) {
             this.field2305.add(new class108((class89)null, var7, var6, (class174)null));
          }

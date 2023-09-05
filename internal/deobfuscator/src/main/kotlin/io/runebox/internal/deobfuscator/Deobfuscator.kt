@@ -42,6 +42,8 @@ class Deobfuscator(
         register<MethodSorter>()
         register<DeadCodeRemover>()
         register<EmptyClassRemover>()
+        register<ClassIncluder>()
+        register<ObfInfoAnnotationAdder>()
 
         Logger.info("Registered ${transformers.size} bytecode transformers.")
     }

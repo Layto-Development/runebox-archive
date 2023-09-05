@@ -34,13 +34,13 @@ public abstract class class298 {
       var6 = ~var6;
       this.field2495 = var6;
       class184 var5 = new class184(method1657(var1));
-      var6 = var5.method1125();
+      var6 = var5.readUnsignedByte();
       if (var6 >= 5 && var6 <= 7) {
          if (var6 >= 6) {
-            var5.method1129();
+            var5.readInt();
          }
 
-         var7 = var5.method1125();
+         var7 = var5.readUnsignedByte();
          if (var6 >= 7) {
             this.field2489 = var5.method1139();
          } else {
@@ -77,18 +77,18 @@ public abstract class class298 {
             this.field2492 = new int[var9 + 1];
 
             for(var10 = 0; var10 < this.field2489; ++var10) {
-               this.field2492[this.field2497[var10]] = var5.method1129();
+               this.field2492[this.field2497[var10]] = var5.readInt();
             }
 
             this.field2485 = new class128(this.field2492);
          }
 
          for(var10 = 0; var10 < this.field2489; ++var10) {
-            this.field2486[this.field2497[var10]] = var5.method1129();
+            this.field2486[this.field2497[var10]] = var5.readInt();
          }
 
          for(var10 = 0; var10 < this.field2489; ++var10) {
-            this.field2487[this.field2497[var10]] = var5.method1129();
+            this.field2487[this.field2497[var10]] = var5.readInt();
          }
 
          for(var10 = 0; var10 < this.field2489; ++var10) {
@@ -146,7 +146,7 @@ public abstract class class298 {
                this.field2490[var11] = new int[this.field2493[var11].length];
 
                for(var13 = 0; var13 < var12; ++var13) {
-                  this.field2490[var11][this.field2484[var11][var13]] = var5.method1129();
+                  this.field2490[var11][this.field2484[var11][var13]] = var5.readInt();
                }
 
                this.field2494[var11] = new class128(this.field2490[var11]);
@@ -372,7 +372,7 @@ public abstract class class298 {
                   var15 = 0;
 
                   for(var16 = 0; var16 < var4; ++var16) {
-                     var15 += var12.method1129();
+                     var15 += var12.readInt();
                      var13[var16] += var15;
                   }
                }
@@ -392,7 +392,7 @@ public abstract class class298 {
                   int var17 = 0;
 
                   for(var18 = 0; var18 < var4; ++var18) {
-                     var17 += var12.method1129();
+                     var17 += var12.readInt();
                      System.arraycopy(var23, var15, var26[var18], var13[var18], var17);
                      var13[var18] += var17;
                      var15 += var17;
@@ -502,15 +502,15 @@ public abstract class class298 {
 
    static final byte[] method1657(byte[] var0) {
       class184 var2 = new class184(var0);
-      int var3 = var2.method1125();
-      int var4 = var2.method1129();
+      int var3 = var2.readUnsignedByte();
+      int var4 = var2.readInt();
       if (var4 >= 0 && (field2498 == 0 || var4 <= field2498)) {
          if (var3 == 0) {
             byte[] var7 = new byte[var4];
-            var2.method1135(var7, 0, var4);
+            var2.readBytes(var7, 0, var4);
             return var7;
          } else {
-            int var5 = var2.method1129();
+            int var5 = var2.readInt();
             if (var5 < 0 || field2498 != 0 && var5 > field2498) {
                throw new RuntimeException();
             } else {

@@ -3,12 +3,12 @@ public class class430 extends class129 {
    }
 
    void method2071(class184 var1) {
-      int var3 = var1.method1125();
+      int var3 = var1.readUnsignedByte();
       if (var3 != class483.field3835.field3837) {
          throw new IllegalStateException("");
       } else {
-         super.field1532 = var1.method1125();
-         super.field1533 = var1.method1125();
+         super.field1532 = var1.readUnsignedByte();
+         super.field1533 = var1.readUnsignedByte();
          super.field1537 = var1.method1174();
          super.field1535 = var1.method1174();
          super.field1531 = var1.method1174();
@@ -25,12 +25,12 @@ public class class430 extends class129 {
       super.field1543 = new byte[super.field1533][64][64];
       super.field1530 = new byte[super.field1533][64][64];
       super.field1540 = new class207[super.field1533][64][64][];
-      int var3 = var1.method1125();
+      int var3 = var1.readUnsignedByte();
       if (class353.field2774.field2775 != var3) {
          throw new IllegalStateException("");
       } else {
-         int var4 = var1.method1125();
-         int var5 = var1.method1125();
+         int var4 = var1.readUnsignedByte();
+         int var5 = var1.readUnsignedByte();
          if (var4 == super.field1531 && var5 == super.field1538) {
             for(int var6 = 0; var6 < 64; ++var6) {
                for(int var7 = 0; var7 < 64; ++var7) {

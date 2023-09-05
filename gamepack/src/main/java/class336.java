@@ -11,7 +11,7 @@ public class class336 extends class56 {
    }
 
    void method608(class184 var1) {
-      this.field2691 = var1.method1129();
+      this.field2691 = var1.readInt();
       this.field2690 = var1.method1130();
    }
 

@@ -199,7 +199,7 @@ public class class398 {
       var2.field1818 = var0.length - 7 - field3104 * 8;
       field3105 = var2.method1174();
       class202.field1936 = var2.method1174();
-      int var3 = (var2.method1125() & 255) + 1;
+      int var3 = (var2.readUnsignedByte() & 255) + 1;
 
       int var4;
       for(var4 = 0; var4 < field3104; ++var4) {
@@ -236,7 +236,7 @@ public class class398 {
          int var7 = var5 * var6;
          byte[] var8 = new byte[var7];
          class89.field1276[var4] = var8;
-         int var9 = var2.method1125();
+         int var9 = var2.readUnsignedByte();
          int var10;
          if (var9 == 0) {
             for(var10 = 0; var10 < var7; ++var10) {

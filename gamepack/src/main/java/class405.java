@@ -19,7 +19,7 @@ public class class405 {
       class184 var4 = new class184(var3);
 
       while(true) {
-         int var5 = var4.method1125();
+         int var5 = var4.readUnsignedByte();
          if (var5 == 0) {
             return;
          }

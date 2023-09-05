@@ -165,7 +165,7 @@ public final class class526 {
             }
 
             if (var8 == 1) {
-               int var9 = var0.method1125();
+               int var9 = var0.readUnsignedByte();
                if (var9 == 1) {
                   var9 = 0;
                }
@@ -196,7 +196,7 @@ public final class class526 {
             }
 
             if (var8 == 1) {
-               var0.method1125();
+               var0.readUnsignedByte();
                break;
             }
 
@@ -235,7 +235,7 @@ public final class class526 {
                var8 += var10 - 1;
                int var11 = var8 & 63;
                int var12 = var8 >> 6 & 63;
-               int var13 = var5.method1125() >> 2;
+               int var13 = var5.readUnsignedByte() >> 2;
                int var14 = var12 + var1;
                int var15 = var11 + var2;
                if (var14 > 0 && var15 > 0 && var14 < 103 && var15 < 103) {
@@ -256,7 +256,7 @@ public final class class526 {
                break;
             }
 
-            var5.method1125();
+            var5.readUnsignedByte();
          }
       }
    }
@@ -284,7 +284,7 @@ public final class class526 {
             int var11 = var9 & 63;
             int var12 = var9 >> 6 & 63;
             int var13 = var9 >> 12;
-            int var14 = var6.method1125();
+            int var14 = var6.readUnsignedByte();
             int var15 = var14 >> 2;
             int var16 = var14 & 3;
             int var17 = var1 + var12;
@@ -329,7 +329,7 @@ public final class class526 {
             int var15 = var13 & 63;
             int var16 = var13 >> 6 & 63;
             int var17 = var13 >> 12;
-            int var18 = var10.method1125();
+            int var18 = var10.readUnsignedByte();
             int var19 = var18 >> 2;
             int var20 = var18 & 3;
             if (var17 == var4 && var16 >= var5 && var16 < var5 + 8 && var15 >= var6 && var15 < var6 + 8) {

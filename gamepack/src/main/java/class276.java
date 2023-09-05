@@ -68,20 +68,20 @@ public class class276 implements class39 {
    }
 
    public void method568(class184 var1) {
-      this.field2353 = var1.method1125();
-      this.field2355 = var1.method1125();
+      this.field2353 = var1.readUnsignedByte();
+      this.field2355 = var1.readUnsignedByte();
       this.field2359 = var1.method1174();
-      this.field2354 = var1.method1125();
-      this.field2361 = var1.method1125();
+      this.field2354 = var1.readUnsignedByte();
+      this.field2361 = var1.readUnsignedByte();
       this.field2363 = var1.method1174();
-      this.field2360 = var1.method1125();
-      this.field2362 = var1.method1125();
+      this.field2360 = var1.readUnsignedByte();
+      this.field2362 = var1.readUnsignedByte();
       this.field2357 = var1.method1174();
-      this.field2358 = var1.method1125();
-      this.field2356 = var1.method1125();
+      this.field2358 = var1.readUnsignedByte();
+      this.field2356 = var1.readUnsignedByte();
       this.field2365 = var1.method1174();
-      this.field2364 = var1.method1125();
-      this.field2366 = var1.method1125();
+      this.field2364 = var1.readUnsignedByte();
+      this.field2366 = var1.readUnsignedByte();
       this.method1527();
    }
 

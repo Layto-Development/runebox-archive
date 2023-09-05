@@ -19,14 +19,14 @@ public class class471 {
    }
 
    final void method2278(class184 var1) {
-      this.field3624 = var1.method1125();
-      this.field3623 = var1.method1129();
-      this.field3620 = var1.method1129();
+      this.field3624 = var1.readUnsignedByte();
+      this.field3623 = var1.readInt();
+      this.field3620 = var1.readInt();
       this.method2279(var1);
    }
 
    final void method2279(class184 var1) {
-      this.field3625 = var1.method1125();
+      this.field3625 = var1.readUnsignedByte();
       this.field3621 = new int[this.field3625];
       this.field3622 = new int[this.field3625];
 

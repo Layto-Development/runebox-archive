@@ -517,13 +517,13 @@ public class class190 {
       for(int var2 = 0; var2 < field1872; ++var2) {
          int var3 = field1865[var2];
          class522 var4 = Client.field749[var3];
-         int var5 = var0.method1125();
+         int var5 = var0.readUnsignedByte();
          if ((var5 & 1) != 0) {
-            var5 += var0.method1125() << 8;
+            var5 += var0.readUnsignedByte() << 8;
          }
 
          if ((var5 & '\u8000') != 0) {
-            var5 += var0.method1125() << 16;
+            var5 += var0.readUnsignedByte() << 16;
          }
 
          method1196(var0, var3, var4, var5);
@@ -535,7 +535,7 @@ public class class190 {
       byte var5 = class423.field3205.field3208;
       int var6;
       if ((var3 & 8) != 0) {
-         var6 = var0.method1125();
+         var6 = var0.readUnsignedByte();
          byte[] var7 = new byte[var6];
          class184 var8 = new class184(var7);
          var0.method1179(var7, 0, var6);
@@ -548,12 +548,12 @@ public class class190 {
       int var17;
       int var19;
       if ((var3 & 65536) != 0) {
-         var6 = var0.method1125();
+         var6 = var0.readUnsignedByte();
 
          for(var17 = 0; var17 < var6; ++var17) {
             var19 = var0.method1146();
             var9 = var0.method1154();
-            var10 = var0.method1129();
+            var10 = var0.readInt();
             var2.method2468(var19, var9, var10 >> 16, var10 & '\uffff');
          }
       }
@@ -582,7 +582,7 @@ public class class190 {
          var17 = var6 >> 8;
          var19 = var17 >= 13 && var17 <= 20 ? var17 - 12 : 0;
          class363 var22 = (class363)class341.method1788(class363.method1847(), var0.method1146());
-         boolean var25 = var0.method1125() == 1;
+         boolean var25 = var0.readUnsignedByte() == 1;
          var11 = var0.method1185();
          var12 = var0.field1818;
          if (null != var2.field4112 && null != var2.field4096) {
@@ -635,7 +635,7 @@ public class class190 {
          var6 = var0.method1153();
          class363 var20 = (class363)class341.method1788(class363.method1847(), var0.method1185());
          boolean var21 = var0.method1185() == 1;
-         var9 = var0.method1125();
+         var9 = var0.readUnsignedByte();
          var10 = var0.field1818;
          if (var2.field4112 != null && var2.field4096 != null) {
             boolean var26 = false;
@@ -673,7 +673,7 @@ public class class190 {
       }
 
       if ((var3 & 4) != 0) {
-         var6 = var0.method1125();
+         var6 = var0.readUnsignedByte();
          if (var6 > 0) {
             for(var17 = 0; var17 < var6; ++var17) {
                var9 = -1;
@@ -696,7 +696,7 @@ public class class190 {
             }
          }
 
-         var17 = var0.method1125();
+         var17 = var0.readUnsignedByte();
          if (var17 > 0) {
             for(var19 = 0; var19 < var17; ++var19) {
                var9 = var0.method1172();
@@ -704,7 +704,7 @@ public class class190 {
                if (var10 != 32767) {
                   var11 = var0.method1172();
                   var12 = var0.method1146();
-                  var29 = var10 > 0 ? var0.method1125() : var12;
+                  var29 = var10 > 0 ? var0.readUnsignedByte() : var12;
                   var2.method2467(var9, Client.field879, var10, var11, var12, var29);
                } else {
                   var2.method2472(var9);
@@ -745,7 +745,7 @@ public class class190 {
       }
 
       if ((var3 & 128) != 0) {
-         var2.field4069 = var0.method1133();
+         var2.field4069 = var0.readString();
          if (var2.field4069.charAt(0) == '~') {
             var2.field4069 = var2.field4069.substring(1);
             class194.method1209(2, var2.field4112.method1458(), var2.field4069);
@@ -770,7 +770,7 @@ public class class190 {
 
       if ((var3 & 8192) != 0) {
          for(var6 = 0; var6 < 3; ++var6) {
-            var2.field4099[var6] = var0.method1133();
+            var2.field4099[var6] = var0.readString();
          }
       }
 

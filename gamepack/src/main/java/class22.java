@@ -211,13 +211,13 @@ public class class22 extends class298 {
                this.field223.method136(this, 255, this.field215, this.field213, (byte)0, true);
             } else {
                class184 var12 = new class184(class298.method1657(var3));
-               int var13 = var12.method1125();
+               int var13 = var12.readUnsignedByte();
                if (var13 != 5 && var13 != 6) {
                   throw new RuntimeException(var13 + "," + this.field215 + "," + var2);
                } else {
                   int var9 = 0;
                   if (var13 >= 6) {
-                     var9 = var12.method1129();
+                     var9 = var12.readInt();
                   }
 
                   if (this.field220 != var9) {

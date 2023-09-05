@@ -9,8 +9,8 @@ public class class417 extends class56 {
    }
 
    void method608(class184 var1) {
-      this.field3198 = var1.method1129();
-      this.field3197 = var1.method1129();
+      this.field3198 = var1.readInt();
+      this.field3197 = var1.readInt();
    }
 
    void method607(class15 var1) {

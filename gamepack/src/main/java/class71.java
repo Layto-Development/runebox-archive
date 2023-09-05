@@ -111,7 +111,7 @@ public class class71 extends class151 {
 
    void method666(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -124,7 +124,7 @@ public class class71 extends class151 {
       if (var2 == 1) {
          this.field1145 = var1.method1174();
       } else if (var2 == 2) {
-         this.field1160 = var1.method1133();
+         this.field1160 = var1.readString();
       } else if (var2 == 4) {
          this.field1159 = var1.method1174();
       } else if (var2 == 5) {
@@ -142,41 +142,41 @@ public class class71 extends class151 {
             this.field1154 -= 65536;
          }
       } else if (var2 == 9) {
-         var1.method1133();
+         var1.readString();
       } else if (var2 == 11) {
          this.field1155 = 1;
       } else if (var2 == 12) {
-         this.field1156 = var1.method1129();
+         this.field1156 = var1.readInt();
       } else if (var2 == 13) {
-         this.field1157 = var1.method1125();
+         this.field1157 = var1.readUnsignedByte();
       } else if (var2 == 14) {
-         this.field1142 = var1.method1125();
+         this.field1142 = var1.readUnsignedByte();
       } else if (var2 == 16) {
          this.field1148 = true;
       } else if (var2 == 23) {
          this.field1190 = var1.method1174();
-         this.field1166 = var1.method1125();
+         this.field1166 = var1.readUnsignedByte();
       } else if (var2 == 24) {
          this.field1165 = var1.method1174();
       } else if (var2 == 25) {
          this.field1167 = var1.method1174();
-         this.field1169 = var1.method1125();
+         this.field1169 = var1.readUnsignedByte();
       } else if (var2 == 26) {
          this.field1168 = var1.method1174();
       } else if (var2 == 27) {
-         this.field1158 = var1.method1125();
+         this.field1158 = var1.readUnsignedByte();
       } else if (var2 >= 30 && var2 < 35) {
-         this.field1161[var2 - 30] = var1.method1133();
+         this.field1161[var2 - 30] = var1.readString();
          if (this.field1161[var2 - 30].equalsIgnoreCase(class27.field486)) {
             this.field1161[var2 - 30] = null;
          }
       } else if (var2 >= 35 && var2 < 40) {
-         this.field1162[var2 - 35] = var1.method1133();
+         this.field1162[var2 - 35] = var1.readString();
       } else {
          int var4;
          int var5;
          if (var2 == 40) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             this.field1179 = new short[var4];
             this.field1147 = new short[var4];
 
@@ -185,7 +185,7 @@ public class class71 extends class151 {
                this.field1147[var5] = (short)var1.method1174();
             }
          } else if (var2 == 41) {
-            var4 = var1.method1125();
+            var4 = var1.readUnsignedByte();
             this.field1173 = new short[var4];
             this.field1149 = new short[var4];
 
@@ -238,7 +238,7 @@ public class class71 extends class151 {
          } else if (var2 == 114) {
             this.field1184 = var1.method1126() * 5;
          } else if (var2 == 115) {
-            this.field1185 = var1.method1125();
+            this.field1185 = var1.readUnsignedByte();
          } else if (var2 == 139) {
             this.field1164 = var1.method1174();
          } else if (var2 == 140) {

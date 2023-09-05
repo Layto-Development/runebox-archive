@@ -64,7 +64,7 @@ public class class230 {
          } else if (class238.field2184.method2563()) {
             byte[] var1 = class238.field2184.method2565();
             class184 var2 = new class184(var1);
-            var2.method1129();
+            var2.readInt();
             field2134 = var2.method1174();
             class263.field2288 = new class230[field2134];
 
@@ -72,10 +72,10 @@ public class class230 {
             for(int var3 = 0; var3 < field2134; var4.field2139 = var3++) {
                var4 = class263.field2288[var3] = new class230();
                var4.field2133 = var2.method1174();
-               var4.field2129 = var2.method1129();
-               var4.field2136 = var2.method1133();
-               var4.field2137 = var2.method1133();
-               var4.field2138 = var2.method1125();
+               var4.field2129 = var2.readInt();
+               var4.field2136 = var2.readString();
+               var4.field2137 = var2.readString();
+               var4.field2138 = var2.readUnsignedByte();
                var4.field2135 = var2.method1127();
             }
 
@@ -322,7 +322,7 @@ public class class230 {
       if (class413.field3167 == var0) {
          var3 = var2.method1164();
          var4 = var2.method1165();
-         var5 = var2.method1125();
+         var5 = var2.readUnsignedByte();
          var6 = (var5 >> 4 & 7) + class372.field2904;
          var7 = class359.field2820 + (var5 & 7);
          var8 = var2.method1153();
@@ -526,8 +526,8 @@ public class class230 {
                var3 = var2.method1146();
                var4 = (var3 >> 4 & 7) + class372.field2904;
                var5 = (var3 & 7) + class359.field2820;
-               var6 = var2.method1125();
-               var7 = var2.method1129();
+               var6 = var2.readUnsignedByte();
+               var7 = var2.readInt();
                var2.method1154();
                var2.method1152();
                var2.method1146();
@@ -546,7 +546,7 @@ public class class230 {
                }
 
             } else if (class413.field3173 == var0) {
-               var3 = var2.method1125();
+               var3 = var2.readUnsignedByte();
                var4 = (var3 >> 4 & 7) + class372.field2904;
                var5 = (var3 & 7) + class359.field2820;
                var6 = var2.method1185();
@@ -562,7 +562,7 @@ public class class230 {
                if (class413.field3172 == var0) {
                   var3 = var2.method1154();
                   var4 = var2.method1164();
-                  var5 = var2.method1125();
+                  var5 = var2.readUnsignedByte();
                   var6 = class372.field2904 + (var5 >> 4 & 7);
                   var7 = class359.field2820 + (var5 & 7);
                   if (var6 >= 0 && var7 >= 0 && var6 < 104 && var7 < 104) {
@@ -591,7 +591,7 @@ public class class230 {
                      var6 = var2.method1147();
                      var7 = var6 >> 4 & 15;
                      var8 = var6 & 7;
-                     var9 = var2.method1125();
+                     var9 = var2.readUnsignedByte();
                      var10 = var2.method1154();
                      if (var4 >= 0 && var5 >= 0 && var4 < 104 && var5 < 104) {
                         var11 = var7 + 1;
@@ -617,7 +617,7 @@ public class class230 {
                      var10 = var2.method1185();
                      var11 = var2.method1147() * 4;
                      var12 = var2.method1160();
-                     var13 = var2.method1125();
+                     var13 = var2.readUnsignedByte();
                      var14 = (var13 >> 4 & 7) + class372.field2904;
                      var15 = (var13 & 7) + class359.field2820;
                      var16 = var2.method1154();
@@ -660,7 +660,7 @@ public class class230 {
                      }
 
                   } else if (var0 == class413.field3165) {
-                     var3 = var2.method1125();
+                     var3 = var2.readUnsignedByte();
                      var4 = (var3 >> 4 & 7) + class372.field2904;
                      var5 = (var3 & 7) + class359.field2820;
                      var6 = var2.method1147();

@@ -13,13 +13,13 @@ public class class235 extends class531 {
    }
 
    void method2516(class184 var1) {
-      var1.method1125();
+      var1.readUnsignedByte();
       this.field2145 = var1.method1174();
       this.field2144 = var1.method1126();
       this.field2143 = var1.method1174();
       var1.method1130();
-      this.field2146 = var1.method1133();
-      var1.method1125();
+      this.field2146 = var1.readString();
+      var1.readUnsignedByte();
    }
 
    void method2517(class290 var1) {

@@ -9,22 +9,22 @@ public class class370 extends class55 {
    public class370(int var1, byte[] var2) {
       this.field2896 = var1;
       class184 var3 = new class184(var2);
-      this.field2897 = var3.method1125();
+      this.field2897 = var3.readUnsignedByte();
       this.field2898 = new int[this.field2897];
       this.field2899 = new int[this.field2897][];
 
       int var4;
       for(var4 = 0; var4 < this.field2897; ++var4) {
-         this.field2898[var4] = var3.method1125();
+         this.field2898[var4] = var3.readUnsignedByte();
       }
 
       for(var4 = 0; var4 < this.field2897; ++var4) {
-         this.field2899[var4] = new int[var3.method1125()];
+         this.field2899[var4] = new int[var3.readUnsignedByte()];
       }
 
       for(var4 = 0; var4 < this.field2897; ++var4) {
          for(int var5 = 0; var5 < this.field2899[var4].length; ++var5) {
-            this.field2899[var4][var5] = var3.method1125();
+            this.field2899[var4][var5] = var3.readUnsignedByte();
          }
       }
 

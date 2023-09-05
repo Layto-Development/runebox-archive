@@ -10,7 +10,7 @@ public class class150 extends class151 {
 
    void method933(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -21,15 +21,15 @@ public class class150 extends class151 {
 
    void method934(class184 var1, int var2) {
       if (var2 == 1) {
-         int var4 = var1.method1125();
+         int var4 = var1.readUnsignedByte();
          if (this.field1620 == null) {
             this.field1620 = new int[var4][];
          }
 
-         for(int var5 = var1.method1125(); var5 != 255; var5 = var1.method1125()) {
+         for(int var5 = var1.readUnsignedByte(); var5 != 255; var5 = var1.readUnsignedByte()) {
             int var6 = var5 & 127;
             boolean var7 = (var5 & 128) != 0;
-            int[] var8 = new int[var1.method1125()];
+            int[] var8 = new int[var1.readUnsignedByte()];
 
             for(int var9 = 0; var9 < var8.length; ++var9) {
                var8[var9] = var1.method1172();

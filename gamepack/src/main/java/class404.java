@@ -5,7 +5,7 @@ public class class404 {
 
    class404(class184 var1) {
       for(int var2 = 0; var2 < 10; ++var2) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 != 0) {
             --var1.field1818;
             this.field3121[var2] = new class434();

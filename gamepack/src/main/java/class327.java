@@ -164,7 +164,7 @@ public class class327 {
 
             class184 var25 = new class184(var3);
             if (var25.field1816.length - var25.field1818 >= 1) {
-               int var6 = var25.method1125();
+               int var6 = var25.readUnsignedByte();
                if (var6 < 0 || var6 > 2) {
                   return;
                }
@@ -183,7 +183,7 @@ public class class327 {
                      }
 
                      var9 = var25.method1174();
-                     var10 = var25.method1125();
+                     var10 = var25.readUnsignedByte();
                      class247 var11 = (class247)class341.method1788(class247.method1450(), var10);
                      Object var12 = var11.method1449(var25);
                      if (var9 >= 0 && var9 < this.field2635.length && this.field2635[var9]) {
@@ -197,7 +197,7 @@ public class class327 {
 
                   for(var8 = 0; var8 < var7; ++var8) {
                      var9 = var25.method1174();
-                     var10 = var25.method1129();
+                     var10 = var25.readInt();
                      if (var9 >= 0 && var9 < this.field2635.length && this.field2635[var9]) {
                         this.field2638.put(var9, var10);
                      }
@@ -212,7 +212,7 @@ public class class327 {
                      }
 
                      var25.method1174();
-                     var25.method1133();
+                     var25.readString();
                      ++var9;
                   }
                }

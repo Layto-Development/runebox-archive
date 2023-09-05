@@ -15,7 +15,7 @@ public class class206 extends class151 {
 
    void method1255(class184 var1) {
       while(true) {
-         int var3 = var1.method1125();
+         int var3 = var1.readUnsignedByte();
          if (var3 == 0) {
             return;
          }
@@ -28,11 +28,11 @@ public class class206 extends class151 {
       if (var2 == 1) {
          this.field1943 = class162.method991(var1.method1126());
       } else if (var2 == 2) {
-         this.field1941 = var1.method1129();
+         this.field1941 = var1.readInt();
       } else if (var2 == 4) {
          this.field1942 = false;
       } else if (var2 == 5) {
-         this.field1945 = var1.method1133();
+         this.field1945 = var1.readString();
       }
 
    }

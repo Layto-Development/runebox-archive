@@ -6,12 +6,12 @@ public class class82 {
    public final long field1255;
 
    class82(class184 var1, byte var2, int var3) {
-      this.field1256 = var1.method1133();
-      this.field1254 = var1.method1133();
+      this.field1256 = var1.readString();
+      this.field1254 = var1.readString();
       this.field1257 = var1.method1174();
       this.field1255 = var1.method1130();
-      int var4 = var1.method1129();
-      int var5 = var1.method1129();
+      int var4 = var1.readInt();
+      int var5 = var1.readInt();
       this.field1253 = new class177();
       this.field1253.method1098(2);
       this.field1253.method1102(var2);

@@ -7,6 +7,11 @@ import org.objectweb.asm.tree.MethodNode
 
 fun MethodNode.init(cls: ClassNode) {
     this.cls = cls
+    origOwner
+    origName
+    origDesc
+    opaqueDesc
+    opaqueValue
 }
 
 fun MethodNode.reset() {
@@ -15,6 +20,12 @@ fun MethodNode.reset() {
 
 var MethodNode.cls: ClassNode by field()
 val MethodNode.pool get() = cls.pool
+
+var MethodNode.origOwner: String by field { it.cls.name }
+var MethodNode.origName: String by field { it.name }
+var MethodNode.origDesc: String by field { it.desc }
+var MethodNode.opaqueDesc: String by field { "" }
+var MethodNode.opaqueValue: String by field { "" }
 
 var MethodNode.hierarchy: HashSet<MethodNode> by field { hashSetOf() }
 

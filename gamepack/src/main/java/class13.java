@@ -6,7 +6,7 @@ final class class13 implements class376 {
    }
 
    public Object method1879(class184 var1) {
-      return var1.method1133();
+      return var1.readString();
    }
 
    public void method1880(Object var1, class184 var2) {

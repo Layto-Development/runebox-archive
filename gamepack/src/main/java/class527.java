@@ -14,9 +14,9 @@ public class class527 extends class56 {
 
    void method608(class184 var1) {
       this.field4148 = var1.method1174();
-      this.field4147 = var1.method1129();
-      this.field4150 = var1.method1125();
-      this.field4146 = var1.method1125();
+      this.field4147 = var1.readInt();
+      this.field4150 = var1.readUnsignedByte();
+      this.field4146 = var1.readUnsignedByte();
    }
 
    void method607(class15 var1) {

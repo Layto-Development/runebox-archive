@@ -20,7 +20,7 @@ public abstract class class8 extends class512 implements class473 {
       class438 var5 = new class438(var3);
       Class var6 = var4.field3557.field2222;
       if (var6 == Integer.class) {
-         var5.field3325 = var1.method1129();
+         var5.field3325 = var1.readInt();
       } else if (var6 == Long.class) {
          var5.field3325 = var1.method1130();
       } else if (var6 == String.class) {
