@@ -7,6 +7,7 @@ dependencies {
     implementation(project(":runebox-common"))
     implementation(project(":runebox-util"))
     implementation(project(":runebox-logger"))
+    implementation(project(":runebox-eventbus"))
     implementation("com.formdev:flatlaf:_")
     implementation("com.formdev:flatlaf-intellij-themes:_")
 }

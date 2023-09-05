@@ -25,6 +25,7 @@ module(":api")
 module("client")
 module(":util")
 module(":common")
+module(":eventbus")
 
 fun module(path: String) {
     val split = path.split(":")

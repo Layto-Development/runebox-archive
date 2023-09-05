@@ -55,9 +55,6 @@ class ClientUI {
         container.add(navContainer)
 
         pluginToolbar = PluginToolbar()
-        pluginToolbar.background = Color.RED
-        container.add(pluginToolbar)
-        container.add(PluginToolbar())
 
         frame.add(container)
         frame.pack()
