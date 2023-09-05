@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Reflection {
 
-    private static final boolean DEBUG_MODE = true;
+    private static final boolean DEBUG_MODE = false;
 
     public static final Map<String, Class<?>> classes = new HashMap<>();
 

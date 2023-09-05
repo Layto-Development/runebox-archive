@@ -63,11 +63,4 @@ class TestClient {
         this.setStub(stub)
     }
 
-    @Test
-    fun testClient() {
-        start()
-        while(true) {
-            Thread.sleep(500L)
-        }
-    }
 }

@@ -7,14 +7,12 @@ dependencies {
     implementation(project(":runebox-common"))
     implementation(project(":runebox-util"))
     implementation(project(":runebox-logger"))
-    implementation(project(":runebox-injector-annotations"))
-    implementation("org.bouncycastle:bcprov-jdk15on:1.52")
-    implementation("org.json:json:20220320")
+    runtimeOnly("org.bouncycastle:bcprov-jdk15on:1.52")
+    runtimeOnly("org.json:json:20220320")
 }
 
 tasks {
     val shadowJar = create<Jar>("shadowJar") {
-        dependsOn(compileKotlin.get())
         group = "build"
         archiveClassifier.set("shaded")
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -28,8 +26,7 @@ tasks {
         with(jar.get())
     }
 
-    create<JavaExec>("runClient") {
-        dependsOn(build.get())
+    create<JavaExec>("run") {
         group = "application"
         mainClass.set("io.runebox.client.RuneBox")
         workingDir = project.projectDir

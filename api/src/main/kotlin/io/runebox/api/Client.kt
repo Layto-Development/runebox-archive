@@ -4,5 +4,5 @@ interface Client {
 
     var gameState: Int
 
-    fun test()
+    fun testfd()
 }

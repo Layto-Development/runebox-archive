@@ -1,6 +1,6 @@
 val injectorOnly by configurations.creating
 
-configurations.compileOnly {
+configurations.implementation {
     extendsFrom(injectorOnly)
     isCanBeResolved = true
     isCanBeConsumed = false
@@ -24,7 +24,13 @@ dependencies {
 
 tasks {
     create<JavaExec>("injectGamepack") {
-        dependsOn(injectorOnly)
+        onlyIf { listOf(
+                project(":runebox-api"),
+                project(":runebox-injector-annotations"),
+                project(":runebox-mixins"),
+                project(":runebox-gamepack")
+            ).any { it.tasks.getByName("jar").didWork } }
+
         group = "internal"
         mainClass.set("io.runebox.internal.injector.Injector")
         workingDir = project.projectDir
