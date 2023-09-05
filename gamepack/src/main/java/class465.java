@@ -1,20 +1,21 @@
-public class class465 extends class56 {
-   static class427[] field3603;
-   static int[] field3601;
-   String field3602;
-   // $FF: synthetic field
-   final class315 this$0;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class465(class315 var1) {
-      this.this$0 = var1;
-   }
+@ObfInfo(name = "kq")
+public class class465 {
+	@ObfInfo(name = "at", desc = "Ljb;")
+	class383 field3764;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1584383335)
+	int field3763;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = -558623439)
+	int field3765;
+	@ObfInfo(name = "au", desc = "Ljava/lang/String;")
+	String field3762;
 
-   void method608(class184 var1) {
-      this.field3602 = var1.readString();
-      var1.readInt();
-   }
-
-   void method607(class15 var1) {
-      var1.field150 = this.field3602;
-   }
+	@ObfInfo(name = "<init>", desc = "(Ljava/lang/String;IILjb;)V")
+	class465(String var1, int var2, int var3, class383 var4) {
+		this.field3762 = var1;
+		this.field3765 = var2;
+		this.field3763 = var3;
+		this.field3764 = var4;
+	}
 }

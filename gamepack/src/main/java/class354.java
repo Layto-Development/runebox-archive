@@ -1,151 +1,83 @@
-import java.util.Comparator;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Iterator;
+import java.util.TimeZone;
 
+@ObfInfo(name = "lc")
+@class103
 public final class class354 {
-   final class260 field2782;
-   final class489 field2779;
-   final class489 field2780;
-   final int field2783;
-   final Comparator field2784;
-   final Map field2778;
-   final long field2781;
+	@ObfInfo(name = "ao", desc = "Ljava/util/HashMap;")
+	static final HashMap field2800;
 
-   public class354(int var1, class260 var2) {
-      this(-1L, var1, var2);
-   }
+	static {
+		field2800 = new HashMap();
+		TimeZone var0;
+		synchronized(field2800) {
+			TimeZone var2 = (TimeZone)field2800.get("Europe/London");
+			if (null == var2) {
+				var2 = TimeZone.getTimeZone("Europe/London");
+				field2800.put("Europe/London", var2);
+			}
 
-   class354(long var1, int var3, class260 var4) {
-      this.field2784 = new class490(this);
-      this.field2781 = var1;
-      this.field2783 = var3;
-      this.field2782 = var4;
-      if (this.field2783 == -1) {
-         this.field2778 = new HashMap(64);
-         this.field2779 = new class489(64, this.field2784);
-         this.field2780 = null;
-      } else {
-         if (this.field2782 == null) {
-            throw new IllegalArgumentException("");
-         }
+			var0 = var2;
+		}
 
-         this.field2778 = new HashMap(this.field2783);
-         this.field2779 = new class489(this.field2783, this.field2784);
-         this.field2780 = new class489(this.field2783);
-      }
+		Calendar.getInstance(var0);
+	}
 
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class354() throws Throwable {
+	}
 
-   boolean method1818() {
-      return this.field2783 != -1;
-   }
+	@ObfInfo(name = "ao", desc = "(IB)V")
+	public static void method1937(int var0, byte var1) {
+		if (!class303.field2447.isEmpty()) {
+			if (var1 <= -1) {
+				throw new IllegalStateException();
+			}
 
-   public Object method1819(Object var1, byte var2) {
-      synchronized(this) {
-         if (this.field2781 != -1L) {
-            if (var2 == -1) {
-               throw new IllegalStateException();
-            }
+			Iterator var2 = class303.field2447.iterator();
 
-            this.method1821();
-         }
+			while (var2.hasNext()) {
+				if (var1 <= -1) {
+					throw new IllegalStateException();
+				}
 
-         class312 var4 = (class312)this.field2778.get(var1);
-         if (var4 == null) {
-            if (var2 == -1) {
-               throw new IllegalStateException();
-            } else {
-               return null;
-            }
-         } else {
-            this.method1822(var4, false);
-            return var4.field2558;
-         }
-      }
-   }
+				class503 var3 = (class503)var2.next();
+				if (null != var3) {
+					var3.field4059 = var0;
+				}
+			}
 
-   public Object method1820(Object var1, Object var2) {
-      synchronized(this) {
-         if (this.field2781 != -1L) {
-            this.method1821();
-         }
+			class503 var4 = (class503)class303.field2447.get(0);
+			if (var4 != null) {
+				if (var1 <= -1) {
+					throw new IllegalStateException();
+				}
 
-         class312 var5 = (class312)this.field2778.get(var1);
-         if (null != var5) {
-            Object var9 = var5.field2558;
-            var5.field2558 = var2;
-            this.method1822(var5, false);
-            return var9;
-         } else {
-            class312 var6;
-            if (this.method1818() && this.field2778.size() == this.field2783) {
-               var6 = (class312)this.field2780.remove();
-               this.field2778.remove(var6.field2559);
-               this.field2779.remove(var6);
-            }
+				if (var4.field4063 != null) {
+					if (var1 <= -1) {
+						throw new IllegalStateException();
+					}
 
-            var6 = new class312(var2, var1);
-            this.field2778.put(var1, var6);
-            this.method1822(var6, true);
-            return null;
-         }
-      }
-   }
+					if (var4.field4063.method809()) {
+						if (var1 <= -1) {
+							return;
+						}
 
-   void method1822(class312 var1, boolean var2) {
-      if (!var2) {
-         this.field2779.remove(var1);
-         if (this.method1818() && !this.field2780.remove(var1)) {
-            throw new IllegalStateException("");
-         }
-      }
+						if (!var4.field4068) {
+							if (var1 <= -1) {
+								throw new IllegalStateException();
+							}
 
-      var1.field2560 = System.currentTimeMillis();
-      if (this.method1818()) {
-         switch (this.field2782.field2283) {
-            case 0:
-               var1.field2561 = var1.field2560;
-               break;
-            case 1:
-               ++var1.field2561;
-         }
+							var4.field4063.method777(var0);
+							var4.field4056 = (float)var0;
+						}
+					}
+				}
+			}
+		}
 
-         this.field2780.add(var1);
-      }
-
-      this.field2779.add(var1);
-   }
-
-   void method1821() {
-      if (this.field2781 == -1L) {
-         throw new IllegalStateException("");
-      } else {
-         long var2 = System.currentTimeMillis() - this.field2781;
-
-         while(!this.field2779.isEmpty()) {
-            class312 var4 = (class312)this.field2779.peek();
-            if (var4.field2560 >= var2) {
-               return;
-            }
-
-            this.field2778.remove(var4.field2559);
-            this.field2779.remove(var4);
-            if (this.method1818()) {
-               this.field2780.remove(var4);
-            }
-         }
-
-      }
-   }
-
-   public void method1817() {
-      synchronized(this) {
-         this.field2778.clear();
-         this.field2779.clear();
-         if (this.method1818()) {
-            this.field2780.clear();
-         }
-
-      }
-   }
+	}
 }

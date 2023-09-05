@@ -1,39 +1,87 @@
-import java.util.Iterator;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class485 extends class358 {
-   static boolean field3840;
+@ObfInfo(name = "br")
+public class class485 {
+	@ObfInfo(name = "ac", desc = "I")
+	int field3945;
+	@ObfInfo(name = "at", desc = "I")
+	int field3948;
+	@ObfInfo(name = "ai", desc = "I")
+	int field3949;
+	@ObfInfo(name = "au", desc = "I")
+	int field3950;
+	@ObfInfo(name = "af", desc = "I")
+	int field3951;
+	@ObfInfo(name = "az", desc = "I")
+	int field3952;
+	@ObfInfo(name = "aa", desc = "I")
+	int field3953;
+	@ObfInfo(name = "ap", desc = "I")
+	int field3954;
+	@ObfInfo(name = "ad", desc = "I")
+	int field3955;
+	@ObfInfo(name = "ae", desc = "[I")
+	int[] field3946;
+	@ObfInfo(name = "ao", desc = "[I")
+	int[] field3947;
 
-   public class485(class358 var1) {
-      super(var1);
-      super.field2810 = "StartSongTask";
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class485() {
+		this.field3950 = 2;
+		this.field3946 = new int[2];
+		this.field3947 = new int[2];
+		this.field3946[0] = 0;
+		this.field3946[1] = 65535;
+		this.field3947[0] = 0;
+		this.field3947[1] = 65535;
+	}
 
-   public boolean method1831() {
-      Iterator var2 = class228.field2105.iterator();
+	@ObfInfo(name = "au", desc = "(Ltm;)V")
+	final void method2456(class280 var1) {
+		this.field3949 = var1.method1492();
+		this.field3948 = var1.method1496();
+		this.field3945 = var1.method1496();
+		this.method2457(var1);
+	}
 
-      while(var2.hasNext()) {
-         class131 var3 = (class131)var2.next();
-         if (null != var3 && !var3.field1552 && null != var3.field1551) {
-            try {
-               var3.field1551.method2178();
-               var3.field1551.method2175(0);
-               if (var3.field1555 != null) {
-                  var3.field1551.method2179(var3.field1555, var3.field1549);
-               }
+	@ObfInfo(name = "ae", desc = "(Ltm;)V")
+	final void method2457(class280 var1) {
+		this.field3950 = var1.method1492();
+		this.field3946 = new int[this.field3950];
+		this.field3947 = new int[this.field3950];
 
-               var3.field1555 = null;
-               var3.field1554 = null;
-               var3.field1548 = null;
-               var3.field1552 = true;
-            } catch (Exception var5) {
-               class194.method1208((String)null, var5);
-               this.method1834(var5.getMessage());
-               return true;
-            }
-         }
-      }
+		for (int var2 = 0; var2 < this.field3950; ++var2) {
+			this.field3946[var2] = var1.method1541();
+			this.field3947[var2] = var1.method1541();
+		}
 
-      super.field2812 = true;
-      return true;
-   }
+	}
+
+	@ObfInfo(name = "ao", desc = "()V")
+	final void method2455() {
+		this.field3952 = 0;
+		this.field3954 = 0;
+		this.field3953 = 0;
+		this.field3951 = 0;
+		this.field3955 = 0;
+	}
+
+	@ObfInfo(name = "at", desc = "(I)I")
+	final int method2454(int var1) {
+		if (this.field3955 >= this.field3952) {
+			this.field3951 = this.field3947[this.field3954++] << 15;
+			if (this.field3954 >= this.field3950) {
+				this.field3954 = this.field3950 - 1;
+			}
+
+			this.field3952 = (int)((double)this.field3946[this.field3954] / 65536.0D * (double)var1);
+			if (this.field3952 > this.field3955) {
+				this.field3953 = ((this.field3947[this.field3954] << 15) - this.field3951) / (this.field3952 - this.field3955);
+			}
+		}
+
+		this.field3951 += this.field3953;
+		++this.field3955;
+		return this.field3951 - this.field3953 >> 15;
+	}
 }

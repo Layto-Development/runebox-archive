@@ -1,107 +1,52 @@
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import javax.net.ssl.HttpsURLConnection;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class98 {
-   static int field1320;
-   final DecimalFormat field1317 = new DecimalFormat();
-   final Map field1318 = new HashMap();
-   final Map field1319 = new HashMap();
+@ObfInfo(name = "fb")
+public class class98 implements class425 {
+	@ObfInfo(name = "ix", desc = "I", intMultiplier = 1742355953)
+	static int field979;
+	@ObfInfo(name = "az", desc = "Lfb;")
+	static final class98 field968;
+	@ObfInfo(name = "ae", desc = "Lfb;")
+	static final class98 field969;
+	@ObfInfo(name = "ao", desc = "Lfb;")
+	static final class98 field970;
+	@ObfInfo(name = "au", desc = "Lfb;")
+	static final class98 field971;
+	@ObfInfo(name = "ac", desc = "Lfb;")
+	static final class98 field972;
+	@ObfInfo(name = "ai", desc = "Lfb;")
+	static final class98 field973;
+	@ObfInfo(name = "at", desc = "Lfb;")
+	static final class98 field974;
+	@ObfInfo(name = "ap", desc = "Lfb;")
+	static final class98 field975;
+	@ObfInfo(name = "aa", desc = "Lfb;")
+	static final class98 field976;
+	@ObfInfo(name = "af", desc = "I", intMultiplier = 360150709)
+	final int field977;
+	@ObfInfo(name = "ad", desc = "I", intMultiplier = 1042578959)
+	final int field978;
 
-   public class98() {
-      this.field1317.setMaximumFractionDigits(2);
-   }
+	static {
+		field971 = new class98(0, 0);
+		field969 = new class98(1, 1);
+		field970 = new class98(2, 2);
+		field974 = new class98(3, 3);
+		field972 = new class98(4, 4);
+		field973 = new class98(5, 5);
+		field968 = new class98(6, 6);
+		field975 = new class98(7, 7);
+		field976 = new class98(8, 8);
+	}
 
-   public void method733(HttpsURLConnection var1) {
-      Iterator var3 = this.field1318.entrySet().iterator();
+	@ObfInfo(name = "<init>", desc = "(II)V")
+	class98(int var1, int var2) {
+		this.field977 = var1;
+		this.field978 = var2;
+	}
 
-      while(var3.hasNext()) {
-         Map.Entry var4 = (Map.Entry)var3.next();
-         var1.setRequestProperty((String)var4.getKey(), (String)var4.getValue());
-      }
-
-   }
-
-   public Map method734() {
-      return this.field1318;
-   }
-
-   public void method735(String var1, String var2) {
-      if (var1 != null && !var1.isEmpty()) {
-         this.field1318.put(var1, var2 != null ? var2 : "");
-      }
-
-   }
-
-   public void method744(String var1) {
-      if (null != var1 && !var1.isEmpty()) {
-         this.field1318.remove(var1);
-      }
-
-   }
-
-   void method740(class284 var1, String var2) {
-      String var4 = String.format("%s %s", var1.method1597(), var2);
-      this.method735("Authorization", var4);
-   }
-
-   public void method736(String var1) {
-      this.method740(class284.field2441, var1);
-   }
-
-   public void method745(String var1) {
-      this.method740(class284.field2442, var1);
-   }
-
-   public void method739(class509 var1) {
-      this.field1318.put("Content-Type", var1.method2462());
-   }
-
-   public void method737() {
-      this.field1318.remove("Content-Type");
-   }
-
-   public void method738(class509 var1) {
-      this.method742(var1, 1.0F);
-   }
-
-   void method742(class509 var1, float var2) {
-      this.field1319.put(var1, Math.max(0.0F, Math.min(1.0F, var2)));
-      this.method741();
-   }
-
-   void method741() {
-      this.field1318.remove("Accept");
-      if (!this.field1319.isEmpty()) {
-         this.field1318.put("Accept", this.method743());
-      }
-
-   }
-
-   String method743() {
-      ArrayList var2 = new ArrayList(this.field1319.entrySet());
-      Collections.sort(var2, new class202(this));
-      StringBuilder var3 = new StringBuilder();
-      Iterator var4 = var2.iterator();
-
-      while(var4.hasNext()) {
-         Map.Entry var5 = (Map.Entry)var4.next();
-         if (var3.length() > 0) {
-            var3.append(",");
-         }
-
-         var3.append(((class509)var5.getKey()).method2462());
-         float var6 = (Float)var5.getValue();
-         if (var6 < 1.0F) {
-            String var7 = this.field1317.format((double)var6);
-            var3.append(";q=").append(var7);
-         }
-      }
-
-      return var3.toString();
-   }
+	@ObfInfo(name = "ae", desc = "(B)I")
+	public int method2222() {
+		return this.field978;
+	}
 }

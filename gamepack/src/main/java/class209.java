@@ -1,54 +1,33 @@
-import java.util.Iterator;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class209 extends class358 {
-   static class331 field1963;
+@ObfInfo(name = "do")
+public class class209 extends class155 {
+	@ObfInfo(name = "ik", desc = "Lpi;")
+	static class258 field1870;
+	@ObfInfo(name = "ai", desc = "[I")
+	static int[] field1872;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = -749589017)
+	int field1867;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 942133651)
+	int field1868;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = 243458057)
+	int field1869;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 1944068325)
+	int field1871;
 
-   public class209(class358 var1) {
-      super(var1);
-      super.field2810 = "AddRequestTask";
-   }
+	@ObfInfo(name = "<init>", desc = "(IIII)V")
+	class209(int var1, int var2, int var3, int var4) {
+		this.field1871 = var1;
+		this.field1867 = var2;
+		this.field1868 = var3;
+		this.field1869 = var4;
+	}
 
-   public boolean method1831() {
-      while(!class228.field2112.isEmpty()) {
-         class131 var2 = (class131)class228.field2112.peek();
-         if (var2 == null) {
-            class228.field2112.pop();
-         } else {
-            var2.field1551 = this.method1265();
-            class228.field2105.add(var2);
-            class228.field2112.pop();
-         }
-      }
-
-      return true;
-   }
-
-   class448 method1265() {
-      class448 var2 = null;
-      Iterator var3 = class228.field2103.iterator();
-
-      while(true) {
-         class448 var4;
-         do {
-            do {
-               if (!var3.hasNext()) {
-                  if (null != var2) {
-                     ++var2.field3433;
-                     if (var2.method2198() == 0 && var2.method2203()) {
-                        var2.method2207();
-                        var2.method2205();
-                        var2.method2175(0);
-                     }
-                  }
-
-                  return var2;
-               }
-
-               var4 = (class448)var3.next();
-            } while(var4 == null);
-         } while(null != var2 && var2.field3433 <= var4.field3433 && (var4.method2198() != 0 || !var4.method2203()));
-
-         var2 = var4;
-      }
-   }
+	@ObfInfo(name = "au", desc = "(IIIIB)V")
+	void method1159(int var1, int var2, int var3, int var4) {
+		this.field1871 = var1;
+		this.field1867 = var2;
+		this.field1868 = var3;
+		this.field1869 = var4;
+	}
 }

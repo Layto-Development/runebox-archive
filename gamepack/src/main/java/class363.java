@@ -1,38 +1,167 @@
-public class class363 implements class188 {
-   static final class363 field2830 = new class363(13, 47, false, false, true);
-   static final class363 field2831 = new class363(1, 0, true, true, true);
-   static final class363 field2832 = new class363(2, 1, true, true, false);
-   static final class363 field2834 = new class363(0, -1, true, false, true);
-   static final class363 field2835 = new class363(5, 10, false, false, true);
-   static final class363 field2836 = new class363(10, 44, false, false, true);
-   static final class363 field2837 = new class363(3, 2, false, false, true);
-   static final class363 field2838 = new class363(8, 42, false, false, true);
-   static final class363 field2839 = new class363(9, 43, false, false, true);
-   static final class363 field2840 = new class363(6, 22, false, false, true);
-   static final class363 field2841 = new class363(11, 45, false, false, true);
-   static final class363 field2842 = new class363(12, 46, false, false, true);
-   static final class363 field2843 = new class363(7, 41, false, false, true);
-   static final class363 field2844 = new class363(14, 48, false, false, true);
-   static final class363 field2845 = new class363(15, 49, false, false, true);
-   static final class363 field2846 = new class363(16, 52, false, false, true);
-   static final class363 field2850 = new class363(4, 3, false, false, true);
-   final int field2847;
-   public final boolean field2833;
-   public final boolean field2849;
-   public final int field2848;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class363(int var1, int var2, boolean var3, boolean var4, boolean var5) {
-      this.field2847 = var1;
-      this.field2848 = var2;
-      this.field2849 = var4;
-      this.field2833 = var5;
-   }
+@ObfInfo(name = "bl")
+public class class363 extends class449 {
+	@ObfInfo(name = "ae", desc = "Low;")
+	class113 field2822;
+	@ObfInfo(name = "au", desc = "Low;")
+	class113 field2825;
+	@ObfInfo(name = "at", desc = "I")
+	int field2823;
+	@ObfInfo(name = "ao", desc = "I")
+	int field2824;
 
-   public int method1195() {
-      return this.field2847;
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	public class363() {
+		this.field2825 = new class113();
+		this.field2822 = new class113();
+		this.field2824 = 0;
+		this.field2823 = -1;
+	}
 
-   public static class363[] method1847() {
-      return new class363[]{field2836, field2850, field2830, field2832, field2831, field2841, field2839, field2837, field2834, field2846, field2845, field2844, field2835, field2842, field2840, field2843, field2838};
-   }
+	@ObfInfo(name = "au", desc = "(Lbw;)V")
+	public final synchronized void method1990(class449 var1) {
+		this.field2825.method632(var1);
+	}
+
+	@ObfInfo(name = "ae", desc = "(Lbw;)V")
+	public final synchronized void method1980(class449 var1) {
+		var1.method907();
+	}
+
+	@ObfInfo(name = "ao", desc = "()V")
+	void method1981() {
+		if (this.field2824 > 0) {
+			for (class138 var1 = (class138)this.field2822.method627(); var1 != null; var1 = (class138)this.field2822.method629()) {
+				var1.field1414 -= this.field2824;
+			}
+
+			this.field2823 -= this.field2824;
+			this.field2824 = 0;
+		}
+
+	}
+
+	@ObfInfo(name = "at", desc = "(Lsj;Lcs;)V")
+	void method1982(class155 var1, class138 var2) {
+		while (var1 != this.field2822.field1030 && ((class138)var1).field1414 <= var2.field1414) {
+			var1 = var1.field1482;
+		}
+
+		class113.method624(var2, var1);
+		this.field2823 = ((class138)this.field2822.field1030.field1482).field1414;
+	}
+
+	@ObfInfo(name = "ac", desc = "(Lcs;)V")
+	void method1983(class138 var1) {
+		var1.method907();
+		var1.method815();
+		class155 var2 = this.field2822.field1030.field1482;
+		if (var2 == this.field2822.field1030) {
+			this.field2823 = -1;
+		} else {
+			this.field2823 = ((class138)var2).field1414;
+		}
+
+	}
+
+	@ObfInfo(name = "ai", desc = "()Lbw;")
+	protected class449 method2354() {
+		return (class449)this.field2825.method627();
+	}
+
+	@ObfInfo(name = "az", desc = "()Lbw;")
+	protected class449 method2355() {
+		return (class449)this.field2825.method629();
+	}
+
+	@ObfInfo(name = "ap", desc = "()I")
+	protected int method2352() {
+		return 0;
+	}
+
+	@ObfInfo(name = "aa", desc = "([III)V")
+	public final synchronized void method2357(int[] var1, int var2, int var3) {
+		do {
+			if (this.field2823 < 0) {
+				this.method1987(var1, var2, var3);
+				return;
+			}
+
+			if (this.field2824 + var3 < this.field2823) {
+				this.field2824 += var3;
+				this.method1987(var1, var2, var3);
+				return;
+			}
+
+			int var4 = this.field2823 - this.field2824;
+			this.method1987(var1, var2, var4);
+			var2 += var4;
+			var3 -= var4;
+			this.field2824 += var4;
+			this.method1981();
+			class138 var5 = (class138)this.field2822.method627();
+			synchronized(var5) {
+				int var7 = var5.method816(this);
+				if (var7 < 0) {
+					var5.field1414 = 0;
+					this.method1983(var5);
+				} else {
+					var5.field1414 = var7;
+					this.method1982(var5.field1482, var5);
+				}
+			}
+		} while(var3 != 0);
+
+	}
+
+	@ObfInfo(name = "af", desc = "([III)V")
+	void method1987(int[] var1, int var2, int var3) {
+		for (class449 var4 = (class449)this.field2825.method627(); var4 != null; var4 = (class449)this.field2825.method629()) {
+			var4.method2358(var1, var2, var3);
+		}
+
+	}
+
+	@ObfInfo(name = "ad", desc = "(I)V")
+	public final synchronized void method2356(int var1) {
+		do {
+			if (this.field2823 < 0) {
+				this.method1991(var1);
+				return;
+			}
+
+			if (this.field2824 + var1 < this.field2823) {
+				this.field2824 += var1;
+				this.method1991(var1);
+				return;
+			}
+
+			int var2 = this.field2823 - this.field2824;
+			this.method1991(var2);
+			var1 -= var2;
+			this.field2824 += var2;
+			this.method1981();
+			class138 var3 = (class138)this.field2822.method627();
+			synchronized(var3) {
+				int var5 = var3.method816(this);
+				if (var5 < 0) {
+					var3.field1414 = 0;
+					this.method1983(var3);
+				} else {
+					var3.field1414 = var5;
+					this.method1982(var3.field1482, var3);
+				}
+			}
+		} while(var1 != 0);
+
+	}
+
+	@ObfInfo(name = "aq", desc = "(I)V")
+	void method1991(int var1) {
+		for (class449 var2 = (class449)this.field2825.method627(); var2 != null; var2 = (class449)this.field2825.method629()) {
+			var2.method2356(var1);
+		}
+
+	}
 }

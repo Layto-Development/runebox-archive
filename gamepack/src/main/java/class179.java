@@ -1,106 +1,50 @@
-public class class179 extends class151 {
-   public static class298 field1800;
-   public static class364 field1801 = new class364(64);
-   int field1802 = 0;
-   public int field1803;
-   public int field1804;
-   public int field1805;
-   public int field1806;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public void method1104() {
-      this.method1107(this.field1802);
-   }
+@ObfInfo(name = "qs")
+public class class179 implements Comparable {
+	@ObfInfo(name = "cj", desc = "I", intMultiplier = -1400140503)
+	static int field1631;
+	@ObfInfo(name = "ao", desc = "Luc;")
+	class353 field1629;
+	@ObfInfo(name = "at", desc = "Luc;")
+	class353 field1630;
 
-   public void method1105(class184 var1, int var2) {
-      while(true) {
-         int var4 = var1.readUnsignedByte();
-         if (var4 == 0) {
-            return;
-         }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class179() {
+	}
 
-         this.method1106(var1, var4, var2);
-      }
-   }
+	@ObfInfo(name = "as", desc = "(I)Luc;")
+	public class353 method1019() {
+		return this.field1629;
+	}
 
-   void method1106(class184 var1, int var2, int var3) {
-      if (var2 == 1) {
-         this.field1802 = var1.method1181();
-      }
+	@ObfInfo(name = "ay", desc = "(I)Ljava/lang/String;", opaqueValue = "-1667677195")
+	public String method1020() {
+		return this.field1629 == null ? "" : this.field1629.method1935();
+	}
 
-   }
+	@ObfInfo(name = "aj", desc = "(I)Ljava/lang/String;", opaqueValue = "1645382276")
+	public String method1021() {
+		return this.field1630 == null ? "" : this.field1630.method1935();
+	}
 
-   void method1107(int var1) {
-      double var3 = (double)(var1 >> 16 & 255) / 256.0;
-      double var5 = (double)(var1 >> 8 & 255) / 256.0;
-      double var7 = (double)(var1 & 255) / 256.0;
-      double var9 = var3;
-      if (var5 < var3) {
-         var9 = var5;
-      }
+	@ObfInfo(name = "av", desc = "(Luc;Luc;I)V", opaqueValue = "-733820505")
+	void method1022(class353 var1, class353 var2) {
+		if (var1 == null) {
+			throw new NullPointerException();
+		} else {
+			this.field1629 = var1;
+			this.field1630 = var2;
+		}
+	}
 
-      if (var7 < var9) {
-         var9 = var7;
-      }
+	@ObfInfo(name = "ae", desc = "(Lqs;I)I")
+	public int method1023(class179 var1) {
+		return this.field1629.method1934(var1.field1629);
+	}
 
-      double var11 = var3;
-      if (var5 > var3) {
-         var11 = var5;
-      }
-
-      if (var7 > var11) {
-         var11 = var7;
-      }
-
-      double var13 = 0.0;
-      double var15 = 0.0;
-      double var17 = (var9 + var11) / 2.0;
-      if (var11 != var9) {
-         if (var17 < 0.5) {
-            var15 = (var11 - var9) / (var9 + var11);
-         }
-
-         if (var17 >= 0.5) {
-            var15 = (var11 - var9) / (2.0 - var11 - var9);
-         }
-
-         if (var3 == var11) {
-            var13 = (var5 - var7) / (var11 - var9);
-         } else if (var11 == var5) {
-            var13 = (var7 - var3) / (var11 - var9) + 2.0;
-         } else if (var11 == var7) {
-            var13 = 4.0 + (var3 - var5) / (var11 - var9);
-         }
-      }
-
-      var13 /= 6.0;
-      this.field1804 = (int)(var15 * 256.0);
-      this.field1803 = (int)(var17 * 256.0);
-      if (this.field1804 < 0) {
-         this.field1804 = 0;
-      } else if (this.field1804 > 255) {
-         this.field1804 = 255;
-      }
-
-      if (this.field1803 < 0) {
-         this.field1803 = 0;
-      } else if (this.field1803 > 255) {
-         this.field1803 = 255;
-      }
-
-      if (var17 > 0.5) {
-         this.field1805 = (int)((1.0 - var17) * var15 * 512.0);
-      } else {
-         this.field1805 = (int)(var15 * var17 * 512.0);
-      }
-
-      if (this.field1805 < 1) {
-         this.field1805 = 1;
-      }
-
-      this.field1806 = (int)(var13 * (double)this.field1805);
-   }
-
-   public static void method1108(class298 var0) {
-      field1800 = var0;
-   }
+	@ObfInfo(name = "compareTo", desc = "(Ljava/lang/Object;)I")
+	public int compareTo(Object var1) {
+		return this.method1023((class179)var1);
+	}
 }

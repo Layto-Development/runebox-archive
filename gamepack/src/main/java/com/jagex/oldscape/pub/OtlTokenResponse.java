@@ -1,7 +1,12 @@
 package com.jagex.oldscape.pub;
 
-public interface OtlTokenResponse {
-   boolean isSuccess();
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   String getToken();
+@ObfInfo(name = "com/jagex/oldscape/pub/OtlTokenResponse")
+public interface OtlTokenResponse {
+	@ObfInfo(name = "isSuccess", desc = "()Z")
+	boolean isSuccess();
+
+	@ObfInfo(name = "getToken", desc = "()Ljava/lang/String;")
+	String getToken();
 }

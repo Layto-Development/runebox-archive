@@ -1,154 +1,198 @@
-import java.util.HashMap;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.awt.Font;
 
-public class class470 {
-   static String field3619;
-   class119 field3616 = new class119(0, 0);
-   int field3618 = 0;
-   int[] field3614 = new int[2048];
-   int[] field3615 = new int[2048];
-   final HashMap field3617 = new HashMap();
+@ObfInfo(name = "ca")
+public final class class470 extends class155 {
+	@ObfInfo(name = "au", desc = "Low;")
+	static class113 field3790;
+	@ObfInfo(name = "fg", desc = "Lnk;")
+	static class505 field3803;
+	@ObfInfo(name = "jd", desc = "I", intMultiplier = -502599913)
+	static int field3787;
+	@ObfInfo(name = "bj", desc = "Ljava/awt/Font;")
+	static Font field3802;
+	@ObfInfo(name = "an", desc = "Lbn;")
+	class28 field3795;
+	@ObfInfo(name = "aa", desc = "Lbn;")
+	class28 field3799;
+	@ObfInfo(name = "ar", desc = "Lhv;")
+	class292 field3800;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = 213423769)
+	int field3788;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1140450119)
+	int field3789;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = 1579031469)
+	int field3791;
+	@ObfInfo(name = "ai", desc = "I", intMultiplier = -587827913)
+	int field3792;
+	@ObfInfo(name = "az", desc = "I", intMultiplier = -1981734327)
+	int field3793;
+	@ObfInfo(name = "ap", desc = "I", intMultiplier = 775499377)
+	int field3794;
+	@ObfInfo(name = "ad", desc = "I", intMultiplier = -448105717)
+	int field3796;
+	@ObfInfo(name = "af", desc = "I", intMultiplier = 96078857)
+	int field3798;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = 1180213293)
+	int field3801;
+	@ObfInfo(name = "al", desc = "I", intMultiplier = 2064097821)
+	int field3804;
+	@ObfInfo(name = "aq", desc = "[I")
+	int[] field3797;
 
-   public class470() {
-      method2275();
-   }
+	static {
+		field3790 = new class113();
+	}
 
-   void method2273(int var1) {
-      int var3 = var1 * 2 + 1;
-      double[] var4 = class308.method1673(0.0, (double)((float)var1 / 3.0F), var1);
-      double var5 = var4[var1] * var4[var1];
-      int[] var7 = new int[var3 * var3];
-      boolean var8 = false;
+	@ObfInfo(name = "<init>", desc = "()V")
+	class470() {
+	}
 
-      for(int var9 = 0; var9 < var3; ++var9) {
-         for(int var10 = 0; var10 < var3; ++var10) {
-            int var11 = var7[var10 + var9 * var3] = (int)(256.0 * (var4[var9] * var4[var10] / var5));
-            if (!var8 && var11 > 0) {
-               var8 = true;
-            }
-         }
-      }
+	@ObfInfo(name = "ae", desc = "(I)V", opaqueValue = "1671616582")
+	void method2412() {
+		int var2 = this.field3794;
+		class292 var3 = this.field3800.method1614();
+		if (var3 != null) {
+			this.field3794 = var3.field2368;
+			this.field3793 = var3.field2369 * 128;
+			this.field3798 = var3.field2370;
+			this.field3796 = var3.field2371;
+			this.field3797 = var3.field2362;
+		} else {
+			this.field3794 = -1;
+			this.field3793 = 0;
+			this.field3798 = 0;
+			this.field3796 = 0;
+			this.field3797 = null;
+		}
 
-      class427 var12 = new class427(var7, var3, var3);
-      this.field3617.put(var1, var12);
-   }
+		if (var2 != this.field3794 && this.field3799 != null) {
+			class164.field1556.method1980(this.field3799);
+			this.field3799 = null;
+		}
 
-   class427 method2269(int var1) {
-      if (!this.field3617.containsKey(var1)) {
-         this.method2273(var1);
-      }
+	}
 
-      return (class427)this.field3617.get(var1);
-   }
+	@ObfInfo(name = "au", desc = "(B)V")
+	static void method2415() {
+		for (class470 var1 = (class470)field3790.method627(); var1 != null; var1 = (class470)field3790.method629()) {
+			if (null != var1.field3799) {
+				class164.field1556.method1980(var1.field3799);
+				var1.field3799 = null;
+			}
 
-   public final void method2270(int var1, int var2) {
-      if (this.field3618 < this.field3614.length) {
-         this.field3614[this.field3618] = var1;
-         this.field3615[this.field3618] = var2;
-         ++this.field3618;
-      }
-   }
+			if (var1.field3795 != null) {
+				class164.field1556.method1980(var1.field3795);
+				var1.field3795 = null;
+			}
+		}
 
-   public final void method2271() {
-      this.field3618 = 0;
-   }
+		field3790.method623();
+	}
 
-   public final void method2272(int var1, int var2, class427 var3, float var4) {
-      int var6 = (int)(var4 * 18.0F);
-      class427 var7 = this.method2269(var6);
-      int var8 = var6 * 2 + 1;
-      class119 var9 = new class119(0, 0, var3.field3237, var3.field3233);
-      class119 var10 = new class119(0, 0);
-      this.field3616.method826(var8, var8);
-      System.nanoTime();
+	@ObfInfo(name = "ao", desc = "(IIILhv;II)V")
+	static void method2414(int var0, int var1, int var2, class292 var3, int var4) {
+		class470 var6 = new class470();
+		var6.field3788 = var0;
+		var6.field3789 = var1 * 128;
+		var6.field3801 = var2 * 128;
+		int var7 = var3.field2339;
+		int var8 = var3.field2324;
+		if (var4 == 1 || var4 == 3) {
+			var7 = var3.field2324;
+			var8 = var3.field2339;
+		}
 
-      int var11;
-      int var12;
-      int var13;
-      for(var11 = 0; var11 < this.field3618; ++var11) {
-         var12 = this.field3614[var11];
-         var13 = this.field3615[var11];
-         int var14 = (int)(var4 * (float)(var12 - var1)) - var6;
-         int var15 = (int)((float)var3.field3233 - (float)(var13 - var2) * var4) - var6;
-         this.field3616.method825(var14, var15);
-         this.field3616.method828(var9, var10);
-         this.method2274(var7, var3, var10);
-      }
+		var6.field3791 = 128 * (var7 + var1);
+		var6.field3792 = (var2 + var8) * 128;
+		var6.field3794 = var3.field2368;
+		var6.field3793 = var3.field2369 * 128;
+		var6.field3798 = var3.field2370;
+		var6.field3796 = var3.field2371;
+		var6.field3797 = var3.field2362;
+		if (null != var3.field2365) {
+			var6.field3800 = var3;
+			var6.method2412();
+		}
 
-      System.nanoTime();
-      System.nanoTime();
+		field3790.method631(var6);
+		if (null != var6.field3797) {
+			var6.field3804 = var6.field3798 + (int)(Math.random() * (double)(var6.field3796 - var6.field3798));
+		}
 
-      for(var11 = 0; var11 < var3.field3236.length; ++var11) {
-         if (var3.field3236[var11] == 0) {
-            var3.field3236[var11] = -16777216;
-         } else {
-            var12 = (var3.field3236[var11] + 64 - 1) / 256;
-            if (var12 <= 0) {
-               var3.field3236[var11] = -16777216;
-            } else {
-               if (var12 > class71.field1192.length) {
-                  var12 = class71.field1192.length;
-               }
+	}
 
-               var13 = class71.field1192[var12 - 1];
-               var3.field3236[var11] = -16777216 | var13;
-            }
-         }
-      }
+	@ObfInfo(name = "at", desc = "(IIIIB)V")
+	static void method2413(int var0, int var1, int var2, int var3) {
+		for (class470 var5 = (class470)field3790.method627(); var5 != null; var5 = (class470)field3790.method629()) {
+			if (var5.field3794 != -1 || var5.field3797 != null) {
+				int var6 = 0;
+				if (var1 > var5.field3791) {
+					var6 += var1 - var5.field3791;
+				} else if (var1 < var5.field3789) {
+					var6 += var5.field3789 - var1;
+				}
 
-      System.nanoTime();
-   }
+				if (var2 > var5.field3792) {
+					var6 += var2 - var5.field3792;
+				} else if (var2 < var5.field3801) {
+					var6 += var5.field3801 - var2;
+				}
 
-   void method2274(class427 var1, class427 var2, class119 var3) {
-      if (var3.field1484 != 0 && var3.field1482 != 0) {
-         int var5 = 0;
-         int var6 = 0;
-         if (var3.field1485 == 0) {
-            var5 = var1.field3237 - var3.field1484;
-         }
+				if (var6 - 64 <= var5.field3793 && class281.field2262.method1772() != 0 && var0 == var5.field3788) {
+					var6 -= 64;
+					if (var6 < 0) {
+						var6 = 0;
+					}
 
-         if (var3.field1483 == 0) {
-            var6 = var1.field3233 - var3.field1482;
-         }
+					int var7 = (var5.field3793 - var6) * class281.field2262.method1772() / var5.field3793;
+					if (var5.field3799 == null) {
+						if (var5.field3794 >= 0) {
+							class538 var8 = class538.method2590(class310.field2523, var5.field3794, 0);
+							if (var8 != null) {
+								class62 var9 = var8.method2588().method486(class105.field1016);
+								class28 var10 = class28.method404(var9, 100, var7);
+								var10.method370(-1);
+								class164.field1556.method1990(var10);
+								var5.field3799 = var10;
+							}
+						}
+					} else {
+						var5.field3799.method371(var7);
+					}
 
-         int var7 = var6 * var1.field3237 + var5;
-         int var8 = var2.field3237 * var3.field1483 + var3.field1485;
+					if (var5.field3795 == null) {
+						if (null != var5.field3797 && (var5.field3804 -= var3) <= 0) {
+							int var12 = (int)(Math.random() * (double)var5.field3797.length);
+							class538 var13 = class538.method2590(class310.field2523, var5.field3797[var12], 0);
+							if (null != var13) {
+								class62 var14 = var13.method2588().method486(class105.field1016);
+								class28 var11 = class28.method404(var14, 100, var7);
+								var11.method370(0);
+								class164.field1556.method1990(var11);
+								var5.field3795 = var11;
+								var5.field3804 = var5.field3798 + (int)(Math.random() * (double)(var5.field3796 - var5.field3798));
+							}
+						}
+					} else {
+						var5.field3795.method371(var7);
+						if (!var5.field3795.method908()) {
+							var5.field3795 = null;
+						}
+					}
+				} else {
+					if (null != var5.field3799) {
+						class164.field1556.method1980(var5.field3799);
+						var5.field3799 = null;
+					}
 
-         for(int var9 = 0; var9 < var3.field1482; ++var9) {
-            for(int var10 = 0; var10 < var3.field1484; ++var10) {
-               int[] var10000 = var2.field3236;
-               int var10001 = var8++;
-               var10000[var10001] += var1.field3236[var7++];
-            }
+					if (var5.field3795 != null) {
+						class164.field1556.method1980(var5.field3795);
+						var5.field3795 = null;
+					}
+				}
+			}
+		}
 
-            var7 += var1.field3237 - var3.field1484;
-            var8 += var2.field3237 - var3.field1484;
-         }
-
-      }
-   }
-
-   static void method2275() {
-      class71.field1192 = new int[2000];
-      int var1 = 0;
-      int var2 = 240;
-
-      int var3;
-      int var4;
-      for(var3 = 12; var1 < 16; var2 -= var3) {
-         var4 = class287.method1600((double)((float)var2 / 360.0F), 0.9998999834060669, (double)((float)var1 * 0.425F / 16.0F + 0.075F));
-         class71.field1192[var1] = var4;
-         ++var1;
-      }
-
-      var2 = 48;
-
-      for(var3 = var2 / 6; var1 < class71.field1192.length; var2 -= var3) {
-         var4 = var1 * 2;
-
-         for(int var5 = class287.method1600((double)((float)var2 / 360.0F), 0.9998999834060669, 0.5); var1 < var4 && var1 < class71.field1192.length; ++var1) {
-            class71.field1192[var1] = var5;
-         }
-      }
-
-   }
+	}
 }

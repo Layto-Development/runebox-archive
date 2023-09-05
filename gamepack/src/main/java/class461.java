@@ -1,73 +1,109 @@
-public class class461 extends class151 {
-   static class22 field3589;
-   static class427[] field3590;
-   class251 field3584;
-   class412 field3580;
-   class412 field3586;
-   int field3581;
-   int field3582;
-   int field3585;
-   String field3583;
-   String field3587;
-   String field3588;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class461(int var1, String var2, String var3, String var4) {
-      this.field3580 = class412.field3161;
-      this.field3586 = class412.field3161;
-      this.method2255(var1, var2, var3, var4);
-   }
+@ObfInfo(name = "jp")
+public class class461 implements class415 {
+	@ObfInfo(name = "af", desc = "I", intMultiplier = 1601793997)
+	int field3745;
+	@ObfInfo(name = "ap", desc = "I", intMultiplier = -171385949)
+	int field3746;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = -1752254321)
+	int field3747;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = -665302455)
+	int field3748;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = -1360390451)
+	int field3749;
+	@ObfInfo(name = "ai", desc = "I", intMultiplier = -2119149505)
+	int field3750;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 1909255191)
+	int field3751;
+	@ObfInfo(name = "az", desc = "I", intMultiplier = 989493471)
+	int field3752;
+	@ObfInfo(name = "aa", desc = "I", intMultiplier = 1680318827)
+	int field3753;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = -311203443)
+	int field3754;
 
-   void method2255(int var1, String var2, String var3, String var4) {
-      int var6 = ++class194.field1890 - 1;
-      this.field3585 = var6;
-      this.field3581 = Client.field879;
-      this.field3582 = var1;
-      this.field3583 = var2;
-      this.method2260();
-      this.field3587 = var3;
-      this.field3588 = var4;
-      this.method2253();
-      this.method2257();
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class461() {
+	}
 
-   void method2253() {
-      this.field3580 = class412.field3161;
-   }
+	@ObfInfo(name = "au", desc = "(Ljf;I)V", opaqueValue = "-474032336")
+	public void method2193(class305 var1) {
+		if (var1.field2465 > this.field3752) {
+			var1.field2465 = this.field3752;
+		}
 
-   final boolean method2258() {
-      if (this.field3580 == class412.field3161) {
-         this.method2254();
-      }
+		if (var1.field2459 < this.field3753) {
+			var1.field2459 = this.field3753;
+		}
 
-      return this.field3580 == class412.field3160;
-   }
+		if (var1.field2467 > this.field3746) {
+			var1.field2467 = this.field3746;
+		}
 
-   void method2254() {
-      this.field3580 = class314.field2562.field2273.method2053(this.field3584) ? class412.field3160 : class412.field3159;
-   }
+		if (var1.field2461 < this.field3745) {
+			var1.field2461 = this.field3745;
+		}
 
-   void method2257() {
-      this.field3586 = class412.field3161;
-   }
+	}
 
-   final boolean method2256() {
-      if (class412.field3161 == this.field3586) {
-         this.method2259();
-      }
+	@ObfInfo(name = "ae", desc = "(IIII)Z", opaqueValue = "1293653198")
+	public boolean method2188(int var1, int var2, int var3) {
+		if (var1 >= this.field3751 && var1 < this.field3751 + this.field3754) {
+			return var2 >> 6 >= this.field3747 && var2 >> 6 <= this.field3749 && var3 >> 6 >= this.field3748 && var3 >> 6 <= this.field3750;
+		} else {
+			return false;
+		}
+	}
 
-      return this.field3586 == class412.field3160;
-   }
+	@ObfInfo(name = "ao", desc = "(IIB)Z", opaqueValue = "31")
+	public boolean method2189(int var1, int var2) {
+		return var1 >> 6 >= this.field3752 && var1 >> 6 <= this.field3753 && var2 >> 6 >= this.field3746 && var2 >> 6 <= this.field3745;
+	}
 
-   void method2259() {
-      this.field3586 = class314.field2562.field2272.method2053(this.field3584) ? class412.field3160 : class412.field3159;
-   }
+	@ObfInfo(name = "at", desc = "(IIII)[I")
+	public int[] method2191(int var1, int var2, int var3) {
+		if (!this.method2188(var1, var2, var3)) {
+			return null;
+		} else {
+			int[] var5 = new int[]{this.field3752 * 64 - this.field3747 * 64 + var2, this.field3746 * 64 - this.field3748 * 64 + var3};
+			return var5;
+		}
+	}
 
-   final void method2260() {
-      if (this.field3583 != null) {
-         this.field3584 = new class251(Client.method480(this.field3583), class121.field1501);
-      } else {
-         this.field3584 = null;
-      }
+	@ObfInfo(name = "ac", desc = "(III)Lmc;")
+	public class50 method2192(int var1, int var2) {
+		if (!this.method2189(var1, var2)) {
+			return null;
+		} else {
+			int var4 = var1 + (this.field3747 * 64 - this.field3752 * 64);
+			int var5 = var2 + (this.field3748 * 64 - this.field3746 * 64);
+			return new class50(this.field3751, var4, var5);
+		}
+	}
 
-   }
+	@ObfInfo(name = "ai", desc = "(Ltm;B)V")
+	public void method2190(class280 var1) {
+		this.field3751 = var1.method1492();
+		this.field3754 = var1.method1492();
+		this.field3747 = var1.method1541();
+		this.field3748 = var1.method1541();
+		this.field3749 = var1.method1541();
+		this.field3750 = var1.method1541();
+		this.field3752 = var1.method1541();
+		this.field3746 = var1.method1541();
+		this.field3753 = var1.method1541();
+		this.field3745 = var1.method1541();
+		this.method2394();
+	}
+
+	@ObfInfo(name = "az", desc = "(B)V")
+	void method2394() {
+	}
+
+	@ObfInfo(name = "ny", desc = "(B)V")
+	static final void method2395() {
+		Client.field235 = Client.field29;
+		class169.field1587 = true;
+	}
 }

@@ -35,12 +35,6 @@ class RuneBox {
         frame.isVisible = true
 
         val client = get<Client> { parametersOf(clientLoader.applet) }
-        Executors.newSingleThreadExecutor().execute {
-            while(true) {
-                println("GameState: ${client.gameState}")
-                Thread.sleep(1000)
-            }
-        }
     }
 
     private fun checkDirs() {

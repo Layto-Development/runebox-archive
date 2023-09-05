@@ -1,24 +1,32 @@
-public class class76 implements class188 {
-   static class119 field1226;
-   static final class76 field1227 = new class76(1, 2);
-   static final class76 field1228 = new class76(2, 3);
-   static final class76 field1229 = new class76(3, 4);
-   static final class76 field1230 = new class76(5, 6);
-   static final class76 field1233 = new class76(4, 5);
-   static final class76 field1234 = new class76(0, -1);
-   final int field1231;
-   final int field1232;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class76(int var1, int var2) {
-      this.field1231 = var1;
-      this.field1232 = var2;
-   }
+@ObfInfo(name = "tq")
+public class class76 {
+	@ObfInfo(name = "ae", desc = "[I")
+	static final int[] field825;
 
-   public int method1195() {
-      return this.field1232;
-   }
+	static {
+		field825 = new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, -1, 1, -1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 3, 3, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+	}
 
-   static class76[] method697() {
-      return new class76[]{field1227, field1229, field1233, field1234, field1228, field1230};
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class76() throws Throwable {
+	}
+
+	@ObfInfo(name = "au", desc = "(IB)I")
+	public static int method516(int var0) {
+		return var0 != 0 && var0 != 1 ? -1 : 0;
+	}
+
+	@ObfInfo(name = "ae", desc = "(II)Ltb;")
+	public static class49 method517(int var0) {
+		int var2 = field825[var0];
+		if (var2 == 1) {
+			return class49.field579;
+		} else if (var2 == 2) {
+			return class49.field574;
+		} else {
+			return var2 == 3 ? class49.field580 : null;
+		}
+	}
 }

@@ -1,122 +1,602 @@
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class268 extends class475 {
-   HashSet field2303;
-   HashSet field2304;
-   List field2305;
+@ObfInfo(name = "ku")
+public class class268 {
+	@ObfInfo(name = "ae", desc = "[[[B")
+	byte[][][] field2161;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = -1580674405)
+	int field2160;
 
-   class268() {
-   }
+	@ObfInfo(name = "<init>", desc = "(I)V")
+	class268(int var1) {
+		this.field2160 = var1;
+	}
 
-   void method1513(class184 var1, class184 var2, int var3, boolean var4) {
-      this.method2292(var1, var3);
-      int var6 = var2.method1174();
-      this.field2303 = new HashSet(var6);
+	@ObfInfo(name = "au", desc = "(IIIIIIIIS)V", opaqueValue = "8215")
+	void method1403(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+		if (var7 != 0 && this.field2160 != 0 && null != this.field2161) {
+			var8 = this.method1397(var8, var7);
+			var7 = this.method1392(var7);
+			class83.method559(var1, var2, var5, var6, var3, var4, this.field2161[var7 - 1][var8], this.field2160, true);
+		}
+	}
 
-      int var7;
-      for(var7 = 0; var7 < var6; ++var7) {
-         class430 var8 = new class430();
+	@ObfInfo(name = "ae", desc = "(IIB)I", opaqueValue = "1")
+	int method1397(int var1, int var2) {
+		if (var2 == 9) {
+			var1 = var1 + 1 & 3;
+		}
 
-         try {
-            var8.method2071(var2);
-         } catch (IllegalStateException var12) {
-            continue;
-         }
+		if (var2 == 10) {
+			var1 = var1 + 3 & 3;
+		}
 
-         this.field2303.add(var8);
-      }
+		if (var2 == 11) {
+			var1 = var1 + 3 & 3;
+		}
 
-      var7 = var2.method1174();
-      this.field2304 = new HashSet(var7);
+		return var1;
+	}
 
-      for(int var13 = 0; var13 < var7; ++var13) {
-         class198 var9 = new class198();
+	@ObfInfo(name = "ao", desc = "(II)I", opaqueValue = "-757286890")
+	int method1392(int var1) {
+		if (var1 != 9 && var1 != 10) {
+			return var1 == 11 ? 8 : var1;
+		} else {
+			return 1;
+		}
+	}
 
-         try {
-            var9.method1227(var2);
-         } catch (IllegalStateException var11) {
-            continue;
-         }
+	@ObfInfo(name = "at", desc = "(I)V", opaqueValue = "650027695")
+	void method1400() {
+		if (this.field2161 == null) {
+			this.field2161 = new byte[8][4][];
+			this.method1393();
+			this.method1399();
+			this.method1394();
+			this.method1401();
+			this.method1396();
+			this.method1402();
+			this.method1398();
+			this.method1395((byte)-68);
+		}
+	}
 
-         this.field2304.add(var9);
-      }
+	@ObfInfo(name = "ac", desc = "(I)V", opaqueValue = "2061815829")
+	void method1393() {
+		byte[] var2 = new byte[this.field2160 * this.field2160];
+		int var3 = 0;
 
-      this.method1512(var2, var4);
-   }
+		int var4;
+		int var5;
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 <= var4) {
+					var2[var3] = -1;
+				}
 
-   void method1512(class184 var1, boolean var2) {
-      this.field2305 = new LinkedList();
-      int var4 = var1.method1174();
+				++var3;
+			}
+		}
 
-      for(int var5 = 0; var5 < var4; ++var5) {
-         int var6 = var1.method1173();
-         class89 var7 = new class89(var1.readInt());
-         boolean var8 = var1.readUnsignedByte() == 1;
-         if (var2 || !var8) {
-            this.field2305.add(new class108((class89)null, var7, var6, (class174)null));
-         }
-      }
+		this.field2161[0][0] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
 
-   }
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 <= var4) {
+					var2[var3] = -1;
+				}
 
-   static void method1515(boolean var0) {
-      if (!class191.field1877.method360() && !class191.field1877.method361() && !class191.field1877.method383((byte)116)) {
-         class534.field4234 = class27.field444;
-         class534.field4232 = class27.field445;
-         class534.field4233 = class27.field407;
-         class534.method2543(2);
-         if (var0) {
-            class534.field4236 = "";
-         }
+				++var3;
+			}
+		}
 
-         if (null == class534.field4243 || class534.field4243.length() <= 0) {
-            if (class4.field36.method2417() != null) {
-               class534.field4243 = class4.field36.method2417();
-               Client.field630 = true;
-            } else {
-               Client.field630 = false;
-            }
-         }
+		this.field2161[0][1] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
 
-         class534.method2549();
-      } else {
-         class534.method2543(10);
-      }
-   }
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 >= var4) {
+					var2[var3] = -1;
+				}
 
-   static void method1514(boolean var0) {
-      byte var2 = 0;
-      boolean var3 = class4.field36.method2418() >= Client.field581;
-      if (!var3) {
-         var2 = 12;
-      } else if (class191.field1877.method360() || class191.field1877.method361() || class191.field1877.method383((byte)106)) {
-         var2 = 10;
-      }
+				++var3;
+			}
+		}
 
-      class534.method2543(var2);
-      if (var0) {
-         class534.field4243 = "";
-         class534.field4236 = "";
-         class13.field117 = 0;
-         class470.field3619 = "";
-      }
+		this.field2161[0][2] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
 
-      if (null == class534.field4243 || class534.field4243.length() <= 0) {
-         if (class4.field36.method2417() != null) {
-            class534.field4243 = class4.field36.method2417();
-            Client.field630 = true;
-         } else {
-            Client.field630 = false;
-         }
-      }
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 >= var4) {
+					var2[var3] = -1;
+				}
 
-      if (Client.field630 && class534.field4243 != null && class534.field4243.length() > 0) {
-         class534.field4241 = 1;
-      } else {
-         class534.field4241 = 0;
-      }
+				++var3;
+			}
+		}
 
-   }
+		this.field2161[0][3] = var2;
+	}
+
+	@ObfInfo(name = "ai", desc = "(I)V", opaqueValue = "65279")
+	void method1399() {
+		byte[] var2 = new byte[this.field2160 * this.field2160];
+		int var3 = 0;
+
+		int var4;
+		int var5;
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 <= var4 >> 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[1][0] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var3 >= 0 && var3 < var2.length) {
+					if (var5 >= var4 << 1) {
+						var2[var3] = -1;
+					}
+
+					++var3;
+				} else {
+					++var3;
+				}
+			}
+		}
+
+		this.field2161[1][1] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 <= var4 >> 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[1][2] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 >= var4 << 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[1][3] = var2;
+	}
+
+	@ObfInfo(name = "az", desc = "(B)V", opaqueValue = "1")
+	void method1394() {
+		byte[] var2 = new byte[this.field2160 * this.field2160];
+		int var3 = 0;
+
+		int var4;
+		int var5;
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 <= var4 >> 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[2][0] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 >= var4 << 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[2][1] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 <= var4 >> 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[2][2] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 >= var4 << 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[2][3] = var2;
+	}
+
+	@ObfInfo(name = "ap", desc = "(I)V", opaqueValue = "-1088178192")
+	void method1401() {
+		byte[] var2 = new byte[this.field2160 * this.field2160];
+		int var3 = 0;
+
+		int var4;
+		int var5;
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 >= var4 >> 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[3][0] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 <= var4 << 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[3][1] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 >= var4 >> 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[3][2] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 <= var4 << 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[3][3] = var2;
+	}
+
+	@ObfInfo(name = "aa", desc = "(I)V", opaqueValue = "-1735156337")
+	void method1396() {
+		byte[] var2 = new byte[this.field2160 * this.field2160];
+		int var3 = 0;
+
+		int var4;
+		int var5;
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 >= var4 >> 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[4][0] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 <= var4 << 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[4][1] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 >= var4 >> 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[4][2] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var3 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 <= var4 << 1) {
+					var2[var3] = -1;
+				}
+
+				++var3;
+			}
+		}
+
+		this.field2161[4][3] = var2;
+	}
+
+	@ObfInfo(name = "af", desc = "(I)V", opaqueValue = "-1612445373")
+	void method1402() {
+		byte[] var2 = new byte[this.field2160 * this.field2160];
+		boolean var3 = false;
+		var2 = new byte[this.field2160 * this.field2160];
+		int var6 = 0;
+
+		int var4;
+		int var5;
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 <= this.field2160 / 2) {
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[5][0] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var6 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var4 <= this.field2160 / 2) {
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[5][1] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var6 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 >= this.field2160 / 2) {
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[5][2] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var6 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var4 >= this.field2160 / 2) {
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[5][3] = var2;
+	}
+
+	@ObfInfo(name = "ad", desc = "(S)V", opaqueValue = "181")
+	void method1398() {
+		byte[] var2 = new byte[this.field2160 * this.field2160];
+		boolean var3 = false;
+		var2 = new byte[this.field2160 * this.field2160];
+		int var6 = 0;
+
+		int var4;
+		int var5;
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 <= var4 - this.field2160 / 2) {
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[6][0] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var6 = 0;
+
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 <= var4 - this.field2160 / 2) {
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[6][1] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var6 = 0;
+
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 <= var4 - this.field2160 / 2) {
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[6][2] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var6 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var5 <= var4 - this.field2160 / 2) {
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[6][3] = var2;
+	}
+
+	@ObfInfo(name = "aq", desc = "(B)V")
+	void method1395(byte var1) {
+		byte[] var2 = new byte[this.field2160 * this.field2160];
+		boolean var3 = false;
+		var2 = new byte[this.field2160 * this.field2160];
+		int var6 = 0;
+
+		int var4;
+		int var5;
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var5 >= var4 - this.field2160 / 2) {
+					if (var1 >= -1) {
+						return;
+					}
+
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[7][0] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var6 = 0;
+
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			for (var5 = 0; var5 < this.field2160; ++var5) {
+				if (var1 >= -1) {
+					throw new IllegalStateException();
+				}
+
+				if (var5 >= var4 - this.field2160 / 2) {
+					if (var1 >= -1) {
+						throw new IllegalStateException();
+					}
+
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[7][1] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var6 = 0;
+
+		for (var4 = this.field2160 - 1; var4 >= 0; --var4) {
+			if (var1 >= -1) {
+				throw new IllegalStateException();
+			}
+
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var1 >= -1) {
+					return;
+				}
+
+				if (var5 >= var4 - this.field2160 / 2) {
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[7][2] = var2;
+		var2 = new byte[this.field2160 * this.field2160];
+		var6 = 0;
+
+		for (var4 = 0; var4 < this.field2160; ++var4) {
+			if (var1 >= -1) {
+				throw new IllegalStateException();
+			}
+
+			for (var5 = this.field2160 - 1; var5 >= 0; --var5) {
+				if (var1 >= -1) {
+					throw new IllegalStateException();
+				}
+
+				if (var5 >= var4 - this.field2160 / 2) {
+					if (var1 >= -1) {
+						throw new IllegalStateException();
+					}
+
+					var2[var6] = -1;
+				}
+
+				++var6;
+			}
+		}
+
+		this.field2161[7][3] = var2;
+	}
 }

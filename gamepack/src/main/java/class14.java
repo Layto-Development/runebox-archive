@@ -1,435 +1,254 @@
-import java.io.IOException;
-import java.util.zip.CRC32;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Iterator;
 
+@ObfInfo(name = "ci")
 public class class14 {
-   boolean field130;
-   byte field121 = 0;
-   class133 field127;
-   class168 field142;
-   class184 field119 = new class184(8);
-   class184 field122;
-   class184 field133;
-   class22[] field137 = new class22[256];
-   class304 field125 = new class304();
-   class79 field123 = new class79(32);
-   class79 field126 = new class79(4096);
-   class79 field128 = new class79(4096);
-   class79 field132 = new class79(4096);
-   int field124 = 0;
-   int field129 = 0;
-   int field131 = 0;
-   int field134 = 0;
-   int field136 = 0;
-   int field138 = -1;
-   int field139 = 255;
-   int field140 = 0;
-   CRC32 field135 = new CRC32();
-   long field120;
-   public int field118 = 0;
-   public int field141 = 0;
+	@ObfInfo(name = "az", desc = "I", intMultiplier = -1624494161)
+	int field349;
+	@ObfInfo(name = "at", desc = "Lsl;")
+	final class187 field348;
+	@ObfInfo(name = "ai", desc = "Lqq;")
+	public final class262 field350;
+	@ObfInfo(name = "ac", desc = "Lqk;")
+	public final class467 field351;
 
-   public boolean method137() {
-      long var2 = class80.method713();
-      int var4 = (int)(var2 - this.field120);
-      this.field120 = var2;
-      if (var4 > 200) {
-         var4 = 200;
-      }
+	@ObfInfo(name = "<init>", desc = "(Lsl;)V")
+	class14(class187 var1) {
+		this.field349 = 0;
+		this.field348 = var1;
+		this.field351 = new class467(var1);
+		this.field350 = new class262(var1);
+	}
 
-      this.field140 += var4;
-      if (this.field129 == 0 && this.field124 == 0 && this.field136 == 0 && this.field131 == 0) {
-         return true;
-      } else if (null == this.field142) {
-         return false;
-      } else {
-         try {
-            if (this.field140 > 30000) {
-               throw new IOException();
-            } else {
-               class133 var5;
-               class184 var6;
-               while(this.field124 < 200 && this.field131 > 0) {
-                  var5 = (class133)this.field132.method710();
-                  var6 = new class184(4);
-                  var6.method1114(1);
-                  var6.method1166((int)var5.field1078);
-                  this.field142.method1015(var6.field1816, 0, 4);
-                  this.field123.method712(var5, var5.field1078);
-                  --this.field131;
-                  ++this.field124;
-               }
+	@ObfInfo(name = "au", desc = "(I)Z", opaqueValue = "17891600")
+	boolean method307() {
+		return this.field349 == 2;
+	}
 
-               while(this.field129 < 200 && this.field136 > 0) {
-                  var5 = (class133)this.field125.method1665();
-                  var6 = new class184(4);
-                  var6.method1114(0);
-                  var6.method1166((int)var5.field1078);
-                  this.field142.method1015(var6.field1816, 0, 4);
-                  var5.method938();
-                  this.field128.method712(var5, var5.field1078);
-                  --this.field136;
-                  ++this.field129;
-               }
+	@ObfInfo(name = "ae", desc = "(I)V")
+	final void method308() {
+		this.field349 = 1;
+	}
 
-               for(int var20 = 0; var20 < 100; ++var20) {
-                  int var21 = this.field142.method1014();
-                  if (var21 < 0) {
-                     throw new IOException();
-                  }
+	@ObfInfo(name = "ao", desc = "(Ltm;II)V", opaqueValue = "345121952")
+	final void method319(class280 var1, int var2) {
+		this.field351.method2403(var1, var2, (byte)-1);
+		this.field349 = 2;
 
-                  if (var21 == 0) {
-                     break;
-                  }
+		for (int var4 = 0; var4 < class183.field1652; ++var4) {
+			class439 var5 = Client.field200[class183.field1653[var4]];
+			var5.method2299();
+		}
 
-                  this.field140 = 0;
-                  byte var7 = 0;
-                  if (this.field127 == null) {
-                     var7 = 8;
-                  } else if (this.field134 == 0) {
-                     var7 = 1;
-                  }
+		Iterator var7 = class159.field1504.iterator();
 
-                  int var8;
-                  int var9;
-                  int var10;
-                  byte[] var10000;
-                  int var10001;
-                  class184 var23;
-                  if (var7 > 0) {
-                     var8 = var7 - this.field119.field1818;
-                     if (var8 > var21) {
-                        var8 = var21;
-                     }
+		while (var7.hasNext()) {
+			class212 var6 = (class212)var7.next();
+			var6.method1181();
+		}
 
-                     this.field142.method1013(this.field119.field1816, this.field119.field1818, var8);
-                     if (this.field121 != 0) {
-                        for(var9 = 0; var9 < var8; ++var9) {
-                           var10000 = this.field119.field1816;
-                           var10001 = var9 + this.field119.field1818;
-                           var10000[var10001] ^= this.field121;
-                        }
-                     }
+		if (class54.field716 != null) {
+			class54.field716.method1337();
+		}
 
-                     var23 = this.field119;
-                     var23.field1818 += var8;
-                     if (this.field119.field1818 < var7) {
-                        break;
-                     }
+	}
 
-                     if (null == this.field127) {
-                        this.field119.field1818 = 0;
-                        var9 = this.field119.readUnsignedByte();
-                        var10 = this.field119.method1174();
-                        int var11 = this.field119.readUnsignedByte();
-                        int var12 = this.field119.readInt();
-                        long var13 = (long)(var10 + (var9 << 16));
-                        class133 var15 = (class133)this.field123.method709(var13);
-                        this.field130 = true;
-                        if (null == var15) {
-                           var15 = (class133)this.field128.method709(var13);
-                           this.field130 = false;
-                        }
+	@ObfInfo(name = "at", desc = "(I)V", opaqueValue = "-676446193")
+	final void method309() {
+		for (class47 var2 = (class47)this.field351.field3770.method2249(); var2 != null; var2 = (class47)this.field351.field3770.method2248()) {
+			if ((long)var2.field567 < class43.method443() / 1000L - 5L) {
+				if (var2.field565 > 0) {
+					class159.method914(5, "", var2.field564 + class453.field3558);
+				}
 
-                        if (null == var15) {
-                           throw new IOException();
-                        }
+				if (var2.field565 == 0) {
+					class159.method914(5, "", var2.field564 + class453.field3452);
+				}
 
-                        int var16 = var11 == 0 ? 5 : 9;
-                        this.field127 = var15;
-                        this.field133 = new class184(var12 + var16 + this.field127.field1566);
-                        this.field133.method1114(var11);
-                        this.field133.writeInt(var12);
-                        this.field134 = 8;
-                        this.field119.field1818 = 0;
-                     } else if (this.field134 == 0) {
-                        if (this.field119.field1816[0] == -1) {
-                           this.field134 = 1;
-                           this.field119.field1818 = 0;
-                        } else {
-                           this.field127 = null;
-                        }
-                     }
-                  } else {
-                     var8 = this.field133.field1816.length - this.field127.field1566;
-                     var9 = 512 - this.field134;
-                     if (var9 > var8 - this.field133.field1818) {
-                        var9 = var8 - this.field133.field1818;
-                     }
+				var2.method1153();
+			}
+		}
 
-                     if (var9 > var21) {
-                        var9 = var21;
-                     }
+	}
 
-                     this.field142.method1013(this.field133.field1816, this.field133.field1818, var9);
-                     if (this.field121 != 0) {
-                        for(var10 = 0; var10 < var9; ++var10) {
-                           var10000 = this.field133.field1816;
-                           var10001 = var10 + this.field133.field1818;
-                           var10000[var10001] ^= this.field121;
-                        }
-                     }
+	@ObfInfo(name = "ac", desc = "(B)V")
+	final void method310() {
+		this.field349 = 0;
+		this.field351.method884();
+		this.field350.method884();
+	}
 
-                     var23 = this.field133;
-                     var23.field1818 += var9;
-                     this.field134 += var9;
-                     if (var8 == this.field133.field1818) {
-                        if (16711935L == this.field127.field1078) {
-                           this.field122 = this.field133;
+	@ObfInfo(name = "ai", desc = "(Luc;ZI)Z", opaqueValue = "496878304")
+	final boolean method311(class353 var1, boolean var2) {
+		if (null == var1) {
+			return false;
+		} else if (var1.equals(class126.field1164.field3315)) {
+			return true;
+		} else {
+			return this.field351.method2402(var1, var2);
+		}
+	}
 
-                           for(var10 = 0; var10 < 256; ++var10) {
-                              class22 var22 = this.field137[var10];
-                              if (var22 != null) {
-                                 this.method135(var22, var10);
-                              }
-                           }
-                        } else {
-                           this.field135.reset();
-                           this.field135.update(this.field133.field1816, 0, var8);
-                           var10 = (int)this.field135.getValue();
-                           if (this.field127.field1564 != var10) {
-                              try {
-                                 this.field142.method1017();
-                              } catch (Exception var18) {
-                              }
+	@ObfInfo(name = "az", desc = "(Luc;I)Z", opaqueValue = "1978543188")
+	final boolean method312(class353 var1) {
+		if (null == var1) {
+			return false;
+		} else {
+			return this.field350.method900(var1);
+		}
+	}
 
-                              ++this.field118;
-                              this.field142 = null;
-                              this.field121 = (byte)((int)(Math.random() * 255.0 + 1.0));
-                              return false;
-                           }
+	@ObfInfo(name = "ap", desc = "(Ljava/lang/String;B)V", opaqueValue = "9")
+	final void method313(String var1) {
+		if (var1 != null) {
+			class353 var3 = new class353(var1, this.field348);
+			if (var3.method1936()) {
+				if (this.method314()) {
+					method323(class453.field3577);
+				} else if (class126.field1164.field3315.equals(var3)) {
+					method325();
+				} else if (this.method311(var3, false)) {
+					method326(var1);
+				} else if (this.method312(var3)) {
+					method323(class453.field3583 + var1 + class453.field3584);
+				} else {
+					method322(var1);
+				}
+			}
+		}
+	}
 
-                           this.field118 = 0;
-                           this.field141 = 0;
-                           this.field127.field1565.method246((int)(this.field127.field1078 & 65535L), this.field133.field1816, 16711680L == (this.field127.field1078 & 16711680L), this.field130);
-                        }
+	@ObfInfo(name = "al", desc = "(I)Z", opaqueValue = "636690078")
+	final boolean method314() {
+		return this.field351.method885() || this.field351.method905() >= 200 && Client.field156 != 1;
+	}
 
-                        this.field127.method605();
-                        if (this.field130) {
-                           --this.field124;
-                        } else {
-                           --this.field129;
-                        }
+	@ObfInfo(name = "an", desc = "(Ljava/lang/String;I)V", opaqueValue = "541901649")
+	final void method315(String var1) {
+		if (null != var1) {
+			class353 var3 = new class353(var1, this.field348);
+			if (var3.method1936()) {
+				if (this.method318()) {
+					method323(class453.field3579);
+				} else if (class126.field1164.field3315.equals(var3)) {
+					method327();
+				} else if (this.method312(var3)) {
+					method321(var1);
+				} else if (this.method311(var3, false)) {
+					method323(class453.field3397 + var1 + class453.field3556);
+				} else {
+					class121 var4 = class121.method689(class480.field3882, Client.field92.field2665);
+					var4.field1141.method1481(class280.method1555(var1));
+					var4.field1141.method1484(var1);
+					Client.field92.method1821(var4);
+				}
+			}
+		}
+	}
 
-                        this.field134 = 0;
-                        this.field127 = null;
-                        this.field133 = null;
-                     } else {
-                        if (this.field134 != 512) {
-                           break;
-                        }
+	@ObfInfo(name = "ag", desc = "(I)Z", opaqueValue = "901944118")
+	final boolean method318() {
+		return this.field350.method885() || this.field350.method905() >= 100 && Client.field156 != 1;
+	}
 
-                        this.field134 = 0;
-                     }
-                  }
-               }
+	@ObfInfo(name = "am", desc = "(Ljava/lang/String;I)V", opaqueValue = "-595757003")
+	final void method316(String var1) {
+		if (null != var1) {
+			class353 var3 = new class353(var1, this.field348);
+			if (var3.method1936()) {
+				if (this.field351.method903(var3)) {
+					Client.method180();
+					class121 var4 = class121.method689(class480.field3862, Client.field92.field2665);
+					var4.field1141.method1481(class280.method1555(var1));
+					var4.field1141.method1484(var1);
+					Client.field92.method1821(var4);
+				}
 
-               return true;
-            }
-         } catch (IOException var19) {
-            try {
-               this.field142.method1017();
-            } catch (Exception var17) {
-            }
+				for (int var6 = 0; var6 < class183.field1652; ++var6) {
+					class439 var5 = Client.field200[class183.field1653[var6]];
+					var5.method2299();
+				}
 
-            ++this.field141;
-            this.field142 = null;
-            return false;
-         }
-      }
-   }
+				Iterator var7 = class159.field1504.iterator();
 
-   public void method133(boolean var1) {
-      if (null != this.field142) {
-         try {
-            class184 var3 = new class184(4);
-            var3.method1114(var1 ? 2 : 3);
-            var3.method1166(0);
-            this.field142.method1015(var3.field1816, 0, 4);
-         } catch (IOException var6) {
-            try {
-               this.field142.method1017();
-            } catch (Exception var5) {
-            }
+				while (var7.hasNext()) {
+					class212 var8 = (class212)var7.next();
+					var8.method1181();
+				}
 
-            ++this.field141;
-            this.field142 = null;
-         }
+				if (null != class54.field716) {
+					class54.field716.method1337();
+				}
 
-      }
-   }
+			}
+		}
+	}
 
-   public void method132(class168 var1, boolean var2) {
-      if (null != this.field142) {
-         try {
-            this.field142.method1017();
-         } catch (Exception var8) {
-         }
+	@ObfInfo(name = "ax", desc = "(Ljava/lang/String;ZI)V", opaqueValue = "-1861839196")
+	public final void method317(String var1, boolean var2) {
+		if (null != var1) {
+			class353 var4 = new class353(var1, this.field348);
+			if (var4.method1936()) {
+				if (this.field350.method903(var4)) {
+					Client.method180();
+					if (var2) {
+						class121 var5 = class121.method689(class480.field3884, Client.field92.field2665);
+						var5.field1141.method1481(class280.method1555(var1));
+						var5.field1141.method1484(var1);
+						Client.field92.method1821(var5);
+					}
+				}
 
-         this.field142 = null;
-      }
+				Client.method272();
+			}
+		}
+	}
 
-      this.field142 = var1;
-      this.method133(var2);
-      this.field119.field1818 = 0;
-      this.field127 = null;
-      this.field133 = null;
-      this.field134 = 0;
+	@ObfInfo(name = "as", desc = "(Luc;I)Z", opaqueValue = "1418526490")
+	final boolean method320(class353 var1) {
+		class317 var3 = (class317)this.field351.method886(var1);
+		return null != var3 && var3.method2221();
+	}
 
-      while(true) {
-         class133 var4 = (class133)this.field123.method710();
-         if (null == var4) {
-            while(true) {
-               var4 = (class133)this.field128.method710();
-               if (var4 == null) {
-                  if (this.field121 != 0) {
-                     try {
-                        class184 var9 = new class184(4);
-                        var9.method1114(4);
-                        var9.method1114(this.field121);
-                        var9.method1155(0);
-                        this.field142.method1015(var9.field1816, 0, 4);
-                     } catch (IOException var7) {
-                        try {
-                           this.field142.method1017();
-                        } catch (Exception var6) {
-                        }
+	@ObfInfo(name = "aa", desc = "(Ljava/lang/String;B)V")
+	static final void method323(String var0) {
+		class159.method914(30, "", var0);
+	}
 
-                        ++this.field141;
-                        this.field142 = null;
-                     }
-                  }
+	@ObfInfo(name = "af", desc = "(Ljava/lang/String;B)V")
+	static final void method326(String var0) {
+		method323(var0 + class453.field3399);
+	}
 
-                  this.field140 = 0;
-                  this.field120 = class80.method713();
-                  return;
-               }
+	@ObfInfo(name = "ad", desc = "(I)V")
+	static final void method325() {
+		method323(class453.field3581);
+	}
 
-               this.field125.method1664(var4);
-               this.field126.method712(var4, var4.field1078);
-               ++this.field136;
-               --this.field129;
-            }
-         }
+	@ObfInfo(name = "aq", desc = "(Ljava/lang/String;I)V")
+	static final void method322(String var0) {
+		class121 var2 = class121.method689(class480.field3834, Client.field92.field2665);
+		var2.field1141.method1481(class280.method1555(var0));
+		var2.field1141.method1484(var0);
+		Client.field92.method1821(var2);
+	}
 
-         this.field132.method712(var4, var4.field1078);
-         ++this.field131;
-         --this.field124;
-      }
-   }
+	@ObfInfo(name = "ar", desc = "(Ljava/lang/String;I)V")
+	static final void method321(String var0) {
+		method323(var0 + class453.field3580);
+	}
 
-   void method134(class22 var1, int var2) {
-      if (var1.field212) {
-         if (var2 <= this.field138) {
-            throw new RuntimeException("");
-         }
+	@ObfInfo(name = "ab", desc = "(I)V")
+	static final void method327() {
+		method323(class453.field3582);
+	}
 
-         if (var2 < this.field139) {
-            this.field139 = var2;
-         }
-      } else {
-         if (var2 >= this.field139) {
-            throw new RuntimeException("");
-         }
-
-         if (var2 > this.field138) {
-            this.field138 = var2;
-         }
-      }
-
-      if (null != this.field122) {
-         this.method135(var1, var2);
-      } else {
-         this.method136((class22)null, 255, 255, 0, (byte)0, true);
-         this.field137[var2] = var1;
-      }
-   }
-
-   void method135(class22 var1, int var2) {
-      this.field122.field1818 = 5 + var2 * 8;
-      if (this.field122.field1818 >= this.field122.field1816.length) {
-         if (var1.field212) {
-            var1.method250();
-         } else {
-            throw new RuntimeException("");
-         }
-      } else {
-         int var4 = this.field122.readInt();
-         int var5 = this.field122.readInt();
-         var1.method245(var4, var5, (byte)18);
-      }
-   }
-
-   void method136(class22 var1, int var2, int var3, int var4, byte var5, boolean var6) {
-      long var8 = (long)((var2 << 16) + var3);
-      class133 var10 = (class133)this.field132.method709(var8);
-      if (var10 == null) {
-         var10 = (class133)this.field123.method709(var8);
-         if (null == var10) {
-            var10 = (class133)this.field126.method709(var8);
-            if (var10 != null) {
-               if (var6) {
-                  var10.method938();
-                  this.field132.method712(var10, var8);
-                  --this.field136;
-                  ++this.field131;
-               }
-
-            } else {
-               if (!var6) {
-                  var10 = (class133)this.field128.method709(var8);
-                  if (null != var10) {
-                     return;
-                  }
-               }
-
-               var10 = new class133();
-               var10.field1565 = var1;
-               var10.field1564 = var4;
-               var10.field1566 = var5;
-               if (var6) {
-                  this.field132.method712(var10, var8);
-                  ++this.field131;
-               } else {
-                  this.field125.method1666(var10);
-                  this.field126.method712(var10, var8);
-                  ++this.field136;
-               }
-
-            }
-         }
-      }
-   }
-
-   void method139(int var1, int var2) {
-      long var4 = (long)(var2 + (var1 << 16));
-      class133 var6 = (class133)this.field126.method709(var4);
-      if (var6 != null) {
-         this.field125.method1664(var6);
-      }
-   }
-
-   int method141(int var1, int var2) {
-      long var4 = (long)(var2 + (var1 << 16));
-      return this.field127 != null && var4 == this.field127.field1078 ? 1 + this.field133.field1818 * 99 / (this.field133.field1816.length - this.field127.field1566) : 0;
-   }
-
-   public int method140(boolean var1, boolean var2) {
-      int var4 = 0;
-      if (var1) {
-         var4 += this.field124 + this.field131;
-      }
-
-      if (var2) {
-         var4 += this.field136 + this.field129;
-      }
-
-      return var4;
-   }
-
-   public void method138() {
-      if (this.field142 != null) {
-         this.field142.method1017();
-      }
-
-   }
+	@ObfInfo(name = "ah", desc = "(Ljava/lang/String;II)V")
+	static final void method324(String var0, int var1) {
+		class121 var3 = class121.method689(class480.field3901, Client.field92.field2665);
+		var3.field1141.method1481(class280.method1555(var0) + 1);
+		var3.field1141.method1481(var1);
+		var3.field1141.method1484(var0);
+		Client.field92.method1821(var3);
+	}
 }

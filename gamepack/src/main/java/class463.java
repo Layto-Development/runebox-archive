@@ -1,34 +1,51 @@
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+@ObfInfo(name = "ap")
 public class class463 {
-   static final int field3593 = (int)(Math.pow(2.0, 4.0) - 1.0);
-   static final int field3594 = (int)(Math.pow(2.0, 8.0) - 1.0);
+	@ObfInfo(name = "aq", desc = "I", intMultiplier = 1299157837)
+	static int field3759;
+	@ObfInfo(name = "au", desc = "Ljava/util/concurrent/ExecutorService;")
+	ExecutorService field3757;
+	@ObfInfo(name = "ae", desc = "Ljava/util/concurrent/Future;")
+	Future field3760;
+	@ObfInfo(name = "ao", desc = "Ltm;")
+	final class280 field3758;
+	@ObfInfo(name = "at", desc = "Lat;")
+	final class84 field3756;
 
-   class463() throws Throwable {
-   }
+	@ObfInfo(name = "<init>", desc = "(Ltm;Lat;)V")
+	public class463(class280 var1, class84 var2) {
+		this.field3757 = Executors.newSingleThreadExecutor();
+		this.field3758 = var1;
+		this.field3756 = var2;
+		this.method2398();
+	}
 
-   public static int method2264(int var0) {
-      return var0 >>> 12;
-   }
+	@ObfInfo(name = "au", desc = "(I)Z")
+	public boolean method2400() {
+		return this.field3760.isDone();
+	}
 
-   public static int method2265(int var0) {
-      return var0 >>> 4 & field3594;
-   }
+	@ObfInfo(name = "ae", desc = "(I)V")
+	public void method2397() {
+		this.field3757.shutdown();
+		this.field3757 = null;
+	}
 
-   public static int method2266(int var0) {
-      return (var0 & field3593) - 1;
-   }
+	@ObfInfo(name = "ao", desc = "(B)Ltm;")
+	public class280 method2399() {
+		try {
+			return (class280)this.field3760.get();
+		} catch (Exception var3) {
+			return null;
+		}
+	}
 
-   static Object[] method2263(class184 var0, int[] var1) {
-      int var3 = var0.method1172();
-      Object[] var4 = new Object[var3 * var1.length];
-
-      for(int var5 = 0; var5 < var3; ++var5) {
-         for(int var6 = 0; var6 < var1.length; ++var6) {
-            int var7 = var6 + var1.length * var5;
-            class247 var8 = class302.method1662(var1[var6]);
-            var4[var7] = var8.method1449(var0);
-         }
-      }
-
-      return var4;
-   }
+	@ObfInfo(name = "at", desc = "(I)V")
+	void method2398() {
+		this.field3760 = this.field3757.submit(new class345(this, this.field3758, this.field3756));
+	}
 }

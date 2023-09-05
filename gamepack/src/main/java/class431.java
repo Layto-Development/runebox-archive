@@ -1,34 +1,26 @@
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class431 implements Iterator {
-   class489 field3260;
-   int field3261 = 0;
-   int field3262;
+@ObfInfo(name = "mp")
+public class class431 {
+	@ObfInfo(name = "ae", desc = "Lml;")
+	class421 field3266;
+	@ObfInfo(name = "ao", desc = "Lbj;")
+	class435 field3271;
+	@ObfInfo(name = "au", desc = "Lmb;")
+	public class4 field3268;
+	@ObfInfo(name = "az", desc = "[Ljava/lang/Object;")
+	public Object[] field3265;
+	@ObfInfo(name = "at", desc = "[Ljava/lang/Object;")
+	public Object[] field3267;
+	@ObfInfo(name = "ac", desc = "[Ljava/lang/Object;")
+	public Object[] field3269;
+	@ObfInfo(name = "ai", desc = "[Ljava/lang/Object;")
+	public Object[] field3270;
 
-   class431(class489 var1) {
-      this.field3262 = this.field3260.field3854;
-      this.field3260 = var1;
-   }
-
-   public boolean hasNext() {
-      return this.field3261 < this.field3260.field3858;
-   }
-
-   public Object next() {
-      if (this.field3262 != this.field3260.field3854) {
-         throw new ConcurrentModificationException();
-      } else if (this.field3261 < this.field3260.field3858) {
-         Object var1 = this.field3260.field3856[this.field3261].field2586;
-         ++this.field3261;
-         return var1;
-      } else {
-         throw new NoSuchElementException();
-      }
-   }
-
-   public void remove() {
-      throw new UnsupportedOperationException();
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class431() {
+		this.field3268 = new class4();
+		this.field3266 = new class421();
+		this.field3271 = new class435();
+	}
 }

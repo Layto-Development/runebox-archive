@@ -1,43 +1,47 @@
-public final class class494 {
-   boolean[] field3883 = new boolean[256];
-   boolean[] field3904 = new boolean[16];
-   byte field3892;
-   byte[] field3884;
-   byte[] field3896;
-   byte[] field3901 = new byte[4096];
-   byte[] field3905 = new byte[256];
-   byte[] field3908 = new byte[18002];
-   byte[] field3909 = new byte[18002];
-   byte[][] field3890 = new byte[6][258];
-   int field3879;
-   int field3885 = 0;
-   int field3886;
-   int field3888;
-   int field3889;
-   int field3893;
-   int field3894;
-   int field3895;
-   int field3897;
-   int field3898;
-   int field3900;
-   int field3902;
-   int field3910 = 0;
-   int field3911;
-   int field3915;
-   int[] field3891 = new int[16];
-   int[] field3899 = new int[256];
-   int[] field3907 = new int[257];
-   int[] field3914 = new int[6];
-   int[][] field3903 = new int[6][258];
-   int[][] field3912 = new int[6][258];
-   int[][] field3913 = new int[6][258];
-   final int field3878 = 16;
-   final int field3880 = 258;
-   final int field3881 = 6;
-   final int field3882 = 50;
-   final int field3887 = 4096;
-   final int field3906 = 18002;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class494() {
-   }
+@ObfInfo(name = "jn")
+public final class class494 {
+	@ObfInfo(name = "nc", desc = "I", intMultiplier = 1693604393)
+	static int field4013;
+	@ObfInfo(name = "am", desc = "I", intMultiplier = -1741613857)
+	int field4010;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = -254851491)
+	int field4011;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 892109197)
+	int field4012;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = 1521030227)
+	int field4014;
+	@ObfInfo(name = "ai", desc = "I", intMultiplier = -1488032469)
+	int field4015;
+	@ObfInfo(name = "az", desc = "I", intMultiplier = -234343827)
+	int field4016;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = 1262324027)
+	int field4017;
+	@ObfInfo(name = "ag", desc = "I", intMultiplier = -721294081)
+	int field4018;
+	@ObfInfo(name = "af", desc = "I", intMultiplier = -1860757305)
+	int field4019;
+	@ObfInfo(name = "ad", desc = "I", intMultiplier = -1051252903)
+	int field4020;
+	@ObfInfo(name = "aq", desc = "I", intMultiplier = 1064543433)
+	int field4021;
+	@ObfInfo(name = "al", desc = "I", intMultiplier = -1575321813)
+	int field4022;
+	@ObfInfo(name = "aa", desc = "I", intMultiplier = 211986193)
+	int field4023;
+	@ObfInfo(name = "ar", desc = "I", intMultiplier = 623652531)
+	int field4024;
+	@ObfInfo(name = "an", desc = "I", intMultiplier = -471429039)
+	int field4025;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 1361881663)
+	int field4026;
+	@ObfInfo(name = "ap", desc = "I", intMultiplier = 90793175)
+	int field4027;
+	@ObfInfo(name = "ab", desc = "I", intMultiplier = 2072845555)
+	int field4028;
+
+	@ObfInfo(name = "<init>", desc = "()V")
+	class494() {
+	}
 }

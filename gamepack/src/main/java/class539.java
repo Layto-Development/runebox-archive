@@ -1,27 +1,24 @@
-import java.net.URL;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Calendar;
+import java.util.TimeZone;
 
+@ObfInfo(name = "mo")
 public class class539 {
-   public static short[] field4264;
-   static int field4260 = -1;
-   static int field4261 = -2;
-   final URL field4259;
-   volatile byte[] field4263;
-   volatile int field4262;
+	@ObfInfo(name = "ao", desc = "Ljava/util/Calendar;")
+	public static Calendar field4277;
+	@ObfInfo(name = "ae", desc = "[Ljava/lang/String;")
+	public static final String[] field4276;
+	@ObfInfo(name = "au", desc = "[[Ljava/lang/String;")
+	public static final String[][] field4278;
 
-   class539(URL var1) {
-      this.field4262 = field4260;
-      this.field4259 = var1;
-   }
+	static {
+		field4278 = new String[][]{{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}, {"Jan", "Feb", "M\u00e4r", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"}, {"jan", "f\u00e9v", "mars", "avr", "mai", "juin", "juil", "ao\u00fbt", "sept", "oct", "nov", "d\u00e9c"}, {"jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"}, {"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"}, {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}, {"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"}};
+		field4276 = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+		Calendar.getInstance();
+		field4277 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+	}
 
-   public boolean method2563() {
-      return field4260 != this.field4262;
-   }
-
-   public byte[] method2565() {
-      return this.field4263;
-   }
-
-   public String method2564() {
-      return this.field4259.toString();
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class539() throws Throwable {
+	}
 }

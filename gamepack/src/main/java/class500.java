@@ -1,30 +1,43 @@
-public class class500 {
-   int field3943;
-   int field3944;
-   int[] field3945;
-   int[] field3946;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class500() {
-      class225 var1 = class223.field2050;
-      var1.method1332(16);
-      this.field3944 = var1.method1333() != 0 ? var1.method1332(4) + 1 : 1;
-      if (var1.method1333() != 0) {
-         var1.method1332(8);
-      }
+@ObfInfo(name = "gu")
+public class class500 extends class362 {
+	@ObfInfo(name = "wl", desc = "[S")
+	static short[] field4040;
+	@ObfInfo(name = "ae", desc = "B")
+	byte field4037;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1314479155)
+	int field4036;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 1961987563)
+	int field4038;
+	@ObfInfo(name = "at", desc = "Ljava/lang/String;")
+	String field4039;
+	// $FF: synthetic field
+	@ObfInfo(name = "this$0", desc = "Lgg;")
+	final class141 this$0;
 
-      var1.method1332(2);
-      if (this.field3944 > 1) {
-         this.field3943 = var1.method1332(4);
-      }
+	@ObfInfo(name = "<init>", desc = "(Lgg;)V")
+	class500(class141 var1) {
+		this.this$0 = var1;
+		this.field4038 = -1;
+	}
 
-      this.field3945 = new int[this.field3944];
-      this.field3946 = new int[this.field3944];
+	@ObfInfo(name = "au", desc = "(Ltm;B)V")
+	void method1978(class280 var1) {
+		var1.method1492();
+		this.field4038 = var1.method1541();
+		this.field4037 = var1.method1493();
+		this.field4036 = var1.method1541();
+		var1.method1497();
+		this.field4039 = var1.method1500();
+		var1.method1492();
+	}
 
-      for(int var2 = 0; var2 < this.field3944; ++var2) {
-         var1.method1332(8);
-         this.field3945[var2] = var1.method1332(8);
-         this.field3946[var2] = var1.method1332(8);
-      }
-
-   }
+	@ObfInfo(name = "ae", desc = "(Lgo;I)V")
+	void method1979(class143 var1) {
+		class524 var3 = (class524)var1.field1434.get(this.field4038);
+		var3.field4199 = this.field4037;
+		var3.field4200 = this.field4036;
+		var3.field4198 = new class353(this.field4039);
+	}
 }

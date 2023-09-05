@@ -1,31 +1,91 @@
-public class class235 extends class531 {
-   static short[] field2147;
-   byte field2144;
-   int field2143;
-   int field2145;
-   String field2146;
-   // $FF: synthetic field
-   final class474 this$0;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class235(class474 var1) {
-      this.this$0 = var1;
-      this.field2145 = -1;
-   }
+@ObfInfo(name = "ky")
+public class class235 implements class415 {
+	@ObfInfo(name = "ai", desc = "I", intMultiplier = -346385577)
+	int field1970;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 2137123145)
+	int field1971;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 993818461)
+	int field1972;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = 1041584515)
+	int field1973;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = 192640145)
+	int field1974;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = 588126651)
+	int field1975;
 
-   void method2516(class184 var1) {
-      var1.readUnsignedByte();
-      this.field2145 = var1.method1174();
-      this.field2144 = var1.method1126();
-      this.field2143 = var1.method1174();
-      var1.method1130();
-      this.field2146 = var1.readString();
-      var1.readUnsignedByte();
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class235() {
+	}
 
-   void method2517(class290 var1) {
-      class219 var3 = (class219)var1.field2457.get(this.field2145);
-      var3.field2037 = this.field2144;
-      var3.field2038 = this.field2143;
-      var3.field2036 = new class251(this.field2146);
-   }
+	@ObfInfo(name = "au", desc = "(Ljf;I)V", opaqueValue = "-474032336")
+	public void method2193(class305 var1) {
+		if (var1.field2465 > this.field1975) {
+			var1.field2465 = this.field1975;
+		}
+
+		if (var1.field2459 < this.field1975) {
+			var1.field2459 = this.field1975;
+		}
+
+		if (var1.field2467 > this.field1970) {
+			var1.field2467 = this.field1970;
+		}
+
+		if (var1.field2461 < this.field1970) {
+			var1.field2461 = this.field1970;
+		}
+
+	}
+
+	@ObfInfo(name = "ae", desc = "(IIII)Z", opaqueValue = "1293653198")
+	public boolean method2188(int var1, int var2, int var3) {
+		if (var1 >= this.field1972 && var1 < this.field1972 + this.field1974) {
+			return this.field1971 == var2 >> 6 && this.field1973 == var3 >> 6;
+		} else {
+			return false;
+		}
+	}
+
+	@ObfInfo(name = "ao", desc = "(IIB)Z", opaqueValue = "31")
+	public boolean method2189(int var1, int var2) {
+		return var1 >> 6 == this.field1975 && var2 >> 6 == this.field1970;
+	}
+
+	@ObfInfo(name = "at", desc = "(IIII)[I", opaqueValue = "-181167712")
+	public int[] method2191(int var1, int var2, int var3) {
+		if (!this.method2188(var1, var2, var3)) {
+			return null;
+		} else {
+			int[] var5 = new int[]{this.field1975 * 64 - this.field1971 * 64 + var2, var3 + (this.field1970 * 64 - this.field1973 * 64)};
+			return var5;
+		}
+	}
+
+	@ObfInfo(name = "ac", desc = "(III)Lmc;", opaqueValue = "-1281040923")
+	public class50 method2192(int var1, int var2) {
+		if (!this.method2189(var1, var2)) {
+			return null;
+		} else {
+			int var4 = this.field1971 * 64 - this.field1975 * 64 + var1;
+			int var5 = this.field1973 * 64 - this.field1970 * 64 + var2;
+			return new class50(this.field1972, var4, var5);
+		}
+	}
+
+	@ObfInfo(name = "ai", desc = "(Ltm;B)V")
+	public void method2190(class280 var1) {
+		this.field1972 = var1.method1492();
+		this.field1974 = var1.method1492();
+		this.field1971 = var1.method1541();
+		this.field1973 = var1.method1541();
+		this.field1975 = var1.method1541();
+		this.field1970 = var1.method1541();
+		this.method1238();
+	}
+
+	@ObfInfo(name = "az", desc = "(B)V")
+	void method1238() {
+	}
 }

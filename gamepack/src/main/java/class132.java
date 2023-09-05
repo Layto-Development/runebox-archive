@@ -1,22 +1,35 @@
-public class class132 implements class188 {
-   static class290 field1563;
-   static class425 field1562;
-   static final class132 field1558 = new class132(0, 1);
-   static final class132 field1559 = new class132(2, 2);
-   static final class132 field1560 = new class132(1, 0);
-   final int field1561;
-   public final int field1557;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class132(int var1, int var2) {
-      this.field1557 = var1;
-      this.field1561 = var2;
-   }
+@ObfInfo(name = "hp")
+public class class132 {
+	@ObfInfo(name = "ju", desc = "[[B")
+	static byte[][] field1367;
+	@ObfInfo(name = "ae", desc = "Lhp;")
+	static final class132 field1360;
+	@ObfInfo(name = "ao", desc = "Lhp;")
+	static final class132 field1361;
+	@ObfInfo(name = "at", desc = "Lhp;")
+	static final class132 field1362;
+	@ObfInfo(name = "ac", desc = "Lhp;")
+	static final class132 field1363;
+	@ObfInfo(name = "az", desc = "Lhp;")
+	static final class132 field1364;
+	@ObfInfo(name = "ai", desc = "Lhp;")
+	static final class132 field1365;
+	@ObfInfo(name = "au", desc = "Lhp;")
+	static final class132 field1366;
 
-   public int method1195() {
-      return this.field1561;
-   }
+	static {
+		field1366 = new class132(0, class36.field495);
+		field1360 = new class132(1, class36.field498);
+		field1361 = new class132(2, class36.field492);
+		field1362 = new class132(3, class36.field488);
+		field1363 = new class132(4, class36.field501);
+		field1365 = new class132(5, class36.field490);
+		field1364 = new class132(6, class36.field497);
+	}
 
-   static class132[] method892() {
-      return new class132[]{field1558, field1560, field1559};
-   }
+	@ObfInfo(name = "<init>", desc = "(ILil;)V")
+	class132(int var1, class36 var2) {
+	}
 }

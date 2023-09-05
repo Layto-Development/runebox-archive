@@ -1,82 +1,68 @@
-public class class177 {
-   static class22 field1799;
-   byte field1795;
-   public int field1793;
-   public int field1794;
-   public int field1796;
-   public int field1797;
-   public int field1798;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.io.IOException;
+import java.net.Socket;
 
-   public class177() {
-   }
+@ObfInfo(name = "qy")
+public class class177 extends class112 {
+	@ObfInfo(name = "ar", desc = "[[[I")
+	static int[][][] field1627;
+	@ObfInfo(name = "ae", desc = "Lqa;")
+	class210 field1625;
+	@ObfInfo(name = "ao", desc = "Lqh;")
+	class364 field1624;
+	@ObfInfo(name = "au", desc = "Ljava/net/Socket;")
+	Socket field1626;
 
-   public class177(class184 var1, boolean var2) {
-      this.field1795 = var1.method1126();
-      this.field1794 = var1.method1174();
-      this.field1798 = var1.readInt();
-      this.field1796 = var1.readInt();
-      this.field1797 = var1.readInt();
-      this.field1793 = var1.readInt();
-      if (var2) {
-         int var4 = 0;
-         boolean var5 = false;
+	@ObfInfo(name = "<init>", desc = "(Ljava/net/Socket;II)V")
+	public class177(Socket var1, int var2, int var3) throws IOException {
+		this.field1626 = var1;
+		this.field1626.setSoTimeout(30000);
+		this.field1626.setTcpNoDelay(true);
+		this.field1626.setReceiveBufferSize(65536);
+		this.field1626.setSendBufferSize(65536);
+		this.field1625 = new class210(this.field1626.getInputStream(), var2);
+		this.field1624 = new class364(this.field1626.getOutputStream(), var3);
+	}
 
-         while(true) {
-            int var6 = var1.readUnsignedByte();
-            if (var6 == 255) {
-               Integer var3 = var5 ? var4 : null;
-               this.method1099(var3);
-               break;
-            }
+	@ObfInfo(name = "au", desc = "(IB)Z")
+	public boolean method617(int var1) throws IOException {
+		return this.field1625.method1161(var1);
+	}
 
-            if (var6 != 0) {
-               throw new IllegalStateException("");
-            }
+	@ObfInfo(name = "ae", desc = "(I)I")
+	public int method619() throws IOException {
+		return this.field1625.method1165();
+	}
 
-            while(true) {
-               int var7 = var1.readUnsignedByte();
-               if (var7 == 255) {
-                  break;
-               }
+	@ObfInfo(name = "ao", desc = "(I)I")
+	public int method621() throws IOException {
+		return this.field1625.method1162();
+	}
 
-               --var1.field1818;
-               if (var1.method1174() != 0) {
-                  throw new IllegalStateException("");
-               }
+	@ObfInfo(name = "at", desc = "([BIIS)I")
+	public int method618(byte[] var1, int var2, int var3) throws IOException {
+		return this.field1625.method1163(var1, var2, var3);
+	}
 
-               if (var5) {
-                  throw new IllegalStateException("");
-               }
+	@ObfInfo(name = "ac", desc = "([BIII)V")
+	public void method620(byte[] var1, int var2, int var3) throws IOException {
+		this.field1624.method1993(var1, var2, var3);
+	}
 
-               var4 = var1.readInt();
-               var5 = true;
-            }
-         }
-      }
+	@ObfInfo(name = "ai", desc = "(I)V")
+	public void method622() {
+		this.field1624.method1992();
 
-   }
+		try {
+			this.field1626.close();
+		} catch (IOException var3) {
+		}
 
-   void method1099(Integer var1) {
-   }
+		this.field1625.method1164();
+	}
 
-   public int method1100() {
-      return this.field1795 & 7;
-   }
-
-   public int method1101() {
-      return (this.field1795 & 8) == 8 ? 1 : 0;
-   }
-
-   void method1098(int var1) {
-      this.field1795 &= -8;
-      this.field1795 = (byte)(this.field1795 | var1 & 7);
-   }
-
-   void method1102(int var1) {
-      this.field1795 &= -9;
-      if (var1 == 1) {
-         this.field1795 = (byte)(this.field1795 | 8);
-      }
-
-   }
+	@ObfInfo(name = "finalize", desc = "()V")
+	protected void finalize() {
+		this.method622();
+	}
 }

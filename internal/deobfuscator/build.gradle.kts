@@ -15,6 +15,7 @@ dependencies {
     implementation("com.google.guava:guava:_")
     runtimeOnly("org.bouncycastle:bcprov-jdk15on:1.52")
     runtimeOnly("org.json:json:20220320")
+    runtimeOnly(project(":runebox-deobfuscator-includes"))
 }
 
 tasks {
@@ -33,7 +34,7 @@ tasks {
         group = "internal"
         mainClass.set("io.runebox.internal.deobfuscator.Deobfuscator")
         workingDir = project.projectDir
-        args = listOf("build/deob/gamepack.jar", "build/deob/gamepack.deob.jar", "-t")
+        args = listOf("build/deob/gamepack.jar", "build/deob/gamepack.deob.jar")
         classpath = sourceSets["main"].runtimeClasspath
     }
 }

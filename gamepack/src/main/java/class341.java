@@ -1,274 +1,119 @@
-import java.util.HashMap;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.applet.Applet;
+import java.awt.Desktop;
+import java.awt.Desktop.Action;
+import java.net.URI;
+import java.net.URL;
+import netscape.javascript.JSObject;
 
+@ObfInfo(name = "bd")
 public class class341 {
-   static int field2728;
+	@ObfInfo(name = "ug", desc = "I", intMultiplier = -2034353787)
+	static int field2698;
+	@ObfInfo(name = "au", desc = "Ljava/applet/Applet;")
+	static Applet field2697;
+	@ObfInfo(name = "ae", desc = "Ljava/lang/String;")
+	static String field2696;
 
-   static {
-      new HashMap();
-   }
+	static {
+		field2697 = null;
+		field2696 = "";
+	}
 
-   class341() throws Throwable {
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class341() throws Throwable {
+	}
 
-   public static class188 method1788(class188[] var0, int var1) {
-      class188[] var3 = var0;
+	@ObfInfo(name = "au", desc = "(Ljava/applet/Applet;Ljava/lang/String;I)V")
+	public static void method1875(Applet var0, String var1) {
+		field2697 = var0;
+		if (null != var1) {
+			field2696 = var1;
+		}
 
-      for(int var4 = 0; var4 < var3.length; ++var4) {
-         class188 var5 = var3[var4];
-         if (var1 == var5.method1195()) {
-            return var5;
-         }
-      }
+	}
 
-      return null;
-   }
+	@ObfInfo(name = "ae", desc = "(Ljava/lang/String;ZZB)V")
+	public static void method1876(String var0, boolean var1, boolean var2) {
+		if (var1) {
+			if (!var2 && Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
+				try {
+					Desktop.getDesktop().browse(new URI(var0));
+					return;
+				} catch (Exception var5) {
+				}
+			}
 
-   static int method1787(int var0, class106 var1, boolean var2, byte var3) {
-      if (var0 == 3300) {
-         if (var3 != -1) {
-            throw new IllegalStateException();
-         } else {
-            class18.field200[++class482.field3830 - 1] = Client.field879;
-            return 1;
-         }
-      } else {
-         int var4;
-         int var5;
-         if (var0 == 3301) {
-            if (var3 != -1) {
-               throw new IllegalStateException();
-            } else {
-               class482.field3830 -= 2;
-               var4 = class18.field200[class482.field3830];
-               var5 = class18.field200[class482.field3830 + 1];
-               class18.field200[++class482.field3830 - 1] = class78.method704(var4, var5);
-               return 1;
-            }
-         } else if (var0 == 3302) {
-            if (var3 != -1) {
-               throw new IllegalStateException();
-            } else {
-               class482.field3830 -= 2;
-               var4 = class18.field200[class482.field3830];
-               var5 = class18.field200[1 + class482.field3830];
-               class18.field200[++class482.field3830 - 1] = class78.method703(var4, var5);
-               return 1;
-            }
-         } else if (var0 == 3303) {
-            if (var3 != -1) {
-               throw new IllegalStateException();
-            } else {
-               class482.field3830 -= 2;
-               var4 = class18.field200[class482.field3830];
-               var5 = class18.field200[class482.field3830 + 1];
-               class18.field200[++class482.field3830 - 1] = class78.method705(var4, var5);
-               return 1;
-            }
-         } else if (var0 == 3304) {
-            if (var3 != -1) {
-               throw new IllegalStateException();
-            } else {
-               var4 = class18.field200[--class482.field3830];
-               class18.field200[++class482.field3830 - 1] = class58.method614(var4).field1083;
-               return 1;
-            }
-         } else if (var0 == 3305) {
-            if (var3 != -1) {
-               throw new IllegalStateException();
-            } else {
-               var4 = class18.field200[--class482.field3830];
-               class18.field200[++class482.field3830 - 1] = Client.field720[var4];
-               return 1;
-            }
-         } else if (var0 == 3306) {
-            if (var3 != -1) {
-               throw new IllegalStateException();
-            } else {
-               var4 = class18.field200[--class482.field3830];
-               class18.field200[++class482.field3830 - 1] = Client.field868[var4];
-               return 1;
-            }
-         } else if (var0 == 3307) {
-            if (var3 != -1) {
-               throw new IllegalStateException();
-            } else {
-               var4 = class18.field200[--class482.field3830];
-               class18.field200[++class482.field3830 - 1] = Client.field871[var4];
-               return 1;
-            }
-         } else {
-            int var6;
-            if (var0 == 3308) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  var4 = class192.field1881;
-                  var5 = class69.field1134 + (class259.field2281.field4028 >> 7);
-                  var6 = (class259.field2281.field3999 >> 7) + class478.field3659;
-                  class18.field200[++class482.field3830 - 1] = var6 + (var4 << 28) + (var5 << 14);
-                  return 1;
-               }
-            } else if (var0 == 3309) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  var4 = class18.field200[--class482.field3830];
-                  class18.field200[++class482.field3830 - 1] = var4 >> 14 & 16383;
-                  return 1;
-               }
-            } else if (var0 == 3310) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  var4 = class18.field200[--class482.field3830];
-                  class18.field200[++class482.field3830 - 1] = var4 >> 28;
-                  return 1;
-               }
-            } else if (var0 == 3311) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  var4 = class18.field200[--class482.field3830];
-                  class18.field200[++class482.field3830 - 1] = var4 & 16383;
-                  return 1;
-               }
-            } else if (var0 == 3312) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  int[] var10000 = class18.field200;
-                  int var10001 = ++class482.field3830 - 1;
-                  byte var10002;
-                  if (Client.field603) {
-                     if (var3 != -1) {
-                        throw new IllegalStateException();
-                     }
+			if (field2696.startsWith("win") && !var2) {
+				method1877(var0, 0);
+			} else if (field2696.startsWith("mac")) {
+				method1878(var0, 1, "openjs");
+			} else {
+				method1877(var0, 2);
+			}
+		} else {
+			method1877(var0, 3);
+		}
 
-                     var10002 = 1;
-                  } else {
-                     var10002 = 0;
-                  }
+	}
 
-                  var10000[var10001] = var10002;
-                  return 1;
-               }
-            } else if (var0 == 3313) {
-               class482.field3830 -= 2;
-               var4 = class18.field200[class482.field3830] + '\u8000';
-               var5 = class18.field200[class482.field3830 + 1];
-               class18.field200[++class482.field3830 - 1] = class78.method704(var4, var5);
-               return 1;
-            } else if (var0 == 3314) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  class482.field3830 -= 2;
-                  var4 = class18.field200[class482.field3830] + '\u8000';
-                  var5 = class18.field200[1 + class482.field3830];
-                  class18.field200[++class482.field3830 - 1] = class78.method703(var4, var5);
-                  return 1;
-               }
-            } else if (var0 == 3315) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  class482.field3830 -= 2;
-                  var4 = class18.field200[class482.field3830] + '\u8000';
-                  var5 = class18.field200[1 + class482.field3830];
-                  class18.field200[++class482.field3830 - 1] = class78.method705(var4, var5);
-                  return 1;
-               }
-            } else if (var0 == 3316) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  if (Client.field664 >= 2) {
-                     if (var3 != -1) {
-                        throw new IllegalStateException();
-                     }
+	@ObfInfo(name = "ao", desc = "(Ljava/lang/String;II)Z")
+	static boolean method1877(String var0, int var1) {
+		return method1878(var0, var1, "openjs");
+	}
 
-                     class18.field200[++class482.field3830 - 1] = Client.field664;
-                  } else {
-                     class18.field200[++class482.field3830 - 1] = 0;
-                  }
+	@ObfInfo(name = "at", desc = "(Ljava/lang/String;ILjava/lang/String;I)Z")
+	static boolean method1878(String var0, int var1, String var2) {
+		if (var1 == 0) {
+			try {
+				if (!field2696.startsWith("win")) {
+					throw new Exception();
+				} else if (!var0.startsWith("http://") && !var0.startsWith("https://")) {
+					throw new Exception();
+				} else {
+					String var12 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
 
-                  return 1;
-               }
-            } else if (var0 == 3317) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  class18.field200[++class482.field3830 - 1] = Client.field596;
-                  return 1;
-               }
-            } else if (var0 == 3318) {
-               class18.field200[++class482.field3830 - 1] = Client.field576;
-               return 1;
-            } else if (var0 == 3321) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  class18.field200[++class482.field3830 - 1] = Client.field693 / 100;
-                  return 1;
-               }
-            } else if (var0 == 3322) {
-               class18.field200[++class482.field3830 - 1] = Client.field863;
-               return 1;
-            } else if (var0 == 3323) {
-               if (Client.field872) {
-                  if (var3 != -1) {
-                     throw new IllegalStateException();
-                  }
+					for (int var5 = 0; var5 < var0.length(); ++var5) {
+						if (var12.indexOf(var0.charAt(var5)) == -1) {
+							throw new Exception();
+						}
+					}
 
-                  class18.field200[++class482.field3830 - 1] = 1;
-               } else {
-                  class18.field200[++class482.field3830 - 1] = 0;
-               }
+					Runtime.getRuntime().exec("cmd /c start \"j\" \"" + var0 + "\"");
+					return true;
+				}
+			} catch (Throwable var6) {
+				return false;
+			}
+		} else if (var1 == 1) {
+			try {
+				Object var11 = class530.method2576(field2697, var2, new Object[]{(new URL(field2697.getCodeBase(), var0)).toString()});
+				return var11 != null;
+			} catch (Throwable var7) {
+				return false;
+			}
+		} else if (var1 == 2) {
+			try {
+				field2697.getAppletContext().showDocument(new URL(field2697.getCodeBase(), var0), "_blank");
+				return true;
+			} catch (Exception var8) {
+				return false;
+			}
+		} else if (var1 == 3) {
+			try {
+				Applet var4 = field2697;
+				JSObject.getWindow(var4).call("loggedout", (Object[])null);
+			} catch (Throwable var10) {
+			}
 
-               return 1;
-            } else if (var0 == 3324) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  class18.field200[++class482.field3830 - 1] = Client.field577;
-                  return 1;
-               }
-            } else if (var0 == 3325) {
-               class482.field3830 -= 4;
-               var4 = class18.field200[class482.field3830];
-               var5 = class18.field200[class482.field3830 + 1];
-               var6 = class18.field200[2 + class482.field3830];
-               int var7 = class18.field200[3 + class482.field3830];
-               var4 += var5 << 14;
-               var4 += var6 << 28;
-               var4 += var7;
-               class18.field200[++class482.field3830 - 1] = var4;
-               return 1;
-            } else if (var0 == 3326) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  class18.field200[++class482.field3830 - 1] = Client.field592;
-                  return 1;
-               }
-            } else if (var0 == 3327) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  class18.field200[++class482.field3830 - 1] = Client.field593;
-                  return 1;
-               }
-            } else if (var0 == 3331) {
-               if (var3 != -1) {
-                  throw new IllegalStateException();
-               } else {
-                  class18.field200[++class482.field3830 - 1] = Client.field693;
-                  return 1;
-               }
-            } else {
-               return 2;
-            }
-         }
-      }
-   }
+			try {
+				field2697.getAppletContext().showDocument(new URL(field2697.getCodeBase(), var0), "_top");
+				return true;
+			} catch (Exception var9) {
+				return false;
+			}
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
 }

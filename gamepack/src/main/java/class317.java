@@ -1,103 +1,46 @@
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.security.cert.Certificate;
-import javax.net.ssl.HandshakeCompletedListener;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocket;
-import org.bouncycastle.crypto.tls.TlsClientProtocol;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-class class317 extends SSLSocket {
-   static class457 field2583;
-   static int field2581;
-   static int field2582;
-   Certificate[] field2584;
-   // $FF: synthetic field
-   final class538 this$0;
-   // $FF: synthetic field
-   final String val$host;
-   // $FF: synthetic field
-   final TlsClientProtocol val$tlsClientProtocol;
+@ObfInfo(name = "qo")
+public class class317 extends class424 {
+	@ObfInfo(name = "au", desc = "Z")
+	boolean field2565;
+	@ObfInfo(name = "ae", desc = "Z")
+	boolean field2566;
 
-   class317(class538 var1, TlsClientProtocol var2, String var3) {
-      this.this$0 = var1;
-      this.val$tlsClientProtocol = var2;
-      this.val$host = var3;
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class317() {
+	}
 
-   public InputStream getInputStream() throws IOException {
-      return this.val$tlsClientProtocol.getInputStream();
-   }
+	@ObfInfo(name = "au", desc = "(Lqo;I)I", opaqueValue = "12632255")
+	int method1741(class317 var1) {
+		if (super.field3235 == Client.field27 && var1.field3235 != Client.field27) {
+			return -1;
+		} else if (var1.field3235 == Client.field27 && Client.field27 != super.field3235) {
+			return 1;
+		} else if (super.field3235 != 0 && var1.field3235 == 0) {
+			return -1;
+		} else if (var1.field3235 != 0 && super.field3235 == 0) {
+			return 1;
+		} else if (this.field2565 && !var1.field2565) {
+			return -1;
+		} else if (!this.field2565 && var1.field2565) {
+			return 1;
+		} else if (this.field2566 && !var1.field2566) {
+			return -1;
+		} else if (!this.field2566 && var1.field2566) {
+			return 1;
+		} else {
+			return super.field3235 != 0 ? super.field3234 - var1.field3234 : var1.field3234 - super.field3234;
+		}
+	}
 
-   public OutputStream getOutputStream() throws IOException {
-      return this.val$tlsClientProtocol.getOutputStream();
-   }
+	@ObfInfo(name = "ae", desc = "(Lqs;I)I")
+	public int method1023(class179 var1) {
+		return this.method1741((class317)var1);
+	}
 
-   public synchronized void close() throws IOException {
-      this.val$tlsClientProtocol.close();
-   }
-
-   public void addHandshakeCompletedListener(HandshakeCompletedListener var1) {
-   }
-
-   public boolean getEnableSessionCreation() {
-      return false;
-   }
-
-   public String[] getEnabledCipherSuites() {
-      return null;
-   }
-
-   public String[] getEnabledProtocols() {
-      return null;
-   }
-
-   public boolean getNeedClientAuth() {
-      return false;
-   }
-
-   public SSLSession getSession() {
-      return new class159(this);
-   }
-
-   public String[] getSupportedProtocols() {
-      return null;
-   }
-
-   public String[] getSupportedCipherSuites() {
-      return null;
-   }
-
-   public boolean getUseClientMode() {
-      return false;
-   }
-
-   public boolean getWantClientAuth() {
-      return false;
-   }
-
-   public void removeHandshakeCompletedListener(HandshakeCompletedListener var1) {
-   }
-
-   public void setEnableSessionCreation(boolean var1) {
-   }
-
-   public void setEnabledCipherSuites(String[] var1) {
-   }
-
-   public void setEnabledProtocols(String[] var1) {
-   }
-
-   public void setNeedClientAuth(boolean var1) {
-   }
-
-   public void setUseClientMode(boolean var1) {
-   }
-
-   public void setWantClientAuth(boolean var1) {
-   }
-
-   public void startHandshake() throws IOException {
-      this.val$tlsClientProtocol.connect(new class199(this));
-   }
+	@ObfInfo(name = "compareTo", desc = "(Ljava/lang/Object;)I")
+	public int compareTo(Object var1) {
+		return this.method1741((class317)var1);
+	}
 }

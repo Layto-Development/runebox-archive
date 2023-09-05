@@ -1,58 +1,29 @@
-import java.util.concurrent.Future;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
+@ObfInfo(name = "bk")
 public class class310 {
-   protected static String field2552;
-   static class196 field2554;
-   String field2553;
-   Future field2555;
+	@ObfInfo(name = "fo", desc = "Lnk;")
+	static class505 field2523;
+	@ObfInfo(name = "wn", desc = "I", intMultiplier = -304253959)
+	static int field2524;
+	@ObfInfo(name = "ds", desc = "[I")
+	static int[] field2522;
 
-   class310(Future var1) {
-      this.field2555 = var1;
-   }
+	static {
+		field2522 = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, 85, 80, 84, -1, 91, -1, -1, -1, 81, 82, 86, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1, -1, -1, 83, 104, 105, 103, 102, 96, 98, 97, 99, -1, -1, -1, -1, -1, -1, -1, 25, 16, 17, 18, 19, 20, 21, 22, 23, 24, -1, -1, -1, -1, -1, -1, -1, 48, 68, 66, 50, 34, 51, 52, 53, 39, 54, 55, 56, 70, 69, 40, 41, 32, 35, 49, 36, 38, 67, 33, 65, 37, 64, -1, -1, -1, -1, -1, 228, 231, 227, 233, 224, 219, 225, 230, 226, 232, 89, 87, -1, 88, 229, 90, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, -1, -1, -1, 101, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 100, -1, 87, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+	}
 
-   class310(String var1) {
-      this.method1674(var1);
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class310() throws Throwable {
+	}
 
-   void method1674(String var1) {
-      if (null == var1) {
-         var1 = "";
-      }
+	@ObfInfo(name = "au", desc = "(II)I")
+	static int method1722(int var0) {
+		return field2522[var0];
+	}
 
-      this.field2553 = var1;
-      if (null != this.field2555) {
-         this.field2555.cancel(true);
-         this.field2555 = null;
-      }
-
-   }
-
-   public final String method1678() {
-      return this.field2553;
-   }
-
-   public boolean method1676() {
-      return null != this.field2553 || this.field2555 == null;
-   }
-
-   public final boolean method1675() {
-      return this.method1676() ? true : this.field2555.isDone();
-   }
-
-   public final class329 method1677() {
-      if (this.method1676()) {
-         return new class329(this.field2553);
-      } else if (!this.method1675()) {
-         return null;
-      } else {
-         try {
-            return (class329)this.field2555.get();
-         } catch (Exception var4) {
-            String var3 = "Error retrieving REST request reply";
-            System.err.println(var3 + "\r\n" + var4);
-            this.method1674(var3);
-            return new class329(var3);
-         }
-      }
-   }
+	@ObfInfo(name = "ae", desc = "(I)I")
+	static int method1721() {
+		return field2522.length;
+	}
 }

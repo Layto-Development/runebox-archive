@@ -1,31 +1,33 @@
-public class class246 {
-   public static final class246 field2215 = new class246(8, 0, "", "");
-   public static final class246 field2217;
-   static final class246 field2207 = new class246(4, 1, "", "");
-   static final class246 field2209 = new class246(6, 3, "", "");
-   static final class246 field2210 = new class246(2, 4, "", "");
-   static final class246 field2211 = new class246(0, 5, "", "");
-   static final class246 field2212 = new class246(5, 6, "", "");
-   static final class246 field2213 = new class246(7, 7, "", "");
-   static final class246 field2214 = new class246(1, 2, "", "");
-   final String field2216;
-   public final int field2208;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Iterator;
 
-   static {
-      field2217 = new class246(3, -1, "", "", true, new class246[]{field2215, field2207, field2214, field2210, field2209});
-   }
+@ObfInfo(name = "tn")
+class class246 implements Iterator {
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 1383103345)
+	int field2070;
+	// $FF: synthetic field
+	@ObfInfo(name = "this$0", desc = "Lth;")
+	final class267 this$0;
 
-   class246(int var1, int var2, String var3, String var4) {
-      this.field2208 = var1;
-      this.field2216 = var4;
-   }
+	@ObfInfo(name = "<init>", desc = "(Lth;)V")
+	class246(class267 var1) {
+		this.this$0 = var1;
+	}
 
-   class246(int var1, int var2, String var3, String var4, boolean var5, class246[] var6) {
-      this.field2208 = var1;
-      this.field2216 = var4;
-   }
+	@ObfInfo(name = "hasNext", desc = "()Z")
+	public boolean hasNext() {
+		return this.field2070 < this.this$0.method2088();
+	}
 
-   public String toString() {
-      return this.field2216;
-   }
+	@ObfInfo(name = "next", desc = "()Ljava/lang/Object;")
+	public Object next() {
+		int var1 = ++this.field2070 - 1;
+		class309 var2 = (class309)this.this$0.field2159.method1219((long)var1);
+		return null != var2 ? var2 : this.this$0.method1391(var1);
+	}
+
+	@ObfInfo(name = "remove", desc = "()V")
+	public void remove() {
+		throw new UnsupportedOperationException();
+	}
 }

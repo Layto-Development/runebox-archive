@@ -1,20 +1,20 @@
-public class class5 extends class56 {
-   boolean field37;
-   int field38;
-   // $FF: synthetic field
-   final class315 this$0;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Comparator;
 
-   class5(class315 var1) {
-      this.this$0 = var1;
-      this.field38 = -1;
-   }
+@ObfInfo(name = "nc")
+final class class5 implements Comparator {
+	@ObfInfo(name = "au", desc = "(Loz;Loz;I)I", opaqueValue = "1942939549")
+	int method285(class158 var1, class158 var2) {
+		return var1.field1500 < var2.field1500 ? -1 : (var1.field1500 == var2.field1500 ? 0 : 1);
+	}
 
-   void method608(class184 var1) {
-      this.field38 = var1.method1174();
-      this.field37 = var1.readUnsignedByte() == 1;
-   }
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method285((class158)var1, (class158)var2);
+	}
 
-   void method607(class15 var1) {
-      var1.method160(this.field38, this.field37);
-   }
+	@ObfInfo(name = "equals", desc = "(Ljava/lang/Object;)Z")
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

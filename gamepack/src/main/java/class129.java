@@ -1,121 +1,117 @@
-import java.util.LinkedList;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-public abstract class class129 {
-   boolean field1541;
-   boolean field1542;
-   byte[][][] field1530;
-   byte[][][] field1543;
-   class207[][][][] field1540;
-   int field1529 = -1;
-   int field1531;
-   int field1532;
-   int field1533;
-   int field1535;
-   int field1537;
-   int field1538;
-   int field1539 = -1;
-   short[][][] field1534;
-   short[][][] field1536;
+@ObfInfo(name = "ar")
+public class class129 {
+	@ObfInfo(name = "au", desc = "I", intMultiplier = -671093253)
+	final int field1169;
+	@ObfInfo(name = "ae", desc = "Ljava/lang/String;")
+	final String field1166;
+	@ObfInfo(name = "ao", desc = "Ljava/util/concurrent/ThreadFactory;")
+	final ThreadFactory field1168;
+	@ObfInfo(name = "at", desc = "Ljava/util/concurrent/ThreadPoolExecutor;")
+	final ThreadPoolExecutor field1167;
 
-   class129() {
-      new LinkedList();
-      this.field1541 = false;
-      this.field1542 = false;
-   }
+	@ObfInfo(name = "<init>", desc = "(Ljava/lang/String;II)V")
+	public class129(String var1, int var2, int var3) {
+		this.field1166 = var1;
+		this.field1169 = var2;
+		this.field1168 = new class527(this);
+		this.field1167 = this.method703(var3);
+	}
 
-   abstract void method883(class184 var1);
+	@ObfInfo(name = "au", desc = "(IB)Ljava/util/concurrent/ThreadPoolExecutor;")
+	final ThreadPoolExecutor method703(int var1) {
+		return new ThreadPoolExecutor(var1, var1, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue(this.field1169), this.field1168);
+	}
 
-   boolean method880() {
-      return this.field1541 && this.field1542;
-   }
+	@ObfInfo(name = "ae", desc = "(Lad;B)Lax;")
+	public class282 method704(class540 var1) {
+		if (this.field1167.getQueue().remainingCapacity() <= 0) {
+			System.err.println("REST thread pool queue is empty\r\nThread pool size " + this.field1167.getCorePoolSize() + " Queue capacity " + this.field1169);
+			return new class282("Queue full");
+		} else {
+			class282 var3 = new class282(this.field1167.submit(new class78(this, var1)));
+			return var3;
+		}
+	}
 
-   void method881(class298 var1) {
-      if (!this.method880()) {
-         byte[] var3 = var1.method1629(this.field1539, this.field1529);
-         if (var3 != null) {
-            this.method883(new class184(var3));
-            this.field1541 = true;
-            this.field1542 = true;
-         }
+	@ObfInfo(name = "ao", desc = "(I)V")
+	public final void method705() {
+		try {
+			this.field1167.shutdown();
+		} catch (Exception var3) {
+			System.err.println("Error shutting down RestRequestService\r\n" + var3);
+		}
 
-      }
-   }
+	}
 
-   void method882() {
-      this.field1536 = (short[][][])null;
-      this.field1534 = (short[][][])null;
-      this.field1543 = (byte[][][])null;
-      this.field1530 = (byte[][][])null;
-      this.field1540 = (class207[][][][])null;
-      this.field1541 = false;
-      this.field1542 = false;
-   }
+	@ObfInfo(name = "lp", desc = "(ILjava/lang/String;I)V", opaqueValue = "-1162572604")
+	static void method706(int var0, String var1) {
+		int var3 = class183.field1652;
+		int[] var4 = class183.field1653;
+		boolean var5 = false;
+		class353 var6 = new class353(var1, class67.field769);
 
-   void method885(int var1, int var2, class184 var3) {
-      int var5 = var3.readUnsignedByte();
-      if (var5 != 0) {
-         if ((var5 & 1) != 0) {
-            this.method884(var1, var2, var3, var5);
-         } else {
-            this.method888(var1, var2, var3, var5);
-         }
+		for (int var7 = 0; var7 < var3; ++var7) {
+			class439 var8 = Client.field200[var4[var7]];
+			if (null != var8 && class126.field1164 != var8 && var8.field3315 != null && var8.field3315.equals(var6)) {
+				class121 var9;
+				if (var0 == 1) {
+					var9 = class121.method689(class480.field3837, Client.field92.field2665);
+					var9.field1141.method1517(var4[var7]);
+					var9.field1141.method1528(0);
+					Client.field92.method1821(var9);
+				} else if (var0 == 4) {
+					var9 = class121.method689(class480.field3893, Client.field92.field2665);
+					var9.field1141.method1544(var4[var7]);
+					var9.field1141.method1554(0);
+					Client.field92.method1821(var9);
+				} else if (var0 == 6) {
+					var9 = class121.method689(class480.field3875, Client.field92.field2665);
+					var9.field1141.method1544(var4[var7]);
+					var9.field1141.method1528(0);
+					Client.field92.method1821(var9);
+				} else if (var0 == 7) {
+					var9 = class121.method689(class480.field3926, Client.field92.field2665);
+					var9.field1141.method1550(var4[var7]);
+					var9.field1141.method1481(0);
+					Client.field92.method1821(var9);
+				}
 
-      }
-   }
+				var5 = true;
+				break;
+			}
+		}
 
-   void method884(int var1, int var2, class184 var3, int var4) {
-      boolean var6 = (var4 & 2) != 0;
-      if (var6) {
-         this.field1534[0][var1][var2] = (short)var3.method1174();
-      }
+		if (!var5) {
+			class159.method914(4, "", class453.field3541 + var1);
+		}
 
-      this.field1536[0][var1][var2] = (short)var3.method1174();
-   }
+	}
 
-   void method888(int var1, int var2, class184 var3, int var4) {
-      int var6 = ((var4 & 24) >> 3) + 1;
-      boolean var7 = (var4 & 2) != 0;
-      boolean var8 = (var4 & 4) != 0;
-      this.field1536[0][var1][var2] = (short)var3.method1174();
-      int var9;
-      int var10;
-      int var12;
-      if (var7) {
-         var9 = var3.readUnsignedByte();
-
-         for(var10 = 0; var10 < var9; ++var10) {
-            int var11 = var3.method1174();
-            if (var11 != 0) {
-               this.field1534[var10][var1][var2] = (short)var11;
-               var12 = var3.readUnsignedByte();
-               this.field1543[var10][var1][var2] = (byte)(var12 >> 2);
-               this.field1530[var10][var1][var2] = (byte)(var12 & 3);
-            }
-         }
-      }
-
-      if (var8) {
-         for(var9 = 0; var9 < var6; ++var9) {
-            var10 = var3.readUnsignedByte();
-            if (var10 != 0) {
-               class207[] var15 = this.field1540[var9][var1][var2] = new class207[var10];
-
-               for(var12 = 0; var12 < var10; ++var12) {
-                  int var13 = var3.method1173();
-                  int var14 = var3.readUnsignedByte();
-                  var15[var12] = new class207(var13, var14 >> 2, var14 & 3);
-               }
-            }
-         }
-      }
-
-   }
-
-   int method886() {
-      return this.field1531;
-   }
-
-   int method887() {
-      return this.field1538;
-   }
+	@ObfInfo(name = "lt", desc = "(III)Ljava/lang/String;", opaqueValue = "-2095424665")
+	static final String method707(int var0, int var1) {
+		int var3 = var1 - var0;
+		if (var3 < -9) {
+			return class479.method2443(16711680);
+		} else if (var3 < -6) {
+			return class479.method2443(16723968);
+		} else if (var3 < -3) {
+			return class479.method2443(16740352);
+		} else if (var3 < 0) {
+			return class479.method2443(16756736);
+		} else if (var3 > 9) {
+			return class479.method2443(65280);
+		} else if (var3 > 6) {
+			return class479.method2443(4259584);
+		} else if (var3 > 3) {
+			return class479.method2443(8453888);
+		} else {
+			return var3 > 0 ? class479.method2443(12648192) : class479.method2443(16776960);
+		}
+	}
 }

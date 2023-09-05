@@ -1,59 +1,52 @@
-public class class430 extends class129 {
-   class430() {
-   }
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   void method2071(class184 var1) {
-      int var3 = var1.readUnsignedByte();
-      if (var3 != class483.field3835.field3837) {
-         throw new IllegalStateException("");
-      } else {
-         super.field1532 = var1.readUnsignedByte();
-         super.field1533 = var1.readUnsignedByte();
-         super.field1537 = var1.method1174();
-         super.field1535 = var1.method1174();
-         super.field1531 = var1.method1174();
-         super.field1538 = var1.method1174();
-         super.field1539 = var1.method1173();
-         super.field1529 = var1.method1173();
-      }
-   }
+@ObfInfo(name = "ox")
+public class class430 {
+	@ObfInfo(name = "ae", desc = "Lri;")
+	class205 field3263;
+	@ObfInfo(name = "au", desc = "Lri;")
+	class205 field3264;
 
-   void method883(class184 var1) {
-      super.field1533 = Math.min(super.field1533, 4);
-      super.field1536 = new short[1][64][64];
-      super.field1534 = new short[super.field1533][64][64];
-      super.field1543 = new byte[super.field1533][64][64];
-      super.field1530 = new byte[super.field1533][64][64];
-      super.field1540 = new class207[super.field1533][64][64][];
-      int var3 = var1.readUnsignedByte();
-      if (class353.field2774.field2775 != var3) {
-         throw new IllegalStateException("");
-      } else {
-         int var4 = var1.readUnsignedByte();
-         int var5 = var1.readUnsignedByte();
-         if (var4 == super.field1531 && var5 == super.field1538) {
-            for(int var6 = 0; var6 < 64; ++var6) {
-               for(int var7 = 0; var7 < 64; ++var7) {
-                  this.method885(var6, var7, var1);
-               }
-            }
+	@ObfInfo(name = "<init>", desc = "()V")
+	public class430() {
+		this.field3264 = new class205();
+		this.field3264.field1859 = this.field3264;
+		this.field3264.field1858 = this.field3264;
+	}
 
-         } else {
-            throw new IllegalStateException("");
-         }
-      }
-   }
+	@ObfInfo(name = "au", desc = "(Lri;)V")
+	public void method2247(class205 var1) {
+		if (var1.field1858 != null) {
+			var1.method1153();
+		}
 
-   public boolean equals(Object var1) {
-      if (!(var1 instanceof class430)) {
-         return false;
-      } else {
-         class430 var2 = (class430)var1;
-         return super.field1531 == var2.field1531 && super.field1538 == var2.field1538;
-      }
-   }
+		var1.field1858 = this.field3264.field1858;
+		var1.field1859 = this.field3264;
+		var1.field1858.field1859 = var1;
+		var1.field1859.field1858 = var1;
+	}
 
-   public int hashCode() {
-      return super.field1531 | super.field1538 << 8;
-   }
+	@ObfInfo(name = "ae", desc = "()Lri;")
+	public class205 method2249() {
+		class205 var1 = this.field3264.field1859;
+		if (var1 == this.field3264) {
+			this.field3263 = null;
+			return null;
+		} else {
+			this.field3263 = var1.field1859;
+			return var1;
+		}
+	}
+
+	@ObfInfo(name = "ao", desc = "()Lri;")
+	public class205 method2248() {
+		class205 var1 = this.field3263;
+		if (var1 == this.field3264) {
+			this.field3263 = null;
+			return null;
+		} else {
+			this.field3263 = var1.field1859;
+			return var1;
+		}
+	}
 }

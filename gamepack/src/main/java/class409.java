@@ -1,36 +1,91 @@
-public class class409 implements Runnable {
-   static class425 field3154;
-   volatile class331[] field3155 = new class331[2];
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class409() {
-   }
+@ObfInfo(name = "hx")
+public class class409 extends class180 {
+	@ObfInfo(name = "au", desc = "Lnu;")
+	static class437 field3159;
+	@ObfInfo(name = "ae", desc = "Lle;")
+	static class7 field3157;
+	@ObfInfo(name = "an", desc = "I", intMultiplier = -284568135)
+	static int field3160;
+	@ObfInfo(name = "ai", desc = "Z")
+	boolean field3155;
+	@ObfInfo(name = "ao", desc = "C")
+	char field3156;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = -490553151)
+	public int field3154;
+	@ObfInfo(name = "ac", desc = "Ljava/lang/String;")
+	public String field3158;
 
-   public void run() {
-      try {
-         for(int var1 = 0; var1 < 2; ++var1) {
-            class331 var2 = this.field3155[var1];
-            if (var2 != null) {
-               var2.method1759();
-            }
-         }
-      } catch (Exception var3) {
-         class194.method1208((String)null, var3);
-      }
+	static {
+		field3157 = new class7(64);
+	}
 
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class409() {
+		this.field3155 = true;
+	}
 
-   static final void method1982(int var0, int var1, boolean var2) {
-      if (Client.field821[var0] != null) {
-         if (var1 >= 0 && var1 < Client.field821[var0].method1604()) {
-            class219 var4 = (class219)Client.field821[var0].field2457.get(var1);
-            class335 var5 = class335.createPacket(ClientPacket.field1019, Client.field641.field2758);
-            var5.buffer.method1114(4 + class184.method1188(var4.field2036.method1458()));
-            var5.buffer.method1114(var0);
-            var5.buffer.method1155(var1);
-            var5.buffer.method1116(var2);
-            var5.buffer.method1117(var4.field2036.method1458());
-            Client.field641.method1797(var5);
-         }
-      }
-   }
+	@ObfInfo(name = "ao", desc = "(I)V")
+	void method2141() {
+	}
+
+	@ObfInfo(name = "at", desc = "(Ltm;B)V", opaqueValue = "-1")
+	void method2142(class280 var1) {
+		while (true) {
+			int var3 = var1.method1492();
+			if (var3 == 0) {
+				return;
+			}
+
+			this.method2143(var1, var3);
+		}
+	}
+
+	@ObfInfo(name = "ac", desc = "(Ltm;II)V", opaqueValue = "1794498871")
+	void method2143(class280 var1, int var2) {
+		if (var2 == 1) {
+			this.field3156 = class244.method1265(var1.method1493());
+		} else if (var2 == 2) {
+			this.field3154 = var1.method1496();
+		} else if (var2 == 4) {
+			this.field3155 = false;
+		} else if (var2 == 5) {
+			this.field3158 = var1.method1500();
+		}
+
+	}
+
+	@ObfInfo(name = "ai", desc = "(I)Z", opaqueValue = "-1752255872")
+	public boolean method2144() {
+		return this.field3156 == 's';
+	}
+
+	@ObfInfo(name = "au", desc = "(Lnu;I)V")
+	public static void method2146(class437 var0) {
+		field3159 = var0;
+	}
+
+	@ObfInfo(name = "ae", desc = "(II)Lhx;")
+	public static class409 method2147(int var0) {
+		class409 var2 = (class409)field3157.method294((long)var0);
+		if (null != var2) {
+			return var2;
+		} else {
+			byte[] var3 = field3159.method2267(11, var0);
+			var2 = new class409();
+			if (var3 != null) {
+				var2.method2142(new class280(var3));
+			}
+
+			var2.method2141();
+			field3157.method293(var2, (long)var0);
+			return var2;
+		}
+	}
+
+	@ObfInfo(name = "az", desc = "(I)V")
+	public static void method2145() {
+		field3157.method291();
+	}
 }

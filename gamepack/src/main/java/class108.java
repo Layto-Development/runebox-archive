@@ -1,39 +1,29 @@
-public class class108 extends class373 {
-   static boolean field1440;
-   final class174 field1439;
-   final int field1436;
-   final int field1437;
-   final int field1438;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class108(class89 var1, class89 var2, int var3, class174 var4) {
-      super(var1, var2);
-      this.field1436 = var3;
-      this.field1439 = var4;
-      class444 var5 = class444.method2173(this.method1871());
-      class427 var6 = var5.method2169(false);
-      if (null != var6) {
-         this.field1438 = var6.field3237;
-         this.field1437 = var6.field3233;
-      } else {
-         this.field1438 = 0;
-         this.field1437 = 0;
-      }
+@ObfInfo(name = "je")
+public class class108 {
+	@ObfInfo(name = "<init>", desc = "()V")
+	class108() throws Throwable {
+	}
 
-   }
+	@ObfInfo(name = "au", desc = "(IIIII)I")
+	static final int method611(int var0, int var1, int var2, int var3) {
+		return var2 * var0 - var3 * var1 >> 16;
+	}
 
-   public int method1871() {
-      return this.field1436;
-   }
+	@ObfInfo(name = "ae", desc = "(IIIII)I")
+	static final int method612(int var0, int var1, int var2, int var3) {
+		return var1 * var2 + var0 * var3 >> 16;
+	}
 
-   class174 method1876() {
-      return this.field1439;
-   }
+	@ObfInfo(name = "ao", desc = "(IIIII)I")
+	static final int method610(int var0, int var1, int var2, int var3) {
+		return var2 * var0 + var1 * var3 >> 16;
+	}
 
-   int method1877() {
-      return this.field1438;
-   }
-
-   int method1872() {
-      return this.field1437;
-   }
+	@ObfInfo(name = "at", desc = "(II)F")
+	static final float method613(int var0) {
+		float var2 = 10075.0F - (float)var0;
+		return (var2 * 1.0075567F - 75.56675F) / var2;
+	}
 }

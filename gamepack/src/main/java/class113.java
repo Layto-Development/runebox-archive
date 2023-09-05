@@ -1,156 +1,140 @@
-import java.awt.Component;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class113 implements KeyListener, FocusListener {
-   static class327 field1463;
-   static int field1456;
-   static int field1457;
-   boolean[] field1460 = new boolean[112];
-   class203[] field1459 = new class203[3];
-   Collection field1458 = new ArrayList(100);
-   Collection field1462 = new ArrayList(100);
-   volatile int field1461 = 0;
+@ObfInfo(name = "ow")
+public class class113 {
+	@ObfInfo(name = "ae", desc = "Lsj;")
+	class155 field1029;
+	@ObfInfo(name = "au", desc = "Lsj;")
+	public class155 field1030;
 
-   class113() {
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	public class113() {
+		this.field1030 = new class155();
+		this.field1030.field1482 = this.field1030;
+		this.field1030.field1484 = this.field1030;
+	}
 
-   void method810(class203 var1, int var2) {
-      this.field1459[var2] = var1;
-   }
+	@ObfInfo(name = "au", desc = "()V")
+	public void method623() {
+		while (true) {
+			class155 var1 = this.field1030.field1482;
+			if (var1 == this.field1030) {
+				this.field1029 = null;
+				return;
+			}
 
-   public int method811() {
-      return this.field1461;
-   }
+			var1.method907();
+		}
+	}
 
-   void method809(Component var1) {
-      var1.setFocusTraversalKeysEnabled(false);
-      var1.addKeyListener(this);
-      var1.addFocusListener(this);
-   }
+	@ObfInfo(name = "ae", desc = "(Lsj;)V")
+	public void method631(class155 var1) {
+		if (var1.field1484 != null) {
+			var1.method907();
+		}
 
-   synchronized void method812(Component var1) {
-      var1.removeKeyListener(this);
-      var1.removeFocusListener(this);
-      synchronized(this) {
-         this.field1462.add(new class180(4, 0));
-      }
-   }
+		var1.field1484 = this.field1030.field1484;
+		var1.field1482 = this.field1030;
+		var1.field1484.field1482 = var1;
+		var1.field1482.field1484 = var1;
+	}
 
-   void method813() {
-      ++this.field1461;
-      this.method814();
-      Iterator var2 = this.field1458.iterator();
+	@ObfInfo(name = "ao", desc = "(Lsj;)V")
+	public void method632(class155 var1) {
+		if (var1.field1484 != null) {
+			var1.method907();
+		}
 
-      while(var2.hasNext()) {
-         class180 var3 = (class180)var2.next();
+		var1.field1484 = this.field1030;
+		var1.field1482 = this.field1030.field1482;
+		var1.field1484.field1482 = var1;
+		var1.field1482.field1484 = var1;
+	}
 
-         for(int var4 = 0; var4 < this.field1459.length && !var3.method1109(this.field1459[var4]); ++var4) {
-         }
-      }
+	@ObfInfo(name = "ac", desc = "()Lsj;")
+	public class155 method625() {
+		class155 var1 = this.field1030.field1482;
+		if (var1 == this.field1030) {
+			return null;
+		} else {
+			var1.method907();
+			return var1;
+		}
+	}
 
-      this.field1458.clear();
-   }
+	@ObfInfo(name = "ai", desc = "()Lsj;")
+	public class155 method626() {
+		class155 var1 = this.field1030.field1484;
+		if (var1 == this.field1030) {
+			return null;
+		} else {
+			var1.method907();
+			return var1;
+		}
+	}
 
-   public final synchronized void keyPressed(KeyEvent var1) {
-      int var2 = var1.getKeyCode();
-      if (var2 >= 0 && var2 < class57.method609()) {
-         var2 = class57.method610(var2);
-         boolean var3 = (var2 & 128) != 0;
-         if (var3) {
-            var2 = -1;
-         }
-      } else {
-         var2 = -1;
-      }
+	@ObfInfo(name = "az", desc = "()Lsj;")
+	public class155 method627() {
+		class155 var1 = this.field1030.field1482;
+		if (var1 == this.field1030) {
+			this.field1029 = null;
+			return null;
+		} else {
+			this.field1029 = var1.field1482;
+			return var1;
+		}
+	}
 
-      if (var2 >= 0) {
-         this.field1460[var2] = true;
-         this.field1462.add(new class180(1, var2));
-         this.field1461 = 0;
-      }
+	@ObfInfo(name = "ap", desc = "()Lsj;")
+	public class155 method628() {
+		class155 var1 = this.field1030.field1484;
+		if (var1 == this.field1030) {
+			this.field1029 = null;
+			return null;
+		} else {
+			this.field1029 = var1.field1484;
+			return var1;
+		}
+	}
 
-      var1.consume();
-   }
+	@ObfInfo(name = "aa", desc = "()Lsj;")
+	public class155 method629() {
+		class155 var1 = this.field1029;
+		if (var1 == this.field1030) {
+			this.field1029 = null;
+			return null;
+		} else {
+			this.field1029 = var1.field1482;
+			return var1;
+		}
+	}
 
-   public final synchronized void keyReleased(KeyEvent var1) {
-      int var2;
-      label16: {
-         var2 = var1.getKeyCode();
-         if (var2 >= 0) {
-            int var4 = class57.field1080.length;
-            if (var2 < var4) {
-               var2 = class57.method610(var2) & -129;
-               break label16;
-            }
-         }
+	@ObfInfo(name = "af", desc = "()Lsj;")
+	public class155 method633() {
+		class155 var1 = this.field1029;
+		if (var1 == this.field1030) {
+			this.field1029 = null;
+			return null;
+		} else {
+			this.field1029 = var1.field1484;
+			return var1;
+		}
+	}
 
-         var2 = -1;
-      }
+	@ObfInfo(name = "ad", desc = "()Z")
+	public boolean method630() {
+		return this.field1030.field1482 == this.field1030;
+	}
 
-      if (var2 >= 0) {
-         this.field1460[var2] = false;
-         this.field1462.add(new class180(2, var2));
-      }
+	@ObfInfo(name = "at", desc = "(Lsj;Lsj;)V")
+	public static void method624(class155 var0, class155 var1) {
+		if (var0.field1484 != null) {
+			var0.method907();
+		}
 
-      var1.consume();
-   }
-
-   public final synchronized void keyTyped(KeyEvent var1) {
-      char var2 = var1.getKeyChar();
-      if (var2 != 0 && var2 != '\uffff') {
-         boolean var3;
-         if ((var2 <= 0 || var2 >= 128) && (var2 < 160 || var2 > 255)) {
-            label47: {
-               if (var2 != 0) {
-                  char[] var4 = class162.field1691;
-
-                  for(int var5 = 0; var5 < var4.length; ++var5) {
-                     char var6 = var4[var5];
-                     if (var6 == var2) {
-                        var3 = true;
-                        break label47;
-                     }
-                  }
-               }
-
-               var3 = false;
-            }
-         } else {
-            var3 = true;
-         }
-
-         if (var3) {
-            this.field1462.add(new class180(3, var2));
-         }
-      }
-
-      var1.consume();
-   }
-
-   synchronized void method814() {
-      Collection var2 = this.field1458;
-      this.field1458 = this.field1462;
-      this.field1462 = var2;
-   }
-
-   public final synchronized void focusGained(FocusEvent var1) {
-      this.field1462.add(new class180(4, 1));
-   }
-
-   public final synchronized void focusLost(FocusEvent var1) {
-      for(int var2 = 0; var2 < 112; ++var2) {
-         if (this.field1460[var2]) {
-            this.field1460[var2] = false;
-            this.field1462.add(new class180(2, var2));
-         }
-      }
-
-      this.field1462.add(new class180(4, 0));
-   }
+		var0.field1484 = var1.field1484;
+		var0.field1482 = var1;
+		var0.field1484.field1482 = var0;
+		var0.field1482.field1484 = var0;
+	}
 }

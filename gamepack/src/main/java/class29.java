@@ -1,29 +1,52 @@
-public class class29 extends class308 {
-   long field566 = System.nanoTime();
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public void method1671() {
-      this.field566 = System.nanoTime();
-   }
+@ObfInfo(name = "hi")
+public class class29 extends class180 {
+	@ObfInfo(name = "ao", desc = "Lle;")
+	public static class7 field468;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = 2064232881)
+	public static int field467;
+	@ObfInfo(name = "au", desc = "Lnu;")
+	static class437 field469;
+	@ObfInfo(name = "ai", desc = "Lnu;")
+	static class437 field470;
+	@ObfInfo(name = "uk", desc = "I", intMultiplier = -1633851311)
+	static int field471;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = 543483367)
+	public int field466;
 
-   public int method1672(int var1, int var2) {
-      long var4 = 1000000L * (long)var2;
-      long var6 = this.field566 - System.nanoTime();
-      if (var6 < var4) {
-         var6 = var4;
-      }
+	static {
+		field468 = new class7(64);
+	}
 
-      class51.method602(var6 / 1000000L);
-      long var8 = System.nanoTime();
+	@ObfInfo(name = "<init>", desc = "()V")
+	class29() {
+		this.field466 = 0;
+	}
 
-      int var10;
-      for(var10 = 0; var10 < 10 && (var10 < 1 || this.field566 < var8); this.field566 += 1000000L * (long)var1) {
-         ++var10;
-      }
+	@ObfInfo(name = "ao", desc = "(Ltm;B)V")
+	void method412(class280 var1) {
+		while (true) {
+			int var3 = var1.method1492();
+			if (var3 == 0) {
+				return;
+			}
 
-      if (this.field566 < var8) {
-         this.field566 = var8;
-      }
+			this.method411(var1, var3);
+		}
+	}
 
-      return var10;
-   }
+	@ObfInfo(name = "at", desc = "(Ltm;II)V", opaqueValue = "633131524")
+	void method411(class280 var1, int var2) {
+		if (var2 == 5) {
+			this.field466 = var1.method1541();
+		}
+
+	}
+
+	@ObfInfo(name = "au", desc = "(Lnu;I)V")
+	public static void method413(class437 var0) {
+		field469 = var0;
+		field467 = field469.method2293(16);
+	}
 }

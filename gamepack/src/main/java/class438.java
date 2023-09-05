@@ -1,32 +1,23 @@
-public class class438 {
-   public Object field3325;
-   public final int field3326;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public class438(int var1) {
-      this.field3326 = var1;
-   }
+@ObfInfo(name = "oi")
+public final class class438 {
+	@ObfInfo(name = "<init>", desc = "()V")
+	class438() throws Throwable {
+	}
 
-   public class438(int var1, Object var2) {
-      this.field3326 = var1;
-      this.field3325 = var2;
-   }
+	@ObfInfo(name = "oc", desc = "(I)V", opaqueValue = "43747649")
+	static void method2296() {
+		if (null != class272.field2224) {
+			Client.field150 = Client.field330;
+			class272.field2224.method2023();
 
-   public int hashCode() {
-      return super.hashCode();
-   }
+			for (int var1 = 0; var1 < Client.field200.length; ++var1) {
+				if (null != Client.field200[var1]) {
+					class272.field2224.method2022((Client.field200[var1].field1061 >> 7) + class265.field2147, class508.field4092 + (Client.field200[var1].field1032 >> 7));
+				}
+			}
+		}
 
-   public boolean equals(Object var1) {
-      if (!(var1 instanceof class438)) {
-         return false;
-      } else {
-         class438 var2 = (class438)var1;
-         if (null == var2.field3325 && null != this.field3325) {
-            return false;
-         } else if (null == this.field3325 && var2.field3325 != null) {
-            return false;
-         } else {
-            return var2.field3326 == this.field3326 && var2.field3325.equals(this.field3325);
-         }
-      }
-   }
+	}
 }

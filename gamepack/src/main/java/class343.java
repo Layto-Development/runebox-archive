@@ -1,46 +1,67 @@
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class class343 extends class56 {
-   static int field2738;
-   static String field2736;
-   int field2737;
-   // $FF: synthetic field
-   final class315 this$0;
+@ObfInfo(name = "ka")
+public class class343 {
+	@ObfInfo(name = "fb", desc = "J", longMultiplier = -8732969090401109105L)
+	static long field2706;
+	@ObfInfo(name = "au", desc = "Lka;")
+	static final class343 field2703;
+	@ObfInfo(name = "ae", desc = "Lka;")
+	static final class343 field2705;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = -1287567465)
+	final int field2704;
 
-   class343(class315 var1) {
-      this.this$0 = var1;
-      this.field2737 = -1;
-   }
+	static {
+		field2703 = new class343(0);
+		field2705 = new class343(1);
+	}
 
-   void method608(class184 var1) {
-      this.field2737 = var1.method1174();
-   }
+	@ObfInfo(name = "<init>", desc = "(I)V")
+	class343(int var1) {
+		this.field2704 = var1;
+	}
 
-   void method607(class15 var1) {
-      var1.method149(this.field2737);
-   }
+	@ObfInfo(name = "aa", desc = "(Ljava/util/ArrayList;ZI)V", opaqueValue = "544527881")
+	static void method1880(ArrayList var0, boolean var1) {
+		if (!var1) {
+			class303.field2448.clear();
+		}
 
-   static void method1790(ArrayList var0, int var1, int var2, int var3, int var4) {
-      if (!var0.isEmpty()) {
-         int var6 = (Integer)var0.get(0);
-         if (var6 == -1 && !Client.field848) {
-            class106.method792(0, 0);
-         } else if (var6 != -1 && !class228.method1379(var6) && class4.field36.method2406() != 0) {
-            ArrayList var7 = new ArrayList();
+		Iterator var3 = var0.iterator();
 
-            for(int var8 = 0; var8 < var0.size(); ++var8) {
-               var7.add(new class131(class303.field2520, (Integer)var0.get(var8), 0, class4.field36.method2406(), false));
-            }
+		while (var3.hasNext()) {
+			class503 var4 = (class503)var3.next();
+			if (var4.field4057 != -1 && var4.field4058 != -1) {
+				if (!var1) {
+					class303.field2448.add(var4);
+				}
 
-            if (Client.field848) {
-               class228.field2106.clear();
-               class228.field2106.addAll(var7);
-               class228.method1383(var1, var2, var3, var4);
-            } else {
-               class228.method1377(var7, var1, var2, var3, var4, false);
-            }
-         }
+				class303.field2454.add(var4);
+			}
+		}
 
-      }
-   }
+	}
+
+	@ObfInfo(name = "jt", desc = "(II)V", opaqueValue = "617389636")
+	static void method1881(int var0) {
+		Client.field257 = 0L;
+		if (var0 >= 2) {
+			Client.field258 = true;
+		} else {
+			Client.field258 = false;
+		}
+
+		if (Client.method212() == 1) {
+			class51.field585.method1883(765, 503);
+		} else {
+			class51.field585.method1883(7680, 2160);
+		}
+
+		if (Client.field111 >= 25) {
+			Client.method150();
+		}
+
+	}
 }

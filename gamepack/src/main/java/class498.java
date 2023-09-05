@@ -1,41 +1,21 @@
-public class class498 extends class410 {
-   class412 field3940;
-   class412 field3941;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class498() {
-      this.field3940 = class412.field3161;
-      this.field3941 = class412.field3161;
-   }
+@ObfInfo(name = "ie")
+public class class498 extends class155 {
+	@ObfInfo(name = "ai", desc = "Lmi;")
+	public class131 field4033;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = 926592131)
+	public int field4030;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1634603123)
+	public int field4031;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = -1348328891)
+	public int field4032;
 
-   void method2435() {
-      this.field3940 = class412.field3161;
-   }
-
-   public final boolean method2436() {
-      if (this.field3940 == class412.field3161) {
-         this.method2439();
-      }
-
-      return this.field3940 == class412.field3160;
-   }
-
-   void method2439() {
-      this.field3940 = class314.field2562.field2273.method2053(super.field2676) ? class412.field3160 : class412.field3159;
-   }
-
-   void method2440() {
-      this.field3941 = class412.field3161;
-   }
-
-   public final boolean method2437() {
-      if (class412.field3161 == this.field3941) {
-         this.method2438();
-      }
-
-      return this.field3941 == class412.field3160;
-   }
-
-   void method2438() {
-      this.field3941 = class314.field2562.field2272.method2053(super.field2676) ? class412.field3160 : class412.field3159;
-   }
+	@ObfInfo(name = "<init>", desc = "(IIILmi;)V")
+	public class498(int var1, int var2, int var3, class131 var4) {
+		this.field4030 = var1;
+		this.field4031 = var2;
+		this.field4032 = var3;
+		this.field4033 = var4;
+	}
 }

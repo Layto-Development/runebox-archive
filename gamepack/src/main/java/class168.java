@@ -1,20 +1,48 @@
-import java.io.IOException;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 
-public abstract class class168 {
-   static class168 field1714;
+@ObfInfo(name = "rt")
+public class class168 implements class167 {
+	@ObfInfo(name = "au", desc = "Ljava/util/Map;")
+	final Map field1582;
 
-   class168() {
-   }
+	@ObfInfo(name = "<init>", desc = "(Ljava/util/Map;)V")
+	public class168(Map var1) {
+		this.field1582 = var1;
+	}
 
-   public abstract boolean method1012(int var1) throws IOException;
+	@ObfInfo(name = "au", desc = "(I)Lre;")
+	public class329 method949() {
+		return null;
+	}
 
-   public abstract int method1013(byte[] var1, int var2, int var3) throws IOException;
+	@ObfInfo(name = "ae", desc = "(I)[B")
+	public byte[] method948() throws UnsupportedEncodingException {
+		return this.method950().getBytes("UTF-8");
+	}
 
-   public abstract int method1014() throws IOException;
+	@ObfInfo(name = "ai", desc = "(I)Ljava/lang/String;", opaqueValue = "-56724135")
+	public String method950() throws UnsupportedEncodingException {
+		StringBuilder var2 = new StringBuilder();
+		Iterator var3 = this.field1582.entrySet().iterator();
 
-   public abstract int method1016() throws IOException;
+		while (var3.hasNext()) {
+			Entry var4 = (Entry)var3.next();
+			String var5 = URLEncoder.encode((String)var4.getKey(), "UTF-8");
+			String var6 = URLEncoder.encode((String)var4.getValue(), "UTF-8");
+			var2.append(var5).append("=").append(var6).append("&");
+		}
 
-   public abstract void method1015(byte[] var1, int var2, int var3) throws IOException;
-
-   public abstract void method1017();
+		if (var2.length() == 0) {
+			return "";
+		} else {
+			var2.deleteCharAt(var2.length() - 1);
+			var2.insert(0, "?");
+			return var2.toString();
+		}
+	}
 }

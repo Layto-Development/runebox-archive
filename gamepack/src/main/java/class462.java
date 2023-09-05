@@ -1,43 +1,26 @@
-import java.awt.image.BufferedImage;
-import java.awt.image.PixelGrabber;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import javax.imageio.ImageIO;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class462 {
-   static int field3592;
-   static String field3591;
+@ObfInfo(name = "qu")
+public class class462 extends class179 {
+	@ObfInfo(name = "au", desc = "I", intMultiplier = -1984190391)
+	int field3755;
 
-   static {
-      ImageIO.setUseCache(false);
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class462() {
+	}
 
-   class462() throws Throwable {
-   }
+	@ObfInfo(name = "au", desc = "(Lqu;I)I")
+	int method2396(class462 var1) {
+		return this.field3755 - var1.field3755;
+	}
 
-   static boolean method2261(int var0, int var1, int var2) {
-      return var0 >= 0 && var0 < 4 && var1 >= 0 && var1 < 104 && var2 >= 0 && var2 < 104;
-   }
+	@ObfInfo(name = "ae", desc = "(Lqs;I)I")
+	public int method1023(class179 var1) {
+		return this.method2396((class462)var1);
+	}
 
-   public static final class427 method2262(byte[] var0) {
-      BufferedImage var2 = null;
-
-      try {
-         Class var3 = ImageIO.class;
-         synchronized(ImageIO.class) {
-            var2 = ImageIO.read(new ByteArrayInputStream(var0));
-         }
-
-         int var10 = var2.getWidth();
-         int var4 = var2.getHeight();
-         int[] var5 = new int[var4 * var10];
-         PixelGrabber var6 = new PixelGrabber(var2, 0, 0, var10, var4, var5, 0, var10);
-         var6.grabPixels();
-         return new class427(var5, var10, var4);
-      } catch (IOException var8) {
-      } catch (InterruptedException var9) {
-      }
-
-      return new class427(0, 0);
-   }
+	@ObfInfo(name = "compareTo", desc = "(Ljava/lang/Object;)I")
+	public int compareTo(Object var1) {
+		return this.method2396((class462)var1);
+	}
 }

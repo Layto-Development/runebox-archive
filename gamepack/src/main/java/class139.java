@@ -1,73 +1,27 @@
-public class class139 extends class55 {
-   class478 field1583;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public class139() {
-      this.field1583 = null;
-   }
+@ObfInfo(name = "ja")
+public class class139 {
+	@ObfInfo(name = "ul", desc = "I", intMultiplier = -605422139)
+	static int field1419;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = 1555789621)
+	int field1415;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 100478481)
+	int field1416;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1257877859)
+	int field1417;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = 599645945)
+	int field1418;
 
-   class139(class223 var1) {
-      if (var1 != null) {
-         this.field1583 = new class478(var1, (class408)null);
-      }
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class139() {
+	}
 
-   public class139(class408 var1) {
-      this.field1583 = new class478((class223)null, var1);
-   }
-
-   public boolean method908(byte var1) {
-      boolean var10000;
-      if (null == this.field1583) {
-         if (var1 == -1) {
-            throw new IllegalStateException();
-         }
-
-         var10000 = true;
-      } else {
-         var10000 = false;
-      }
-
-      return var10000;
-   }
-
-   public class408 method910() {
-      if (null != this.field1583 && this.field1583.field3656.tryLock()) {
-         class408 var2;
-         try {
-            var2 = this.method907();
-         } finally {
-            this.field1583.field3656.unlock();
-         }
-
-         return var2;
-      } else {
-         return null;
-      }
-   }
-
-   public class408 method909() {
-      if (this.field1583 != null) {
-         this.field1583.field3656.lock();
-
-         class408 var2;
-         try {
-            var2 = this.method907();
-         } finally {
-            this.field1583.field3656.unlock();
-         }
-
-         return var2;
-      } else {
-         return null;
-      }
-   }
-
-   class408 method907() {
-      if (this.field1583.field3655 == null) {
-         this.field1583.field3655 = this.field1583.field3660.method1329((int[])null);
-         this.field1583.field3660 = null;
-      }
-
-      return this.field1583.field3655;
-   }
+	@ObfInfo(name = "<init>", desc = "(Lja;)V")
+	class139(class139 var1) {
+		this.field1416 = var1.field1416;
+		this.field1415 = var1.field1415;
+		this.field1417 = var1.field1417;
+		this.field1418 = var1.field1418;
+	}
 }

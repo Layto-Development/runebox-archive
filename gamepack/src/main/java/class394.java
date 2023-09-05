@@ -1,46 +1,37 @@
-public class class394 extends class358 {
-   class131 field3083 = null;
-   int field3082 = 0;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public class394(class358 var1, int var2, boolean var3, int var4) {
-      super(var1);
-      super.field2810 = "FadeOutTask";
-      if (var2 >= 0) {
-         if (var3 && var2 < class228.field2112.size()) {
-            this.field3083 = (class131)class228.field2112.get(var2);
-         } else if (!var3 && var2 < class228.field2105.size()) {
-            this.field3083 = (class131)class228.field2105.get(var2);
-         }
+@ObfInfo(name = "um")
+public class class394 implements class425 {
+	@ObfInfo(name = "au", desc = "Lum;")
+	public static final class394 field3048;
+	@ObfInfo(name = "ae", desc = "Lum;")
+	static final class394 field3046;
+	@ObfInfo(name = "ao", desc = "Lum;")
+	static final class394 field3049;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = 1910869001)
+	final int field3047;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = 2077273167)
+	public final int field3045;
 
-         this.field3082 = var4;
-      }
-   }
+	static {
+		field3048 = new class394(0, 0);
+		field3046 = new class394(1, 1);
+		field3049 = new class394(2, 2);
+	}
 
-   public boolean method1831() {
-      if (this.field3083 != null && this.field3083.field1551 != null) {
-         this.field3083.field1556 = true;
+	@ObfInfo(name = "<init>", desc = "(II)V")
+	class394(int var1, int var2) {
+		this.field3045 = var1;
+		this.field3047 = var2;
+	}
 
-         try {
-            if (this.field3083.field1544 > 0.0F && this.field3083.field1551.method2203()) {
-               float var2 = this.field3082 == 0 ? (float)this.field3082 : (float)this.field3083.field1547 / (float)this.field3082;
-               class131 var10000 = this.field3083;
-               var10000.field1544 -= var2 == 0.0F ? (float)this.field3083.field1547 : var2;
-               if (this.field3083.field1544 < 0.0F) {
-                  this.field3083.field1544 = 0.0F;
-               }
+	@ObfInfo(name = "ae", desc = "(B)I")
+	public int method2222() {
+		return this.field3047;
+	}
 
-               this.field3083.field1551.method2175((int)this.field3083.field1544);
-               return false;
-            }
-         } catch (Exception var3) {
-            this.method1834(var3.getMessage());
-            return true;
-         }
-
-         this.field3083.field1556 = false;
-         return true;
-      } else {
-         return true;
-      }
-   }
+	@ObfInfo(name = "au", desc = "(B)[Lum;")
+	public static class394[] method2093() {
+		return new class394[]{field3046, field3049, field3048};
+	}
 }

@@ -1,24 +1,18 @@
-public abstract class class204 {
-   String field1937;
-   // $FF: synthetic field
-   final class281 this$0;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class204(class281 var1, String var2) {
-      this.this$0 = var1;
-      this.field1937 = var2;
-   }
+@ObfInfo(name = "kn")
+public class class204 {
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = -1156952409)
+	final int field1855;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = -152771529)
+	final int field1856;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = -1761099397)
+	final int field1857;
 
-   public abstract int method1251();
-
-   public String method1248() {
-      return this.field1937;
-   }
-
-   public String method1249() {
-      return null;
-   }
-
-   public int method1250() {
-      return -1;
-   }
+	@ObfInfo(name = "<init>", desc = "(III)V")
+	class204(int var1, int var2, int var3) {
+		this.field1856 = var1;
+		this.field1855 = var2;
+		this.field1857 = var3;
+	}
 }

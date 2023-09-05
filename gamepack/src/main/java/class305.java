@@ -1,136 +1,248 @@
-public final class class305 extends class496 {
-   boolean field2524;
-   class157 field2548;
-   double field2534;
-   double field2539;
-   double field2540;
-   double field2541;
-   double field2542;
-   double field2543;
-   double field2544;
-   double field2546;
-   int field2522;
-   int field2523;
-   int field2525;
-   int field2526;
-   int field2527;
-   int field2528;
-   int field2529;
-   int field2530;
-   int field2531;
-   int field2532;
-   int field2533;
-   int field2535;
-   int field2536;
-   int field2537;
-   int field2538;
-   int field2545;
-   int field2547;
-   int field2549;
-   int field2550;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Iterator;
+import java.util.LinkedList;
 
-   class305(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11) {
-      this.field2524 = false;
-      this.field2549 = 0;
-      this.field2550 = 0;
-      this.field2535 = var1;
-      this.field2523 = var2;
-      this.field2533 = var3;
-      this.field2522 = var4;
-      this.field2531 = var5;
-      this.field2547 = var6;
-      this.field2532 = var7;
-      this.field2525 = var8;
-      this.field2537 = var9;
-      this.field2536 = var10;
-      this.field2527 = var11;
-      this.field2524 = false;
-      int var12 = class529.method2515(this.field2535).field4158;
-      if (var12 != -1) {
-         this.field2548 = class157.method984(var12);
-      } else {
-         this.field2548 = null;
-      }
+@ObfInfo(name = "jf")
+public class class305 {
+	@ObfInfo(name = "op", desc = "I", intMultiplier = -1500772979)
+	static int field2471;
+	@ObfInfo(name = "ad", desc = "Z")
+	boolean field2469;
+	@ObfInfo(name = "ai", desc = "Lmc;")
+	class50 field2464;
+	@ObfInfo(name = "ap", desc = "I", intMultiplier = -1612980305)
+	int field2459;
+	@ObfInfo(name = "af", desc = "I", intMultiplier = 1385317393)
+	int field2461;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = -57065415)
+	int field2463;
+	@ObfInfo(name = "az", desc = "I", intMultiplier = -970396571)
+	int field2465;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = -1879737221)
+	int field2466;
+	@ObfInfo(name = "aa", desc = "I", intMultiplier = 1545324723)
+	int field2467;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 318342769)
+	int field2468;
+	@ObfInfo(name = "ae", desc = "Ljava/lang/String;")
+	String field2460;
+	@ObfInfo(name = "ao", desc = "Ljava/lang/String;")
+	String field2462;
+	@ObfInfo(name = "aq", desc = "Ljava/util/LinkedList;")
+	LinkedList field2470;
 
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	public class305() {
+		this.field2468 = -1;
+		this.field2466 = -1;
+		this.field2463 = -1;
+		this.field2464 = null;
+		this.field2465 = Integer.MAX_VALUE;
+		this.field2459 = 0;
+		this.field2467 = Integer.MAX_VALUE;
+		this.field2461 = 0;
+		this.field2469 = false;
+	}
 
-   class305(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12) {
-      this(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, var12);
-      this.field2538 = var10;
-   }
+	@ObfInfo(name = "au", desc = "(Ltm;IB)V", opaqueValue = "-1")
+	public void method1686(class280 var1, int var2) {
+		this.field2468 = var2;
+		this.field2460 = var1.method1500();
+		this.field2462 = var1.method1500();
+		this.field2464 = new class50(var1.method1496());
+		this.field2466 = var1.method1496();
+		var1.method1492();
+		this.field2469 = var1.method1492() == 1;
+		this.field2463 = var1.method1492();
+		int var4 = var1.method1492();
+		this.field2470 = new LinkedList();
 
-   final void method1667(int var1, int var2, int var3, int var4) {
-      this.field2528 = var1;
-      this.field2529 = var2;
-      this.field2530 = var3;
-      double var6;
-      if (!this.field2524) {
-         var6 = (double)(this.field2528 - this.field2533);
-         double var8 = (double)(this.field2529 - this.field2522);
-         double var10 = Math.sqrt(var6 * var6 + var8 * var8);
-         this.field2546 = (double)this.field2533 + (double)this.field2537 * var6 / var10;
-         this.field2539 = (double)this.field2522 + (double)this.field2537 * var8 / var10;
-         this.field2540 = (double)this.field2531;
-      }
+		for (int var5 = 0; var5 < var4; ++var5) {
+			this.field2470.add(this.method1702(var1));
+		}
 
-      var6 = (double)(this.field2532 + 1 - var4);
-      this.field2541 = ((double)this.field2528 - this.field2546) / var6;
-      this.field2542 = ((double)this.field2529 - this.field2539) / var6;
-      this.field2543 = Math.sqrt(this.field2542 * this.field2542 + this.field2541 * this.field2541);
-      if (!this.field2524) {
-         this.field2544 = -this.field2543 * Math.tan((double)this.field2525 * 0.02454369);
-      }
+		this.method1685();
+	}
 
-      this.field2534 = ((double)this.field2530 - this.field2540 - this.field2544 * var6) * 2.0 / (var6 * var6);
-   }
+	@ObfInfo(name = "ae", desc = "(Ltm;I)Lkw;")
+	class415 method1702(class280 var1) {
+		int var3 = var1.method1492();
+		class512[] var4 = new class512[]{class512.field4097, class512.field4099, class512.field4098, class512.field4104};
+		class512 var5 = (class512)class216.method1198(var4, var3);
+		Object var6 = null;
+		switch(var5.field4100) {
+		case 0:
+			var6 = new class501();
+			break;
+		case 1:
+			var6 = new class193();
+			break;
+		case 2:
+			var6 = new class461();
+			break;
+		case 3:
+			var6 = new class235();
+			break;
+		default:
+			throw new IllegalStateException("");
+		}
 
-   final void method1668(int var1) {
-      this.field2524 = true;
-      this.field2546 += this.field2541 * (double)var1;
-      this.field2539 += (double)var1 * this.field2542;
-      this.field2540 += this.field2534 * 0.5 * (double)var1 * (double)var1 + (double)var1 * this.field2544;
-      this.field2544 += this.field2534 * (double)var1;
-      this.field2526 = (int)(Math.atan2(this.field2541, this.field2542) * 325.949) + 1024 & 2047;
-      this.field2545 = (int)(Math.atan2(this.field2544, this.field2543) * 325.949) & 2047;
-      if (this.field2548 != null) {
-         if (!this.field2548.method983()) {
-            this.field2550 += var1;
+		((class415)var6).method2190(var1);
+		return (class415)var6;
+	}
 
-            while(true) {
-               do {
-                  do {
-                     if (this.field2550 <= this.field2548.field1674[this.field2549]) {
-                        return;
-                     }
+	@ObfInfo(name = "ao", desc = "(IIII)Z", opaqueValue = "367578160")
+	public boolean method1687(int var1, int var2, int var3) {
+		Iterator var5 = this.field2470.iterator();
 
-                     this.field2550 -= this.field2548.field1674[this.field2549];
-                     ++this.field2549;
-                  } while(this.field2549 < this.field2548.field1663.length);
+		class415 var6;
+		do {
+			if (!var5.hasNext()) {
+				return false;
+			}
 
-                  this.field2549 -= this.field2548.field1667;
-               } while(this.field2549 >= 0 && this.field2549 < this.field2548.field1663.length);
+			var6 = (class415)var5.next();
+		} while(!var6.method2188(var1, var2, var3));
 
-               this.field2549 = 0;
-            }
-         } else {
-            this.field2549 += var1;
-            int var3 = this.field2548.method980();
-            if (this.field2549 >= var3) {
-               this.field2549 = var3 - this.field2548.field1667;
-            }
-         }
-      }
+		return true;
+	}
 
-   }
+	@ObfInfo(name = "at", desc = "(III)Z", opaqueValue = "770144654")
+	public boolean method1690(int var1, int var2) {
+		int var4 = var1 / 64;
+		int var5 = var2 / 64;
+		if (var4 >= this.field2465 && var4 <= this.field2459) {
+			if (var5 >= this.field2467 && var5 <= this.field2461) {
+				Iterator var6 = this.field2470.iterator();
 
-   protected final class104 method2401() {
-      class529 var2 = class529.method2515(this.field2535);
-      class104 var3 = var2.method2511(this.field2549);
-      if (null == var3) {
-         return null;
-      } else {
-         var3.method779(this.field2545);
-         return var3;
-      }
-   }
+				class415 var7;
+				do {
+					if (!var6.hasNext()) {
+						return false;
+					}
+
+					var7 = (class415)var6.next();
+				} while(!var7.method2189(var1, var2));
+
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+
+	@ObfInfo(name = "ac", desc = "(IIII)[I", opaqueValue = "1529858788")
+	public int[] method1700(int var1, int var2, int var3) {
+		Iterator var5 = this.field2470.iterator();
+
+		class415 var6;
+		do {
+			if (!var5.hasNext()) {
+				return null;
+			}
+
+			var6 = (class415)var5.next();
+		} while(!var6.method2188(var1, var2, var3));
+
+		return var6.method2191(var1, var2, var3);
+	}
+
+	@ObfInfo(name = "ai", desc = "(III)Lmc;", opaqueValue = "1667154997")
+	public class50 method1688(int var1, int var2) {
+		Iterator var4 = this.field2470.iterator();
+
+		class415 var5;
+		do {
+			if (!var4.hasNext()) {
+				return null;
+			}
+
+			var5 = (class415)var4.next();
+		} while(!var5.method2189(var1, var2));
+
+		return var5.method2192(var1, var2);
+	}
+
+	@ObfInfo(name = "az", desc = "(I)V")
+	void method1685() {
+		Iterator var2 = this.field2470.iterator();
+
+		while (var2.hasNext()) {
+			class415 var3 = (class415)var2.next();
+			var3.method2193(this);
+		}
+
+	}
+
+	@ObfInfo(name = "ap", desc = "(I)I")
+	public int method1696() {
+		return this.field2468;
+	}
+
+	@ObfInfo(name = "aa", desc = "(I)Z")
+	public boolean method1689() {
+		return this.field2469;
+	}
+
+	@ObfInfo(name = "af", desc = "(B)Ljava/lang/String;")
+	public String method1695() {
+		return this.field2460;
+	}
+
+	@ObfInfo(name = "ad", desc = "(I)Ljava/lang/String;")
+	public String method1691() {
+		return this.field2462;
+	}
+
+	@ObfInfo(name = "aq", desc = "(I)I")
+	int method1692() {
+		return this.field2466;
+	}
+
+	@ObfInfo(name = "al", desc = "(B)I")
+	public int method1693() {
+		return this.field2463;
+	}
+
+	@ObfInfo(name = "an", desc = "(I)I")
+	public int method1694() {
+		return this.field2465;
+	}
+
+	@ObfInfo(name = "ar", desc = "(B)I")
+	public int method1705() {
+		return this.field2459;
+	}
+
+	@ObfInfo(name = "ab", desc = "(B)I")
+	public int method1703() {
+		return this.field2467;
+	}
+
+	@ObfInfo(name = "ag", desc = "(I)I")
+	public int method1701() {
+		return this.field2461;
+	}
+
+	@ObfInfo(name = "am", desc = "(I)I")
+	public int method1704() {
+		return this.field2464.field581;
+	}
+
+	@ObfInfo(name = "ax", desc = "(B)I")
+	public int method1697() {
+		return this.field2464.field582;
+	}
+
+	@ObfInfo(name = "ah", desc = "(B)I")
+	public int method1698() {
+		return this.field2464.field583;
+	}
+
+	@ObfInfo(name = "as", desc = "(I)Lmc;")
+	public class50 method1699() {
+		return new class50(this.field2464);
+	}
 }

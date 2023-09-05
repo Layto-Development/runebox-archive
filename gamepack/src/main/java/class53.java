@@ -1,15 +1,16 @@
-import java.util.Comparator;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-final class class53 implements Comparator {
-   int method604(class82 var1, class82 var2) {
-      return var1.field1257 < var2.field1257 ? -1 : (var2.field1257 == var1.field1257 ? 0 : 1);
-   }
+@ObfInfo(name = "bv")
+public interface class53 {
+	@ObfInfo(name = "ae", desc = "(II)Z")
+	boolean method458(int var1);
 
-   public int compare(Object var1, Object var2) {
-      return this.method604((class82)var1, (class82)var2);
-   }
+	@ObfInfo(name = "ao", desc = "(CI)Z")
+	boolean method459(char var1);
 
-   public boolean equals(Object var1) {
-      return super.equals(var1);
-   }
+	@ObfInfo(name = "au", desc = "(II)Z")
+	boolean method460(int var1);
+
+	@ObfInfo(name = "at", desc = "(ZI)Z")
+	boolean method461(boolean var1);
 }

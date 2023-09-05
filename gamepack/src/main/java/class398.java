@@ -1,255 +1,262 @@
-public class class398 {
-   static int field3104;
-   static int field3105;
-   static int[] field3103;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class398() throws Throwable {
-   }
+@ObfInfo(name = "uk")
+public final class class398 extends class83 {
+	@ObfInfo(name = "au", desc = "[B")
+	public byte[] field3107;
+	@ObfInfo(name = "ac", desc = "I")
+	public int field3103;
+	@ObfInfo(name = "az", desc = "I")
+	public int field3104;
+	@ObfInfo(name = "ao", desc = "I")
+	public int field3105;
+	@ObfInfo(name = "at", desc = "I")
+	public int field3106;
+	@ObfInfo(name = "ai", desc = "I")
+	public int field3108;
+	@ObfInfo(name = "ap", desc = "I")
+	public int field3109;
+	@ObfInfo(name = "ae", desc = "[I")
+	public int[] field3110;
 
-   public static class425[] method1920(class298 var0, int var1, int var2) {
-      return !method1922(var0, var1, var2) ? null : method1921();
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class398() {
+	}
 
-   public static class427[] method1931(class298 var0, int var1, int var2) {
-      return !method1922(var0, var1, var2) ? null : method1930();
-   }
+	@ObfInfo(name = "au", desc = "()V")
+	public void method2110() {
+		if (this.field3105 != this.field3104 || this.field3106 != this.field3109) {
+			byte[] var1 = new byte[this.field3104 * this.field3109];
+			int var2 = 0;
 
-   public static class460 method1929(class298 var0, class298 var1, int var2, int var3) {
-      return !method1922(var0, var2, var3) ? null : method1927(var1.method1629(var2, var3));
-   }
+			for (int var3 = 0; var3 < this.field3106; ++var3) {
+				for (int var4 = 0; var4 < this.field3105; ++var4) {
+					var1[var4 + this.field3103 + (var3 + this.field3108) * this.field3104] = this.field3107[var2++];
+				}
+			}
 
-   public static class425[] method1928(class298 var0, String var1, String var2) {
-      if (!var0.method1651(var1, var2)) {
-         return null;
-      } else {
-         int var4 = var0.method1654(var1);
-         int var5 = var0.method1646(var4, var2);
-         return method1920(var0, var4, var5);
-      }
-   }
+			this.field3107 = var1;
+			this.field3105 = this.field3104;
+			this.field3106 = this.field3109;
+			this.field3103 = 0;
+			this.field3108 = 0;
+		}
+	}
 
-   public static class425 method1926(class298 var0, String var1, String var2) {
-      if (!var0.method1651(var1, var2)) {
-         return null;
-      } else {
-         int var4 = var0.method1654(var1);
-         int var5 = var0.method1646(var4, var2);
-         class425 var6;
-         if (!method1922(var0, var4, var5)) {
-            var6 = null;
-         } else {
-            var6 = method1932();
-         }
+	@ObfInfo(name = "ae", desc = "(III)V")
+	public void method2111(int var1, int var2, int var3) {
+		for (int var4 = 0; var4 < this.field3110.length; ++var4) {
+			int var5 = this.field3110[var4] >> 16 & 255;
+			var5 += var1;
+			if (var5 < 0) {
+				var5 = 0;
+			} else if (var5 > 255) {
+				var5 = 255;
+			}
 
-         return var6;
-      }
-   }
+			int var6 = this.field3110[var4] >> 8 & 255;
+			var6 += var2;
+			if (var6 < 0) {
+				var6 = 0;
+			} else if (var6 > 255) {
+				var6 = 255;
+			}
 
-   public static class427[] method1919(class298 var0, String var1, String var2) {
-      if (!var0.method1651(var1, var2)) {
-         return null;
-      } else {
-         int var4 = var0.method1654(var1);
-         int var5 = var0.method1646(var4, var2);
-         return method1931(var0, var4, var5);
-      }
-   }
+			int var7 = this.field3110[var4] & 255;
+			var7 += var3;
+			if (var7 < 0) {
+				var7 = 0;
+			} else if (var7 > 255) {
+				var7 = 255;
+			}
 
-   static class425[] method1921() {
-      class425[] var1 = new class425[field3104];
+			this.field3110[var4] = (var5 << 16) + (var6 << 8) + var7;
+		}
 
-      for(int var2 = 0; var2 < field3104; ++var2) {
-         class425 var3 = var1[var2] = new class425();
-         var3.field3221 = field3105;
-         var3.field3226 = class202.field1936;
-         var3.field3220 = field3103[var2];
-         var3.field3225 = class465.field3601[var2];
-         var3.field3222 = class103.field1343[var2];
-         var3.field3223 = class288.field2445[var2];
-         var3.field3227 = class150.field1622;
-         var3.field3224 = class89.field1276[var2];
-      }
+	}
 
-      field3103 = null;
-      class465.field3601 = null;
-      class103.field1343 = null;
-      class288.field2445 = null;
-      class150.field1622 = null;
-      class89.field1276 = (byte[][])null;
-      return var1;
-   }
+	@ObfInfo(name = "ao", desc = "(II)V")
+	public void method2115(int var1, int var2) {
+		var1 += this.field3103;
+		var2 += this.field3108;
+		int var3 = var1 + var2 * class83.field870;
+		int var4 = 0;
+		int var5 = this.field3106;
+		int var6 = this.field3105;
+		int var7 = class83.field870 - var6;
+		int var8 = 0;
+		int var9;
+		if (var2 < class83.field876) {
+			var9 = class83.field876 - var2;
+			var5 -= var9;
+			var2 = class83.field876;
+			var4 += var9 * var6;
+			var3 += var9 * class83.field870;
+		}
 
-   public static class425 method1932() {
-      class425 var1 = new class425();
-      var1.field3221 = field3105;
-      var1.field3226 = class202.field1936;
-      var1.field3220 = field3103[0];
-      var1.field3225 = class465.field3601[0];
-      var1.field3222 = class103.field1343[0];
-      var1.field3223 = class288.field2445[0];
-      var1.field3227 = class150.field1622;
-      var1.field3224 = class89.field1276[0];
-      field3103 = null;
-      class465.field3601 = null;
-      class103.field1343 = null;
-      class288.field2445 = null;
-      class150.field1622 = null;
-      class89.field1276 = (byte[][])null;
-      return var1;
-   }
+		if (var2 + var5 > class83.field874) {
+			var5 -= var2 + var5 - class83.field874;
+		}
 
-   static class427[] method1930() {
-      class427[] var1 = new class427[field3104];
+		if (var1 < class83.field875) {
+			var9 = class83.field875 - var1;
+			var6 -= var9;
+			var1 = class83.field875;
+			var4 += var9;
+			var3 += var9;
+			var8 += var9;
+			var7 += var9;
+		}
 
-      for(int var2 = 0; var2 < field3104; ++var2) {
-         class427 var3 = var1[var2] = new class427();
-         var3.field3234 = field3105;
-         var3.field3235 = class202.field1936;
-         var3.field3231 = field3103[var2];
-         var3.field3232 = class465.field3601[var2];
-         var3.field3237 = class103.field1343[var2];
-         var3.field3233 = class288.field2445[var2];
-         int var4 = var3.field3237 * var3.field3233;
-         byte[] var5 = class89.field1276[var2];
-         var3.field3236 = new int[var4];
+		if (var1 + var6 > class83.field869) {
+			var9 = var1 + var6 - class83.field869;
+			var6 -= var9;
+			var8 += var9;
+			var7 += var9;
+		}
 
-         for(int var6 = 0; var6 < var4; ++var6) {
-            var3.field3236[var6] = class150.field1622[var5[var6] & 255];
-         }
-      }
+		if (var6 > 0 && var5 > 0) {
+			method2112(class83.field872, this.field3107, this.field3110, var4, var3, var6, var5, var7, var8);
+		}
+	}
 
-      field3103 = null;
-      class465.field3601 = null;
-      class103.field1343 = null;
-      class288.field2445 = null;
-      class150.field1622 = null;
-      class89.field1276 = (byte[][])null;
-      return var1;
-   }
+	@ObfInfo(name = "ac", desc = "(IIII)V")
+	public void method2114(int var1, int var2, int var3, int var4) {
+		int var5 = this.field3105;
+		int var6 = this.field3106;
+		int var7 = 0;
+		int var8 = 0;
+		int var9 = this.field3104;
+		int var10 = this.field3109;
+		int var11 = (var9 << 16) / var3;
+		int var12 = (var10 << 16) / var4;
+		int var13;
+		if (this.field3103 > 0) {
+			var13 = ((this.field3103 << 16) + var11 - 1) / var11;
+			var1 += var13;
+			var7 += var13 * var11 - (this.field3103 << 16);
+		}
 
-   static class427 method1924() {
-      class427 var1 = new class427();
-      var1.field3234 = field3105;
-      var1.field3235 = class202.field1936;
-      var1.field3231 = field3103[0];
-      var1.field3232 = class465.field3601[0];
-      var1.field3237 = class103.field1343[0];
-      var1.field3233 = class288.field2445[0];
-      int var2 = var1.field3233 * var1.field3237;
-      byte[] var3 = class89.field1276[0];
-      var1.field3236 = new int[var2];
+		if (this.field3108 > 0) {
+			var13 = ((this.field3108 << 16) + var12 - 1) / var12;
+			var2 += var13;
+			var8 += var13 * var12 - (this.field3108 << 16);
+		}
 
-      for(int var4 = 0; var4 < var2; ++var4) {
-         var1.field3236[var4] = class150.field1622[var3[var4] & 255];
-      }
+		if (var5 < var9) {
+			var3 = ((var5 << 16) - var7 + var11 - 1) / var11;
+		}
 
-      field3103 = null;
-      class465.field3601 = null;
-      class103.field1343 = null;
-      class288.field2445 = null;
-      class150.field1622 = null;
-      class89.field1276 = (byte[][])null;
-      return var1;
-   }
+		if (var6 < var10) {
+			var4 = ((var6 << 16) - var8 + var12 - 1) / var12;
+		}
 
-   static class460 method1927(byte[] var0) {
-      if (null == var0) {
-         return null;
-      } else {
-         class460 var2 = new class460(var0, field3103, class465.field3601, class103.field1343, class288.field2445, class150.field1622, class89.field1276);
-         field3103 = null;
-         class465.field3601 = null;
-         class103.field1343 = null;
-         class288.field2445 = null;
-         class150.field1622 = null;
-         class89.field1276 = (byte[][])null;
-         return var2;
-      }
-   }
+		var13 = var1 + var2 * class83.field870;
+		int var14 = class83.field870 - var3;
+		if (var2 + var4 > class83.field874) {
+			var4 -= var2 + var4 - class83.field874;
+		}
 
-   static boolean method1922(class298 var0, int var1, int var2) {
-      byte[] var4 = var0.method1629(var1, var2);
-      if (null == var4) {
-         return false;
-      } else {
-         method1925(var4);
-         return true;
-      }
-   }
+		int var15;
+		if (var2 < class83.field876) {
+			var15 = class83.field876 - var2;
+			var4 -= var15;
+			var13 += var15 * class83.field870;
+			var8 += var12 * var15;
+		}
 
-   public static boolean method1923(class298 var0, int var1) {
-      byte[] var3 = var0.method1636(var1);
-      if (null == var3) {
-         return false;
-      } else {
-         method1925(var3);
-         return true;
-      }
-   }
+		if (var1 + var3 > class83.field869) {
+			var15 = var1 + var3 - class83.field869;
+			var3 -= var15;
+			var14 += var15;
+		}
 
-   static void method1925(byte[] var0) {
-      class184 var2 = new class184(var0);
-      var2.field1818 = var0.length - 2;
-      field3104 = var2.method1174();
-      field3103 = new int[field3104];
-      class465.field3601 = new int[field3104];
-      class103.field1343 = new int[field3104];
-      class288.field2445 = new int[field3104];
-      class89.field1276 = new byte[field3104][];
-      var2.field1818 = var0.length - 7 - field3104 * 8;
-      field3105 = var2.method1174();
-      class202.field1936 = var2.method1174();
-      int var3 = (var2.readUnsignedByte() & 255) + 1;
+		if (var1 < class83.field875) {
+			var15 = class83.field875 - var1;
+			var3 -= var15;
+			var13 += var15;
+			var7 += var11 * var15;
+			var14 += var15;
+		}
 
-      int var4;
-      for(var4 = 0; var4 < field3104; ++var4) {
-         field3103[var4] = var2.method1174();
-      }
+		method2113(class83.field872, this.field3107, this.field3110, var7, var8, var13, var14, var3, var4, var11, var12, var5);
+	}
 
-      for(var4 = 0; var4 < field3104; ++var4) {
-         class465.field3601[var4] = var2.method1174();
-      }
+	@ObfInfo(name = "at", desc = "([I[B[IIIIIII)V")
+	static void method2112(int[] var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+		int var9 = -(var5 >> 2);
+		var5 = -(var5 & 3);
 
-      for(var4 = 0; var4 < field3104; ++var4) {
-         class103.field1343[var4] = var2.method1174();
-      }
+		for (int var10 = -var6; var10 < 0; ++var10) {
+			int var11;
+			byte var12;
+			for (var11 = var9; var11 < 0; ++var11) {
+				var12 = var1[var3++];
+				if (var12 != 0) {
+					var0[var4++] = var2[var12 & 255];
+				} else {
+					++var4;
+				}
 
-      for(var4 = 0; var4 < field3104; ++var4) {
-         class288.field2445[var4] = var2.method1174();
-      }
+				var12 = var1[var3++];
+				if (var12 != 0) {
+					var0[var4++] = var2[var12 & 255];
+				} else {
+					++var4;
+				}
 
-      var2.field1818 = var0.length - 7 - field3104 * 8 - (var3 - 1) * 3;
-      class150.field1622 = new int[var3];
+				var12 = var1[var3++];
+				if (var12 != 0) {
+					var0[var4++] = var2[var12 & 255];
+				} else {
+					++var4;
+				}
 
-      for(var4 = 1; var4 < var3; ++var4) {
-         class150.field1622[var4] = var2.method1181();
-         if (class150.field1622[var4] == 0) {
-            class150.field1622[var4] = 1;
-         }
-      }
+				var12 = var1[var3++];
+				if (var12 != 0) {
+					var0[var4++] = var2[var12 & 255];
+				} else {
+					++var4;
+				}
+			}
 
-      var2.field1818 = 0;
+			for (var11 = var5; var11 < 0; ++var11) {
+				var12 = var1[var3++];
+				if (var12 != 0) {
+					var0[var4++] = var2[var12 & 255];
+				} else {
+					++var4;
+				}
+			}
 
-      for(var4 = 0; var4 < field3104; ++var4) {
-         int var5 = class103.field1343[var4];
-         int var6 = class288.field2445[var4];
-         int var7 = var5 * var6;
-         byte[] var8 = new byte[var7];
-         class89.field1276[var4] = var8;
-         int var9 = var2.readUnsignedByte();
-         int var10;
-         if (var9 == 0) {
-            for(var10 = 0; var10 < var7; ++var10) {
-               var8[var10] = var2.method1126();
-            }
-         } else if (var9 == 1) {
-            for(var10 = 0; var10 < var5; ++var10) {
-               for(int var11 = 0; var11 < var6; ++var11) {
-                  var8[var10 + var5 * var11] = var2.method1126();
-               }
-            }
-         }
-      }
+			var4 += var7;
+			var3 += var8;
+		}
 
-   }
+	}
+
+	@ObfInfo(name = "ai", desc = "([I[B[IIIIIIIIII)V")
+	static void method2113(int[] var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11) {
+		int var12 = var3;
+
+		for (int var13 = -var8; var13 < 0; ++var13) {
+			int var14 = (var4 >> 16) * var11;
+
+			for (int var15 = -var7; var15 < 0; ++var15) {
+				byte var16 = var1[(var3 >> 16) + var14];
+				if (var16 != 0) {
+					var0[var5++] = var2[var16 & 255];
+				} else {
+					++var5;
+				}
+
+				var3 += var9;
+			}
+
+			var4 += var10;
+			var3 = var12;
+			var5 += var6;
+		}
+
+	}
 }

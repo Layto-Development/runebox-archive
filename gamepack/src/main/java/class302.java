@@ -1,21 +1,29 @@
-public class class302 {
-   static final int[] field2515 = new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, -1, 1, -1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 3, 3, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Comparator;
 
-   class302() throws Throwable {
-   }
+@ObfInfo(name = "mq")
+public class class302 implements Comparator {
+	@ObfInfo(name = "bh", desc = "[Z")
+	public static boolean[] field2440;
+	@ObfInfo(name = "nh", desc = "I", intMultiplier = 617707969)
+	static int field2441;
 
-   public static int method1661(int var0) {
-      return var0 != 0 && var0 != 1 ? -1 : 0;
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class302() {
+	}
 
-   public static class247 method1662(int var0) {
-      int var2 = field2515[var0];
-      if (var2 == 1) {
-         return class247.field2224;
-      } else if (var2 == 2) {
-         return class247.field2219;
-      } else {
-         return var2 == 3 ? class247.field2225 : null;
-      }
-   }
+	@ObfInfo(name = "au", desc = "(Lli;Lli;I)I")
+	int method1676(class252 var1, class252 var2) {
+		return var1.field2089 - var2.field2089;
+	}
+
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method1676((class252)var1, (class252)var2);
+	}
+
+	@ObfInfo(name = "equals", desc = "(Ljava/lang/Object;)Z")
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

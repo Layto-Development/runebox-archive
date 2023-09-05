@@ -1,23 +1,47 @@
-public class class275 {
-   static final class275 field2336 = new class275(4);
-   static final class275 field2337 = new class275(1);
-   static final class275 field2338 = new class275(0);
-   static final class275 field2339 = new class275(3);
-   static final class275 field2340 = new class275(9);
-   static final class275 field2341 = new class275(5);
-   static final class275 field2342 = new class275(7);
-   static final class275 field2343 = new class275(2);
-   static final class275 field2344 = new class275(14);
-   static final class275 field2345 = new class275(8);
-   static final class275 field2346 = new class275(10);
-   static final class275 field2347 = new class275(11);
-   static final class275 field2348 = new class275(12);
-   static final class275 field2349 = new class275(13);
-   static final class275 field2351 = new class275(15);
-   static final class275 field2352 = new class275(6);
-   int field2350;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class275(int var1) {
-      this.field2350 = var1;
-   }
+@ObfInfo(name = "qj")
+public final class class275 implements Comparable {
+	@ObfInfo(name = "au", desc = "Ljava/lang/Object;")
+	Object field2229;
+	@ObfInfo(name = "ae", desc = "Ljava/lang/Object;")
+	Object field2230;
+	@ObfInfo(name = "ao", desc = "J", longMultiplier = 7811919619489354263L)
+	long field2231;
+	@ObfInfo(name = "at", desc = "J", longMultiplier = -5410299538867077373L)
+	long field2232;
+
+	@ObfInfo(name = "<init>", desc = "(Ljava/lang/Object;Ljava/lang/Object;)V")
+	class275(Object var1, Object var2) {
+		this.field2229 = var1;
+		this.field2230 = var2;
+	}
+
+	@ObfInfo(name = "au", desc = "(Lqj;B)I", opaqueValue = "1")
+	int method1441(class275 var1) {
+		if (this.field2232 < var1.field2232) {
+			return -1;
+		} else {
+			return this.field2232 > var1.field2232 ? 1 : 0;
+		}
+	}
+
+	@ObfInfo(name = "equals", desc = "(Ljava/lang/Object;)Z")
+	public boolean equals(Object var1) {
+		if (var1 instanceof class275) {
+			return this.field2230.equals(((class275)var1).field2230);
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
+
+	@ObfInfo(name = "hashCode", desc = "()I")
+	public int hashCode() {
+		return this.field2230.hashCode();
+	}
+
+	@ObfInfo(name = "compareTo", desc = "(Ljava/lang/Object;)I")
+	public int compareTo(Object var1) {
+		return this.method1441((class275)var1);
+	}
 }

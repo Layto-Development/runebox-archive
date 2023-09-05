@@ -1,9 +1,8 @@
-public interface class203 {
-   boolean method1244(int var1);
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   boolean method1245(char var1);
-
-   boolean method1246(int var1);
-
-   boolean method1247(boolean var1);
+@ObfInfo(name = "rd")
+public class class203 {
+	@ObfInfo(name = "<init>", desc = "()V")
+	class203() throws Throwable {
+	}
 }

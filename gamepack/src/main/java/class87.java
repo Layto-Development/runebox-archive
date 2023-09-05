@@ -1,16 +1,28 @@
-import java.util.Calendar;
-import java.util.TimeZone;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Comparator;
 
-public class class87 {
-   public static Calendar field1271;
-   public static final String[] field1270 = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
-   public static final String[][] field1272 = new String[][]{{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}, {"Jan", "Feb", "M\u00e4r", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"}, {"jan", "f\u00e9v", "mars", "avr", "mai", "juin", "juil", "ao\u00fbt", "sept", "oct", "nov", "d\u00e9c"}, {"jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"}, {"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"}, {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}, {"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"}};
+@ObfInfo(name = "ua")
+public class class87 implements Comparator {
+	@ObfInfo(name = "au", desc = "Z")
+	final boolean field883;
 
-   static {
-      Calendar.getInstance();
-      field1271 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-   }
+	@ObfInfo(name = "<init>", desc = "(Z)V")
+	public class87(boolean var1) {
+		this.field883 = var1;
+	}
 
-   class87() throws Throwable {
-   }
+	@ObfInfo(name = "au", desc = "(Lqs;Lqs;B)I")
+	int method565(class179 var1, class179 var2) {
+		return this.field883 ? var1.method1023(var2) : var2.method1023(var1);
+	}
+
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method565((class179)var1, (class179)var2);
+	}
+
+	@ObfInfo(name = "equals", desc = "(Ljava/lang/Object;)Z")
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

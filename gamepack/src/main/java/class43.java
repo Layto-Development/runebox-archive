@@ -1,26 +1,22 @@
-public class class43 extends class56 {
-   static class22 field928;
-   String field926;
-   long field927;
-   // $FF: synthetic field
-   final class315 this$0;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class43(class315 var1) {
-      this.this$0 = var1;
-      this.field927 = -1L;
-      this.field926 = null;
-   }
+@ObfInfo(name = "lv")
+public final class class43 {
+	@ObfInfo(name = "au", desc = "J", longMultiplier = 7339559813345552623L)
+	static long field557;
 
-   void method608(class184 var1) {
-      if (var1.readUnsignedByte() != 255) {
-         --var1.field1818;
-         this.field927 = var1.method1130();
-      }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class43() throws Throwable {
+	}
 
-      this.field926 = var1.method1184();
-   }
+	@ObfInfo(name = "au", desc = "(I)J")
+	public static final synchronized long method443() {
+		long var1 = System.currentTimeMillis();
+		if (var1 < field557) {
+			class34.field484 += field557 - var1;
+		}
 
-   void method607(class15 var1) {
-      var1.method158(this.field927, this.field926, 0);
-   }
+		field557 = var1;
+		return var1 + class34.field484;
+	}
 }

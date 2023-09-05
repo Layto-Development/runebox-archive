@@ -1,15 +1,26 @@
-final class class9 implements class376 {
-   static class22 field105;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   void method122(Integer var1, class184 var2) {
-      var2.writeInt(var1);
-   }
+@ObfInfo(name = "el")
+public class class9 extends class381 {
+	@ObfInfo(name = "au", desc = "Z")
+	final boolean field339;
 
-   public Object method1879(class184 var1) {
-      return var1.readInt();
-   }
+	@ObfInfo(name = "<init>", desc = "(Z)V")
+	public class9(boolean var1) {
+		this.field339 = var1;
+	}
 
-   public void method1880(Object var1, class184 var2) {
-      this.method122((Integer)var1, var2);
-   }
+	@ObfInfo(name = "au", desc = "(Lqb;Lqb;I)I", opaqueValue = "1675983004")
+	int method295(class424 var1, class424 var2) {
+		if (var1.field3235 != var2.field3235) {
+			return this.field339 ? var1.field3235 - var2.field3235 : var2.field3235 - var1.field3235;
+		} else {
+			return this.method2031(var1, var2);
+		}
+	}
+
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method295((class424)var1, (class424)var2);
+	}
 }

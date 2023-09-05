@@ -1,6 +1,5 @@
 package io.runebox.internal.deobfuscator
 
-import org.tinylog.kotlin.Logger
 import java.applet.Applet
 import java.applet.AppletContext
 import java.applet.AppletStub
@@ -11,7 +10,6 @@ import java.io.File
 import java.net.URL
 import java.net.URLClassLoader
 import javax.swing.JFrame
-import kotlin.reflect.full.createInstance
 
 class TestClient(private val file: File, private val vanillaFile: File) {
 
@@ -33,7 +31,7 @@ class TestClient(private val file: File, private val vanillaFile: File) {
             }
         }
 
-        val classloader = URLClassLoader(arrayOf(file.toURI().toURL(), vanillaFile.toURI().toURL()))
+        val classloader = URLClassLoader(arrayOf(file.toURI().toURL()))
         val main = params["initial_class"]!!.replace(".class", "").replaceFirstChar { it.uppercase() }
         val applet = classloader.loadClass(main).newInstance() as Applet
 

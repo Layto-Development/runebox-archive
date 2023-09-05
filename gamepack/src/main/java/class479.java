@@ -1,32 +1,41 @@
-import java.util.zip.Inflater;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
+@ObfInfo(name = "dq")
 public class class479 {
-   Inflater field3661;
+	@ObfInfo(name = "at", desc = "Ljava/lang/String;")
+	static String field3819;
+	@ObfInfo(name = "au", desc = "Ljava/lang/String;")
+	static String field3820;
+	@ObfInfo(name = "ac", desc = "Ljava/lang/String;")
+	static String field3821;
+	@ObfInfo(name = "ao", desc = "Ljava/lang/String;")
+	static String field3822;
+	@ObfInfo(name = "ae", desc = "Ljava/lang/String;")
+	static String field3823;
+	@ObfInfo(name = "ai", desc = "Ljava/lang/String;")
+	static String field3824;
+	@ObfInfo(name = "az", desc = "Ljava/lang/String;")
+	static String field3825;
+	@ObfInfo(name = "ap", desc = "Ljava/lang/String;")
+	static String field3826;
 
-   public class479() {
-      this(-1, 1000000, 1000000);
-   }
+	static {
+		field3820 = "true";
+		field3823 = ",";
+		field3822 = "|";
+		field3819 = " (";
+		field3821 = ")";
+		field3824 = "->";
+		field3825 = "<br>";
+		field3826 = "</col>";
+	}
 
-   class479(int var1, int var2, int var3) {
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class479() throws Throwable {
+	}
 
-   public void method2313(class184 var1, byte[] var2) {
-      if (var1.field1816[var1.field1818] == 31 && var1.field1816[1 + var1.field1818] == -117) {
-         if (null == this.field3661) {
-            this.field3661 = new Inflater(true);
-         }
-
-         try {
-            this.field3661.setInput(var1.field1816, var1.field1818 + 10, var1.field1816.length - (8 + var1.field1818 + 10));
-            this.field3661.inflate(var2);
-         } catch (Exception var5) {
-            this.field3661.reset();
-            throw new RuntimeException("");
-         }
-
-         this.field3661.reset();
-      } else {
-         throw new RuntimeException("");
-      }
-   }
+	@ObfInfo(name = "ae", desc = "(IB)Ljava/lang/String;")
+	static String method2443(int var0) {
+		return "<col=" + Integer.toHexString(var0) + ">";
+	}
 }

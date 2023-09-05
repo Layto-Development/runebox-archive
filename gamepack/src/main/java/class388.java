@@ -1,33 +1,25 @@
-import java.net.MalformedURLException;
-import java.net.URL;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
+@ObfInfo(name = "rw")
 public class class388 {
-   static int field3074;
-   class427 field3072;
-   class539 field3073;
+	@ObfInfo(name = "an", desc = "[I")
+	static final int[] field3035;
+	@ObfInfo(name = "al", desc = "[I")
+	static final int[] field3036;
 
-   class388(String var1, class69 var2) {
-      try {
-         this.field3073 = var2.method657(new URL(var1));
-      } catch (MalformedURLException var4) {
-         this.field3073 = null;
-      }
+	static {
+		field3036 = new int[2048];
+		field3035 = new int[2048];
+		double var0 = 0.0030679615757712823D;
 
-   }
+		for (int var2 = 0; var2 < 2048; ++var2) {
+			field3036[var2] = (int)(65536.0D * Math.sin(var0 * (double)var2));
+			field3035[var2] = (int)(65536.0D * Math.cos((double)var2 * var0));
+		}
 
-   class388(class539 var1) {
-      this.field3073 = var1;
-   }
+	}
 
-   class427 method1896() {
-      if (null == this.field3072 && this.field3073 != null && this.field3073.method2563()) {
-         if (this.field3073.method2565() != null) {
-            this.field3072 = class462.method2262(this.field3073.method2565());
-         }
-
-         this.field3073 = null;
-      }
-
-      return this.field3072;
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class388() throws Throwable {
+	}
 }

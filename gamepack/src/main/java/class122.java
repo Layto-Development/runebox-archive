@@ -1,279 +1,148 @@
-import java.io.EOFException;
-import java.io.IOException;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
+@ObfInfo(name = "cr")
 public class class122 {
-   byte[] field1505;
-   byte[] field1508;
-   class472 field1512;
-   int field1504 = 0;
-   int field1507;
-   long field1503 = -1L;
-   long field1506;
-   long field1509 = -1L;
-   long field1510;
-   long field1511;
-   long field1513;
+	@ObfInfo(name = "ap", desc = "F")
+	static float field1149;
+	@ObfInfo(name = "ai", desc = "[[F")
+	static float[][] field1145;
+	@ObfInfo(name = "aa", desc = "I")
+	static int field1150;
+	@ObfInfo(name = "az", desc = "[[I")
+	static int[][] field1144;
+	@ObfInfo(name = "au", desc = "[I")
+	int[] field1147;
+	@ObfInfo(name = "ac", desc = "[I")
+	int[] field1148;
+	@ObfInfo(name = "at", desc = "[[[I")
+	int[][][] field1146;
+	@ObfInfo(name = "ao", desc = "[[[I")
+	int[][][] field1151;
 
-   public class122(class472 var1, int var2, int var3) throws IOException {
-      this.field1512 = var1;
-      this.field1506 = this.field1511 = var1.method2282();
-      this.field1505 = new byte[var2];
-      this.field1508 = new byte[var3];
-      this.field1510 = 0L;
-   }
+	static {
+		field1145 = new float[2][8];
+		field1144 = new int[2][8];
+	}
 
-   public void method855() throws IOException {
-      this.method861();
-      this.field1512.method2284();
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class122() {
+		this.field1147 = new int[2];
+		this.field1151 = new int[2][2][4];
+		this.field1146 = new int[2][2][4];
+		this.field1148 = new int[2];
+	}
 
-   public void method856(long var1) throws IOException {
-      if (var1 < 0L) {
-         throw new IOException("");
-      } else {
-         this.field1510 = var1;
-      }
-   }
+	@ObfInfo(name = "au", desc = "(IIF)F")
+	float method691(int var1, int var2, float var3) {
+		float var4 = (float)this.field1146[var1][0][var2] + var3 * (float)(this.field1146[var1][1][var2] - this.field1146[var1][0][var2]);
+		var4 *= 0.0015258789F;
+		return 1.0F - (float)Math.pow(10.0D, (double)(-var4 / 20.0F));
+	}
 
-   public long method862() {
-      return this.field1506;
-   }
+	@ObfInfo(name = "ao", desc = "(IIF)F")
+	float method692(int var1, int var2, float var3) {
+		float var4 = (float)this.field1151[var1][0][var2] + var3 * (float)(this.field1151[var1][1][var2] - this.field1151[var1][0][var2]);
+		var4 *= 1.2207031E-4F;
+		return method693(var4);
+	}
 
-   public void method857(byte[] var1) throws IOException {
-      this.method858(var1, 0, var1.length);
-   }
+	@ObfInfo(name = "at", desc = "(IF)I")
+	int method694(int var1, float var2) {
+		float var3;
+		if (var1 == 0) {
+			var3 = (float)this.field1148[0] + (float)(this.field1148[1] - this.field1148[0]) * var2;
+			var3 *= 0.0030517578F;
+			field1149 = (float)Math.pow(0.1D, (double)(var3 / 20.0F));
+			field1150 = (int)(field1149 * 65536.0F);
+		}
 
-   public void method858(byte[] var1, int var2, int var3) throws IOException {
-      try {
-         if (var2 + var3 > var1.length) {
-            throw new ArrayIndexOutOfBoundsException(var3 + var2 - var1.length);
-         }
+		if (this.field1147[var1] == 0) {
+			return 0;
+		} else {
+			var3 = this.method691(var1, 0, var2);
+			field1145[var1][0] = var3 * -2.0F * (float)Math.cos((double)this.method692(var1, 0, var2));
+			field1145[var1][1] = var3 * var3;
 
-         if (-1L != this.field1509 && this.field1510 >= this.field1509 && this.field1510 + (long)var3 <= this.field1509 + (long)this.field1504) {
-            System.arraycopy(this.field1508, (int)(this.field1510 - this.field1509), var1, var2, var3);
-            this.field1510 += (long)var3;
-            return;
-         }
+			float[] var10000;
+			int var4;
+			for (var4 = 1; var4 < this.field1147[var1]; ++var4) {
+				var3 = this.method691(var1, var4, var2);
+				float var5 = var3 * -2.0F * (float)Math.cos((double)this.method692(var1, var4, var2));
+				float var6 = var3 * var3;
+				field1145[var1][var4 * 2 + 1] = field1145[var1][var4 * 2 - 1] * var6;
+				field1145[var1][var4 * 2] = field1145[var1][var4 * 2 - 1] * var5 + field1145[var1][var4 * 2 - 2] * var6;
 
-         long var5 = this.field1510;
-         int var8 = var3;
-         int var9;
-         if (this.field1510 >= this.field1503 && this.field1510 < this.field1503 + (long)this.field1507) {
-            var9 = (int)((long)this.field1507 - (this.field1510 - this.field1503));
-            if (var9 > var3) {
-               var9 = var3;
-            }
+				for (int var7 = var4 * 2 - 1; var7 >= 2; --var7) {
+					var10000 = field1145[var1];
+					var10000[var7] += field1145[var1][var7 - 1] * var5 + field1145[var1][var7 - 2] * var6;
+				}
 
-            System.arraycopy(this.field1505, (int)(this.field1510 - this.field1503), var1, var2, var9);
-            this.field1510 += (long)var9;
-            var2 += var9;
-            var3 -= var9;
-         }
+				var10000 = field1145[var1];
+				var10000[1] += field1145[var1][0] * var5 + var6;
+				var10000 = field1145[var1];
+				var10000[0] += var5;
+			}
 
-         if (var3 > this.field1505.length) {
-            this.field1512.method2280(this.field1510);
+			if (var1 == 0) {
+				for (var4 = 0; var4 < this.field1147[0] * 2; ++var4) {
+					var10000 = field1145[0];
+					var10000[var4] *= field1149;
+				}
+			}
 
-            for(this.field1513 = this.field1510; var3 > 0; var3 -= var9) {
-               var9 = this.field1512.method2283(var1, var2, var3);
-               if (var9 == -1) {
-                  break;
-               }
+			for (var4 = 0; var4 < this.field1147[var1] * 2; ++var4) {
+				field1144[var1][var4] = (int)(field1145[var1][var4] * 65536.0F);
+			}
 
-               this.field1513 += (long)var9;
-               this.field1510 += (long)var9;
-               var2 += var9;
-            }
-         } else if (var3 > 0) {
-            this.method859();
-            var9 = var3;
-            if (var3 > this.field1507) {
-               var9 = this.field1507;
-            }
+			return this.field1147[var1] * 2;
+		}
+	}
 
-            System.arraycopy(this.field1505, 0, var1, var2, var9);
-            var2 += var9;
-            var3 -= var9;
-            this.field1510 += (long)var9;
-         }
+	@ObfInfo(name = "ac", desc = "(Ltm;Lbr;)V")
+	final void method690(class280 var1, class485 var2) {
+		int var3 = var1.method1492();
+		this.field1147[0] = var3 >> 4;
+		this.field1147[1] = var3 & 15;
+		if (var3 != 0) {
+			this.field1148[0] = var1.method1541();
+			this.field1148[1] = var1.method1541();
+			int var4 = var1.method1492();
 
-         if (-1L != this.field1509) {
-            if (this.field1509 > this.field1510 && var3 > 0) {
-               var9 = var2 + (int)(this.field1509 - this.field1510);
-               if (var9 > var2 + var3) {
-                  var9 = var2 + var3;
-               }
+			int var5;
+			int var6;
+			for (var5 = 0; var5 < 2; ++var5) {
+				for (var6 = 0; var6 < this.field1147[var5]; ++var6) {
+					this.field1151[var5][0][var6] = var1.method1541();
+					this.field1146[var5][0][var6] = var1.method1541();
+				}
+			}
 
-               while(var2 < var9) {
-                  var1[var2++] = 0;
-                  --var3;
-                  ++this.field1510;
-               }
-            }
+			for (var5 = 0; var5 < 2; ++var5) {
+				for (var6 = 0; var6 < this.field1147[var5]; ++var6) {
+					if ((var4 & 1 << var5 * 4 << var6) != 0) {
+						this.field1151[var5][1][var6] = var1.method1541();
+						this.field1146[var5][1][var6] = var1.method1541();
+					} else {
+						this.field1151[var5][1][var6] = this.field1151[var5][0][var6];
+						this.field1146[var5][1][var6] = this.field1146[var5][0][var6];
+					}
+				}
+			}
 
-            long var15 = -1L;
-            long var11 = -1L;
-            if (this.field1509 >= var5 && this.field1509 < (long)var8 + var5) {
-               var15 = this.field1509;
-            } else if (var5 >= this.field1509 && var5 < this.field1509 + (long)this.field1504) {
-               var15 = var5;
-            }
+			if (var4 != 0 || this.field1148[1] != this.field1148[0]) {
+				var2.method2457(var1);
+			}
+		} else {
+			int[] var7 = this.field1148;
+			this.field1148[1] = 0;
+			var7[0] = 0;
+		}
 
-            if (this.field1509 + (long)this.field1504 > var5 && (long)this.field1504 + this.field1509 <= (long)var8 + var5) {
-               var11 = this.field1509 + (long)this.field1504;
-            } else if (var5 + (long)var8 > this.field1509 && var5 + (long)var8 <= (long)this.field1504 + this.field1509) {
-               var11 = (long)var8 + var5;
-            }
+	}
 
-            if (var15 > -1L && var11 > var15) {
-               int var13 = (int)(var11 - var15);
-               System.arraycopy(this.field1508, (int)(var15 - this.field1509), var1, (int)(var15 - var5) + var2, var13);
-               if (var11 > this.field1510) {
-                  var3 = (int)((long)var3 - (var11 - this.field1510));
-                  this.field1510 = var11;
-               }
-            }
-         }
-      } catch (IOException var14) {
-         this.field1513 = -1L;
-         throw var14;
-      }
-
-      if (var3 > 0) {
-         throw new EOFException();
-      }
-   }
-
-   void method859() throws IOException {
-      this.field1507 = 0;
-      if (this.field1510 != this.field1513) {
-         this.field1512.method2280(this.field1510);
-         this.field1513 = this.field1510;
-      }
-
-      int var3;
-      for(this.field1503 = this.field1510; this.field1507 < this.field1505.length; this.field1507 += var3) {
-         int var2 = this.field1505.length - this.field1507;
-         if (var2 > 200000000) {
-            var2 = 200000000;
-         }
-
-         var3 = this.field1512.method2283(this.field1505, this.field1507, var2);
-         if (var3 == -1) {
-            break;
-         }
-
-         this.field1513 += (long)var3;
-      }
-
-   }
-
-   public void method860(byte[] var1, int var2, int var3) throws IOException {
-      try {
-         if ((long)var3 + this.field1510 > this.field1506) {
-            this.field1506 = this.field1510 + (long)var3;
-         }
-
-         if (-1L != this.field1509 && (this.field1510 < this.field1509 || this.field1510 > (long)this.field1504 + this.field1509)) {
-            this.method861();
-         }
-
-         if (-1L != this.field1509 && (long)var3 + this.field1510 > (long)this.field1508.length + this.field1509) {
-            int var5 = (int)((long)this.field1508.length - (this.field1510 - this.field1509));
-            System.arraycopy(var1, var2, this.field1508, (int)(this.field1510 - this.field1509), var5);
-            this.field1510 += (long)var5;
-            var2 += var5;
-            var3 -= var5;
-            this.field1504 = this.field1508.length;
-            this.method861();
-         }
-
-         if (var3 <= this.field1508.length) {
-            if (var3 > 0) {
-               if (-1L == this.field1509) {
-                  this.field1509 = this.field1510;
-               }
-
-               System.arraycopy(var1, var2, this.field1508, (int)(this.field1510 - this.field1509), var3);
-               this.field1510 += (long)var3;
-               if (this.field1510 - this.field1509 > (long)this.field1504) {
-                  this.field1504 = (int)(this.field1510 - this.field1509);
-               }
-
-            }
-         } else {
-            if (this.field1510 != this.field1513) {
-               this.field1512.method2280(this.field1510);
-               this.field1513 = this.field1510;
-            }
-
-            this.field1512.method2281(var1, var2, var3);
-            this.field1513 += (long)var3;
-            if (this.field1513 > this.field1511) {
-               this.field1511 = this.field1513;
-            }
-
-            long var11 = -1L;
-            long var7 = -1L;
-            if (this.field1510 >= this.field1503 && this.field1510 < this.field1503 + (long)this.field1507) {
-               var11 = this.field1510;
-            } else if (this.field1503 >= this.field1510 && this.field1503 < (long)var3 + this.field1510) {
-               var11 = this.field1503;
-            }
-
-            if ((long)var3 + this.field1510 > this.field1503 && (long)var3 + this.field1510 <= this.field1503 + (long)this.field1507) {
-               var7 = this.field1510 + (long)var3;
-            } else if ((long)this.field1507 + this.field1503 > this.field1510 && this.field1503 + (long)this.field1507 <= (long)var3 + this.field1510) {
-               var7 = this.field1503 + (long)this.field1507;
-            }
-
-            if (var11 > -1L && var7 > var11) {
-               int var9 = (int)(var7 - var11);
-               System.arraycopy(var1, (int)(var11 + (long)var2 - this.field1510), this.field1505, (int)(var11 - this.field1503), var9);
-            }
-
-            this.field1510 += (long)var3;
-         }
-      } catch (IOException var10) {
-         this.field1513 = -1L;
-         throw var10;
-      }
-   }
-
-   void method861() throws IOException {
-      if (this.field1509 != -1L) {
-         if (this.field1509 != this.field1513) {
-            this.field1512.method2280(this.field1509);
-            this.field1513 = this.field1509;
-         }
-
-         this.field1512.method2281(this.field1508, 0, this.field1504);
-         this.field1513 += (long)this.field1504;
-         if (this.field1513 > this.field1511) {
-            this.field1511 = this.field1513;
-         }
-
-         long var2 = -1L;
-         long var4 = -1L;
-         if (this.field1509 >= this.field1503 && this.field1509 < (long)this.field1507 + this.field1503) {
-            var2 = this.field1509;
-         } else if (this.field1503 >= this.field1509 && this.field1503 < this.field1509 + (long)this.field1504) {
-            var2 = this.field1503;
-         }
-
-         if (this.field1509 + (long)this.field1504 > this.field1503 && this.field1509 + (long)this.field1504 <= this.field1503 + (long)this.field1507) {
-            var4 = this.field1509 + (long)this.field1504;
-         } else if (this.field1503 + (long)this.field1507 > this.field1509 && (long)this.field1507 + this.field1503 <= this.field1509 + (long)this.field1504) {
-            var4 = this.field1503 + (long)this.field1507;
-         }
-
-         if (var2 > -1L && var4 > var2) {
-            int var6 = (int)(var4 - var2);
-            System.arraycopy(this.field1508, (int)(var2 - this.field1509), this.field1505, (int)(var2 - this.field1503), var6);
-         }
-
-         this.field1509 = -1L;
-         this.field1504 = 0;
-      }
-
-   }
+	@ObfInfo(name = "ae", desc = "(F)F")
+	static float method693(float var0) {
+		float var1 = 32.703197F * (float)Math.pow(2.0D, (double)var0);
+		return var1 * 3.1415927F / 11025.0F;
+	}
 }

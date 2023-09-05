@@ -1,25 +1,30 @@
-public class class527 extends class56 {
-   public static short[][] field4149;
-   int field4146;
-   int field4147;
-   int field4148;
-   int field4150;
-   // $FF: synthetic field
-   final class315 this$0;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 
-   class527(class315 var1) {
-      this.this$0 = var1;
-      this.field4148 = -1;
-   }
+@ObfInfo(name = "ag")
+public class class527 implements ThreadFactory {
+	// $FF: synthetic field
+	@ObfInfo(name = "this$0", desc = "Lar;")
+	final class129 this$0;
+	@ObfInfo(name = "au", desc = "Ljava/lang/ThreadGroup;")
+	final ThreadGroup field4207;
+	@ObfInfo(name = "ae", desc = "Ljava/util/concurrent/atomic/AtomicInteger;")
+	final AtomicInteger field4206;
 
-   void method608(class184 var1) {
-      this.field4148 = var1.method1174();
-      this.field4147 = var1.readInt();
-      this.field4150 = var1.readUnsignedByte();
-      this.field4146 = var1.readUnsignedByte();
-   }
+	@ObfInfo(name = "<init>", desc = "(Lar;)V")
+	class527(class129 var1) {
+		this.this$0 = var1;
+		this.field4206 = new AtomicInteger(1);
+		SecurityManager var2 = System.getSecurityManager();
+		this.field4207 = var2 != null ? var2.getThreadGroup() : Thread.currentThread().getThreadGroup();
+	}
 
-   void method607(class15 var1) {
-      var1.method153(this.field4148, this.field4147, this.field4150, this.field4146);
-   }
+	@ObfInfo(name = "newThread", desc = "(Ljava/lang/Runnable;)Ljava/lang/Thread;")
+	public Thread newThread(Runnable var1) {
+		Thread var2 = new Thread(this.field4207, var1, this.this$0.field1166 + "-rest-request-" + this.field4206.getAndIncrement(), 0L);
+		var2.setDaemon(true);
+		var2.setPriority(5);
+		return var2;
+	}
 }

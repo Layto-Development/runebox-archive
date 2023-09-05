@@ -1,42 +1,46 @@
-public class class2 implements class188 {
-   public static final class2 field25 = new class2(9, 2);
-   public static final class2 field26 = new class2(22, 3);
-   public static final class2 field6 = new class2(2, 0);
-   public static final class2 field7 = new class2(3, 0);
-   public static final class2 field9 = new class2(0, 0);
-   static final class2 field10 = new class2(5, 1);
-   static final class2 field11 = new class2(6, 1);
-   static final class2 field13 = new class2(21, 2);
-   static final class2 field14 = new class2(12, 2);
-   static final class2 field15 = new class2(7, 1);
-   static final class2 field16 = new class2(13, 2);
-   static final class2 field17 = new class2(15, 2);
-   static final class2 field18 = new class2(16, 2);
-   static final class2 field19 = new class2(17, 2);
-   static final class2 field20 = new class2(19, 2);
-   static final class2 field21 = new class2(4, 1);
-   static final class2 field22 = new class2(20, 2);
-   static final class2 field23 = new class2(14, 2);
-   static final class2 field24 = new class2(10, 2);
-   static final class2 field27 = new class2(11, 2);
-   static final class2 field4 = new class2(18, 2);
-   static final class2 field5 = new class2(1, 0);
-   static final class2 field8 = new class2(8, 1);
-   public final int field12;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class2(int var1, int var2) {
-      this.field12 = var1;
-   }
+@ObfInfo(name = "hg")
+public class class2 {
+	@ObfInfo(name = "jo", desc = "[I")
+	static int[] field4;
 
-   public int method1195() {
-      return this.field12;
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class2() throws Throwable {
+	}
 
-   public static boolean method3(int var0) {
-      return var0 >= field9.field12 && var0 <= field7.field12 || var0 == field25.field12;
-   }
+	@ObfInfo(name = "au", desc = "(Ltm;Lsf;I)Lsf;")
+	static final class525 method3(class280 var0, class525 var1) {
+		int var3 = var0.method1492();
+		int var4;
+		if (null == var1) {
+			var4 = class497.method2492(var3);
+			var1 = new class525(var4);
+		}
 
-   public static boolean method4(int var0) {
-      return var0 >= field24.field12 && var0 <= field27.field12;
-   }
+		for (var4 = 0; var4 < var3; ++var4) {
+			boolean var5 = var0.method1492() == 1;
+			int var6 = var0.method1548();
+			Object var7;
+			if (var5) {
+				var7 = new class45(var0.method1500());
+			} else {
+				var7 = new class149(var0.method1496());
+			}
+
+			var1.method2562((class155)var7, (long)var6);
+		}
+
+		return var1;
+	}
+
+	@ObfInfo(name = "ae", desc = "(Lsf;III)I")
+	static int method2(class525 var0, int var1, int var2) {
+		if (null == var0) {
+			return var2;
+		} else {
+			class149 var4 = (class149)var0.method2558((long)var1);
+			return var4 == null ? var2 : var4.field1457;
+		}
+	}
 }

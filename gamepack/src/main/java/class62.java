@@ -1,65 +1,49 @@
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.Shape;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
-import java.awt.image.DirectColorModel;
-import java.awt.image.Raster;
-import java.awt.image.WritableRaster;
-import java.util.Hashtable;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public final class class62 extends class148 {
-   Component field1115;
-   Image field1116;
+@ObfInfo(name = "bu")
+public class class62 extends class218 {
+	@ObfInfo(name = "at", desc = "I")
+	int field737;
+	@ObfInfo(name = "ac", desc = "Z")
+	public boolean field741;
+	@ObfInfo(name = "ae", desc = "[B")
+	public byte[] field738;
+	@ObfInfo(name = "ao", desc = "I")
+	public int field739;
+	@ObfInfo(name = "au", desc = "I")
+	public int field740;
 
-   class62(int var1, int var2, Component var3, boolean var4) {
-      super.field1615 = var1;
-      super.field1617 = var2;
-      super.field1616 = new int[var2 * var1 + 1];
-      if (var4) {
-         super.field1614 = new float[var2 * var1 + 1];
-      }
+	@ObfInfo(name = "<init>", desc = "(I[BII)V")
+	class62(int var1, byte[] var2, int var3, int var4) {
+		this.field740 = var1;
+		this.field738 = var2;
+		this.field739 = var3;
+		this.field737 = var4;
+	}
 
-      DataBufferInt var5 = new DataBufferInt(super.field1616, super.field1616.length);
-      DirectColorModel var6 = new DirectColorModel(32, 16711680, 65280, 255);
-      WritableRaster var7 = Raster.createWritableRaster(var6.createCompatibleSampleModel(super.field1615, super.field1617), var5, (Point)null);
-      this.field1116 = new BufferedImage(var6, var7, false, new Hashtable());
-      this.method631(var3);
-      this.method932();
-   }
+	@ObfInfo(name = "<init>", desc = "(I[BIIZ)V")
+	class62(int var1, byte[] var2, int var3, int var4, boolean var5) {
+		this.field740 = var1;
+		this.field738 = var2;
+		this.field739 = var3;
+		this.field737 = var4;
+		this.field741 = var5;
+	}
 
-   final void method631(Component var1) {
-      this.field1115 = var1;
-   }
+	@ObfInfo(name = "au", desc = "(Lcx;)Lbu;")
+	public class62 method486(class124 var1) {
+		this.field738 = var1.method696(this.field738);
+		this.field740 = var1.method697(this.field740);
+		if (this.field739 == this.field737) {
+			this.field739 = this.field737 = var1.method695(this.field739);
+		} else {
+			this.field739 = var1.method695(this.field739);
+			this.field737 = var1.method695(this.field737);
+			if (this.field739 == this.field737) {
+				--this.field739;
+			}
+		}
 
-   public final void method929(int var1, int var2) {
-      this.method634(this.field1115.getGraphics(), var1, var2);
-   }
-
-   public final void method930(int var1, int var2, int var3, int var4) {
-      this.method633(this.field1115.getGraphics(), var1, var2, var3, var4);
-   }
-
-   final void method634(Graphics var1, int var2, int var3) {
-      try {
-         var1.drawImage(this.field1116, var2, var3, this.field1115);
-      } catch (Exception var6) {
-         this.field1115.repaint();
-      }
-
-   }
-
-   final void method633(Graphics var1, int var2, int var3, int var4, int var5) {
-      try {
-         Shape var7 = var1.getClip();
-         var1.clipRect(var2, var3, var4, var5);
-         var1.drawImage(this.field1116, 0, 0, this.field1115);
-         var1.setClip(var7);
-      } catch (Exception var8) {
-         this.field1115.repaint();
-      }
-
-   }
+		return this;
+	}
 }

@@ -1,58 +1,99 @@
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.util.Hashtable;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
+@ObfInfo(name = "bi")
 public class class293 {
-   static boolean field2470 = false;
-   static File field2471;
-   static Hashtable field2472 = new Hashtable(16);
+	@ObfInfo(name = "dd", desc = "[Luk;")
+	static class398[] field2379;
+	@ObfInfo(name = "aa", desc = "I", intMultiplier = 1529858789)
+	static int field2375;
+	@ObfInfo(name = "ao", desc = "Lso;")
+	class405 field2377;
+	@ObfInfo(name = "ae", desc = "Lnu;")
+	class437 field2376;
+	@ObfInfo(name = "au", desc = "Lnu;")
+	class437 field2378;
 
-   class293() throws Throwable {
-   }
+	@ObfInfo(name = "<init>", desc = "(Lnu;Lnu;)V")
+	public class293(class437 var1, class437 var2) {
+		new class405(256);
+		this.field2377 = new class405(256);
+		this.field2378 = var1;
+		this.field2376 = var2;
+	}
 
-   static void method1615(byte var0) {
-      try {
-         File var1 = new File(class138.field1581, "random.dat");
-         int var3;
-         if (var1.exists()) {
-            class237.field2171 = new class122(new class472(var1, "rw", 25L), 24, 0);
-         } else {
-            label46:
-            for(int var2 = 0; var2 < class237.field2175.length; ++var2) {
-               if (var0 != -1) {
-                  throw new IllegalStateException();
-               }
+	@ObfInfo(name = "au", desc = "(II[II)Lbu;", opaqueValue = "-1858861655")
+	class62 method1621(int var1, int var2, int[] var3) {
+		long var5 = this.method1625(var1, var2, false);
+		class428 var7 = (class428)this.field2377.method2129(var5);
+		if (null != var7) {
+			return var7.method2227();
+		} else if (var3 != null && var3[0] <= 0) {
+			return null;
+		} else {
+			class538 var8 = class538.method2590(this.field2378, var1, var2);
+			if (null == var8) {
+				return null;
+			} else {
+				class62 var9 = var8.method2588();
+				this.field2377.method2132(new class428(var9), var5);
+				if (var3 != null) {
+					var3[0] -= var9.field738.length;
+				}
 
-               for(var3 = 0; var3 < class524.field4129.length; ++var3) {
-                  if (var0 != -1) {
-                     throw new IllegalStateException();
-                  }
+				return var9;
+			}
+		}
+	}
 
-                  File var4 = new File(class524.field4129[var3] + class237.field2175[var2] + File.separatorChar + "random.dat");
-                  if (var4.exists()) {
-                     if (var0 != -1) {
-                        throw new IllegalStateException();
-                     }
+	@ObfInfo(name = "ae", desc = "(IIB)Lcf;", opaqueValue = "-1")
+	class428 method1620(int var1, int var2) {
+		long var4 = this.method1625(var1, var2, true);
+		class428 var6 = (class428)this.field2377.method2129(var4);
+		if (var6 != null) {
+			return var6;
+		} else {
+			class130 var7 = class130.method712(this.field2376, var1, var2);
+			if (var7 == null) {
+				return new class428();
+			} else {
+				class428 var8 = new class428(var7);
+				this.field2377.method2132(var8, var4);
+				return var8;
+			}
+		}
+	}
 
-                     class237.field2171 = new class122(new class472(var4, "rw", 25L), 24, 0);
-                     break label46;
-                  }
-               }
-            }
-         }
+	@ObfInfo(name = "ao", desc = "(I[II)Lbu;", opaqueValue = "88728645")
+	class62 method1622(int var1, int[] var2) {
+		if (this.field2378.method2279() == 1) {
+			return this.method1621(0, var1, var2);
+		} else if (this.field2378.method2293(var1) == 1) {
+			return this.method1621(var1, 0, var2);
+		} else {
+			throw new RuntimeException();
+		}
+	}
 
-         if (null == class237.field2171) {
-            RandomAccessFile var6 = new RandomAccessFile(var1, "rw");
-            var3 = var6.read();
-            var6.seek(0L);
-            var6.write(var3);
-            var6.seek(0L);
-            var6.close();
-            class237.field2171 = new class122(new class472(var1, "rw", 25L), 24, 0);
-         }
-      } catch (IOException var5) {
-      }
+	@ObfInfo(name = "at", desc = "(II)Lcf;", opaqueValue = "-1353408951")
+	public class428 method1623(int var1) {
+		if (this.field2376.method2279() == 1) {
+			return this.method1620(0, var1);
+		} else if (this.field2376.method2293(var1) == 1) {
+			return this.method1620(var1, 0);
+		} else {
+			throw new RuntimeException();
+		}
+	}
 
-   }
+	@ObfInfo(name = "ac", desc = "(II)Lbu;")
+	public class62 method1624(int var1) {
+		return this.method1622(var1, (int[])null);
+	}
+
+	@ObfInfo(name = "ai", desc = "(IIZI)J", opaqueValue = "1190461425")
+	long method1625(int var1, int var2, boolean var3) {
+		int var5 = var2 ^ (var1 << 4 & 65535 | var1 >> 12);
+		var5 |= var1 << 16;
+		return var3 ? (long)var5 ^ 4294967296L : (long)var5;
+	}
 }

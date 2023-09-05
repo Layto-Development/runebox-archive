@@ -24,7 +24,8 @@ allprojects {
     apply(plugin = "java")
 
     if(project.name !in listOf(
-        "runebox-injector-include",
+        "runebox-deobfuscator-includes",
+        "runebox-injector-annotations",
         "runebox-gamepack",
         "runebox-mixins"
     )) {

@@ -1,17 +1,33 @@
-public final class class60 {
-   public static class122[] field1103;
-   int field1094;
-   int field1095;
-   int field1096;
-   int field1097;
-   int field1098;
-   int field1099;
-   int field1100;
-   int field1105 = 0;
-   public class496 field1101;
-   public class496 field1102;
-   public long field1104 = 0L;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class60() {
-   }
+@ObfInfo(name = "az")
+public class class60 implements class425 {
+	@ObfInfo(name = "wi", desc = "Lru;")
+	static class387 field733;
+	@ObfInfo(name = "au", desc = "Laz;")
+	static final class60 field735;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 760206015)
+	final int field732;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = 2116991637)
+	public final int field734;
+
+	static {
+		field735 = new class60(0, 0);
+	}
+
+	@ObfInfo(name = "<init>", desc = "(II)V")
+	class60(int var1, int var2) {
+		this.field734 = var1;
+		this.field732 = var2;
+	}
+
+	@ObfInfo(name = "ae", desc = "(B)I")
+	public int method2222() {
+		return this.field732;
+	}
+
+	@ObfInfo(name = "au", desc = "(I)[Laz;")
+	public static class60[] method485() {
+		return new class60[]{field735};
+	}
 }

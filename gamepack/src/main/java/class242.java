@@ -1,70 +1,31 @@
-public class class242 {
-   int field2196;
-   int field2197;
-   final int field2198;
-   final int[] field2194;
-   final int[] field2200;
-   final int[][] field2195;
-   final int[][] field2199;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public class242(int var1, int var2) {
-      this.field2199 = new int[var1][var2];
-      this.field2195 = new int[var1][var2];
-      int var3 = var1 * var2;
-      int var4 = class349.method1808(var3 / 4);
-      this.field2200 = new int[var4];
-      this.field2194 = new int[var4];
-      this.field2198 = var4 - 1;
-   }
+@ObfInfo(name = "fx")
+public class class242 extends class313 {
+	@ObfInfo(name = "ff", desc = "Lnk;")
+	static class505 field2008;
+	@ObfInfo(name = "ae", desc = "B")
+	byte field2009;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = -1887192453)
+	int field2010;
+	// $FF: synthetic field
+	@ObfInfo(name = "this$0", desc = "Lfn;")
+	final class220 this$0;
 
-   void method1443() {
-      for(int var2 = 0; var2 < this.field2199.length; ++var2) {
-         for(int var3 = 0; var3 < this.field2199[var2].length; ++var3) {
-            this.field2199[var2][var3] = 0;
-            this.field2195[var2][var3] = 99999999;
-         }
-      }
+	@ObfInfo(name = "<init>", desc = "(Lfn;)V")
+	class242(class220 var1) {
+		this.this$0 = var1;
+		this.field2010 = -1;
+	}
 
-   }
+	@ObfInfo(name = "au", desc = "(Ltm;I)V")
+	void method1731(class280 var1) {
+		this.field2010 = var1.method1541();
+		this.field2009 = var1.method1493();
+	}
 
-   void method1433(int var1, int var2) {
-      this.field2196 = var1;
-      this.field2197 = var2;
-   }
-
-   int method1434() {
-      return this.field2196;
-   }
-
-   int method1435() {
-      return this.field2197;
-   }
-
-   int method1436() {
-      return this.field2199.length;
-   }
-
-   int method1441() {
-      return this.field2199[0].length;
-   }
-
-   int[][] method1442() {
-      return this.field2199;
-   }
-
-   int[][] method1437() {
-      return this.field2195;
-   }
-
-   int[] method1438() {
-      return this.field2200;
-   }
-
-   int[] method1439() {
-      return this.field2194;
-   }
-
-   int method1440() {
-      return this.field2198;
-   }
+	@ObfInfo(name = "ae", desc = "(Lfi;B)V")
+	void method1730(class291 var1) {
+		var1.method1604(this.field2010, this.field2009);
+	}
 }

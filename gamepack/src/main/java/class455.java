@@ -1,56 +1,347 @@
-public abstract class class455 implements class86 {
-   class247 field3557;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.regex.Pattern;
 
-   class455(int var1) {
-   }
+@ObfInfo(name = "op")
+@class103
+public final class class455 {
+	static {
+		Pattern.compile("^\\D*(\\d+)\\D*$");
+	}
 
-   abstract void method2247(class184 var1, int var2);
+	@ObfInfo(name = "<init>", desc = "()V")
+	class455() throws Throwable {
+	}
 
-   public void method2246(class184 var1) {
-      while(true) {
-         int var3 = var1.readUnsignedByte();
-         if (var3 == 0) {
-            return;
-         }
+	@ObfInfo(name = "au", desc = "([Ljava/lang/CharSequence;III)Ljava/lang/String;")
+	public static String method2381(CharSequence[] var0, int var1, int var2) {
+		if (var2 == 0) {
+			return "";
+		} else if (var2 == 1) {
+			CharSequence var9 = var0[var1];
+			return var9 == null ? "null" : var9.toString();
+		} else {
+			int var4 = var2 + var1;
+			int var5 = 0;
 
-         class107 var4 = (class107)class341.method1788(class107.method798(), var3);
-         if (var4 != null) {
-            switch (var4.field1430) {
-               case 0:
-                  int var5 = var1.readUnsignedByte();
-                  this.field3557 = class302.method1662(var5);
-                  if (this.field3557 != null) {
-                     break;
-                  }
+			for (int var6 = var1; var6 < var4; ++var6) {
+				CharSequence var7 = var0[var6];
+				if (var7 == null) {
+					var5 += 4;
+				} else {
+					var5 += var7.length();
+				}
+			}
 
-                  throw new IllegalStateException("Unknown ScriptVarType ID in VarType.decode: " + var5);
-               case 1:
-                  var1.method1175();
-                  break;
-               case 2:
-                  class339[] var6 = new class339[]{class339.field2719, class339.field2716, class339.field2717, class339.field2715};
-                  class341.method1788(var6, var1.readUnsignedByte());
-                  break;
-               default:
-                  throw new IllegalStateException("Unrecognised VarTypeEncodingKey - " + var4);
-            }
-         } else {
-            this.method2247(var1, var3);
-         }
-      }
-   }
+			StringBuilder var10 = new StringBuilder(var5);
 
-   boolean method2249() {
-      return this.field3557 != null;
-   }
+			for (int var11 = var1; var11 < var4; ++var11) {
+				CharSequence var8 = var0[var11];
+				if (null == var8) {
+					var10.append("null");
+				} else {
+					var10.append(var8);
+				}
+			}
 
-   Object method2248() {
-      if (class247.field2224 == this.field3557) {
-         return 0;
-      } else if (class247.field2225 == this.field3557) {
-         return -1L;
-      } else {
-         return class247.field2219 == this.field3557 ? "" : null;
-      }
-   }
+			return var10.toString();
+		}
+	}
+
+	@ObfInfo(name = "ae", desc = "(Ljava/lang/CharSequence;I)Z")
+	public static boolean method2378(CharSequence var0) {
+		return method2379(var0, 10, true);
+	}
+
+	@ObfInfo(name = "ao", desc = "(Ljava/lang/CharSequence;IZI)Z")
+	static boolean method2379(CharSequence var0, int var1, boolean var2) {
+		if (var1 >= 2 && var1 <= 36) {
+			boolean var4 = false;
+			boolean var5 = false;
+			int var6 = 0;
+			int var7 = var0.length();
+
+			for (int var8 = 0; var8 < var7; ++var8) {
+				char var9 = var0.charAt(var8);
+				if (var8 == 0) {
+					if (var9 == '-') {
+						var4 = true;
+						continue;
+					}
+
+					if (var9 == '+' && var2) {
+						continue;
+					}
+				}
+
+				int var11;
+				if (var9 >= '0' && var9 <= '9') {
+					var11 = var9 - '0';
+				} else if (var9 >= 'A' && var9 <= 'Z') {
+					var11 = var9 - '7';
+				} else {
+					if (var9 < 'a' || var9 > 'z') {
+						return false;
+					}
+
+					var11 = var9 - 'W';
+				}
+
+				if (var11 >= var1) {
+					return false;
+				}
+
+				if (var4) {
+					var11 = -var11;
+				}
+
+				int var10 = var11 + var1 * var6;
+				if (var6 != var10 / var1) {
+					return false;
+				}
+
+				var6 = var10;
+				var5 = true;
+			}
+
+			return var5;
+		} else {
+			throw new IllegalArgumentException("" + var1);
+		}
+	}
+
+	@ObfInfo(name = "at", desc = "(Ljava/lang/CharSequence;I)I")
+	public static int method2372(CharSequence var0) {
+		return method2367(var0, 10, true);
+	}
+
+	@ObfInfo(name = "ac", desc = "(Ljava/lang/CharSequence;IZB)I")
+	public static int method2367(CharSequence var0, int var1, boolean var2) {
+		if (var1 >= 2 && var1 <= 36) {
+			boolean var4 = false;
+			boolean var5 = false;
+			int var6 = 0;
+			int var7 = var0.length();
+
+			for (int var8 = 0; var8 < var7; ++var8) {
+				char var9 = var0.charAt(var8);
+				if (var8 == 0) {
+					if (var9 == '-') {
+						var4 = true;
+						continue;
+					}
+
+					if (var9 == '+' && var2) {
+						continue;
+					}
+				}
+
+				int var11;
+				if (var9 >= '0' && var9 <= '9') {
+					var11 = var9 - '0';
+				} else if (var9 >= 'A' && var9 <= 'Z') {
+					var11 = var9 - '7';
+				} else {
+					if (var9 < 'a' || var9 > 'z') {
+						throw new NumberFormatException();
+					}
+
+					var11 = var9 - 'W';
+				}
+
+				if (var11 >= var1) {
+					throw new NumberFormatException();
+				}
+
+				if (var4) {
+					var11 = -var11;
+				}
+
+				int var10 = var6 * var1 + var11;
+				if (var6 != var10 / var1) {
+					throw new NumberFormatException();
+				}
+
+				var6 = var10;
+				var5 = true;
+			}
+
+			if (!var5) {
+				throw new NumberFormatException();
+			} else {
+				return var6;
+			}
+		} else {
+			throw new IllegalArgumentException("" + var1);
+		}
+	}
+
+	@ObfInfo(name = "ai", desc = "(IZI)Ljava/lang/String;")
+	public static String method2368(int var0, boolean var1) {
+		return var1 && var0 >= 0 ? method2371(var0, 10, var1) : Integer.toString(var0);
+	}
+
+	@ObfInfo(name = "az", desc = "(IIZI)Ljava/lang/String;")
+	static String method2371(int var0, int var1, boolean var2) {
+		if (var1 >= 2 && var1 <= 36) {
+			if (var2 && var0 >= 0) {
+				int var4 = 2;
+
+				for (int var5 = var0 / var1; var5 != 0; ++var4) {
+					var5 /= var1;
+				}
+
+				char[] var6 = new char[var4];
+				var6[0] = '+';
+
+				for (int var7 = var4 - 1; var7 > 0; --var7) {
+					int var8 = var0;
+					var0 /= var1;
+					int var9 = var8 - var1 * var0;
+					if (var9 >= 10) {
+						var6[var7] = (char)(var9 + 87);
+					} else {
+						var6[var7] = (char)(var9 + 48);
+					}
+				}
+
+				return new String(var6);
+			} else {
+				return Integer.toString(var0, var1);
+			}
+		} else {
+			throw new IllegalArgumentException("" + var1);
+		}
+	}
+
+	@ObfInfo(name = "ap", desc = "(Ljava/lang/CharSequence;I)I")
+	public static int method2375(CharSequence var0) {
+		int var2 = var0.length();
+		int var3 = 0;
+
+		for (int var4 = 0; var4 < var2; ++var4) {
+			var3 = (var3 << 5) - var3 + class244.method1270(var0.charAt(var4));
+		}
+
+		return var3;
+	}
+
+	@ObfInfo(name = "aa", desc = "(Ljava/lang/CharSequence;B)I")
+	public static int method2374(CharSequence var0) {
+		int var2 = var0.length();
+		int var3 = 0;
+
+		for (int var4 = 0; var4 < var2; ++var4) {
+			var3 = (var3 << 5) - var3 + var0.charAt(var4);
+		}
+
+		return var3;
+	}
+
+	@ObfInfo(name = "af", desc = "(CI)Z")
+	public static boolean method2376(char var0) {
+		return var0 >= 'A' && var0 <= 'Z' || var0 >= 'a' && var0 <= 'z';
+	}
+
+	@ObfInfo(name = "aq", desc = "(CS)Z")
+	public static boolean method2382(char var0) {
+		return var0 >= '0' && var0 <= '9' || var0 >= 'A' && var0 <= 'Z' || var0 >= 'a' && var0 <= 'z';
+	}
+
+	@ObfInfo(name = "al", desc = "(Ljava/lang/String;I)Ljava/lang/String;")
+	public static String method2373(String var0) {
+		StringBuilder var2 = new StringBuilder(var0.length());
+		int var3 = 0;
+		int var4 = -1;
+
+		for (int var5 = 0; var5 < var0.length(); ++var5) {
+			char var6 = var0.charAt(var5);
+			if (var6 == '<') {
+				var2.append(var0.substring(var3, var5));
+				var4 = var5;
+			} else if (var6 == '>' && var4 != -1) {
+				String var7 = var0.substring(var4 + 1, var5);
+				var4 = -1;
+				if (var7.equals("lt")) {
+					var2.append("<");
+				} else if (var7.equals("gt")) {
+					var2.append(">");
+				} else if (var7.equals("br")) {
+					var2.append("\n");
+				}
+
+				var3 = var5 + 1;
+			}
+		}
+
+		if (var3 < var0.length()) {
+			var2.append(var0.substring(var3, var0.length()));
+		}
+
+		return var2.toString();
+	}
+
+	@ObfInfo(name = "an", desc = "(Ljava/lang/String;I)Ljava/lang/String;")
+	public static String method2369(String var0) {
+		int var2 = var0.length();
+		char[] var3 = new char[var2];
+		byte var4 = 2;
+
+		for (int var5 = 0; var5 < var2; ++var5) {
+			char var6 = var0.charAt(var5);
+			if (var4 == 0) {
+				var6 = Character.toLowerCase(var6);
+			} else if (var4 == 2 || Character.isUpperCase(var6)) {
+				var6 = class244.method1266(var6);
+			}
+
+			if (Character.isLetter(var6)) {
+				var4 = 0;
+			} else if (var6 != '.' && var6 != '?' && var6 != '!') {
+				if (Character.isSpaceChar(var6)) {
+					if (var4 != 2) {
+						var4 = 1;
+					}
+				} else {
+					var4 = 1;
+				}
+			} else {
+				var4 = 2;
+			}
+
+			var3[var5] = var6;
+		}
+
+		return new String(var3);
+	}
+
+	@ObfInfo(name = "ar", desc = "(CII)Ljava/lang/String;")
+	public static String method2380(char var0, int var1) {
+		char[] var3 = new char[var1];
+
+		for (int var4 = 0; var4 < var1; ++var4) {
+			var3[var4] = var0;
+		}
+
+		return new String(var3);
+	}
+
+	@ObfInfo(name = "ab", desc = "(CB)Z")
+	public static boolean method2370(char var0) {
+		if (var0 >= ' ' && var0 <= '~') {
+			return true;
+		} else if (var0 >= 160 && var0 <= 255) {
+			return true;
+		} else {
+			return var0 == 8364 || var0 == 338 || var0 == 8212 || var0 == 339 || var0 == 376;
+		}
+	}
+
+	@ObfInfo(name = "ag", desc = "(II)I")
+	public static int method2377(int var0) {
+		if (var0 > 0) {
+			return 1;
+		} else {
+			return var0 < 0 ? -1 : 0;
+		}
+	}
 }

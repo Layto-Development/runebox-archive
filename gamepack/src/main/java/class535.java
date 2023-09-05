@@ -1,18 +1,44 @@
-public class class535 extends class358 {
-   static class299 field4254;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public class535(class358 var1) {
-      super(var1);
-      super.field2810 = "SwapSongTask";
-   }
+@ObfInfo(name = "dc")
+public class class535 implements class425 {
+	@ObfInfo(name = "bl", desc = "Luq;")
+	public static class482 field4266;
+	@ObfInfo(name = "fr", desc = "Lnk;")
+	static class505 field4261;
+	@ObfInfo(name = "ae", desc = "Ldc;")
+	static final class535 field4262;
+	@ObfInfo(name = "at", desc = "Ldc;")
+	static final class535 field4263;
+	@ObfInfo(name = "ac", desc = "Ldc;")
+	static final class535 field4264;
+	@ObfInfo(name = "ao", desc = "Ldc;")
+	static final class535 field4265;
+	@ObfInfo(name = "au", desc = "Ldc;")
+	static final class535 field4267;
+	@ObfInfo(name = "ai", desc = "I", intMultiplier = 1356865323)
+	final int field4268;
 
-   public boolean method1831() {
-      if (class228.field2105.size() > 1 && class228.field2105.get(0) != null && ((class131)class228.field2105.get(0)).field1551.method2203() && class228.field2105.get(1) != null && ((class131)class228.field2105.get(1)).field1551.method2203()) {
-         class131 var2 = (class131)class228.field2105.get(0);
-         class228.field2105.set(0, class228.field2105.get(1));
-         class228.field2105.set(1, var2);
-      }
+	static {
+		field4267 = new class535(0);
+		field4262 = new class535(1);
+		field4265 = new class535(2);
+		field4263 = new class535(3);
+		field4264 = new class535(4);
+	}
 
-      return true;
-   }
+	@ObfInfo(name = "<init>", desc = "(I)V")
+	class535(int var1) {
+		this.field4268 = var1;
+	}
+
+	@ObfInfo(name = "ae", desc = "(B)I")
+	public int method2222() {
+		return this.field4268;
+	}
+
+	@ObfInfo(name = "au", desc = "(I)[Ldc;")
+	static class535[] method2585() {
+		return new class535[]{field4265, field4267, field4263, field4262, field4264};
+	}
 }

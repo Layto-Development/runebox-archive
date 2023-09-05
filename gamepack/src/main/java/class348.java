@@ -1,76 +1,82 @@
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.applet.Applet;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringReader;
+import java.io.StringWriter;
 
-public class class348 {
-   static int field2754;
-   boolean field2762 = true;
-   class164 field2759 = new class164(40000);
-   class168 field2768;
-   class184 field2757 = new class184(5000);
-   class375 field2755 = null;
-   class375 field2760;
-   class375 field2766;
-   class375 field2767;
-   class45 field2763 = new class45();
-   int field2756 = 0;
-   int field2761 = 0;
-   int field2764 = 0;
-   int field2765 = 0;
-   public class152 field2758;
+@ObfInfo(name = "uy")
+public class class348 extends RuntimeException {
+	@ObfInfo(name = "at", desc = "I", intMultiplier = -1869469455)
+	public static int field2757;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = -522148493)
+	public static int field2758;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = -671342643)
+	public static int field2761;
+	@ObfInfo(name = "au", desc = "Ljava/applet/Applet;")
+	public static Applet field2755;
+	@ObfInfo(name = "ae", desc = "Ljava/lang/String;")
+	public static String field2754;
+	@ObfInfo(name = "jy", desc = "[[I")
+	static int[][] field2759;
+	@ObfInfo(name = "ai", desc = "Ljava/lang/String;")
+	String field2756;
+	@ObfInfo(name = "az", desc = "Ljava/lang/Throwable;")
+	Throwable field2760;
 
-   class348() {
-   }
+	@ObfInfo(name = "<init>", desc = "(Ljava/lang/Throwable;Ljava/lang/String;)V")
+	class348(Throwable var1, String var2) {
+		this.field2756 = var2;
+		this.field2760 = var1;
+	}
 
-   final void method1802() {
-      this.field2763.method576();
-      this.field2756 = 0;
-   }
+	@ObfInfo(name = "ao", desc = "(Ljava/lang/Throwable;I)Ljava/lang/String;")
+	static String method1922(Throwable var0) throws IOException {
+		String var2;
+		if (var0 instanceof class348) {
+			class348 var3 = (class348)var0;
+			var2 = var3.field2756 + " | ";
+			var0 = var3.field2760;
+		} else {
+			var2 = "";
+		}
 
-   final void method1796() throws IOException {
-      if (this.field2768 != null && this.field2756 > 0) {
-         this.field2757.field1818 = 0;
+		StringWriter var13 = new StringWriter();
+		PrintWriter var4 = new PrintWriter(var13);
+		var0.printStackTrace(var4);
+		var4.close();
+		String var5 = var13.toString();
+		BufferedReader var6 = new BufferedReader(new StringReader(var5));
+		String var7 = var6.readLine();
 
-         while(true) {
-            class335 var2 = (class335)this.field2763.method583();
-            if (null == var2 || var2.field2683 > this.field2757.field1816.length - this.field2757.field1818) {
-               this.field2768.method1015(this.field2757.field1816, 0, this.field2757.field1818);
-               this.field2764 = 0;
-               break;
-            }
+		while (true) {
+			while (true) {
+				String var8 = var6.readLine();
+				if (var8 == null) {
+					var2 = var2 + "| " + var7;
+					return var2;
+				}
 
-            this.field2757.method1119(var2.buffer.field1816, 0, var2.field2683);
-            this.field2756 -= var2.field2683;
-            var2.method605();
-            var2.buffer.method1113();
-            var2.method1771();
-         }
-      }
+				int var9 = var8.indexOf(40);
+				int var10 = var8.indexOf(41, var9 + 1);
+				if (var9 >= 0 && var10 >= 0) {
+					String var11 = var8.substring(var9 + 1, var10);
+					int var12 = var11.indexOf(".java:");
+					if (var12 >= 0) {
+						var11 = var11.substring(0, var12) + var11.substring(var12 + 5);
+						var2 = var2 + var11 + ' ';
+						continue;
+					}
 
-   }
+					var8 = var8.substring(0, var9);
+				}
 
-   public final void method1797(class335 var1) {
-      this.field2763.method577(var1);
-      var1.field2683 = var1.buffer.field1818;
-      var1.buffer.field1818 = 0;
-      this.field2756 += var1.field2683;
-   }
-
-   void method1798(class168 var1) {
-      this.field2768 = var1;
-   }
-
-   void method1801() {
-      if (this.field2768 != null) {
-         this.field2768.method1017();
-         this.field2768 = null;
-      }
-
-   }
-
-   void method1799() {
-      this.field2768 = null;
-   }
-
-   class168 method1800() {
-      return this.field2768;
-   }
+				var8 = var8.trim();
+				var8 = var8.substring(var8.lastIndexOf(32) + 1);
+				var8 = var8.substring(var8.lastIndexOf(9) + 1);
+				var2 = var2 + var8 + ' ';
+			}
+		}
+	}
 }

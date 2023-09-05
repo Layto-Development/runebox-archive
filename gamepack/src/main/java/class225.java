@@ -1,45 +1,49 @@
-public class class225 {
-   byte[] field2084 = null;
-   int field2083 = 0;
-   int field2085 = 0;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Iterator;
 
-   class225() {
-   }
+@ObfInfo(name = "ol")
+public class class225 implements Iterator {
+	@ObfInfo(name = "au", desc = "Lou;")
+	class133 field1943;
+	@ObfInfo(name = "ae", desc = "Lsq;")
+	class180 field1944;
+	@ObfInfo(name = "ao", desc = "Lsq;")
+	class180 field1945;
 
-   int method1332(int var1) {
-      int var3 = 0;
+	@ObfInfo(name = "<init>", desc = "(Lou;)V")
+	class225(class133 var1) {
+		this.field1945 = null;
+		this.field1943 = var1;
+		this.field1944 = this.field1943.field1369.field1632;
+		this.field1945 = null;
+	}
 
-      int var4;
-      int var5;
-      for(var4 = 0; var1 >= 8 - this.field2085; var1 -= var5) {
-         var5 = 8 - this.field2085;
-         int var6 = (1 << var5) - 1;
-         var3 += (this.field2084[this.field2083] >> this.field2085 & var6) << var4;
-         this.field2085 = 0;
-         ++this.field2083;
-         var4 += var5;
-      }
+	@ObfInfo(name = "next", desc = "()Ljava/lang/Object;")
+	public Object next() {
+		class180 var1 = this.field1944;
+		if (var1 == this.field1943.field1369) {
+			var1 = null;
+			this.field1944 = null;
+		} else {
+			this.field1944 = var1.field1632;
+		}
 
-      if (var1 > 0) {
-         var5 = (1 << var1) - 1;
-         var3 += (this.field2084[this.field2083] >> this.field2085 & var5) << var4;
-         this.field2085 += var1;
-      }
+		this.field1945 = var1;
+		return var1;
+	}
 
-      return var3;
-   }
+	@ObfInfo(name = "hasNext", desc = "()Z")
+	public boolean hasNext() {
+		return this.field1944 != this.field1943.field1369;
+	}
 
-   int method1333() {
-      int var2 = this.field2084[this.field2083] >> this.field2085 & 1;
-      ++this.field2085;
-      this.field2083 += this.field2085 >> 3;
-      this.field2085 &= 7;
-      return var2;
-   }
-
-   void method1334(byte[] var1, int var2) {
-      this.field2084 = var1;
-      this.field2083 = var2;
-      this.field2085 = 0;
-   }
+	@ObfInfo(name = "remove", desc = "()V")
+	public void remove() {
+		if (this.field1945 == null) {
+			throw new IllegalStateException();
+		} else {
+			this.field1945.method1024();
+			this.field1945 = null;
+		}
+	}
 }

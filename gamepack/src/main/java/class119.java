@@ -1,141 +1,123 @@
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+
+@ObfInfo(name = "bz")
 public class class119 {
-   static class427 field1486;
-   public int field1482;
-   public int field1483;
-   public int field1484;
-   public int field1485;
+	@ObfInfo(name = "ao", desc = "I")
+	int field1124;
+	@ObfInfo(name = "ae", desc = "I")
+	int field1125;
+	@ObfInfo(name = "at", desc = "I")
+	int field1126;
+	@ObfInfo(name = "au", desc = "I")
+	int field1127;
+	@ObfInfo(name = "ac", desc = "I")
+	int field1128;
+	@ObfInfo(name = "ai", desc = "I")
+	int field1129;
+	@ObfInfo(name = "az", desc = "[I")
+	int[] field1130;
 
-   public class119(int var1, int var2) {
-      this(0, 0, var1, var2);
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class119() {
+		class226 var1 = class130.field1176;
+		this.field1127 = var1.method1216(16);
+		this.field1125 = var1.method1216(24);
+		this.field1124 = var1.method1216(24);
+		this.field1126 = var1.method1216(24) + 1;
+		this.field1128 = var1.method1216(6) + 1;
+		this.field1129 = var1.method1216(8);
+		int[] var2 = new int[this.field1128];
 
-   public class119(int var1, int var2, int var3, int var4) {
-      this.method825(var1, var2);
-      this.method826(var3, var4);
-   }
+		int var3;
+		for (var3 = 0; var3 < this.field1128; ++var3) {
+			int var4 = 0;
+			int var5 = var1.method1216(3);
+			boolean var6 = var1.method1217() != 0;
+			if (var6) {
+				var4 = var1.method1216(5);
+			}
 
-   public void method825(int var1, int var2) {
-      this.field1485 = var1;
-      this.field1483 = var2;
-   }
+			var2[var3] = var4 << 3 | var5;
+		}
 
-   public void method826(int var1, int var2) {
-      this.field1484 = var1;
-      this.field1482 = var2;
-   }
+		this.field1130 = new int[this.field1128 * 8];
 
-   public boolean method827(int var1, int var2, byte var3) {
-      boolean var10000;
-      if (var1 >= this.field1485 && var1 < this.field1484 + this.field1485) {
-         if (var3 >= -1) {
-            throw new IllegalStateException();
-         }
+		for (var3 = 0; var3 < this.field1128 * 8; ++var3) {
+			this.field1130[var3] = (var2[var3 >> 3] & 1 << (var3 & 7)) != 0 ? var1.method1216(8) : -1;
+		}
 
-         if (var2 >= this.field1483) {
-            if (var3 >= -1) {
-               throw new IllegalStateException();
-            }
+	}
 
-            if (var2 < this.field1483 + this.field1482) {
-               var10000 = true;
-               return var10000;
-            }
-         }
-      }
+	@ObfInfo(name = "au", desc = "([FIZLce;)V")
+	void method684(float[] var1, int var2, boolean var3, class226 var4) {
+		int var5;
+		for (var5 = 0; var5 < var2; ++var5) {
+			var1[var5] = 0.0F;
+		}
 
-      var10000 = false;
-      return var10000;
-   }
+		if (!var3) {
+			var5 = class130.field1179[this.field1129].field556;
+			int var6 = this.field1124 - this.field1125;
+			int var7 = var6 / this.field1126;
+			int[] var8 = new int[var7];
 
-   public String toString() {
-      return null;
-   }
+			for (int var9 = 0; var9 < 8; ++var9) {
+				int var10 = 0;
 
-   public void method828(class119 var1, class119 var2) {
-      this.method829(var1, var2);
-      this.method830(var1, var2);
-   }
+				while (var10 < var7) {
+					int var11;
+					int var12;
+					if (var9 == 0) {
+						var11 = class130.field1179[this.field1129].method441(var4);
 
-   void method829(class119 var1, class119 var2) {
-      var2.field1485 = this.field1485;
-      var2.field1484 = this.field1484;
-      if (this.field1485 < var1.field1485) {
-         var2.field1484 = (var2.field1484 * 2133643001 - (var1.field1485 * 2133643001 - this.field1485 * 2133643001)) * -2074045623;
-         var2.field1485 = var1.field1485;
-      }
+						for (var12 = var5 - 1; var12 >= 0; --var12) {
+							if (var10 + var12 < var7) {
+								var8[var10 + var12] = var11 % this.field1128;
+							}
 
-      if (var2.method831() > var1.method831()) {
-         var2.field1484 -= var2.method831() - var1.method831();
-      }
+							var11 /= this.field1128;
+						}
+					}
 
-      if (var2.field1484 < 0) {
-         var2.field1484 = 0;
-      }
+					for (var11 = 0; var11 < var5; ++var11) {
+						var12 = var8[var10];
+						int var13 = this.field1130[var12 * 8 + var9];
+						if (var13 >= 0) {
+							int var14 = this.field1125 + var10 * this.field1126;
+							class42 var15 = class130.field1179[var13];
+							int var16;
+							if (this.field1127 == 0) {
+								var16 = this.field1126 / var15.field556;
 
-   }
+								for (int var20 = 0; var20 < var16; ++var20) {
+									float[] var21 = var15.method440(var4);
 
-   void method830(class119 var1, class119 var2) {
-      var2.field1483 = this.field1483;
-      var2.field1482 = this.field1482;
-      if (this.field1483 < var1.field1483) {
-         var2.field1482 = (var2.field1482 * -584535177 - (var1.field1483 * -584535177 - this.field1483 * -584535177)) * 377886279;
-         var2.field1483 = var1.field1483;
-      }
+									for (int var19 = 0; var19 < var15.field556; ++var19) {
+										var1[var14 + var20 + var19 * var16] += var21[var19];
+									}
+								}
+							} else {
+								var16 = 0;
 
-      if (var2.method833() > var1.method833()) {
-         var2.field1482 -= var2.method833() - var1.method833();
-      }
+								while (var16 < this.field1126) {
+									float[] var17 = var15.method440(var4);
 
-      if (var2.field1482 < 0) {
-         var2.field1482 = 0;
-      }
+									for (int var18 = 0; var18 < var15.field556; ++var18) {
+										var1[var14 + var16] += var17[var18];
+										++var16;
+									}
+								}
+							}
+						}
 
-   }
+						++var10;
+						if (var10 >= var7) {
+							break;
+						}
+					}
+				}
+			}
 
-   int method831() {
-      return this.field1484 + this.field1485;
-   }
-
-   int method833() {
-      return this.field1483 + this.field1482;
-   }
-
-   static final boolean method832(class480 var0) {
-      int var2 = var0.field3700;
-      if (var2 == 205) {
-         Client.field629 = 250;
-         return true;
-      } else {
-         int var3;
-         int var4;
-         if (var2 >= 300 && var2 <= 313) {
-            var3 = (var2 - 300) / 2;
-            var4 = var2 & 1;
-            Client.field862.method1387(var3, var4 == 1);
-         }
-
-         if (var2 >= 314 && var2 <= 323) {
-            var3 = (var2 - 314) / 2;
-            var4 = var2 & 1;
-            Client.field862.method1388(var3, var4 == 1);
-         }
-
-         if (var2 == 324) {
-            Client.field862.method1395(0);
-         }
-
-         if (var2 == 325) {
-            Client.field862.method1395(1);
-         }
-
-         if (var2 == 326) {
-            class335 var5 = class335.createPacket(ClientPacket.field992, Client.field641.field2758);
-            Client.field862.method1389(var5.buffer);
-            Client.field641.method1797(var5);
-            return true;
-         } else {
-            return false;
-         }
-      }
-   }
+		}
+	}
 }

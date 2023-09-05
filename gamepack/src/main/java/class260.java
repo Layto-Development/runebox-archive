@@ -1,9 +1,41 @@
-public class class260 {
-   public static final class260 field2282 = new class260(0);
-   static final class260 field2284 = new class260(1);
-   final int field2283;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.security.SecureRandom;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
-   class260(int var1) {
-      this.field2283 = var1;
-   }
+@ObfInfo(name = "cc")
+public class class260 {
+	@ObfInfo(name = "au", desc = "Ljava/util/concurrent/ExecutorService;")
+	ExecutorService field2116;
+	@ObfInfo(name = "ae", desc = "Ljava/util/concurrent/Future;")
+	Future field2117;
+
+	@ObfInfo(name = "<init>", desc = "()V")
+	class260() {
+		this.field2116 = Executors.newSingleThreadExecutor();
+		this.field2117 = this.field2116.submit(new class256());
+	}
+
+	@ObfInfo(name = "au", desc = "(I)V")
+	void method1365() {
+		this.field2116.shutdown();
+		this.field2116 = null;
+	}
+
+	@ObfInfo(name = "ae", desc = "(I)Z")
+	boolean method1363() {
+		return this.field2117.isDone();
+	}
+
+	@ObfInfo(name = "ao", desc = "(B)Ljava/security/SecureRandom;")
+	SecureRandom method1364() {
+		try {
+			return (SecureRandom)this.field2117.get();
+		} catch (Exception var5) {
+			SecureRandom var4 = new SecureRandom();
+			var4.nextInt();
+			return var4;
+		}
+	}
 }

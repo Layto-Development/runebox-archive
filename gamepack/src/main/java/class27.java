@@ -1,498 +1,207 @@
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+
+@ObfInfo(name = "fh")
 public class class27 {
-   public static String field234;
-   public static String field235 = "";
-   public static String field236;
-   public static String field237 = "This world is full.";
-   public static String field238 = "Ok";
-   public static String field239;
-   public static String field240 = "Continue";
-   public static String field241;
-   public static String field242;
-   public static String field243 = "Trust this computer";
-   public static String field244;
-   public static String field245 = "Loading - please wait.";
-   public static String field246 = "Connection lost";
-   public static String field247 = "Please wait - attempting to reestablish";
-   public static String field248 = "Starting game engine...";
-   public static String field249 = "Prepared visibility map";
-   public static String field250;
-   public static String field251 = "Checking for updates - ";
-   public static String field252 = "Loaded update list";
-   public static String field253 = "Prepared sound engine";
-   public static String field254;
-   public static String field255 = "Loaded fonts";
-   public static String field256 = "Loading title screen - ";
-   public static String field257 = "Loaded title screen";
-   public static String field258 = "Loading config - ";
-   public static String field259;
-   public static String field260 = "Loading sprites - ";
-   public static String field261 = "Loaded sprites";
-   public static String field262 = "Loading textures - ";
-   public static String field263;
-   public static String field264 = "";
-   public static String field265;
-   public static String field266 = "Loaded wordpack";
-   public static String field267 = "Loading interfaces - ";
-   public static String field268 = "Loaded interfaces";
-   public static String field269 = "Loading world map - ";
-   public static String field270 = "Please enter your username/email address.";
-   public static String field271;
-   public static String field272 = "Discard";
-   public static String field273 = "Recover Account";
-   public static String field274 = "Connecting to update server";
-   public static String field275 = "Please enter a 6-digit PIN.";
-   public static String field276;
-   public static String field277 = "You have only just left another world.";
-   public static String field278 = "Your profile will be transferred in:";
-   public static String field279 = "in serious rule breaking.";
-   public static String field280 = "Connection timed out.";
-   public static String field281 = "Please try using a different world.";
-   public static String field282;
-   public static String field283 = "";
-   public static String field284 = "Please try using a different world.";
-   public static String field285 = "";
-   public static String field286 = "No response from server.";
-   public static String field287 = "Loading wordpack - ";
-   public static String field288;
-   public static String field289;
-   public static String field290;
-   public static String field291 = "";
-   public static String field292 = "Either your account is still logged in, or the last";
-   public static String field293 = "world you were using has become unavailable.";
-   public static String field294 = "Please try again later.";
-   public static String field295 = "RuneScape has been updated!";
-   public static String field296 = "Please reload this page.";
-   public static String field297;
-   public static String field298;
-   public static String field299 = "Please use a different world.";
-   public static String field300;
-   public static String field301 = "Unable to connect.";
-   public static String field302 = "Login server offline.";
-   public static String field303;
-   public static String field304 = "Login limit exceeded.";
-   public static String field305 = "Too many connections from your address.";
-   public static String field306;
-   public static String field307;
-   public static String field308 = "Bad session id.";
-   public static String field309 = "";
-   public static String field310 = "We suspect someone knows your password.";
-   public static String field311 = "Press 'change your password' on front page.";
-   public static String field312 = "Unable to connect.";
-   public static String field313 = "You need a members account to login to this world.";
-   public static String field314 = "Please subscribe, or use a different world.";
-   public static String field315 = "";
-   public static String field316 = "Could not complete login.";
-   public static String field317;
-   public static String field318 = "";
-   public static String field319 = "Please try using a different world.";
-   public static String field320 = "Please wait 1 minute and try again.";
-   public static String field321 = "";
-   public static String field322 = "Too many login attempts.";
-   public static String field323 = "You can use the Jagex Launcher to continue playing.";
-   public static String field324 = "The unpaid balance on your account needs";
-   public static String field325;
-   public static String field326 = "as it was used to break our rules.";
-   public static String field327 = "to a non-members area.";
-   public static String field328 = "Your account has been locked due to";
-   public static String field329 = "suspicious activity.";
-   public static String field330 = "Please recover your account.";
-   public static String field331 = "";
-   public static String field332 = "to be resolved before you can play.";
-   public static String field333 = "Please use a different world.";
-   public static String field334;
-   public static String field335 = "Please try using a different world.";
-   public static String field336;
-   public static String field337 = "Malformed login packet.";
-   public static String field338;
-   public static String field339 = "Your account has been involved";
-   public static String field340 = "No reply from loginserver.";
-   public static String field341 = "Please wait 1 minute and try again.";
-   public static String field342;
-   public static String field343 = "Error loading your profile.";
-   public static String field344 = "Please contact customer support.";
-   public static String field345;
-   public static String field346 = "Unexpected loginserver response.";
-   public static String field347 = "Please try using a different world.";
-   public static String field348 = "";
-   public static String field349 = "This computers address has been blocked";
-   public static String field350 = "View Appeal Options";
-   public static String field351 = "";
-   public static String field352;
-   public static String field353 = "Service unavailable.";
-   public static String field354 = "";
-   public static String field355 = "";
-   public static String field356;
-   public static String field357 = "";
-   public static String field358 = "";
-   public static String field359 = "Please enter your password.";
-   public static String field360 = "for 30 days: ";
-   public static String field361 = "";
-   public static String field362 = "in order to play the game.  Please set it";
-   public static String field363 = "via the website, or the main game.";
-   public static String field364 = "To access this free world, log into a";
-   public static String field365 = "Sorry invited players only.";
-   public static String field366;
-   public static String field367;
-   public static String field368 = "Loaded input handler";
-   public static String field369 = "Loaded world map";
-   public static String field370;
-   public static String field371;
-   public static String field372;
-   public static String field373;
-   public static String field374;
-   public static String field375 = "";
-   public static String field376;
-   public static String field377;
-   public static String field378;
-   public static String field379;
-   public static String field380;
-   public static String field381;
-   public static String field382;
-   public static String field383;
-   public static String field384;
-   public static String field385;
-   public static String field386;
-   public static String field387;
-   public static String field388;
-   public static String field390;
-   public static String field391 = "";
-   public static String field392;
-   public static String field393;
-   public static String field394 = "Please try using a different world.";
-   public static String field395;
-   public static String field396;
-   public static String field397 = "Take";
-   public static String field398;
-   public static String field399;
-   public static String field400;
-   public static String field401;
-   public static String field402;
-   public static String field403;
-   public static String field404 = "Please try again.";
-   public static String field405 = "";
-   public static String field406 = "Drop";
-   public static String field407;
-   public static String field408;
-   public static String field409;
-   public static String field410;
-   public static String field411;
-   public static String field412;
-   public static String field413;
-   public static String field414;
-   public static String field415;
-   public static String field416;
-   public static String field417;
-   public static String field418;
-   public static String field419;
-   public static String field420;
-   public static String field421;
-   public static String field422 = "This world is running a closed Beta.";
-   public static String field423 = "";
-   public static String field424;
-   public static String field425;
-   public static String field426 = "";
-   public static String field427;
-   public static String field428;
-   public static String field429;
-   public static String field430;
-   public static String field431;
-   public static String field432;
-   public static String field433;
-   public static String field434;
-   public static String field435;
-   public static String field436 = "Invalid loginserver requested.";
-   public static String field437;
-   public static String field438;
-   public static String field439;
-   public static String field440;
-   public static String field441;
-   public static String field442;
-   public static String field443 = "Error connecting to server.";
-   public static String field444;
-   public static String field445;
-   public static String field446 = "Loading fonts - ";
-   public static String field447;
-   public static String field448;
-   public static String field449;
-   public static String field450 = "";
-   public static String field451 = "Loaded config";
-   public static String field452 = "Press the button below to download it now.";
-   public static String field453 = "";
-   public static String field454;
-   public static String field455;
-   public static String field456;
-   public static String field457 = " seconds.";
-   public static String field458;
-   public static String field459;
-   public static String field460;
-   public static String field461;
-   public static String field462;
-   public static String field463 = " (Members)";
-   public static String field464;
-   public static String field465;
-   public static String field466;
-   public static String field467;
-   public static String field468;
-   public static String field469;
-   public static String field470;
-   public static String field471;
-   public static String field472;
-   public static String field473;
-   public static String field474;
-   public static String field475;
-   public static String field476 = "";
-   public static String field477;
-   public static String field478;
-   public static String field479;
-   public static String field480 = "members world and move your character";
-   public static String field481;
-   public static String field482;
-   public static String field483;
-   public static String field484;
-   public static String field485;
-   public static String field486 = "Hidden";
-   public static String field487;
-   public static String field488;
-   public static String field489;
-   public static String field490;
-   public static String field491;
-   public static String field492;
-   public static String field493;
-   public static String field494 = "Your account must have a displayname set";
-   public static String field495;
-   public static String field496;
-   public static String field497;
-   public static String field498;
-   public static String field499;
-   public static String field500;
-   public static String field501;
-   public static String field502;
-   public static String field503 = "";
-   public static String field504;
-   public static String field505;
-   public static String field506;
-   public static String field507;
-   public static String field508;
-   public static String field509 = "";
-   public static String field510;
-   public static String field511;
-   public static String field512;
-   public static String field513 = "The server is being updated.";
-   public static String field514;
-   public static String field515;
-   public static String field516 = "Select";
-   public static String field517;
-   public static String field518;
-   public static String field519;
-   public static String field520;
-   public static String field521;
-   public static String field522;
-   public static String field523;
-   public static String field524;
-   public static String field525;
-   public static String field526;
-   public static String field527;
-   public static String field528;
-   public static String field529;
-   public static String field530;
-   public static String field531;
-   public static String field532;
-   public static String field533;
-   public static String field534;
-   public static String field535;
-   public static String field536;
-   public static String field537;
-   public static String field538;
-   public static String field539;
-   public static String field540 = "Loaded textures";
-   public static String field541;
-   public static String field542;
-   public static String field543;
-   public static String field544 = "null";
-   static String field389 = "Please visit the support page for assistance.";
+	@ObfInfo(name = "jb", desc = "Liv;")
+	static class194 field448;
+	@ObfInfo(name = "ae", desc = "Z")
+	boolean field428;
+	@ObfInfo(name = "ai", desc = "Z")
+	boolean field430;
+	@ObfInfo(name = "au", desc = "Z")
+	boolean field442;
+	@ObfInfo(name = "ag", desc = "Z")
+	boolean field443;
+	@ObfInfo(name = "ac", desc = "[Leg;")
+	class157[] field431;
+	@ObfInfo(name = "ao", desc = "Lew;")
+	class532 field429;
+	@ObfInfo(name = "at", desc = "Lew;")
+	class532 field449;
+	@ObfInfo(name = "ab", desc = "F")
+	float field427;
+	@ObfInfo(name = "aq", desc = "F")
+	float field432;
+	@ObfInfo(name = "az", desc = "F")
+	float field433;
+	@ObfInfo(name = "ap", desc = "F")
+	float field434;
+	@ObfInfo(name = "aa", desc = "F")
+	float field435;
+	@ObfInfo(name = "af", desc = "F")
+	float field436;
+	@ObfInfo(name = "ad", desc = "F")
+	float field437;
+	@ObfInfo(name = "aj", desc = "F")
+	float field438;
+	@ObfInfo(name = "an", desc = "F")
+	float field439;
+	@ObfInfo(name = "ar", desc = "F")
+	float field440;
+	@ObfInfo(name = "ay", desc = "F")
+	float field447;
+	@ObfInfo(name = "al", desc = "F")
+	float field450;
+	@ObfInfo(name = "ax", desc = "[F")
+	float[] field444;
+	@ObfInfo(name = "am", desc = "I", intMultiplier = -284538355)
+	int field441;
+	@ObfInfo(name = "ah", desc = "I", intMultiplier = 616833209)
+	int field445;
+	@ObfInfo(name = "as", desc = "I", intMultiplier = 1839145601)
+	int field446;
 
-   static {
-      field366 = field389;
-      field367 = "Your account is currently inaccessible.";
-      field396 = "Please try again in a few minutes.";
-      field511 = "";
-      field370 = "You need to vote to play!";
-      field371 = "Visit runescape.com and vote,";
-      field372 = "and then come back here!";
-      field373 = "Sorry, but your account is not eligible to play.";
-      field415 = "For more information, please take a look at";
-      field384 = "our privacy policy.";
-      field488 = "Privacy Policy";
-      field529 = "Enter the 6-digit code generated by your";
-      field242 = "authenticator app.";
-      field379 = "";
-      field380 = "The code you entered was incorrect.";
-      field381 = "Please try again.";
-      field382 = "";
-      field402 = "Login attempt timed out.";
-      field376 = "Please try again.";
-      field385 = "";
-      field386 = "You were signed out.";
-      field387 = "Please sign in again.";
-      field388 = "";
-      field440 = "Failed to login.";
-      field390 = "Please try again.";
-      field409 = "";
-      field392 = "Unexpected server response";
-      field254 = "Please try using a different world.";
-      field300 = "";
-      field395 = " has logged in.";
-      field289 = " has logged out.";
-      field378 = "Unable to find ";
-      field398 = "Use";
-      field399 = "Examine";
-      field400 = "Attack";
-      field401 = "Choose Option";
-      field265 = " more options";
-      field403 = "Walk here";
-      field244 = "level-";
-      field408 = "skill-";
-      field506 = "Please wait...";
-      field479 = "Close";
-      field282 = " ";
-      field303 = "M";
-      field410 = "M";
-      field411 = "K";
-      field412 = "K";
-      field413 = "World";
-      field414 = "Your friend list is full. Max of 200 for free users, and 400 for members";
-      field236 = " is already on your friend list";
-      field416 = "Your ignore list is full. Max of 100 for free users, and 400 for members";
-      field417 = " is already on your ignore list";
-      field418 = "You can't add yourself to your own friend list";
-      field419 = "You can't add yourself to your own ignore list";
-      field420 = "Please remove ";
-      field421 = " from your ignore list first";
-      field234 = "Please remove ";
-      field393 = " from your friend list first";
-      field334 = "yellow:";
-      field425 = "red:";
-      field336 = "green:";
-      field427 = "cyan:";
-      field306 = "purple:";
-      field429 = "white:";
-      field430 = "flash1:";
-      field241 = "flash2:";
-      field276 = "flash3:";
-      field298 = "glow1:";
-      field342 = "glow2:";
-      field435 = "glow3:";
-      field352 = "rainbow:";
-      field437 = "pattern";
-      field438 = "wave:";
-      field439 = "wave2:";
-      field288 = "shake:";
-      field441 = "scroll:";
-      field325 = "slide:";
-      field424 = "RuneScape is loading - please wait...";
-      field444 = "";
-      field445 = "Enter your username/email & password.";
-      field407 = "";
-      field263 = "Warning!";
-      field448 = "This is a <col=ff0000>PvP<col=ffffff> world.";
-      field449 = "Players can attack each other";
-      field250 = "almost everywhere.";
-      field539 = "This is a <col=ffff00>High Risk<col=ffffff> world.";
-      field473 = "The Protect Item prayer will";
-      field533 = "not work on this world.";
-      field454 = "This is a <col=ffff00>High Risk <col=ff0000>PvP<col=ffffff> world.";
-      field455 = "Players can attack each other almost everywhere";
-      field456 = "and the Protect Item prayer won't work.";
-      field467 = "This is a <col=00ffff>Beta<col=ffffff> world.";
-      field458 = "Your normal account will not be affected.";
-      field459 = "";
-      field460 = "Authenticator";
-      field461 = "";
-      field462 = "Connecting to server...";
-      field447 = "";
-      field464 = "The game servers are currently being updated.";
-      field465 = "Please wait a few minutes and try again.";
-      field466 = "";
-      field481 = "";
-      field468 = "You were disconnected from the server.";
-      field469 = "";
-      field470 = "Login: ";
-      field471 = "Password: ";
-      field472 = "PIN: ";
-      field515 = "Welcome to RuneScape";
-      field474 = "New User";
-      field475 = "Existing User";
-      field431 = "Login";
-      field477 = "Cancel";
-      field478 = "Remember username";
-      field432 = "Hide username";
-      field485 = "Incorrect username or password.";
-      field297 = "If you have upgraded to a Jagex Account, you";
-      field482 = "need to log in using the <u=ffd200><col=ffd200>Jagex Launcher</col></u> instead.";
-      field483 = "Try again";
-      field484 = "Forgotten password?";
-      field434 = "Forgotten your password?";
-      field356 = "Username/email: ";
-      field487 = "Recover";
-      field527 = "Back";
-      field442 = "Can't login? Click here.";
-      field490 = "Still having trouble logging in?";
-      field491 = "Having trouble logging in?";
-      field492 = "";
-      field493 = "Page has opened in the browser.";
-      field377 = "";
-      field495 = "Please enter your username.";
-      field496 = "If you created your account after November";
-      field497 = "2010, this will be the creation email address.";
-      field498 = field492;
-      field499 = field493;
-      field500 = field377;
-      field532 = "";
-      field502 = "Error connecting to server.";
-      field307 = "";
-      field504 = "The part of the website you are trying";
-      field505 = "to connect to is offline at the moment.";
-      field489 = "Please try again later.";
-      field507 = "Sorry, there was an error trying to";
-      field508 = "log you in to this part of the website.";
-      field501 = "Please try again later.";
-      field510 = "";
-      field271 = "Error connecting to server.";
-      field374 = "";
-      field239 = "You must enter a valid login to proceed. For accounts";
-      field514 = "created after 24th November 2010, please use your";
-      field338 = "email address. Otherwise please use your username.";
-      field512 = "Your date of birth isn't set.";
-      field517 = "Please verify your account status by";
-      field518 = "setting your date of birth.";
-      field519 = "Set Date of Birth";
-      field520 = "Your date of birth information is waiting";
-      field521 = "to be reviewed by our staff.";
-      field522 = "It will be processed shortly.";
-      field523 = "Before using this app, please read and accept our";
-      field524 = "<col=ffd200>terms of use</col>, <col=ffd200>privacy policy</col>, and <col=ffd200>end user licence</col>";
-      field525 = "<col=ffd200>agreement (EULA)</col>.";
-      field526 = "By accepting, you agree to these documents.";
-      field290 = "You must accept our terms of use, privacy policy,";
-      field528 = "and end user licence agreement to continue.";
-      field345 = "Accept";
-      field530 = "Decline";
-      field531 = "Select a world";
-      field259 = "Members only world";
-      field317 = "Free world";
-      field534 = "World";
-      field535 = "Players";
-      field536 = "Location";
-      field537 = "Type";
-      field538 = "OFF";
-      field433 = "FULL";
-      field383 = "Loading...";
-      field541 = "Click to switch";
-      field542 = "Download Launcher";
-      field543 = "https://oldschool.runescape.com/launcher";
-      field428 = "https://support.runescape.com/hc/en-gb/articles/360001552065";
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class27() {
+		this.field443 = true;
+		this.field441 = 0;
+	}
 
-   class27() throws Throwable {
-   }
+	@ObfInfo(name = "au", desc = "(Ltm;IB)I")
+	int method357(class280 var1, int var2, byte var3) {
+		int var4 = var1.method1541();
+		int var5 = var1.method1492();
+		class98[] var6 = new class98[]{class98.field971, class98.field969, class98.field970, class98.field974, class98.field972, class98.field973, class98.field968, class98.field975, class98.field976};
+		class98 var7 = (class98)class216.method1198(var6, var5);
+		if (null == var7) {
+			var7 = class98.field976;
+		}
+
+		this.field429 = class532.method2581(var1.method1492());
+		this.field449 = class532.method2581(var1.method1492());
+		boolean var10001;
+		if (var1.method1492() != 0) {
+			if (var3 >= -1) {
+				throw new IllegalStateException();
+			}
+
+			var10001 = true;
+		} else {
+			var10001 = false;
+		}
+
+		this.field442 = var10001;
+		this.field431 = new class157[var4];
+		class157 var9 = null;
+
+		for (int var10 = 0; var10 < var4; ++var10) {
+			if (var3 >= -1) {
+				throw new IllegalStateException();
+			}
+
+			class157 var8 = new class157();
+			var8.method910(var1, var2);
+			this.field431[var10] = var8;
+			if (null != var9) {
+				if (var3 >= -1) {
+					throw new IllegalStateException();
+				}
+
+				var9.field1494 = var8;
+			}
+
+			var9 = var8;
+		}
+
+		return var4;
+	}
+
+	@ObfInfo(name = "ae", desc = "(S)V")
+	void method358() {
+		this.field445 = this.field431[0].field1488;
+		this.field446 = this.field431[this.method362() - 1].field1488;
+		this.field444 = new float[this.method364() + 1];
+
+		for (int var2 = this.method360(); var2 <= this.method356(); ++var2) {
+			this.field444[var2 - this.method360()] = class306.method1707(this, (float)var2);
+		}
+
+		this.field431 = null;
+		this.field447 = class306.method1707(this, (float)(this.method360() - 1));
+		this.field438 = class306.method1707(this, (float)(this.method356() + 1));
+	}
+
+	@ObfInfo(name = "ao", desc = "(IB)F", opaqueValue = "11")
+	public float method359(int var1) {
+		if (var1 < this.method360()) {
+			return this.field447;
+		} else {
+			return var1 > this.method356() ? this.field438 : this.field444[var1 - this.method360()];
+		}
+	}
+
+	@ObfInfo(name = "at", desc = "(I)I")
+	int method360() {
+		return this.field445;
+	}
+
+	@ObfInfo(name = "ac", desc = "(I)I")
+	int method356() {
+		return this.field446;
+	}
+
+	@ObfInfo(name = "ai", desc = "(I)I")
+	int method364() {
+		return this.method356() - this.method360();
+	}
+
+	@ObfInfo(name = "az", desc = "(FB)I", opaqueValue = "2")
+	int method363(float var1) {
+		if (this.field441 < 0 || (float)this.field431[this.field441].field1488 > var1 || this.field431[this.field441].field1494 != null && (float)this.field431[this.field441].field1494.field1488 <= var1) {
+			if (var1 >= (float)this.method360() && var1 <= (float)this.method356()) {
+				int var3 = this.method362();
+				int var4 = this.field441;
+				if (var3 > 0) {
+					int var5 = 0;
+					int var6 = var3 - 1;
+
+					do {
+						int var7 = var6 + var5 >> 1;
+						if (var1 < (float)this.field431[var7].field1488) {
+							if (var1 > (float)this.field431[var7 - 1].field1488) {
+								var4 = var7 - 1;
+								break;
+							}
+
+							var6 = var7 - 1;
+						} else {
+							if (var1 <= (float)this.field431[var7].field1488) {
+								var4 = var7;
+								break;
+							}
+
+							if (var1 < (float)this.field431[var7 + 1].field1488) {
+								var4 = var7;
+								break;
+							}
+
+							var5 = var7 + 1;
+						}
+					} while(var5 <= var6);
+				}
+
+				if (this.field441 != var4) {
+					this.field441 = var4;
+					this.field443 = true;
+				}
+
+				return this.field441;
+			} else {
+				return -1;
+			}
+		} else {
+			return this.field441;
+		}
+	}
+
+	@ObfInfo(name = "ap", desc = "(FI)Leg;", opaqueValue = "1882980652")
+	class157 method361(float var1) {
+		int var3 = this.method363(var1);
+		return var3 >= 0 && var3 < this.field431.length ? this.field431[var3] : null;
+	}
+
+	@ObfInfo(name = "aa", desc = "(I)I", opaqueValue = "1529858788")
+	int method362() {
+		return null == this.field431 ? 0 : this.field431.length;
+	}
 }

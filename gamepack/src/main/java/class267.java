@@ -1,151 +1,56 @@
-public class class267 extends class124 {
-   static class425[] field2301;
-   static String field2298;
-   class201 field2302 = new class201();
-   class272 field2300 = new class272();
-   class448 field2299;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Iterator;
 
-   class267(class448 var1) {
-      this.field2299 = var1;
-   }
+@ObfInfo(name = "th")
+public class class267 extends class392 implements class436 {
+	@ObfInfo(name = "ao", desc = "Lkg;")
+	final class227 field2159;
+	@ObfInfo(name = "ae", desc = "Lnu;")
+	final class437 field2158;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = -1843835189)
+	final int field2157;
 
-   protected class124 method866() {
-      class280 var1 = (class280)this.field2302.method1236();
-      if (var1 == null) {
-         return null;
-      } else {
-         return (class124)(var1.field2396 != null ? var1.field2396 : this.method867());
-      }
-   }
+	@ObfInfo(name = "<init>", desc = "(Lns;ILon;Lnu;)V")
+	public class267(class174 var1, int var2, class67 var3, class437 var4) {
+		super(var1, var3, var4 != null ? var4.method2293(var2) : 0);
+		this.field2159 = new class227(64);
+		this.field2158 = var4;
+		this.field2157 = var2;
+	}
 
-   protected class124 method867() {
-      class280 var1;
-      do {
-         var1 = (class280)this.field2302.method1238();
-         if (var1 == null) {
-            return null;
-         }
-      } while(null == var1.field2396);
+	@ObfInfo(name = "au", desc = "(IB)Lrv;", opaqueValue = "1")
+	protected class230 method2089(int var1) {
+		synchronized(this.field2159) {
+			class309 var3 = (class309)this.field2159.method1219((long)var1);
+			if (null == var3) {
+				var3 = this.method1391(var1);
+				this.field2159.method1221(var3, (long)var1);
+			}
 
-      return var1.field2396;
-   }
+			return var3;
+		}
+	}
 
-   protected int method864() {
-      return 0;
-   }
+	@ObfInfo(name = "ab", desc = "(IB)Lrg;", opaqueValue = "0")
+	class309 method1391(int var1) {
+		byte[] var3 = this.field2158.method2267(this.field2157, var1);
+		class309 var4 = new class309(var1);
+		if (var3 != null) {
+			var4.method1226(new class280(var3));
+		}
 
-   protected void method869(int[] var1, int var2, int var3) {
-      this.field2300.method869(var1, var2, var3);
+		return var4;
+	}
 
-      for(class280 var6 = (class280)this.field2302.method1236(); null != var6; var6 = (class280)this.field2302.method1238()) {
-         if (!this.field2299.method2206(var6)) {
-            int var4 = var2;
-            int var5 = var3;
+	@ObfInfo(name = "ag", desc = "(I)V")
+	public void method1390() {
+		synchronized(this.field2159) {
+			this.field2159.method1224();
+		}
+	}
 
-            do {
-               if (var5 <= var6.field2407) {
-                  this.method1510(var6, var1, var4, var5, var5 + var4);
-                  var6.field2407 -= var5;
-                  break;
-               }
-
-               this.method1510(var6, var1, var4, var6.field2407, var4 + var5);
-               var4 += var6.field2407;
-               var5 -= var6.field2407;
-            } while(!this.field2299.method2197(var6, var1, var4, var5));
-         }
-      }
-
-   }
-
-   protected void method868(int var1) {
-      this.field2300.method868(var1);
-
-      for(class280 var3 = (class280)this.field2302.method1236(); var3 != null; var3 = (class280)this.field2302.method1238()) {
-         if (!this.field2299.method2206(var3)) {
-            int var2 = var1;
-
-            do {
-               if (var2 <= var3.field2407) {
-                  this.method1511(var3, var2);
-                  var3.field2407 -= var2;
-                  break;
-               }
-
-               this.method1511(var3, var3.field2407);
-               var2 -= var3.field2407;
-            } while(!this.field2299.method2197(var3, (int[])null, 0, var2));
-         }
-      }
-
-   }
-
-   void method1510(class280 var1, int[] var2, int var3, int var4, int var5) {
-      if ((this.field2299.field3403[var1.field2398] & 4) != 0 && var1.field2402 < 0) {
-         int var7 = this.field2299.field3430[var1.field2398] / class331.field2655;
-
-         while(true) {
-            int var8 = (var7 + 1048575 - var1.field2408) / var7;
-            if (var8 > var4) {
-               var1.field2408 += var7 * var4;
-               break;
-            }
-
-            var1.field2396.method869(var2, var3, var8);
-            var3 += var8;
-            var4 -= var8;
-            var1.field2408 += var8 * var7 - 1048576;
-            int var9 = class331.field2655 / 100;
-            int var10 = 262144 / var7;
-            if (var10 < var9) {
-               var9 = var10;
-            }
-
-            class432 var11 = var1.field2396;
-            if (this.field2299.field3405[var1.field2398] == 0) {
-               var1.field2396 = class432.method2074(var1.field2390, var11.method2084(), var11.method2078(), var11.method2079());
-            } else {
-               var1.field2396 = class432.method2074(var1.field2390, var11.method2084(), 0, var11.method2079());
-               this.field2299.method2193(var1, var1.field2389.field2317[var1.field2393] < 0);
-               var1.field2396.method2103(var9, var11.method2078());
-            }
-
-            if (var1.field2389.field2317[var1.field2393] < 0) {
-               var1.field2396.method2075(-1);
-            }
-
-            var11.method2082(var9);
-            var11.method869(var2, var3, var5 - var3);
-            if (var11.method2086()) {
-               this.field2300.method1525(var11);
-            }
-         }
-      }
-
-      var1.field2396.method869(var2, var3, var4);
-   }
-
-   void method1511(class280 var1, int var2) {
-      if ((this.field2299.field3403[var1.field2398] & 4) != 0 && var1.field2402 < 0) {
-         int var4 = this.field2299.field3430[var1.field2398] / class331.field2655;
-         int var5 = (var4 + 1048575 - var1.field2408) / var4;
-         var1.field2408 = var2 * var4 + var1.field2408 & 1048575;
-         if (var5 <= var2) {
-            if (this.field2299.field3405[var1.field2398] == 0) {
-               var1.field2396 = class432.method2074(var1.field2390, var1.field2396.method2084(), var1.field2396.method2078(), var1.field2396.method2079());
-            } else {
-               var1.field2396 = class432.method2074(var1.field2390, var1.field2396.method2084(), 0, var1.field2396.method2079());
-               this.field2299.method2193(var1, var1.field2389.field2317[var1.field2393] < 0);
-            }
-
-            if (var1.field2389.field2317[var1.field2393] < 0) {
-               var1.field2396.method2075(-1);
-            }
-
-            var2 = var1.field2408 / var4;
-         }
-      }
-
-      var1.field2396.method868(var2);
-   }
+	@ObfInfo(name = "iterator", desc = "()Ljava/util/Iterator;")
+	public Iterator iterator() {
+		return new class246(this);
+	}
 }

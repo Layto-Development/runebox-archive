@@ -1,15 +1,20 @@
-public final class class233 {
-   final int[] field2142;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Comparator;
 
-   class233() {
-      this.field2142 = new int[4096];
-   }
+@ObfInfo(name = "oy")
+final class class233 implements Comparator {
+	@ObfInfo(name = "au", desc = "(Loz;Loz;I)I", opaqueValue = "-370241365")
+	int method1231(class158 var1, class158 var2) {
+		return var1.field1498.field3713 < var2.field1498.field3713 ? -1 : (var1.field1498.field3713 == var2.field1498.field3713 ? 0 : 1);
+	}
 
-   class233(int[] var1) {
-      this.field2142 = var1;
-   }
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method1231((class158)var1, (class158)var2);
+	}
 
-   final int method1419(int var1, int var2) {
-      return this.field2142[var1 + var2 * 64];
-   }
+	@ObfInfo(name = "equals", desc = "(Ljava/lang/Object;)Z")
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

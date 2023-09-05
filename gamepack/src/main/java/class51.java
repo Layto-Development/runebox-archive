@@ -1,44 +1,29 @@
-public final class class51 extends class55 {
-   static int field1058;
-   int field1057;
-   int field1059;
-   int field1060;
-   int field1061;
-   int field1062;
-   int field1063;
-   int field1064;
-   int field1065;
-   int field1066;
-   int field1067 = 31;
-   int field1068 = 0;
-   int field1069 = -1;
-   int field1070;
-   int field1071;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Comparator;
 
-   class51() {
-   }
+@ObfInfo(name = "it")
+public class class51 implements Comparator {
+	@ObfInfo(name = "bw", desc = "Lclient;")
+	static Client field585;
+	@ObfInfo(name = "ai", desc = "Luk;")
+	static class398 field586;
 
-   void method600(int var1) {
-      this.field1067 = var1;
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class51() {
+	}
 
-   boolean method601(int var1) {
-      if (var1 >= 0 && var1 <= 4) {
-         return (this.field1067 & 1 << var1) != 0;
-      } else {
-         return true;
-      }
-   }
+	@ObfInfo(name = "au", desc = "(Lio;Lio;I)I")
+	int method456(class406 var1, class406 var2) {
+		return var1.method2133() - var2.method2133();
+	}
 
-   public static final void method602(long var0) {
-      if (var0 > 0L) {
-         if (0L == var0 % 10L) {
-            class283.method1596(var0 - 1L);
-            class283.method1596(1L);
-         } else {
-            class283.method1596(var0);
-         }
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method456((class406)var1, (class406)var2);
+	}
 
-      }
-   }
+	@ObfInfo(name = "equals", desc = "(Ljava/lang/Object;)Z")
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

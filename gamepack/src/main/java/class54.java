@@ -1,19 +1,29 @@
-import java.util.concurrent.Callable;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
-public class class54 implements Callable {
-   static class22 field1075;
-   final class184 field1076;
-   final class390 field1074;
-   // $FF: synthetic field
-   final class403 this$0;
+@ObfInfo(name = "ba")
+public class class54 extends class155 {
+	@ObfInfo(name = "sh", desc = "Lqc;")
+	static class248 field716;
+	@ObfInfo(name = "ap", desc = "[[[B")
+	byte[][][] field714;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = -1471748283)
+	int field712;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 820704441)
+	int field713;
+	@ObfInfo(name = "at", desc = "[I")
+	int[] field715;
+	@ObfInfo(name = "ai", desc = "[I")
+	int[] field717;
+	@ObfInfo(name = "ao", desc = "[I")
+	int[] field720;
+	@ObfInfo(name = "ac", desc = "[Ljava/lang/reflect/Field;")
+	Field[] field719;
+	@ObfInfo(name = "az", desc = "[Ljava/lang/reflect/Method;")
+	Method[] field718;
 
-   class54(class403 var1, class184 var2, class390 var3) {
-      this.this$0 = var1;
-      this.field1076 = var2;
-      this.field1074 = var3;
-   }
-
-   public Object call() {
-      return this.field1074.method1897(this.field1076);
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class54() {
+	}
 }

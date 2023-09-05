@@ -1,20 +1,30 @@
-public class class136 {
-   static boolean field1574;
-   static int[] field1571;
-   public short[] field1572;
-   public short[] field1573;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public class136(int var1) {
-      class71 var2 = class71.method682(var1);
-      if (var2.method679()) {
-         this.field1572 = new short[var2.field1147.length];
-         System.arraycopy(var2.field1147, 0, this.field1572, 0, this.field1572.length);
-      }
+@ObfInfo(name = "fy")
+public class class136 extends class313 {
+	@ObfInfo(name = "kd", desc = "[Lui;")
+	static class150[] field1382;
+	@ObfInfo(name = "ac", desc = "[I")
+	static int[] field1380;
+	@ObfInfo(name = "au", desc = "Ljava/lang/String;")
+	String field1381;
+	// $FF: synthetic field
+	@ObfInfo(name = "this$0", desc = "Lfn;")
+	final class220 this$0;
 
-      if (var2.method676()) {
-         this.field1573 = new short[var2.field1149.length];
-         System.arraycopy(var2.field1149, 0, this.field1573, 0, this.field1573.length);
-      }
+	@ObfInfo(name = "<init>", desc = "(Lfn;)V")
+	class136(class220 var1) {
+		this.this$0 = var1;
+	}
 
-   }
+	@ObfInfo(name = "au", desc = "(Ltm;I)V")
+	void method1731(class280 var1) {
+		this.field1381 = var1.method1500();
+		var1.method1496();
+	}
+
+	@ObfInfo(name = "ae", desc = "(Lfi;B)V")
+	void method1730(class291 var1) {
+		var1.field2305 = this.field1381;
+	}
 }

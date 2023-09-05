@@ -1,25 +1,34 @@
-public class class288 extends class151 {
-   static int[] field2445;
-   public final int field2446;
-   public final int field2447;
-   public final int[] field2448;
-   public final int[] field2449;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class288(int var1, int var2, int[] var3, int[] var4, int var5) {
-      this.field2447 = var1;
-      this.field2446 = var2;
-      this.field2448 = var3;
-      this.field2449 = var4;
-   }
+@ObfInfo(name = "gb")
+public class class288 extends class313 {
+	@ObfInfo(name = "ae", desc = "Ljava/lang/String;")
+	String field2289;
+	@ObfInfo(name = "au", desc = "J", longMultiplier = 5068354842123857345L)
+	long field2290;
+	// $FF: synthetic field
+	@ObfInfo(name = "this$0", desc = "Lfn;")
+	final class220 this$0;
 
-   public boolean method1601(int var1, int var2) {
-      if (var2 >= 0 && var2 < this.field2449.length) {
-         int var4 = this.field2449[var2];
-         if (var1 >= var4 && var1 <= this.field2448[var2] + var4) {
-            return true;
-         }
-      }
+	@ObfInfo(name = "<init>", desc = "(Lfn;)V")
+	class288(class220 var1) {
+		this.this$0 = var1;
+		this.field2290 = -1L;
+		this.field2289 = null;
+	}
 
-      return false;
-   }
+	@ObfInfo(name = "au", desc = "(Ltm;I)V", opaqueValue = "-1238726644")
+	void method1731(class280 var1) {
+		if (var1.method1492() != 255) {
+			--var1.field2254;
+			this.field2290 = var1.method1497();
+		}
+
+		this.field2289 = var1.method1551();
+	}
+
+	@ObfInfo(name = "ae", desc = "(Lfi;B)V")
+	void method1730(class291 var1) {
+		var1.method1593(this.field2290, this.field2289);
+	}
 }

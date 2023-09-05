@@ -1,41 +1,49 @@
-public class class255 {
-   boolean field2241 = false;
-   int field2237;
-   int field2242;
-   int field2243;
-   int field2244 = 0;
-   int field2245;
-   int field2246;
-   int field2248;
-   int field2249;
-   int field2250;
-   int[] field2247 = new int[1024];
-   public boolean field2238 = true;
-   public class155 field2239;
-   public int field2240 = 512;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class255() {
-   }
+@ObfInfo(name = "ti")
+public final class class255 {
+	@ObfInfo(name = "<init>", desc = "()V")
+	class255() throws Throwable {
+	}
 
-   void method1461() {
-      this.field2237 = this.field2245 / 2;
-      this.field2246 = this.field2243 / 2;
-      this.field2242 = -this.field2237;
-      this.field2248 = this.field2245 - this.field2237;
-      this.field2249 = -this.field2246;
-      this.field2250 = this.field2243 - this.field2246;
-   }
+	@ObfInfo(name = "au", desc = "(Ljava/lang/CharSequence;I)I")
+	public static int method1348(CharSequence var0) {
+		int var2 = var0.length();
+		int var3 = 0;
 
-   void method1463(int var1, int var2, int var3, int var4) {
-      this.field2237 = var1 - var2;
-      this.field2246 = var3 - var4;
-      this.field2242 = -this.field2237;
-      this.field2248 = this.field2245 - this.field2237;
-      this.field2249 = -this.field2246;
-      this.field2250 = this.field2243 - this.field2246;
-   }
+		for (int var4 = 0; var4 < var2; ++var4) {
+			char var5 = var0.charAt(var4);
+			if (var5 <= 127) {
+				++var3;
+			} else if (var5 <= 2047) {
+				var3 += 2;
+			} else {
+				var3 += 3;
+			}
+		}
 
-   void method1462(int var1, int var2, int var3) {
-      this.field2241 = var1 < 0 || var1 > this.field2245 || var2 < 0 || var2 > this.field2245 || var3 < 0 || var3 > this.field2245;
-   }
+		return var3;
+	}
+
+	@ObfInfo(name = "ae", desc = "([BILjava/lang/CharSequence;I)I")
+	public static int method1349(byte[] var0, int var1, CharSequence var2) {
+		int var4 = var2.length();
+		int var5 = var1;
+
+		for (int var6 = 0; var6 < var4; ++var6) {
+			char var7 = var2.charAt(var6);
+			if (var7 <= 127) {
+				var0[var5++] = (byte)var7;
+			} else if (var7 <= 2047) {
+				var0[var5++] = (byte)(192 | var7 >> 6);
+				var0[var5++] = (byte)(128 | var7 & '?');
+			} else {
+				var0[var5++] = (byte)(224 | var7 >> '\f');
+				var0[var5++] = (byte)(128 | var7 >> 6 & 63);
+				var0[var5++] = (byte)(128 | var7 & '?');
+			}
+		}
+
+		return var5 - var1;
+	}
 }

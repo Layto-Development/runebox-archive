@@ -1,40 +1,29 @@
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.Iterator;
-import java.util.Map;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class21 implements class380 {
-   final Map field211;
+@ObfInfo(name = "lj")
+public class class21 {
+	@ObfInfo(name = "uz", desc = "I", intMultiplier = 984261565)
+	static int field397;
+	@ObfInfo(name = "au", desc = "[B")
+	byte[] field393;
+	@ObfInfo(name = "ae", desc = "[B")
+	byte[] field398;
+	@ObfInfo(name = "ai", desc = "I", intMultiplier = -341693181)
+	int field389;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = -1047647419)
+	int field390;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1214926019)
+	int field391;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = 751515157)
+	int field392;
+	@ObfInfo(name = "az", desc = "I", intMultiplier = 326458923)
+	int field394;
+	@ObfInfo(name = "ap", desc = "I", intMultiplier = -1787275153)
+	int field395;
+	@ObfInfo(name = "aa", desc = "I", intMultiplier = -107755175)
+	int field396;
 
-   public class21(Map var1) {
-      this.field211 = var1;
-   }
-
-   public class509 method1889() {
-      return null;
-   }
-
-   public byte[] method1888() throws UnsupportedEncodingException {
-      return this.method239().getBytes("UTF-8");
-   }
-
-   public String method239() throws UnsupportedEncodingException {
-      StringBuilder var2 = new StringBuilder();
-      Iterator var3 = this.field211.entrySet().iterator();
-
-      while(var3.hasNext()) {
-         Map.Entry var4 = (Map.Entry)var3.next();
-         String var5 = URLEncoder.encode((String)var4.getKey(), "UTF-8");
-         String var6 = URLEncoder.encode((String)var4.getValue(), "UTF-8");
-         var2.append(var5).append("=").append(var6).append("&");
-      }
-
-      if (var2.length() == 0) {
-         return "";
-      } else {
-         var2.deleteCharAt(var2.length() - 1);
-         var2.insert(0, "?");
-         return var2.toString();
-      }
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class21() {
+	}
 }

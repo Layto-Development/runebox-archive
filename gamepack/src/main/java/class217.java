@@ -1,54 +1,47 @@
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
+@ObfInfo(name = "my")
 public class class217 {
-   static int field2020;
+	@ObfInfo(name = "au", desc = "Lmx;")
+	static class393 field1932;
 
-   class217() throws Throwable {
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class217() throws Throwable {
+	}
 
-   static class495 method1313(int var0) {
-      class495 var2 = (class495)class157.field1665.method1851((long)var0);
-      if (var2 != null) {
-         return var2;
-      } else {
-         class298 var4 = class12.field115;
-         class298 var5 = class467.field3604;
-         boolean var6 = true;
-         byte[] var7 = var4.method1637(var0 >> 16 & '\uffff', var0 & '\uffff');
-         class495 var3;
-         if (var7 == null) {
-            var6 = false;
-            var3 = null;
-         } else {
-            int var8 = (var7[1] & 255) << 8 | var7[2] & 255;
-            byte[] var9 = var5.method1637(var8, 0);
-            if (var9 == null) {
-               var6 = false;
-            }
+	@ObfInfo(name = "au", desc = "(Lmx;I)V")
+	public static void method1199(class393 var0) {
+		field1932 = var0;
+	}
 
-            if (!var6) {
-               var3 = null;
-            } else {
-               if (class495.field3921 == null) {
-                  class264.field2291 = Runtime.getRuntime().availableProcessors();
-                  class495.field3921 = new ThreadPoolExecutor(0, class264.field2291, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue(100 + class264.field2291 * 100), new class306());
-               }
+	@ObfInfo(name = "ae", desc = "(Ltm;Ljava/lang/String;I)I")
+	public static int method1201(class280 var0, String var1) {
+		int var3 = var0.field2254;
+		byte[] var4 = class244.method1267(var1);
+		var0.method1536(var4.length);
+		var0.field2254 += field1932.method2090(var4, 0, var4.length, var0.field2252, var0.field2254);
+		return var0.field2254 - var3;
+	}
 
-               try {
-                  var3 = new class495(var4, var5, var0, false);
-               } catch (Exception var11) {
-                  var3 = null;
-               }
-            }
-         }
+	@ObfInfo(name = "ao", desc = "(Ltm;I)Ljava/lang/String;")
+	public static String method1202(class280 var0) {
+		return method1200(var0, 32767);
+	}
 
-         if (var3 != null) {
-            class157.field1665.method1850(var3, (long)var0);
-         }
+	@ObfInfo(name = "at", desc = "(Ltm;IB)Ljava/lang/String;")
+	static String method1200(class280 var0, int var1) {
+		try {
+			int var3 = var0.method1539();
+			if (var3 > var1) {
+				var3 = var1;
+			}
 
-         return var3;
-      }
-   }
+			byte[] var4 = new byte[var3];
+			var0.field2254 += field1932.method2091(var0.field2252, var0.field2254, var4, 0, var3);
+			String var5 = class244.method1269(var4, 0, var3);
+			return var5;
+		} catch (Exception var6) {
+			return "Cabbage";
+		}
+	}
 }

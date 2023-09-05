@@ -1,11 +1,7 @@
-public class class207 {
-   final int field1948;
-   final int field1949;
-   final int field1950;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class207(int var1, int var2, int var3) {
-      this.field1949 = var1;
-      this.field1948 = var2;
-      this.field1950 = var3;
-   }
+@ObfInfo(name = "ql")
+public interface class207 {
+	@ObfInfo(name = "ok", desc = "(S)Luc;")
+	class353 method1155();
 }

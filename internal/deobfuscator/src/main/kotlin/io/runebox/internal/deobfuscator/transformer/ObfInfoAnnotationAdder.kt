@@ -14,7 +14,8 @@ class ObfInfoAnnotationAdder : Transformer {
         pool.classes.forEach { cls ->
             cls.visibleAnnotations = listOf(cls.createAnnotation())
 
-            cls.methods.forEach { method ->
+            cls.methods.forEach methodLoop@ { method ->
+                if(method.isInitializer()) return@methodLoop
                 method.visibleAnnotations = listOf(method.createAnnotation())
             }
 
@@ -27,7 +28,7 @@ class ObfInfoAnnotationAdder : Transformer {
     }
 
     private fun ClassNode.createAnnotation(): AnnotationNode {
-        val node = AnnotationNode("Linclude/ObfInfo;")
+        val node = AnnotationNode("Lio/runebox/internal/deobfuscator/includes/ObfInfo;")
         val values = mutableListOf<Any>()
         if(origName != "") {
             values.add("name", origName)
@@ -37,21 +38,18 @@ class ObfInfoAnnotationAdder : Transformer {
     }
 
     private fun MethodNode.createAnnotation(): AnnotationNode {
-        val node = AnnotationNode("Linclude/ObfInfo;")
+        val node = AnnotationNode("Lio/runebox/internal/deobfuscator/includes/ObfInfo;")
         val values = mutableListOf<Any>()
-        if(origOwner != "") values.add("owner", origOwner)
         if(origName != "") values.add("name", origName)
         if(origDesc != "") values.add("desc", origDesc)
-        if(opaqueDesc != "") values.add("opaqueDesc", opaqueDesc)
         if(opaqueValue != "") values.add("opaqueValue", opaqueValue)
         node.values = values
         return node
     }
 
     private fun FieldNode.createAnnotation(): AnnotationNode {
-        val node = AnnotationNode("Linclude/ObfInfo;")
+        val node = AnnotationNode("Lio/runebox/internal/deobfuscator/includes/ObfInfo;")
         val values = mutableListOf<Any>()
-        if(origOwner != "") values.add("owner", origOwner)
         if(origName != "") values.add("name", origName)
         if(origDesc != "") values.add("desc", origDesc)
         if(intMultiplier != 0) values.add("intMultiplier", intMultiplier)

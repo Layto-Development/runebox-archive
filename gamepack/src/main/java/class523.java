@@ -1,20 +1,35 @@
-final class class523 implements class130 {
-   public static String field4125;
-   static class22 field4126;
-   // $FF: synthetic field
-   final class480 val$cc;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class523(class480 var1) {
-      this.val$cc = var1;
-   }
+@ObfInfo(name = "nb")
+public class class523 {
+	@ObfInfo(name = "ae", desc = "Lnb;")
+	static final class523 field4191;
+	@ObfInfo(name = "ao", desc = "Lnb;")
+	static final class523 field4192;
+	@ObfInfo(name = "au", desc = "Lnb;")
+	static final class523 field4193;
+	@ObfInfo(name = "at", desc = "Lnb;")
+	static final class523 field4194;
+	@ObfInfo(name = "ai", desc = "I", intMultiplier = 2123855839)
+	public final int field4195;
+	@ObfInfo(name = "ac", desc = "Ljava/lang/String;")
+	public final String field4190;
 
-   public void method889() {
-      if (this.val$cc != null && this.val$cc.method2337().field2308 != null) {
-         class208 var2 = new class208();
-         var2.method1262(this.val$cc);
-         var2.method1263(this.val$cc.method2337().field2308);
-         Client.method412().method1240(var2);
-      }
+	static {
+		field4193 = new class523("LIVE", 0);
+		field4191 = new class523("BUILDLIVE", 3);
+		field4192 = new class523("RC", 1);
+		field4194 = new class523("WIP", 2);
+	}
 
-   }
+	@ObfInfo(name = "<init>", desc = "(Ljava/lang/String;I)V")
+	class523(String var1, int var2) {
+		this.field4190 = var1;
+		this.field4195 = var2;
+	}
+
+	@ObfInfo(name = "au", desc = "(I)[Lnb;")
+	public static class523[] method2556() {
+		return new class523[]{field4193, field4192, field4194, field4191};
+	}
 }

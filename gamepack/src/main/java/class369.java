@@ -1,35 +1,41 @@
-public final class class369 extends class55 {
-   boolean field2873;
-   boolean field2888;
-   boolean field2889;
-   class154[] field2891 = new class154[5];
-   class189 field2881;
-   class273 field2877;
-   class369 field2895;
-   class416 field2878;
-   class450 field2884;
-   class501 field2874;
-   class60 field2883;
-   int field2875;
-   int field2876;
-   int field2879;
-   int field2880;
-   int field2882;
-   int field2886 = 0;
-   int field2887;
-   int field2890;
-   int field2892;
-   int field2893;
-   int field2894;
-   int[] field2885 = new int[5];
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.net.MalformedURLException;
+import java.net.URL;
 
-   class369(int var1, int var2, int var3) {
-      this.field2876 = this.field2892 = var1;
-      this.field2879 = var2;
-      this.field2875 = var3;
-   }
+@ObfInfo(name = "mw")
+public class class369 {
+	@ObfInfo(name = "qq", desc = "I", intMultiplier = -466560567)
+	static int field2869;
+	@ObfInfo(name = "ae", desc = "Lui;")
+	class150 field2867;
+	@ObfInfo(name = "au", desc = "Let;")
+	class22 field2868;
 
-   static String method1860(int var0) {
-      return "<img=" + var0 + ">";
-   }
+	@ObfInfo(name = "<init>", desc = "(Ljava/lang/String;Lev;)V")
+	class369(String var1, class265 var2) {
+		try {
+			this.field2868 = var2.method1384(new URL(var1));
+		} catch (MalformedURLException var4) {
+			this.field2868 = null;
+		}
+
+	}
+
+	@ObfInfo(name = "<init>", desc = "(Let;)V")
+	class369(class22 var1) {
+		this.field2868 = var1;
+	}
+
+	@ObfInfo(name = "au", desc = "(I)Lui;", opaqueValue = "-39928687")
+	class150 method1997() {
+		if (null == this.field2867 && this.field2868 != null && this.field2868.method334()) {
+			if (this.field2868.method336() != null) {
+				this.field2867 = class499.method2495(this.field2868.method336());
+			}
+
+			this.field2868 = null;
+		}
+
+		return this.field2867;
+	}
 }

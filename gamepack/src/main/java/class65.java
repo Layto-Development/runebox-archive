@@ -1,19 +1,16 @@
-public class class65 extends class3 {
-   final boolean field1122;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public class65(boolean var1) {
-      this.field1122 = var1;
-   }
+@ObfInfo(name = "js")
+public interface class65 {
+	@ObfInfo(name = "ai", desc = "(II)Z")
+	boolean method493(int var1);
 
-   int method648(class410 var1, class410 var2) {
-      if (var1.field3157 != 0 && var2.field3157 != 0) {
-         return this.field1122 ? var1.field3156 - var2.field3156 : var2.field3156 - var1.field3156;
-      } else {
-         return this.method6(var1, var2);
-      }
-   }
+	@ObfInfo(name = "ac", desc = "(IB)Z")
+	boolean method494(int var1);
 
-   public int compare(Object var1, Object var2) {
-      return this.method648((class410)var1, (class410)var2);
-   }
+	@ObfInfo(name = "at", desc = "(II)I")
+	int method492(int var1);
+
+	@ObfInfo(name = "ao", desc = "(II)[I")
+	int[] method495(int var1);
 }

@@ -1,21 +1,26 @@
-public class class413 {
-   public static final class413 field3162 = new class413(16);
-   public static final class413 field3163 = new class413(6);
-   public static final class413 field3164 = new class413(4);
-   public static final class413 field3165 = new class413(4);
-   public static final class413 field3166 = new class413(19);
-   public static final class413 field3167 = new class413(11);
-   public static final class413 field3168 = new class413(14);
-   public static final class413 field3169 = new class413(5);
-   public static final class413 field3170 = new class413(14);
-   public static final class413 field3171 = new class413(5);
-   public static final class413 field3172 = new class413(7);
-   public static final class413 field3173 = new class413(2);
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class413(int var1) {
-   }
+@ObfInfo(name = "ei")
+public class class413 extends class381 {
+	@ObfInfo(name = "au", desc = "Z")
+	final boolean field3185;
 
-   public static class413[] method1989() {
-      return new class413[]{field3169, field3162, field3164, field3165, field3173, field3167, field3163, field3170, field3168, field3171, field3172, field3166};
-   }
+	@ObfInfo(name = "<init>", desc = "(Z)V")
+	public class413(boolean var1) {
+		this.field3185 = var1;
+	}
+
+	@ObfInfo(name = "au", desc = "(Lqb;Lqb;I)I", opaqueValue = "-2143241619")
+	int method2186(class424 var1, class424 var2) {
+		if (var1.field3235 != 0 && var2.field3235 != 0) {
+			return this.field3185 ? var1.field3234 - var2.field3234 : var2.field3234 - var1.field3234;
+		} else {
+			return this.method2031(var1, var2);
+		}
+	}
+
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method2186((class424)var1, (class424)var2);
+	}
 }

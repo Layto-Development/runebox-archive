@@ -1,180 +1,280 @@
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+
+@ObfInfo(name = "mx")
 public class class393 {
-   public static int[] field3078;
-   static class15 field3080;
-   static int[] field3079 = new int['\u8000'];
-   static int[] field3081;
+	@ObfInfo(name = "ae", desc = "[B")
+	byte[] field3042;
+	@ObfInfo(name = "au", desc = "[I")
+	int[] field3043;
+	@ObfInfo(name = "ao", desc = "[I")
+	int[] field3044;
 
-   static {
-      for(int var0 = 0; var0 < 32768; ++var0) {
-         field3079[var0] = method1901(var0);
-      }
+	@ObfInfo(name = "<init>", desc = "([B)V")
+	public class393(byte[] var1) {
+		int var2 = var1.length;
+		this.field3043 = new int[var2];
+		this.field3042 = var1;
+		int[] var3 = new int[33];
+		this.field3044 = new int[8];
+		int var4 = 0;
 
-      method1903();
-   }
+		for (int var5 = 0; var5 < var2; ++var5) {
+			byte var6 = var1[var5];
+			if (var6 != 0) {
+				int var7 = 1 << 32 - var6;
+				int var8 = var3[var6];
+				this.field3043[var5] = var8;
+				int var9;
+				int var10;
+				int var11;
+				int var12;
+				if ((var8 & var7) != 0) {
+					var9 = var3[var6 - 1];
+				} else {
+					var9 = var8 | var7;
 
-   class393() throws Throwable {
-   }
+					for (var10 = var6 - 1; var10 >= 1; --var10) {
+						var11 = var3[var10];
+						if (var11 != var8) {
+							break;
+						}
 
-   static final int method1901(int var0) {
-      double var2 = (double)(var0 >> 10 & 31) / 31.0;
-      double var4 = (double)(var0 >> 5 & 31) / 31.0;
-      double var6 = (double)(var0 & 31) / 31.0;
-      double var8 = var2;
-      if (var4 < var2) {
-         var8 = var4;
-      }
+						var12 = 1 << 32 - var10;
+						if ((var11 & var12) != 0) {
+							var3[var10] = var3[var10 - 1];
+							break;
+						}
 
-      if (var6 < var8) {
-         var8 = var6;
-      }
+						var3[var10] = var11 | var12;
+					}
+				}
 
-      double var10 = var2;
-      if (var4 > var2) {
-         var10 = var4;
-      }
+				var3[var6] = var9;
 
-      if (var6 > var10) {
-         var10 = var6;
-      }
+				for (var10 = var6 + 1; var10 <= 32; ++var10) {
+					if (var3[var10] == var8) {
+						var3[var10] = var9;
+					}
+				}
 
-      double var12 = 0.0;
-      double var14 = 0.0;
-      double var16 = (var10 + var8) / 2.0;
-      if (var8 != var10) {
-         if (var16 < 0.5) {
-            var14 = (var10 - var8) / (var8 + var10);
-         }
+				var10 = 0;
 
-         if (var16 >= 0.5) {
-            var14 = (var10 - var8) / (2.0 - var10 - var8);
-         }
+				for (var11 = 0; var11 < var6; ++var11) {
+					var12 = Integer.MIN_VALUE >>> var11;
+					if ((var8 & var12) != 0) {
+						if (this.field3044[var10] == 0) {
+							this.field3044[var10] = var4;
+						}
 
-         if (var10 == var2) {
-            var12 = (var4 - var6) / (var10 - var8);
-         } else if (var4 == var10) {
-            var12 = 2.0 + (var6 - var2) / (var10 - var8);
-         } else if (var6 == var10) {
-            var12 = 4.0 + (var2 - var4) / (var10 - var8);
-         }
-      }
+						var10 = this.field3044[var10];
+					} else {
+						++var10;
+					}
 
-      int var18 = (int)(var12 * 256.0 / 6.0);
-      var18 &= 255;
-      double var19 = var14 * 256.0;
-      if (var19 < 0.0) {
-         var19 = 0.0;
-      } else if (var19 > 255.0) {
-         var19 = 255.0;
-      }
+					if (var10 >= this.field3044.length) {
+						int[] var13 = new int[2 * this.field3044.length];
 
-      if (var16 > 0.7) {
-         var19 /= 2.0;
-         var19 = Math.floor(var19);
-      }
+						for (int var14 = 0; var14 < this.field3044.length; ++var14) {
+							var13[var14] = this.field3044[var14];
+						}
 
-      if (var16 > 0.75) {
-         var19 /= 2.0;
-         var19 = Math.floor(var19);
-      }
+						this.field3044 = var13;
+					}
 
-      if (var16 > 0.85) {
-         var19 /= 2.0;
-         var19 = Math.floor(var19);
-      }
+					var12 >>>= 1;
+				}
 
-      if (var16 > 0.95) {
-         var19 /= 2.0;
-         var19 = Math.floor(var19);
-      }
+				this.field3044[var10] = ~var5;
+				if (var10 >= var4) {
+					var4 = var10 + 1;
+				}
+			}
+		}
 
-      if (var16 > 0.995) {
-         var16 = 0.995;
-      }
+	}
 
-      int var21 = (int)((double)(var18 / 4 * 8) + var19 / 32.0);
-      return (int)(var16 * 128.0) + (var21 << 7);
-   }
+	@ObfInfo(name = "au", desc = "([BII[BII)I", opaqueValue = "-1325994574")
+	int method2090(byte[] var1, int var2, int var3, byte[] var4, int var5) {
+		int var7 = 0;
+		int var8 = var5 << 3;
 
-   static void method1903() {
-      if (field3078 == null) {
-         field3078 = new int[65536];
-         double var1 = 0.949999988079071;
+		for (var3 += var2; var2 < var3; ++var2) {
+			int var9 = var1[var2] & 255;
+			int var10 = this.field3043[var9];
+			byte var11 = this.field3042[var9];
+			if (var11 == 0) {
+				throw new RuntimeException("" + var9);
+			}
 
-         for(int var3 = 0; var3 < 65536; ++var3) {
-            double var4 = 0.0078125 + (double)(var3 >> 10 & 63) / 64.0;
-            double var6 = 0.0625 + (double)(var3 >> 7 & 7) / 8.0;
-            double var8 = (double)(var3 & 127) / 128.0;
-            double var10 = var8;
-            double var12 = var8;
-            double var14 = var8;
-            if (0.0 != var6) {
-               double var16;
-               if (var8 < 0.5) {
-                  var16 = var8 * (var6 + 1.0);
-               } else {
-                  var16 = var6 + var8 - var6 * var8;
-               }
+			int var12 = var8 >> 3;
+			int var13 = var8 & 7;
+			var7 &= -var13 >> 31;
+			int var14 = (var13 + var11 - 1 >> 3) + var12;
+			var13 += 24;
+			var4[var12] = (byte)(var7 |= var10 >>> var13);
+			if (var12 < var14) {
+				++var12;
+				var13 -= 8;
+				var4[var12] = (byte)(var7 = var10 >>> var13);
+				if (var12 < var14) {
+					++var12;
+					var13 -= 8;
+					var4[var12] = (byte)(var7 = var10 >>> var13);
+					if (var12 < var14) {
+						++var12;
+						var13 -= 8;
+						var4[var12] = (byte)(var7 = var10 >>> var13);
+						if (var12 < var14) {
+							++var12;
+							var13 -= 8;
+							var4[var12] = (byte)(var7 = var10 << -var13);
+						}
+					}
+				}
+			}
 
-               double var18 = var8 * 2.0 - var16;
-               double var20 = var4 + 0.3333333333333333;
-               if (var20 > 1.0) {
-                  --var20;
-               }
+			var8 += var11;
+		}
 
-               double var24 = var4 - 0.3333333333333333;
-               if (var24 < 0.0) {
-                  ++var24;
-               }
+		return (var8 + 7 >> 3) - var5;
+	}
 
-               if (var20 * 6.0 < 1.0) {
-                  var10 = var20 * 6.0 * (var16 - var18) + var18;
-               } else if (var20 * 2.0 < 1.0) {
-                  var10 = var16;
-               } else if (var20 * 3.0 < 2.0) {
-                  var10 = var18 + (var16 - var18) * (0.6666666666666666 - var20) * 6.0;
-               } else {
-                  var10 = var18;
-               }
+	@ObfInfo(name = "ae", desc = "([BI[BIIB)I", opaqueValue = "23")
+	int method2091(byte[] var1, int var2, byte[] var3, int var4, int var5) {
+		if (var5 == 0) {
+			return 0;
+		} else {
+			int var7 = 0;
+			var5 += var4;
+			int var8 = var2;
 
-               if (var4 * 6.0 < 1.0) {
-                  var12 = var18 + (var16 - var18) * 6.0 * var4;
-               } else if (var4 * 2.0 < 1.0) {
-                  var12 = var16;
-               } else if (var4 * 3.0 < 2.0) {
-                  var12 = 6.0 * (var16 - var18) * (0.6666666666666666 - var4) + var18;
-               } else {
-                  var12 = var18;
-               }
+			while (true) {
+				byte var9 = var1[var8];
+				if (var9 < 0) {
+					var7 = this.field3044[var7];
+				} else {
+					++var7;
+				}
 
-               if (var24 * 6.0 < 1.0) {
-                  var14 = 6.0 * (var16 - var18) * var24 + var18;
-               } else if (var24 * 2.0 < 1.0) {
-                  var14 = var16;
-               } else if (var24 * 3.0 < 2.0) {
-                  var14 = var18 + (0.6666666666666666 - var24) * (var16 - var18) * 6.0;
-               } else {
-                  var14 = var18;
-               }
-            }
+				int var10;
+				if ((var10 = this.field3044[var7]) < 0) {
+					var3[var4++] = (byte)(~var10);
+					if (var4 >= var5) {
+						break;
+					}
 
-            var10 = Math.pow(var10, var1);
-            var12 = Math.pow(var12, var1);
-            var14 = Math.pow(var14, var1);
-            int var26 = (int)(var10 * 256.0);
-            int var17 = (int)(var12 * 256.0);
-            int var27 = (int)(var14 * 256.0);
-            int var19 = (var26 << 16) + (var17 << 8) + var27;
-            field3078[var3] = var19 & 16777215;
-         }
+					var7 = 0;
+				}
 
-      }
-   }
+				if ((var9 & 64) != 0) {
+					var7 = this.field3044[var7];
+				} else {
+					++var7;
+				}
 
-   public static int method1902(int var0) {
-      return 255 - (var0 & 255);
-   }
+				if ((var10 = this.field3044[var7]) < 0) {
+					var3[var4++] = (byte)(~var10);
+					if (var4 >= var5) {
+						break;
+					}
 
-   static int method1904() {
-      return class534.field4230;
-   }
+					var7 = 0;
+				}
+
+				if ((var9 & 32) != 0) {
+					var7 = this.field3044[var7];
+				} else {
+					++var7;
+				}
+
+				if ((var10 = this.field3044[var7]) < 0) {
+					var3[var4++] = (byte)(~var10);
+					if (var4 >= var5) {
+						break;
+					}
+
+					var7 = 0;
+				}
+
+				if ((var9 & 16) != 0) {
+					var7 = this.field3044[var7];
+				} else {
+					++var7;
+				}
+
+				if ((var10 = this.field3044[var7]) < 0) {
+					var3[var4++] = (byte)(~var10);
+					if (var4 >= var5) {
+						break;
+					}
+
+					var7 = 0;
+				}
+
+				if ((var9 & 8) != 0) {
+					var7 = this.field3044[var7];
+				} else {
+					++var7;
+				}
+
+				if ((var10 = this.field3044[var7]) < 0) {
+					var3[var4++] = (byte)(~var10);
+					if (var4 >= var5) {
+						break;
+					}
+
+					var7 = 0;
+				}
+
+				if ((var9 & 4) != 0) {
+					var7 = this.field3044[var7];
+				} else {
+					++var7;
+				}
+
+				if ((var10 = this.field3044[var7]) < 0) {
+					var3[var4++] = (byte)(~var10);
+					if (var4 >= var5) {
+						break;
+					}
+
+					var7 = 0;
+				}
+
+				if ((var9 & 2) != 0) {
+					var7 = this.field3044[var7];
+				} else {
+					++var7;
+				}
+
+				if ((var10 = this.field3044[var7]) < 0) {
+					var3[var4++] = (byte)(~var10);
+					if (var4 >= var5) {
+						break;
+					}
+
+					var7 = 0;
+				}
+
+				if ((var9 & 1) != 0) {
+					var7 = this.field3044[var7];
+				} else {
+					++var7;
+				}
+
+				if ((var10 = this.field3044[var7]) < 0) {
+					var3[var4++] = (byte)(~var10);
+					if (var4 >= var5) {
+						break;
+					}
+
+					var7 = 0;
+				}
+
+				++var8;
+			}
+
+			return var8 + 1 - var2;
+		}
+	}
 }

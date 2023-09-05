@@ -1,285 +1,46 @@
-import java.io.EOFException;
-import java.io.IOException;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public final class class347 {
-   static byte[] field2751 = new byte[520];
-   class122 field2749 = null;
-   class122 field2750 = null;
-   int field2752 = 65000;
-   int field2753;
+@ObfInfo(name = "tv")
+public class class347 implements class425 {
+	@ObfInfo(name = "ae", desc = "Ltv;")
+	public static final class347 field2747;
+	@ObfInfo(name = "au", desc = "Ltv;")
+	public static final class347 field2748;
+	@ObfInfo(name = "ac", desc = "Ltv;")
+	static final class347 field2746;
+	@ObfInfo(name = "at", desc = "Ltv;")
+	static final class347 field2749;
+	@ObfInfo(name = "ai", desc = "Ltv;")
+	static final class347 field2752;
+	@ObfInfo(name = "ao", desc = "Ltv;")
+	static final class347 field2753;
+	@ObfInfo(name = "az", desc = "I", intMultiplier = -1493160685)
+	final int field2750;
+	@ObfInfo(name = "ap", desc = "I", intMultiplier = 1294522359)
+	final int field2751;
 
-   public class347(int var1, class122 var2, class122 var3, int var4) {
-      this.field2753 = var1;
-      this.field2749 = var2;
-      this.field2750 = var3;
-      this.field2752 = var4;
-   }
+	static {
+		field2748 = new class347(1, 0);
+		field2747 = new class347(5, 2);
+		field2753 = new class347(2, 5);
+		field2749 = new class347(0, 6);
+		field2746 = new class347(4, 7);
+		field2752 = new class347(3, 8);
+	}
 
-   public byte[] method1793(int var1) {
-      synchronized(this.field2749) {
-         Object var10000;
-         try {
-            if (this.field2750.method862() < (long)(6 + var1 * 6)) {
-               var10000 = null;
-               return (byte[])var10000;
-            }
+	@ObfInfo(name = "<init>", desc = "(II)V")
+	class347(int var1, int var2) {
+		this.field2750 = var1;
+		this.field2751 = var2;
+	}
 
-            this.field2750.method856((long)(var1 * 6));
-            this.field2750.method858(field2751, 0, 6);
-            int var4 = (field2751[2] & 255) + ((field2751[1] & 255) << 8) + ((field2751[0] & 255) << 16);
-            int var5 = ((field2751[4] & 255) << 8) + ((field2751[3] & 255) << 16) + (field2751[5] & 255);
-            if (var4 < 0 || var4 > this.field2752) {
-               var10000 = null;
-               return (byte[])var10000;
-            }
+	@ObfInfo(name = "ae", desc = "(B)I")
+	public int method2222() {
+		return this.field2751;
+	}
 
-            if (var5 > 0 && (long)var5 <= this.field2749.method862() / 520L) {
-               byte[] var6 = new byte[var4];
-               int var7 = 0;
-               int var8 = 0;
-
-               while(var7 < var4) {
-                  if (var5 == 0) {
-                     var10000 = null;
-                     return (byte[])var10000;
-                  }
-
-                  this.field2749.method856(520L * (long)var5);
-                  int var9 = var4 - var7;
-                  int var10;
-                  int var11;
-                  int var12;
-                  int var13;
-                  byte var14;
-                  if (var1 > 65535) {
-                     if (var9 > 510) {
-                        var9 = 510;
-                     }
-
-                     var14 = 10;
-                     this.field2749.method858(field2751, 0, var9 + var14);
-                     var10 = ((field2751[2] & 255) << 8) + ((field2751[1] & 255) << 16) + ((field2751[0] & 255) << 24) + (field2751[3] & 255);
-                     var11 = ((field2751[4] & 255) << 8) + (field2751[5] & 255);
-                     var12 = (field2751[8] & 255) + ((field2751[6] & 255) << 16) + ((field2751[7] & 255) << 8);
-                     var13 = field2751[9] & 255;
-                  } else {
-                     if (var9 > 512) {
-                        var9 = 512;
-                     }
-
-                     var14 = 8;
-                     this.field2749.method858(field2751, 0, var14 + var9);
-                     var10 = ((field2751[0] & 255) << 8) + (field2751[1] & 255);
-                     var11 = (field2751[3] & 255) + ((field2751[2] & 255) << 8);
-                     var12 = (field2751[6] & 255) + ((field2751[5] & 255) << 8) + ((field2751[4] & 255) << 16);
-                     var13 = field2751[7] & 255;
-                  }
-
-                  if (var10 == var1 && var8 == var11 && var13 == this.field2753) {
-                     if (var12 >= 0 && (long)var12 <= this.field2749.method862() / 520L) {
-                        int var15 = var9 + var14;
-
-                        for(int var16 = var14; var16 < var15; ++var16) {
-                           var6[var7++] = field2751[var16];
-                        }
-
-                        var5 = var12;
-                        ++var8;
-                        continue;
-                     }
-
-                     var10000 = null;
-                     return (byte[])var10000;
-                  }
-
-                  var10000 = null;
-                  return (byte[])var10000;
-               }
-
-               byte[] var20 = var6;
-               return var20;
-            }
-
-            var10000 = null;
-         } catch (IOException var18) {
-            return null;
-         }
-
-         return (byte[])var10000;
-      }
-   }
-
-   public boolean method1794(int var1, byte[] var2, int var3) {
-      synchronized(this.field2749) {
-         if (var3 >= 0 && var3 <= this.field2752) {
-            boolean var6 = this.method1795(var1, var2, var3, true);
-            if (!var6) {
-               var6 = this.method1795(var1, var2, var3, false);
-            }
-
-            return var6;
-         } else {
-            throw new IllegalArgumentException("" + this.field2753 + ',' + var1 + ',' + var3);
-         }
-      }
-   }
-
-   boolean method1795(int var1, byte[] var2, int var3, boolean var4) {
-      synchronized(this.field2749) {
-         try {
-            int var7;
-            boolean var10000;
-            if (var4) {
-               if (this.field2750.method862() < (long)(var1 * 6 + 6)) {
-                  var10000 = false;
-                  return var10000;
-               }
-
-               this.field2750.method856((long)(var1 * 6));
-               this.field2750.method858(field2751, 0, 6);
-               var7 = (field2751[5] & 255) + ((field2751[3] & 255) << 16) + ((field2751[4] & 255) << 8);
-               if (var7 <= 0 || (long)var7 > this.field2749.method862() / 520L) {
-                  var10000 = false;
-                  return var10000;
-               }
-            } else {
-               var7 = (int)((this.field2749.method862() + 519L) / 520L);
-               if (var7 == 0) {
-                  var7 = 1;
-               }
-            }
-
-            field2751[0] = (byte)(var3 >> 16);
-            field2751[1] = (byte)(var3 >> 8);
-            field2751[2] = (byte)var3;
-            field2751[3] = (byte)(var7 >> 16);
-            field2751[4] = (byte)(var7 >> 8);
-            field2751[5] = (byte)var7;
-            this.field2750.method856((long)(var1 * 6));
-            this.field2750.method860(field2751, 0, 6);
-            int var8 = 0;
-            int var9 = 0;
-
-            while(true) {
-               if (var8 < var3) {
-                  label154: {
-                     int var10 = 0;
-                     int var11;
-                     if (var4) {
-                        this.field2749.method856((long)var7 * 520L);
-                        int var12;
-                        int var13;
-                        if (var1 > 65535) {
-                           try {
-                              this.field2749.method858(field2751, 0, 10);
-                           } catch (EOFException var17) {
-                              break label154;
-                           }
-
-                           var11 = ((field2751[1] & 255) << 16) + ((field2751[0] & 255) << 24) + ((field2751[2] & 255) << 8) + (field2751[3] & 255);
-                           var12 = (field2751[5] & 255) + ((field2751[4] & 255) << 8);
-                           var10 = ((field2751[6] & 255) << 16) + ((field2751[7] & 255) << 8) + (field2751[8] & 255);
-                           var13 = field2751[9] & 255;
-                        } else {
-                           try {
-                              this.field2749.method858(field2751, 0, 8);
-                           } catch (EOFException var16) {
-                              break label154;
-                           }
-
-                           var11 = ((field2751[0] & 255) << 8) + (field2751[1] & 255);
-                           var12 = ((field2751[2] & 255) << 8) + (field2751[3] & 255);
-                           var10 = (field2751[6] & 255) + ((field2751[5] & 255) << 8) + ((field2751[4] & 255) << 16);
-                           var13 = field2751[7] & 255;
-                        }
-
-                        if (var1 != var11 || var12 != var9 || this.field2753 != var13) {
-                           var10000 = false;
-                           return var10000;
-                        }
-
-                        if (var10 < 0 || (long)var10 > this.field2749.method862() / 520L) {
-                           var10000 = false;
-                           return var10000;
-                        }
-                     }
-
-                     if (var10 == 0) {
-                        var4 = false;
-                        var10 = (int)((this.field2749.method862() + 519L) / 520L);
-                        if (var10 == 0) {
-                           ++var10;
-                        }
-
-                        if (var10 == var7) {
-                           ++var10;
-                        }
-                     }
-
-                     if (var1 > 65535) {
-                        if (var3 - var8 <= 510) {
-                           var10 = 0;
-                        }
-
-                        field2751[0] = (byte)(var1 >> 24);
-                        field2751[1] = (byte)(var1 >> 16);
-                        field2751[2] = (byte)(var1 >> 8);
-                        field2751[3] = (byte)var1;
-                        field2751[4] = (byte)(var9 >> 8);
-                        field2751[5] = (byte)var9;
-                        field2751[6] = (byte)(var10 >> 16);
-                        field2751[7] = (byte)(var10 >> 8);
-                        field2751[8] = (byte)var10;
-                        field2751[9] = (byte)this.field2753;
-                        this.field2749.method856((long)var7 * 520L);
-                        this.field2749.method860(field2751, 0, 10);
-                        var11 = var3 - var8;
-                        if (var11 > 510) {
-                           var11 = 510;
-                        }
-
-                        this.field2749.method860(var2, var8, var11);
-                        var8 += var11;
-                     } else {
-                        if (var3 - var8 <= 512) {
-                           var10 = 0;
-                        }
-
-                        field2751[0] = (byte)(var1 >> 8);
-                        field2751[1] = (byte)var1;
-                        field2751[2] = (byte)(var9 >> 8);
-                        field2751[3] = (byte)var9;
-                        field2751[4] = (byte)(var10 >> 16);
-                        field2751[5] = (byte)(var10 >> 8);
-                        field2751[6] = (byte)var10;
-                        field2751[7] = (byte)this.field2753;
-                        this.field2749.method856(520L * (long)var7);
-                        this.field2749.method860(field2751, 0, 8);
-                        var11 = var3 - var8;
-                        if (var11 > 512) {
-                           var11 = 512;
-                        }
-
-                        this.field2749.method860(var2, var8, var11);
-                        var8 += var11;
-                     }
-
-                     var7 = var10;
-                     ++var9;
-                     continue;
-                  }
-               }
-
-               var10000 = true;
-               return var10000;
-            }
-         } catch (IOException var18) {
-            return false;
-         }
-      }
-   }
-
-   public String toString() {
-      return "" + this.field2753;
-   }
+	@ObfInfo(name = "au", desc = "(I)Z", opaqueValue = "756163097")
+	public boolean method1921() {
+		return this == field2747;
+	}
 }

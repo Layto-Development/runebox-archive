@@ -1,62 +1,165 @@
-public final class class364 {
-   class151 field2855 = new class151();
-   class197 field2854;
-   class361 field2852 = new class361();
-   int field2851;
-   int field2853;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.io.IOException;
+import java.io.OutputStream;
 
-   public class364(int var1) {
-      this.field2851 = var1;
-      this.field2853 = var1;
+@ObfInfo(name = "qh")
+public class class364 implements Runnable {
+	@ObfInfo(name = "ap", desc = "Z")
+	boolean field2828;
+	@ObfInfo(name = "at", desc = "[B")
+	byte[] field2829;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1807946919)
+	int field2826;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = 168230827)
+	int field2830;
+	@ObfInfo(name = "ai", desc = "I", intMultiplier = 220465503)
+	int field2831;
+	@ObfInfo(name = "az", desc = "Ljava/io/IOException;")
+	IOException field2832;
+	@ObfInfo(name = "ae", desc = "Ljava/io/OutputStream;")
+	OutputStream field2827;
+	@ObfInfo(name = "au", desc = "Ljava/lang/Thread;")
+	Thread field2833;
 
-      int var2;
-      for(var2 = 1; var2 + var2 < var1; var2 += var2) {
-      }
+	@ObfInfo(name = "<init>", desc = "(Ljava/io/OutputStream;I)V")
+	class364(OutputStream var1, int var2) {
+		this.field2830 = 0;
+		this.field2831 = 0;
+		this.field2827 = var1;
+		this.field2826 = var2 + 1;
+		this.field2829 = new byte[this.field2826];
+		this.field2833 = new Thread(this);
+		this.field2833.setDaemon(true);
+		this.field2833.start();
+	}
 
-      this.field2854 = new class197(var2);
-   }
+	@ObfInfo(name = "au", desc = "(S)Z", opaqueValue = "7464")
+	boolean method1994() {
+		if (this.field2828) {
+			try {
+				this.field2827.close();
+				if (null == this.field2832) {
+					this.field2832 = new IOException("");
+				}
+			} catch (IOException var3) {
+				if (null == this.field2832) {
+					this.field2832 = new IOException(var3);
+				}
+			}
 
-   public class151 method1851(long var1) {
-      class151 var3 = (class151)this.field2854.method1222(var1);
-      if (var3 != null) {
-         this.field2852.method1839(var3);
-      }
+			return true;
+		} else {
+			return false;
+		}
+	}
 
-      return var3;
-   }
+	@ObfInfo(name = "run", desc = "()V")
+	public void run() {
+		do {
+			int var1;
+			synchronized(this) {
+				while (true) {
+					if (this.field2832 != null) {
+						return;
+					}
 
-   public void method1849(long var1) {
-      class151 var3 = (class151)this.field2854.method1222(var1);
-      if (var3 != null) {
-         var3.method605();
-         var3.method938();
-         ++this.field2853;
-      }
+					if (this.field2830 <= this.field2831) {
+						var1 = this.field2831 - this.field2830;
+					} else {
+						var1 = this.field2831 + (this.field2826 - this.field2830);
+					}
 
-   }
+					if (var1 > 0) {
+						break;
+					}
 
-   public void method1850(class151 var1, long var2) {
-      if (this.field2853 == 0) {
-         class151 var4 = this.field2852.method1841();
-         var4.method605();
-         var4.method938();
-         if (var4 == this.field2855) {
-            var4 = this.field2852.method1841();
-            var4.method605();
-            var4.method938();
-         }
-      } else {
-         --this.field2853;
-      }
+					try {
+						this.field2827.flush();
+					} catch (IOException var10) {
+						this.field2832 = var10;
+						return;
+					}
 
-      this.field2854.method1226(var1, var2);
-      this.field2852.method1839(var1);
-   }
+					if (this.method1994()) {
+						return;
+					}
 
-   public void method1848() {
-      this.field2852.method1845();
-      this.field2854.method1223();
-      this.field2855 = new class151();
-      this.field2853 = this.field2851;
-   }
+					try {
+						this.wait();
+					} catch (InterruptedException var11) {
+					}
+				}
+			}
+
+			try {
+				if (var1 + this.field2830 <= this.field2826) {
+					this.field2827.write(this.field2829, this.field2830, var1);
+				} else {
+					int var13 = this.field2826 - this.field2830;
+					this.field2827.write(this.field2829, this.field2830, var13);
+					this.field2827.write(this.field2829, 0, var1 - var13);
+				}
+			} catch (IOException var9) {
+				IOException var2 = var9;
+				synchronized(this) {
+					this.field2832 = var2;
+					return;
+				}
+			}
+
+			synchronized(this) {
+				this.field2830 = (var1 + this.field2830) % this.field2826;
+			}
+		} while(!this.method1994());
+
+	}
+
+	@ObfInfo(name = "ae", desc = "([BIIB)V", opaqueValue = "1")
+	void method1993(byte[] var1, int var2, int var3) throws IOException {
+		if (var3 >= 0 && var2 >= 0 && var2 + var3 <= var1.length) {
+			synchronized(this) {
+				if (this.field2832 != null) {
+					throw new IOException(this.field2832.toString());
+				} else {
+					int var6;
+					if (this.field2830 <= this.field2831) {
+						var6 = this.field2826 - this.field2831 + this.field2830 - 1;
+					} else {
+						var6 = this.field2830 - this.field2831 - 1;
+					}
+
+					if (var6 < var3) {
+						throw new IOException("");
+					} else {
+						if (this.field2831 + var3 <= this.field2826) {
+							System.arraycopy(var1, var2, this.field2829, this.field2831, var3);
+						} else {
+							int var7 = this.field2826 - this.field2831;
+							System.arraycopy(var1, var2, this.field2829, this.field2831, var7);
+							System.arraycopy(var1, var7 + var2, this.field2829, 0, var3 - var7);
+						}
+
+						this.field2831 = (this.field2831 + var3) % this.field2826;
+						this.notifyAll();
+					}
+				}
+			}
+		} else {
+			throw new IOException();
+		}
+	}
+
+	@ObfInfo(name = "ao", desc = "(I)V")
+	void method1992() {
+		synchronized(this) {
+			this.field2828 = true;
+			this.notifyAll();
+		}
+
+		try {
+			this.field2833.join();
+		} catch (InterruptedException var4) {
+		}
+
+	}
 }

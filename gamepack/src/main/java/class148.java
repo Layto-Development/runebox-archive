@@ -1,21 +1,20 @@
-public abstract class class148 {
-   protected float[] field1614;
-   public int field1615;
-   public int field1617;
-   public int[] field1616;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Comparator;
 
-   protected class148() {
-   }
+@ObfInfo(name = "om")
+final class class148 implements Comparator {
+	@ObfInfo(name = "au", desc = "(Loz;Loz;I)I", opaqueValue = "822428190")
+	int method847(class158 var1, class158 var2) {
+		return var1.field1502 < var2.field1502 ? -1 : (var2.field1502 == var1.field1502 ? 0 : 1);
+	}
 
-   public abstract void method929(int var1, int var2);
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method847((class158)var1, (class158)var2);
+	}
 
-   public abstract void method930(int var1, int var2, int var3, int var4);
-
-   public final void method932() {
-      class156.method947(this.field1616, this.field1615, this.field1617, this.field1614);
-   }
-
-   public final void method931(boolean var1) {
-      this.field1614 = var1 ? new float[this.field1617 * this.field1615 + 1] : null;
-   }
+	@ObfInfo(name = "equals", desc = "(Ljava/lang/Object;)Z")
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

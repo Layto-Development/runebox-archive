@@ -1,783 +1,1491 @@
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.ClipboardOwner;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
-
-public class class28 {
-   boolean field549 = true;
-   boolean field551 = false;
-   boolean field560 = false;
-   class130 field559;
-   class130 field564;
-   class7 field545 = new class7();
-   class7 field548 = new class7();
-   int field546 = 0;
-   int field547 = Integer.MAX_VALUE;
-   int field550 = 0;
-   int field552 = 0;
-   int field553 = 0;
-   int field554 = 0;
-   int field555 = 0;
-   int field556 = 0;
-   int field557 = 0;
-   int field558 = 0;
-   int field561 = 0;
-   int field562 = 0;
-   int field563 = Integer.MAX_VALUE;
-   int field565 = 0;
-
-   class28() {
-      this.field548.method110(1);
-      this.field545.method110(1);
-   }
-
-   void method269() {
-      this.field546 = (this.field546 + 1) % 60;
-      if (this.field558 > 0) {
-         --this.field558;
-      }
-
-   }
-
-   public boolean method270(boolean var1) {
-      var1 = var1 && this.field549;
-      boolean var3 = this.field560 != var1;
-      this.field560 = var1;
-      if (!this.field560) {
-         this.method289(this.field556, this.field556);
-      }
-
-      return var3;
-   }
-
-   public void method300(boolean var1) {
-      this.field549 = var1;
-      this.field560 = var1 && this.field560;
-   }
-
-   boolean method339(String var1) {
-      String var3 = this.field548.method79();
-      if (!var3.equals(var1)) {
-         var1 = this.method314(var1);
-         this.field548.method111(var1);
-         this.method278(this.field562, this.field550);
-         this.method321();
-         this.method326();
-         return true;
-      } else {
-         return false;
-      }
-   }
-
-   boolean method272(String var1) {
-      this.field545.method111(var1);
-      return true;
-   }
-
-   boolean method273(class282 var1) {
-      boolean var3 = !this.field551;
-      this.field548.method81(var1);
-      this.field545.method81(var1);
-      this.field551 = true;
-      var3 |= this.method278(this.field562, this.field550);
-      var3 |= this.method289(this.field555, this.field556);
-      if (this.method321()) {
-         this.method326();
-         var3 = true;
-      }
-
-      return var3;
-   }
-
-   public boolean method274(int var1, int var2) {
-      boolean var4 = this.field553 != var1 || this.field561 != var2;
-      this.field553 = var1;
-      this.field561 = var2;
-      var4 |= this.method278(this.field562, this.field550);
-      return var4;
-   }
-
-   public boolean method275(int var1) {
-      if (var1 < 0) {
-         var1 = Integer.MAX_VALUE;
-      }
-
-      boolean var3 = var1 == this.field548.method115();
-      this.field548.method106(var1);
-      this.field545.method106(var1);
-      if (this.method321()) {
-         this.method326();
-         var3 = true;
-      }
-
-      return var3;
-   }
-
-   public boolean method276(int var1) {
-      this.field548.method77(var1);
-      if (this.method321()) {
-         this.method326();
-         return true;
-      } else {
-         return false;
-      }
-   }
-
-   public boolean method343(int var1) {
-      this.field563 = var1;
-      if (this.method321()) {
-         this.method326();
-         return true;
-      } else {
-         return false;
-      }
-   }
-
-   public boolean method278(int var1, int var2) {
-      if (!this.method312()) {
-         this.field562 = var1;
-         this.field550 = var2;
-         return false;
-      } else {
-         int var4 = this.field562;
-         int var5 = this.field550;
-         int var6 = Math.max(0, this.field548.method90() - this.field553 + 2);
-         int var7 = Math.max(0, this.field548.method91() - this.field561 + 1);
-         this.field562 = Math.max(0, Math.min(var6, var1));
-         this.field550 = Math.max(0, Math.min(var7, var2));
-         return var4 != this.field562 || this.field550 != var5;
-      }
-   }
-
-   public boolean method335(int var1, int var2) {
-      boolean var4 = true;
-      if (var1 < 0 || var1 > 2) {
-         var4 = false;
-      }
-
-      if (var2 < 0 || var2 > 2) {
-         var4 = false;
-      }
-
-      return var4 ? this.field548.method82(var1, var2) : false;
-   }
-
-   public void method279(int var1) {
-      this.field548.method83(var1);
-   }
-
-   public void method280(int var1) {
-      this.field552 = var1;
-   }
-
-   public void method349(int var1) {
-      this.field548.method110(var1);
-   }
-
-   public void method348(int var1) {
-      this.field548.method80(var1);
-   }
-
-   public boolean method330(int var1) {
-      this.field554 = var1;
-      String var3 = this.field548.method79();
-      int var4 = var3.length();
-      var3 = this.method314(var3);
-      if (var3.length() != var4) {
-         this.field548.method111(var3);
-         this.method278(this.field562, this.field550);
-         this.method321();
-         this.method326();
-         return true;
-      } else {
-         return false;
-      }
-   }
-
-   public void method282() {
-      this.field551 = false;
-   }
-
-   public boolean method329(int var1) {
-      if (this.method316(var1)) {
-         this.method288();
-         class160 var3 = this.field548.method109((char)var1, this.field556, this.field547);
-         this.method289(var3.method989(), var3.method989());
-         this.method321();
-         this.method326();
-      }
-
-      return true;
-   }
-
-   public void method284() {
-      if (!this.method288() && this.field556 > 0) {
-         int var2 = this.field548.method87(this.field556 - 1);
-         this.method326();
-         this.method289(var2, var2);
-      }
-
-   }
-
-   public void method285() {
-      if (!this.method288() && this.field556 < this.field548.method78()) {
-         int var2 = this.field548.method87(this.field556);
-         this.method326();
-         this.method289(var2, var2);
-      }
-
-   }
-
-   public void method286() {
-      if (!this.method288() && this.field556 > 0) {
-         class467 var2 = this.method319(this.field556 - 1);
-         int var3 = this.field548.method88((Integer)var2.field3606, this.field556);
-         this.method326();
-         this.method289(var3, var3);
-      }
-
-   }
-
-   public void method307() {
-      if (!this.method288() && this.field556 < this.field548.method78()) {
-         class467 var2 = this.method319(this.field556);
-         int var3 = this.field548.method88(this.field556, (Integer)var2.field3605);
-         this.method326();
-         this.method289(var3, var3);
-      }
-
-   }
-
-   boolean method288() {
-      if (!this.method317()) {
-         return false;
-      } else {
-         int var2 = this.field548.method88(this.field555, this.field556);
-         this.method326();
-         this.method289(var2, var2);
-         return true;
-      }
-   }
-
-   public void method347() {
-      this.method289(0, this.field548.method78());
-   }
-
-   public boolean method289(int var1, int var2) {
-      if (!this.method312()) {
-         this.field555 = var1;
-         this.field556 = var2;
-         return false;
-      } else {
-         if (var1 > this.field548.method78()) {
-            var1 = this.field548.method78();
-         }
-
-         if (var2 > this.field548.method78()) {
-            var2 = this.field548.method78();
-         }
-
-         boolean var4 = this.field555 != var1 || var2 != this.field556;
-         this.field555 = var1;
-         if (var2 != this.field556) {
-            this.field556 = var2;
-            this.field546 = 0;
-            this.method324();
-         }
-
-         if (var4 && null != this.field559) {
-            this.field559.method889();
-         }
-
-         return var4;
-      }
-   }
-
-   public void method290(boolean var1) {
-      class467 var3 = this.method320(this.field556);
-      this.method322((Integer)var3.field3606, var1);
-   }
-
-   public void method291(boolean var1) {
-      class467 var3 = this.method320(this.field556);
-      this.method322((Integer)var3.field3605, var1);
-   }
-
-   public void method292(boolean var1) {
-      this.method322(0, var1);
-   }
-
-   public void method293(boolean var1) {
-      this.method322(this.field548.method78(), var1);
-   }
-
-   public void method341(boolean var1) {
-      if (this.method317() && !var1) {
-         this.method322(Math.min(this.field555, this.field556), var1);
-      } else if (this.field556 > 0) {
-         this.method322(this.field556 - 1, var1);
-      }
-
-   }
-
-   public void method294(boolean var1) {
-      if (this.method317() && !var1) {
-         this.method322(Math.max(this.field555, this.field556), var1);
-      } else if (this.field556 < this.field548.method78()) {
-         this.method322(1 + this.field556, var1);
-      }
-
-   }
-
-   public void method295(boolean var1) {
-      if (this.field556 > 0) {
-         class467 var3 = this.method319(this.field556 - 1);
-         this.method322((Integer)var3.field3606, var1);
-      }
-
-   }
-
-   public void method296(boolean var1) {
-      if (this.field556 < this.field548.method78()) {
-         class467 var3 = this.method319(1 + this.field556);
-         this.method322((Integer)var3.field3605, var1);
-      }
-
-   }
-
-   public void method297(boolean var1) {
-      if (this.field556 > 0) {
-         this.method322(this.field548.method89(this.field556, -1), var1);
-      }
-
-   }
-
-   public void method298(boolean var1) {
-      if (this.field556 < this.field548.method78()) {
-         this.method322(this.field548.method89(this.field556, 1), var1);
-      }
-
-   }
-
-   public void method299(boolean var1) {
-      if (this.field556 > 0) {
-         int var3 = this.method323();
-         this.method322(this.field548.method89(this.field556, -var3), var1);
-      }
-
-   }
-
-   public void method287(boolean var1) {
-      if (this.field556 < this.field548.method78()) {
-         int var3 = this.method323();
-         this.method322(this.field548.method89(this.field556, var3), var1);
-      }
-
-   }
-
-   public void method337(boolean var1) {
-      class437 var3 = this.field548.method84(0, this.field556);
-      class467 var4 = var3.method2148();
-      this.method322(this.field548.method105((Integer)var4.field3606, this.field550), var1);
-   }
-
-   public void method336(boolean var1) {
-      class437 var3 = this.field548.method84(0, this.field556);
-      class467 var4 = var3.method2148();
-      this.method322(this.field548.method105((Integer)var4.field3606, this.field561 + this.field550), var1);
-   }
-
-   public void method345(int var1, int var2, boolean var3, boolean var4) {
-      boolean var6 = false;
-      class467 var7;
-      int var9;
-      if (!this.field551) {
-         var9 = 0;
-      } else {
-         var1 += this.field562;
-         var2 += this.field550;
-         var7 = this.method327();
-         var9 = this.field548.method105(var1 - (Integer)var7.field3606, var2 - (Integer)var7.field3605);
-      }
-
-      if (var3 && var4) {
-         this.field565 = 1;
-         var7 = this.method319(var9);
-         class467 var8 = this.method319(this.field557);
-         this.method318(var8, var7);
-      } else if (var3) {
-         this.field565 = 1;
-         var7 = this.method319(var9);
-         this.method289((Integer)var7.field3606, (Integer)var7.field3605);
-         this.field557 = (Integer)var7.field3606;
-      } else if (var4) {
-         this.method289(this.field557, var9);
-      } else {
-         if (this.field558 > 0 && var9 == this.field557) {
-            if (this.field556 == this.field555) {
-               this.field565 = 1;
-               var7 = this.method319(var9);
-               this.method289((Integer)var7.field3606, (Integer)var7.field3605);
-            } else {
-               this.field565 = 2;
-               var7 = this.method320(var9);
-               this.method289((Integer)var7.field3606, (Integer)var7.field3605);
-            }
-         } else {
-            this.field565 = 0;
-            this.method289(var9, var9);
-            this.field557 = var9;
-         }
-
-         this.field558 = 25;
-      }
-
-   }
-
-   public void method328(int var1, int var2) {
-      if (this.field551 && this.method308()) {
-         var1 += this.field562;
-         var2 += this.field550;
-         class467 var4 = this.method327();
-         int var5 = this.field548.method105(var1 - (Integer)var4.field3606, var2 - (Integer)var4.field3605);
-         class467 var6;
-         class467 var7;
-         switch (this.field565) {
-            case 0:
-               this.method289(this.field555, var5);
-               break;
-            case 1:
-               var6 = this.method319(this.field557);
-               var7 = this.method319(var5);
-               this.method318(var6, var7);
-               break;
-            case 2:
-               var6 = this.method320(this.field557);
-               var7 = this.method320(var5);
-               this.method318(var6, var7);
-         }
-      }
-
-   }
-
-   public void method301(Clipboard var1) {
-      class437 var3 = this.field548.method84(this.field555, this.field556);
-      if (!var3.method2143()) {
-         String var4 = var3.method2142();
-         if (!var4.isEmpty()) {
-            var1.setContents(new StringSelection(var4), (ClipboardOwner)null);
-         }
-      }
-
-   }
-
-   public void method271(Clipboard var1) {
-      if (this.method317()) {
-         this.method301(var1);
-         this.method288();
-      }
-
-   }
-
-   public void method302(Clipboard var1) {
-      Transferable var3 = var1.getContents((Object)null);
-      if (null != var3 && var3.isDataFlavorSupported(DataFlavor.stringFlavor)) {
-         try {
-            String var4 = this.method314((String)var3.getTransferData(DataFlavor.stringFlavor));
-            this.method288();
-            class160 var5 = this.field548.method85(var4, this.field556, this.field547);
-            this.method289(var5.method989(), var5.method989());
-            this.method321();
-            this.method326();
-         } catch (Exception var6) {
-         }
-      }
-
-   }
-
-   public void method342() {
-      this.field550 = Math.max(0, this.field550 - this.field548.method92());
-   }
-
-   public void method303() {
-      int var2 = Math.max(0, this.field548.method91() - this.field561);
-      this.field550 = Math.min(var2, this.field550 + this.field548.method92());
-   }
-
-   public void method304(class130 var1) {
-      this.field564 = var1;
-   }
-
-   public void method305(class130 var1) {
-      this.field559 = var1;
-   }
-
-   public class7 method332() {
-      return this.field548;
-   }
-
-   public class7 method306() {
-      return this.field545;
-   }
-
-   public class437 method281() {
-      return this.field548.method84(this.field555, this.field556);
-   }
-
-   public boolean method308() {
-      return this.field560;
-   }
-
-   public boolean method309() {
-      return this.field549;
-   }
-
-   public boolean method331() {
-      return this.method308() && this.field546 % 60 < 30;
-   }
-
-   public int method310() {
-      return this.field556;
-   }
-
-   public int method311() {
-      return this.field555;
-   }
-
-   public boolean method312() {
-      return this.field551;
-   }
-
-   public int method313() {
-      return this.field562;
-   }
-
-   public int method338() {
-      return this.field550;
-   }
-
-   public int method344() {
-      return this.field548.method115();
-   }
-
-   public int method340() {
-      return this.field548.method95();
-   }
-
-   public int method346() {
-      return this.field563;
-   }
-
-   public int method315() {
-      return this.field552;
-   }
-
-   public int method283() {
-      return this.field548.method103();
-   }
-
-   public int method334() {
-      return this.field554;
-   }
-
-   public int method277() {
-      return this.field548.method96();
-   }
-
-   public boolean method333() {
-      return this.method340() > 1;
-   }
-
-   boolean method317() {
-      return this.field556 != this.field555;
-   }
-
-   String method314(String var1) {
-      StringBuilder var3 = new StringBuilder(var1.length());
-
-      for(int var4 = 0; var4 < var1.length(); ++var4) {
-         char var5 = var1.charAt(var4);
-         if (this.method316(var5)) {
-            var3.append(var5);
-         }
-      }
-
-      return var3.toString();
-   }
-
-   void method318(class467 var1, class467 var2) {
-      if ((Integer)var2.field3606 < (Integer)var1.field3606) {
-         this.method289((Integer)var1.field3605, (Integer)var2.field3606);
-      } else {
-         this.method289((Integer)var1.field3606, (Integer)var2.field3605);
-      }
-
-   }
-
-   class467 method319(int var1) {
-      int var3 = this.field548.method78();
-      int var4 = 0;
-      int var5 = var3;
-
-      int var6;
-      for(var6 = var1; var6 > 0; --var6) {
-         if (this.method325(this.field548.method93(var6 - 1).field4170)) {
-            var4 = var6;
-            break;
-         }
-      }
-
-      for(var6 = var1; var6 < var3; ++var6) {
-         if (this.method325(this.field548.method93(var6).field4170)) {
-            var5 = var6;
-            break;
-         }
-      }
-
-      return new class467(var4, var5);
-   }
-
-   class467 method320(int var1) {
-      int var3 = this.field548.method78();
-      int var4 = 0;
-      int var5 = var3;
-
-      int var6;
-      for(var6 = var1; var6 > 0; --var6) {
-         if (this.field548.method93(var6 - 1).field4170 == '\n') {
-            var4 = var6;
-            break;
-         }
-      }
-
-      for(var6 = var1; var6 < var3; ++var6) {
-         if (this.field548.method93(var6).field4170 == '\n') {
-            var5 = var6;
-            break;
-         }
-      }
-
-      return new class467(var4, var5);
-   }
-
-   boolean method321() {
-      if (!this.method312()) {
-         return false;
-      } else {
-         boolean var2 = false;
-         if (this.field548.method78() > this.field563) {
-            this.field548.method88(this.field563, this.field548.method78());
-            var2 = true;
-         }
-
-         int var3 = this.method340();
-         int var4;
-         if (this.field548.method108() > var3) {
-            var4 = this.field548.method89(0, var3) - 1;
-            this.field548.method88(var4, this.field548.method78());
-            var2 = true;
-         }
-
-         if (var2) {
-            var4 = this.field556;
-            int var5 = this.field555;
-            int var6 = this.field548.method78();
-            if (this.field556 > var6) {
-               var4 = var6;
-            }
-
-            if (this.field555 > var6) {
-               var5 = var6;
-            }
-
-            this.method289(var5, var4);
-         }
-
-         return var2;
-      }
-   }
-
-   void method322(int var1, boolean var2) {
-      if (var2) {
-         this.method289(this.field555, var1);
-      } else {
-         this.method289(var1, var1);
-      }
-
-   }
-
-   int method323() {
-      return this.field561 / this.field548.method92();
-   }
-
-   void method324() {
-      class437 var2 = this.field548.method84(0, this.field556);
-      class467 var3 = var2.method2148();
-      int var4 = this.field548.method92();
-      int var5 = (Integer)var3.field3606 - 10;
-      int var6 = var5 + 20;
-      int var7 = (Integer)var3.field3605 - 3;
-      int var8 = var7 + 6 + var4;
-      int var9 = this.field562;
-      int var10 = this.field553 + var9;
-      int var11 = this.field550;
-      int var12 = var11 + this.field561;
-      int var13 = this.field562;
-      int var14 = this.field550;
-      if (var5 < var9) {
-         var13 = var5;
-      } else if (var6 > var10) {
-         var13 = var6 - this.field553;
-      }
-
-      if (var7 < var11) {
-         var14 = var7;
-      } else if (var8 > var12) {
-         var14 = var8 - this.field561;
-      }
-
-      this.method278(var13, var14);
-   }
-
-   boolean method325(int var1) {
-      return var1 == 32 || var1 == 10 || var1 == 9;
-   }
-
-   void method326() {
-      if (null != this.field564) {
-         this.field564.method889();
-      }
-
-   }
-
-   boolean method316(int var1) {
-      switch (this.field554) {
-         case 1:
-            return class330.method1746((char)var1);
-         case 2:
-            return class330.method1740((char)var1);
-         case 3:
-            return class519.method2475((char)var1);
-         case 4:
-            char var3 = (char)var1;
-            if (class519.method2475(var3)) {
-               return true;
-            } else {
-               if (var3 != 'k' && var3 != 'K' && var3 != 'm' && var3 != 'M' && var3 != 'b' && var3 != 'B') {
-                  return false;
-               }
-
-               return true;
-            }
-         default:
-            return true;
-      }
-   }
-
-   class467 method327() {
-      int var2 = this.field548.method97(this.field553);
-      int var3 = this.field548.method98(this.field561);
-      return new class467(var2, var3);
-   }
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+
+@ObfInfo(name = "bn")
+public class class28 extends class449 {
+	@ObfInfo(name = "ad", desc = "Z")
+	boolean field464;
+	@ObfInfo(name = "al", desc = "I")
+	int field451;
+	@ObfInfo(name = "ae", desc = "I")
+	int field452;
+	@ObfInfo(name = "ao", desc = "I")
+	int field453;
+	@ObfInfo(name = "at", desc = "I")
+	int field454;
+	@ObfInfo(name = "ac", desc = "I")
+	int field455;
+	@ObfInfo(name = "an", desc = "I")
+	int field456;
+	@ObfInfo(name = "az", desc = "I")
+	int field457;
+	@ObfInfo(name = "ap", desc = "I")
+	int field458;
+	@ObfInfo(name = "aa", desc = "I")
+	int field459;
+	@ObfInfo(name = "af", desc = "I")
+	int field460;
+	@ObfInfo(name = "au", desc = "I")
+	int field461;
+	@ObfInfo(name = "aq", desc = "I")
+	int field462;
+	@ObfInfo(name = "ai", desc = "I")
+	int field463;
+	@ObfInfo(name = "ar", desc = "I")
+	int field465;
+
+	@ObfInfo(name = "<init>", desc = "(Lbu;II)V")
+	class28(class62 var1, int var2, int var3) {
+		super.field3389 = var1;
+		this.field459 = var1.field739;
+		this.field460 = var1.field737;
+		this.field464 = var1.field741;
+		this.field452 = var2;
+		this.field453 = var3;
+		this.field454 = 8192;
+		this.field461 = 0;
+		this.method407();
+	}
+
+	@ObfInfo(name = "<init>", desc = "(Lbu;III)V")
+	class28(class62 var1, int var2, int var3, int var4) {
+		super.field3389 = var1;
+		this.field459 = var1.field739;
+		this.field460 = var1.field737;
+		this.field464 = var1.field741;
+		this.field452 = var2;
+		this.field453 = var3;
+		this.field454 = var4;
+		this.field461 = 0;
+		this.method407();
+	}
+
+	@ObfInfo(name = "br", desc = "()I")
+	int method2353() {
+		int var1 = this.field455 * 3 >> 6;
+		var1 = (var1 ^ var1 >> 31) + (var1 >>> 31);
+		if (this.field458 == 0) {
+			var1 -= var1 * this.field461 / (((class62)super.field3389).field738.length << 8);
+		} else if (this.field458 >= 0) {
+			var1 -= var1 * this.field459 / ((class62)super.field3389).field738.length;
+		}
+
+		return var1 > 255 ? 255 : var1;
+	}
+
+	@ObfInfo(name = "ac", desc = "()V")
+	void method407() {
+		this.field455 = this.field453;
+		this.field463 = method399(this.field453, this.field454);
+		this.field457 = method366(this.field453, this.field454);
+	}
+
+	@ObfInfo(name = "af", desc = "(I)V")
+	public synchronized void method370(int var1) {
+		this.field458 = var1;
+	}
+
+	@ObfInfo(name = "aq", desc = "(I)V")
+	public synchronized void method371(int var1) {
+		this.method372(var1 << 6, this.method374());
+	}
+
+	@ObfInfo(name = "al", desc = "(I)V")
+	synchronized void method410(int var1) {
+		this.method372(var1, this.method374());
+	}
+
+	@ObfInfo(name = "an", desc = "(II)V")
+	synchronized void method372(int var1, int var2) {
+		this.field453 = var1;
+		this.field454 = var2;
+		this.field462 = 0;
+		this.method407();
+	}
+
+	@ObfInfo(name = "ar", desc = "()I")
+	public synchronized int method373() {
+		return this.field453 == Integer.MIN_VALUE ? 0 : this.field453;
+	}
+
+	@ObfInfo(name = "ab", desc = "()I")
+	public synchronized int method374() {
+		return this.field454 < 0 ? -1 : this.field454;
+	}
+
+	@ObfInfo(name = "ag", desc = "(I)V")
+	public synchronized void method375(int var1) {
+		int var2 = ((class62)super.field3389).field738.length << 8;
+		if (var1 < -1) {
+			var1 = -1;
+		}
+
+		if (var1 > var2) {
+			var1 = var2;
+		}
+
+		this.field461 = var1;
+	}
+
+	@ObfInfo(name = "am", desc = "(Z)V")
+	public synchronized void method403(boolean var1) {
+		this.field452 = (this.field452 ^ this.field452 >> 31) + (this.field452 >>> 31);
+		if (var1) {
+			this.field452 = -this.field452;
+		}
+
+	}
+
+	@ObfInfo(name = "ax", desc = "()V")
+	void method400() {
+		if (this.field462 != 0) {
+			if (this.field453 == Integer.MIN_VALUE) {
+				this.field453 = 0;
+			}
+
+			this.field462 = 0;
+			this.method407();
+		}
+
+	}
+
+	@ObfInfo(name = "ah", desc = "(II)V")
+	public synchronized void method402(int var1, int var2) {
+		this.method385(var1, var2, this.method374());
+	}
+
+	@ObfInfo(name = "as", desc = "(III)V")
+	public synchronized void method385(int var1, int var2, int var3) {
+		if (var1 == 0) {
+			this.method372(var2, var3);
+		} else {
+			int var4 = method399(var2, var3);
+			int var5 = method366(var2, var3);
+			if (this.field463 == var4 && this.field457 == var5) {
+				this.field462 = 0;
+			} else {
+				int var6 = var2 - this.field455;
+				if (this.field455 - var2 > var6) {
+					var6 = this.field455 - var2;
+				}
+
+				if (var4 - this.field463 > var6) {
+					var6 = var4 - this.field463;
+				}
+
+				if (this.field463 - var4 > var6) {
+					var6 = this.field463 - var4;
+				}
+
+				if (var5 - this.field457 > var6) {
+					var6 = var5 - this.field457;
+				}
+
+				if (this.field457 - var5 > var6) {
+					var6 = this.field457 - var5;
+				}
+
+				if (var1 > var6) {
+					var1 = var6;
+				}
+
+				this.field462 = var1;
+				this.field453 = var2;
+				this.field454 = var3;
+				this.field451 = (var2 - this.field455) / var1;
+				this.field456 = (var4 - this.field463) / var1;
+				this.field465 = (var5 - this.field457) / var1;
+			}
+		}
+	}
+
+	@ObfInfo(name = "ay", desc = "(I)V")
+	public synchronized void method377(int var1) {
+		if (var1 == 0) {
+			this.method410(0);
+			this.method907();
+		} else if (this.field463 == 0 && this.field457 == 0) {
+			this.field462 = 0;
+			this.field453 = 0;
+			this.field455 = 0;
+			this.method907();
+		} else {
+			int var2 = -this.field455;
+			if (this.field455 > var2) {
+				var2 = this.field455;
+			}
+
+			if (-this.field463 > var2) {
+				var2 = -this.field463;
+			}
+
+			if (this.field463 > var2) {
+				var2 = this.field463;
+			}
+
+			if (-this.field457 > var2) {
+				var2 = -this.field457;
+			}
+
+			if (this.field457 > var2) {
+				var2 = this.field457;
+			}
+
+			if (var1 > var2) {
+				var1 = var2;
+			}
+
+			this.field462 = var1;
+			this.field453 = Integer.MIN_VALUE;
+			this.field451 = -this.field455 / var1;
+			this.field456 = -this.field463 / var1;
+			this.field465 = -this.field457 / var1;
+		}
+	}
+
+	@ObfInfo(name = "aj", desc = "(I)V")
+	public synchronized void method378(int var1) {
+		if (this.field452 < 0) {
+			this.field452 = -var1;
+		} else {
+			this.field452 = var1;
+		}
+
+	}
+
+	@ObfInfo(name = "av", desc = "()I")
+	public synchronized int method379() {
+		return this.field452 < 0 ? -this.field452 : this.field452;
+	}
+
+	@ObfInfo(name = "aw", desc = "()Z")
+	public boolean method380() {
+		return this.field461 < 0 || this.field461 >= ((class62)super.field3389).field738.length << 8;
+	}
+
+	@ObfInfo(name = "ak", desc = "()Z")
+	public boolean method381() {
+		return this.field462 != 0;
+	}
+
+	@ObfInfo(name = "ai", desc = "()Lbw;")
+	protected class449 method2354() {
+		return null;
+	}
+
+	@ObfInfo(name = "az", desc = "()Lbw;")
+	protected class449 method2355() {
+		return null;
+	}
+
+	@ObfInfo(name = "ap", desc = "()I")
+	protected int method2352() {
+		return this.field453 == 0 && this.field462 == 0 ? 0 : 1;
+	}
+
+	@ObfInfo(name = "aa", desc = "([III)V")
+	public synchronized void method2357(int[] var1, int var2, int var3) {
+		if (this.field453 == 0 && this.field462 == 0) {
+			this.method2356(var3);
+		} else {
+			class62 var4 = (class62)super.field3389;
+			int var5 = this.field459 << 8;
+			int var6 = this.field460 << 8;
+			int var7 = var4.field738.length << 8;
+			int var8 = var6 - var5;
+			if (var8 <= 0) {
+				this.field458 = 0;
+			}
+
+			int var9 = var2;
+			var3 += var2;
+			if (this.field461 < 0) {
+				if (this.field452 <= 0) {
+					this.method400();
+					this.method907();
+					return;
+				}
+
+				this.field461 = 0;
+			}
+
+			if (this.field461 >= var7) {
+				if (this.field452 >= 0) {
+					this.method400();
+					this.method907();
+					return;
+				}
+
+				this.field461 = var7 - 1;
+			}
+
+			if (this.field458 < 0) {
+				if (this.field464) {
+					if (this.field452 < 0) {
+						var9 = this.method387(var1, var2, var5, var3, var4.field738[this.field459]);
+						if (this.field461 >= var5) {
+							return;
+						}
+
+						this.field461 = var5 + var5 - 1 - this.field461;
+						this.field452 = -this.field452;
+					}
+
+					while (true) {
+						var9 = this.method401(var1, var9, var6, var3, var4.field738[this.field460 - 1]);
+						if (this.field461 < var6) {
+							return;
+						}
+
+						this.field461 = var6 + var6 - 1 - this.field461;
+						this.field452 = -this.field452;
+						var9 = this.method387(var1, var9, var5, var3, var4.field738[this.field459]);
+						if (this.field461 >= var5) {
+							return;
+						}
+
+						this.field461 = var5 + var5 - 1 - this.field461;
+						this.field452 = -this.field452;
+					}
+				} else if (this.field452 < 0) {
+					while (true) {
+						var9 = this.method387(var1, var9, var5, var3, var4.field738[this.field460 - 1]);
+						if (this.field461 >= var5) {
+							return;
+						}
+
+						this.field461 = var6 - 1 - (var6 - 1 - this.field461) % var8;
+					}
+				} else {
+					while (true) {
+						var9 = this.method401(var1, var9, var6, var3, var4.field738[this.field459]);
+						if (this.field461 < var6) {
+							return;
+						}
+
+						this.field461 = var5 + (this.field461 - var5) % var8;
+					}
+				}
+			} else {
+				if (this.field458 > 0) {
+					if (this.field464) {
+						label131: {
+							if (this.field452 < 0) {
+								var9 = this.method387(var1, var2, var5, var3, var4.field738[this.field459]);
+								if (this.field461 >= var5) {
+									return;
+								}
+
+								this.field461 = var5 + var5 - 1 - this.field461;
+								this.field452 = -this.field452;
+								if (--this.field458 == 0) {
+									break label131;
+								}
+							}
+
+							do {
+								var9 = this.method401(var1, var9, var6, var3, var4.field738[this.field460 - 1]);
+								if (this.field461 < var6) {
+									return;
+								}
+
+								this.field461 = var6 + var6 - 1 - this.field461;
+								this.field452 = -this.field452;
+								if (--this.field458 == 0) {
+									break;
+								}
+
+								var9 = this.method387(var1, var9, var5, var3, var4.field738[this.field459]);
+								if (this.field461 >= var5) {
+									return;
+								}
+
+								this.field461 = var5 + var5 - 1 - this.field461;
+								this.field452 = -this.field452;
+							} while(--this.field458 != 0);
+						}
+					} else {
+						int var10;
+						if (this.field452 < 0) {
+							while (true) {
+								var9 = this.method387(var1, var9, var5, var3, var4.field738[this.field460 - 1]);
+								if (this.field461 >= var5) {
+									return;
+								}
+
+								var10 = (var6 - 1 - this.field461) / var8;
+								if (var10 >= this.field458) {
+									this.field461 += var8 * this.field458;
+									this.field458 = 0;
+									break;
+								}
+
+								this.field461 += var8 * var10;
+								this.field458 -= var10;
+							}
+						} else {
+							while (true) {
+								var9 = this.method401(var1, var9, var6, var3, var4.field738[this.field459]);
+								if (this.field461 < var6) {
+									return;
+								}
+
+								var10 = (this.field461 - var5) / var8;
+								if (var10 >= this.field458) {
+									this.field461 -= var8 * this.field458;
+									this.field458 = 0;
+									break;
+								}
+
+								this.field461 -= var8 * var10;
+								this.field458 -= var10;
+							}
+						}
+					}
+				}
+
+				if (this.field452 < 0) {
+					this.method387(var1, var9, 0, var3, 0);
+					if (this.field461 < 0) {
+						this.field461 = -1;
+						this.method400();
+						this.method907();
+					}
+				} else {
+					this.method401(var1, var9, var7, var3, 0);
+					if (this.field461 >= var7) {
+						this.field461 = var7;
+						this.method400();
+						this.method907();
+					}
+				}
+
+			}
+		}
+	}
+
+	@ObfInfo(name = "ad", desc = "(I)V")
+	public synchronized void method2356(int var1) {
+		if (this.field462 > 0) {
+			if (var1 >= this.field462) {
+				if (this.field453 == Integer.MIN_VALUE) {
+					this.field453 = 0;
+					this.field457 = 0;
+					this.field463 = 0;
+					this.field455 = 0;
+					this.method907();
+					var1 = this.field462;
+				}
+
+				this.field462 = 0;
+				this.method407();
+			} else {
+				this.field455 += this.field451 * var1;
+				this.field463 += this.field456 * var1;
+				this.field457 += this.field465 * var1;
+				this.field462 -= var1;
+			}
+		}
+
+		class62 var2 = (class62)super.field3389;
+		int var3 = this.field459 << 8;
+		int var4 = this.field460 << 8;
+		int var5 = var2.field738.length << 8;
+		int var6 = var4 - var3;
+		if (var6 <= 0) {
+			this.field458 = 0;
+		}
+
+		if (this.field461 < 0) {
+			if (this.field452 <= 0) {
+				this.method400();
+				this.method907();
+				return;
+			}
+
+			this.field461 = 0;
+		}
+
+		if (this.field461 >= var5) {
+			if (this.field452 >= 0) {
+				this.method400();
+				this.method907();
+				return;
+			}
+
+			this.field461 = var5 - 1;
+		}
+
+		this.field461 += this.field452 * var1;
+		if (this.field458 < 0) {
+			if (!this.field464) {
+				if (this.field452 < 0) {
+					if (this.field461 >= var3) {
+						return;
+					}
+
+					this.field461 = var4 - 1 - (var4 - 1 - this.field461) % var6;
+				} else {
+					if (this.field461 < var4) {
+						return;
+					}
+
+					this.field461 = var3 + (this.field461 - var3) % var6;
+				}
+
+			} else {
+				if (this.field452 < 0) {
+					if (this.field461 >= var3) {
+						return;
+					}
+
+					this.field461 = var3 + var3 - 1 - this.field461;
+					this.field452 = -this.field452;
+				}
+
+				while (this.field461 >= var4) {
+					this.field461 = var4 + var4 - 1 - this.field461;
+					this.field452 = -this.field452;
+					if (this.field461 >= var3) {
+						return;
+					}
+
+					this.field461 = var3 + var3 - 1 - this.field461;
+					this.field452 = -this.field452;
+				}
+
+			}
+		} else {
+			if (this.field458 > 0) {
+				if (this.field464) {
+					label120: {
+						if (this.field452 < 0) {
+							if (this.field461 >= var3) {
+								return;
+							}
+
+							this.field461 = var3 + var3 - 1 - this.field461;
+							this.field452 = -this.field452;
+							if (--this.field458 == 0) {
+								break label120;
+							}
+						}
+
+						do {
+							if (this.field461 < var4) {
+								return;
+							}
+
+							this.field461 = var4 + var4 - 1 - this.field461;
+							this.field452 = -this.field452;
+							if (--this.field458 == 0) {
+								break;
+							}
+
+							if (this.field461 >= var3) {
+								return;
+							}
+
+							this.field461 = var3 + var3 - 1 - this.field461;
+							this.field452 = -this.field452;
+						} while(--this.field458 != 0);
+					}
+				} else {
+					label152: {
+						int var7;
+						if (this.field452 < 0) {
+							if (this.field461 >= var3) {
+								return;
+							}
+
+							var7 = (var4 - 1 - this.field461) / var6;
+							if (var7 >= this.field458) {
+								this.field461 += var6 * this.field458;
+								this.field458 = 0;
+								break label152;
+							}
+
+							this.field461 += var6 * var7;
+							this.field458 -= var7;
+						} else {
+							if (this.field461 < var4) {
+								return;
+							}
+
+							var7 = (this.field461 - var3) / var6;
+							if (var7 >= this.field458) {
+								this.field461 -= var6 * this.field458;
+								this.field458 = 0;
+								break label152;
+							}
+
+							this.field461 -= var6 * var7;
+							this.field458 -= var7;
+						}
+
+						return;
+					}
+				}
+			}
+
+			if (this.field452 < 0) {
+				if (this.field461 < 0) {
+					this.field461 = -1;
+					this.method400();
+					this.method907();
+				}
+			} else if (this.field461 >= var5) {
+				this.field461 = var5;
+				this.method400();
+				this.method907();
+			}
+
+		}
+	}
+
+	@ObfInfo(name = "bh", desc = "([IIIII)I")
+	int method401(int[] var1, int var2, int var3, int var4, int var5) {
+		while (true) {
+			if (this.field462 > 0) {
+				int var6 = var2 + this.field462;
+				if (var6 > var4) {
+					var6 = var4;
+				}
+
+				this.field462 += var2;
+				if (this.field452 == 256 && (this.field461 & 255) == 0) {
+					if (class429.field3257) {
+						var2 = method394(0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field463, this.field457, this.field456, this.field465, 0, var6, var3, this);
+					} else {
+						var2 = method393(((class62)super.field3389).field738, var1, this.field461, var2, this.field455, this.field451, 0, var6, var3, this);
+					}
+				} else if (class429.field3257) {
+					var2 = method398(0, 0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field463, this.field457, this.field456, this.field465, 0, var6, var3, this, this.field452, var5);
+				} else {
+					var2 = method397(0, 0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field455, this.field451, 0, var6, var3, this, this.field452, var5);
+				}
+
+				this.field462 -= var2;
+				if (this.field462 != 0) {
+					return var2;
+				}
+
+				if (!this.method406()) {
+					continue;
+				}
+
+				return var4;
+			}
+
+			if (this.field452 == 256 && (this.field461 & 255) == 0) {
+				if (class429.field3257) {
+					return method388(0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field463, this.field457, 0, var4, var3, this);
+				}
+
+				return method368(((class62)super.field3389).field738, var1, this.field461, var2, this.field455, 0, var4, var3, this);
+			}
+
+			if (class429.field3257) {
+				return method391(0, 0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field463, this.field457, 0, var4, var3, this, this.field452, var5);
+			}
+
+			return method390(0, 0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field455, 0, var4, var3, this, this.field452, var5);
+		}
+	}
+
+	@ObfInfo(name = "bm", desc = "([IIIII)I")
+	int method387(int[] var1, int var2, int var3, int var4, int var5) {
+		while (true) {
+			if (this.field462 > 0) {
+				int var6 = var2 + this.field462;
+				if (var6 > var4) {
+					var6 = var4;
+				}
+
+				this.field462 += var2;
+				if (this.field452 == -256 && (this.field461 & 255) == 0) {
+					if (class429.field3257) {
+						var2 = method396(0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field463, this.field457, this.field456, this.field465, 0, var6, var3, this);
+					} else {
+						var2 = method395(((class62)super.field3389).field738, var1, this.field461, var2, this.field455, this.field451, 0, var6, var3, this);
+					}
+				} else if (class429.field3257) {
+					var2 = method405(0, 0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field463, this.field457, this.field456, this.field465, 0, var6, var3, this, this.field452, var5);
+				} else {
+					var2 = method408(0, 0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field455, this.field451, 0, var6, var3, this, this.field452, var5);
+				}
+
+				this.field462 -= var2;
+				if (this.field462 != 0) {
+					return var2;
+				}
+
+				if (!this.method406()) {
+					continue;
+				}
+
+				return var4;
+			}
+
+			if (this.field452 == -256 && (this.field461 & 255) == 0) {
+				if (class429.field3257) {
+					return method409(0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field463, this.field457, 0, var4, var3, this);
+				}
+
+				return method389(((class62)super.field3389).field738, var1, this.field461, var2, this.field455, 0, var4, var3, this);
+			}
+
+			if (class429.field3257) {
+				return method392(0, 0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field463, this.field457, 0, var4, var3, this, this.field452, var5);
+			}
+
+			return method376(0, 0, ((class62)super.field3389).field738, var1, this.field461, var2, this.field455, 0, var4, var3, this, this.field452, var5);
+		}
+	}
+
+	@ObfInfo(name = "bf", desc = "()Z")
+	boolean method406() {
+		int var1 = this.field453;
+		int var2;
+		int var3;
+		if (var1 == Integer.MIN_VALUE) {
+			var3 = 0;
+			var2 = 0;
+			var1 = 0;
+		} else {
+			var2 = method399(var1, this.field454);
+			var3 = method366(var1, this.field454);
+		}
+
+		if (this.field455 == var1 && this.field463 == var2 && this.field457 == var3) {
+			if (this.field453 == Integer.MIN_VALUE) {
+				this.field453 = 0;
+				this.field457 = 0;
+				this.field463 = 0;
+				this.field455 = 0;
+				this.method907();
+				return true;
+			} else {
+				this.method407();
+				return false;
+			}
+		} else {
+			if (this.field455 < var1) {
+				this.field451 = 1;
+				this.field462 = var1 - this.field455;
+			} else if (this.field455 > var1) {
+				this.field451 = -1;
+				this.field462 = this.field455 - var1;
+			} else {
+				this.field451 = 0;
+			}
+
+			if (this.field463 < var2) {
+				this.field456 = 1;
+				if (this.field462 == 0 || this.field462 > var2 - this.field463) {
+					this.field462 = var2 - this.field463;
+				}
+			} else if (this.field463 > var2) {
+				this.field456 = -1;
+				if (this.field462 == 0 || this.field462 > this.field463 - var2) {
+					this.field462 = this.field463 - var2;
+				}
+			} else {
+				this.field456 = 0;
+			}
+
+			if (this.field457 < var3) {
+				this.field465 = 1;
+				if (this.field462 == 0 || this.field462 > var3 - this.field457) {
+					this.field462 = var3 - this.field457;
+				}
+			} else if (this.field457 > var3) {
+				this.field465 = -1;
+				if (this.field462 == 0 || this.field462 > this.field457 - var3) {
+					this.field462 = this.field457 - var3;
+				}
+			} else {
+				this.field465 = 0;
+			}
+
+			return false;
+		}
+	}
+
+	@ObfInfo(name = "au", desc = "(II)I")
+	static int method399(int var0, int var1) {
+		return var1 < 0 ? var0 : (int)((double)var0 * Math.sqrt((double)(16384 - var1) * 1.220703125E-4D) + 0.5D);
+	}
+
+	@ObfInfo(name = "ae", desc = "(II)I")
+	static int method366(int var0, int var1) {
+		return var1 < 0 ? -var0 : (int)((double)var0 * Math.sqrt((double)var1 * 1.220703125E-4D) + 0.5D);
+	}
+
+	@ObfInfo(name = "ao", desc = "(Lbu;II)Lbn;")
+	public static class28 method404(class62 var0, int var1, int var2) {
+		return var0.field738 != null && var0.field738.length != 0 ? new class28(var0, (int)((long)var0.field740 * 256L * (long)var1 / (long)(class429.field3242 * 100)), var2 << 6) : null;
+	}
+
+	@ObfInfo(name = "at", desc = "(Lbu;III)Lbn;")
+	public static class28 method369(class62 var0, int var1, int var2, int var3) {
+		return var0.field738 != null && var0.field738.length != 0 ? new class28(var0, var1, var2, var3) : null;
+	}
+
+	@ObfInfo(name = "bq", desc = "([B[IIIIIIILbn;)I")
+	static int method368(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, class28 var8) {
+		var2 >>= 8;
+		var7 >>= 8;
+		var4 <<= 2;
+		if ((var5 = var3 + var7 - var2) > var6) {
+			var5 = var6;
+		}
+
+		int var10001;
+		for (var5 -= 3; var3 < var5; var1[var10001] += var0[var2++] * var4) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var10001 = var3++;
+		}
+
+		for (var5 += 3; var3 < var5; var1[var10001] += var0[var2++] * var4) {
+			var10001 = var3++;
+		}
+
+		var8.field461 = var2 << 8;
+		return var3;
+	}
+
+	@ObfInfo(name = "ba", desc = "(I[B[IIIIIIIILbn;)I")
+	static int method388(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, class28 var10) {
+		var3 >>= 8;
+		var9 >>= 8;
+		var5 <<= 2;
+		var6 <<= 2;
+		if ((var7 = var4 + var9 - var3) > var8) {
+			var7 = var8;
+		}
+
+		var4 <<= 1;
+		var7 <<= 1;
+
+		int var10001;
+		byte var11;
+		for (var7 -= 6; var4 < var7; var2[var10001] += var11 * var6) {
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+		}
+
+		for (var7 += 6; var4 < var7; var2[var10001] += var11 * var6) {
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+		}
+
+		var10.field461 = var3 << 8;
+		return var4 >> 1;
+	}
+
+	@ObfInfo(name = "bl", desc = "([B[IIIIIIILbn;)I")
+	static int method389(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, class28 var8) {
+		var2 >>= 8;
+		var7 >>= 8;
+		var4 <<= 2;
+		if ((var5 = var3 + var2 - (var7 - 1)) > var6) {
+			var5 = var6;
+		}
+
+		int var10001;
+		for (var5 -= 3; var3 < var5; var1[var10001] += var0[var2--] * var4) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var10001 = var3++;
+		}
+
+		for (var5 += 3; var3 < var5; var1[var10001] += var0[var2--] * var4) {
+			var10001 = var3++;
+		}
+
+		var8.field461 = var2 << 8;
+		return var3;
+	}
+
+	@ObfInfo(name = "be", desc = "(I[B[IIIIIIIILbn;)I")
+	static int method409(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, class28 var10) {
+		var3 >>= 8;
+		var9 >>= 8;
+		var5 <<= 2;
+		var6 <<= 2;
+		if ((var7 = var4 + var3 - (var9 - 1)) > var8) {
+			var7 = var8;
+		}
+
+		var4 <<= 1;
+		var7 <<= 1;
+
+		int var10001;
+		byte var11;
+		for (var7 -= 6; var4 < var7; var2[var10001] += var11 * var6) {
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+		}
+
+		for (var7 += 6; var4 < var7; var2[var10001] += var11 * var6) {
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+		}
+
+		var10.field461 = var3 << 8;
+		return var4 >> 1;
+	}
+
+	@ObfInfo(name = "bi", desc = "(II[B[IIIIIIILbn;II)I")
+	static int method390(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, class28 var10, int var11, int var12) {
+		if (var11 == 0 || (var7 = var5 + (var9 - var4 + var11 - 257) / var11) > var8) {
+			var7 = var8;
+		}
+
+		byte var13;
+		int var10001;
+		while (var5 < var7) {
+			var1 = var4 >> 8;
+			var13 = var2[var1];
+			var10001 = var5++;
+			var3[var10001] += ((var13 << 8) + (var2[var1 + 1] - var13) * (var4 & 255)) * var6 >> 6;
+			var4 += var11;
+		}
+
+		if (var11 == 0 || (var7 = var5 + (var9 - var4 + var11 - 1) / var11) > var8) {
+			var7 = var8;
+		}
+
+		for (var1 = var12; var5 < var7; var4 += var11) {
+			var13 = var2[var4 >> 8];
+			var10001 = var5++;
+			var3[var10001] += ((var13 << 8) + (var1 - var13) * (var4 & 255)) * var6 >> 6;
+		}
+
+		var10.field461 = var4;
+		return var5;
+	}
+
+	@ObfInfo(name = "bz", desc = "(II[B[IIIIIIIILbn;II)I")
+	static int method391(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class28 var11, int var12, int var13) {
+		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 257) / var12) > var9) {
+			var8 = var9;
+		}
+
+		var5 <<= 1;
+
+		byte var14;
+		int var10001;
+		for (var8 <<= 1; var5 < var8; var4 += var12) {
+			var1 = var4 >> 8;
+			var14 = var2[var1];
+			var0 = (var14 << 8) + (var2[var1 + 1] - var14) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+		}
+
+		if (var12 == 0 || (var8 = (var5 >> 1) + (var10 - var4 + var12 - 1) / var12) > var9) {
+			var8 = var9;
+		}
+
+		var8 <<= 1;
+
+		for (var1 = var13; var5 < var8; var4 += var12) {
+			var14 = var2[var4 >> 8];
+			var0 = (var14 << 8) + (var1 - var14) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+		}
+
+		var11.field461 = var4;
+		return var5 >> 1;
+	}
+
+	@ObfInfo(name = "bx", desc = "(II[B[IIIIIIILbn;II)I")
+	static int method376(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, class28 var10, int var11, int var12) {
+		if (var11 == 0 || (var7 = var5 + (var9 + 256 - var4 + var11) / var11) > var8) {
+			var7 = var8;
+		}
+
+		int var10001;
+		while (var5 < var7) {
+			var1 = var4 >> 8;
+			byte var13 = var2[var1 - 1];
+			var10001 = var5++;
+			var3[var10001] += ((var13 << 8) + (var2[var1] - var13) * (var4 & 255)) * var6 >> 6;
+			var4 += var11;
+		}
+
+		if (var11 == 0 || (var7 = var5 + (var9 - var4 + var11) / var11) > var8) {
+			var7 = var8;
+		}
+
+		var0 = var12;
+
+		for (var1 = var11; var5 < var7; var4 += var1) {
+			var10001 = var5++;
+			var3[var10001] += ((var0 << 8) + (var2[var4 >> 8] - var0) * (var4 & 255)) * var6 >> 6;
+		}
+
+		var10.field461 = var4;
+		return var5;
+	}
+
+	@ObfInfo(name = "bn", desc = "(II[B[IIIIIIIILbn;II)I")
+	static int method392(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class28 var11, int var12, int var13) {
+		if (var12 == 0 || (var8 = var5 + (var10 + 256 - var4 + var12) / var12) > var9) {
+			var8 = var9;
+		}
+
+		var5 <<= 1;
+
+		int var10001;
+		for (var8 <<= 1; var5 < var8; var4 += var12) {
+			var1 = var4 >> 8;
+			byte var14 = var2[var1 - 1];
+			var0 = (var14 << 8) + (var2[var1] - var14) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+		}
+
+		if (var12 == 0 || (var8 = (var5 >> 1) + (var10 - var4 + var12) / var12) > var9) {
+			var8 = var9;
+		}
+
+		var8 <<= 1;
+
+		for (var1 = var13; var5 < var8; var4 += var12) {
+			var0 = (var1 << 8) + (var2[var4 >> 8] - var1) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+		}
+
+		var11.field461 = var4;
+		return var5 >> 1;
+	}
+
+	@ObfInfo(name = "bw", desc = "([B[IIIIIIIILbn;)I")
+	static int method393(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, class28 var9) {
+		var2 >>= 8;
+		var8 >>= 8;
+		var4 <<= 2;
+		var5 <<= 2;
+		if ((var6 = var3 + var8 - var2) > var7) {
+			var6 = var7;
+		}
+
+		var9.field463 += var9.field456 * (var6 - var3);
+		var9.field457 += var9.field465 * (var6 - var3);
+
+		int var10001;
+		for (var6 -= 3; var3 < var6; var4 += var5) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+		}
+
+		for (var6 += 3; var3 < var6; var4 += var5) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+		}
+
+		var9.field455 = var4 >> 2;
+		var9.field461 = var2 << 8;
+		return var3;
+	}
+
+	@ObfInfo(name = "bc", desc = "(I[B[IIIIIIIIIILbn;)I")
+	static int method394(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, class28 var12) {
+		var3 >>= 8;
+		var11 >>= 8;
+		var5 <<= 2;
+		var6 <<= 2;
+		var7 <<= 2;
+		var8 <<= 2;
+		if ((var9 = var4 + var11 - var3) > var10) {
+			var9 = var10;
+		}
+
+		var12.field455 += var12.field451 * (var9 - var4);
+		var4 <<= 1;
+		var9 <<= 1;
+
+		byte var13;
+		int var10001;
+		for (var9 -= 6; var4 < var9; var6 += var8) {
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+		}
+
+		for (var9 += 6; var4 < var9; var6 += var8) {
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+		}
+
+		var12.field463 = var5 >> 2;
+		var12.field457 = var6 >> 2;
+		var12.field461 = var3 << 8;
+		return var4 >> 1;
+	}
+
+	@ObfInfo(name = "bg", desc = "([B[IIIIIIIILbn;)I")
+	static int method395(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, class28 var9) {
+		var2 >>= 8;
+		var8 >>= 8;
+		var4 <<= 2;
+		var5 <<= 2;
+		if ((var6 = var3 + var2 - (var8 - 1)) > var7) {
+			var6 = var7;
+		}
+
+		var9.field463 += var9.field456 * (var6 - var3);
+		var9.field457 += var9.field465 * (var6 - var3);
+
+		int var10001;
+		for (var6 -= 3; var3 < var6; var4 += var5) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+		}
+
+		for (var6 += 3; var3 < var6; var4 += var5) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+		}
+
+		var9.field455 = var4 >> 2;
+		var9.field461 = var2 << 8;
+		return var3;
+	}
+
+	@ObfInfo(name = "cw", desc = "(I[B[IIIIIIIIIILbn;)I")
+	static int method396(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, class28 var12) {
+		var3 >>= 8;
+		var11 >>= 8;
+		var5 <<= 2;
+		var6 <<= 2;
+		var7 <<= 2;
+		var8 <<= 2;
+		if ((var9 = var4 + var3 - (var11 - 1)) > var10) {
+			var9 = var10;
+		}
+
+		var12.field455 += var12.field451 * (var9 - var4);
+		var4 <<= 1;
+		var9 <<= 1;
+
+		byte var13;
+		int var10001;
+		for (var9 -= 6; var4 < var9; var6 += var8) {
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+		}
+
+		for (var9 += 6; var4 < var9; var6 += var8) {
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+		}
+
+		var12.field463 = var5 >> 2;
+		var12.field457 = var6 >> 2;
+		var12.field461 = var3 << 8;
+		return var4 >> 1;
+	}
+
+	@ObfInfo(name = "cf", desc = "(II[B[IIIIIIIILbn;II)I")
+	static int method397(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class28 var11, int var12, int var13) {
+		var11.field463 -= var11.field456 * var5;
+		var11.field457 -= var11.field465 * var5;
+		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 257) / var12) > var9) {
+			var8 = var9;
+		}
+
+		byte var14;
+		int var10001;
+		while (var5 < var8) {
+			var1 = var4 >> 8;
+			var14 = var2[var1];
+			var10001 = var5++;
+			var3[var10001] += ((var14 << 8) + (var2[var1 + 1] - var14) * (var4 & 255)) * var6 >> 6;
+			var6 += var7;
+			var4 += var12;
+		}
+
+		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 1) / var12) > var9) {
+			var8 = var9;
+		}
+
+		for (var1 = var13; var5 < var8; var4 += var12) {
+			var14 = var2[var4 >> 8];
+			var10001 = var5++;
+			var3[var10001] += ((var14 << 8) + (var1 - var14) * (var4 & 255)) * var6 >> 6;
+			var6 += var7;
+		}
+
+		var11.field463 += var11.field456 * var5;
+		var11.field457 += var11.field465 * var5;
+		var11.field455 = var6;
+		var11.field461 = var4;
+		return var5;
+	}
+
+	@ObfInfo(name = "cm", desc = "(II[B[IIIIIIIIIILbn;II)I")
+	static int method398(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, class28 var13, int var14, int var15) {
+		var13.field455 -= var13.field451 * var5;
+		if (var14 == 0 || (var10 = var5 + (var12 - var4 + var14 - 257) / var14) > var11) {
+			var10 = var11;
+		}
+
+		var5 <<= 1;
+
+		byte var16;
+		int var10001;
+		for (var10 <<= 1; var5 < var10; var4 += var14) {
+			var1 = var4 >> 8;
+			var16 = var2[var1];
+			var0 = (var16 << 8) + (var2[var1 + 1] - var16) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var6 += var8;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+			var7 += var9;
+		}
+
+		if (var14 == 0 || (var10 = (var5 >> 1) + (var12 - var4 + var14 - 1) / var14) > var11) {
+			var10 = var11;
+		}
+
+		var10 <<= 1;
+
+		for (var1 = var15; var5 < var10; var4 += var14) {
+			var16 = var2[var4 >> 8];
+			var0 = (var16 << 8) + (var1 - var16) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var6 += var8;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+			var7 += var9;
+		}
+
+		var5 >>= 1;
+		var13.field455 += var13.field451 * var5;
+		var13.field463 = var6;
+		var13.field457 = var7;
+		var13.field461 = var4;
+		return var5;
+	}
+
+	@ObfInfo(name = "cn", desc = "(II[B[IIIIIIIILbn;II)I")
+	static int method408(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class28 var11, int var12, int var13) {
+		var11.field463 -= var11.field456 * var5;
+		var11.field457 -= var11.field465 * var5;
+		if (var12 == 0 || (var8 = var5 + (var10 + 256 - var4 + var12) / var12) > var9) {
+			var8 = var9;
+		}
+
+		int var10001;
+		while (var5 < var8) {
+			var1 = var4 >> 8;
+			byte var14 = var2[var1 - 1];
+			var10001 = var5++;
+			var3[var10001] += ((var14 << 8) + (var2[var1] - var14) * (var4 & 255)) * var6 >> 6;
+			var6 += var7;
+			var4 += var12;
+		}
+
+		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12) / var12) > var9) {
+			var8 = var9;
+		}
+
+		var0 = var13;
+
+		for (var1 = var12; var5 < var8; var4 += var1) {
+			var10001 = var5++;
+			var3[var10001] += ((var0 << 8) + (var2[var4 >> 8] - var0) * (var4 & 255)) * var6 >> 6;
+			var6 += var7;
+		}
+
+		var11.field463 += var11.field456 * var5;
+		var11.field457 += var11.field465 * var5;
+		var11.field455 = var6;
+		var11.field461 = var4;
+		return var5;
+	}
+
+	@ObfInfo(name = "cs", desc = "(II[B[IIIIIIIIIILbn;II)I")
+	static int method405(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, class28 var13, int var14, int var15) {
+		var13.field455 -= var13.field451 * var5;
+		if (var14 == 0 || (var10 = var5 + (var12 + 256 - var4 + var14) / var14) > var11) {
+			var10 = var11;
+		}
+
+		var5 <<= 1;
+
+		int var10001;
+		for (var10 <<= 1; var5 < var10; var4 += var14) {
+			var1 = var4 >> 8;
+			byte var16 = var2[var1 - 1];
+			var0 = (var16 << 8) + (var2[var1] - var16) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var6 += var8;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+			var7 += var9;
+		}
+
+		if (var14 == 0 || (var10 = (var5 >> 1) + (var12 - var4 + var14) / var14) > var11) {
+			var10 = var11;
+		}
+
+		var10 <<= 1;
+
+		for (var1 = var15; var5 < var10; var4 += var14) {
+			var0 = (var1 << 8) + (var2[var4 >> 8] - var1) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var6 += var8;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+			var7 += var9;
+		}
+
+		var5 >>= 1;
+		var13.field455 += var13.field451 * var5;
+		var13.field463 = var6;
+		var13.field457 = var7;
+		var13.field461 = var4;
+		return var5;
+	}
 }

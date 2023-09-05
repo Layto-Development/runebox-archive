@@ -1,141 +1,134 @@
-import java.awt.Canvas;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.Iterator;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public final class class477 extends Canvas {
-   static class409 field3653;
-   static class6 field3650;
-   static int field3652;
-   static long field3651;
-   Component field3654;
+@ObfInfo(name = "sg")
+public class class477 {
+	@ObfInfo(name = "at", desc = "[C")
+	static final char[] field3814;
+	@ObfInfo(name = "ao", desc = "[C")
+	static final char[] field3815;
 
-   class477(Component var1) {
-      this.field3654 = var1;
-   }
+	static {
+		field3815 = new char[]{' ', '\u00a0', '_', '-', '\u00e0', '\u00e1', '\u00e2', '\u00e4', '\u00e3', '\u00c0', '\u00c1', '\u00c2', '\u00c4', '\u00c3', '\u00e8', '\u00e9', '\u00ea', '\u00eb', '\u00c8', '\u00c9', '\u00ca', '\u00cb', '\u00ed', '\u00ee', '\u00ef', '\u00cd', '\u00ce', '\u00cf', '\u00f2', '\u00f3', '\u00f4', '\u00f6', '\u00f5', '\u00d2', '\u00d3', '\u00d4', '\u00d6', '\u00d5', '\u00f9', '\u00fa', '\u00fb', '\u00fc', '\u00d9', '\u00da', '\u00db', '\u00dc', '\u00e7', '\u00c7', '\u00ff', '\u0178', '\u00f1', '\u00d1', '\u00df'};
+		field3814 = new char[]{'[', ']', '#'};
+	}
 
-   public final void update(Graphics var1) {
-      this.field3654.update(var1);
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class477() throws Throwable {
+	}
 
-   public final void paint(Graphics var1) {
-      this.field3654.paint(var1);
-   }
+	@ObfInfo(name = "au", desc = "(CB)Z")
+	public static final boolean method2438(char var0) {
+		if (Character.isISOControl(var0)) {
+			return false;
+		} else if (class455.method2382(var0)) {
+			return true;
+		} else {
+			char[] var2 = field3815;
 
-   static final void method2312() {
-      int var4;
-      for(int var1 = 0; var1 < Client.field831; ++var1) {
-         int var10002 = Client.field788[var1]--;
-         if (Client.field788[var1] >= -10) {
-            class404 var11 = Client.field620[var1];
-            if (var11 == null) {
-               class404 var10000 = (class404)null;
-               var11 = class404.method1975(class57.field1081, Client.field832[var1], 0);
-               if (null == var11) {
-                  continue;
-               }
+			int var3;
+			char var4;
+			for (var3 = 0; var3 < var2.length; ++var3) {
+				var4 = var2[var3];
+				if (var0 == var4) {
+					return true;
+				}
+			}
 
-               int[] var19 = Client.field788;
-               var19[var1] += var11.method1974();
-               Client.field620[var1] = var11;
-            }
+			var2 = field3814;
 
-            if (Client.field788[var1] < 0) {
-               int var3;
-               if (Client.field583[var1] != 0) {
-                  var4 = 128 * (Client.field583[var1] & 255);
-                  int var5 = Client.field583[var1] >> 16 & 255;
-                  int var6 = var5 * 128 + 64 - class259.field2281.field4028;
-                  if (var6 < 0) {
-                     var6 = -var6;
-                  }
+			for (var3 = 0; var3 < var2.length; ++var3) {
+				var4 = var2[var3];
+				if (var0 == var4) {
+					return true;
+				}
+			}
 
-                  int var7 = Client.field583[var1] >> 8 & 255;
-                  int var8 = 64 + var7 * 128 - class259.field2281.field3999;
-                  if (var8 < 0) {
-                     var8 = -var8;
-                  }
+			return false;
+		}
+	}
 
-                  int var9 = var8 + var6 - 128;
-                  if (var9 > var4) {
-                     Client.field788[var1] = -100;
-                     continue;
-                  }
+	@ObfInfo(name = "ae", desc = "(CB)Z")
+	public static final boolean method2440(char var0) {
+		return var0 == 160 || var0 == ' ' || var0 == '_' || var0 == '-';
+	}
 
-                  if (var9 < 0) {
-                     var9 = 0;
-                  }
+	@ObfInfo(name = "ao", desc = "(CI)C")
+	public static char method2437(char var0) {
+		switch(var0) {
+		case ' ':
+		case '-':
+		case '_':
+		case '\u00a0':
+			return '_';
+		case '#':
+		case '[':
+		case ']':
+			return var0;
+		case '\u00c0':
+		case '\u00c1':
+		case '\u00c2':
+		case '\u00c3':
+		case '\u00c4':
+		case '\u00e0':
+		case '\u00e1':
+		case '\u00e2':
+		case '\u00e3':
+		case '\u00e4':
+			return 'a';
+		case '\u00c7':
+		case '\u00e7':
+			return 'c';
+		case '\u00c8':
+		case '\u00c9':
+		case '\u00ca':
+		case '\u00cb':
+		case '\u00e8':
+		case '\u00e9':
+		case '\u00ea':
+		case '\u00eb':
+			return 'e';
+		case '\u00cd':
+		case '\u00ce':
+		case '\u00cf':
+		case '\u00ed':
+		case '\u00ee':
+		case '\u00ef':
+			return 'i';
+		case '\u00d1':
+		case '\u00f1':
+			return 'n';
+		case '\u00d2':
+		case '\u00d3':
+		case '\u00d4':
+		case '\u00d5':
+		case '\u00d6':
+		case '\u00f2':
+		case '\u00f3':
+		case '\u00f4':
+		case '\u00f5':
+		case '\u00f6':
+			return 'o';
+		case '\u00d9':
+		case '\u00da':
+		case '\u00db':
+		case '\u00dc':
+		case '\u00f9':
+		case '\u00fa':
+		case '\u00fb':
+		case '\u00fc':
+			return 'u';
+		case '\u00df':
+			return 'b';
+		case '\u00ff':
+		case '\u0178':
+			return 'y';
+		default:
+			return Character.toLowerCase(var0);
+		}
+	}
 
-                  var3 = (var4 - var9) * class4.field36.method2432() / var4;
-               } else {
-                  var3 = class4.field36.method2414();
-               }
-
-               if (var3 > 0) {
-                  class408 var14 = var11.method1973().method1981(class519.field4079);
-                  class432 var15 = class432.method2105(var14, 100, var3);
-                  var15.method2075(Client.field833[var1] - 1);
-                  class514.field3985.method1525(var15);
-               }
-
-               Client.field788[var1] = -100;
-            }
-         } else {
-            --Client.field831;
-
-            for(int var2 = var1; var2 < Client.field831; ++var2) {
-               Client.field832[var2] = Client.field832[var2 + 1];
-               Client.field620[var2] = Client.field620[var2 + 1];
-               Client.field833[var2] = Client.field833[var2 + 1];
-               Client.field788[var2] = Client.field788[var2 + 1];
-               Client.field583[var2] = Client.field583[var2 + 1];
-            }
-
-            --var1;
-         }
-      }
-
-      if (Client.field848) {
-         boolean var10;
-         if (!class228.field2107.isEmpty()) {
-            var10 = true;
-         } else if (!class228.field2105.isEmpty() && class228.field2105.get(0) != null && ((class131)class228.field2105.get(0)).field1551 != null) {
-            var10 = ((class131)class228.field2105.get(0)).field1551.method2203();
-         } else {
-            var10 = false;
-         }
-
-         if (!var10) {
-            if (class4.field36.method2406() != 0) {
-               boolean var12 = !class228.field2106.isEmpty();
-               if (var12) {
-                  class22 var13 = class303.field2520;
-                  var4 = class4.field36.method2406();
-                  if (!class228.field2106.isEmpty()) {
-                     ArrayList var16 = new ArrayList();
-                     Iterator var17 = class228.field2106.iterator();
-
-                     while(var17.hasNext()) {
-                        class131 var18 = (class131)var17.next();
-                        var18.field1552 = false;
-                        var18.field1550 = false;
-                        var18.field1556 = false;
-                        var18.field1553 = false;
-                        var18.field1548 = var13;
-                        var18.field1547 = var4;
-                        var18.field1544 = 0.0F;
-                        var16.add(var18);
-                     }
-
-                     class228.method1377(var16, class228.field2109, class228.field2110, class228.field2111, class228.field2102, false);
-                  }
-               }
-            }
-
-            Client.field848 = false;
-         }
-      }
-
-   }
+	@ObfInfo(name = "at", desc = "(Ljava/lang/String;I)Ljava/lang/String;")
+	public static String method2439(String var0) {
+		return var0 != null && !var0.isEmpty() && var0.charAt(0) != '#' ? var0 : "";
+	}
 }

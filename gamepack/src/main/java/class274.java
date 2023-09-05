@@ -1,32 +1,49 @@
-import java.util.PriorityQueue;
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicBoolean;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-class class274 implements Callable {
-   // $FF: synthetic field
-   final class448 this$0;
-   // $FF: synthetic field
-   final AtomicBoolean val$cancelled;
+@ObfInfo(name = "uz")
+public class class274 {
+	@ObfInfo(name = "au", desc = "[I")
+	int[] field2228;
 
-   class274(class448 var1, AtomicBoolean var2) {
-      this.this$0 = var1;
-      this.val$cancelled = var2;
-   }
+	@ObfInfo(name = "<init>", desc = "([I)V")
+	public class274(int[] var1) {
+		int var2;
+		for (var2 = 1; var2 <= (var1.length >> 1) + var1.length; var2 <<= 1) {
+		}
 
-   public Object call() {
-      PriorityQueue var1 = this.this$0.field3413;
+		this.field2228 = new int[var2 + var2];
 
-      while(true) {
-         class172 var2 = null;
-         synchronized(var1) {
-            if (var1.isEmpty() || this.val$cancelled.get()) {
-               return null;
-            }
+		int var3;
+		for (var3 = 0; var3 < var2 + var2; ++var3) {
+			this.field2228[var3] = -1;
+		}
 
-            var2 = (class172)var1.remove();
-         }
+		int var4;
+		for (var3 = 0; var3 < var1.length; this.field2228[1 + var4 + var4] = var3++) {
+			for (var4 = var1[var3] & var2 - 1; this.field2228[1 + var4 + var4] != -1; var4 = var4 + 1 & var2 - 1) {
+			}
 
-         var2.field1728.method910();
-      }
-   }
+			this.field2228[var4 + var4] = var1[var3];
+		}
+
+	}
+
+	@ObfInfo(name = "au", desc = "(II)I", opaqueValue = "-1742890609")
+	public int method1440(int var1) {
+		int var3 = (this.field2228.length >> 1) - 1;
+		int var4 = var1 & var3;
+
+		while (true) {
+			int var5 = this.field2228[1 + var4 + var4];
+			if (var5 == -1) {
+				return -1;
+			}
+
+			if (this.field2228[var4 + var4] == var1) {
+				return var5;
+			}
+
+			var4 = var4 + 1 & var3;
+		}
+	}
 }

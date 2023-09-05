@@ -1,16 +1,94 @@
-public final class class80 {
-   static long field1249;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Random;
 
-   class80() throws Throwable {
-   }
+@ObfInfo(name = "pg")
+public class class80 {
+	@ObfInfo(name = "<init>", desc = "()V")
+	class80() throws Throwable {
+	}
 
-   public static final synchronized long method713() {
-      long var1 = System.currentTimeMillis();
-      if (var1 < field1249) {
-         class477.field3651 += field1249 - var1;
-      }
+	@ObfInfo(name = "au", desc = "([BI[BII)V")
+	public static void method529(byte[] var0, int var1, byte[] var2, int var3, int var4) {
+		if (var0 == var2) {
+			if (var1 == var3) {
+				return;
+			}
 
-      field1249 = var1;
-      return var1 + class477.field3651;
-   }
+			if (var3 > var1 && var3 < var1 + var4) {
+				--var4;
+				var1 += var4;
+				var3 += var4;
+				var4 = var1 - var4;
+
+				for (var4 += 7; var1 >= var4; var2[var3--] = var0[var1--]) {
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+				}
+
+				for (var4 -= 7; var1 >= var4; var2[var3--] = var0[var1--]) {
+				}
+
+				return;
+			}
+		}
+
+		var4 += var1;
+
+		for (var4 -= 7; var1 < var4; var2[var3++] = var0[var1++]) {
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+		}
+
+		for (var4 += 7; var1 < var4; var2[var3++] = var0[var1++]) {
+		}
+
+	}
+
+	@ObfInfo(name = "af", desc = "([III)V")
+	public static void method531(int[] var0, int var1, int var2) {
+		for (var2 = var1 + var2 - 7; var1 < var2; var0[var1++] = 0) {
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+		}
+
+		for (var2 += 7; var1 < var2; var0[var1++] = 0) {
+		}
+
+	}
+
+	@ObfInfo(name = "ad", desc = "([IIII)V")
+	public static void method530(int[] var0, int var1, int var2, int var3) {
+		if (var2 == 0 && var3 == 0) {
+			var2 = (int)(Math.random() * 2.147483647E9D);
+			var3 = (int)(Math.random() * 2.147483647E9D);
+		}
+
+		long var4 = (long)var2 << 32 | (long)var3;
+		Random var6 = new Random(var4);
+
+		for (int var7 = var1 - 1; var7 > 0; --var7) {
+			int var8 = var6.nextInt(var7 + 1);
+			if (var7 != var8) {
+				int var9 = var0[var7];
+				var0[var7] = var0[var8];
+				var0[var8] = var9;
+			}
+		}
+
+	}
 }

@@ -1,21 +1,28 @@
-public class class107 implements class188 {
-   static final class107 field1431 = new class107(2, 2);
-   static final class107 field1432 = new class107(1, 10);
-   static final class107 field1433 = new class107(0, 1);
-   static final class107 field1434 = new class107(3, 3);
-   final int field1430;
-   final int field1435;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class107(int var1, int var2) {
-      this.field1430 = var1;
-      this.field1435 = var2;
-   }
+@ObfInfo(name = "ec")
+public class class107 extends class381 {
+	@ObfInfo(name = "ar", desc = "Luk;")
+	static class398 field1020;
+	@ObfInfo(name = "au", desc = "Z")
+	final boolean field1019;
 
-   public int method1195() {
-      return this.field1435;
-   }
+	@ObfInfo(name = "<init>", desc = "(Z)V")
+	public class107(boolean var1) {
+		this.field1019 = var1;
+	}
 
-   static class107[] method798() {
-      return new class107[]{field1433, field1431, field1434, field1432};
-   }
+	@ObfInfo(name = "au", desc = "(Lqb;Lqb;I)I", opaqueValue = "1019583195")
+	int method609(class424 var1, class424 var2) {
+		if (var1.field3235 != 0 && var2.field3235 != 0) {
+			return this.field1019 ? var1.method1019().method1934(var2.method1019()) : var2.method1019().method1934(var1.method1019());
+		} else {
+			return this.method2031(var1, var2);
+		}
+	}
+
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method609((class424)var1, (class424)var2);
+	}
 }

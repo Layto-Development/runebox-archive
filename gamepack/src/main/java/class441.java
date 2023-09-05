@@ -1,122 +1,58 @@
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.concurrent.Callable;
 
-public class class441 implements MouseListener, MouseMotionListener, FocusListener {
-   public static class441 field3346 = new class441();
-   public static int field3332 = 0;
-   public static int field3339 = 0;
-   public static int field3343 = 0;
-   public static int field3344 = 0;
-   public static int field3345 = 0;
-   public static int field3349 = 0;
-   public static long field3333 = 0L;
-   public static long field3340 = 0L;
-   public static volatile int field3335 = 0;
-   public static volatile int field3336 = -1;
-   public static volatile int field3337 = -1;
-   public static volatile int field3341 = 0;
-   public static volatile int field3348 = 0;
-   public static volatile int field3350 = 0;
-   public static volatile long field3338 = -1L;
-   public static volatile long field3342 = 0L;
-   static int field3347;
-   static volatile int field3334 = 0;
+@ObfInfo(name = "fe")
+class class441 implements Callable {
+	@ObfInfo(name = "qj", desc = "I", intMultiplier = 1753680661)
+	static int field3329;
+	// $FF: synthetic field
+	@ObfInfo(name = "val$p", desc = "Ltm;")
+	final class280 val$p;
+	// $FF: synthetic field
+	@ObfInfo(name = "this$0", desc = "Lfv;")
+	final class89 this$0;
+	// $FF: synthetic field
+	@ObfInfo(name = "val$version", desc = "I")
+	final int val$version;
 
-   class441() {
-   }
+	@ObfInfo(name = "<init>", desc = "(Lfv;Ltm;I)V")
+	class441(class89 var1, class280 var2, int var3) {
+		this.this$0 = var1;
+		this.val$p = var2;
+		this.val$version = var3;
+	}
 
-   final int method2159(MouseEvent var1) {
-      int var3 = var1.getButton();
-      if (!var1.isAltDown() && var3 != 2) {
-         return !var1.isMetaDown() && var3 != 3 ? 1 : 2;
-      } else {
-         return 4;
-      }
-   }
+	@ObfInfo(name = "call", desc = "()Ljava/lang/Object;")
+	public Object call() {
+		this.this$0.method573(this.val$p, this.val$version);
+		return null;
+	}
 
-   public final synchronized void mousePressed(MouseEvent var1) {
-      if (null != field3346) {
-         field3334 = 0;
-         field3350 = var1.getX();
-         field3348 = var1.getY();
-         field3342 = class80.method713();
-         field3341 = this.method2159(var1);
-         if (field3341 != 0) {
-            field3335 = field3341;
-         }
-      }
+	@ObfInfo(name = "au", desc = "(Ljava/lang/CharSequence;B)J", opaqueValue = "-1")
+	static long method2312(CharSequence var0) {
+		long var2 = 0L;
+		int var4 = var0.length();
 
-      if (var1.isPopupTrigger()) {
-         var1.consume();
-      }
+		for (int var5 = 0; var5 < var4; ++var5) {
+			var2 *= 37L;
+			char var6 = var0.charAt(var5);
+			if (var6 >= 'A' && var6 <= 'Z') {
+				var2 += (long)(var6 + 1 - 65);
+			} else if (var6 >= 'a' && var6 <= 'z') {
+				var2 += (long)(var6 + 1 - 97);
+			} else if (var6 >= '0' && var6 <= '9') {
+				var2 += (long)(var6 + 27 - 48);
+			}
 
-   }
+			if (var2 >= 177917621779460413L) {
+				break;
+			}
+		}
 
-   public final synchronized void mouseReleased(MouseEvent var1) {
-      if (null != field3346) {
-         field3334 = 0;
-         field3335 = 0;
-      }
+		while (var2 % 37L == 0L && var2 != 0L) {
+			var2 /= 37L;
+		}
 
-      if (var1.isPopupTrigger()) {
-         var1.consume();
-      }
-
-   }
-
-   public final void mouseClicked(MouseEvent var1) {
-      if (var1.isPopupTrigger()) {
-         var1.consume();
-      }
-
-   }
-
-   public final synchronized void mouseEntered(MouseEvent var1) {
-      this.mouseMoved(var1);
-   }
-
-   public final synchronized void mouseExited(MouseEvent var1) {
-      if (field3346 != null) {
-         field3334 = 0;
-         field3336 = -1;
-         field3337 = -1;
-         field3338 = var1.getWhen();
-      }
-
-   }
-
-   public final synchronized void mouseDragged(MouseEvent var1) {
-      this.mouseMoved(var1);
-   }
-
-   public final synchronized void mouseMoved(MouseEvent var1) {
-      if (null != field3346) {
-         field3334 = 0;
-         field3336 = var1.getX();
-         field3337 = var1.getY();
-         field3338 = var1.getWhen();
-      }
-
-   }
-
-   public final void focusGained(FocusEvent var1) {
-   }
-
-   public final synchronized void focusLost(FocusEvent var1) {
-      if (field3346 != null) {
-         field3335 = 0;
-      }
-
-   }
-
-   public static int method2161() {
-      return ++field3334 - 1;
-   }
-
-   public static void method2160(int var0) {
-      field3334 = var0;
-   }
+		return var2;
+	}
 }

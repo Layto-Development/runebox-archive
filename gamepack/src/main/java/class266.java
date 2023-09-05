@@ -1,33 +1,29 @@
-public class class266 extends class221 {
-   int field2292 = 0;
-   int field2293 = 0;
-   int field2294 = 0;
-   int field2295 = 0;
-   int field2296 = 0;
-   int field2297 = 0;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public class266(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-      super(var7, var8);
-      this.field2296 = var1;
-      this.field2293 = var2;
-      this.field2294 = var3;
-      this.field2295 = var4;
-      this.field2292 = var5;
-      this.field2297 = var6;
-   }
+@ObfInfo(name = "jo")
+public final class class266 {
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = 1928295169)
+	int field2148;
+	@ObfInfo(name = "ao", desc = "I", intMultiplier = 2005175761)
+	int field2149;
+	@ObfInfo(name = "at", desc = "I", intMultiplier = -1628547661)
+	int field2150;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 1162218027)
+	int field2151;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = 1499438365)
+	int field2152;
+	@ObfInfo(name = "aa", desc = "I", intMultiplier = 1002689579)
+	int field2156;
+	@ObfInfo(name = "az", desc = "Lik;")
+	public class510 field2153;
+	@ObfInfo(name = "ai", desc = "Lik;")
+	public class510 field2155;
+	@ObfInfo(name = "ap", desc = "J", longMultiplier = -4244623663237435829L)
+	public long field2154;
 
-   public int method1320() {
-      double var2 = this.method722();
-      return (int)Math.round((double)(this.field2295 - this.field2296) * var2 + (double)this.field2296);
-   }
-
-   public int method1321() {
-      double var2 = this.method722();
-      return (int)Math.round(var2 * (double)(this.field2292 - this.field2293) + (double)this.field2293);
-   }
-
-   public int method1322() {
-      double var2 = this.method722();
-      return (int)Math.round((double)this.field2294 + (double)(this.field2297 - this.field2294) * var2);
-   }
+	@ObfInfo(name = "<init>", desc = "()V")
+	class266() {
+		this.field2154 = 0L;
+		this.field2156 = 0;
+	}
 }

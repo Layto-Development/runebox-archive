@@ -1,90 +1,79 @@
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.awt.FontMetrics;
+
+@ObfInfo(name = "da")
 public class class447 {
-   static int[] field3392 = new int[500];
-   static int[] field3394 = new int[500];
-   static int[] field3397 = new int[500];
-   static int[] field3398 = new int[500];
-   boolean field3402 = false;
-   class370 field3393 = null;
-   int field3396 = -1;
-   int[] field3395;
-   int[] field3399;
-   int[] field3400;
-   int[] field3401;
+	@ObfInfo(name = "dt", desc = "Luk;")
+	static class398 field3385;
+	@ObfInfo(name = "bk", desc = "Ljava/awt/FontMetrics;")
+	static FontMetrics field3384;
 
-   class447(byte[] var1, class370 var2) {
-      this.field3393 = var2;
-      class184 var3 = new class184(var1);
-      class184 var4 = new class184(var1);
-      var3.field1818 = 2;
-      int var5 = var3.readUnsignedByte();
-      int var6 = -1;
-      int var7 = 0;
-      var4.field1818 = var3.field1818 + var5;
+	@ObfInfo(name = "<init>", desc = "()V")
+	class447() throws Throwable {
+	}
 
-      int var8;
-      for(var8 = 0; var8 < var5; ++var8) {
-         int var9 = var3.readUnsignedByte();
-         if (var9 > 0) {
-            if (this.field3393.field2898[var8] != 0) {
-               for(int var10 = var8 - 1; var10 > var6; --var10) {
-                  if (this.field3393.field2898[var10] == 0) {
-                     field3398[var7] = var10;
-                     field3392[var7] = 0;
-                     field3394[var7] = 0;
-                     field3397[var7] = 0;
-                     ++var7;
-                     break;
-                  }
-               }
-            }
+	@ObfInfo(name = "ir", desc = "(Ljava/lang/String;B)V", opaqueValue = "0")
+	static final void method2351(String var0) {
+		if (var0.equalsIgnoreCase("toggleroof")) {
+			class281.field2262.method1744(!class281.field2262.method1745());
+			if (class281.field2262.method1745()) {
+				class159.method914(99, "", "Roofs are now all hidden");
+			} else {
+				class159.method914(99, "", "Roofs will only be removed selectively");
+			}
+		}
 
-            field3398[var7] = var8;
-            short var11 = 0;
-            if (this.field3393.field2898[var8] == 3) {
-               var11 = 128;
-            }
+		if (var0.startsWith("zbuf")) {
+			boolean var2 = class455.method2372(var0.substring(5).trim()) == 1;
+			class51.field585.method1894(var2);
+			class276.method1454(var2);
+		}
 
-            if ((var9 & 1) != 0) {
-               field3392[var7] = var4.method1136();
-            } else {
-               field3392[var7] = var11;
-            }
+		if (var0.equalsIgnoreCase("z")) {
+			Client.field91 = !Client.field91;
+		}
 
-            if ((var9 & 2) != 0) {
-               field3394[var7] = var4.method1136();
-            } else {
-               field3394[var7] = var11;
-            }
+		if (var0.equalsIgnoreCase("displayfps")) {
+			class281.field2262.method1748();
+		}
 
-            if ((var9 & 4) != 0) {
-               field3397[var7] = var4.method1136();
-            } else {
-               field3397[var7] = var11;
-            }
+		if (var0.equalsIgnoreCase("renderself")) {
+			Client.field265 = !Client.field265;
+		}
 
-            var6 = var8;
-            ++var7;
-            if (this.field3393.field2898[var8] == 5) {
-               this.field3402 = true;
-            }
-         }
-      }
+		if (var0.equalsIgnoreCase("mouseovertext")) {
+			Client.field187 = !Client.field187;
+		}
 
-      if (var4.field1818 != var1.length) {
-      }
+		if (Client.field115 >= 2) {
+			if (var0.equalsIgnoreCase("errortest")) {
+				throw new RuntimeException();
+			}
 
-      this.field3396 = var7;
-      this.field3395 = new int[var7];
-      this.field3399 = new int[var7];
-      this.field3400 = new int[var7];
-      this.field3401 = new int[var7];
+			if (var0.equalsIgnoreCase("showcoord")) {
+				class34.field483.field2015 = !class34.field483.field2015;
+			}
 
-      for(var8 = 0; var8 < var7; ++var8) {
-         this.field3395[var8] = field3398[var8];
-         this.field3399[var8] = field3392[var8];
-         this.field3400[var8] = field3394[var8];
-         this.field3401[var8] = field3397[var8];
-      }
+			if (var0.equalsIgnoreCase("fpson")) {
+				class281.field2262.method1747(true);
+			}
 
-   }
+			if (var0.equalsIgnoreCase("fpsoff")) {
+				class281.field2262.method1747(false);
+			}
+
+			if (var0.equalsIgnoreCase("gc")) {
+				System.gc();
+			}
+
+			if (var0.equalsIgnoreCase("clientdrop")) {
+				Client.method214();
+			}
+		}
+
+		class121 var3 = class121.method689(class480.field3910, Client.field92.field2665);
+		var3.field1141.method1481(var0.length() + 1);
+		var3.field1141.method1484(var0);
+		Client.field92.method1821(var3);
+	}
 }

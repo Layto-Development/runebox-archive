@@ -1,21 +1,34 @@
-public class class243 {
-   class243() throws Throwable {
-   }
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   static final int method1445(int var0, int var1, int var2, int var3) {
-      return var2 * var0 - var3 * var1 >> 16;
-   }
+@ObfInfo(name = "em")
+public class class243 extends class381 {
+	@ObfInfo(name = "au", desc = "Z")
+	final boolean field2011;
 
-   static final int method1446(int var0, int var1, int var2, int var3) {
-      return var1 * var2 + var0 * var3 >> 16;
-   }
+	@ObfInfo(name = "<init>", desc = "(Z)V")
+	public class243(boolean var1) {
+		this.field2011 = var1;
+	}
 
-   static final int method1444(int var0, int var1, int var2, int var3) {
-      return var2 * var0 + var1 * var3 >> 16;
-   }
+	@ObfInfo(name = "au", desc = "(Lqb;Lqb;I)I", opaqueValue = "399087736")
+	int method1263(class424 var1, class424 var2) {
+		if (Client.field27 == var1.field3235 && var2.field3235 == Client.field27) {
+			return this.field2011 ? var1.method1019().method1934(var2.method1019()) : var2.method1019().method1934(var1.method1019());
+		} else {
+			return this.method2031(var1, var2);
+		}
+	}
 
-   static final float method1447(int var0) {
-      float var2 = 10075.0F - (float)var0;
-      return (var2 * 1.0075567F - 75.56675F) / var2;
-   }
+	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
+	public int compare(Object var1, Object var2) {
+		return this.method1263((class424)var1, (class424)var2);
+	}
+
+	@ObfInfo(name = "an", desc = "(I)V")
+	public static void method1264() {
+		class292.field2326.method291();
+		class292.field2353.method291();
+		class292.field2329.method291();
+		class292.field2347.method291();
+	}
 }

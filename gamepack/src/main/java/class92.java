@@ -1,74 +1,99 @@
-public class class92 implements class39 {
-   int field1288;
-   int field1289;
-   int field1290;
-   int field1291;
-   int field1292;
-   int field1293;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class92() {
-   }
+@ObfInfo(name = "nm")
+public class class92 implements class425 {
+	@ObfInfo(name = "ao", desc = "Lnm;")
+	public static final class92 field930;
+	@ObfInfo(name = "at", desc = "Lnm;")
+	public static final class92 field931;
+	@ObfInfo(name = "au", desc = "Lnm;")
+	public static final class92 field933;
+	@ObfInfo(name = "ac", desc = "Lnm;")
+	public static final class92 field949;
+	@ObfInfo(name = "aj", desc = "Lnm;")
+	public static final class92 field950;
+	@ObfInfo(name = "ag", desc = "Lnm;")
+	static final class92 field928;
+	@ObfInfo(name = "ae", desc = "Lnm;")
+	static final class92 field929;
+	@ObfInfo(name = "af", desc = "Lnm;")
+	static final class92 field932;
+	@ObfInfo(name = "az", desc = "Lnm;")
+	static final class92 field934;
+	@ObfInfo(name = "ap", desc = "Lnm;")
+	static final class92 field935;
+	@ObfInfo(name = "ah", desc = "Lnm;")
+	static final class92 field937;
+	@ObfInfo(name = "ad", desc = "Lnm;")
+	static final class92 field938;
+	@ObfInfo(name = "aa", desc = "Lnm;")
+	static final class92 field939;
+	@ObfInfo(name = "aq", desc = "Lnm;")
+	static final class92 field940;
+	@ObfInfo(name = "an", desc = "Lnm;")
+	static final class92 field941;
+	@ObfInfo(name = "ar", desc = "Lnm;")
+	static final class92 field942;
+	@ObfInfo(name = "ab", desc = "Lnm;")
+	static final class92 field943;
+	@ObfInfo(name = "am", desc = "Lnm;")
+	static final class92 field944;
+	@ObfInfo(name = "ai", desc = "Lnm;")
+	static final class92 field945;
+	@ObfInfo(name = "ax", desc = "Lnm;")
+	static final class92 field946;
+	@ObfInfo(name = "al", desc = "Lnm;")
+	static final class92 field947;
+	@ObfInfo(name = "as", desc = "Lnm;")
+	static final class92 field948;
+	@ObfInfo(name = "ay", desc = "Lnm;")
+	static final class92 field951;
+	@ObfInfo(name = "av", desc = "I", intMultiplier = 480633771)
+	public final int field936;
 
-   public void method571(class475 var1) {
-      if (var1.field3643 > this.field1293) {
-         var1.field3643 = this.field1293;
-      }
+	static {
+		field933 = new class92(0, 0);
+		field929 = new class92(1, 0);
+		field930 = new class92(2, 0);
+		field931 = new class92(3, 0);
+		field949 = new class92(9, 2);
+		field945 = new class92(4, 1);
+		field934 = new class92(5, 1);
+		field935 = new class92(6, 1);
+		field939 = new class92(7, 1);
+		field932 = new class92(8, 1);
+		field938 = new class92(12, 2);
+		field940 = new class92(13, 2);
+		field947 = new class92(14, 2);
+		field941 = new class92(15, 2);
+		field942 = new class92(16, 2);
+		field943 = new class92(17, 2);
+		field928 = new class92(18, 2);
+		field944 = new class92(19, 2);
+		field946 = new class92(20, 2);
+		field937 = new class92(21, 2);
+		field948 = new class92(10, 2);
+		field951 = new class92(11, 2);
+		field950 = new class92(22, 3);
+	}
 
-      if (var1.field3637 < this.field1293) {
-         var1.field3637 = this.field1293;
-      }
+	@ObfInfo(name = "<init>", desc = "(II)V")
+	class92(int var1, int var2) {
+		this.field936 = var1;
+	}
 
-      if (var1.field3645 > this.field1288) {
-         var1.field3645 = this.field1288;
-      }
+	@ObfInfo(name = "ae", desc = "(B)I")
+	public int method2222() {
+		return this.field936;
+	}
 
-      if (var1.field3639 < this.field1288) {
-         var1.field3639 = this.field1288;
-      }
+	@ObfInfo(name = "au", desc = "(II)Z")
+	public static boolean method582(int var0) {
+		return var0 >= field933.field936 && var0 <= field931.field936 || var0 == field949.field936;
+	}
 
-   }
-
-   public boolean method566(int var1, int var2, int var3) {
-      if (var1 >= this.field1290 && var1 < this.field1290 + this.field1292) {
-         return this.field1289 == var2 >> 6 && this.field1291 == var3 >> 6;
-      } else {
-         return false;
-      }
-   }
-
-   public boolean method567(int var1, int var2) {
-      return var1 >> 6 == this.field1293 && var2 >> 6 == this.field1288;
-   }
-
-   public int[] method569(int var1, int var2, int var3) {
-      if (!this.method566(var1, var2, var3)) {
-         return null;
-      } else {
-         int[] var5 = new int[]{this.field1293 * 64 - this.field1289 * 64 + var2, var3 + (this.field1288 * 64 - this.field1291 * 64)};
-         return var5;
-      }
-   }
-
-   public class89 method570(int var1, int var2) {
-      if (!this.method567(var1, var2)) {
-         return null;
-      } else {
-         int var4 = this.field1289 * 64 - this.field1293 * 64 + var1;
-         int var5 = this.field1291 * 64 - this.field1288 * 64 + var2;
-         return new class89(this.field1290, var4, var5);
-      }
-   }
-
-   public void method568(class184 var1) {
-      this.field1290 = var1.readUnsignedByte();
-      this.field1292 = var1.readUnsignedByte();
-      this.field1289 = var1.method1174();
-      this.field1291 = var1.method1174();
-      this.field1293 = var1.method1174();
-      this.field1288 = var1.method1174();
-      this.method725();
-   }
-
-   void method725() {
-   }
+	@ObfInfo(name = "ao", desc = "(IB)Z")
+	public static boolean method583(int var0) {
+		return var0 >= field948.field936 && var0 <= field951.field936;
+	}
 }

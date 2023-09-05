@@ -1,23 +1,64 @@
-public class class328 implements class188 {
-   static int field2651;
-   static final class328 field2640 = new class328(6, 6);
-   static final class328 field2641 = new class328(1, 1);
-   static final class328 field2642 = new class328(2, 2);
-   static final class328 field2643 = new class328(0, 0);
-   static final class328 field2644 = new class328(4, 4);
-   static final class328 field2645 = new class328(5, 5);
-   static final class328 field2646 = new class328(3, 3);
-   static final class328 field2647 = new class328(7, 7);
-   static final class328 field2648 = new class328(8, 8);
-   final int field2649;
-   final int field2650;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-   class328(int var1, int var2) {
-      this.field2649 = var1;
-      this.field2650 = var2;
-   }
+@ObfInfo(name = "tx")
+public class class328 extends class180 {
+	@ObfInfo(name = "at", desc = "[Ltb;")
+	class49[] field2628;
+	@ObfInfo(name = "ac", desc = "Ljava/util/List;")
+	List field2629;
 
-   public int method1195() {
-      return this.field2650;
-   }
+	@ObfInfo(name = "<init>", desc = "(Lnu;II)V")
+	public class328(class437 var1, int var2, int var3) {
+		byte[] var4 = var1.method2267(var2, var3 + 1);
+		this.method1803(new class280(var4));
+	}
+
+	@ObfInfo(name = "<init>", desc = "(Lnu;I)V")
+	public class328(class437 var1, int var2) {
+		byte[] var3 = var1.method2267(var2, 0);
+		this.method1803(new class280(var3));
+	}
+
+	@ObfInfo(name = "au", desc = "(Ltm;I)V", opaqueValue = "1059234847")
+	void method1803(class280 var1) {
+		int var3 = var1.method1508();
+		this.field2628 = new class49[var3];
+		this.field2629 = new ArrayList(var3);
+
+		for (int var4 = 0; var4 < var3; ++var4) {
+			this.field2628[var4] = (class49)class216.method1198(class49.method452(), var1.method1492());
+			int var5 = var1.method1508();
+			HashMap var6 = new HashMap(var5);
+
+			while (var5-- > 0) {
+				Object var7 = this.field2628[var4].method451(var1);
+				int var8 = var1.method1508();
+				ArrayList var9 = new ArrayList();
+
+				while (var8-- > 0) {
+					int var10 = var1.method1508();
+					var9.add(var10);
+				}
+
+				var6.put(var7, var9);
+			}
+
+			this.field2629.add(var4, var6);
+		}
+
+	}
+
+	@ObfInfo(name = "ae", desc = "(Ljava/lang/Object;IB)Ljava/util/List;")
+	public List method1804(Object var1, int var2) {
+		if (var2 < 0) {
+			var2 = 0;
+		}
+
+		Map var4 = (Map)this.field2629.get(var2);
+		return (List)var4.get(var1);
+	}
 }

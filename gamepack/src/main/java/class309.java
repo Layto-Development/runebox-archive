@@ -1,18 +1,13 @@
-import java.nio.ByteBuffer;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class309 extends class134 {
-   ByteBuffer field2551;
+@ObfInfo(name = "rg")
+public class class309 extends class230 {
+	@ObfInfo(name = "<init>", desc = "(I)V")
+	public class309(int var1) {
+		super(var1);
+	}
 
-   byte[] method894() {
-      byte[] var2 = new byte[this.field2551.capacity()];
-      this.field2551.position(0);
-      this.field2551.get(var2);
-      return var2;
-   }
-
-   public void method893(byte[] var1) {
-      this.field2551 = ByteBuffer.allocateDirect(var1.length);
-      this.field2551.position(0);
-      this.field2551.put(var1);
-   }
+	@ObfInfo(name = "au", desc = "(Ltm;II)V")
+	void method1227(class280 var1, int var2) {
+	}
 }

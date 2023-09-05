@@ -1,12 +1,9 @@
-public class class269 {
-   class200 field2307 = new class200();
-   class297 field2312 = new class297();
-   public class28 field2309 = new class28();
-   public Object[] field2306;
-   public Object[] field2308;
-   public Object[] field2310;
-   public Object[] field2311;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class269() {
-   }
+@ObfInfo(name = "of")
+public class class269 extends RuntimeException {
+	@ObfInfo(name = "<init>", desc = "(Ljava/lang/String;[Ljava/lang/Object;)V")
+	public class269(String var1, Object[] var2) {
+		super(String.format(var1, var2));
+	}
 }

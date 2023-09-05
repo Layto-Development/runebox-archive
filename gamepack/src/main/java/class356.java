@@ -1,72 +1,35 @@
-import java.util.Iterator;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-public class class356 implements Iterator {
-   class197 field2796;
-   class55 field2797;
-   class55 field2799 = null;
-   int field2798;
+@ObfInfo(name = "me")
+public class class356 extends class180 {
+	@ObfInfo(name = "az", desc = "[I")
+	static int[] field2808;
+	@ObfInfo(name = "ae", desc = "I", intMultiplier = 1476740129)
+	public final int field2809;
+	@ObfInfo(name = "au", desc = "I", intMultiplier = 933190117)
+	public final int field2810;
+	@ObfInfo(name = "ao", desc = "[I")
+	public final int[] field2811;
+	@ObfInfo(name = "at", desc = "[I")
+	public final int[] field2812;
 
-   public class356(class197 var1) {
-      this.field2796 = var1;
-      this.method1827();
-   }
+	@ObfInfo(name = "<init>", desc = "(II[I[II)V")
+	class356(int var1, int var2, int[] var3, int[] var4, int var5) {
+		this.field2810 = var1;
+		this.field2809 = var2;
+		this.field2811 = var3;
+		this.field2812 = var4;
+	}
 
-   void method1827() {
-      this.field2797 = this.field2796.field1921[0].field1077;
-      this.field2798 = 1;
-      this.field2799 = null;
-   }
+	@ObfInfo(name = "au", desc = "(III)Z", opaqueValue = "152224212")
+	public boolean method1938(int var1, int var2) {
+		if (var2 >= 0 && var2 < this.field2812.length) {
+			int var4 = this.field2812[var2];
+			if (var1 >= var4 && var1 <= this.field2811[var2] + var4) {
+				return true;
+			}
+		}
 
-   public class55 method1828() {
-      this.method1827();
-      return (class55)this.next();
-   }
-
-   public Object next() {
-      class55 var1;
-      if (this.field2797 != this.field2796.field1921[this.field2798 - 1]) {
-         var1 = this.field2797;
-         this.field2797 = var1.field1077;
-         this.field2799 = var1;
-         return var1;
-      } else {
-         do {
-            if (this.field2798 >= this.field2796.field1920) {
-               return null;
-            }
-
-            var1 = this.field2796.field1921[this.field2798++].field1077;
-         } while(var1 == this.field2796.field1921[this.field2798 - 1]);
-
-         this.field2797 = var1.field1077;
-         this.field2799 = var1;
-         return var1;
-      }
-   }
-
-   public boolean hasNext() {
-      if (this.field2797 != this.field2796.field1921[this.field2798 - 1]) {
-         return true;
-      } else {
-         while(this.field2798 < this.field2796.field1920) {
-            if (this.field2796.field1921[this.field2798++].field1077 != this.field2796.field1921[this.field2798 - 1]) {
-               this.field2797 = this.field2796.field1921[this.field2798 - 1].field1077;
-               return true;
-            }
-
-            this.field2797 = this.field2796.field1921[this.field2798 - 1];
-         }
-
-         return false;
-      }
-   }
-
-   public void remove() {
-      if (this.field2799 == null) {
-         throw new IllegalStateException();
-      } else {
-         this.field2799.method605();
-         this.field2799 = null;
-      }
-   }
+		return false;
+	}
 }

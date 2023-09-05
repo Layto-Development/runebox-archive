@@ -1,123 +1,137 @@
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.ProtocolException;
+import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+
+@ObfInfo(name = "ad")
 public class class540 {
-   boolean field4273;
-   int field4265;
-   int field4266 = 0;
-   int field4267;
-   int field4268;
-   int field4269;
-   int field4270;
-   int field4271;
-   int field4272 = 0;
-   int field4274;
-   int field4275;
-   int field4276;
-   int field4277;
+	@ObfInfo(name = "gd", desc = "Lnk;")
+	static class505 field4279;
+	@ObfInfo(name = "ai", desc = "Z")
+	boolean field4281;
+	@ObfInfo(name = "ac", desc = "Z")
+	boolean field4283;
+	@ObfInfo(name = "at", desc = "Lrf;")
+	class167 field4282;
+	@ObfInfo(name = "az", desc = "I", intMultiplier = 1934831509)
+	int field4285;
+	@ObfInfo(name = "ao", desc = "Laf;")
+	final class312 field4286;
+	@ObfInfo(name = "ae", desc = "Lqf;")
+	final class59 field4280;
+	@ObfInfo(name = "au", desc = "Ljavax/net/ssl/HttpsURLConnection;")
+	final HttpsURLConnection field4284;
 
-   public void method2566(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9) {
-      this.field4277 = var1;
-      this.field4265 = var2;
-      this.field4267 = var3;
-      this.field4268 = var4;
-      this.field4269 = var5;
-      this.field4270 = var6;
-      this.field4266 = var7;
-      this.field4272 = var8;
-      this.field4273 = var9;
-   }
+	@ObfInfo(name = "<init>", desc = "(Ljava/net/URL;Laf;Z)V")
+	public class540(URL var1, class312 var2, boolean var3) throws IOException {
+		this(var1, var2, new class59(), var3);
+	}
 
-   public void method2567(int var1, int var2, int var3, int var4) {
-      this.field4274 = var1;
-      this.field4275 = var2;
-      this.field4276 = var3;
-      this.field4271 = var4;
-   }
+	@ObfInfo(name = "<init>", desc = "(Ljava/net/URL;Laf;Lqf;Z)V")
+	public class540(URL var1, class312 var2, class59 var3, boolean var4) throws IOException {
+		this.field4283 = false;
+		this.field4281 = false;
+		this.field4285 = 300000;
+		if (!var2.method1728()) {
+			throw new UnsupportedEncodingException("Unsupported request method used " + var2.method1726());
+		} else {
+			this.field4284 = (HttpsURLConnection)var1.openConnection();
+			if (!var4) {
+				this.field4284.setSSLSocketFactory(class520.method2548());
+			}
 
-   public void method2568(class7 var1, class460 var2, byte var3) {
-      if (var2 == null) {
-         if (var3 >= -1) {
-            throw new IllegalStateException();
-         }
-      } else {
-         int var4 = var2.field2423;
-         int var5 = Math.min(this.field4268, (int)((float)var4 * 0.9F));
-         int var6 = var1.method97(this.field4267);
-         int var7 = var1.method98(this.field4268);
-         int var8 = this.field4277 - this.field4269 + var6;
-         int var9 = this.field4265 - this.field4270 + var7 + var4;
-         class156.method961(this.field4277, this.field4265, this.field4277 + this.field4267, this.field4268 + this.field4265);
-         int var10 = this.field4272;
-         int var11 = this.field4266;
-         if (var10 > var11) {
-            int var12 = var10;
-            var10 = var11;
-            var11 = var12;
-         }
+			this.field4286 = var2;
+			this.field4280 = null != var3 ? var3 : new class59();
+		}
+	}
 
-         class437 var22 = var1.method84(0, var10);
-         class437 var13 = var1.method84(var10, var11);
-         class437 var14 = var1.method84(var11, var1.method78());
-         class437 var15 = var1.method84(0, this.field4266);
-         int var17;
-         int var19;
-         if (!var13.method2143()) {
-            if (var3 >= -1) {
-               throw new IllegalStateException();
-            }
+	@ObfInfo(name = "au", desc = "(B)Lqf;")
+	public class59 method2596() {
+		return this.field4280;
+	}
 
-            int var16 = var2.field2427 + var2.field2428;
+	@ObfInfo(name = "ae", desc = "(Lrf;B)V", opaqueValue = "2")
+	public void method2592(class167 var1) {
+		if (!this.field4283) {
+			if (var1 == null) {
+				this.field4280.method482("Content-Type");
+				this.field4282 = null;
+			} else {
+				this.field4282 = var1;
+				if (this.field4282.method949() != null) {
+					this.field4280.method477(this.field4282.method949());
+				} else {
+					this.field4280.method475();
+				}
 
-            for(var17 = 0; var17 < var13.method2144(); ++var17) {
-               if (var3 >= -1) {
-                  throw new IllegalStateException();
-               }
+			}
+		}
+	}
 
-               class530 var18 = var13.method2146(var17);
-               var19 = var8 + var18.field4169;
-               int var20 = var2.method1595(var18.field4170);
-               int var21 = var9 + var18.field4172 - var4;
-               class156.method954(var19, var21, var20, var16, this.field4271);
-            }
-         }
+	@ObfInfo(name = "ao", desc = "(I)V", opaqueValue = "414752321")
+	void method2593() throws ProtocolException {
+		if (!this.field4283) {
+			this.field4284.setRequestMethod(this.field4286.method1726());
+			this.field4280.method471(this.field4284);
+			if (this.field4286.method1727() && this.field4282 != null) {
+				this.field4284.setDoOutput(true);
+				ByteArrayOutputStream var2 = new ByteArrayOutputStream();
 
-         if (!var22.method2143()) {
-            if (var3 >= -1) {
-               return;
-            }
+				try {
+					var2.write(this.field4282.method948());
+					var2.writeTo(this.field4284.getOutputStream());
+				} catch (IOException var12) {
+					var12.printStackTrace();
+				} finally {
+					try {
+						var2.close();
+					} catch (IOException var11) {
+						var11.printStackTrace();
+					}
 
-            var2.method1575(var22, var8, var9, this.field4274, this.field4275, -1);
-         }
+				}
+			}
 
-         if (!var13.method2143()) {
-            if (var3 >= -1) {
-               throw new IllegalStateException();
-            }
+			this.field4284.setConnectTimeout(this.field4285);
+			this.field4284.setInstanceFollowRedirects(this.field4281);
+			this.field4283 = true;
+		}
+	}
 
-            var2.method1575(var13, var8, var9, this.field4276, this.field4275, -1);
-         }
+	@ObfInfo(name = "at", desc = "(I)Z", opaqueValue = "920659858")
+	boolean method2595() throws IOException {
+		if (!this.field4283) {
+			this.method2593();
+		}
 
-         if (!var14.method2143()) {
-            if (var3 >= -1) {
-               throw new IllegalStateException();
-            }
+		this.field4284.connect();
+		return this.field4284.getResponseCode() == -1;
+	}
 
-            var2.method1575(var14, var8, var9, this.field4274, this.field4275, -1);
-         }
+	@ObfInfo(name = "ac", desc = "(I)Las;", opaqueValue = "1655457013")
+	class403 method2594() {
+		try {
+			if (!this.field4283 || this.field4284.getResponseCode() == -1) {
+				return new class403("No REST response has been received yet.");
+			}
+		} catch (IOException var11) {
+			this.field4284.disconnect();
+			return new class403("Error decoding REST response code: " + var11.getMessage());
+		}
 
-         if (this.field4273) {
-            class467 var23 = var15.method2148();
-            var17 = var8 + (Integer)var23.field3606;
-            int var24 = var9 + (Integer)var23.field3605;
-            var19 = var24 - var5;
-            class156.method956(var17, var24, var17, var19, this.field4274);
-            if (this.field4275 != -1) {
-               if (var3 >= -1) {
-                  return;
-               }
+		class403 var4;
+		try {
+			class403 var2 = new class403(this.field4284);
+			return var2;
+		} catch (IOException var9) {
+			var4 = new class403("Error decoding REST response: " + var9.getMessage());
+		} finally {
+			this.field4284.disconnect();
+		}
 
-               class156.method956(var17 + 1, var24 + 1, var17 + 1, var19 + 1, this.field4275);
-            }
-         }
-
-      }
-   }
+		return var4;
+	}
 }

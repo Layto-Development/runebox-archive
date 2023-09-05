@@ -1,44 +1,51 @@
-public abstract class class8 extends class512 implements class473 {
-   protected class8(class442 var1, class121 var2, int var3) {
-      super(var1, var2, var3);
-   }
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-   protected abstract class455 method119(int var1);
+@ObfInfo(name = "sx")
+public class class8 implements class3 {
+	@ObfInfo(name = "au", desc = "Ljava/util/Map;")
+	Map field338;
+	@ObfInfo(name = "ae", desc = "Luu;")
+	final class456 field337;
 
-   public int method118() {
-      return super.field3983;
-   }
+	@ObfInfo(name = "<init>", desc = "(Luu;)V")
+	public class8(class456 var1) {
+		this.field337 = var1;
+	}
 
-   public Object method2286(int var1) {
-      class455 var3 = this.method119(var1);
-      return null != var3 && var3.method2249() ? var3.method2248() : null;
-   }
+	@ObfInfo(name = "au", desc = "(IS)I")
+	public int method5(int var1) {
+		if (null != this.field338) {
+			class10 var3 = (class10)this.field338.get(var1);
+			if (var3 != null) {
+				return (Integer)var3.field340;
+			}
+		}
 
-   public class438 method117(class184 var1) {
-      int var3 = var1.method1174();
-      class455 var4 = this.method119(var3);
-      class438 var5 = new class438(var3);
-      Class var6 = var4.field3557.field2222;
-      if (var6 == Integer.class) {
-         var5.field3325 = var1.readInt();
-      } else if (var6 == Long.class) {
-         var5.field3325 = var1.method1130();
-      } else if (var6 == String.class) {
-         var5.field3325 = var1.method1175();
-      } else {
-         if (!class123.class.isAssignableFrom(var6)) {
-            throw new IllegalStateException();
-         }
+		return (Integer)this.field337.method2383(var1);
+	}
 
-         try {
-            class123 var7 = (class123)var6.newInstance();
-            var7.method863(var1);
-            var5.field3325 = var7;
-         } catch (InstantiationException var8) {
-         } catch (IllegalAccessException var9) {
-         }
-      }
+	@ObfInfo(name = "ae", desc = "(ILjava/lang/Object;I)V", opaqueValue = "1797615972")
+	public void method4(int var1, Object var2) {
+		if (null == this.field338) {
+			this.field338 = new HashMap();
+			this.field338.put(var1, new class10(var1, var2));
+		} else {
+			class10 var4 = (class10)this.field338.get(var1);
+			if (null == var4) {
+				this.field338.put(var1, new class10(var1, var2));
+			} else {
+				var4.field340 = var2;
+			}
+		}
 
-      return var5;
-   }
+	}
+
+	@ObfInfo(name = "iterator", desc = "()Ljava/util/Iterator;")
+	public Iterator iterator() {
+		return this.field338 == null ? Collections.emptyList().iterator() : this.field338.values().iterator();
+	}
 }

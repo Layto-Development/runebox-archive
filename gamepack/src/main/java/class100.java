@@ -1,23 +1,32 @@
-public class class100 {
-   final int field1325;
-   final int field1326;
-   final String field1327;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   class100(int var1, int var2, String var3) {
-      this.field1325 = var1;
-      this.field1326 = var2;
-      this.field1327 = var3;
-   }
+@ObfInfo(name = "np")
+public class class100 implements class425 {
+	@ObfInfo(name = "at", desc = "Lnp;")
+	public static final class100 field980;
+	@ObfInfo(name = "ao", desc = "Lnp;")
+	public static final class100 field981;
+	@ObfInfo(name = "ae", desc = "Lnp;")
+	public static final class100 field982;
+	@ObfInfo(name = "au", desc = "Lnp;")
+	public static final class100 field984;
+	@ObfInfo(name = "ac", desc = "I", intMultiplier = -1651266547)
+	final int field983;
 
-   class100(class184 var1) {
-      this(var1.readUnsignedByte(), var1.readUnsignedByte(), var1.readString());
-   }
+	static {
+		field984 = new class100(-1);
+		field982 = new class100(0);
+		field981 = new class100(1);
+		field980 = new class100(2);
+	}
 
-   String method747() {
-      return Integer.toHexString(this.field1325) + Integer.toHexString(this.field1326) + this.field1327;
-   }
+	@ObfInfo(name = "<init>", desc = "(I)V")
+	class100(int var1) {
+		this.field983 = var1;
+	}
 
-   int method746() {
-      return this.field1326;
-   }
+	@ObfInfo(name = "ae", desc = "(B)I")
+	public int method2222() {
+		return this.field983;
+	}
 }

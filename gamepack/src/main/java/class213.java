@@ -1,275 +1,122 @@
-public class class213 implements class203 {
-   boolean field2012 = false;
-   boolean field2014 = false;
-   class480 field2013 = null;
+import io.runebox.internal.deobfuscator.includes.ObfInfo;
 
-   public void method1308(class480 var1) {
-      this.method1307();
-      if (var1 != null) {
-         this.field2013 = var1;
-         class269 var3 = var1.method2337();
-         if (null != var3) {
-            var3.field2309.method270(true);
-            if (var3.field2310 != null) {
-               class208 var4 = new class208();
-               var4.method1262(var1);
-               var4.method1263(var3.field2310);
-               Client.method412().method1240(var4);
-            }
-         }
-      }
+@ObfInfo(name = "sc")
+public abstract class class213 {
+	@ObfInfo(name = "gv", desc = "I", intMultiplier = -1711054295)
+	static int field1904;
+	@ObfInfo(name = "af", desc = "D")
+	double field1900;
+	@ObfInfo(name = "aa", desc = "I", intMultiplier = -1232031963)
+	int field1901;
+	@ObfInfo(name = "ad", desc = "I", intMultiplier = 627724959)
+	int field1902;
+	@ObfInfo(name = "ap", desc = "I", intMultiplier = 2041242771)
+	int field1903;
 
-   }
+	@ObfInfo(name = "<init>", desc = "(II)V")
+	class213(int var1, int var2) {
+		this.field1903 = 0;
+		this.field1901 = 0;
+		this.field1900 = 0.0D;
+		this.field1902 = 0;
+		this.field1903 = var1;
+		this.field1901 = 0;
+		this.field1902 = var2 >= 0 && var2 <= 27 ? var2 : 0;
+		this.field1900 = method1191(this.field1901, this.field1903, this.field1902);
+	}
 
-   public class480 method1305() {
-      return this.field2013;
-   }
+	@ObfInfo(name = "ab", desc = "(I)V")
+	public void method1190() {
+		if (this.field1901 < this.field1903) {
+			++this.field1901;
+			this.field1900 = method1191(this.field1901, this.field1903, this.field1902);
+		}
 
-   public void method1307() {
-      if (this.field2013 != null) {
-         class269 var2 = this.field2013.method2337();
-         class480 var3 = this.field2013;
-         this.field2013 = null;
-         if (var2 != null) {
-            var2.field2309.method270(false);
-            if (null != var2.field2310) {
-               class208 var4 = new class208();
-               var4.method1262(var3);
-               var4.method1263(var2.field2310);
-               Client.method412().method1240(var4);
-            }
+	}
 
-         }
-      }
-   }
+	@ObfInfo(name = "ag", desc = "(I)D")
+	double method1189() {
+		return this.field1900;
+	}
 
-   public boolean method1246(int var1) {
-      if (this.field2013 == null) {
-         return false;
-      } else {
-         class297 var3 = this.field2013.method2326();
-         if (null == var3) {
-            return false;
-         } else {
-            if (var3.method1627(var1)) {
-               switch (var1) {
-                  case 81:
-                     this.field2014 = true;
-                     break;
-                  case 82:
-                     this.field2012 = true;
-                     break;
-                  default:
-                     if (this.method1306(var1)) {
-                        Client.method485(this.field2013);
-                     }
-               }
-            }
-
-            return var3.method1618(var1);
-         }
-      }
-   }
-
-   public boolean method1244(int var1) {
-      switch (var1) {
-         case 81:
-            this.field2014 = false;
-            return false;
-         case 82:
-            this.field2012 = false;
-            return false;
-         default:
-            return false;
-      }
-   }
-
-   public boolean method1245(char var1) {
-      if (this.field2013 == null) {
-         return false;
-      } else {
-         boolean var3;
-         if (var1 >= ' ' && var1 < 127 || var1 > 127 && var1 < 160 || var1 > 160 && var1 <= 255) {
-            var3 = true;
-         } else {
-            label80: {
-               if (var1 != 0) {
-                  char[] var4 = class162.field1691;
-
-                  for(int var5 = 0; var5 < var4.length; ++var5) {
-                     char var6 = var4[var5];
-                     if (var1 == var6) {
-                        var3 = true;
-                        break label80;
-                     }
-                  }
-               }
-
-               var3 = false;
-            }
-         }
-
-         if (!var3) {
-            return false;
-         } else {
-            class28 var7 = this.field2013.method2350();
-            if (null != var7 && var7.method312()) {
-               class297 var8 = this.field2013.method2326();
-               if (null == var8) {
-                  return false;
-               } else {
-                  if (var8.method1619(var1) && var7.method329(var1)) {
-                     Client.method485(this.field2013);
-                  }
-
-                  return var8.method1622(var1);
-               }
-            } else {
-               return false;
-            }
-         }
-      }
-   }
-
-   public boolean method1247(boolean var1) {
-      return false;
-   }
-
-   boolean method1306(int var1) {
-      if (null == this.field2013) {
-         return false;
-      } else {
-         class28 var3 = this.field2013.method2350();
-         if (null != var3 && var3.method312()) {
-            switch (var1) {
-               case 13:
-                  this.method1307();
-                  return true;
-               case 48:
-                  if (this.field2012) {
-                     var3.method347();
-                  }
-
-                  return true;
-               case 65:
-                  if (this.field2012) {
-                     var3.method271(Client.method528());
-                  }
-
-                  return true;
-               case 66:
-                  if (this.field2012) {
-                     var3.method301(Client.method528());
-                  }
-
-                  return true;
-               case 67:
-                  if (this.field2012) {
-                     var3.method302(Client.method528());
-                  }
-
-                  return true;
-               case 84:
-                  if (var3.method315() == 0) {
-                     var3.method329(10);
-                  } else if (this.field2014 && var3.method333()) {
-                     var3.method329(10);
-                  } else {
-                     class269 var4 = this.field2013.method2337();
-                     class208 var5 = new class208();
-                     var5.method1262(this.field2013);
-                     var5.method1263(var4.field2306);
-                     Client.method412().method1240(var5);
-                     this.method1307();
-                  }
-
-                  return true;
-               case 85:
-                  if (this.field2012) {
-                     var3.method286();
-                  } else {
-                     var3.method284();
-                  }
-
-                  return true;
-               case 96:
-                  if (this.field2012) {
-                     var3.method295(this.field2014);
-                  } else {
-                     var3.method341(this.field2014);
-                  }
-
-                  return true;
-               case 97:
-                  if (this.field2012) {
-                     var3.method296(this.field2014);
-                  } else {
-                     var3.method294(this.field2014);
-                  }
-
-                  return true;
-               case 98:
-                  if (this.field2012) {
-                     var3.method342();
-                  } else {
-                     var3.method297(this.field2014);
-                  }
-
-                  return true;
-               case 99:
-                  if (this.field2012) {
-                     var3.method303();
-                  } else {
-                     var3.method298(this.field2014);
-                  }
-
-                  return true;
-               case 101:
-                  if (this.field2012) {
-                     var3.method307();
-                  } else {
-                     var3.method285();
-                  }
-
-                  return true;
-               case 102:
-                  if (this.field2012) {
-                     var3.method292(this.field2014);
-                  } else {
-                     var3.method290(this.field2014);
-                  }
-
-                  return true;
-               case 103:
-                  if (this.field2012) {
-                     var3.method293(this.field2014);
-                  } else {
-                     var3.method291(this.field2014);
-                  }
-
-                  return true;
-               case 104:
-                  if (this.field2012) {
-                     var3.method337(this.field2014);
-                  } else {
-                     var3.method299(this.field2014);
-                  }
-
-                  return true;
-               case 105:
-                  if (this.field2012) {
-                     var3.method336(this.field2014);
-                  } else {
-                     var3.method287(this.field2014);
-                  }
-
-                  return true;
-               default:
-                  return false;
-            }
-         } else {
-            return false;
-         }
-      }
-   }
+	@ObfInfo(name = "am", desc = "(IIIB)D")
+	static double method1191(int var0, int var1, int var2) {
+		double var4 = var1 > 0 ? (double)Math.max(0.0F, Math.min(1.0F, (float)var0 / (float)var1)) : 1.0D;
+		if (var4 > 0.0D && var4 < 1.0D) {
+			double var6;
+			double var8;
+			switch(var2) {
+			case 0:
+				return var4;
+			case 1:
+				return 1.0D - Math.cos(var4 * 3.141592653589793D / 2.0D);
+			case 2:
+				return Math.sin(var4 * 3.141592653589793D / 2.0D);
+			case 3:
+				return -(Math.cos(var4 * 3.141592653589793D) - 1.0D) / 2.0D;
+			case 4:
+				return var4 * var4;
+			case 5:
+				return 1.0D - (1.0D - var4) * (1.0D - var4);
+			case 6:
+				return var4 < 0.5D ? var4 * 2.0D * var4 : 1.0D - Math.pow(2.0D + var4 * -2.0D, 2.0D) / 2.0D;
+			case 7:
+				return var4 * var4 * var4;
+			case 8:
+				return 1.0D - Math.pow(1.0D - var4, 3.0D);
+			case 9:
+				return var4 < 0.5D ? var4 * var4 * 4.0D * var4 : 1.0D - Math.pow(2.0D + var4 * -2.0D, 3.0D) / 2.0D;
+			case 10:
+				return var4 * var4 * var4 * var4;
+			case 11:
+				return 1.0D - Math.pow(1.0D - var4, 4.0D);
+			case 12:
+				return var4 < 0.5D ? var4 * var4 * var4 * var4 * 8.0D : 1.0D - Math.pow(2.0D + var4 * -2.0D, 4.0D) / 2.0D;
+			case 13:
+				return var4 * var4 * var4 * var4 * var4;
+			case 14:
+				return 1.0D - Math.pow(1.0D - var4, 5.0D);
+			case 15:
+				return var4 < 0.5D ? var4 * var4 * 8.0D * var4 * var4 * var4 : 1.0D - Math.pow(var4 * -2.0D + 2.0D, 5.0D) / 2.0D;
+			case 16:
+				return Math.pow(2.0D, var4 * 10.0D - 10.0D);
+			case 17:
+				return 1.0D - Math.pow(2.0D, var4 * -10.0D);
+			case 18:
+				return var4 < 0.5D ? Math.pow(2.0D, 10.0D + var4 * 20.0D) / 2.0D : (2.0D - Math.pow(2.0D, 10.0D + var4 * -20.0D)) / 2.0D;
+			case 19:
+				return 1.0D - Math.sqrt(1.0D - Math.pow(var4, 2.0D));
+			case 20:
+				return Math.sqrt(1.0D - Math.pow(var4 - 1.0D, 2.0D));
+			case 21:
+				return var4 < 0.5D ? (1.0D - Math.sqrt(1.0D - Math.pow(var4 * 2.0D, 2.0D))) / 2.0D : (Math.sqrt(1.0D - Math.pow(2.0D + var4 * -2.0D, 2.0D)) + 1.0D) / 2.0D;
+			case 22:
+				var6 = 1.70158D;
+				var8 = 2.70158D;
+				return var4 * 2.70158D * var4 * var4 - var4 * 1.70158D * var4;
+			case 23:
+				var6 = 1.70158D;
+				var8 = 2.70158D;
+				return 1.0D + 2.70158D * Math.pow(var4 - 1.0D, 3.0D) + 1.70158D * Math.pow(var4 - 1.0D, 2.0D);
+			case 24:
+				var6 = 1.70158D;
+				var8 = 2.5949095D;
+				return var4 < 0.5D ? Math.pow(var4 * 2.0D, 2.0D) * (var4 * 7.189819D - 2.5949095D) / 2.0D : (Math.pow(var4 * 2.0D - 2.0D, 2.0D) * (3.5949095D * (var4 * 2.0D - 2.0D) + 2.5949095D) + 2.0D) / 2.0D;
+			case 25:
+				var6 = 2.0943951023931953D;
+				return -Math.pow(2.0D, var4 * 10.0D - 10.0D) * Math.sin((var4 * 10.0D - 10.75D) * 2.0943951023931953D);
+			case 26:
+				var6 = 2.0943951023931953D;
+				return Math.pow(2.0D, var4 * -10.0D) * Math.sin(2.0943951023931953D * (var4 * 10.0D - 0.75D)) + 1.0D;
+			case 27:
+				var6 = 1.3962634015954636D;
+				var8 = Math.sin((var4 * 20.0D - 11.125D) * 1.3962634015954636D);
+				return var4 < 0.5D ? -(Math.pow(2.0D, var4 * 20.0D - 10.0D) * var8) / 2.0D : Math.pow(2.0D, 10.0D + var4 * -20.0D) * var8 / 2.0D + 1.0D;
+			default:
+				return var4;
+			}
+		} else {
+			return var4 <= 0.0D ? 0.0D : 1.0D;
+		}
+	}
 }
