@@ -81,10 +81,10 @@ public class class196 extends class55 {
       var1.method1114(this.field1913);
 
       for(int var3 = 0; var3 < this.field1896.length; ++var3) {
-         var1.method1180(this.field1896[var3]);
+         var1.writeInt(this.field1896[var3]);
       }
 
-      var1.method1180(this.field1917);
+      var1.writeInt(this.field1917);
       var1.method1118(this.field1918);
       var1.method1118(this.field1919);
    }

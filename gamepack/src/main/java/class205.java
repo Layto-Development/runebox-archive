@@ -23,23 +23,23 @@ public class class205 {
 
       int var8;
       for(var8 = 0; var8 < 4; ++var8) {
-         var5.method1180(var4.nextInt());
+         var5.writeInt(var4.nextInt());
       }
 
-      var5.method1180(var7[0]);
-      var5.method1180(var7[1]);
+      var5.writeInt(var7[0]);
+      var5.writeInt(var7[1]);
       var5.method1151(var0);
       var5.method1151(0L);
 
       for(var8 = 0; var8 < 4; ++var8) {
-         var5.method1180(var4.nextInt());
+         var5.writeInt(var4.nextInt());
       }
 
       var5.method1158(field1939, field1940);
       var6.method1114(10);
 
       for(var8 = 0; var8 < 3; ++var8) {
-         var6.method1180(var4.nextInt());
+         var6.writeInt(var4.nextInt());
       }
 
       var6.method1151(var4.nextLong());

@@ -3,6 +3,7 @@ package io.runebox.internal.injector
 import com.google.common.reflect.ClassPath
 import io.runebox.internal.injector.annotations.Mixin
 import io.runebox.internal.injector.asm.ClassPool
+import io.runebox.internal.injector.asm.ignored
 import io.runebox.internal.injector.util.AsmUtil
 import io.runebox.internal.injector.util.AsmUtil.MIXIN_BASE
 import org.objectweb.asm.Type
@@ -22,8 +23,13 @@ class Injector(
 
     private fun init() {
         Logger.info("Loading mixin and client classes from jar files.")
+
         mixinPool.readJar(mixinsJar)
         clientPool.readJar(clientJar)
+
+        clientPool.classes.filter { it.name.startsWith("org/") }.forEach { cls ->
+            cls.ignored = true
+        }
     }
 
     fun inject() {
@@ -44,10 +50,7 @@ class Injector(
 
         Logger.info("Saving injected client classes to output jar.")
 
-        val outputPool = ClassPool(this)
-        results.forEach { outputPool.addClass(it) }
-        clientPool.classes.forEach { outputPool.addClass(it) }
-        outputPool.writeJar(outputJar)
+        clientPool.writeJar(outputJar, includeIgnored = true)
 
         Logger.info("Injector completed successfully.")
     }

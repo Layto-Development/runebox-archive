@@ -50,24 +50,24 @@ public class class248 {
          if (null != var8 && class259.field2281 != var8 && var8.field4112 != null && var8.field4112.equals(var6)) {
             class335 var9;
             if (var0 == 1) {
-               var9 = class335.method1773(class46.field941, Client.field641.field2758);
-               var9.field2686.method1150(var4[var7]);
-               var9.field2686.method1161(0);
+               var9 = class335.createPacket(ClientPacket.field941, Client.field641.field2758);
+               var9.buffer.method1150(var4[var7]);
+               var9.buffer.method1161(0);
                Client.field641.method1797(var9);
             } else if (var0 == 4) {
-               var9 = class335.method1773(class46.field997, Client.field641.field2758);
-               var9.field2686.method1177(var4[var7]);
-               var9.field2686.method1187(0);
+               var9 = class335.createPacket(ClientPacket.field997, Client.field641.field2758);
+               var9.buffer.method1177(var4[var7]);
+               var9.buffer.method1187(0);
                Client.field641.method1797(var9);
             } else if (var0 == 6) {
-               var9 = class335.method1773(class46.field979, Client.field641.field2758);
-               var9.field2686.method1177(var4[var7]);
-               var9.field2686.method1161(0);
+               var9 = class335.createPacket(ClientPacket.field979, Client.field641.field2758);
+               var9.buffer.method1177(var4[var7]);
+               var9.buffer.method1161(0);
                Client.field641.method1797(var9);
             } else if (var0 == 7) {
-               var9 = class335.method1773(class46.field1030, Client.field641.field2758);
-               var9.field2686.method1183(var4[var7]);
-               var9.field2686.method1114(0);
+               var9 = class335.createPacket(ClientPacket.field1030, Client.field641.field2758);
+               var9.buffer.method1183(var4[var7]);
+               var9.buffer.method1114(0);
                Client.field641.method1797(var9);
             }
 

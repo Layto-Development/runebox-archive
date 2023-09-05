@@ -1,5 +1,7 @@
 package io.runebox.internal.injector.transformers
 
+import com.google.common.collect.Iterables
+import io.runebox.internal.injector.asm.init
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes.ASM9
 import org.objectweb.asm.tree.ClassNode
@@ -13,8 +15,12 @@ class MethodReplaceTransformer : AbstractTransformer() {
         mixinMethod: MethodNode,
         clientMethod: MethodNode
     ) {
-        clientMethod.instructions.clear()
-        mixinMethod.accept(ReplaceMethodVisitor(mixinCls, clientCls, clientMethod))
+        val copy = MethodNode(clientMethod.access, clientMethod.name, clientMethod.desc, clientMethod.signature, Iterables.toArray(mixinMethod.exceptions, String::class.java))
+        mixinMethod.accept(ReplaceMethodVisitor(mixinCls, clientCls, copy))
+
+        clientCls.methods.remove(clientMethod)
+        copy.init(clientCls)
+        clientCls.methods.add(copy)
     }
 
     private class ReplaceMethodVisitor(private val mixinCls: ClassNode, private val clientCls: ClassNode, parent: MethodVisitor) : MethodVisitor(ASM9, parent) {

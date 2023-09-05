@@ -138,7 +138,7 @@ public class class14 {
                         this.field127 = var15;
                         this.field133 = new class184(var12 + var16 + this.field127.field1566);
                         this.field133.method1114(var11);
-                        this.field133.method1180(var12);
+                        this.field133.writeInt(var12);
                         this.field134 = 8;
                         this.field119.field1818 = 0;
                      } else if (this.field134 == 0) {

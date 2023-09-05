@@ -23,7 +23,7 @@ public class class138 {
       class59 var2 = (class59)field1582.method583();
       if (var2 != null) {
          int var3 = var0.field1818;
-         var0.method1180(var2.field1086);
+         var0.writeInt(var2.field1086);
 
          for(int var4 = 0; var4 < var2.field1085; ++var4) {
             if (var2.field1088[var4] != 0) {
@@ -37,7 +37,7 @@ public class class138 {
                      var6 = var2.field1092[var4];
                      var7 = var6.getInt((Object)null);
                      var0.method1114(0);
-                     var0.method1180(var7);
+                     var0.writeInt(var7);
                   } else if (var5 == 1) {
                      var6 = var2.field1092[var4];
                      var6.setInt((Object)null, var2.field1090[var4]);
@@ -46,7 +46,7 @@ public class class138 {
                      var6 = var2.field1092[var4];
                      var7 = var6.getModifiers();
                      var0.method1114(0);
-                     var0.method1180(var7);
+                     var0.writeInt(var7);
                   }
 
                   Method var23;
@@ -55,7 +55,7 @@ public class class138 {
                         var23 = var2.field1091[var4];
                         var7 = var23.getModifiers();
                         var0.method1114(0);
-                        var0.method1180(var7);
+                        var0.writeInt(var7);
                      }
                   } else {
                      var23 = var2.field1091[var4];

@@ -37,10 +37,10 @@ public class class348 {
                break;
             }
 
-            this.field2757.method1119(var2.field2686.field1816, 0, var2.field2683);
+            this.field2757.method1119(var2.buffer.field1816, 0, var2.field2683);
             this.field2756 -= var2.field2683;
             var2.method605();
-            var2.field2686.method1113();
+            var2.buffer.method1113();
             var2.method1771();
          }
       }
@@ -49,8 +49,8 @@ public class class348 {
 
    public final void method1797(class335 var1) {
       this.field2763.method577(var1);
-      var1.field2683 = var1.field2686.field1818;
-      var1.field2686.field1818 = 0;
+      var1.field2683 = var1.buffer.field1818;
+      var1.buffer.field1818 = 0;
       this.field2756 += var1.field2683;
    }
 

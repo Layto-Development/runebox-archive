@@ -1160,7 +1160,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   class112.field1450 = var2;
                   class184 var4 = new class184(5);
                   var4.method1114(15);
-                  var4.method1180(216);
+                  var4.writeInt(216);
                   class112.field1450.method1015(var4.field1816, 0, 5);
                   ++field609;
                   class353.field2777 = class80.method713();
@@ -1452,8 +1452,8 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             var29 = class315.method1687((byte)-1);
             var29.field2681 = null;
             var29.field2682 = 0;
-            var29.field2686 = new class164(5000);
-            var29.field2686.method1114(class211.field2007.field2005);
+            var29.buffer = new class164(5000);
+            var29.buffer.method1114(class211.field2007.field2005);
             field641.method1797(var29);
             field641.method1796();
             var3.field1818 = 0;
@@ -1509,25 +1509,25 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             int[] var30 = new int[]{class493.field3877.nextInt(), class493.field3877.nextInt(), class493.field3877.nextInt(), class493.field3877.nextInt()};
             var34.field1818 = 0;
             var34.method1114(1);
-            var34.method1180(var30[0]);
-            var34.method1180(var30[1]);
-            var34.method1180(var30[2]);
-            var34.method1180(var30[3]);
+            var34.writeInt(var30[0]);
+            var34.writeInt(var30[1]);
+            var34.writeInt(var30[2]);
+            var34.writeInt(var30[3]);
             var34.method1151(class359.field2821);
             if (gameState == 40) {
-               var34.method1180(class90.field1282[0]);
-               var34.method1180(class90.field1282[1]);
-               var34.method1180(class90.field1282[2]);
-               var34.method1180(class90.field1282[3]);
+               var34.writeInt(class90.field1282[0]);
+               var34.writeInt(class90.field1282[1]);
+               var34.writeInt(class90.field1282[2]);
+               var34.writeInt(class90.field1282[3]);
             } else {
                if (gameState == 50) {
                   var34.method1114(class158.field1681.method1195());
-                  var34.method1180(class205.field1938);
+                  var34.writeInt(class205.field1938);
                } else {
                   var34.method1114(field826.method1195());
                   switch (field826.field1684) {
                      case 0:
-                        var34.method1180(class4.field36.method2428(class534.field4243));
+                        var34.writeInt(class4.field36.method2428(class534.field4243));
                      case 1:
                      default:
                         break;
@@ -1555,63 +1555,63 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             class335 var7 = class315.method1687((byte)-1);
             var7.field2681 = null;
             var7.field2682 = 0;
-            var7.field2686 = new class164(5000);
-            var7.field2686.field1818 = 0;
+            var7.buffer = new class164(5000);
+            var7.buffer.field1818 = 0;
             if (gameState == 40) {
-               var7.field2686.method1114(class211.field2002.field2005);
+               var7.buffer.method1114(class211.field2002.field2005);
             } else {
-               var7.field2686.method1114(class211.field2001.field2005);
+               var7.buffer.method1114(class211.field2001.field2005);
             }
 
-            var7.field2686.method1155(0);
-            int var8 = var7.field2686.field1818;
-            var7.field2686.method1180(216);
-            var7.field2686.method1180(1);
-            var7.field2686.method1114(field582);
-            var7.field2686.method1114(field594);
+            var7.buffer.method1155(0);
+            int var8 = var7.buffer.field1818;
+            var7.buffer.writeInt(216);
+            var7.buffer.writeInt(1);
+            var7.buffer.method1114(field582);
+            var7.buffer.method1114(field594);
             byte var9 = 0;
-            var7.field2686.method1114(var9);
-            var7.field2686.method1119(var34.field1816, 0, var34.field1818);
-            int var10 = var7.field2686.field1818;
-            var7.field2686.method1117(class534.field4243);
-            var7.field2686.method1114((field807 ? 1 : 0) << 1 | (field580 ? 1 : 0));
-            var7.field2686.method1155(class426.field3228);
-            var7.field2686.method1155(class456.field3562);
-            method473(var7.field2686);
-            var7.field2686.method1117(class267.field2298);
-            var7.field2686.method1180(class521.field4092);
+            var7.buffer.method1114(var9);
+            var7.buffer.method1119(var34.field1816, 0, var34.field1818);
+            int var10 = var7.buffer.field1818;
+            var7.buffer.method1117(class534.field4243);
+            var7.buffer.method1114((field807 ? 1 : 0) << 1 | (field580 ? 1 : 0));
+            var7.buffer.method1155(class426.field3228);
+            var7.buffer.method1155(class456.field3562);
+            method473(var7.buffer);
+            var7.buffer.method1117(class267.field2298);
+            var7.buffer.writeInt(class521.field4092);
             if (field758 > 213) {
-               var7.field2686.method1114(0);
+               var7.buffer.method1114(0);
             }
 
             class184 var11 = new class184(class310.field2554.method1221());
             class310.field2554.method1220(var11);
-            var7.field2686.method1119(var11.field1816, 0, var11.field1816.length);
-            var7.field2686.method1114(field582);
-            var7.field2686.method1180(0);
-            var7.field2686.method1134(class9.field105.field2495);
-            var7.field2686.method1134(class526.field4132.field2495);
-            var7.field2686.method1134(class523.field4126.field2495);
-            var7.field2686.method1134(class516.field3994.field2495);
-            var7.field2686.method1134(class360.field2825.field2495);
-            var7.field2686.method1163(class372.field2920.field2495);
-            var7.field2686.method1180(class226.field2089.field2495);
-            var7.field2686.method1162(class57.field1081.field2495);
-            var7.field2686.method1180(class300.field2503.field2495);
-            var7.field2686.method1134(class383.field3063.field2495);
-            var7.field2686.method1134(0);
-            var7.field2686.method1163(class219.field2035.field2495);
-            var7.field2686.method1134(class522.field4124.field2495);
-            var7.field2686.method1162(class43.field928.field2495);
-            var7.field2686.method1134(class54.field1075.field2495);
-            var7.field2686.method1163(class81.field1250.field2495);
-            var7.field2686.method1162(class303.field2520.field2495);
-            var7.field2686.method1180(class444.field3386.field2495);
-            var7.field2686.method1162(class461.field3589.field2495);
-            var7.field2686.method1163(class331.field2666.field2495);
-            var7.field2686.method1180(class177.field1799.field2495);
-            var7.field2686.method1168(var30, var10, var7.field2686.field1818);
-            var7.field2686.method1122(var7.field2686.field1818 - var8);
+            var7.buffer.method1119(var11.field1816, 0, var11.field1816.length);
+            var7.buffer.method1114(field582);
+            var7.buffer.writeInt(0);
+            var7.buffer.method1134(class9.field105.field2495);
+            var7.buffer.method1134(class526.field4132.field2495);
+            var7.buffer.method1134(class523.field4126.field2495);
+            var7.buffer.method1134(class516.field3994.field2495);
+            var7.buffer.method1134(class360.field2825.field2495);
+            var7.buffer.method1163(class372.field2920.field2495);
+            var7.buffer.writeInt(class226.field2089.field2495);
+            var7.buffer.method1162(class57.field1081.field2495);
+            var7.buffer.writeInt(class300.field2503.field2495);
+            var7.buffer.method1134(class383.field3063.field2495);
+            var7.buffer.method1134(0);
+            var7.buffer.method1163(class219.field2035.field2495);
+            var7.buffer.method1134(class522.field4124.field2495);
+            var7.buffer.method1162(class43.field928.field2495);
+            var7.buffer.method1134(class54.field1075.field2495);
+            var7.buffer.method1163(class81.field1250.field2495);
+            var7.buffer.method1162(class303.field2520.field2495);
+            var7.buffer.writeInt(class444.field3386.field2495);
+            var7.buffer.method1162(class461.field3589.field2495);
+            var7.buffer.method1163(class331.field2666.field2495);
+            var7.buffer.writeInt(class177.field1799.field2495);
+            var7.buffer.method1168(var30, var10, var7.buffer.field1818);
+            var7.buffer.method1122(var7.buffer.field1818 - var8);
             field641.method1797(var7);
             field641.method1796();
             field641.field2758 = new class152(var30);
@@ -1699,10 +1699,10 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             var29 = class315.method1687((byte)-1);
             var29.field2681 = null;
             var29.field2682 = 0;
-            var29.field2686 = new class164(5000);
-            var29.field2686.method1114(class211.field2003.field2005);
-            var29.field2686.method1155(this.field663.field1818);
-            var29.field2686.method1120(this.field663);
+            var29.buffer = new class164(5000);
+            var29.buffer.method1114(class211.field2003.field2005);
+            var29.buffer.method1155(this.field663.field1818);
+            var29.buffer.method1120(this.field663);
             field641.method1797(var29);
             field641.method1796();
             this.field663 = null;
@@ -2039,11 +2039,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   class335 var19;
                   int var20;
                   if (field644.field3825) {
-                     var19 = class335.method1773(class46.field943, field641.field2758);
-                     var19.field2686.method1114(0);
-                     var20 = var19.field2686.field1818;
-                     field644.method2365(var19.field2686);
-                     var19.field2686.method1123(var19.field2686.field1818 - var20);
+                     var19 = class335.createPacket(ClientPacket.field943, field641.field2758);
+                     var19.buffer.method1114(0);
+                     var20 = var19.buffer.field1818;
+                     field644.method2365(var19.buffer);
+                     var19.buffer.method1123(var19.buffer.field1818 - var20);
                      field641.method1797(var19);
                      field644.method2364();
                   }
@@ -2061,7 +2061,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                         int var7 = 0;
 
                         int var8;
-                        for(var8 = 0; var8 < class146.field1607.field4081 && (null == var18 || var18.field2686.field1818 - var4 < 246); ++var8) {
+                        for(var8 = 0; var8 < class146.field1607.field4081 && (null == var18 || var18.buffer.field1818 - var4 < 246); ++var8) {
                            var5 = var8;
                            int var9 = class146.field1607.field4083[var8];
                            if (var9 < -1) {
@@ -2079,10 +2079,10 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
                            if (var10 != field592 || field593 != var9) {
                               if (null == var18) {
-                                 var18 = class335.method1773(class46.field1003, field641.field2758);
-                                 var18.field2686.method1114(0);
-                                 var4 = var18.field2686.field1818;
-                                 class164 var10000 = var18.field2686;
+                                 var18 = class335.createPacket(ClientPacket.field1003, field641.field2758);
+                                 var18.buffer.method1114(0);
+                                 var4 = var18.buffer.field1818;
+                                 class164 var10000 = var18.buffer;
                                  var10000.field1818 += 2;
                                  var6 = 0;
                                  var7 = 0;
@@ -2107,25 +2107,25 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                               if (var13 < 8 && var11 >= -32 && var11 <= 31 && var12 >= -32 && var12 <= 31) {
                                  var11 += 32;
                                  var12 += 32;
-                                 var18.field2686.method1155((var13 << 12) + (var11 << 6) + var12);
+                                 var18.buffer.method1155((var13 << 12) + (var11 << 6) + var12);
                               } else if (var13 < 32 && var11 >= -128 && var11 <= 127 && var12 >= -128 && var12 <= 127) {
                                  var11 += 128;
                                  var12 += 128;
-                                 var18.field2686.method1114(var13 + 128);
-                                 var18.field2686.method1155(var12 + (var11 << 8));
+                                 var18.buffer.method1114(var13 + 128);
+                                 var18.buffer.method1155(var12 + (var11 << 8));
                               } else if (var13 < 32) {
-                                 var18.field2686.method1114(var13 + 192);
+                                 var18.buffer.method1114(var13 + 192);
                                  if (var10 != -1 && var9 != -1) {
-                                    var18.field2686.method1180(var10 | var9 << 16);
+                                    var18.buffer.writeInt(var10 | var9 << 16);
                                  } else {
-                                    var18.field2686.method1180(Integer.MIN_VALUE);
+                                    var18.buffer.writeInt(Integer.MIN_VALUE);
                                  }
                               } else {
-                                 var18.field2686.method1155('\ue000' + (var13 & 8191));
+                                 var18.buffer.method1155('\ue000' + (var13 & 8191));
                                  if (var10 != -1 && var9 != -1) {
-                                    var18.field2686.method1180(var10 | var9 << 16);
+                                    var18.buffer.writeInt(var10 | var9 << 16);
                                  } else {
-                                    var18.field2686.method1180(Integer.MIN_VALUE);
+                                    var18.buffer.writeInt(Integer.MIN_VALUE);
                                  }
                               }
 
@@ -2135,12 +2135,12 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                         }
 
                         if (null != var18) {
-                           var18.field2686.method1123(var18.field2686.field1818 - var4);
-                           var8 = var18.field2686.field1818;
-                           var18.field2686.field1818 = var4;
-                           var18.field2686.method1114(var6 / var7);
-                           var18.field2686.method1114(var6 % var7);
-                           var18.field2686.field1818 = var8;
+                           var18.buffer.method1123(var18.buffer.field1818 - var4);
+                           var8 = var18.buffer.field1818;
+                           var18.buffer.field1818 = var4;
+                           var18.buffer.method1114(var6 / var7);
+                           var18.buffer.method1114(var6 % var7);
+                           var18.buffer.field1818 = var8;
                            field641.method1797(var18);
                         }
 
@@ -2179,23 +2179,23 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                      }
 
                      var6 = (int)var21;
-                     var31 = class335.method1773(class46.field969, field641.field2758);
-                     var31.field2686.method1155((class441.field3343 == 2 ? 1 : 0) + (var6 << 1));
-                     var31.field2686.method1155(var5);
-                     var31.field2686.method1155(var4);
+                     var31 = class335.createPacket(ClientPacket.field969, field641.field2758);
+                     var31.buffer.method1155((class441.field3343 == 2 ? 1 : 0) + (var6 << 1));
+                     var31.buffer.method1155(var5);
+                     var31.buffer.method1155(var4);
                      field641.method1797(var31);
                   }
 
                   if (field789 != 0) {
-                     var19 = class335.method1773(class46.field1017, field641.field2758);
-                     var19.field2686.method1155(field789);
+                     var19 = class335.createPacket(ClientPacket.field1017, field641.field2758);
+                     var19.buffer.method1155(field789);
                      field641.method1797(var19);
                   }
 
                   if (field724.field176 > 0) {
-                     var19 = class335.method1773(class46.field931, field641.field2758);
-                     var19.field2686.method1155(0);
-                     var20 = var19.field2686.field1818;
+                     var19 = class335.createPacket(ClientPacket.field931, field641.field2758);
+                     var19.buffer.method1155(0);
+                     var20 = var19.buffer.field1818;
                      long var22 = class80.method713();
 
                      for(var6 = 0; var6 < field724.field176; ++var6) {
@@ -2205,11 +2205,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                         }
 
                         field819 = var22;
-                        var19.field2686.method1187(field724.field175[var6]);
-                        var19.field2686.method1157((int)var34);
+                        var19.buffer.method1187(field724.field175[var6]);
+                        var19.buffer.method1157((int)var34);
                      }
 
-                     var19.field2686.method1122(var19.field2686.field1818 - var20);
+                     var19.buffer.method1122(var19.buffer.field1818 - var20);
                      field641.method1797(var19);
                   }
 
@@ -2224,23 +2224,23 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   if (field679 && field678 <= 0) {
                      field678 = 20;
                      field679 = false;
-                     var19 = class335.method1773(class46.field954, field641.field2758);
-                     var19.field2686.method1155(field754);
-                     var19.field2686.method1150(field615);
+                     var19 = class335.createPacket(ClientPacket.field954, field641.field2758);
+                     var19.buffer.method1155(field754);
+                     var19.buffer.method1150(field615);
                      field641.method1797(var19);
                   }
 
                   if (class163.field1694 && !field595) {
                      field595 = true;
-                     var19 = class335.method1773(class46.field983, field641.field2758);
-                     var19.field2686.method1114(1);
+                     var19 = class335.createPacket(ClientPacket.field983, field641.field2758);
+                     var19.buffer.method1114(1);
                      field641.method1797(var19);
                   }
 
                   if (!class163.field1694 && field595) {
                      field595 = false;
-                     var19 = class335.method1773(class46.field983, field641.field2758);
-                     var19.field2686.method1114(0);
+                     var19 = class335.createPacket(ClientPacket.field983, field641.field2758);
+                     var19.buffer.method1114(0);
                      field641.method1797(var19);
                   }
 
@@ -2385,11 +2385,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                                                    if (class175.method1052()) {
                                                       var5 = class175.field1765;
                                                       var6 = class175.field1766;
-                                                      var31 = class335.method1773(class46.field937, field641.field2758);
-                                                      var31.field2686.method1114(5);
-                                                      var31.field2686.method1150(var5 + class69.field1134);
-                                                      var31.field2686.method1177(class478.field3659 + var6);
-                                                      var31.field2686.method1161(field724.method171(82) ? (field724.method171(81) ? 2 : 1) : 0);
+                                                      var31 = class335.createPacket(ClientPacket.field937, field641.field2758);
+                                                      var31.buffer.method1114(5);
+                                                      var31.buffer.method1150(var5 + class69.field1134);
+                                                      var31.buffer.method1177(class478.field3659 + var6);
+                                                      var31.buffer.method1161(field724.method171(82) ? (field724.method171(81) ? 2 : 1) : 0);
                                                       field641.method1797(var31);
                                                       class175.method1075();
                                                       field696 = class441.field3344;
@@ -2469,7 +2469,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                                                    if (var5 > 15000 && var6 > 15000) {
                                                       field629 = 250;
                                                       class441.method2160(14500);
-                                                      var37 = class335.method1773(class46.field955, field641.field2758);
+                                                      var37 = class335.createPacket(ClientPacket.field955, field641.field2758);
                                                       field641.method1797(var37);
                                                    }
 
@@ -2477,7 +2477,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                                                    method467();
                                                    ++field641.field2764;
                                                    if (field641.field2764 > 50) {
-                                                      var37 = class335.method1773(class46.field971, field641.field2758);
+                                                      var37 = class335.createPacket(ClientPacket.field971, field641.field2758);
                                                       field641.method1797(var37);
                                                    }
 
@@ -2530,11 +2530,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   }
                }
 
-               var18 = class335.method1773(class46.field935, field641.field2758);
-               var18.field2686.method1114(0);
-               var4 = var18.field2686.field1818;
-               class138.method905(var18.field2686);
-               var18.field2686.method1123(var18.field2686.field1818 - var4);
+               var18 = class335.createPacket(ClientPacket.field935, field641.field2758);
+               var18.buffer.method1114(0);
+               var4 = var18.buffer.field1818;
+               class138.method905(var18.buffer);
+               var18.buffer.method1123(var18.buffer.field1818 - var4);
                field641.method1797(var18);
             }
          }
@@ -2544,8 +2544,8 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    public void method1598(int var1, int var2) {
       if (null != field641 && null != field641.field2758) {
          if (var1 > -1 && class4.field36.method2406() > 0 && !field848) {
-            class335 var4 = class335.method1773(class46.field1024, field641.field2758);
-            var4.field2686.method1180(var1);
+            class335 var4 = class335.createPacket(ClientPacket.field1024, field641.field2758);
+            var4.buffer.writeInt(var1);
             field641.method1797(var4);
          }
 
@@ -2916,11 +2916,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                var23 = var4.method1129();
                var25 = var4.method1129();
                var7 = class210.method1302();
-               class335 var83 = class335.method1773(class46.field1013, field641.field2758);
-               var83.field2686.method1114(class210.field1974);
-               var83.field2686.method1134(var23);
-               var83.field2686.method1163(var25);
-               var83.field2686.method1145(var7);
+               class335 var83 = class335.createPacket(ClientPacket.field1013, field641.field2758);
+               var83.buffer.method1114(class210.field1974);
+               var83.buffer.method1134(var23);
+               var83.buffer.method1163(var25);
+               var83.buffer.method1145(var7);
                field641.method1797(var83);
                var1.field2755 = null;
                return true;
@@ -5057,13 +5057,13 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                }
 
                if (null != field764 && method443(field760) != null) {
-                  class335 var11 = class335.method1773(class46.field961, field641.field2758);
-                  var11.field2686.method1162(field760.field3674);
-                  var11.field2686.method1134(field764.field3674);
-                  var11.field2686.method1155(field760.field3793);
-                  var11.field2686.method1155(field764.field3802);
-                  var11.field2686.method1177(field764.field3793);
-                  var11.field2686.method1177(field760.field3802);
+                  class335 var11 = class335.createPacket(ClientPacket.field961, field641.field2758);
+                  var11.buffer.method1162(field760.field3674);
+                  var11.buffer.method1134(field764.field3674);
+                  var11.buffer.method1155(field760.field3793);
+                  var11.buffer.method1155(field764.field3802);
+                  var11.buffer.method1177(field764.field3793);
+                  var11.buffer.method1177(field760.field3802);
                   field641.method1797(var11);
                }
             } else if (this.method372((byte)-32)) {
@@ -5100,8 +5100,8 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
    void method387(int var1) {
       if (field758 >= 216) {
-         class335 var3 = class335.method1773(class46.field1027, field641.field2758);
-         var3.field2686.method1114(var1);
+         class335 var3 = class335.createPacket(ClientPacket.field1027, field641.field2758);
+         var3.buffer.method1114(var1);
          field641.method1797(var3);
       }
 
@@ -5109,8 +5109,8 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
    void method379(int var1) {
       if (field758 >= 216) {
-         class335 var3 = class335.method1773(class46.field1028, field641.field2758);
-         var3.field2686.method1114(var1);
+         class335 var3 = class335.createPacket(ClientPacket.field1028, field641.field2758);
+         var3.buffer.method1114(var1);
          field641.method1797(var3);
       }
 
@@ -6052,21 +6052,21 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                int var11 = var9 * var6 - var8 * var5 >> 11;
                int var12 = class259.field2281.field4028 + var10 >> 7;
                int var13 = class259.field2281.field3999 - var11 >> 7;
-               class335 var14 = class335.method1773(class46.field972, field641.field2758);
-               var14.field2686.method1114(18);
-               var14.field2686.method1150(class69.field1134 + var12);
-               var14.field2686.method1177(var13 + class478.field3659);
-               var14.field2686.method1161(field724.method171(82) ? (field724.method171(81) ? 2 : 1) : 0);
-               var14.field2686.method1114(var5);
-               var14.field2686.method1114(var6);
-               var14.field2686.method1155(field754);
-               var14.field2686.method1114(57);
-               var14.field2686.method1114(0);
-               var14.field2686.method1114(0);
-               var14.field2686.method1114(89);
-               var14.field2686.method1155(class259.field2281.field4028);
-               var14.field2686.method1155(class259.field2281.field3999);
-               var14.field2686.method1114(63);
+               class335 var14 = class335.createPacket(ClientPacket.field972, field641.field2758);
+               var14.buffer.method1114(18);
+               var14.buffer.method1150(class69.field1134 + var12);
+               var14.buffer.method1177(var13 + class478.field3659);
+               var14.buffer.method1161(field724.method171(82) ? (field724.method171(81) ? 2 : 1) : 0);
+               var14.buffer.method1114(var5);
+               var14.buffer.method1114(var6);
+               var14.buffer.method1155(field754);
+               var14.buffer.method1114(57);
+               var14.buffer.method1114(0);
+               var14.buffer.method1114(0);
+               var14.buffer.method1114(89);
+               var14.buffer.method1155(class259.field2281.field4028);
+               var14.buffer.method1155(class259.field2281.field3999);
+               var14.buffer.method1114(63);
                field641.method1797(var14);
                field827 = var12;
                field750 = var13;
@@ -6662,10 +6662,10 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    }
 
    static void method422() {
-      class335 var1 = class335.method1773(class46.field1021, field641.field2758);
-      var1.field2686.method1114(method484());
-      var1.field2686.method1155(class426.field3228);
-      var1.field2686.method1155(class456.field3562);
+      class335 var1 = class335.createPacket(ClientPacket.field1021, field641.field2758);
+      var1.buffer.method1114(method484());
+      var1.buffer.method1155(class426.field3228);
+      var1.buffer.method1155(class456.field3562);
       field641.method1797(var1);
    }
 
@@ -7327,13 +7327,13 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                      if (var7) {
                         int[] var4 = var0.field1706.method2340();
                         if (null != var4) {
-                           class335 var5 = class335.method1773(class46.field948, field641.field2758);
-                           var5.field2686.method1162(var4[1]);
-                           var5.field2686.method1163(var0.field1706.field3674);
-                           var5.field2686.method1183(var0.field1706.field3793);
-                           var5.field2686.method1180(var0.field1706.method2332());
-                           var5.field2686.method1163(var4[2]);
-                           var5.field2686.method1163(var4[0]);
+                           class335 var5 = class335.createPacket(ClientPacket.field948, field641.field2758);
+                           var5.buffer.method1162(var4[1]);
+                           var5.buffer.method1163(var0.field1706.field3674);
+                           var5.buffer.method1183(var0.field1706.field3793);
+                           var5.buffer.writeInt(var0.field1706.method2332());
+                           var5.buffer.method1163(var4[2]);
+                           var5.buffer.method1163(var4[0]);
                            field641.method1797(var5);
                         }
                      }
@@ -7683,7 +7683,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
       if (field641.field2764 >= 50 || var0) {
          field641.field2764 = 0;
          if (!field643 && field641.method1800() != null) {
-            class335 var2 = class335.method1773(class46.field971, field641.field2758);
+            class335 var2 = class335.createPacket(ClientPacket.field971, field641.field2758);
             field641.method1797(var2);
 
             try {
@@ -7911,8 +7911,8 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             class449.field3464.method1848();
             class335 var20;
             if (class191.field1877.method1291()) {
-               var20 = class335.method1773(class46.field956, field641.field2758);
-               var20.field2686.method1180(1057001181);
+               var20 = class335.createPacket(ClientPacket.field956, field641.field2758);
+               var20.buffer.writeInt(1057001181);
                field641.method1797(var20);
             }
 
@@ -7935,7 +7935,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             updateGameState(30);
             method514();
             class526.method2495();
-            var20 = class335.method1773(class46.field977, field641.field2758);
+            var20 = class335.createPacket(ClientPacket.field977, field641.field2758);
             field641.method1797(var20);
             class210.method1301();
          }
@@ -9245,9 +9245,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field1020, field641.field2758);
-            var11.field2686.method1145(field724.method171(82) ? 1 : 0);
-            var11.field2686.method1177(var3);
+            var11 = class335.createPacket(ClientPacket.field1020, field641.field2758);
+            var11.buffer.method1145(field724.method171(82) ? 1 : 0);
+            var11.buffer.method1177(var3);
             field641.method1797(var11);
          }
       }
@@ -9261,9 +9261,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field990, field641.field2758);
-            var11.field2686.method1145(field724.method171(82) ? 1 : 0);
-            var11.field2686.method1155(var3);
+            var11 = class335.createPacket(ClientPacket.field990, field641.field2758);
+            var11.buffer.method1145(field724.method171(82) ? 1 : 0);
+            var11.buffer.method1155(var3);
             field641.method1797(var11);
          }
       }
@@ -9278,9 +9278,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field982, field641.field2758);
-            var11.field2686.method1150(var3);
-            var11.field2686.method1114(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field982, field641.field2758);
+            var11.buffer.method1150(var3);
+            var11.buffer.method1114(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9294,9 +9294,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field997, field641.field2758);
-            var11.field2686.method1177(var3);
-            var11.field2686.method1187(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field997, field641.field2758);
+            var11.buffer.method1177(var3);
+            var11.buffer.method1187(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9317,11 +9317,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field981, field641.field2758);
-         var15.field2686.method1155(var1 + class478.field3659);
-         var15.field2686.method1150(class69.field1134 + var0);
-         var15.field2686.method1145(field724.method171(82) ? 1 : 0);
-         var15.field2686.method1183(var3);
+         var15 = class335.createPacket(ClientPacket.field981, field641.field2758);
+         var15.buffer.method1155(var1 + class478.field3659);
+         var15.buffer.method1150(class69.field1134 + var0);
+         var15.buffer.method1145(field724.method171(82) ? 1 : 0);
+         var15.buffer.method1183(var3);
          field641.method1797(var15);
       }
 
@@ -9332,14 +9332,14 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field949, field641.field2758);
-         var15.field2686.method1177(class343.field2738);
-         var15.field2686.method1180(class328.field2651);
-         var15.field2686.method1155(class475.field3649);
-         var15.field2686.method1150(var3);
-         var15.field2686.method1177(var1 + class478.field3659);
-         var15.field2686.method1177(class69.field1134 + var0);
-         var15.field2686.method1114(field724.method171(82) ? 1 : 0);
+         var15 = class335.createPacket(ClientPacket.field949, field641.field2758);
+         var15.buffer.method1177(class343.field2738);
+         var15.buffer.writeInt(class328.field2651);
+         var15.buffer.method1155(class475.field3649);
+         var15.buffer.method1150(var3);
+         var15.buffer.method1177(var1 + class478.field3659);
+         var15.buffer.method1177(class69.field1134 + var0);
+         var15.buffer.method1114(field724.method171(82) ? 1 : 0);
          field641.method1797(var15);
       }
 
@@ -9352,9 +9352,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field976, field641.field2758);
-            var11.field2686.method1161(field724.method171(82) ? 1 : 0);
-            var11.field2686.method1183(var3);
+            var11 = class335.createPacket(ClientPacket.field976, field641.field2758);
+            var11.buffer.method1161(field724.method171(82) ? 1 : 0);
+            var11.buffer.method1183(var3);
             field641.method1797(var11);
          }
       }
@@ -9368,12 +9368,12 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field942, field641.field2758);
-            var11.field2686.method1134(class328.field2651);
-            var11.field2686.method1177(class343.field2738);
-            var11.field2686.method1177(class475.field3649);
-            var11.field2686.method1177(var3);
-            var11.field2686.method1114(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field942, field641.field2758);
+            var11.buffer.method1134(class328.field2651);
+            var11.buffer.method1177(class343.field2738);
+            var11.buffer.method1177(class475.field3649);
+            var11.buffer.method1177(var3);
+            var11.buffer.method1114(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9383,8 +9383,8 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field697 = var8;
          field813 = 2;
          field755 = 0;
-         var15 = class335.method1773(class46.field995, field641.field2758);
-         var15.field2686.method1150(var3);
+         var15 = class335.createPacket(ClientPacket.field995, field641.field2758);
+         var15.buffer.method1150(var3);
          field641.method1797(var15);
       }
 
@@ -9397,9 +9397,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field984, field641.field2758);
-            var11.field2686.method1114(field724.method171(82) ? 1 : 0);
-            var11.field2686.method1183(var3);
+            var11 = class335.createPacket(ClientPacket.field984, field641.field2758);
+            var11.buffer.method1114(field724.method171(82) ? 1 : 0);
+            var11.buffer.method1183(var3);
             field641.method1797(var11);
          }
       }
@@ -9411,11 +9411,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field967, field641.field2758);
-         var15.field2686.method1150(class478.field3659 + var1);
-         var15.field2686.method1183(class69.field1134 + var0);
-         var15.field2686.method1114(field724.method171(82) ? 1 : 0);
-         var15.field2686.method1177(var3);
+         var15 = class335.createPacket(ClientPacket.field967, field641.field2758);
+         var15.buffer.method1150(class478.field3659 + var1);
+         var15.buffer.method1183(class69.field1134 + var0);
+         var15.buffer.method1114(field724.method171(82) ? 1 : 0);
+         var15.buffer.method1177(var3);
          field641.method1797(var15);
       }
 
@@ -9432,12 +9432,12 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field1009, field641.field2758);
-            var11.field2686.method1161(field724.method171(82) ? 1 : 0);
-            var11.field2686.method1177(var3);
-            var11.field2686.method1183(field710);
-            var11.field2686.method1163(class325.field2628);
-            var11.field2686.method1150(field744);
+            var11 = class335.createPacket(ClientPacket.field1009, field641.field2758);
+            var11.buffer.method1161(field724.method171(82) ? 1 : 0);
+            var11.buffer.method1177(var3);
+            var11.buffer.method1183(field710);
+            var11.buffer.method1163(class325.field2628);
+            var11.buffer.method1150(field744);
             field641.method1797(var11);
          }
       }
@@ -9449,11 +9449,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field959, field641.field2758);
-         var15.field2686.method1177(var3);
-         var15.field2686.method1150(class69.field1134 + var0);
-         var15.field2686.method1145(field724.method171(82) ? 1 : 0);
-         var15.field2686.method1155(var1 + class478.field3659);
+         var15 = class335.createPacket(ClientPacket.field959, field641.field2758);
+         var15.buffer.method1177(var3);
+         var15.buffer.method1150(class69.field1134 + var0);
+         var15.buffer.method1145(field724.method171(82) ? 1 : 0);
+         var15.buffer.method1155(var1 + class478.field3659);
          field641.method1797(var15);
       }
 
@@ -9465,7 +9465,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          }
       }
 
-      class335 var12;
+      class335 packet;
       if (var2 == 24) {
          var14 = class480.method2355(var1);
          if (var14 != null) {
@@ -9475,9 +9475,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (var17) {
-               var12 = class335.method1773(class46.field946, field641.field2758);
-               var12.field2686.method1180(var1);
-               field641.method1797(var12);
+               packet = class335.createPacket(ClientPacket.IF_ACTION, field641.field2758);
+               packet.buffer.writeInt(var1);
+               field641.method1797(packet);
             }
          }
       }
@@ -9491,9 +9491,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field1012, field641.field2758);
-            var11.field2686.method1150(var3);
-            var11.field2686.method1114(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field1012, field641.field2758);
+            var11.buffer.method1150(var3);
+            var11.buffer.method1114(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9507,9 +9507,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field979, field641.field2758);
-            var11.field2686.method1177(var3);
-            var11.field2686.method1161(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field979, field641.field2758);
+            var11.buffer.method1177(var3);
+            var11.buffer.method1161(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9521,14 +9521,14 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field985, field641.field2758);
-         var15.field2686.method1150(class343.field2738);
-         var15.field2686.method1183(var3);
-         var15.field2686.method1114(field724.method171(82) ? 1 : 0);
-         var15.field2686.method1177(class475.field3649);
-         var15.field2686.method1183(class69.field1134 + var0);
-         var15.field2686.method1177(class478.field3659 + var1);
-         var15.field2686.method1162(class328.field2651);
+         var15 = class335.createPacket(ClientPacket.field985, field641.field2758);
+         var15.buffer.method1150(class343.field2738);
+         var15.buffer.method1183(var3);
+         var15.buffer.method1114(field724.method171(82) ? 1 : 0);
+         var15.buffer.method1177(class475.field3649);
+         var15.buffer.method1183(class69.field1134 + var0);
+         var15.buffer.method1177(class478.field3659 + var1);
+         var15.buffer.method1162(class328.field2651);
          field641.method1797(var15);
       }
 
@@ -9539,14 +9539,14 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field993, field641.field2758);
-         var15.field2686.method1150(var3);
-         var15.field2686.method1177(var0 + class69.field1134);
-         var15.field2686.method1155(class478.field3659 + var1);
-         var15.field2686.method1150(field744);
-         var15.field2686.method1161(field724.method171(82) ? 1 : 0);
-         var15.field2686.method1150(field710);
-         var15.field2686.method1134(class325.field2628);
+         var15 = class335.createPacket(ClientPacket.field993, field641.field2758);
+         var15.buffer.method1150(var3);
+         var15.buffer.method1177(var0 + class69.field1134);
+         var15.buffer.method1155(class478.field3659 + var1);
+         var15.buffer.method1150(field744);
+         var15.buffer.method1161(field724.method171(82) ? 1 : 0);
+         var15.buffer.method1150(field710);
+         var15.buffer.method1134(class325.field2628);
          field641.method1797(var15);
       }
 
@@ -9561,11 +9561,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field1004, field641.field2758);
-         var15.field2686.method1114(field724.method171(82) ? 1 : 0);
-         var15.field2686.method1177(var1 + class478.field3659);
-         var15.field2686.method1155(var3);
-         var15.field2686.method1183(class69.field1134 + var0);
+         var15 = class335.createPacket(ClientPacket.field1004, field641.field2758);
+         var15.buffer.method1114(field724.method171(82) ? 1 : 0);
+         var15.buffer.method1177(var1 + class478.field3659);
+         var15.buffer.method1155(var3);
+         var15.buffer.method1183(class69.field1134 + var0);
          field641.method1797(var15);
       }
 
@@ -9576,11 +9576,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field975, field641.field2758);
-         var15.field2686.method1114(field724.method171(82) ? 1 : 0);
-         var15.field2686.method1183(class69.field1134 + var0);
-         var15.field2686.method1177(class478.field3659 + var1);
-         var15.field2686.method1183(var3);
+         var15 = class335.createPacket(ClientPacket.field975, field641.field2758);
+         var15.buffer.method1114(field724.method171(82) ? 1 : 0);
+         var15.buffer.method1183(class69.field1134 + var0);
+         var15.buffer.method1177(class478.field3659 + var1);
+         var15.buffer.method1183(var3);
          field641.method1797(var15);
       }
 
@@ -9599,12 +9599,12 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field989, field641.field2758);
-            var11.field2686.method1150(field744);
-            var11.field2686.method1183(field710);
-            var11.field2686.method1163(class325.field2628);
-            var11.field2686.method1183(var3);
-            var11.field2686.method1145(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field989, field641.field2758);
+            var11.buffer.method1150(field744);
+            var11.buffer.method1183(field710);
+            var11.buffer.method1163(class325.field2628);
+            var11.buffer.method1183(var3);
+            var11.buffer.method1145(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9612,8 +9612,8 @@ public final class Client extends class210 implements class161, OAuthApi, class2
       int var16;
       class480 var18;
       if (var2 == 28) {
-         var15 = class335.method1773(class46.field946, field641.field2758);
-         var15.field2686.method1180(var1);
+         var15 = class335.createPacket(ClientPacket.IF_ACTION, field641.field2758);
+         var15.buffer.writeInt(var1);
          field641.method1797(var15);
          var18 = class480.method2355(var1);
          if (null != var18 && null != var18.field3738 && var18.field3738[0][0] == 5) {
@@ -9632,9 +9632,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field944, field641.field2758);
-            var11.field2686.method1177(var3);
-            var11.field2686.method1161(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field944, field641.field2758);
+            var11.buffer.method1177(var3);
+            var11.buffer.method1161(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9646,17 +9646,17 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field934, field641.field2758);
-         var15.field2686.method1155(class69.field1134 + var0);
-         var15.field2686.method1155(class478.field3659 + var1);
-         var15.field2686.method1183(var3);
-         var15.field2686.method1187(field724.method171(82) ? 1 : 0);
+         var15 = class335.createPacket(ClientPacket.field934, field641.field2758);
+         var15.buffer.method1155(class69.field1134 + var0);
+         var15.buffer.method1155(class478.field3659 + var1);
+         var15.buffer.method1183(var3);
+         var15.buffer.method1187(field724.method171(82) ? 1 : 0);
          field641.method1797(var15);
       }
 
       if (var2 == 29) {
-         var15 = class335.method1773(class46.field946, field641.field2758);
-         var15.field2686.method1180(var1);
+         var15 = class335.createPacket(ClientPacket.IF_ACTION, field641.field2758);
+         var15.buffer.writeInt(var1);
          field641.method1797(var15);
          var18 = class480.method2355(var1);
          if (null != var18 && var18.field3738 != null && var18.field3738[0][0] == 5) {
@@ -9681,9 +9681,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             }
 
             if (null != var19) {
-               var12 = class335.method1773(class46.field996, field641.field2758);
-               var12.field2686.method1177(var19.field3513);
-               field641.method1797(var12);
+               packet = class335.createPacket(ClientPacket.field996, field641.field2758);
+               packet.buffer.method1177(var19.field3513);
+               field641.method1797(packet);
             }
          }
       }
@@ -9697,9 +9697,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field941, field641.field2758);
-            var11.field2686.method1150(var3);
-            var11.field2686.method1161(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field941, field641.field2758);
+            var11.buffer.method1150(var3);
+            var11.buffer.method1161(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9709,10 +9709,10 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field697 = var8;
          field813 = 2;
          field755 = 0;
-         var15 = class335.method1773(class46.field974, field641.field2758);
-         var15.field2686.method1155(class69.field1134 + var0);
-         var15.field2686.method1150(var3);
-         var15.field2686.method1183(class478.field3659 + var1);
+         var15 = class335.createPacket(ClientPacket.field974, field641.field2758);
+         var15.buffer.method1155(class69.field1134 + var0);
+         var15.buffer.method1150(var3);
+         var15.buffer.method1183(class478.field3659 + var1);
          field641.method1797(var15);
       }
 
@@ -9725,9 +9725,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field994, field641.field2758);
-            var11.field2686.method1183(var3);
-            var11.field2686.method1114(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field994, field641.field2758);
+            var11.buffer.method1183(var3);
+            var11.buffer.method1114(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9739,11 +9739,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field1002, field641.field2758);
-         var15.field2686.method1150(var0 + class69.field1134);
-         var15.field2686.method1155(var1 + class478.field3659);
-         var15.field2686.method1145(field724.method171(82) ? 1 : 0);
-         var15.field2686.method1155(var3);
+         var15 = class335.createPacket(ClientPacket.field1002, field641.field2758);
+         var15.buffer.method1150(var0 + class69.field1134);
+         var15.buffer.method1155(var1 + class478.field3659);
+         var15.buffer.method1145(field724.method171(82) ? 1 : 0);
+         var15.buffer.method1155(var3);
          field641.method1797(var15);
       }
 
@@ -9759,13 +9759,13 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                class18.method216(var20);
             }
 
-            var11 = class335.method1773(class46.field945, field641.field2758);
-            var11.field2686.method1177(field710);
-            var11.field2686.method1155(var0);
-            var11.field2686.method1150(field744);
-            var11.field2686.method1155(var4);
-            var11.field2686.method1163(class325.field2628);
-            var11.field2686.method1162(var1);
+            var11 = class335.createPacket(ClientPacket.field945, field641.field2758);
+            var11.buffer.method1177(field710);
+            var11.buffer.method1155(var0);
+            var11.buffer.method1150(field744);
+            var11.buffer.method1155(var4);
+            var11.buffer.method1163(class325.field2628);
+            var11.buffer.method1162(var1);
             field641.method1797(var11);
          }
       }
@@ -9777,11 +9777,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          field755 = 0;
          field827 = var0;
          field750 = var1;
-         var15 = class335.method1773(class46.field970, field641.field2758);
-         var15.field2686.method1155(var3);
-         var15.field2686.method1150(class69.field1134 + var0);
-         var15.field2686.method1145(field724.method171(82) ? 1 : 0);
-         var15.field2686.method1155(class478.field3659 + var1);
+         var15 = class335.createPacket(ClientPacket.field970, field641.field2758);
+         var15.buffer.method1155(var3);
+         var15.buffer.method1150(class69.field1134 + var0);
+         var15.buffer.method1145(field724.method171(82) ? 1 : 0);
+         var15.buffer.method1155(class478.field3659 + var1);
          field641.method1797(var15);
       }
 
@@ -9794,9 +9794,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var11 = class335.method1773(class46.field1030, field641.field2758);
-            var11.field2686.method1183(var3);
-            var11.field2686.method1114(field724.method171(82) ? 1 : 0);
+            var11 = class335.createPacket(ClientPacket.field1030, field641.field2758);
+            var11.buffer.method1183(var3);
+            var11.buffer.method1114(field724.method171(82) ? 1 : 0);
             field641.method1797(var11);
          }
       }
@@ -9827,14 +9827,14 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var15 = class335.method1773(class46.field1023, field641.field2758);
-            var15.field2686.method1183(var0 + class69.field1134);
-            var15.field2686.method1145(field724.method171(82) ? 1 : 0);
-            var15.field2686.method1177(field710);
-            var15.field2686.method1150(field744);
-            var15.field2686.method1163(class325.field2628);
-            var15.field2686.method1177(var1 + class478.field3659);
-            var15.field2686.method1177(var3);
+            var15 = class335.createPacket(ClientPacket.field1023, field641.field2758);
+            var15.buffer.method1183(var0 + class69.field1134);
+            var15.buffer.method1145(field724.method171(82) ? 1 : 0);
+            var15.buffer.method1177(field710);
+            var15.buffer.method1150(field744);
+            var15.buffer.method1163(class325.field2628);
+            var15.buffer.method1177(var1 + class478.field3659);
+            var15.buffer.method1177(var3);
             field641.method1797(var15);
          }
 
@@ -9845,11 +9845,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var15 = class335.method1773(class46.field965, field641.field2758);
-            var15.field2686.method1183(var1 + class478.field3659);
-            var15.field2686.method1145(field724.method171(82) ? 1 : 0);
-            var15.field2686.method1150(var3);
-            var15.field2686.method1183(var0 + class69.field1134);
+            var15 = class335.createPacket(ClientPacket.field965, field641.field2758);
+            var15.buffer.method1183(var1 + class478.field3659);
+            var15.buffer.method1145(field724.method171(82) ? 1 : 0);
+            var15.buffer.method1150(var3);
+            var15.buffer.method1183(var0 + class69.field1134);
             field641.method1797(var15);
          }
 
@@ -9860,11 +9860,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             field755 = 0;
             field827 = var0;
             field750 = var1;
-            var15 = class335.method1773(class46.field1010, field641.field2758);
-            var15.field2686.method1155(class69.field1134 + var0);
-            var15.field2686.method1183(class478.field3659 + var1);
-            var15.field2686.method1114(field724.method171(82) ? 1 : 0);
-            var15.field2686.method1150(var3);
+            var15 = class335.createPacket(ClientPacket.field1010, field641.field2758);
+            var15.buffer.method1155(class69.field1134 + var0);
+            var15.buffer.method1183(class478.field3659 + var1);
+            var15.buffer.method1114(field724.method171(82) ? 1 : 0);
+            var15.buffer.method1150(var3);
             field641.method1797(var15);
          }
 
@@ -9877,9 +9877,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                field755 = 0;
                field827 = var0;
                field750 = var1;
-               var11 = class335.method1773(class46.field1026, field641.field2758);
-               var11.field2686.method1114(field724.method171(82) ? 1 : 0);
-               var11.field2686.method1177(var3);
+               var11 = class335.createPacket(ClientPacket.field1026, field641.field2758);
+               var11.buffer.method1114(field724.method171(82) ? 1 : 0);
+               var11.buffer.method1177(var3);
                field641.method1797(var11);
             }
          }
@@ -9893,12 +9893,12 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                field755 = 0;
                field827 = var0;
                field750 = var1;
-               var11 = class335.method1773(class46.field1000, field641.field2758);
-               var11.field2686.method1183(class475.field3649);
-               var11.field2686.method1183(class343.field2738);
-               var11.field2686.method1134(class328.field2651);
-               var11.field2686.method1183(var3);
-               var11.field2686.method1145(field724.method171(82) ? 1 : 0);
+               var11 = class335.createPacket(ClientPacket.field1000, field641.field2758);
+               var11.buffer.method1183(class475.field3649);
+               var11.buffer.method1183(class343.field2738);
+               var11.buffer.method1134(class328.field2651);
+               var11.buffer.method1183(var3);
+               var11.buffer.method1145(field724.method171(82) ? 1 : 0);
                field641.method1797(var11);
             }
          }
@@ -9933,9 +9933,9 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    }
 
    static void method551(int var0, int var1) {
-      class335 var3 = class335.method1773(class46.field987, field641.field2758);
-      var3.field2686.method1134(var0);
-      var3.field2686.method1183(var1);
+      class335 var3 = class335.createPacket(ClientPacket.field987, field641.field2758);
+      var3.buffer.method1134(var0);
+      var3.buffer.method1183(var1);
       field641.method1797(var3);
    }
 
@@ -9963,82 +9963,82 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             if (var8) {
                class335 var11;
                if (var0 == 1) {
-                  var11 = class335.method1773(class46.field957, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field957, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
                if (var0 == 2) {
-                  var11 = class335.method1773(class46.field947, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field947, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
                if (var0 == 3) {
-                  var11 = class335.method1773(class46.field999, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field999, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
                if (var0 == 4) {
-                  var11 = class335.method1773(class46.field964, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field964, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
                if (var0 == 5) {
-                  var11 = class335.method1773(class46.field980, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field980, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
                if (var0 == 6) {
-                  var11 = class335.method1773(class46.field936, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field936, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
                if (var0 == 7) {
-                  var11 = class335.method1773(class46.field978, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field978, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
                if (var0 == 8) {
-                  var11 = class335.method1773(class46.field932, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field932, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
                if (var0 == 9) {
-                  var11 = class335.method1773(class46.field1007, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field1007, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
                if (var0 == 10) {
-                  var11 = class335.method1773(class46.field963, field641.field2758);
-                  var11.field2686.method1180(var1);
-                  var11.field2686.method1155(var2);
-                  var11.field2686.method1155(var3);
+                  var11 = class335.createPacket(ClientPacket.field963, field641.field2758);
+                  var11.buffer.writeInt(var1);
+                  var11.buffer.method1155(var2);
+                  var11.buffer.method1155(var3);
                   field641.method1797(var11);
                }
 
@@ -12067,7 +12067,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    }
 
    static final void method502() {
-      class335 var1 = class335.method1773(class46.field939, field641.field2758);
+      class335 var1 = class335.createPacket(ClientPacket.field939, field641.field2758);
       field641.method1797(var1);
       class18.field195 = true;
 
@@ -12312,25 +12312,25 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
    static final void method461(String var0) {
       if (class59.field1089 != null) {
-         class335 var2 = class335.method1773(class46.field1018, field641.field2758);
-         var2.field2686.method1114(class184.method1188(var0));
-         var2.field2686.method1117(var0);
+         class335 var2 = class335.createPacket(ClientPacket.field1018, field641.field2758);
+         var2.buffer.method1114(class184.method1188(var0));
+         var2.buffer.method1117(var0);
          field641.method1797(var2);
       }
    }
 
    static final void method449(String var0) {
       if (!var0.equals("")) {
-         class335 var2 = class335.method1773(class46.field998, field641.field2758);
-         var2.field2686.method1114(class184.method1188(var0));
-         var2.field2686.method1117(var0);
+         class335 var2 = class335.createPacket(ClientPacket.field998, field641.field2758);
+         var2.buffer.method1114(class184.method1188(var0));
+         var2.buffer.method1117(var0);
          field641.method1797(var2);
       }
    }
 
    static final void method428() {
-      class335 var1 = class335.method1773(class46.field998, field641.field2758);
-      var1.field2686.method1114(0);
+      class335 var1 = class335.createPacket(ClientPacket.field998, field641.field2758);
+      var1.buffer.method1114(0);
       field641.method1797(var1);
    }
 
@@ -12340,11 +12340,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          class219 var4 = (class219)var3.field2457.get(var1);
          if (var4.field2037 == -1) {
             String var5 = var4.field2036.method1458();
-            class335 var6 = class335.method1773(class46.field960, field641.field2758);
-            var6.field2686.method1114(3 + class184.method1188(var5));
-            var6.field2686.method1114(var0);
-            var6.field2686.method1155(var1);
-            var6.field2686.method1117(var5);
+            class335 var6 = class335.createPacket(ClientPacket.field960, field641.field2758);
+            var6.buffer.method1114(3 + class184.method1188(var5));
+            var6.buffer.method1114(var0);
+            var6.buffer.method1155(var1);
+            var6.buffer.method1117(var5);
             field641.method1797(var6);
          }
       }
@@ -12355,11 +12355,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          if (var1 >= 0 && var1 < field821[var0].method1604()) {
             class219 var3 = (class219)field821[var0].field2457.get(var1);
             if (var3.field2037 == -1) {
-               class335 var4 = class335.method1773(class46.field951, field641.field2758);
-               var4.field2686.method1114(3 + class184.method1188(var3.field2036.method1458()));
-               var4.field2686.method1114(var0);
-               var4.field2686.method1155(var1);
-               var4.field2686.method1117(var3.field2036.method1458());
+               class335 var4 = class335.createPacket(ClientPacket.field951, field641.field2758);
+               var4.buffer.method1114(3 + class184.method1188(var3.field2036.method1458()));
+               var4.buffer.method1114(var0);
+               var4.buffer.method1155(var1);
+               var4.buffer.method1117(var3.field2036.method1458());
                field641.method1797(var4);
             }
          }
@@ -12543,11 +12543,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    }
 
    public static void method436(int var0, int var1, int var2, boolean var3) {
-      class335 var5 = class335.method1773(class46.field958, field641.field2758);
-      var5.field2686.method1187(var2);
-      var5.field2686.method1155(var1);
-      var5.field2686.method1163(var3 ? field676 : 0);
-      var5.field2686.method1177(var0);
+      class335 var5 = class335.createPacket(ClientPacket.field958, field641.field2758);
+      var5.buffer.method1187(var2);
+      var5.buffer.method1155(var1);
+      var5.buffer.method1163(var3 ? field676 : 0);
+      var5.buffer.method1177(var0);
       field641.method1797(var5);
    }
 
@@ -12556,7 +12556,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    }
 
    static void method415() {
-      field641.method1797(class335.method1773(class46.field1006, field641.field2758));
+      field641.method1797(class335.createPacket(ClientPacket.field1006, field641.field2758));
       field669 = 0;
    }
 

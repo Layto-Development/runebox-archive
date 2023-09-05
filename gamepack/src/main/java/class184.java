@@ -77,7 +77,7 @@ public class class184 extends class55 {
       this.field1816[++this.field1818 - 1] = (byte)var1;
    }
 
-   public void method1180(int var1) {
+   public void writeInt(int var1) {
       this.field1816[++this.field1818 - 1] = (byte)(var1 >> 24);
       this.field1816[++this.field1818 - 1] = (byte)(var1 >> 16);
       this.field1816[++this.field1818 - 1] = (byte)(var1 >> 8);
@@ -451,8 +451,8 @@ public class class184 extends class55 {
          }
 
          this.field1818 -= 8;
-         this.method1180(var5);
-         this.method1180(var6);
+         this.writeInt(var5);
+         this.writeInt(var6);
       }
 
    }
@@ -473,8 +473,8 @@ public class class184 extends class55 {
          }
 
          this.field1818 -= 8;
-         this.method1180(var5);
-         this.method1180(var6);
+         this.writeInt(var5);
+         this.writeInt(var6);
       }
 
    }
@@ -496,8 +496,8 @@ public class class184 extends class55 {
          }
 
          this.field1818 -= 8;
-         this.method1180(var8);
-         this.method1180(var9);
+         this.writeInt(var8);
+         this.writeInt(var9);
       }
 
       this.field1818 = var5;
@@ -520,8 +520,8 @@ public class class184 extends class55 {
          }
 
          this.field1818 -= 8;
-         this.method1180(var8);
-         this.method1180(var9);
+         this.writeInt(var8);
+         this.writeInt(var9);
       }
 
       this.field1818 = var5;
@@ -550,7 +550,7 @@ public class class184 extends class55 {
       }
 
       var6 = ~var6;
-      this.method1180(var6);
+      this.writeInt(var6);
       return var6;
    }
 

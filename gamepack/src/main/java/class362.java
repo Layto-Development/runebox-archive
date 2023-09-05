@@ -165,8 +165,8 @@ public class class362 extends class55 {
       var1.field1818 += var5 * 3;
       this.field2828 = new byte[var4];
       class184 var51 = new class184(this.field2828);
-      var51.method1180(1297377380);
-      var51.method1180(6);
+      var51.writeInt(1297377380);
+      var51.writeInt(6);
       var51.method1155(var2 > 1 ? 1 : 0);
       var51.method1155(var2);
       var51.method1155(var3);
@@ -187,7 +187,7 @@ public class class362 extends class55 {
 
       label226:
       for(int var63 = 0; var63 < var2; ++var63) {
-         var51.method1180(1297379947);
+         var51.writeInt(1297379947);
          var51.field1818 += 4;
          int var64 = var51.field1818;
          int var65 = var64;

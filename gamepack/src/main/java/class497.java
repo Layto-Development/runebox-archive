@@ -96,8 +96,8 @@ public class class497 {
 
       while(var3.hasNext()) {
          Map.Entry var4 = (Map.Entry)var3.next();
-         var2.method1180((Integer)var4.getKey());
-         var2.method1180((Integer)var4.getValue());
+         var2.writeInt((Integer)var4.getKey());
+         var2.writeInt((Integer)var4.getValue());
       }
 
       var2.method1117(null != this.field3930 ? this.field3930 : "");
@@ -108,7 +108,7 @@ public class class497 {
       var2.method1114(this.field3935);
       var2.method1114(this.field3933);
       var2.method1114(this.field3931 ? 1 : 0);
-      var2.method1180(this.field3929);
+      var2.writeInt(this.field3929);
       return var2;
    }
 

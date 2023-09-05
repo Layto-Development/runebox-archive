@@ -119,9 +119,9 @@ public class class258 {
             } else if (this.method1481(var3, false)) {
                method1493(class27.field234 + var1 + class27.field393);
             } else {
-               class335 var4 = class335.method1773(class46.field986, Client.field641.field2758);
-               var4.field2686.method1114(class184.method1188(var1));
-               var4.field2686.method1117(var1);
+               class335 var4 = class335.createPacket(ClientPacket.field986, Client.field641.field2758);
+               var4.buffer.method1114(class184.method1188(var1));
+               var4.buffer.method1117(var1);
                Client.field641.method1797(var4);
             }
          }
@@ -138,9 +138,9 @@ public class class258 {
          if (var3.method1459()) {
             if (this.field2273.method2056(var3)) {
                Client.method452();
-               class335 var4 = class335.method1773(class46.field966, Client.field641.field2758);
-               var4.field2686.method1114(class184.method1188(var1));
-               var4.field2686.method1117(var1);
+               class335 var4 = class335.createPacket(ClientPacket.field966, Client.field641.field2758);
+               var4.buffer.method1114(class184.method1188(var1));
+               var4.buffer.method1117(var1);
                Client.field641.method1797(var4);
             }
 
@@ -171,9 +171,9 @@ public class class258 {
             if (this.field2272.method2056(var4)) {
                Client.method452();
                if (var2) {
-                  class335 var5 = class335.method1773(class46.field988, Client.field641.field2758);
-                  var5.field2686.method1114(class184.method1188(var1));
-                  var5.field2686.method1117(var1);
+                  class335 var5 = class335.createPacket(ClientPacket.field988, Client.field641.field2758);
+                  var5.buffer.method1114(class184.method1188(var1));
+                  var5.buffer.method1117(var1);
                   Client.field641.method1797(var5);
                }
             }
@@ -201,9 +201,9 @@ public class class258 {
    }
 
    static final void method1492(String var0) {
-      class335 var2 = class335.method1773(class46.field938, Client.field641.field2758);
-      var2.field2686.method1114(class184.method1188(var0));
-      var2.field2686.method1117(var0);
+      class335 var2 = class335.createPacket(ClientPacket.field938, Client.field641.field2758);
+      var2.buffer.method1114(class184.method1188(var0));
+      var2.buffer.method1117(var0);
       Client.field641.method1797(var2);
    }
 
@@ -216,10 +216,10 @@ public class class258 {
    }
 
    static final void method1494(String var0, int var1) {
-      class335 var3 = class335.method1773(class46.field1005, Client.field641.field2758);
-      var3.field2686.method1114(class184.method1188(var0) + 1);
-      var3.field2686.method1114(var1);
-      var3.field2686.method1117(var0);
+      class335 var3 = class335.createPacket(ClientPacket.field1005, Client.field641.field2758);
+      var3.buffer.method1114(class184.method1188(var0) + 1);
+      var3.buffer.method1114(var1);
+      var3.buffer.method1117(var0);
       Client.field641.method1797(var3);
    }
 }

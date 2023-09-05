@@ -11,18 +11,7 @@ import org.objectweb.asm.tree.ClassNode
 import org.objectweb.asm.tree.FieldNode
 import org.objectweb.asm.tree.MethodNode
 
-class MixinInjection(mixinCls: ClassNode, clientCls: ClassNode) {
-
-    val mixinCls = ClassNode()
-    val clientCls = ClassNode()
-
-    init {
-        mixinCls.accept(this.mixinCls)
-        this.mixinCls.init(mixinCls.pool)
-
-        clientCls.accept(this.clientCls)
-        this.clientCls.init(clientCls.pool)
-    }
+class MixinInjection(val mixinCls: ClassNode, val clientCls: ClassNode) {
 
     fun result() = clientCls
 

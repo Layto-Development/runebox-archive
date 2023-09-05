@@ -2,6 +2,7 @@ package io.runebox.api
 
 interface Client {
 
-    val gameState: Int
+    var gameState: Int
 
+    fun test()
 }

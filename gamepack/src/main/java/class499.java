@@ -5,10 +5,10 @@ public class class499 {
    }
 
    public static class335 method2442(int var0, String var1, class121 var2, int var3) {
-      class335 var5 = class335.method1773(class46.field968, Client.field641.field2758);
-      var5.field2686.method1114(0);
-      int var6 = var5.field2686.field1818;
-      var5.field2686.method1114(var0);
+      class335 var5 = class335.createPacket(ClientPacket.field968, Client.field641.field2758);
+      var5.buffer.method1114(0);
+      int var6 = var5.buffer.field1818;
+      var5.buffer.method1114(var0);
       String var7 = var1.toLowerCase();
       int var8 = 0;
       byte[] var9 = null;
@@ -78,20 +78,20 @@ public class class499 {
          var1 = var1.substring(class27.field325.length());
       }
 
-      var5.field2686.method1114(var8);
-      var5.field2686.method1114(var10);
+      var5.buffer.method1114(var8);
+      var5.buffer.method1114(var10);
       if (null != var9 && Client.field758 >= 214) {
          for(int var11 = 0; var11 < var9.length; ++var11) {
-            var5.field2686.method1114(var9[var11]);
+            var5.buffer.method1114(var9[var11]);
          }
       }
 
-      class68.method653(var5.field2686, var1);
+      class68.method653(var5.buffer, var1);
       if (var0 == class137.field1579.method1195()) {
-         var5.field2686.method1114(var3);
+         var5.buffer.method1114(var3);
       }
 
-      var5.field2686.method1123(var5.field2686.field1818 - var6);
+      var5.buffer.method1123(var5.buffer.field1818 - var6);
       return var5;
    }
 

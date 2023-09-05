@@ -65,9 +65,9 @@ public class class52 {
          }
       }
 
-      class335 var3 = class335.method1773(class46.field1014, Client.field641.field2758);
-      var3.field2686.method1114(var0.length() + 1);
-      var3.field2686.method1117(var0);
+      class335 var3 = class335.createPacket(ClientPacket.field1014, Client.field641.field2758);
+      var3.buffer.method1114(var0.length() + 1);
+      var3.buffer.method1117(var0);
       Client.field641.method1797(var3);
    }
 }

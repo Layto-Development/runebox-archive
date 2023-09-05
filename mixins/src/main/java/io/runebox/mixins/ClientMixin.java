@@ -1,31 +1,24 @@
 package io.runebox.mixins;
 
 import io.runebox.api.Client;
-import io.runebox.internal.injector.annotations.*;
+import io.runebox.internal.injector.annotations.Copy;
+import io.runebox.internal.injector.annotations.Inject;
+import io.runebox.internal.injector.annotations.Mixin;
+import io.runebox.internal.injector.annotations.Replace;
 
-@SuppressWarnings("ALL")
 @Mixin(Client.class)
 public abstract class ClientMixin implements Client {
 
-    @Shadow("gameState")
-    private static int gameState;
-
     @Inject
-    public void printGameState() {
-        System.out.println("GameState: " + gameState);
-    }
-
     @Override
-    @Inject
-    public int getGameState() {
-        return gameState;
+    public void test() {
+        System.out.println("Hello World!");
     }
 
     @Copy("init")
     @Replace("init")
-    public final void rs$init() {
-        System.out.println("Hello World!");
-        printGameState();
+    public void rs$init() {
+        System.out.println("Successfully injected client.init()V!");
         rs$init();
     }
 }

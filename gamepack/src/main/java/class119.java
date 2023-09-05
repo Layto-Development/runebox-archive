@@ -129,8 +129,8 @@ public class class119 {
          }
 
          if (var2 == 326) {
-            class335 var5 = class335.method1773(class46.field992, Client.field641.field2758);
-            Client.field862.method1389(var5.field2686);
+            class335 var5 = class335.createPacket(ClientPacket.field992, Client.field641.field2758);
+            Client.field862.method1389(var5.buffer);
             Client.field641.method1797(var5);
             return true;
          } else {

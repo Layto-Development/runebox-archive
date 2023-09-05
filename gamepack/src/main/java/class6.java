@@ -204,8 +204,8 @@ public class class6 {
                }
 
                if (var10) {
-                  class335 var13 = class335.method1773(class46.field1008, Client.field641.field2758);
-                  var13.field2686.method1180(this.field66.method721());
+                  class335 var13 = class335.createPacket(ClientPacket.field1008, Client.field641.field2758);
+                  var13.buffer.writeInt(this.field66.method721());
                   Client.field641.method1797(var13);
                   this.field75 = 0L;
                }

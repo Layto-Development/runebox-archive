@@ -12,7 +12,9 @@ import java.util.jar.JarOutputStream
 class ClassPool(val injector: Injector) {
 
     private val classMap = hashSetOf<ClassNode>()
-    val classes get() = classMap
+
+    val classes get() = classMap.filter { !it.ignored }
+    val allClasses get() = classMap
 
     fun containsClass(name: String) = classMap.any { it.name == name }
     fun containsClass(cls: ClassNode) = containsClass(cls.name)
@@ -40,11 +42,12 @@ class ClassPool(val injector: Injector) {
         }
     }
 
-    fun writeJar(file: File) {
+    fun writeJar(file: File, includeIgnored: Boolean = false) {
         if(file.exists()) {
             file.deleteRecursively()
         }
         JarOutputStream(file.outputStream()).use { jos ->
+            val classes = if(includeIgnored) allClasses else this.classes
             classes.forEach { cls ->
                 jos.putNextEntry(JarEntry("${cls.name}.class"))
                 jos.write(cls.toBytes())

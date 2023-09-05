@@ -23,12 +23,12 @@ public class class409 implements Runnable {
       if (Client.field821[var0] != null) {
          if (var1 >= 0 && var1 < Client.field821[var0].method1604()) {
             class219 var4 = (class219)Client.field821[var0].field2457.get(var1);
-            class335 var5 = class335.method1773(class46.field1019, Client.field641.field2758);
-            var5.field2686.method1114(4 + class184.method1188(var4.field2036.method1458()));
-            var5.field2686.method1114(var0);
-            var5.field2686.method1155(var1);
-            var5.field2686.method1116(var2);
-            var5.field2686.method1117(var4.field2036.method1458());
+            class335 var5 = class335.createPacket(ClientPacket.field1019, Client.field641.field2758);
+            var5.buffer.method1114(4 + class184.method1188(var4.field2036.method1458()));
+            var5.buffer.method1114(var0);
+            var5.buffer.method1155(var1);
+            var5.buffer.method1116(var2);
+            var5.buffer.method1117(var4.field2036.method1458());
             Client.field641.method1797(var5);
          }
       }

@@ -21,10 +21,13 @@ module(":mixins")
 module(":gamepack")
 module(":logger")
 module(":api")
+module("client")
+module(":util")
+module(":common")
 
 fun module(path: String) {
     val split = path.split(":")
-    val moduleName = split.drop(1).joinToString("-") { it }
+    val moduleName = if(split.size > 1) split.drop(1).joinToString("-") { it } else path
 
     include(moduleName)
 

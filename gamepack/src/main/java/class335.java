@@ -3,8 +3,8 @@ public class class335 extends class55 {
    static class31 field2688;
    static class335[] field2684 = new class335[300];
    static int field2685 = 0;
-   public class164 field2686;
-   public class46 field2681;
+   public class164 buffer;
+   public ClientPacket field2681;
    public int field2682;
    public int field2683;
 
@@ -17,24 +17,24 @@ public class class335 extends class55 {
       }
    }
 
-   public static class335 method1773(class46 var0, class152 var1) {
+   public static class335 createPacket(ClientPacket var0, class152 var1) {
       class335 var3 = class315.method1687((byte)-1);
       var3.field2681 = var0;
       var3.field2682 = var0.field1001;
       if (var3.field2682 == -1) {
-         var3.field2686 = new class164(260);
+         var3.buffer = new class164(260);
       } else if (var3.field2682 == -2) {
-         var3.field2686 = new class164(10000);
+         var3.buffer = new class164(10000);
       } else if (var3.field2682 <= 18) {
-         var3.field2686 = new class164(20);
+         var3.buffer = new class164(20);
       } else if (var3.field2682 <= 98) {
-         var3.field2686 = new class164(100);
+         var3.buffer = new class164(100);
       } else {
-         var3.field2686 = new class164(260);
+         var3.buffer = new class164(260);
       }
 
-      var3.field2686.method998(var1);
-      var3.field2686.method1000(var3.field2681.field950);
+      var3.buffer.method998(var1);
+      var3.buffer.method1000(var3.field2681.field950);
       var3.field2683 = 0;
       return var3;
    }
