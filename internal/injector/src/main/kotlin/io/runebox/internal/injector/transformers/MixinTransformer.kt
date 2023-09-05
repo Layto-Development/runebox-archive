@@ -1,12 +1,9 @@
-package io.runebox.internal.injector.injectors
+package io.runebox.internal.injector.transformers
 
-import io.runebox.internal.injector.Handles
-import io.runebox.internal.injector.annotations.Mixin
 import io.runebox.internal.injector.util.AsmUtil.API_BASE
 import org.objectweb.asm.tree.ClassNode
 
-@Handles(Mixin::class)
-class MixinInjector : AbstractInjector() {
+class MixinTransformer : AbstractTransformer() {
 
     override fun visitMixin(mixinCls: ClassNode, clientCls: ClassNode) {
         injectApiInterfaces(mixinCls, clientCls)

@@ -20,7 +20,7 @@ class Deobfuscator(
         transformers.clear()
 
         /**
-         * Register bytecode deob injectors in the order they will run.
+         * Register bytecode deob transformers in the order they will run.
          */
         register<StaticFieldMover>()
         register<RuntimeExceptionRemover>()
@@ -43,7 +43,7 @@ class Deobfuscator(
         register<DeadCodeRemover>()
         register<EmptyClassRemover>()
 
-        Logger.info("Registered ${transformers.size} bytecode injectors.")
+        Logger.info("Registered ${transformers.size} bytecode transformers.")
     }
 
     private fun init() {
@@ -62,7 +62,7 @@ class Deobfuscator(
     fun run() {
         this.init()
 
-        Logger.info("Running bytecode injectors.")
+        Logger.info("Running bytecode transformers.")
         transformers.forEach { transformer ->
             Logger.info("Running ${transformer::class.simpleName}.")
             transformer.run(pool)

@@ -309,7 +309,7 @@ public class class534 {
             class69.method661();
          }
 
-         if (Client.field660 != 5) {
+         if (Client.gameState != 5) {
             if (-1L == field4239) {
                field4239 = class80.method713() + 1000L;
             }
@@ -322,7 +322,7 @@ public class class534 {
                }
             }
 
-            if (Client.field660 == 10 || Client.field660 == 11) {
+            if (Client.gameState == 10 || Client.gameState == 11) {
                if (class219.field2034 == class121.field1497) {
                   if (class441.field3343 == 1 || !class136.field1574 && class441.field3343 == 4) {
                      var6 = 5 + field4219;
@@ -482,7 +482,7 @@ public class class534 {
 
                            method2555(class27.field461, class27.field462, class27.field447);
                            Client.method435(false);
-                           Client.method520(20);
+                           Client.updateGameState(20);
                            return;
                         }
 
@@ -576,7 +576,7 @@ public class class534 {
 
                                        method2555(class27.field461, class27.field462, class27.field447);
                                        Client.method435(false);
-                                       Client.method520(20);
+                                       Client.updateGameState(20);
                                        return;
                                     }
                                  }
@@ -691,7 +691,7 @@ public class class534 {
                                  class470.field3619 = "";
                                  Client.method435(true);
                                  method2555(class27.field461, class27.field462, class27.field447);
-                                 Client.method520(20);
+                                 Client.updateGameState(20);
                                  return;
                               }
 
@@ -744,7 +744,7 @@ public class class534 {
                                        class470.field3619 = "";
                                        Client.method435(true);
                                        method2555(class27.field461, class27.field462, class27.field447);
-                                       Client.method520(20);
+                                       Client.updateGameState(20);
                                        return;
                                     }
 
@@ -839,7 +839,7 @@ public class class534 {
                                        if (var6 == 1 && var7 >= var14 - 75 && var7 <= var14 + 75 && var8 >= var36 - 20 && var8 <= var36 + 20) {
                                           var40 = method2545();
                                           if (var40) {
-                                             Client.method520(50);
+                                             Client.updateGameState(50);
                                              return;
                                           }
                                        }
@@ -873,7 +873,7 @@ public class class534 {
                                           if (var28.field186 == 84) {
                                              var40 = method2545();
                                              if (var40) {
-                                                Client.method520(50);
+                                                Client.updateGameState(50);
                                              }
 
                                              return;
@@ -921,7 +921,7 @@ public class class534 {
                                        method2555(class27.field461, class27.field462, class27.field447);
                                        Client.field621 = class140.field1585;
                                        Client.method435(false);
-                                       Client.method520(20);
+                                       Client.updateGameState(20);
                                     }
                                  } else if (field4230 == 12) {
                                     var10 = class241.field2193;

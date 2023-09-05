@@ -12,4 +12,10 @@ interface InjectionVisitor {
 
     fun visitFieldInject(mixinField: FieldNode, clientCls: ClassNode)
 
+    fun visitCopy(clientCls: ClassNode, copyMethod: MethodNode, origName: String, desc: String)
+
+    fun visitMethodReplace(mixinCls: ClassNode, clientCls: ClassNode, mixinMethod: MethodNode, clientMethod: MethodNode)
+
+    fun visitFieldReplace(mixinCls: ClassNode, clientCls: ClassNode, mixinField: FieldNode, clientField: FieldNode)
+
 }

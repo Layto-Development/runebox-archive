@@ -3,17 +3,29 @@ package io.runebox.mixins;
 import io.runebox.api.Client;
 import io.runebox.internal.injector.annotations.*;
 
+@SuppressWarnings("ALL")
 @Mixin(Client.class)
 public abstract class ClientMixin implements Client {
 
-    public void printHello() {
-        System.out.println("Hello World");
+    @Shadow("gameState")
+    private static int gameState;
+
+    @Inject
+    public void printGameState() {
+        System.out.println("GameState: " + gameState);
     }
 
-    // Overrided from runebox-api Client.java
     @Override
     @Inject
     public int getGameState() {
-        return 0;
+        return gameState;
+    }
+
+    @Copy("init")
+    @Replace("init")
+    public final void rs$init() {
+        System.out.println("Hello World!");
+        printGameState();
+        rs$init();
     }
 }

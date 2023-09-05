@@ -257,7 +257,7 @@ final class class178 implements class130 {
          class534.field4223.method2012(class534.field4219, 0);
          class119.field1486.method2012(class534.field4219 + 382, 0);
          class409.field3154.method2000(382 + class534.field4219 - class409.field3154.field3222 / 2, 18);
-         if (Client.field660 == 0 || Client.field660 == 5) {
+         if (Client.gameState == 0 || Client.gameState == 5) {
             var4 = 20;
             var0.method1573(class27.field424, class534.field4225 + 180, 245 - var4, 16777215, -1);
             var5 = 253 - var4;
@@ -273,7 +273,7 @@ final class class178 implements class130 {
          String var8;
          String var9;
          short var24;
-         if (Client.field660 == 20) {
+         if (Client.gameState == 20) {
             class534.field4221.method2000(180 + class534.field4225 - class534.field4221.field3222 / 2, 271 - class534.field4221.field3223 / 2);
             var4 = 201;
             var0.method1573(class534.field4234, 180 + class534.field4225, var4, 16776960, 0);
@@ -303,7 +303,7 @@ final class class178 implements class130 {
             }
          }
 
-         if (Client.field660 == 10 || Client.field660 == 11 || Client.field660 == 50) {
+         if (Client.gameState == 10 || Client.gameState == 11 || Client.gameState == 50) {
             class534.field4221.method2000(class534.field4225, 171);
             short var25;
             if (class534.field4230 == 0) {
@@ -688,7 +688,7 @@ final class class178 implements class130 {
             }
          }
 
-         if (Client.field660 >= 10) {
+         if (Client.gameState >= 10) {
             int[] var45 = new int[4];
             class156.method950(var45);
             class156.method961(class534.field4219, 0, 765 + class534.field4219, class456.field3562);
@@ -698,7 +698,7 @@ final class class178 implements class130 {
          }
 
          class199.field1930[class4.field36.method2425() ? 1 : 0].method2000(765 + class534.field4219 - 40, 463);
-         if (Client.field660 > 5 && class121.field1497 == class219.field2034) {
+         if (Client.gameState > 5 && class121.field1497 == class219.field2034) {
             if (class395.field3084 != null) {
                var4 = class534.field4219 + 5;
                var24 = 463;

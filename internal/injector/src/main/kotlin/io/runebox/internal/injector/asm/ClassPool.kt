@@ -2,6 +2,8 @@ package io.runebox.internal.injector.asm
 
 import io.runebox.internal.injector.Injector
 import org.objectweb.asm.tree.ClassNode
+import org.objectweb.asm.tree.FieldNode
+import org.objectweb.asm.tree.MethodNode
 import java.io.File
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
@@ -52,6 +54,32 @@ class ClassPool(val injector: Injector) {
     }
 
     fun getClass(name: String) = classMap.firstOrNull { it.name == name }
+
+    fun getStaticMethod(owner: String, name: String, desc: String): MethodNode? {
+        val ret = getClass(owner)?.getMethod(name, desc)
+        if(ret != null && ret.isStatic()) return ret
+
+        classes.flatMap { it.methods.filter { it.isStatic() } }.forEach { method ->
+            if(method.name == name && method.desc == desc) {
+                return method
+            }
+        }
+
+        return null
+    }
+
+    fun getStaticField(owner: String, name: String, desc: String): FieldNode? {
+        val ret = getClass(owner)?.getField(name, desc)
+        if(ret != null && ret.isStatic()) return ret
+
+        classes.flatMap { it.fields.filter { it.isStatic() } }.forEach { field ->
+            if(field.name == name && field.desc == desc) {
+                return field
+            }
+        }
+
+        return null
+    }
 
     fun clear() {
         classMap.clear()

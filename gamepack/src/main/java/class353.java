@@ -45,7 +45,7 @@ public class class353 {
          class191.field1877.method1266(7680, 2160);
       }
 
-      if (Client.field660 >= 25) {
+      if (Client.gameState >= 25) {
          Client.method422();
       }
 

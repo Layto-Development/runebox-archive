@@ -146,7 +146,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    static int field655;
    static int field657;
    static int field659;
-   static int field660 = 0;
+   static int gameState = 0;
    static int field665;
    static int field666;
    static int field667;
@@ -785,7 +785,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    }
 
    public boolean isOnLoginScreen() {
-      return field660 == 10;
+      return gameState == 10;
    }
 
    public long getAccountHash() {
@@ -976,30 +976,30 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                field789 = var3;
             }
 
-            if (field660 == 0) {
+            if (gameState == 0) {
                method482();
                class210.method1301();
-            } else if (field660 == 5) {
+            } else if (gameState == 5) {
                class534.method2556(this, class103.field1341, class253.field2234);
                method482();
                class210.method1301();
-            } else if (field660 != 10 && field660 != 11) {
-               if (field660 == 20) {
+            } else if (gameState != 10 && gameState != 11) {
+               if (gameState == 20) {
                   class534.method2556(this, class103.field1341, class253.field2234);
                   this.method366();
-               } else if (field660 == 50) {
+               } else if (gameState == 50) {
                   class534.method2556(this, class103.field1341, class253.field2234);
                   this.method366();
-               } else if (field660 == 25) {
+               } else if (gameState == 25) {
                   method531();
                }
             } else {
                class534.method2556(this, class103.field1341, class253.field2234);
             }
 
-            if (field660 == 30) {
+            if (gameState == 30) {
                this.method385();
-            } else if (field660 == 40 || field660 == 45) {
+            } else if (gameState == 40 || gameState == 45) {
                this.method366();
             }
 
@@ -1011,7 +1011,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    }
 
    protected final void method1286(boolean var1) {
-      if ((field660 == 10 || field660 == 20 || field660 == 30) && 0L != field806 && class80.method713() > field806) {
+      if ((gameState == 10 || gameState == 20 || gameState == 30) && 0L != field806 && class80.method713() > field806) {
          class353.method1816(method484());
       }
 
@@ -1022,16 +1022,16 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          }
       }
 
-      if (field660 == 0) {
+      if (gameState == 0) {
          this.method1283(class534.field4226, class534.field4227, var1);
-      } else if (field660 == 5) {
+      } else if (gameState == 5) {
          class178.method1103(class112.field1452, class103.field1341, class253.field2234);
-      } else if (field660 != 10 && field660 != 11) {
-         if (field660 == 20) {
+      } else if (gameState != 10 && gameState != 11) {
+         if (gameState == 20) {
             class178.method1103(class112.field1452, class103.field1341, class253.field2234);
-         } else if (field660 == 50) {
+         } else if (gameState == 50) {
             class178.method1103(class112.field1452, class103.field1341, class253.field2234);
-         } else if (field660 == 25) {
+         } else if (gameState == 25) {
             if (field650 == 1) {
                if (field646 > field680) {
                   field680 = field646;
@@ -1049,25 +1049,25 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             } else {
                method541(class27.field245, false);
             }
-         } else if (field660 == 30) {
+         } else if (gameState == 30) {
             this.method368();
-         } else if (field660 == 40) {
+         } else if (gameState == 40) {
             method541(class27.field246 + class357.field2806 + class27.field247, false);
-         } else if (field660 == 45) {
+         } else if (gameState == 45) {
             method541(class27.field506, false);
          }
       } else {
          class178.method1103(class112.field1452, class103.field1341, class253.field2234);
       }
 
-      if (field660 == 30 && field805 == 0 && !var1 && !field807) {
+      if (gameState == 30 && field805 == 0 && !var1 && !field807) {
          for(var3 = 0; var3 < field747; ++var3) {
             if (field799[var3]) {
                class300.field2508.method930(field801[var3], field802[var3], field803[var3], field804[var3]);
                field799[var3] = false;
             }
          }
-      } else if (field660 > 0) {
+      } else if (gameState > 0) {
          class300.field2508.method929(0, 0);
 
          for(var3 = 0; var3 < field747; ++var3) {
@@ -1111,7 +1111,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    }
 
    void method365() {
-      if (field660 != 1000) {
+      if (gameState != 1000) {
          boolean var2 = class40.field923.method137();
          if (!var2) {
             this.method381();
@@ -1123,12 +1123,12 @@ public final class Client extends class210 implements class161, OAuthApi, class2
    void method381() {
       if (class40.field923.field118 >= 4) {
          this.method1287("js5crc");
-         method520(1000);
+         updateGameState(1000);
       } else {
          if (class40.field923.field141 >= 4) {
-            if (field660 <= 5) {
+            if (gameState <= 5) {
                this.method1287("js5io");
-               method520(1000);
+               updateGameState(1000);
                return;
             }
 
@@ -1182,7 +1182,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                }
 
                if (field609 == 4) {
-                  class40.field923.method132(class112.field1450, field660 > 20);
+                  class40.field923.method132(class112.field1450, gameState > 20);
                   class146.field1612 = null;
                   class112.field1450 = null;
                   field609 = 0;
@@ -1210,18 +1210,18 @@ public final class Client extends class210 implements class161, OAuthApi, class2
       if (field756 < 2 || var1 != 7 && var1 != 9) {
          if (field756 >= 2 && var1 == 6) {
             this.method1287("js5connect_outofdate");
-            method520(1000);
+            updateGameState(1000);
          } else if (field756 >= 4) {
-            if (field660 <= 5) {
+            if (gameState <= 5) {
                this.method1287("js5connect");
-               method520(1000);
+               updateGameState(1000);
             } else {
                field610 = 3000;
             }
          }
-      } else if (field660 <= 5) {
+      } else if (gameState <= 5) {
          this.method1287("js5connect_full");
-         method520(1000);
+         updateGameState(1000);
       } else {
          field610 = 3000;
       }
@@ -1514,13 +1514,13 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             var34.method1180(var30[2]);
             var34.method1180(var30[3]);
             var34.method1151(class359.field2821);
-            if (field660 == 40) {
+            if (gameState == 40) {
                var34.method1180(class90.field1282[0]);
                var34.method1180(class90.field1282[1]);
                var34.method1180(class90.field1282[2]);
                var34.method1180(class90.field1282[3]);
             } else {
-               if (field660 == 50) {
+               if (gameState == 50) {
                   var34.method1114(class158.field1681.method1195());
                   var34.method1180(class205.field1938);
                } else {
@@ -1557,7 +1557,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             var7.field2682 = 0;
             var7.field2686 = new class164(5000);
             var7.field2686.field1818 = 0;
-            if (field660 == 40) {
+            if (gameState == 40) {
                var7.field2686.method1114(class211.field2002.field2005);
             } else {
                var7.field2686.method1114(class211.field2001.field2005);
@@ -1634,11 +1634,11 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                method518(5);
             }
 
-            if (var28 == 21 && field660 == 20) {
+            if (var28 == 21 && gameState == 20) {
                method518(12);
             } else if (var28 == 2) {
                method518(14);
-            } else if (var28 == 15 && field660 == 40) {
+            } else if (var28 == 15 && gameState == 40) {
                field641.field2761 = -1;
                method518(19);
             } else if (var28 == 64) {
@@ -1816,7 +1816,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   String var43 = var3.method1133();
                   String var36 = var3.method1133();
                   class534.method2555(var45, var43, var36);
-                  method520(10);
+                  updateGameState(10);
                   if (field621.method912()) {
                      class534.method2543(9);
                   }
@@ -2023,7 +2023,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          for(var2 = 0; var2 < 100 && this.method370(field641); ++var2) {
          }
 
-         if (field660 == 30) {
+         if (gameState == 30) {
             while(true) {
                class59 var3 = (class59)class138.field1582.method583();
                boolean var17;
@@ -2263,7 +2263,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
                   method537();
                   method469();
-                  if (field660 != 30) {
+                  if (gameState != 30) {
                      return;
                   }
 
@@ -3483,7 +3483,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   var89.field2140 = "beta";
                }
 
-               method520(45);
+               updateGameState(45);
                var3.method1017();
                var3 = null;
                class325.method1712(var89);
@@ -5203,7 +5203,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
       class210.field1969 = new class93();
       class191.field1877.method1279();
       field608 = class277.field2377;
-      method520(0);
+      updateGameState(0);
    }
 
    static void method421() {
@@ -5220,13 +5220,13 @@ public final class Client extends class210 implements class161, OAuthApi, class2
       class48.field1044 = null;
    }
 
-   static void method520(int var0) {
-      if (field660 != var0) {
-         if (field660 == 30) {
+   static void updateGameState(int var0) {
+      if (gameState != var0) {
+         if (gameState == 30) {
             field815.method1307();
          }
 
-         if (field660 == 0) {
+         if (gameState == 0) {
             class191.field1877.method1299();
          }
 
@@ -5245,7 +5245,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             class168.field1714 = null;
          }
 
-         if (field660 == 25) {
+         if (gameState == 25) {
             field650 = 0;
             field646 = 0;
             field680 = 1;
@@ -5255,7 +5255,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
 
          if (var0 != 5 && var0 != 10) {
             if (var0 == 20) {
-               int var4 = field660 == 11 ? 4 : 0;
+               int var4 = gameState == 11 ? 4 : 0;
                class534.method2557(class43.field928, class331.field2666, false, var4);
             } else if (var0 == 11) {
                class534.method2557(class43.field928, class331.field2666, false, 4);
@@ -5288,7 +5288,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
             class534.method2557(class43.field928, class331.field2666, true, var3);
          }
 
-         field660 = var0;
+         gameState = var0;
       }
    }
 
@@ -5530,7 +5530,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   } else {
                      class534.field4227 = class27.field257;
                      class534.field4226 = 50;
-                     method520(5);
+                     updateGameState(5);
                      field608 = class277.field2374;
                   }
                } else if (class277.field2374 == field608) {
@@ -5786,7 +5786,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                   }
                } else {
                   if (class277.field2369 == field608) {
-                     method520(10);
+                     updateGameState(10);
                   }
 
                }
@@ -5834,7 +5834,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
       }
 
       class78.method706();
-      method520(30);
+      updateGameState(30);
 
       for(var1 = 0; var1 < 100; ++var1) {
          field586[var1] = true;
@@ -5858,7 +5858,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
       class69.method661();
       field848 = false;
       class372.method1869();
-      method520(10);
+      updateGameState(10);
    }
 
    static long method447() {
@@ -5919,7 +5919,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
          method552();
       } else {
          field644.method2366();
-         method520(40);
+         updateGameState(40);
          class168.field1714 = field641.method1800();
          field641.method1799();
       }
@@ -7569,7 +7569,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
       if (!var2 || class526.field4131 != var0 || class520.field4086 != var1) {
          class526.field4131 = var0;
          class520.field4086 = var1;
-         method520(25);
+         updateGameState(25);
          method541(class27.field245, true);
          int var4 = class69.field1134;
          int var5 = class478.field3659;
@@ -7932,7 +7932,7 @@ public final class Client extends class210 implements class161, OAuthApi, class2
                }
             }
 
-            method520(30);
+            updateGameState(30);
             method514();
             class526.method2495();
             var20 = class335.method1773(class46.field977, field641.field2758);

@@ -4,6 +4,7 @@ import com.google.common.reflect.ClassPath
 import io.runebox.internal.injector.annotations.Mixin
 import io.runebox.internal.injector.asm.ClassPool
 import io.runebox.internal.injector.util.AsmUtil
+import io.runebox.internal.injector.util.AsmUtil.MIXIN_BASE
 import org.objectweb.asm.Type
 import org.objectweb.asm.tree.ClassNode
 import org.tinylog.kotlin.Logger
@@ -28,20 +29,20 @@ class Injector(
     fun inject() {
         this.init()
 
-        val mixinNodes = findMixinNodes()
-        val injectors = findInjectors()
+        val mixins = findMixins()
+        val injectors = findTransformers()
         val visitor = MixinInjectionVisitor(injectors)
         val results = mutableListOf<ClassNode>()
 
         Logger.info("Running mixin injections.")
 
-        mixinNodes.forEach { mixin ->
-            Logger.info("Injecting ${mixin.mixinCls.name} -> ${mixin.clientCls.name}.")
+        mixins.forEach { mixin ->
+            Logger.info("Injecting mixin: ${mixin.mixinCls.name.replace(MIXIN_BASE, "")} -> ${mixin.clientCls.name}.")
             mixin.accept(visitor)
             results.add(mixin.result())
         }
 
-        Logger.info("Saving injected class changes to output jar.")
+        Logger.info("Saving injected client classes to output jar.")
 
         val outputPool = ClassPool(this)
         results.forEach { outputPool.addClass(it) }
@@ -51,36 +52,36 @@ class Injector(
         Logger.info("Injector completed successfully.")
     }
 
-    private fun findMixinNodes(): List<MixinNode> {
-        Logger.info("Loading mixin classes.")
+    private fun findMixins(): List<MixinInjection> {
+        Logger.info("Loading injector mixins.")
 
-        val nodes = mutableListOf<MixinNode>()
+        val nodes = mutableListOf<MixinInjection>()
         mixinPool.classes.forEach { mixinCls ->
             val apiClsName = mixinCls.readAnnotation<Mixin>() ?: return@forEach
             val clientClsName = apiClsName.replace(AsmUtil.API_BASE, "")
             val clientCls = clientPool.getClass(clientClsName) ?: error("Failed to find client class $clientClsName. [api-class: $apiClsName, mixin-class: ${mixinCls.name}]")
-            nodes.add(MixinNode(mixinCls, clientCls))
+            nodes.add(MixinInjection(mixinCls, clientCls))
         }
         return nodes
     }
 
-    private fun findInjectors(): List<InjectionVisitor> {
-        Logger.info("Loading injector classes.")
+    private fun findTransformers(): List<InjectionVisitor> {
+        Logger.info("Loading injector transformers.")
 
-        val injectors = mutableListOf<InjectionVisitor>()
-        ClassPath.from(Injector::class.java.classLoader).getTopLevelClassesRecursive("io.runebox.internal.injector.injectors")
+        val transformers = mutableListOf<InjectionVisitor>()
+        ClassPath.from(Injector::class.java.classLoader).getTopLevelClassesRecursive("io.runebox.internal.injector.transformers")
             .map { it.name }
             .forEach { clsName ->
                 try {
                     val clazz = Class.forName(clsName)
                     if(InjectionVisitor::class.java.isAssignableFrom(clazz) && !Modifier.isAbstract(clazz.modifiers)) {
-                        injectors.add(clazz.getDeclaredConstructor().newInstance() as InjectionVisitor)
+                        transformers.add(clazz.getDeclaredConstructor().newInstance() as InjectionVisitor)
                     }
                 } catch (e: Exception) {
-                    Logger.warn(e) { "Failed to load injector: $clsName." }
+                    Logger.warn(e) { "Failed to load injector transformer: $clsName." }
                 }
             }
-        return injectors
+        return transformers
     }
 
     private inline fun <reified T> ClassNode.readAnnotation(): String? {

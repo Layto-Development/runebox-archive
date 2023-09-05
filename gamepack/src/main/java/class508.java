@@ -193,13 +193,13 @@ public class class508 {
       } else {
          if (var0 == 56) {
             class534.method2555(class27.field529, class27.field242, class27.field379);
-            Client.method520(11);
+            Client.updateGameState(11);
             return;
          }
 
          if (var0 == 57) {
             class534.method2555(class27.field380, class27.field381, class27.field382);
-            Client.method520(11);
+            Client.updateGameState(11);
             return;
          }
 
@@ -208,36 +208,36 @@ public class class508 {
             class534.method2543(7);
          } else {
             if (var0 == 62) {
-               Client.method520(10);
+               Client.updateGameState(10);
                class534.method2543(9);
                class534.method2555(class27.field402, class27.field376, class27.field385);
                return;
             }
 
             if (var0 == 63) {
-               Client.method520(10);
+               Client.updateGameState(10);
                class534.method2543(9);
                class534.method2555(class27.field386, class27.field387, class27.field388);
                return;
             }
 
             if (var0 == 65 || var0 == 67) {
-               Client.method520(10);
+               Client.updateGameState(10);
                class534.method2543(9);
                class534.method2555(class27.field440, class27.field390, class27.field409);
                return;
             }
 
             if (var0 == 71) {
-               Client.method520(10);
+               Client.updateGameState(10);
                class534.method2543(7);
                class534.method2555("There was a problem updating your DOB.", "Please try again later. If the problem ", "persists, please contact Jagex Support.");
             } else if (var0 == 73) {
-               Client.method520(10);
+               Client.updateGameState(10);
                class534.method2543(6);
                class534.method2555(class27.field520, class27.field521, class27.field522);
             } else if (var0 == 72) {
-               Client.method520(10);
+               Client.updateGameState(10);
                class534.method2543(32);
             } else {
                class534.method2555(class27.field392, class27.field254, class27.field300);
@@ -245,7 +245,7 @@ public class class508 {
          }
       }
 
-      Client.method520(10);
+      Client.updateGameState(10);
       boolean var3 = var2 != class393.method1904();
       if (!var3 && Client.field621.method912()) {
          class534.method2543(9);
