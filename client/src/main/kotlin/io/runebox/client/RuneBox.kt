@@ -7,20 +7,26 @@ import io.runebox.client.ui.ClientUI
 import io.runebox.common.RuneboxPaths
 import io.runebox.common.get
 import io.runebox.common.inject
+import io.runebox.plugin.PluginModule
+import io.runebox.plugin.RuneBoxPluginManager
 import org.koin.core.context.startKoin
 import org.koin.core.parameter.parametersOf
+import org.refactoringminer.api.Refactoring
+import org.refactoringminer.api.RefactoringHandler
+import org.refactoringminer.api.RefactoringType
+import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl
 import org.tinylog.kotlin.Logger
-import java.io.ByteArrayOutputStream
 import java.io.File
 import java.math.BigInteger
 import java.net.URL
 import java.security.MessageDigest
-import java.util.jar.JarFile
+
 
 class RuneBox {
 
     private val clientLoader: ClientLoader by inject()
     private val ui: ClientUI by inject()
+    private val pluginManager: RuneBoxPluginManager by inject()
 
     /**
      * The RuneBox Client api instance.
@@ -37,6 +43,11 @@ class RuneBox {
         this.checkDirs()
         this.checkGamepacks()
         clientLoader.load()
+
+        /*
+         * Init and start plugin manager.
+         */
+        this.initPlugins()
 
         /*
          * Open the client UI.
@@ -90,26 +101,17 @@ class RuneBox {
         injectedGamepack.writeBytes(latestInjectedGamepackBytes)
     }
 
-    private fun getVanillaGamepackBytes(): ByteArray {
-        val bytes = URL("http://oldschool1.runescape.com/gamepack.jar").openConnection().getInputStream().readAllBytes()
-        val tempJar = File.createTempFile("temp-", "gamepack.jar")
-        tempJar.writeBytes(bytes)
-        val output = ByteArrayOutputStream().also { it.use { bos ->
-            JarFile(tempJar).use { jar ->
-                jar.entries().asSequence().forEach { entry ->
-                    if(entry.name.endsWith(".class")) {
-                        val entryBytes = jar.getInputStream(entry).readAllBytes()
-                        bos.writeBytes(entryBytes)
-                    }
-                }
-            }
-        } }
-        tempJar.delete()
-        return output.toByteArray()
-    }
-
     private fun ByteArray.checksum(): String {
         return BigInteger(1, MessageDigest.getInstance("MD5").digest(this)).toString(16).padStart(32, '0')
+    }
+
+    private fun initPlugins() {
+        Logger.info("Loading RuneBox plugins.")
+
+        pluginManager.loadPlugins()
+        pluginManager.startPlugins()
+
+        Logger.info("Successfully started ${pluginManager.startedPlugins.size} plugins.")
     }
 
     private fun setupSwingDefaults() {
@@ -120,7 +122,8 @@ class RuneBox {
     companion object {
 
         private val DI_MODULES = listOf(
-            ClientModule
+            ClientModule,
+            PluginModule
         )
 
         @JvmStatic

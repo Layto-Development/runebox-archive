@@ -1,5 +1,5 @@
 plugins {
-    id("de.fayard.refreshVersions") version "0.51.0"
+    id("de.fayard.refreshVersions") version "0.60.2"
     id("com.gradle.enterprise") version "3.14.1"
 }
 
@@ -13,6 +13,10 @@ gradleEnterprise {
     }
 }
 
+refreshVersions {
+    enableBuildSrcLibs()
+}
+
 module("internal:deobfuscator")
 module("internal:deobfuscator:annotations")
 module("internal:injector")
@@ -22,10 +26,13 @@ module(":mixins")
 module(":gamepack")
 module(":logger")
 module(":api")
-module("client")
+module(":client")
 module(":util")
 module(":common")
 module(":eventbus")
+module(":plugins")
+
+include(":runebox-plugins:test-plugin")
 
 fun module(path: String) {
     val split = path.split(":")

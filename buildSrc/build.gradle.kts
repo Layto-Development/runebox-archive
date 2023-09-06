@@ -37,6 +37,9 @@ artifacts {
 
 gradlePlugin {
     plugins {
-
+        create("RuneBoxPlugin") {
+            id = "io.runebox.plugin"
+            implementationClass = "plugins.RuneboxPlugin"
+        }
     }
 }

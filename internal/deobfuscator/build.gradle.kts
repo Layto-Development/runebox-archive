@@ -12,6 +12,7 @@ plugins {
 
 dependencies {
     implementation(project(":runebox-logger"))
+    implementation(project(":runebox-util"))
     implementation("org.ow2.asm:asm:_")
     implementation("org.ow2.asm:asm-commons:_")
     implementation("org.ow2.asm:asm-util:_")

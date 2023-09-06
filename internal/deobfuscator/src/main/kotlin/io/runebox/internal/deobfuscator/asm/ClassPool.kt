@@ -1,5 +1,6 @@
 package io.runebox.internal.deobfuscator.asm
 
+import io.runebox.internal.deobfuscator.asm.classpath.ClassPath
 import org.objectweb.asm.Opcodes.ACC_PRIVATE
 import org.objectweb.asm.Opcodes.ACC_STATIC
 import org.objectweb.asm.commons.Remapper
@@ -19,6 +20,8 @@ class ClassPool {
     val classes get() = classMap.filter { !it.ignored }
     val ignoredClasses get() = classMap.filter { it.ignored }
     val allClasses get() = classMap.toList()
+
+    val classPath get() = ClassPath(ClassLoader.getPlatformClassLoader(), this)
 
     fun addClass(cls: ClassNode) {
         if(cls in classMap) return

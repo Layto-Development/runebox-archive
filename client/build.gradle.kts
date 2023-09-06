@@ -8,10 +8,10 @@ dependencies {
     implementation(project(":runebox-util"))
     implementation(project(":runebox-logger"))
     implementation(project(":runebox-eventbus"))
+    implementation(project(":runebox-plugins"))
     implementation("com.formdev:flatlaf:_")
     implementation("com.formdev:flatlaf-intellij-themes:_")
-    implementation("org.bouncycastle:bcprov-jdk15on:1.52")
-    implementation("org.json:json:20220320")
+    implementation("org.pf4j:pf4j:_")
 }
 
 tasks {

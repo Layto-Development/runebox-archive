@@ -35,6 +35,7 @@ class DeadCodeRemover : Transformer {
 
                         insns.remove()
                         count++
+
                         changed = true
                     }
                     changed = changed or method.tryCatchBlocks.removeIf { it.isBodyEmpty() }
