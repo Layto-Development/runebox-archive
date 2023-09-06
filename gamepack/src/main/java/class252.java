@@ -1,15 +1,68 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
-@ObfInfo(name = "li")
-public class class252 {
-	@ObfInfo(name = "ae", desc = "Lcf;")
-	class428 field2090;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = 844910323)
-	int field2089;
+public class class252 implements class427 {
+	final MessageDigest field2352;
 
-	@ObfInfo(name = "<init>", desc = "(ILcf;)V")
-	class252(int var1, class428 var2) {
-		this.field2089 = var1;
-		this.field2090 = var2;
+	class252(class362 var1) {
+		this.field2352 = this.method1488();
+	}
+
+	boolean method1490(int var1, String var2, long var3) {
+		byte[] var5 = this.method1487(var2, var3);
+		return method1486(var5) >= var1;
+	}
+
+	byte[] method1487(String var1, long var2) {
+		StringBuilder var4 = new StringBuilder();
+		var4.append(var1).append(Long.toHexString(var2));
+		this.field2352.reset();
+
+		try {
+			this.field2352.update(var4.toString().getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException var6) {
+			var6.printStackTrace();
+		}
+
+		return this.field2352.digest();
+	}
+
+	MessageDigest method1488() {
+		try {
+			return MessageDigest.getInstance("SHA-256");
+		} catch (NoSuchAlgorithmException var2) {
+			var2.printStackTrace();
+			return null;
+		}
+	}
+
+	static int method1486(byte[] var0) {
+		int var1 = 0;
+		byte[] var2 = var0;
+
+		for (int var3 = 0; var3 < var2.length; ++var3) {
+			byte var4 = var2[var3];
+			int var5 = method1489(var4);
+			var1 += var5;
+			if (var5 != 8) {
+				break;
+			}
+		}
+
+		return var1;
+	}
+
+	static int method1489(byte var0) {
+		int var1 = 0;
+		if (var0 == 0) {
+			var1 = 8;
+		} else {
+			for (int var2 = var0 & 255; (var2 & 128) == 0; var2 <<= 1) {
+				++var1;
+			}
+		}
+
+		return var1;
 	}
 }

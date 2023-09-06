@@ -1,35 +1,43 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.Comparator;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
-@ObfInfo(name = "qw")
-class class56 implements Comparator {
-	@ObfInfo(name = "ae", desc = "Lnu;")
-	static class437 field723;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lqv;")
-	final class339 this$0;
+public class class56 {
+	static int field611;
+	ExecutorService field609;
+	Future field612;
+	final class130 field608;
+	final class42 field610;
 
-	@ObfInfo(name = "<init>", desc = "(Lqv;)V")
-	class56(class339 var1) {
-		this.this$0 = var1;
+	public class56(class42 var1, class130 var2) {
+		this.field609 = Executors.newSingleThreadExecutor();
+		this.field610 = var1;
+		this.field608 = var2;
+		this.method414();
 	}
 
-	@ObfInfo(name = "au", desc = "(Lqj;Lqj;I)I", opaqueValue = "-1504884068")
-	int method468(class275 var1, class275 var2) {
-		if (var1.field2231 > var2.field2231) {
-			return 1;
-		} else {
-			return var1.field2231 < var2.field2231 ? -1 : 0;
+	public boolean method416() {
+		return this.field612.isDone();
+	}
+
+	public void method413() {
+		this.field609.shutdown();
+		this.field609 = null;
+	}
+
+	public class42 method415() {
+		try {
+			return (class42)this.field612.get();
+		} catch (Exception var3) {
+			return null;
 		}
 	}
 
-	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
-	public int compare(Object var1, Object var2) {
-		return this.method468((class275)var1, (class275)var2);
+	void method414() {
+		this.field612 = this.field609.submit(new class26(this, this.field610, this.field608));
 	}
 
-	@ObfInfo(name = "equals", desc = "(Ljava/lang/Object;)Z")
-	public boolean equals(Object var1) {
-		return super.equals(var1);
+	static final int method417(int var0) {
+		return Math.abs(var0 - class175.field1694) > 1024 ? var0 + 2048 * (var0 < class175.field1694 ? 1 : -1) : var0;
 	}
 }

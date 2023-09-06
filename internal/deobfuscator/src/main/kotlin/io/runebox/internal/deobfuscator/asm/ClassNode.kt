@@ -40,7 +40,7 @@ val ClassNode.ancestorClasses get() = superClasses.plus(subClasses).plus(this)
 fun ClassNode.getMethod(name: String, desc: String) = methods.firstOrNull { it.name == name && it.desc == desc }
 fun ClassNode.getField(name: String, desc: String) = fields.firstOrNull { it.name == name && it.desc == desc }
 
-fun ClassNode.fromBytes(bytes: ByteArray, flags: Int = ClassReader.EXPAND_FRAMES): ClassNode {
+fun ClassNode.fromBytes(bytes: ByteArray, flags: Int = ClassReader.SKIP_FRAMES): ClassNode {
     val reader = ClassReader(bytes)
     reader.accept(this, flags)
     return this

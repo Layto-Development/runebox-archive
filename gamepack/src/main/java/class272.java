@@ -1,17 +1,36 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class272 {
+	public static final class272 field2445;
+	static final class272 field2446;
+	String field2447;
 
-@ObfInfo(name = "ps")
-public final class class272 {
-	@ObfInfo(name = "wq", desc = "Lod;")
-	public static class379 field2224;
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = 1645243627)
-	int field2222;
-	@ObfInfo(name = "au", desc = "Ljava/lang/Object;")
-	final Object field2223;
+	static {
+		field2445 = new class272("application/json");
+		field2446 = new class272("text/plain");
+	}
 
-	@ObfInfo(name = "<init>", desc = "(Ljava/lang/Object;I)V")
-	class272(Object var1, int var2) {
-		this.field2223 = var1;
-		this.field2222 = var2;
+	class272(String var1) {
+		this.field2447 = var1;
+	}
+
+	public String method1588() {
+		return this.field2447;
+	}
+
+	static final boolean method1587(int var0, int var1, int var2, int var3, int var4) {
+		class353 var6 = null;
+
+		for (class353 var7 = (class353)Client.field144.method563(); var7 != null; var7 = (class353)Client.field144.method565()) {
+			if (var0 == var7.field3028 && var1 == var7.field3021 && var2 == var7.field3027 && var3 == var7.field3014) {
+				var6 = var7;
+				break;
+			}
+		}
+
+		if (null != var6) {
+			var6.field3023 = var4;
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

@@ -1,99 +1,108 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Comparator;
 
-@ObfInfo(name = "bi")
-public class class293 {
-	@ObfInfo(name = "dd", desc = "[Luk;")
-	static class398[] field2379;
-	@ObfInfo(name = "aa", desc = "I", intMultiplier = 1529858789)
-	static int field2375;
-	@ObfInfo(name = "ao", desc = "Lso;")
-	class405 field2377;
-	@ObfInfo(name = "ae", desc = "Lnu;")
-	class437 field2376;
-	@ObfInfo(name = "au", desc = "Lnu;")
-	class437 field2378;
+public class class293 implements Comparator {
+	static int field2725;
+	final boolean field2726;
 
-	@ObfInfo(name = "<init>", desc = "(Lnu;Lnu;)V")
-	public class293(class437 var1, class437 var2) {
-		new class405(256);
-		this.field2377 = new class405(256);
-		this.field2378 = var1;
-		this.field2376 = var2;
+	public class293(boolean var1) {
+		this.field2726 = var1;
 	}
 
-	@ObfInfo(name = "au", desc = "(II[II)Lbu;", opaqueValue = "-1858861655")
-	class62 method1621(int var1, int var2, int[] var3) {
-		long var5 = this.method1625(var1, var2, false);
-		class428 var7 = (class428)this.field2377.method2129(var5);
-		if (null != var7) {
-			return var7.method2227();
-		} else if (var3 != null && var3[0] <= 0) {
-			return null;
-		} else {
-			class538 var8 = class538.method2590(this.field2378, var1, var2);
-			if (null == var8) {
-				return null;
+	int method1674(class304 var1, class304 var2) {
+		return this.field2726 ? var1.field2768 - var2.field2768 : var2.field2768 - var1.field2768;
+	}
+
+	public int compare(Object var1, Object var2) {
+		return this.method1674((class304)var1, (class304)var2);
+	}
+
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
+
+	static float method1675(class415 var0, float var1, boolean var2) {
+		float var4 = 0.0F;
+		if (null != var0 && var0.method2141() != 0) {
+			float var5 = (float)var0.field3470[0].field986;
+			float var6 = (float)var0.field3470[var0.method2141() - 1].field986;
+			float var7 = var6 - var5;
+			if ((double)var7 == 0.0D) {
+				return var0.field3470[0].field989;
 			} else {
-				class62 var9 = var8.method2588();
-				this.field2377.method2132(new class428(var9), var5);
-				if (var3 != null) {
-					var3[0] -= var9.field738.length;
+				float var8 = 0.0F;
+				if (var1 > var6) {
+					var8 = (var1 - var6) / var7;
+				} else {
+					var8 = (var1 - var5) / var7;
 				}
 
-				return var9;
+				double var9 = (double)((int)var8);
+				float var11 = Math.abs((float)((double)var8 - var9));
+				float var12 = var11 * var7;
+				var9 = Math.abs(var9 + 1.0D);
+				double var13 = var9 / 2.0D;
+				double var15 = (double)((int)var13);
+				var11 = (float)(var13 - var15);
+				float var17;
+				float var18;
+				if (var2) {
+					if (class224.field2042 == var0.field3468) {
+						if ((double)var11 != 0.0D) {
+							var12 += var5;
+						} else {
+							var12 = var6 - var12;
+						}
+					} else if (var0.field3468 != class224.field2037 && var0.field3468 != class224.field2038) {
+						if (class224.field2039 == var0.field3468) {
+							var12 = var5 - var1;
+							var17 = var0.field3470[0].field995;
+							var18 = var0.field3470[0].field987;
+							var4 = var0.field3470[0].field989;
+							if (0.0D != (double)var17) {
+								var4 -= var12 * var18 / var17;
+							}
+
+							return var4;
+						}
+					} else {
+						var12 = var6 - var12;
+					}
+				} else if (class224.field2042 == var0.field3488) {
+					if ((double)var11 != 0.0D) {
+						var12 = var6 - var12;
+					} else {
+						var12 += var5;
+					}
+				} else if (class224.field2037 != var0.field3488 && var0.field3488 != class224.field2038) {
+					if (var0.field3488 == class224.field2039) {
+						var12 = var1 - var6;
+						var17 = var0.field3470[var0.method2141() - 1].field990;
+						var18 = var0.field3470[var0.method2141() - 1].field991;
+						var4 = var0.field3470[var0.method2141() - 1].field989;
+						if (0.0D != (double)var17) {
+							var4 += var18 * var12 / var17;
+						}
+
+						return var4;
+					}
+				} else {
+					var12 += var5;
+				}
+
+				var4 = class43.method341(var0, var12);
+				float var19;
+				if (var2 && class224.field2038 == var0.field3468) {
+					var19 = var0.field3470[var0.method2141() - 1].field989 - var0.field3470[0].field989;
+					var4 = (float)((double)var4 - (double)var19 * var9);
+				} else if (!var2 && var0.field3488 == class224.field2038) {
+					var19 = var0.field3470[var0.method2141() - 1].field989 - var0.field3470[0].field989;
+					var4 = (float)((double)var4 + (double)var19 * var9);
+				}
+
+				return var4;
 			}
-		}
-	}
-
-	@ObfInfo(name = "ae", desc = "(IIB)Lcf;", opaqueValue = "-1")
-	class428 method1620(int var1, int var2) {
-		long var4 = this.method1625(var1, var2, true);
-		class428 var6 = (class428)this.field2377.method2129(var4);
-		if (var6 != null) {
-			return var6;
 		} else {
-			class130 var7 = class130.method712(this.field2376, var1, var2);
-			if (var7 == null) {
-				return new class428();
-			} else {
-				class428 var8 = new class428(var7);
-				this.field2377.method2132(var8, var4);
-				return var8;
-			}
+			return var4;
 		}
-	}
-
-	@ObfInfo(name = "ao", desc = "(I[II)Lbu;", opaqueValue = "88728645")
-	class62 method1622(int var1, int[] var2) {
-		if (this.field2378.method2279() == 1) {
-			return this.method1621(0, var1, var2);
-		} else if (this.field2378.method2293(var1) == 1) {
-			return this.method1621(var1, 0, var2);
-		} else {
-			throw new RuntimeException();
-		}
-	}
-
-	@ObfInfo(name = "at", desc = "(II)Lcf;", opaqueValue = "-1353408951")
-	public class428 method1623(int var1) {
-		if (this.field2376.method2279() == 1) {
-			return this.method1620(0, var1);
-		} else if (this.field2376.method2293(var1) == 1) {
-			return this.method1620(var1, 0);
-		} else {
-			throw new RuntimeException();
-		}
-	}
-
-	@ObfInfo(name = "ac", desc = "(II)Lbu;")
-	public class62 method1624(int var1) {
-		return this.method1622(var1, (int[])null);
-	}
-
-	@ObfInfo(name = "ai", desc = "(IIZI)J", opaqueValue = "1190461425")
-	long method1625(int var1, int var2, boolean var3) {
-		int var5 = var2 ^ (var1 << 4 & 65535 | var1 >> 12);
-		var5 |= var1 << 16;
-		return var3 ? (long)var5 ^ 4294967296L : (long)var5;
 	}
 }

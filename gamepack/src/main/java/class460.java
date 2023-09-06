@@ -1,215 +1,114 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-@ObfInfo(name = "ha")
-public class class460 extends class180 {
-	@ObfInfo(name = "ae", desc = "Lnu;")
-	public static class437 field3729;
-	@ObfInfo(name = "au", desc = "Lnu;")
-	public static class437 field3742;
-	@ObfInfo(name = "ao", desc = "Lle;")
-	public static class7 field3730;
-	@ObfInfo(name = "at", desc = "Lle;")
-	public static class7 field3731;
-	@ObfInfo(name = "sl", desc = "Z")
-	static boolean field3735;
-	@ObfInfo(name = "aq", desc = "I", intMultiplier = 2044410789)
-	int field3728;
-	@ObfInfo(name = "ac", desc = "I", intMultiplier = 1143254317)
-	int field3732;
-	@ObfInfo(name = "ar", desc = "I", intMultiplier = 115934601)
-	int field3733;
-	@ObfInfo(name = "al", desc = "I", intMultiplier = 1484714697)
-	int field3740;
-	@ObfInfo(name = "an", desc = "I", intMultiplier = -1490600117)
-	int field3741;
-	@ObfInfo(name = "ab", desc = "I", intMultiplier = 472229573)
-	int field3743;
-	@ObfInfo(name = "ai", desc = "I", intMultiplier = 13212181)
-	int field3744;
-	@ObfInfo(name = "aa", desc = "[S")
-	short[] field3736;
-	@ObfInfo(name = "af", desc = "[S")
-	short[] field3737;
-	@ObfInfo(name = "ad", desc = "[S")
-	short[] field3738;
-	@ObfInfo(name = "ap", desc = "[S")
-	short[] field3739;
-	@ObfInfo(name = "az", desc = "I", intMultiplier = -1431367329)
-	public int field3734;
+public class class460 implements class367 {
+	public static final class460 field3977;
+	public static final class460 field3978;
+	public static final class460 field3979;
+	public static final class460 field3981;
+	public static final class460 field3983;
+	public static final class460 field3984;
+	final int field3980;
+	public final String field3982;
 
 	static {
-		field3730 = new class7(64);
-		field3731 = new class7(30);
+		field3983 = new class460("runescape", "RuneScape", 0);
+		field3977 = new class460("stellardawn", "Stellar Dawn", 1);
+		field3979 = new class460("game3", "Game 3", 2);
+		field3978 = new class460("game4", "Game 4", 3);
+		field3984 = new class460("game5", "Game 5", 4);
+		field3981 = new class460("oldscape", "RuneScape 2007", 5);
 	}
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class460() {
-		this.field3734 = -1;
-		this.field3728 = 128;
-		this.field3740 = 128;
-		this.field3741 = 0;
-		this.field3733 = 0;
-		this.field3743 = 0;
+	class460(String var1, String var2, int var3) {
+		this.field3982 = var1;
+		this.field3980 = var3;
 	}
 
-	@ObfInfo(name = "ae", desc = "(Ltm;B)V", opaqueValue = "2")
-	void method2391(class280 var1) {
-		while (true) {
-			int var3 = var1.method1492();
-			if (var3 == 0) {
-				return;
+	public int method1970() {
+		return this.field3980;
+	}
+
+	public static int method2267(CharSequence var0, CharSequence var1, class168 var2) {
+		int var4 = var0.length();
+		int var5 = var1.length();
+		int var6 = 0;
+		int var7 = 0;
+		char var8 = 0;
+		char var9 = 0;
+
+		while (var6 - var8 < var4 || var7 - var9 < var5) {
+			if (var6 - var8 >= var4) {
+				return -1;
 			}
 
-			this.method2388(var1, var3);
-		}
-	}
+			if (var7 - var9 >= var5) {
+				return 1;
+			}
 
-	@ObfInfo(name = "ao", desc = "(Ltm;IB)V", opaqueValue = "27")
-	void method2388(class280 var1, int var2) {
-		if (var2 == 1) {
-			this.field3744 = var1.method1541();
-		} else if (var2 == 2) {
-			this.field3734 = var1.method1541();
-		} else if (var2 == 4) {
-			this.field3728 = var1.method1541();
-		} else if (var2 == 5) {
-			this.field3740 = var1.method1541();
-		} else if (var2 == 6) {
-			this.field3741 = var1.method1541();
-		} else if (var2 == 7) {
-			this.field3733 = var1.method1492();
-		} else if (var2 == 8) {
-			this.field3743 = var1.method1492();
+			char var10;
+			if (var8 != 0) {
+				var10 = var8;
+				boolean var15 = false;
+			} else {
+				var10 = var0.charAt(var6++);
+			}
+
+			char var11;
+			if (var9 != 0) {
+				var11 = var9;
+				boolean var16 = false;
+			} else {
+				var11 = var1.charAt(var7++);
+			}
+
+			var8 = class288.method1657(var10);
+			var9 = class288.method1657(var11);
+			var10 = class363.method1963(var10, var2);
+			var11 = class363.method1963(var11, var2);
+			if (var11 != var10 && Character.toUpperCase(var10) != Character.toUpperCase(var11)) {
+				var10 = Character.toLowerCase(var10);
+				var11 = Character.toLowerCase(var11);
+				if (var10 != var11) {
+					return class488.method2403(var10, var2) - class488.method2403(var11, var2);
+				}
+			}
+		}
+
+		int var17 = Math.min(var4, var5);
+
+		char var13;
+		int var18;
+		for (var18 = 0; var18 < var17; ++var18) {
+			if (class168.field1630 == var2) {
+				var6 = var4 - 1 - var18;
+				var7 = var5 - 1 - var18;
+			} else {
+				var7 = var18;
+				var6 = var18;
+			}
+
+			char var12 = var0.charAt(var6);
+			var13 = var1.charAt(var7);
+			if (var13 != var12 && Character.toUpperCase(var12) != Character.toUpperCase(var13)) {
+				var12 = Character.toLowerCase(var12);
+				var13 = Character.toLowerCase(var13);
+				if (var12 != var13) {
+					return class488.method2403(var12, var2) - class488.method2403(var13, var2);
+				}
+			}
+		}
+
+		var18 = var4 - var5;
+		if (var18 != 0) {
+			return var18;
 		} else {
-			int var4;
-			int var5;
-			if (var2 == 40) {
-				var4 = var1.method1492();
-				this.field3739 = new short[var4];
-				this.field3736 = new short[var4];
-
-				for (var5 = 0; var5 < var4; ++var5) {
-					this.field3739[var5] = (short)var1.method1541();
-					this.field3736[var5] = (short)var1.method1541();
-				}
-			} else if (var2 == 41) {
-				var4 = var1.method1492();
-				this.field3737 = new short[var4];
-				this.field3738 = new short[var4];
-
-				for (var5 = 0; var5 < var4; ++var5) {
-					this.field3737[var5] = (short)var1.method1541();
-					this.field3738[var5] = (short)var1.method1541();
-				}
-			}
-		}
-
-	}
-
-	@ObfInfo(name = "at", desc = "(II)Ljr;", opaqueValue = "-359824266")
-	public final class384 method2389(int var1) {
-		class384 var3 = this.method2390();
-		class384 var4;
-		if (this.field3734 != -1 && var1 != -1) {
-			var4 = class202.method1149(this.field3734).method1141(var3, var1);
-		} else {
-			var4 = var3.method2071(true);
-		}
-
-		if (this.field3728 != 128 || this.field3740 != 128) {
-			var4.method2058(this.field3728, this.field3740, this.field3728);
-		}
-
-		if (this.field3741 != 0) {
-			if (this.field3741 == 90) {
-				var4.method2055();
-			}
-
-			if (this.field3741 == 180) {
-				var4.method2055();
-				var4.method2055();
-			}
-
-			if (this.field3741 == 270) {
-				var4.method2055();
-				var4.method2055();
-				var4.method2055();
-			}
-		}
-
-		return var4;
-	}
-
-	@ObfInfo(name = "ac", desc = "(B)Ljr;", opaqueValue = "11")
-	public final class384 method2390() {
-		class384 var2 = (class384)field3731.method294((long)this.field3732);
-		if (null == var2) {
-			class445 var3 = class445.method2341(field3729, this.field3744, 0);
-			if (var3 == null) {
-				return null;
-			}
-
-			int var4;
-			if (null != this.field3739) {
-				for (var4 = 0; var4 < this.field3739.length; ++var4) {
-					var3.method2340(this.field3739[var4], this.field3736[var4]);
+			for (int var19 = 0; var19 < var17; ++var19) {
+				var13 = var0.charAt(var19);
+				char var14 = var1.charAt(var19);
+				if (var14 != var13) {
+					return class488.method2403(var13, var2) - class488.method2403(var14, var2);
 				}
 			}
 
-			if (this.field3737 != null) {
-				for (var4 = 0; var4 < this.field3737.length; ++var4) {
-					var3.method2331(this.field3737[var4], this.field3738[var4]);
-				}
-			}
-
-			var2 = var3.method2337(64 + this.field3733, 850 + this.field3743, -30, -50, -30);
-			field3731.method293(var2, (long)this.field3732);
+			return 0;
 		}
-
-		return var2;
-	}
-
-	@ObfInfo(name = "au", desc = "(IS)Lha;")
-	public static class460 method2393(int var0) {
-		class460 var2 = (class460)field3730.method294((long)var0);
-		if (var2 != null) {
-			return var2;
-		} else {
-			byte[] var3 = field3742.method2267(13, var0);
-			var2 = new class460();
-			var2.field3732 = var0;
-			if (var3 != null) {
-				var2.method2391(new class280(var3));
-			}
-
-			field3730.method293(var2, (long)var0);
-			return var2;
-		}
-	}
-
-	@ObfInfo(name = "aa", desc = "(I)Ljava/util/Date;", opaqueValue = "188290060")
-	static Date method2392() throws ParseException {
-		SimpleDateFormat var1 = new SimpleDateFormat("ddMMyyyyHH", Locale.ENGLISH);
-		var1.setLenient(false);
-		StringBuilder var2 = new StringBuilder();
-		String[] var3 = class162.field1539;
-
-		for (int var4 = 0; var4 < var3.length; ++var4) {
-			String var5 = var3[var4];
-			if (var5 == null) {
-				class162.method924(7);
-				class162.method936("Date not valid.", "Please ensure all characters are populated.", "");
-				return null;
-			}
-
-			var2.append(var5);
-		}
-
-		var2.append("12");
-		return var1.parse(var2.toString());
 	}
 }

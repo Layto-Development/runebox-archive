@@ -21,6 +21,7 @@ fun ClassNode.remap(remapper: Remapper) {
     signature = remapper.mapSignature(signature, false)
     superName = remapper.mapType(superName)
     interfaces = interfaces?.map(remapper::mapType)
+    sourceFile = "$name.java"
 
     val origOuterClass = outerClass
     outerClass = remapper.mapType(origOuterClass)

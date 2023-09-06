@@ -1,20 +1,38 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class47 {
+	static int field542;
+	static int field544;
+	int field543;
+	int field545;
 
-@ObfInfo(name = "qg")
-public class class47 extends class205 {
-	@ObfInfo(name = "la", desc = "I", intMultiplier = 175102541)
-	static int field566;
-	@ObfInfo(name = "ae", desc = "Luc;")
-	public class353 field564;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = -508388215)
-	public int field567;
-	@ObfInfo(name = "ao", desc = "S")
-	public short field565;
+	class47(int var1, int var2) {
+		this.field545 = var1;
+		this.field543 = var2;
+	}
 
-	@ObfInfo(name = "<init>", desc = "(Luc;I)V")
-	class47(class353 var1, int var2) {
-		this.field567 = (int)(class43.method443() / 1000L);
-		this.field564 = var1;
-		this.field565 = (short)var2;
+	boolean method351(class68 var1) {
+		if (null == var1) {
+			return false;
+		} else {
+			switch(this.field545) {
+			case 1:
+				return var1.method498(this.field543);
+			case 2:
+				return var1.method496(this.field543);
+			case 3:
+				return var1.method497((char)this.field543);
+			case 4:
+				return var1.method499(this.field543 == 1);
+			default:
+				return false;
+			}
+		}
+	}
+
+	static final int method352(int var0, int var1, int var2, int var3) {
+		return var2 * var0 + var1 * var3 >> 16;
+	}
+
+	static class445 method350(int var0) {
+		return (class445)class41.field521.method2543((long)var0);
 	}
 }

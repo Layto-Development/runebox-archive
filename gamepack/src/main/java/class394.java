@@ -1,37 +1,54 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "um")
-public class class394 implements class425 {
-	@ObfInfo(name = "au", desc = "Lum;")
-	public static final class394 field3048;
-	@ObfInfo(name = "ae", desc = "Lum;")
-	static final class394 field3046;
-	@ObfInfo(name = "ao", desc = "Lum;")
-	static final class394 field3049;
-	@ObfInfo(name = "ac", desc = "I", intMultiplier = 1910869001)
-	final int field3047;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 2077273167)
-	public final int field3045;
+public class class394 implements class367 {
+	public static final class394 field3312;
+	public static final class394 field3313;
+	public static final class394 field3314;
+	public static final class394 field3317;
+	static byte[][][] field3316;
+	public byte field3315;
 
 	static {
-		field3048 = new class394(0, 0);
-		field3046 = new class394(1, 1);
-		field3049 = new class394(2, 2);
+		field3312 = new class394((byte)-1);
+		field3313 = new class394((byte)0);
+		field3317 = new class394((byte)1);
+		field3314 = new class394((byte)2);
 	}
 
-	@ObfInfo(name = "<init>", desc = "(II)V")
-	class394(int var1, int var2) {
-		this.field3045 = var1;
-		this.field3047 = var2;
+	class394(byte var1) {
+		this.field3315 = var1;
 	}
 
-	@ObfInfo(name = "ae", desc = "(B)I")
-	public int method2222() {
-		return this.field3047;
+	public int method1970() {
+		return this.field3315;
 	}
 
-	@ObfInfo(name = "au", desc = "(B)[Lum;")
-	public static class394[] method2093() {
-		return new class394[]{field3046, field3049, field3048};
+	static String method2064(int var0) {
+		return "<col=" + Integer.toHexString(var0) + ">";
+	}
+
+	public static int method2067(int var0) {
+		return (var0 & class125.field1167) - 1;
+	}
+
+	static void method2066(int var0) {
+		if (var0 != -1) {
+			if (class292.method1669(var0)) {
+				class60[] var2 = class160.field1484[var0];
+
+				for (int var3 = 0; var3 < var2.length; ++var3) {
+					class60 var4 = var2[var3];
+					if (null != var4.field728) {
+						class309 var5 = new class309();
+						var5.field2791 = var4;
+						var5.field2794 = var4.field728;
+						class102.method670(var5, 5000000, 0);
+					}
+				}
+
+			}
+		}
+	}
+
+	static Object method2065(int var0) {
+		return class439.method2210((class140)class451.method2249(class140.method841(), var0));
 	}
 }

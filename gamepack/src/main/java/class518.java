@@ -1,34 +1,41 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class518 extends class218 {
+	static String field4224;
 
-@ObfInfo(name = "gn")
-public abstract class class518 {
-	@ObfInfo(name = "at", desc = "Ljava/lang/String;")
-	String field4148;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lgf;")
-	final class371 this$0;
-
-	@ObfInfo(name = "<init>", desc = "(Lgf;Ljava/lang/String;)V")
-	class518(class371 var1, String var2) {
-		this.this$0 = var1;
-		this.field4148 = var2;
+	static {
+		new class344(64);
 	}
 
-	@ObfInfo(name = "au", desc = "(B)I")
-	public abstract int method2541();
-
-	@ObfInfo(name = "al", desc = "(I)Ljava/lang/String;")
-	public String method2538() {
-		return this.field4148;
+	class518() throws Throwable {
 	}
 
-	@ObfInfo(name = "ae", desc = "(I)Ljava/lang/String;")
-	public String method2539() {
-		return null;
+	public static boolean method2526(char var0) {
+		return var0 >= 'A' && var0 <= 'Z' || var0 >= 'a' && var0 <= 'z';
 	}
 
-	@ObfInfo(name = "af", desc = "(I)I")
-	public int method2540() {
-		return -1;
+	static void method2525(boolean var0) {
+		if (var0) {
+			class312.method1747();
+		} else {
+			for (int var2 = 0; var2 < class92.field903.size(); ++var2) {
+				class104 var3 = (class104)class92.field903.get(var2);
+				if (var3 == null) {
+					class92.field903.remove(var2);
+					--var2;
+				} else if (var3.field1034) {
+					if (var3.field1032.field431 > 0) {
+						--var3.field1032.field431;
+					}
+
+					var3.field1032.method168();
+					var3.field1032.method166();
+					var3.field1032.method130(0);
+					class92.field903.remove(var2);
+					--var2;
+				} else {
+					var3.field1034 = true;
+				}
+			}
+		}
+
 	}
 }

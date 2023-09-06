@@ -1,79 +1,26 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.awt.FontMetrics;
-
-@ObfInfo(name = "da")
 public class class447 {
-	@ObfInfo(name = "dt", desc = "Luk;")
-	static class398 field3385;
-	@ObfInfo(name = "bk", desc = "Ljava/awt/FontMetrics;")
-	static FontMetrics field3384;
+	static int[] field3937;
+	int[] field3932;
+	short[] field3933;
+	short[] field3935;
+	public boolean field3936;
+	public long field3934;
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class447() throws Throwable {
+	public class447(long var1, int[] var3, short[] var4, short[] var5, boolean var6) {
+		this.field3936 = false;
+		this.field3934 = var1;
+		this.field3932 = var3;
+		this.field3933 = var4;
+		this.field3935 = var5;
+		this.field3936 = var6;
 	}
 
-	@ObfInfo(name = "ir", desc = "(Ljava/lang/String;B)V", opaqueValue = "0")
-	static final void method2351(String var0) {
-		if (var0.equalsIgnoreCase("toggleroof")) {
-			class281.field2262.method1744(!class281.field2262.method1745());
-			if (class281.field2262.method1745()) {
-				class159.method914(99, "", "Roofs are now all hidden");
-			} else {
-				class159.method914(99, "", "Roofs will only be removed selectively");
-			}
-		}
+	public static int method2236(int var0) {
+		return var0 >>> 4 & class125.field1168;
+	}
 
-		if (var0.startsWith("zbuf")) {
-			boolean var2 = class455.method2372(var0.substring(5).trim()) == 1;
-			class51.field585.method1894(var2);
-			class276.method1454(var2);
-		}
-
-		if (var0.equalsIgnoreCase("z")) {
-			Client.field91 = !Client.field91;
-		}
-
-		if (var0.equalsIgnoreCase("displayfps")) {
-			class281.field2262.method1748();
-		}
-
-		if (var0.equalsIgnoreCase("renderself")) {
-			Client.field265 = !Client.field265;
-		}
-
-		if (var0.equalsIgnoreCase("mouseovertext")) {
-			Client.field187 = !Client.field187;
-		}
-
-		if (Client.field115 >= 2) {
-			if (var0.equalsIgnoreCase("errortest")) {
-				throw new RuntimeException();
-			}
-
-			if (var0.equalsIgnoreCase("showcoord")) {
-				class34.field483.field2015 = !class34.field483.field2015;
-			}
-
-			if (var0.equalsIgnoreCase("fpson")) {
-				class281.field2262.method1747(true);
-			}
-
-			if (var0.equalsIgnoreCase("fpsoff")) {
-				class281.field2262.method1747(false);
-			}
-
-			if (var0.equalsIgnoreCase("gc")) {
-				System.gc();
-			}
-
-			if (var0.equalsIgnoreCase("clientdrop")) {
-				Client.method214();
-			}
-		}
-
-		class121 var3 = class121.method689(class480.field3910, Client.field92.field2665);
-		var3.field1141.method1481(var0.length() + 1);
-		var3.field1141.method1484(var0);
-		Client.field92.method1821(var3);
+	static int method2235(class60 var0) {
+		class380 var2 = (class380)Client.field222.method1492((long)var0.field763 + ((long)var0.field644 << 32));
+		return var2 != null ? var2.field3226 : var0.field715;
 	}
 }

@@ -10,6 +10,8 @@ dependencies {
     implementation(project(":runebox-eventbus"))
     implementation("com.formdev:flatlaf:_")
     implementation("com.formdev:flatlaf-intellij-themes:_")
+    implementation("org.bouncycastle:bcprov-jdk15on:1.52")
+    implementation("org.json:json:20220320")
 }
 
 tasks {

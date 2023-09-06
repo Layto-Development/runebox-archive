@@ -1,37 +1,35 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public final class class142 implements Comparable {
+	Object field1363;
+	Object field1364;
+	long field1365;
+	long field1366;
 
-@ObfInfo(name = "fq")
-public class class142 extends class313 {
-	@ObfInfo(name = "aq", desc = "[[S")
-	public static short[][] field1430;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = -947832085)
-	int field1427;
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = -1547450271)
-	int field1428;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = 1568997835)
-	int field1429;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = -20381335)
-	int field1431;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lfn;")
-	final class220 this$0;
-
-	@ObfInfo(name = "<init>", desc = "(Lfn;)V")
-	class142(class220 var1) {
-		this.this$0 = var1;
-		this.field1429 = -1;
+	class142(Object var1, Object var2) {
+		this.field1363 = var1;
+		this.field1364 = var2;
 	}
 
-	@ObfInfo(name = "au", desc = "(Ltm;I)V")
-	void method1731(class280 var1) {
-		this.field1429 = var1.method1541();
-		this.field1428 = var1.method1496();
-		this.field1431 = var1.method1492();
-		this.field1427 = var1.method1492();
+	int method843(class142 var1) {
+		if (this.field1366 < var1.field1366) {
+			return -1;
+		} else {
+			return this.field1366 > var1.field1366 ? 1 : 0;
+		}
 	}
 
-	@ObfInfo(name = "ae", desc = "(Lfi;B)V")
-	void method1730(class291 var1) {
-		var1.method1598(this.field1429, this.field1428, this.field1431, this.field1427);
+	public boolean equals(Object var1) {
+		if (var1 instanceof class142) {
+			return this.field1364.equals(((class142)var1).field1364);
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
+
+	public int hashCode() {
+		return this.field1364.hashCode();
+	}
+
+	public int compareTo(Object var1) {
+		return this.method843((class142)var1);
 	}
 }

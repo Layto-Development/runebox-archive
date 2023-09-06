@@ -1,34 +1,32 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.Comparator;
+import java.util.zip.Inflater;
 
-@ObfInfo(name = "qz")
-public abstract class class381 implements Comparator {
-	@ObfInfo(name = "tk", desc = "Lui;")
-	static class150 field2929;
-	@ObfInfo(name = "ae", desc = "Ljava/util/Comparator;")
-	Comparator field2930;
+public class class381 {
+	Inflater field3227;
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	protected class381() {
+	public class381() {
+		this(-1, 1000000, 1000000);
 	}
 
-	@ObfInfo(name = "aa", desc = "(Ljava/util/Comparator;I)V", opaqueValue = "-2038221000")
-	final void method2030(Comparator var1) {
-		if (this.field2930 == null) {
-			this.field2930 = var1;
-		} else if (this.field2930 instanceof class381) {
-			((class381)this.field2930).method2030(var1);
+	class381(int var1, int var2, int var3) {
+	}
+
+	public void method2037(class42 var1, byte[] var2) {
+		if (var1.field525[var1.field527] == 31 && var1.field525[1 + var1.field527] == -117) {
+			if (null == this.field3227) {
+				this.field3227 = new Inflater(true);
+			}
+
+			try {
+				this.field3227.setInput(var1.field525, var1.field527 + 10, var1.field525.length - (8 + var1.field527 + 10));
+				this.field3227.inflate(var2);
+			} catch (Exception var5) {
+				this.field3227.reset();
+				throw new RuntimeException("");
+			}
+
+			this.field3227.reset();
+		} else {
+			throw new RuntimeException("");
 		}
-
-	}
-
-	@ObfInfo(name = "af", desc = "(Lqs;Lqs;I)I", opaqueValue = "1529858790")
-	protected final int method2031(class179 var1, class179 var2) {
-		return this.field2930 == null ? 0 : this.field2930.compare(var1, var2);
-	}
-
-	@ObfInfo(name = "equals", desc = "(Ljava/lang/Object;)Z")
-	public boolean equals(Object var1) {
-		return super.equals(var1);
 	}
 }

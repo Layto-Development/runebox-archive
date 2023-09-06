@@ -1,69 +1,56 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.io.UnsupportedEncodingException;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+public abstract class class531 implements class438 {
+	class140 field4267;
 
-@ObfInfo(name = "rl")
-public class class531 implements class167 {
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 608843781)
-	public static int field4238;
-	@ObfInfo(name = "ae", desc = "Lorg/json/JSONObject;")
-	JSONObject field4237;
-
-	@ObfInfo(name = "<init>", desc = "(Lorg/json/JSONObject;)V")
-	public class531(JSONObject var1) {
-		this.field4237 = var1;
+	class531(int var1) {
 	}
 
-	@ObfInfo(name = "<init>", desc = "(Ljava/lang/String;)V")
-	public class531(String var1) throws UnsupportedEncodingException {
-		this.method2577(var1);
-	}
+	abstract void method2562(class42 var1, int var2);
 
-	@ObfInfo(name = "<init>", desc = "([B)V")
-	public class531(byte[] var1) throws UnsupportedEncodingException {
-		this.method2579(var1);
-	}
-
-	@ObfInfo(name = "au", desc = "(I)Lre;")
-	public class329 method949() {
-		return class329.field2630;
-	}
-
-	@ObfInfo(name = "ai", desc = "([BB)V")
-	void method2579(byte[] var1) throws UnsupportedEncodingException {
-		String var3 = new String(var1, "UTF-8");
-		this.method2577(var3);
-	}
-
-	@ObfInfo(name = "az", desc = "(Ljava/lang/String;B)V", opaqueValue = "0")
-	void method2577(String var1) throws UnsupportedEncodingException {
-		try {
-			if (var1.charAt(0) == '{') {
-				this.field4237 = new JSONObject(var1);
-			} else {
-				if (var1.charAt(0) != '[') {
-					throw new UnsupportedEncodingException("Invalid JSON passed to the JSON content builder.");
-				}
-
-				JSONArray var3 = new JSONArray(var1);
-				this.field4237 = new JSONObject();
-				this.field4237.put("arrayValues", var3);
+	public void method2561(class42 var1) {
+		while (true) {
+			int var3 = var1.method278();
+			if (var3 == 0) {
+				return;
 			}
 
-		} catch (JSONException var4) {
-			throw new UnsupportedEncodingException(var4.getMessage());
+			class468 var4 = (class468)class451.method2249(class330.method1844(), var3);
+			if (var4 != null) {
+				switch(var4.field4009) {
+				case 0:
+					int var5 = var1.method278();
+					this.field4267 = class393.method2063(var5);
+					if (this.field4267 != null) {
+						break;
+					}
+
+					throw new IllegalStateException("Unknown ScriptVarType ID in VarType.decode: " + var5);
+				case 1:
+					var1.method328();
+					break;
+				case 2:
+					class11[] var6 = new class11[]{class11.field363, class11.field360, class11.field361, class11.field359};
+					class451.method2249(var6, var1.method278());
+					break;
+				default:
+					throw new IllegalStateException("Unrecognised VarTypeEncodingKey - " + var4);
+				}
+			} else {
+				this.method2562(var1, var3);
+			}
 		}
 	}
 
-	@ObfInfo(name = "ap", desc = "(B)Lorg/json/JSONObject;")
-	public JSONObject method2578() {
-		return this.field4237;
+	boolean method2564() {
+		return this.field4267 != null;
 	}
 
-	@ObfInfo(name = "ae", desc = "(I)[B", opaqueValue = "-1606678601")
-	public byte[] method948() throws UnsupportedEncodingException {
-		return this.field4237 == null ? new byte[0] : this.field4237.toString().getBytes("UTF-8");
+	Object method2563() {
+		if (class140.field1352 == this.field4267) {
+			return 0;
+		} else if (class140.field1353 == this.field4267) {
+			return -1L;
+		} else {
+			return class140.field1347 == this.field4267 ? "" : null;
+		}
 	}
 }

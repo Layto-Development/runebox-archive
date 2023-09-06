@@ -1,52 +1,68 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.net.URL;
 
-@ObfInfo(name = "fb")
-public class class98 implements class425 {
-	@ObfInfo(name = "ix", desc = "I", intMultiplier = 1742355953)
-	static int field979;
-	@ObfInfo(name = "az", desc = "Lfb;")
-	static final class98 field968;
-	@ObfInfo(name = "ae", desc = "Lfb;")
-	static final class98 field969;
-	@ObfInfo(name = "ao", desc = "Lfb;")
-	static final class98 field970;
-	@ObfInfo(name = "au", desc = "Lfb;")
-	static final class98 field971;
-	@ObfInfo(name = "ac", desc = "Lfb;")
-	static final class98 field972;
-	@ObfInfo(name = "ai", desc = "Lfb;")
-	static final class98 field973;
-	@ObfInfo(name = "at", desc = "Lfb;")
-	static final class98 field974;
-	@ObfInfo(name = "ap", desc = "Lfb;")
-	static final class98 field975;
-	@ObfInfo(name = "aa", desc = "Lfb;")
-	static final class98 field976;
-	@ObfInfo(name = "af", desc = "I", intMultiplier = 360150709)
-	final int field977;
-	@ObfInfo(name = "ad", desc = "I", intMultiplier = 1042578959)
-	final int field978;
+public class class98 {
+	static int field988;
+	static int field993;
+	static long field994;
+	class98 field992;
+	float field987;
+	float field989;
+	float field990;
+	float field991;
+	float field995;
+	int field986;
 
-	static {
-		field971 = new class98(0, 0);
-		field969 = new class98(1, 1);
-		field970 = new class98(2, 2);
-		field974 = new class98(3, 3);
-		field972 = new class98(4, 4);
-		field973 = new class98(5, 5);
-		field968 = new class98(6, 6);
-		field975 = new class98(7, 7);
-		field976 = new class98(8, 8);
+	class98() {
+		this.field995 = Float.MAX_VALUE;
+		this.field987 = Float.MAX_VALUE;
+		this.field990 = Float.MAX_VALUE;
+		this.field991 = Float.MAX_VALUE;
 	}
 
-	@ObfInfo(name = "<init>", desc = "(II)V")
-	class98(int var1, int var2) {
-		this.field977 = var1;
-		this.field978 = var2;
+	void method645(class42 var1, int var2) {
+		this.field986 = var1.method280();
+		this.field989 = var1.method284();
+		this.field995 = var1.method284();
+		this.field987 = var1.method284();
+		this.field990 = var1.method284();
+		this.field991 = var1.method284();
 	}
 
-	@ObfInfo(name = "ae", desc = "(B)I")
-	public int method2222() {
-		return this.field978;
+	static boolean method647() {
+		try {
+			if (class467.field4008 == null) {
+				class467.field4008 = class136.field1326.method1684(new URL(class518.field4224));
+			} else if (class467.field4008.method1916()) {
+				byte[] var1 = class467.field4008.method1918();
+				class42 var2 = new class42(var1);
+				var2.method282();
+				class12.field369 = var2.method327();
+				class225.field2044 = new class12[class12.field369];
+
+				class12 var4;
+				for (int var3 = 0; var3 < class12.field369; var4.field374 = var3++) {
+					var4 = class225.field2044[var3] = new class12();
+					var4.field368 = var2.method327();
+					var4.field364 = var2.method282();
+					var4.field371 = var2.method286();
+					var4.field372 = var2.method286();
+					var4.field373 = var2.method278();
+					var4.field370 = var2.method280();
+				}
+
+				class172.method978(class225.field2044, 0, class225.field2044.length - 1, class12.field367, class12.field366);
+				class467.field4008 = null;
+				return true;
+			}
+		} catch (Exception var5) {
+			var5.printStackTrace();
+			class467.field4008 = null;
+		}
+
+		return false;
+	}
+
+	public static synchronized byte[] method646(int var0) {
+		return class312.method1748(var0, false);
 	}
 }

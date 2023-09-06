@@ -1,71 +1,87 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.concurrent.Future;
+import java.util.Iterator;
 
-@ObfInfo(name = "ax")
-public class class282 {
-	@ObfInfo(name = "ba", desc = "Ljava/lang/String;")
-	protected static String field2263;
-	@ObfInfo(name = "vg", desc = "Lsm;")
-	static class521 field2265;
-	@ObfInfo(name = "ae", desc = "Ljava/lang/String;")
-	String field2264;
-	@ObfInfo(name = "au", desc = "Ljava/util/concurrent/Future;")
-	Future field2266;
+public class class282 implements Iterable {
+	class218 field2508;
+	public class218 field2509;
 
-	@ObfInfo(name = "<init>", desc = "(Ljava/util/concurrent/Future;)V")
-	class282(Future var1) {
-		this.field2266 = var1;
+	public class282() {
+		this.field2509 = new class218();
+		this.field2509.field2029 = this.field2509;
+		this.field2509.field2030 = this.field2509;
 	}
 
-	@ObfInfo(name = "<init>", desc = "(Ljava/lang/String;)V")
-	class282(String var1) {
-		this.method1563(var1);
-	}
-
-	@ObfInfo(name = "au", desc = "(Ljava/lang/String;I)V", opaqueValue = "-1361517715")
-	void method1563(String var1) {
-		if (null == var1) {
-			var1 = "";
-		}
-
-		this.field2264 = var1;
-		if (null != this.field2266) {
-			this.field2266.cancel(true);
-			this.field2266 = null;
+	public void method1607() {
+		while (this.field2509.field2029 != this.field2509) {
+			this.field2509.field2029.method1252();
 		}
 
 	}
 
-	@ObfInfo(name = "ae", desc = "(I)Ljava/lang/String;")
-	public final String method1567() {
-		return this.field2264;
+	public void method1601(class218 var1) {
+		if (var1.field2030 != null) {
+			var1.method1252();
+		}
+
+		var1.field2030 = this.field2509.field2030;
+		var1.field2029 = this.field2509;
+		var1.field2030.field2029 = var1;
+		var1.field2029.field2030 = var1;
 	}
 
-	@ObfInfo(name = "ao", desc = "(I)Z", opaqueValue = "-1247601864")
-	public boolean method1565() {
-		return null != this.field2264 || this.field2266 == null;
-	}
-
-	@ObfInfo(name = "at", desc = "(B)Z", opaqueValue = "1")
-	public final boolean method1564() {
-		return this.method1565() ? true : this.field2266.isDone();
-	}
-
-	@ObfInfo(name = "ac", desc = "(I)Las;", opaqueValue = "-47538599")
-	public final class403 method1566() {
-		if (this.method1565()) {
-			return new class403(this.field2264);
-		} else if (!this.method1564()) {
+	public class218 method1603() {
+		class218 var1 = this.field2509.field2029;
+		if (var1 == this.field2509) {
 			return null;
 		} else {
-			try {
-				return (class403)this.field2266.get();
-			} catch (Exception var4) {
-				String var3 = "Error retrieving REST request reply";
-				System.err.println(var3 + "\r\n" + var4);
-				this.method1563(var3);
-				return new class403(var3);
-			}
+			var1.method1252();
+			return var1;
 		}
+	}
+
+	public class218 method1604() {
+		return this.method1605((class218)null);
+	}
+
+	class218 method1605(class218 var1) {
+		class218 var2;
+		if (var1 == null) {
+			var2 = this.field2509.field2029;
+		} else {
+			var2 = var1;
+		}
+
+		if (var2 == this.field2509) {
+			this.field2508 = null;
+			return null;
+		} else {
+			this.field2508 = var2.field2029;
+			return var2;
+		}
+	}
+
+	public class218 method1606() {
+		class218 var1 = this.field2508;
+		if (var1 == this.field2509) {
+			this.field2508 = null;
+			return null;
+		} else {
+			this.field2508 = var1.field2029;
+			return var1;
+		}
+	}
+
+	public Iterator iterator() {
+		return new class276(this);
+	}
+
+	public static void method1602(class218 var0, class218 var1) {
+		if (var0.field2030 != null) {
+			var0.method1252();
+		}
+
+		var0.field2030 = var1;
+		var0.field2029 = var1.field2029;
+		var0.field2030.field2029 = var0;
+		var0.field2029.field2030 = var0;
 	}
 }

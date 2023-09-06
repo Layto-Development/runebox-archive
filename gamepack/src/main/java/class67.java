@@ -1,94 +1,142 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.Locale;
-
-@ObfInfo(name = "on")
-@class103
-public class class67 implements class425 {
-	@ObfInfo(name = "bv", desc = "Lnu;")
-	public static class437 field760;
-	@ObfInfo(name = "ao", desc = "Lon;")
-	public static final class67 field759;
-	@ObfInfo(name = "ai", desc = "Lon;")
-	public static final class67 field762;
-	@ObfInfo(name = "au", desc = "Lon;")
-	public static final class67 field765;
-	@ObfInfo(name = "cs", desc = "Lsl;")
-	static class187 field769;
-	@ObfInfo(name = "ac", desc = "Lon;")
-	static final class67 field758;
-	@ObfInfo(name = "az", desc = "Lon;")
-	static final class67 field763;
-	@ObfInfo(name = "at", desc = "Lon;")
-	static final class67 field768;
-	@ObfInfo(name = "ae", desc = "Lon;")
-	static final class67 field770;
-	@ObfInfo(name = "ad", desc = "[Lon;")
-	static final class67[] field767;
-	@ObfInfo(name = "af", desc = "I", intMultiplier = 459816573)
-	final int field766;
-	@ObfInfo(name = "aa", desc = "Ljava/lang/String;")
-	final String field761;
-	@ObfInfo(name = "ap", desc = "Ljava/lang/String;")
-	final String field764;
+public class class67 extends class218 {
+	static class344 field810;
+	public int field809;
 
 	static {
-		field765 = new class67("EN", "en", "English", class515.field4115, 0, "GB");
-		field770 = new class67("DE", "de", "German", class515.field4115, 1, "DE");
-		field759 = new class67("FR", "fr", "French", class515.field4115, 2, "FR");
-		field768 = new class67("PT", "pt", "Portuguese", class515.field4115, 3, "BR");
-		field758 = new class67("NL", "nl", "Dutch", class515.field4127, 4, "NL");
-		field762 = new class67("ES", "es", "Spanish", class515.field4127, 5, "ES");
-		field763 = new class67("ES_MX", "es-mx", "Spanish (Latin American)", class515.field4115, 6, "MX");
-		class67[] var0 = method500();
-		field767 = new class67[var0.length];
-		class67[] var1 = var0;
+		field810 = new class344(64);
+	}
 
-		for (int var2 = 0; var2 < var1.length; ++var2) {
-			class67 var3 = var1[var2];
-			if (field767[var3.field766] != null) {
-				throw new IllegalStateException();
+	class67() {
+		this.field809 = 0;
+	}
+
+	void method489(class42 var1) {
+		while (true) {
+			int var3 = var1.method278();
+			if (var3 == 0) {
+				return;
 			}
 
-			field767[var3.field766] = var3;
+			this.method490(var1, var3);
+		}
+	}
+
+	void method490(class42 var1, int var2) {
+		if (var2 == 2) {
+			this.field809 = var1.method327();
 		}
 
 	}
 
-	@ObfInfo(name = "<init>", desc = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Loe;ILjava/lang/String;)V")
-	class67(String var1, String var2, String var3, class515 var4, int var5, String var6) {
-		this.field764 = var1;
-		this.field761 = var2;
-		this.field766 = var5;
-		if (var6 != null) {
-			new Locale(var2.substring(0, 2), var6);
+	public static int method495(CharSequence var0) {
+		int var2 = var0.length();
+		int var3 = 0;
+
+		for (int var4 = 0; var4 < var2; ++var4) {
+			char var5 = var0.charAt(var4);
+			if (var5 <= 127) {
+				++var3;
+			} else if (var5 <= 2047) {
+				var3 += 2;
+			} else {
+				var3 += 3;
+			}
+		}
+
+		return var3;
+	}
+
+	public static int method493(int var0, int var1, int var2) {
+		int var4 = class443.method2222(var2 - var1 + 1);
+		var4 <<= var1;
+		return var0 & ~var4;
+	}
+
+	public static int method491(long var0) {
+		return (int)(var0 >>> 17 & 4294967295L);
+	}
+
+	public static class210 method492(int var0) {
+		class210 var2 = (class210)class210.field1935.method1890((long)var0);
+		if (var2 != null) {
+			return var2;
 		} else {
-			new Locale(var2.substring(0, 2));
+			byte[] var3 = class389.field3271.method1212(10, var0);
+			var2 = new class210();
+			var2.field1938 = var0;
+			if (null != var3) {
+				var2.method1184(new class42(var3));
+			}
+
+			var2.method1196();
+			if (var2.field1945 != -1) {
+				var2.method1181(method492(var2.field1945), method492(var2.field1972));
+			}
+
+			if (var2.field1966 != -1) {
+				var2.method1195(method492(var2.field1966), method492(var2.field1958));
+			}
+
+			if (var2.field1985 != -1) {
+				var2.method1183(method492(var2.field1985), method492(var2.field1944));
+			}
+
+			if (!class210.field1934 && var2.field1942) {
+				if (var2.field1945 == -1 && var2.field1966 == -1 && var2.field1985 == -1) {
+					var2.field1954 = var2.field1954 + class433.field3769;
+				}
+
+				var2.field1982 = false;
+
+				int var4;
+				for (var4 = 0; var4 < var2.field1955.length; ++var4) {
+					var2.field1955[var4] = null;
+				}
+
+				for (var4 = 0; var4 < var2.field1956.length; ++var4) {
+					if (var4 != 4) {
+						var2.field1956[var4] = null;
+					}
+				}
+
+				var2.field1957 = -2;
+				var2.field1979 = 0;
+				if (null != var2.field1981) {
+					boolean var7 = false;
+
+					for (class462 var5 = var2.field1981.method2545(); var5 != null; var5 = var2.field1981.method2546()) {
+						class425 var6 = class30.method216((int)var5.field3987);
+						if (var6.field3517) {
+							var5.method2269();
+						} else {
+							var7 = true;
+						}
+					}
+
+					if (!var7) {
+						var2.field1981 = null;
+					}
+				}
+			}
+
+			class210.field1935.method1889(var2, (long)var0);
+			return var2;
 		}
-
 	}
 
-	@ObfInfo(name = "ao", desc = "(B)Ljava/lang/String;")
-	String method502() {
-		return this.field761;
-	}
+	static void method494() {
+		if (Client.field95) {
+			class60 var1 = class203.method1149(class292.field2723, Client.field171);
+			if (null != var1 && var1.field739 != null) {
+				class309 var2 = new class309();
+				var2.field2791 = var1;
+				var2.field2794 = var1.field739;
+				class186.method1031(var2);
+			}
 
-	@ObfInfo(name = "ae", desc = "(B)I")
-	public int method2222() {
-		return this.field766;
-	}
-
-	@ObfInfo(name = "toString", desc = "()Ljava/lang/String;")
-	public String toString() {
-		return this.method502().toLowerCase(Locale.ENGLISH);
-	}
-
-	@ObfInfo(name = "au", desc = "(I)[Lon;")
-	static class67[] method500() {
-		return new class67[]{field762, field770, field759, field763, field758, field765, field768};
-	}
-
-	@ObfInfo(name = "at", desc = "(II)Lon;", opaqueValue = "-1520674516")
-	public static class67 method499(int var0) {
-		return var0 >= 0 && var0 < field767.length ? field767[var0] : null;
+			Client.field137 = -1;
+			Client.field95 = false;
+			class185.method1024(var1);
+		}
 	}
 }

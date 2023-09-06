@@ -1,33 +1,34 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class74 extends class538 {
+	static int[] field826;
+	int field822;
+	int field823;
+	int field824;
+	int field825;
+	// $FF: synthetic field
+	final class464 this$0;
 
-@ObfInfo(name = "dg")
-public class class74 {
-	@ObfInfo(name = "ks", desc = "[Lui;")
-	static class150[] field799;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 1196292575)
-	int field798;
-	@ObfInfo(name = "ae", desc = "Lnk;")
-	final class505 field796;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = -161989157)
-	final int field797;
-
-	@ObfInfo(name = "<init>", desc = "(Lnk;Ljava/lang/String;)V")
-	class74(class505 var1, String var2) {
-		this.field798 = 0;
-		this.field796 = var1;
-		this.field797 = var1.method2279();
+	class74(class464 var1) {
+		this.this$0 = var1;
 	}
 
-	@ObfInfo(name = "au", desc = "(I)Z", opaqueValue = "1328846410")
-	boolean method512() {
-		this.field798 = 0;
+	void method2583(class42 var1) {
+		this.field822 = var1.method282();
+		this.field825 = var1.method282();
+		this.field823 = var1.method278();
+		this.field824 = var1.method278();
+	}
 
-		for (int var2 = 0; var2 < this.field797; ++var2) {
-			if (!this.field796.method2506(var2) || this.field796.method2505(var2)) {
-				++this.field798;
+	void method2582(class379 var1) {
+		var1.method2029(this.field822, this.field825, this.field823, this.field824);
+	}
+
+	static boolean method521(char var0) {
+		for (int var2 = 0; var2 < class116.field1109.length(); ++var2) {
+			if (var0 == class116.field1109.charAt(var2)) {
+				return true;
 			}
 		}
 
-		return this.field798 >= this.field797;
+		return false;
 	}
 }

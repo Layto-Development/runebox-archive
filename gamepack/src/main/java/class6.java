@@ -1,77 +1,71 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+public class class6 extends class538 {
+	int field324;
+	// $FF: synthetic field
+	final class464 this$0;
 
-@ObfInfo(name = "ai")
-public class class6 implements class192 {
-	@ObfInfo(name = "au", desc = "Ljava/security/MessageDigest;")
-	final MessageDigest field331;
-
-	@ObfInfo(name = "<init>", desc = "(Laa;)V")
-	class6(class184 var1) {
-		this.field331 = this.method288();
+	class6(class464 var1) {
+		this.this$0 = var1;
+		this.field324 = -1;
 	}
 
-	@ObfInfo(name = "au", desc = "(ILjava/lang/String;J)Z")
-	boolean method290(int var1, String var2, long var3) {
-		byte[] var5 = this.method287(var2, var3);
-		return method286(var5) >= var1;
+	void method2583(class42 var1) {
+		this.field324 = var1.method327();
 	}
 
-	@ObfInfo(name = "at", desc = "(Ljava/lang/String;J)[B")
-	byte[] method287(String var1, long var2) {
-		StringBuilder var4 = new StringBuilder();
-		var4.append(var1).append(Long.toHexString(var2));
-		this.field331.reset();
-
-		try {
-			this.field331.update(var4.toString().getBytes("UTF-8"));
-		} catch (UnsupportedEncodingException var6) {
-			var6.printStackTrace();
-		}
-
-		return this.field331.digest();
+	void method2582(class379 var1) {
+		var1.method2022(this.field324);
 	}
 
-	@ObfInfo(name = "ac", desc = "()Ljava/security/MessageDigest;")
-	MessageDigest method288() {
-		try {
-			return MessageDigest.getInstance("SHA-256");
-		} catch (NoSuchAlgorithmException var2) {
-			var2.printStackTrace();
-			return null;
-		}
-	}
+	static final boolean method56(byte[] var0, int var1, int var2) {
+		boolean var4 = true;
+		class42 var5 = new class42(var0);
+		int var6 = -1;
 
-	@ObfInfo(name = "ae", desc = "([B)I")
-	static int method286(byte[] var0) {
-		int var1 = 0;
-		byte[] var2 = var0;
+		label57:
+		while (true) {
+			int var7 = var5.method291();
+			if (var7 == 0) {
+				return var4;
+			}
 
-		for (int var3 = 0; var3 < var2.length; ++var3) {
-			byte var4 = var2[var3];
-			int var5 = method289(var4);
-			var1 += var5;
-			if (var5 != 8) {
-				break;
+			var6 += var7;
+			int var8 = 0;
+			boolean var9 = false;
+
+			while (true) {
+				int var10;
+				while (!var9) {
+					var10 = var5.method325();
+					if (var10 == 0) {
+						continue label57;
+					}
+
+					var8 += var10 - 1;
+					int var11 = var8 & 63;
+					int var12 = var8 >> 6 & 63;
+					int var13 = var5.method278() >> 2;
+					int var14 = var12 + var1;
+					int var15 = var11 + var2;
+					if (var14 > 0 && var15 > 0 && var14 < 103 && var15 < 103) {
+						class235 var16 = class96.method638(var6, (byte)-45);
+						if (var13 != 22 || !Client.field7 || var16.field2130 != 0 || var16.field2123 == 1 || var16.field2110) {
+							if (!var16.method1346()) {
+								++Client.field75;
+								var4 = false;
+							}
+
+							var9 = true;
+						}
+					}
+				}
+
+				var10 = var5.method325();
+				if (var10 == 0) {
+					break;
+				}
+
+				var5.method278();
 			}
 		}
-
-		return var1;
-	}
-
-	@ObfInfo(name = "ao", desc = "(B)I")
-	static int method289(byte var0) {
-		int var1 = 0;
-		if (var0 == 0) {
-			var1 = 8;
-		} else {
-			for (int var2 = var0 & 255; (var2 & 128) == 0; var2 <<= 1) {
-				++var1;
-			}
-		}
-
-		return var1;
 	}
 }

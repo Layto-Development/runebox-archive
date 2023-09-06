@@ -1,152 +1,143 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.awt.Canvas;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.Iterator;
+public class class34 {
+	boolean field492;
+	boolean field496;
+	class264 field483;
+	class264 field489;
+	class264 field491;
+	class264[] field487;
+	class264[] field488;
+	float[][] field485;
+	float[][] field490;
+	float[][] field493;
+	float[][] field495;
+	final class264[] field486;
+	public class34 field494;
+	public final int field484;
 
-@ObfInfo(name = "av")
-public final class class34 extends Canvas {
-	@ObfInfo(name = "wb", desc = "Lsi;")
-	static class245 field483;
-	@ObfInfo(name = "af", desc = "Lbe;")
-	static class279 field486;
-	@ObfInfo(name = "pr", desc = "I", intMultiplier = -395313837)
-	static int field485;
-	@ObfInfo(name = "ae", desc = "J", longMultiplier = 6865685735894550463L)
-	static long field484;
-	@ObfInfo(name = "au", desc = "Ljava/awt/Component;")
-	Component field487;
+	public class34(int var1, class42 var2, boolean var3) {
+		this.field489 = new class264();
+		this.field492 = true;
+		this.field491 = new class264();
+		this.field496 = true;
+		this.field483 = new class264();
+		this.field484 = var2.method280();
+		this.field486 = new class264[var1];
+		this.field487 = new class264[this.field486.length];
+		this.field488 = new class264[this.field486.length];
+		this.field485 = new float[this.field486.length][3];
 
-	@ObfInfo(name = "<init>", desc = "(Ljava/awt/Component;)V")
-	class34(Component var1) {
-		this.field487 = var1;
+		for (int var4 = 0; var4 < this.field486.length; ++var4) {
+			this.field486[var4] = new class264(var2, var3);
+			this.field485[var4][0] = var2.method284();
+			this.field485[var4][1] = var2.method284();
+			this.field485[var4][2] = var2.method284();
+		}
+
+		this.method227();
 	}
 
-	@ObfInfo(name = "update", desc = "(Ljava/awt/Graphics;)V")
-	public final void update(Graphics var1) {
-		this.field487.update(var1);
-	}
-
-	@ObfInfo(name = "paint", desc = "(Ljava/awt/Graphics;)V")
-	public final void paint(Graphics var1) {
-		this.field487.paint(var1);
-	}
-
-	@ObfInfo(name = "hr", desc = "(I)V", opaqueValue = "954063172")
-	static final void method419() {
-		int var4;
-		for (int var1 = 0; var1 < Client.field282; ++var1) {
-			int var10002 = Client.field239[var1]--;
-			if (Client.field239[var1] >= -10) {
-				class538 var11 = Client.field71[var1];
-				if (var11 == null) {
-					class538 var10000 = (class538)null;
-					var11 = class538.method2590(class310.field2523, Client.field283[var1], 0);
-					if (null == var11) {
-						continue;
-					}
-
-					int[] var19 = Client.field239;
-					var19[var1] += var11.method2589();
-					Client.field71[var1] = var11;
-				}
-
-				if (Client.field239[var1] < 0) {
-					int var3;
-					if (Client.field34[var1] != 0) {
-						var4 = 128 * (Client.field34[var1] & 255);
-						int var5 = Client.field34[var1] >> 16 & 255;
-						int var6 = var5 * 128 + 64 - class126.field1164.field1061;
-						if (var6 < 0) {
-							var6 = -var6;
-						}
-
-						int var7 = Client.field34[var1] >> 8 & 255;
-						int var8 = 64 + var7 * 128 - class126.field1164.field1032;
-						if (var8 < 0) {
-							var8 = -var8;
-						}
-
-						int var9 = var8 + var6 - 128;
-						if (var9 > var4) {
-							Client.field239[var1] = -100;
-							continue;
-						}
-
-						if (var9 < 0) {
-							var9 = 0;
-						}
-
-						var3 = (var4 - var9) * class281.field2262.method1772() / var4;
-					} else {
-						var3 = class281.field2262.method1754();
-					}
-
-					if (var3 > 0) {
-						class62 var14 = var11.method2588().method486(class105.field1016);
-						class28 var15 = class28.method404(var14, 100, var3);
-						var15.method370(Client.field284[var1] - 1);
-						class164.field1556.method1990(var15);
-					}
-
-					Client.field239[var1] = -100;
-				}
+	void method227() {
+		this.field493 = new float[this.field486.length][3];
+		this.field490 = new float[this.field486.length][3];
+		this.field495 = new float[this.field486.length][3];
+		class264 var2;
+		synchronized(class264.field2387) {
+			if (class514.field4192 == 0) {
+				var2 = new class264();
 			} else {
-				--Client.field282;
-
-				for (int var2 = var1; var2 < Client.field282; ++var2) {
-					Client.field283[var2] = Client.field283[var2 + 1];
-					Client.field71[var2] = Client.field71[var2 + 1];
-					Client.field284[var2] = Client.field284[var2 + 1];
-					Client.field239[var2] = Client.field239[var2 + 1];
-					Client.field34[var2] = Client.field34[var2 + 1];
-				}
-
-				--var1;
+				class264.field2387[--class514.field4192].method1523();
+				var2 = class264.field2387[class514.field4192];
 			}
 		}
 
-		if (Client.field299) {
-			boolean var10;
-			if (!class303.field2449.isEmpty()) {
-				var10 = true;
-			} else if (!class303.field2447.isEmpty() && class303.field2447.get(0) != null && ((class503)class303.field2447.get(0)).field4063 != null) {
-				var10 = ((class503)class303.field2447.get(0)).field4063.method809();
+		class264 var3 = var2;
+
+		for (int var4 = 0; var4 < this.field486.length; ++var4) {
+			class264 var5 = this.method237(var4);
+			var3.method1530(var5);
+			var3.method1535();
+			this.field493[var4] = var3.method1522();
+			this.field490[var4][0] = var5.field2388[12];
+			this.field490[var4][1] = var5.field2388[13];
+			this.field490[var4][2] = var5.field2388[14];
+			this.field495[var4] = var5.method1529();
+		}
+
+		var3.method1532();
+	}
+
+	class264 method237(int var1) {
+		return this.field486[var1];
+	}
+
+	class264 method229(int var1) {
+		if (this.field487[var1] == null) {
+			this.field487[var1] = new class264(this.method237(var1));
+			if (null != this.field494) {
+				this.field487[var1].method1533(this.field494.method229(var1));
 			} else {
-				var10 = false;
-			}
-
-			if (!var10) {
-				if (class281.field2262.method1746() != 0) {
-					boolean var12 = !class303.field2448.isEmpty();
-					if (var12) {
-						class505 var13 = class323.field2609;
-						var4 = class281.field2262.method1746();
-						if (!class303.field2448.isEmpty()) {
-							ArrayList var16 = new ArrayList();
-							Iterator var17 = class303.field2448.iterator();
-
-							while (var17.hasNext()) {
-								class503 var18 = (class503)var17.next();
-								var18.field4064 = false;
-								var18.field4062 = false;
-								var18.field4068 = false;
-								var18.field4065 = false;
-								var18.field4060 = var13;
-								var18.field4059 = var4;
-								var18.field4056 = 0.0F;
-								var16.add(var18);
-							}
-
-							class303.method1677(var16, class303.field2451, class303.field2452, class303.field2453, class303.field2444, false);
-						}
-					}
-				}
-
-				Client.field299 = false;
+				this.field487[var1].method1533(class264.field2389);
 			}
 		}
 
+		return this.field487[var1];
+	}
+
+	class264 method236(int var1) {
+		if (this.field488[var1] == null) {
+			this.field488[var1] = new class264(this.method229(var1));
+			this.field488[var1].method1535();
+		}
+
+		return this.field488[var1];
+	}
+
+	void method230(class264 var1) {
+		this.field489.method1530(var1);
+		this.field492 = true;
+		this.field496 = true;
+	}
+
+	class264 method231() {
+		return this.field489;
+	}
+
+	class264 method232() {
+		if (this.field492) {
+			this.field491.method1530(this.method231());
+			if (null != this.field494) {
+				this.field491.method1533(this.field494.method232());
+			}
+
+			this.field492 = false;
+		}
+
+		return this.field491;
+	}
+
+	public class264 method228(int var1) {
+		if (this.field496) {
+			this.field483.method1530(this.method236(var1));
+			this.field483.method1533(this.method232());
+			this.field496 = false;
+		}
+
+		return this.field483;
+	}
+
+	float[] method233(int var1) {
+		return this.field493[var1];
+	}
+
+	float[] method234(int var1) {
+		return this.field490[var1];
+	}
+
+	float[] method235(int var1) {
+		return this.field495[var1];
+	}
+
+	public static int method238(int var0) {
+		return var0 != 0 && var0 != 1 ? -1 : 0;
 	}
 }

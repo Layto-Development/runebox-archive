@@ -1,21 +1,29 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class420 extends class218 {
+	static int[] field3504;
+	public final int field3505;
+	public final int field3506;
+	public final int[] field3507;
+	public final int[] field3508;
 
-@ObfInfo(name = "ks")
-public final class class420 {
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = 944463717)
-	int field3226;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = -1279455469)
-	int field3227;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = 1160500229)
-	int field3228;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 827095241)
-	int field3229;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Ljd;")
-	final class324 this$0;
+	class420(int var1, int var2, int[] var3, int[] var4, int var5) {
+		this.field3506 = var1;
+		this.field3505 = var2;
+		this.field3507 = var3;
+		this.field3508 = var4;
+	}
 
-	@ObfInfo(name = "<init>", desc = "(Ljd;)V")
-	class420(class324 var1) {
-		this.this$0 = var1;
+	public boolean method2163(int var1, int var2) {
+		if (var2 >= 0 && var2 < this.field3508.length) {
+			int var4 = this.field3508[var2];
+			if (var1 >= var4 && var1 <= this.field3507[var2] + var4) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public static int method2164(int var0) {
+		return var0 >> 17 & 7;
 	}
 }

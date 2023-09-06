@@ -1,49 +1,115 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.applet.Applet;
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.net.URL;
+import netscape.javascript.JSObject;
 
-@ObfInfo(name = "tr")
 public class class316 {
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = -822857019)
-	static final int field2563;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = -511636545)
-	static final int field2564;
+	public static class208 field2827;
+	static class25[] field2828;
 
-	static {
-		field2563 = (int)(Math.pow(2.0D, 4.0D) - 1.0D);
-		field2564 = (int)(Math.pow(2.0D, 8.0D) - 1.0D);
-	}
-
-	@ObfInfo(name = "<init>", desc = "()V")
 	class316() throws Throwable {
 	}
 
-	@ObfInfo(name = "au", desc = "(II)I")
-	public static int method1738(int var0) {
-		return var0 >>> 12;
-	}
+	static File method1751(String var0) {
+		if (!class209.field1927) {
+			throw new RuntimeException("");
+		} else {
+			File var2 = (File)class209.field1929.get(var0);
+			if (var2 != null) {
+				return var2;
+			} else {
+				File var3 = new File(class209.field1928, var0);
+				RandomAccessFile var4 = null;
 
-	@ObfInfo(name = "ae", desc = "(IB)I")
-	public static int method1739(int var0) {
-		return var0 >>> 4 & field2564;
-	}
+				try {
+					File var5 = new File(var3.getParent());
+					if (!var5.exists()) {
+						throw new RuntimeException("");
+					} else {
+						var4 = new RandomAccessFile(var3, "rw");
+						int var6 = var4.read();
+						var4.seek(0L);
+						var4.write(var6);
+						var4.seek(0L);
+						var4.close();
+						class209.field1929.put(var0, var3);
+						return var3;
+					}
+				} catch (Exception var8) {
+					try {
+						if (var4 != null) {
+							var4.close();
+							var4 = null;
+						}
+					} catch (Exception var7) {
+					}
 
-	@ObfInfo(name = "ao", desc = "(II)I")
-	public static int method1740(int var0) {
-		return (var0 & field2563) - 1;
-	}
-
-	@ObfInfo(name = "at", desc = "(Ltm;[II)[Ljava/lang/Object;")
-	static Object[] method1737(class280 var0, int[] var1) {
-		int var3 = var0.method1539();
-		Object[] var4 = new Object[var3 * var1.length];
-
-		for (int var5 = 0; var5 < var3; ++var5) {
-			for (int var6 = 0; var6 < var1.length; ++var6) {
-				int var7 = var6 + var1.length * var5;
-				class49 var8 = class76.method517(var1[var6]);
-				var4[var7] = var8.method451(var0);
+					throw new RuntimeException();
+				}
 			}
 		}
+	}
 
-		return var4;
+	static boolean method1753(String var0, int var1, String var2) {
+		if (var1 == 0) {
+			try {
+				if (!class504.field4173.startsWith("win")) {
+					throw new Exception();
+				} else if (!var0.startsWith("http://") && !var0.startsWith("https://")) {
+					throw new Exception();
+				} else {
+					String var12 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
+
+					for (int var5 = 0; var5 < var0.length(); ++var5) {
+						if (var12.indexOf(var0.charAt(var5)) == -1) {
+							throw new Exception();
+						}
+					}
+
+					Runtime.getRuntime().exec("cmd /c start \"j\" \"" + var0 + "\"");
+					return true;
+				}
+			} catch (Throwable var6) {
+				return false;
+			}
+		} else if (var1 == 1) {
+			try {
+				Object var11 = class159.method893(class504.field4174, var2, new Object[]{(new URL(class504.field4174.getCodeBase(), var0)).toString()});
+				return var11 != null;
+			} catch (Throwable var7) {
+				return false;
+			}
+		} else if (var1 == 2) {
+			try {
+				class504.field4174.getAppletContext().showDocument(new URL(class504.field4174.getCodeBase(), var0), "_blank");
+				return true;
+			} catch (Exception var8) {
+				return false;
+			}
+		} else if (var1 == 3) {
+			try {
+				Applet var4 = class504.field4174;
+				JSObject.getWindow(var4).call("loggedout", (Object[])null);
+			} catch (Throwable var10) {
+			}
+
+			try {
+				class504.field4174.getAppletContext().showDocument(new URL(class504.field4174.getCodeBase(), var0), "_top");
+				return true;
+			} catch (Exception var9) {
+				return false;
+			}
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
+
+	static class502 method1752(int var0, int var1) {
+		Client.field303.field4162 = var0;
+		Client.field303.field4161 = var1;
+		Client.field303.field4163 = 1;
+		Client.field303.field4164 = 1;
+		return Client.field303;
 	}
 }

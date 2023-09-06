@@ -1,50 +1,36 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.awt.image.BufferedImage;
-import java.awt.image.PixelGrabber;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-
-@ObfInfo(name = "bt")
 public class class499 {
-	@ObfInfo(name = "al", desc = "I", intMultiplier = 183350311)
-	static int field4035;
-	@ObfInfo(name = "he", desc = "Ljava/lang/String;")
-	static String field4034;
+	public static final class499 field4150;
+	public static final class499 field4151;
+	public static final class499 field4153;
+	public static final class499 field4155;
+	static final class499 field4152;
+	public final String field4154;
 
 	static {
-		ImageIO.setUseCache(false);
+		field4155 = new class499("details");
+		field4151 = new class499("compositemap");
+		field4150 = new class499("compositetexture");
+		field4152 = new class499("area");
+		field4153 = new class499("labels");
 	}
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class499() throws Throwable {
+	class499(String var1) {
+		this.field4154 = var1;
 	}
 
-	@ObfInfo(name = "au", desc = "(IIIB)Z", opaqueValue = "15")
-	static boolean method2494(int var0, int var1, int var2) {
-		return var0 >= 0 && var0 < 4 && var1 >= 0 && var1 < 104 && var2 >= 0 && var2 < 104;
-	}
-
-	@ObfInfo(name = "au", desc = "([BI)Lui;")
-	public static final class150 method2495(byte[] var0) {
-		BufferedImage var2 = null;
-
-		try {
-			Class var3 = ImageIO.class;
-			synchronized(ImageIO.class) {
-				var2 = ImageIO.read(new ByteArrayInputStream(var0));
+	public static class151 method2417(int var0) {
+		class151 var2 = (class151)class151.field1432.method1890((long)var0);
+		if (var2 != null) {
+			return var2;
+		} else {
+			byte[] var3 = class151.field1428.method1212(32, var0);
+			var2 = new class151();
+			if (var3 != null) {
+				var2.method864(new class42(var3));
 			}
 
-			int var10 = var2.getWidth();
-			int var4 = var2.getHeight();
-			int[] var5 = new int[var4 * var10];
-			PixelGrabber var6 = new PixelGrabber(var2, 0, 0, var10, var4, var5, 0, var10);
-			var6.grabPixels();
-			return new class150(var5, var10, var4);
-		} catch (IOException var8) {
-		} catch (InterruptedException var9) {
+			class151.field1432.method1889(var2, (long)var0);
+			return var2;
 		}
-
-		return new class150(0, 0);
 	}
 }

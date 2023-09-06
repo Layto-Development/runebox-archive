@@ -1,111 +1,97 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.Iterator;
+public class class525 {
+	public static final float field4241;
+	public static final float field4242;
+	static class135 field4245;
+	static class384 field4240;
+	static float[] field4243;
+	static float[] field4244;
 
-@ObfInfo(name = "sf")
-public final class class525 implements Iterable {
-	@ObfInfo(name = "ao", desc = "Lsj;")
-	class155 field4203;
-	@ObfInfo(name = "at", desc = "Lsj;")
-	class155 field4204;
-	@ObfInfo(name = "ae", desc = "[Lsj;")
-	class155[] field4202;
-	@ObfInfo(name = "au", desc = "I")
-	int field4201;
-	@ObfInfo(name = "ac", desc = "I")
-	int field4205;
-
-	@ObfInfo(name = "<init>", desc = "(I)V")
-	public class525(int var1) {
-		this.field4205 = 0;
-		this.field4201 = var1;
-		this.field4202 = new class155[var1];
-
-		for (int var2 = 0; var2 < var1; ++var2) {
-			class155 var3 = this.field4202[var2] = new class155();
-			var3.field1482 = var3;
-			var3.field1484 = var3;
-		}
-
+	static {
+		field4241 = Math.ulp(1.0F);
+		field4242 = field4241 * 2.0F;
+		field4243 = new float[4];
+		field4244 = new float[5];
 	}
 
-	@ObfInfo(name = "au", desc = "(J)Lsj;")
-	public class155 method2558(long var1) {
-		class155 var3 = this.field4202[(int)(var1 & (long)(this.field4201 - 1))];
+	class525() throws Throwable {
+	}
 
-		for (this.field4203 = var3.field1482; this.field4203 != var3; this.field4203 = this.field4203.field1482) {
-			if (this.field4203.field1483 == var1) {
-				class155 var4 = this.field4203;
-				this.field4203 = this.field4203.field1482;
-				return var4;
+	public static byte[] method2540(Object var0, boolean var1) {
+		if (var0 == null) {
+			return null;
+		} else if (var0 instanceof byte[]) {
+			byte[] var7 = (byte[])((byte[])var0);
+			if (var1) {
+				int var5 = var7.length;
+				byte[] var6 = new byte[var5];
+				System.arraycopy(var7, 0, var6, 0, var5);
+				return var6;
+			} else {
+				return var7;
 			}
-		}
-
-		this.field4203 = null;
-		return null;
-	}
-
-	@ObfInfo(name = "ae", desc = "(Lsj;J)V")
-	public void method2562(class155 var1, long var2) {
-		if (var1.field1484 != null) {
-			var1.method907();
-		}
-
-		class155 var4 = this.field4202[(int)(var2 & (long)(this.field4201 - 1))];
-		var1.field1484 = var4.field1484;
-		var1.field1482 = var4;
-		var1.field1484.field1482 = var1;
-		var1.field1482.field1484 = var1;
-		var1.field1483 = var2;
-	}
-
-	@ObfInfo(name = "ao", desc = "()V")
-	public void method2559() {
-		for (int var1 = 0; var1 < this.field4201; ++var1) {
-			class155 var2 = this.field4202[var1];
-
-			while (true) {
-				class155 var3 = var2.field1482;
-				if (var3 == var2) {
-					break;
-				}
-
-				var3.method907();
-			}
-		}
-
-		this.field4203 = null;
-		this.field4204 = null;
-	}
-
-	@ObfInfo(name = "at", desc = "()Lsj;")
-	public class155 method2560() {
-		this.field4205 = 0;
-		return this.method2561();
-	}
-
-	@ObfInfo(name = "ac", desc = "()Lsj;")
-	public class155 method2561() {
-		class155 var1;
-		if (this.field4205 > 0 && this.field4204 != this.field4202[this.field4205 - 1]) {
-			var1 = this.field4204;
-			this.field4204 = var1.field1482;
-			return var1;
+		} else if (var0 instanceof class178) {
+			class178 var3 = (class178)var0;
+			return var3.method1008();
 		} else {
-			do {
-				if (this.field4205 >= this.field4201) {
-					return null;
-				}
-
-				var1 = this.field4202[this.field4205++].field1482;
-			} while(var1 == this.field4202[this.field4205 - 1]);
-
-			this.field4204 = var1.field1482;
-			return var1;
+			throw new IllegalArgumentException();
 		}
 	}
 
-	@ObfInfo(name = "iterator", desc = "()Ljava/util/Iterator;")
-	public Iterator iterator() {
-		return new class234(this);
+	public static void method2541() {
+		class425.field3519.method1887();
+	}
+
+	static final void method2539(class60 var0, int var1, int var2, int var3) {
+		if (null == var0.field719) {
+			throw new RuntimeException();
+		} else {
+			var0.field719[var1] = var2;
+			var0.field720[var1] = var3;
+		}
+	}
+
+	static final void method2542(int var0, int var1, int var2) {
+		if (class375.field3180 < var0) {
+			class375.field3180 += class120.field1131 + class184.field1743 * (var0 - class375.field3180) / 1000;
+			if (class375.field3180 > var0) {
+				class375.field3180 = var0;
+			}
+		}
+
+		if (class375.field3180 > var0) {
+			class375.field3180 -= class120.field1131 + class184.field1743 * (class375.field3180 - var0) / 1000;
+			if (class375.field3180 < var0) {
+				class375.field3180 = var0;
+			}
+		}
+
+		if (class463.field3989 < var1) {
+			class463.field3989 += class120.field1131 + (var1 - class463.field3989) * class184.field1743 / 1000;
+			if (class463.field3989 > var1) {
+				class463.field3989 = var1;
+			}
+		}
+
+		if (class463.field3989 > var1) {
+			class463.field3989 -= (class463.field3989 - var1) * class184.field1743 / 1000 + class120.field1131;
+			if (class463.field3989 < var1) {
+				class463.field3989 = var1;
+			}
+		}
+
+		if (class196.field1796 < var2) {
+			class196.field1796 += class120.field1131 + (var2 - class196.field1796) * class184.field1743 / 1000;
+			if (class196.field1796 > var2) {
+				class196.field1796 = var2;
+			}
+		}
+
+		if (class196.field1796 > var2) {
+			class196.field1796 -= (class196.field1796 - var2) * class184.field1743 / 1000 + class120.field1131;
+			if (class196.field1796 < var2) {
+				class196.field1796 = var2;
+			}
+		}
+
 	}
 }

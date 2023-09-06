@@ -1,26 +1,21 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class247 extends class192 {
+	int field2235;
+	int field2236;
 
-@ObfInfo(name = "fg")
-public class class247 extends class313 {
-	@ObfInfo(name = "au", desc = "I", intMultiplier = -2045378669)
-	int field2071;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lfn;")
-	final class220 this$0;
-
-	@ObfInfo(name = "<init>", desc = "(Lfn;)V")
-	class247(class220 var1) {
-		this.this$0 = var1;
-		this.field2071 = -1;
+	public class247(int var1, int var2, int var3, int var4) {
+		super(var3, var4);
+		this.field2235 = 0;
+		this.field2236 = 0;
+		this.field2235 = var1;
+		this.field2236 = var2;
 	}
 
-	@ObfInfo(name = "au", desc = "(Ltm;I)V")
-	void method1731(class280 var1) {
-		this.field2071 = var1.method1541();
+	public int method1439() {
+		double var2 = this.method1047();
+		return (int)Math.round((double)this.field2235 + var2 * (double)(this.field2236 - this.field2235));
 	}
 
-	@ObfInfo(name = "ae", desc = "(Lfi;B)V")
-	void method1730(class291 var1) {
-		var1.method1592(this.field2071);
+	static void method1440(String var0) {
+		class116.field1104 = class230.method1323(var0);
 	}
 }

@@ -1,43 +1,88 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "de")
 public class class522 {
-	@ObfInfo(name = "bc", desc = "Lrb;")
-	static class238 field4185;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = 519228135)
-	int field4186;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = -1506450929)
-	int field4187;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = -404137777)
-	int field4188;
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = -184686117)
-	int field4189;
+	static class342 field4234;
+	byte field4230;
+	public int field4228;
+	public int field4229;
+	public int field4231;
+	public int field4232;
+	public int field4233;
 
-	@ObfInfo(name = "<init>", desc = "(IIII)V")
-	class522(int var1, int var2, int var3, int var4) {
-		this.field4188 = var1;
-		this.field4189 = var2;
-		this.field4186 = var3;
-		this.field4187 = var4;
+	public class522() {
 	}
 
-	@ObfInfo(name = "au", desc = "(B)I")
-	int method2554() {
-		return this.field4188;
+	public class522(class42 var1, boolean var2) {
+		this.field4230 = var1.method279();
+		this.field4229 = var1.method327();
+		this.field4233 = var1.method282();
+		this.field4231 = var1.method282();
+		this.field4232 = var1.method282();
+		this.field4228 = var1.method282();
+		if (var2) {
+			int var4 = 0;
+			boolean var5 = false;
+
+			while (true) {
+				int var6 = var1.method278();
+				if (var6 == 255) {
+					Integer var3 = var5 ? var4 : null;
+					this.method2533(var3);
+					break;
+				}
+
+				if (var6 != 0) {
+					throw new IllegalStateException("");
+				}
+
+				while (true) {
+					int var7 = var1.method278();
+					if (var7 == 255) {
+						break;
+					}
+
+					--var1.field527;
+					if (var1.method327() != 0) {
+						throw new IllegalStateException("");
+					}
+
+					if (var5) {
+						throw new IllegalStateException("");
+					}
+
+					var4 = var1.method282();
+					var5 = true;
+				}
+			}
+		}
+
 	}
 
-	@ObfInfo(name = "ae", desc = "(B)I")
-	int method2555() {
-		return this.field4189;
+	void method2533(Integer var1) {
 	}
 
-	@ObfInfo(name = "ao", desc = "(I)I")
-	int method2553() {
-		return this.field4186;
+	public int method2534() {
+		return this.field4230 & 7;
 	}
 
-	@ObfInfo(name = "at", desc = "(I)I")
-	int method2552() {
-		return this.field4187;
+	public int method2535() {
+		return (this.field4230 & 8) == 8 ? 1 : 0;
+	}
+
+	void method2532(int var1) {
+		this.field4230 &= -8;
+		this.field4230 = (byte)(this.field4230 | var1 & 7);
+	}
+
+	void method2536(int var1) {
+		this.field4230 &= -9;
+		if (var1 == 1) {
+			this.field4230 = (byte)(this.field4230 | 8);
+		}
+
+	}
+
+	static void method2537(int var0) {
+		class176.field1696 = var0;
+		class176.field1697 = new class176[var0];
+		class505.field4176 = 0;
 	}
 }

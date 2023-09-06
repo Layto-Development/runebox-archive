@@ -1,81 +1,190 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public final class class126 {
+	int field1169;
+	int field1170;
+	int field1171;
+	int field1174;
+	int[] field1172;
+	int[] field1173;
 
-@ObfInfo(name = "hb")
-public class class126 extends class180 {
-	@ObfInfo(name = "ae", desc = "Lle;")
-	public static class7 field1158;
-	@ObfInfo(name = "au", desc = "Lnu;")
-	static class437 field1162;
-	@ObfInfo(name = "mo", desc = "Ldf;")
-	static class439 field1164;
-	@ObfInfo(name = "us", desc = "I", intMultiplier = -1186066389)
-	static int field1161;
-	@ObfInfo(name = "ai", desc = "[I")
-	static final int[] field1157;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = 144903653)
-	public int field1159;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 225410143)
-	public int field1160;
-	@ObfInfo(name = "ac", desc = "I", intMultiplier = 1882806955)
-	public int field1163;
+	public class126(int[] var1) {
+		this.field1173 = new int[256];
+		this.field1172 = new int[256];
 
-	static {
-		field1158 = new class7(64);
-		field1157 = new int[32];
-		int var0 = 2;
-
-		for (int var1 = 0; var1 < 32; ++var1) {
-			field1157[var1] = var0 - 1;
-			var0 += var0;
+		for (int var2 = 0; var2 < var1.length; ++var2) {
+			this.field1172[var2] = var1[var2];
 		}
 
+		this.method767();
 	}
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class126() {
+	public final int method764() {
+		if (this.field1171 == 0) {
+			this.method766();
+			this.field1171 = 256;
+		}
+
+		return this.field1172[--this.field1171];
 	}
 
-	@ObfInfo(name = "ao", desc = "(Ltm;I)V", opaqueValue = "1263558544")
-	void method698(class280 var1) {
-		while (true) {
-			int var3 = var1.method1492();
-			if (var3 == 0) {
-				return;
+	public final int method765() {
+		if (this.field1171 == 0) {
+			this.method766();
+			this.field1171 = 256;
+		}
+
+		return this.field1172[this.field1171 - 1];
+	}
+
+	final void method766() {
+		this.field1169 += ++this.field1170;
+
+		for (int var2 = 0; var2 < 256; ++var2) {
+			int var3 = this.field1173[var2];
+			if ((var2 & 2) == 0) {
+				if ((var2 & 1) == 0) {
+					this.field1174 ^= this.field1174 << 13;
+				} else {
+					this.field1174 ^= this.field1174 >>> 6;
+				}
+			} else if ((var2 & 1) == 0) {
+				this.field1174 ^= this.field1174 << 2;
+			} else {
+				this.field1174 ^= this.field1174 >>> 16;
 			}
 
-			this.method699(var1, var3);
-		}
-	}
-
-	@ObfInfo(name = "at", desc = "(Ltm;II)V")
-	void method699(class280 var1, int var2) {
-		if (var2 == 1) {
-			this.field1159 = var1.method1541();
-			this.field1160 = var1.method1492();
-			this.field1163 = var1.method1492();
+			this.field1174 += this.field1173[var2 + 128 & 255];
+			int var4;
+			this.field1173[var2] = var4 = this.field1169 + this.field1173[(var3 & 1020) >> 2] + this.field1174;
+			this.field1172[var2] = this.field1169 = this.field1173[(var4 >> 8 & 1020) >> 2] + var3;
 		}
 
 	}
 
-	@ObfInfo(name = "au", desc = "(Lnu;I)V")
-	public static void method700(class437 var0) {
-		field1162 = var0;
-	}
+	final void method767() {
+		int var10 = -1640531527;
+		int var9 = -1640531527;
+		int var8 = -1640531527;
+		int var7 = -1640531527;
+		int var6 = -1640531527;
+		int var5 = -1640531527;
+		int var4 = -1640531527;
+		int var3 = -1640531527;
 
-	@ObfInfo(name = "ae", desc = "(II)Lhb;")
-	public static class126 method701(int var0) {
-		class126 var2 = (class126)field1158.method294((long)var0);
-		if (var2 != null) {
-			return var2;
-		} else {
-			byte[] var3 = field1162.method2267(14, var0);
-			var2 = new class126();
-			if (var3 != null) {
-				var2.method698(new class280(var3));
-			}
-
-			field1158.method293(var2, (long)var0);
-			return var2;
+		int var2;
+		for (var2 = 0; var2 < 4; ++var2) {
+			var3 ^= var4 << 11;
+			var6 += var3;
+			var4 += var5;
+			var4 ^= var5 >>> 2;
+			var7 += var4;
+			var5 += var6;
+			var5 ^= var6 << 8;
+			var8 += var5;
+			var6 += var7;
+			var6 ^= var7 >>> 16;
+			var9 += var6;
+			var7 += var8;
+			var7 ^= var8 << 10;
+			var10 += var7;
+			var8 += var9;
+			var8 ^= var9 >>> 4;
+			var3 += var8;
+			var9 += var10;
+			var9 ^= var10 << 8;
+			var4 += var9;
+			var10 += var3;
+			var10 ^= var3 >>> 9;
+			var5 += var10;
+			var3 += var4;
 		}
+
+		for (var2 = 0; var2 < 256; var2 += 8) {
+			var3 += this.field1172[var2];
+			var4 += this.field1172[var2 + 1];
+			var5 += this.field1172[var2 + 2];
+			var6 += this.field1172[var2 + 3];
+			var7 += this.field1172[var2 + 4];
+			var8 += this.field1172[var2 + 5];
+			var9 += this.field1172[var2 + 6];
+			var10 += this.field1172[var2 + 7];
+			var3 ^= var4 << 11;
+			var6 += var3;
+			var4 += var5;
+			var4 ^= var5 >>> 2;
+			var7 += var4;
+			var5 += var6;
+			var5 ^= var6 << 8;
+			var8 += var5;
+			var6 += var7;
+			var6 ^= var7 >>> 16;
+			var9 += var6;
+			var7 += var8;
+			var7 ^= var8 << 10;
+			var10 += var7;
+			var8 += var9;
+			var8 ^= var9 >>> 4;
+			var3 += var8;
+			var9 += var10;
+			var9 ^= var10 << 8;
+			var4 += var9;
+			var10 += var3;
+			var10 ^= var3 >>> 9;
+			var5 += var10;
+			var3 += var4;
+			this.field1173[var2] = var3;
+			this.field1173[var2 + 1] = var4;
+			this.field1173[var2 + 2] = var5;
+			this.field1173[var2 + 3] = var6;
+			this.field1173[var2 + 4] = var7;
+			this.field1173[var2 + 5] = var8;
+			this.field1173[var2 + 6] = var9;
+			this.field1173[var2 + 7] = var10;
+		}
+
+		for (var2 = 0; var2 < 256; var2 += 8) {
+			var3 += this.field1173[var2];
+			var4 += this.field1173[var2 + 1];
+			var5 += this.field1173[var2 + 2];
+			var6 += this.field1173[var2 + 3];
+			var7 += this.field1173[var2 + 4];
+			var8 += this.field1173[var2 + 5];
+			var9 += this.field1173[var2 + 6];
+			var10 += this.field1173[var2 + 7];
+			var3 ^= var4 << 11;
+			var6 += var3;
+			var4 += var5;
+			var4 ^= var5 >>> 2;
+			var7 += var4;
+			var5 += var6;
+			var5 ^= var6 << 8;
+			var8 += var5;
+			var6 += var7;
+			var6 ^= var7 >>> 16;
+			var9 += var6;
+			var7 += var8;
+			var7 ^= var8 << 10;
+			var10 += var7;
+			var8 += var9;
+			var8 ^= var9 >>> 4;
+			var3 += var8;
+			var9 += var10;
+			var9 ^= var10 << 8;
+			var4 += var9;
+			var10 += var3;
+			var10 ^= var3 >>> 9;
+			var5 += var10;
+			var3 += var4;
+			this.field1173[var2] = var3;
+			this.field1173[var2 + 1] = var4;
+			this.field1173[var2 + 2] = var5;
+			this.field1173[var2 + 3] = var6;
+			this.field1173[var2 + 4] = var7;
+			this.field1173[var2 + 5] = var8;
+			this.field1173[var2 + 6] = var9;
+			this.field1173[var2 + 7] = var10;
+		}
+
+		this.method766();
+		this.field1171 = 256;
 	}
 }

@@ -1,40 +1,32 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class322 {
+	public Object field2897;
+	public final int field2898;
 
-@ObfInfo(name = "gj")
-public class class322 extends class362 {
-	@ObfInfo(name = "ae", desc = "B")
-	byte field2602;
-	@ObfInfo(name = "ao", desc = "B")
-	byte field2603;
-	@ObfInfo(name = "au", desc = "Ljava/lang/String;")
-	String field2604;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lgg;")
-	final class141 this$0;
-
-	@ObfInfo(name = "<init>", desc = "(Lgg;)V")
-	class322(class141 var1) {
-		this.this$0 = var1;
+	public class322(int var1) {
+		this.field2898 = var1;
 	}
 
-	@ObfInfo(name = "au", desc = "(Ltm;B)V", opaqueValue = "1")
-	void method1978(class280 var1) {
-		this.field2604 = var1.method1551();
-		if (null != this.field2604) {
-			var1.method1492();
-			this.field2602 = var1.method1493();
-			this.field2603 = var1.method1493();
-		}
-
+	public class322(int var1, Object var2) {
+		this.field2898 = var1;
+		this.field2897 = var2;
 	}
 
-	@ObfInfo(name = "ae", desc = "(Lgo;I)V", opaqueValue = "-510575280")
-	void method1979(class143 var1) {
-		var1.field1437 = this.field2604;
-		if (null != this.field2604) {
-			var1.field1432 = this.field2602;
-			var1.field1436 = this.field2603;
-		}
+	public int hashCode() {
+		return super.hashCode();
+	}
 
+	public boolean equals(Object var1) {
+		if (!(var1 instanceof class322)) {
+			return false;
+		} else {
+			class322 var2 = (class322)var1;
+			if (null == var2.field2897 && null != this.field2897) {
+				return false;
+			} else if (null == this.field2897 && var2.field2897 != null) {
+				return false;
+			} else {
+				return var2.field2898 == this.field2898 && var2.field2897.equals(this.field2897);
+			}
+		}
 	}
 }

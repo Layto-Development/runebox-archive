@@ -1,12 +1,7 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public abstract class class45 implements class510 {
+	protected int field538;
 
-@ObfInfo(name = "sd")
-public class class45 extends class155 {
-	@ObfInfo(name = "au", desc = "Ljava/lang/Object;")
-	public final Object field562;
-
-	@ObfInfo(name = "<init>", desc = "(Ljava/lang/Object;)V")
-	public class45(Object var1) {
-		this.field562 = var1;
+	protected class45(class460 var1, class168 var2, int var3) {
+		this.field538 = var3;
 	}
 }

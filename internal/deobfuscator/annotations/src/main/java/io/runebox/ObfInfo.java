@@ -1,4 +1,4 @@
-package io.runebox.internal.deobfuscator.includes;
+package io.runebox;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -18,5 +18,4 @@ public @interface ObfInfo {
     int intMultiplier() default 0;
 
     long longMultiplier() default 0L;
-
 }

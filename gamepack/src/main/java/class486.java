@@ -1,21 +1,17 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "qp")
 public class class486 {
-	@ObfInfo(name = "ao", desc = "Lqp;")
-	public static final class486 field3956;
-	@ObfInfo(name = "ae", desc = "Lqp;")
-	public static final class486 field3957;
-	@ObfInfo(name = "au", desc = "Lqp;")
-	public static final class486 field3958;
+	static final int[] field4106;
 
 	static {
-		field3958 = new class486();
-		field3957 = new class486();
-		field3956 = new class486();
+		field4106 = new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, -1, 1, -1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 3, 3, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 	}
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class486() {
+	class486() throws Throwable {
+	}
+
+	static void method2402() {
+		for (class333 var1 = (class333)Client.field257.method563(); var1 != null; var1 = (class333)Client.field257.method565()) {
+			var1.method2269();
+		}
+
 	}
 }

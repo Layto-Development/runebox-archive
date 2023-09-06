@@ -1,44 +1,123 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+public class class86 {
+	class462 field867;
+	public class462 field868;
 
-@ObfInfo(name = "pr")
-public class class86 implements Iterator {
-	@ObfInfo(name = "au", desc = "Lpa;")
-	class332 field880;
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = 150272453)
-	int field881;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1979527987)
-	int field882;
-
-	@ObfInfo(name = "<init>", desc = "(Lpa;)V")
-	class86(class332 var1) {
-		this.field881 = 0;
-		this.field882 = this.field880.field2635;
-		this.field880 = var1;
+	public class86() {
+		this.field868 = new class462();
+		this.field868.field3986 = this.field868;
+		this.field868.field3988 = this.field868;
 	}
 
-	@ObfInfo(name = "hasNext", desc = "()Z")
-	public boolean hasNext() {
-		return this.field881 < this.field880.field2639;
-	}
+	public void method559() {
+		while (true) {
+			class462 var1 = this.field868.field3986;
+			if (var1 == this.field868) {
+				this.field867 = null;
+				return;
+			}
 
-	@ObfInfo(name = "next", desc = "()Ljava/lang/Object;")
-	public Object next() {
-		if (this.field882 != this.field880.field2635) {
-			throw new ConcurrentModificationException();
-		} else if (this.field881 < this.field880.field2639) {
-			Object var1 = this.field880.field2637[this.field881].field2223;
-			++this.field881;
-			return var1;
-		} else {
-			throw new NoSuchElementException();
+			var1.method2269();
 		}
 	}
 
-	@ObfInfo(name = "remove", desc = "()V")
-	public void remove() {
-		throw new UnsupportedOperationException();
+	public void method567(class462 var1) {
+		if (var1.field3988 != null) {
+			var1.method2269();
+		}
+
+		var1.field3988 = this.field868.field3988;
+		var1.field3986 = this.field868;
+		var1.field3988.field3986 = var1;
+		var1.field3986.field3988 = var1;
+	}
+
+	public void method568(class462 var1) {
+		if (var1.field3988 != null) {
+			var1.method2269();
+		}
+
+		var1.field3988 = this.field868;
+		var1.field3986 = this.field868.field3986;
+		var1.field3988.field3986 = var1;
+		var1.field3986.field3988 = var1;
+	}
+
+	public class462 method561() {
+		class462 var1 = this.field868.field3986;
+		if (var1 == this.field868) {
+			return null;
+		} else {
+			var1.method2269();
+			return var1;
+		}
+	}
+
+	public class462 method562() {
+		class462 var1 = this.field868.field3988;
+		if (var1 == this.field868) {
+			return null;
+		} else {
+			var1.method2269();
+			return var1;
+		}
+	}
+
+	public class462 method563() {
+		class462 var1 = this.field868.field3986;
+		if (var1 == this.field868) {
+			this.field867 = null;
+			return null;
+		} else {
+			this.field867 = var1.field3986;
+			return var1;
+		}
+	}
+
+	public class462 method564() {
+		class462 var1 = this.field868.field3988;
+		if (var1 == this.field868) {
+			this.field867 = null;
+			return null;
+		} else {
+			this.field867 = var1.field3988;
+			return var1;
+		}
+	}
+
+	public class462 method565() {
+		class462 var1 = this.field867;
+		if (var1 == this.field868) {
+			this.field867 = null;
+			return null;
+		} else {
+			this.field867 = var1.field3986;
+			return var1;
+		}
+	}
+
+	public class462 method569() {
+		class462 var1 = this.field867;
+		if (var1 == this.field868) {
+			this.field867 = null;
+			return null;
+		} else {
+			this.field867 = var1.field3988;
+			return var1;
+		}
+	}
+
+	public boolean method566() {
+		return this.field868.field3986 == this.field868;
+	}
+
+	public static void method560(class462 var0, class462 var1) {
+		if (var0.field3988 != null) {
+			var0.method2269();
+		}
+
+		var0.field3988 = var1.field3988;
+		var0.field3986 = var1;
+		var0.field3988.field3986 = var0;
+		var0.field3986.field3988 = var0;
 	}
 }

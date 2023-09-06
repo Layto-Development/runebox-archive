@@ -1,43 +1,39 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class158 implements class367 {
+	static int field1477;
+	static final class158 field1466;
+	static final class158 field1467;
+	static final class158 field1468;
+	static final class158 field1469;
+	static final class158 field1470;
+	static final class158 field1471;
+	static final class158 field1472;
+	static final class158 field1473;
+	static final class158 field1474;
+	final int field1475;
+	final int field1476;
 
-@ObfInfo(name = "oz")
-public class class158 {
-	@ObfInfo(name = "ac", desc = "Ljava/lang/String;")
-	String field1499;
-	@ObfInfo(name = "at", desc = "Ljava/lang/String;")
-	String field1501;
-	@ObfInfo(name = "ao", desc = "Loh;")
-	public final class454 field1498;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = -1109796019)
-	public final int field1502;
-	@ObfInfo(name = "ae", desc = "J", longMultiplier = -3116197775568989741L)
-	public final long field1500;
-
-	@ObfInfo(name = "<init>", desc = "(Ltm;BI)V")
-	class158(class280 var1, byte var2, int var3) {
-		this.field1501 = var1.method1500();
-		this.field1499 = var1.method1500();
-		this.field1502 = var1.method1541();
-		this.field1500 = var1.method1497();
-		int var4 = var1.method1496();
-		int var5 = var1.method1496();
-		this.field1498 = new class454();
-		this.field1498.method2362(2);
-		this.field1498.method2366(var2);
-		this.field1498.field3713 = var4;
-		this.field1498.field3711 = var5;
-		this.field1498.field3712 = 0;
-		this.field1498.field3708 = 0;
-		this.field1498.field3709 = var3;
+	static {
+		field1469 = new class158(0, 0);
+		field1467 = new class158(1, 1);
+		field1468 = new class158(2, 2);
+		field1472 = new class158(3, 3);
+		field1470 = new class158(4, 4);
+		field1471 = new class158(5, 5);
+		field1466 = new class158(6, 6);
+		field1473 = new class158(7, 7);
+		field1474 = new class158(8, 8);
 	}
 
-	@ObfInfo(name = "au", desc = "(I)Ljava/lang/String;")
-	public String method912() {
-		return this.field1501;
+	class158(int var1, int var2) {
+		this.field1475 = var1;
+		this.field1476 = var2;
 	}
 
-	@ObfInfo(name = "ae", desc = "(B)Ljava/lang/String;")
-	public String method911() {
-		return this.field1499;
+	public int method1970() {
+		return this.field1476;
+	}
+
+	public static class96 method892(int var0) {
+		return var0 >= 0 && var0 < class96.field957.length && class96.field957[var0] != null ? class96.field957[var0] : new class96(var0);
 	}
 }

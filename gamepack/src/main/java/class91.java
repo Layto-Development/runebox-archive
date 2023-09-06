@@ -1,46 +1,61 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.concurrent.Callable;
+public class class91 extends class234 {
+	double field893;
+	double field894;
+	double field895;
+	double field896;
+	double field897;
+	int field891;
+	int field892;
 
-@ObfInfo(name = "ep")
-public class class91 implements Callable {
-	@ObfInfo(name = "mt", desc = "Ljk;")
-	static class458 field925;
-	@ObfInfo(name = "kz", desc = "I", intMultiplier = 1065394883)
-	static int field926;
-	@ObfInfo(name = "gf", desc = "I", intMultiplier = -1026582299)
-	static int field927;
-	@ObfInfo(name = "ao", desc = "Lfs;")
-	final class214 field922;
-	@ObfInfo(name = "au", desc = "Lfh;")
-	final class27 field924;
-	@ObfInfo(name = "ae", desc = "Lft;")
-	final class416 field921;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lfv;")
-	final class89 this$0;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 1155375763)
-	final int field923;
+	public class91(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
+		super(var9, var10);
+		this.field891 = 0;
+		this.field892 = 0;
+		this.field893 = 0.0D;
+		this.field894 = 0.0D;
+		this.field895 = 0.0D;
+		this.field897 = 0.0D;
+		this.field896 = 0.0D;
+		this.field891 = var3;
+		this.field892 = var6;
+		if ((var7 - var1) * (var5 - var8) == (var4 - var7) * (var8 - var2)) {
+			this.field893 = (double)var4;
+			this.field894 = (double)var5;
+		} else {
+			double var11 = (double)((float)(var1 + var7)) / 2.0D;
+			double var13 = (double)((float)(var2 + var8)) / 2.0D;
+			double var15 = (double)((float)(var7 + var4)) / 2.0D;
+			double var17 = (double)((float)(var5 + var8)) / 2.0D;
+			double var19 = -1.0D * (double)(var7 - var1) / (double)(var8 - var2);
+			double var21 = (double)(var4 - var7) * -1.0D / (double)(var5 - var8);
+			this.field893 = (var19 * var11 - var21 * var15 + var17 - var13) / (var19 - var21);
+			this.field894 = var13 + var19 * (this.field893 - var11);
+			this.field895 = Math.sqrt(Math.pow(this.field893 - (double)var1, 2.0D) + Math.pow(this.field894 - (double)var2, 2.0D));
+			this.field897 = Math.atan2((double)var2 - this.field894, (double)var1 - this.field893);
+			double var23 = Math.atan2((double)var8 - this.field894, (double)var7 - this.field893);
+			this.field896 = Math.atan2((double)var5 - this.field894, (double)var4 - this.field893);
+			boolean var25 = this.field897 <= var23 && var23 <= this.field896 || this.field896 <= var23 && var23 <= this.field897;
+			if (!var25) {
+				this.field896 += (double)(this.field897 - this.field896 > 0.0D ? 2 : -2) * 3.141592653589793D;
+			}
 
-	@ObfInfo(name = "<init>", desc = "(Lfv;Lfh;Lft;Lfs;I)V")
-	class91(class89 var1, class27 var2, class416 var3, class214 var4, int var5) {
-		this.this$0 = var1;
-		this.field924 = var2;
-		this.field921 = var3;
-		this.field922 = var4;
-		this.field923 = var5;
+		}
 	}
 
-	@ObfInfo(name = "call", desc = "()Ljava/lang/Object;")
-	public Object call() {
-		this.field924.method358();
-		class27[][] var1;
-		if (class416.field3199 == this.field921) {
-			var1 = this.this$0.field889;
-		} else {
-			var1 = this.this$0.field895;
-		}
+	public int method1340() {
+		double var2 = this.method1047();
+		double var4 = this.field897 + (this.field896 - this.field897) * var2;
+		return (int)Math.round(this.field893 + this.field895 * Math.cos(var4));
+	}
 
-		var1[this.field923][this.field922.method1192()] = this.field924;
-		return null;
+	public int method1341() {
+		double var2 = this.method1047();
+		double var4 = this.field897 + var2 * (this.field896 - this.field897);
+		return (int)Math.round(this.field894 + this.field895 * Math.sin(var4));
+	}
+
+	public int method1342() {
+		double var2 = this.method1047();
+		return (int)Math.round((double)this.field891 + var2 * (double)(this.field892 - this.field891));
 	}
 }

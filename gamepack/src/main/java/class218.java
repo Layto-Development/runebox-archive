@@ -1,11 +1,14 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class218 extends class462 {
+	public class218 field2029;
+	public class218 field2030;
+	public long field2031;
 
-@ObfInfo(name = "cp")
-public abstract class class218 extends class155 {
-	@ObfInfo(name = "ai", desc = "I")
-	int field1933;
-
-	@ObfInfo(name = "<init>", desc = "()V")
-	class218() {
+	public void method1252() {
+		if (this.field2030 != null) {
+			this.field2030.field2029 = this.field2029;
+			this.field2029.field2030 = this.field2030;
+			this.field2029 = null;
+			this.field2030 = null;
+		}
 	}
 }

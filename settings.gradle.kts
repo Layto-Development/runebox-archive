@@ -14,7 +14,7 @@ gradleEnterprise {
 }
 
 module("internal:deobfuscator")
-module("internal:deobfuscator:includes")
+module("internal:deobfuscator:annotations")
 module("internal:injector")
 module("internal:injector:annotations")
 module("internal:updater")

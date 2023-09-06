@@ -1,77 +1,86 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class350 extends class71 {
+	int field3006;
 
-@ObfInfo(name = "sb")
-public class class350 {
-	@ObfInfo(name = "ap", desc = "Z")
-	boolean field2766;
-	@ObfInfo(name = "ai", desc = "Lnu;")
-	class437 field2764;
-	@ObfInfo(name = "az", desc = "I", intMultiplier = 1219559555)
-	int field2765;
-	@ObfInfo(name = "ac", desc = "Ljava/lang/String;")
-	String field2763;
-
-	@ObfInfo(name = "<init>", desc = "(Lnu;)V")
-	class350(class437 var1) {
-		this.field2765 = 0;
-		this.field2766 = false;
-		this.field2764 = var1;
+	class350() {
 	}
 
-	@ObfInfo(name = "au", desc = "(Ljava/lang/String;I)V", opaqueValue = "-1398397545")
-	void method1925(String var1) {
-		if (null != var1 && !var1.isEmpty()) {
-			if (this.field2763 != var1) {
-				this.field2763 = var1;
-				this.field2765 = 0;
-				this.field2766 = false;
-				this.method1926();
+	int method1921(class350 var1) {
+		return this.field3006 - var1.field3006;
+	}
+
+	public int method512(class71 var1) {
+		return this.method1921((class350)var1);
+	}
+
+	public int compareTo(Object var1) {
+		return this.method1921((class350)var1);
+	}
+
+	static final void method1920() {
+		for (class353 var1 = (class353)Client.field144.method563(); var1 != null; var1 = (class353)Client.field144.method565()) {
+			if (var1.field3026 > 0) {
+				--var1.field3026;
+			}
+
+			boolean var2;
+			int var3;
+			int var4;
+			class235 var5;
+			if (var1.field3026 == 0) {
+				if (var1.field3017 >= 0) {
+					var3 = var1.field3017;
+					var4 = var1.field3019;
+					var5 = class96.method638(var3, (byte)-69);
+					if (var4 == 11) {
+						var4 = 10;
+					}
+
+					if (var4 >= 5 && var4 <= 8) {
+						var4 = 4;
+					}
+
+					var2 = var5.method1345(var4);
+					if (!var2) {
+						continue;
+					}
+				}
+
+				class199.method1138(var1.field3028, var1.field3014, var1.field3021, var1.field3027, var1.field3017, var1.field3018, var1.field3019, var1.field3023);
+				var1.method2269();
+			} else {
+				if (var1.field3025 > 0) {
+					--var1.field3025;
+				}
+
+				if (var1.field3025 == 0 && var1.field3021 >= 1 && var1.field3027 >= 1 && var1.field3021 <= 102 && var1.field3027 <= 102) {
+					if (var1.field3020 >= 0) {
+						var3 = var1.field3020;
+						var4 = var1.field3016;
+						var5 = class96.method638(var3, (byte)-10);
+						if (var4 == 11) {
+							var4 = 10;
+						}
+
+						if (var4 >= 5 && var4 <= 8) {
+							var4 = 4;
+						}
+
+						var2 = var5.method1345(var4);
+						if (!var2) {
+							continue;
+						}
+					}
+
+					class199.method1138(var1.field3028, var1.field3014, var1.field3021, var1.field3027, var1.field3020, var1.field3022, var1.field3016, var1.field3023);
+					var1.field3025 = -1;
+					if (var1.field3020 == var1.field3017 && var1.field3017 == -1) {
+						var1.method2269();
+					} else if (var1.field3020 == var1.field3017 && var1.field3022 == var1.field3018 && var1.field3019 == var1.field3016) {
+						var1.method2269();
+					}
+				}
 			}
 		}
-	}
 
-	@ObfInfo(name = "ae", desc = "(I)I", opaqueValue = "252910623")
-	int method1926() {
-		if (this.field2763 == null) {
-			this.field2765 = 100;
-			this.field2766 = true;
-		} else {
-			if (this.field2765 < 33) {
-				if (!this.field2764.method2287(class506.field4082.field4085, this.field2763)) {
-					return this.field2765;
-				}
-
-				this.field2765 = 33;
-			}
-
-			if (this.field2765 == 33) {
-				if (this.field2764.method2289(class506.field4081.field4085, this.field2763) && !this.field2764.method2287(class506.field4081.field4085, this.field2763)) {
-					return this.field2765;
-				}
-
-				this.field2765 = 66;
-			}
-
-			if (this.field2765 == 66) {
-				if (!this.field2764.method2287(this.field2763, class506.field4084.field4085)) {
-					return this.field2765;
-				}
-
-				this.field2765 = 100;
-				this.field2766 = true;
-			}
-		}
-
-		return this.field2765;
-	}
-
-	@ObfInfo(name = "ao", desc = "(B)Z")
-	boolean method1927() {
-		return this.field2766;
-	}
-
-	@ObfInfo(name = "at", desc = "(I)I")
-	int method1928() {
-		return this.field2765;
 	}
 }

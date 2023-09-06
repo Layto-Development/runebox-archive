@@ -1,131 +1,121 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.ArrayList;
-import java.util.BitSet;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 
-@ObfInfo(name = "go")
-public class class143 extends class155 {
-	@ObfInfo(name = "ae", desc = "Z")
-	boolean field1433;
-	@ObfInfo(name = "au", desc = "Z")
-	boolean field1438;
-	@ObfInfo(name = "at", desc = "[I")
-	int[] field1435;
-	@ObfInfo(name = "az", desc = "B")
-	public byte field1432;
-	@ObfInfo(name = "ap", desc = "B")
-	public byte field1436;
-	@ObfInfo(name = "ai", desc = "Ljava/lang/String;")
-	public String field1437;
-	@ObfInfo(name = "ao", desc = "Ljava/util/List;")
-	public List field1434;
-	@ObfInfo(name = "ac", desc = "J", longMultiplier = -1404514629729281795L)
-	public long field1439;
+public class class143 extends class8 {
+	HashSet field1367;
+	HashSet field1368;
+	List field1369;
 
-	static {
-		new BitSet(65536);
+	class143() {
 	}
 
-	@ObfInfo(name = "<init>", desc = "(Ltm;)V")
-	public class143(class280 var1) {
-		this.field1433 = true;
-		this.field1437 = null;
-		this.method837(var1);
-	}
+	void method845(class42 var1, class42 var2, int var3, boolean var4) {
+		this.method66(var1, var3);
+		int var6 = var2.method327();
+		this.field1367 = new HashSet(var6);
 
-	@ObfInfo(name = "au", desc = "(B)[I", opaqueValue = "1")
-	public int[] method836() {
-		if (null == this.field1435) {
-			String[] var2 = new String[this.field1434.size()];
-			this.field1435 = new int[this.field1434.size()];
+		int var7;
+		for (var7 = 0; var7 < var6; ++var7) {
+			class152 var8 = new class152();
 
-			for (int var3 = 0; var3 < this.field1434.size(); this.field1435[var3] = var3++) {
-				var2[var3] = ((class524)this.field1434.get(var3)).field4198.method1933();
+			try {
+				var8.method877(var2);
+			} catch (IllegalStateException var12) {
+				continue;
 			}
 
-			int[] var4 = this.field1435;
-			class330.method1807(var2, var4, 0, var2.length - 1);
+			this.field1367.add(var8);
 		}
 
-		return this.field1435;
+		var7 = var2.method327();
+		this.field1368 = new HashSet(var7);
+
+		for (int var13 = 0; var13 < var7; ++var13) {
+			class418 var9 = new class418();
+
+			try {
+				var9.method2147(var2);
+			} catch (IllegalStateException var11) {
+				continue;
+			}
+
+			this.field1368.add(var9);
+		}
+
+		this.method844(var2, var4);
 	}
 
-	@ObfInfo(name = "ae", desc = "(Lfu;I)V")
-	void method832(class524 var1) {
-		this.field1434.add(var1);
-		this.field1435 = null;
+	void method844(class42 var1, boolean var2) {
+		this.field1369 = new LinkedList();
+		int var4 = var1.method327();
+
+		for (int var5 = 0; var5 < var4; ++var5) {
+			int var6 = var1.method326();
+			class29 var7 = new class29(var1.method282());
+			boolean var8 = var1.method278() == 1;
+			if (var2 || !var8) {
+				this.field1369.add(new class524((class29)null, var7, var6, (class197)null));
+			}
+		}
+
 	}
 
-	@ObfInfo(name = "ao", desc = "(II)V")
-	void method833(int var1) {
-		this.field1434.remove(var1);
-		this.field1435 = null;
-	}
+	static void method847(boolean var0) {
+		if (!class466.field3999.method7() && !class466.field3999.method8() && !class466.field3999.method30((byte)116)) {
+			class116.field1101 = class433.field3750;
+			class116.field1099 = class433.field3751;
+			class116.field1100 = class433.field3713;
+			class337.method1864(2);
+			if (var0) {
+				class116.field1103 = "";
+			}
 
-	@ObfInfo(name = "at", desc = "(B)I")
-	public int method834() {
-		return this.field1434.size();
-	}
+			if (null == class116.field1110 || class116.field1110.length() <= 0) {
+				if (class176.field1701.method2500() != null) {
+					class116.field1110 = class176.field1701.method2500();
+					Client.field57 = true;
+				} else {
+					Client.field57 = false;
+				}
+			}
 
-	@ObfInfo(name = "ac", desc = "(Ljava/lang/String;S)I", opaqueValue = "179")
-	public int method835(String var1) {
-		if (!this.field1433) {
-			throw new RuntimeException("Displaynames not available");
+			class235.method1356();
 		} else {
-			for (int var3 = 0; var3 < this.field1434.size(); ++var3) {
-				if (((class524)this.field1434.get(var3)).field4198.method1935().equalsIgnoreCase(var1)) {
-					return var3;
-				}
-			}
-
-			return -1;
+			class337.method1864(10);
 		}
 	}
 
-	@ObfInfo(name = "ai", desc = "(Ltm;I)V", opaqueValue = "381864012")
-	void method837(class280 var1) {
-		int var3 = var1.method1492();
-		if ((var3 & 1) != 0) {
-			this.field1438 = true;
+	static void method846(boolean var0) {
+		byte var2 = 0;
+		boolean var3 = class176.field1701.method2501() >= Client.field8;
+		if (!var3) {
+			var2 = 12;
+		} else if (class466.field3999.method7() || class466.field3999.method8() || class466.field3999.method30((byte)106)) {
+			var2 = 10;
 		}
 
-		if ((var3 & 2) != 0) {
-			this.field1433 = true;
+		class337.method1864(var2);
+		if (var0) {
+			class116.field1110 = "";
+			class116.field1103 = "";
+			class242.field2213 = 0;
+			class110.field1061 = "";
 		}
 
-		int var4 = 2;
-		if ((var3 & 4) != 0) {
-			var4 = var1.method1492();
-		}
-
-		super.field1483 = var1.method1497();
-		this.field1439 = var1.method1497();
-		this.field1437 = var1.method1500();
-		var1.method1499();
-		this.field1436 = var1.method1493();
-		this.field1432 = var1.method1493();
-		int var5 = var1.method1541();
-		if (var5 > 0) {
-			this.field1434 = new ArrayList(var5);
-
-			for (int var6 = 0; var6 < var5; ++var6) {
-				class524 var7 = new class524();
-				if (this.field1438) {
-					var1.method1497();
-				}
-
-				if (this.field1433) {
-					var7.field4198 = new class353(var1.method1500());
-				}
-
-				var7.field4199 = var1.method1493();
-				var7.field4200 = var1.method1541();
-				if (var4 >= 3) {
-					var1.method1499();
-				}
-
-				this.field1434.add(var6, var7);
+		if (null == class116.field1110 || class116.field1110.length() <= 0) {
+			if (class176.field1701.method2500() != null) {
+				class116.field1110 = class176.field1701.method2500();
+				Client.field57 = true;
+			} else {
+				Client.field57 = false;
 			}
+		}
+
+		if (Client.field57 && class116.field1110 != null && class116.field1110.length() > 0) {
+			class116.field1108 = 1;
+		} else {
+			class116.field1108 = 0;
 		}
 
 	}

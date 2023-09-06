@@ -1,24 +1,15 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Comparator;
 
-@ObfInfo(name = "po")
-public class class33 extends class236 {
-	@ObfInfo(name = "rd", desc = "Lth;")
-	static class267 field482;
-
-	@ObfInfo(name = "<init>", desc = "(Lpm;)V")
-	public class33(class236 var1) {
-		super(var1);
-		super.field1978 = "SwapSongTask";
+final class class33 implements Comparator {
+	int method226(class478 var1, class478 var2) {
+		return var1.field4064.field4233 < var2.field4064.field4233 ? -1 : (var1.field4064.field4233 == var2.field4064.field4233 ? 0 : 1);
 	}
 
-	@ObfInfo(name = "au", desc = "(I)Z", opaqueValue = "1553685320")
-	public boolean method1242() {
-		if (class303.field2447.size() > 1 && class303.field2447.get(0) != null && ((class503)class303.field2447.get(0)).field4063.method809() && class303.field2447.get(1) != null && ((class503)class303.field2447.get(1)).field4063.method809()) {
-			class503 var2 = (class503)class303.field2447.get(0);
-			class303.field2447.set(0, class303.field2447.get(1));
-			class303.field2447.set(1, var2);
-		}
+	public int compare(Object var1, Object var2) {
+		return this.method226((class478)var1, (class478)var2);
+	}
 
-		return true;
+	public boolean equals(Object var1) {
+		return super.equals(var1);
 	}
 }

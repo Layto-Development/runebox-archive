@@ -1,51 +1,28 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+public class class463 implements class369 {
+	static int field3989;
 
-@ObfInfo(name = "ap")
-public class class463 {
-	@ObfInfo(name = "aq", desc = "I", intMultiplier = 1299157837)
-	static int field3759;
-	@ObfInfo(name = "au", desc = "Ljava/util/concurrent/ExecutorService;")
-	ExecutorService field3757;
-	@ObfInfo(name = "ae", desc = "Ljava/util/concurrent/Future;")
-	Future field3760;
-	@ObfInfo(name = "ao", desc = "Ltm;")
-	final class280 field3758;
-	@ObfInfo(name = "at", desc = "Lat;")
-	final class84 field3756;
-
-	@ObfInfo(name = "<init>", desc = "(Ltm;Lat;)V")
-	public class463(class280 var1, class84 var2) {
-		this.field3757 = Executors.newSingleThreadExecutor();
-		this.field3758 = var1;
-		this.field3756 = var2;
-		this.method2398();
-	}
-
-	@ObfInfo(name = "au", desc = "(I)Z")
-	public boolean method2400() {
-		return this.field3760.isDone();
-	}
-
-	@ObfInfo(name = "ae", desc = "(I)V")
-	public void method2397() {
-		this.field3757.shutdown();
-		this.field3757 = null;
-	}
-
-	@ObfInfo(name = "ao", desc = "(B)Ltm;")
-	public class280 method2399() {
-		try {
-			return (class280)this.field3760.get();
-		} catch (Exception var3) {
-			return null;
+	static class167 method2271(int var0) {
+		class167 var2 = (class167)class167.field1619.method1890((long)var0);
+		if (var2 != null) {
+			return var2;
+		} else {
+			byte[] var3 = class522.field4234.method1212(var0, 0);
+			if (null == var3) {
+				return null;
+			} else {
+				var2 = class151.method869(var3);
+				class167.field1619.method1889(var2, (long)var0);
+				return var2;
+			}
 		}
 	}
 
-	@ObfInfo(name = "at", desc = "(I)V")
-	void method2398() {
-		this.field3760 = this.field3757.submit(new class345(this, this.field3758, this.field3756));
+	static class342 method2272(int var0, boolean var1, boolean var2, boolean var3, boolean var4) {
+		class124 var6 = null;
+		if (null != class297.field2739) {
+			var6 = new class124(var0, class297.field2739, class436.field3865[var0], 1000000);
+		}
+
+		return new class342(var6, class290.field2580, class336.field2933, var0, var1, var2, var3, var4);
 	}
 }

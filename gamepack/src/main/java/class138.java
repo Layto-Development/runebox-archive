@@ -1,17 +1,7 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public final class class138 {
+	static class342 field1330;
+	static class60 field1329;
 
-@ObfInfo(name = "cs")
-public abstract class class138 extends class155 {
-	@ObfInfo(name = "au", desc = "I")
-	int field1414;
-
-	@ObfInfo(name = "<init>", desc = "()V")
 	class138() throws Throwable {
 	}
-
-	@ObfInfo(name = "ae", desc = "(Lbl;)I")
-	abstract int method816(class363 var1);
-
-	@ObfInfo(name = "au", desc = "()V")
-	abstract void method815();
 }

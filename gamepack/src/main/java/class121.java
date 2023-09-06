@@ -1,70 +1,65 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class121 {
+	class445[] field1133;
+	int field1132;
 
-@ObfInfo(name = "ly")
-public class class121 extends class155 {
-	@ObfInfo(name = "ak", desc = "[[Lmi;")
-	public static class131[][] field1142;
-	@ObfInfo(name = "ac", desc = "[Lly;")
-	static class121[] field1139;
-	@ObfInfo(name = "ip", desc = "Lsr;")
-	static class389 field1143;
-	@ObfInfo(name = "ai", desc = "I", intMultiplier = 612768397)
-	static int field1140;
-	@ObfInfo(name = "ao", desc = "Lto;")
-	public class259 field1141;
-	@ObfInfo(name = "au", desc = "Llw;")
-	public class480 field1136;
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = -491908089)
-	public int field1137;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 1067890615)
-	public int field1138;
-
-	static {
-		field1139 = new class121[300];
-		field1140 = 0;
-	}
-
-	@ObfInfo(name = "<init>", desc = "()V")
 	class121() {
+		this.field1133 = new class445[100];
 	}
 
-	@ObfInfo(name = "ao", desc = "(I)V", opaqueValue = "45081734")
-	public void method687() {
-		if (field1140 < field1139.length) {
-			field1139[++field1140 - 1] = this;
+	class445 method751(int var1, String var2, String var3, String var4) {
+		class445 var6 = this.field1133[99];
+
+		for (int var7 = this.field1132; var7 > 0; --var7) {
+			if (var7 != 100) {
+				this.field1133[var7] = this.field1133[var7 - 1];
+			}
 		}
-	}
 
-	@ObfInfo(name = "ae", desc = "(Llw;Lux;I)Lly;")
-	public static class121 method689(class480 var0, class199 var1) {
-		class121 var3 = class220.method1205((byte)-1);
-		var3.field1136 = var0;
-		var3.field1137 = var0.field3897;
-		if (var3.field1137 == -1) {
-			var3.field1141 = new class259(260);
-		} else if (var3.field1137 == -2) {
-			var3.field1141 = new class259(10000);
-		} else if (var3.field1137 <= 18) {
-			var3.field1141 = new class259(20);
-		} else if (var3.field1137 <= 98) {
-			var3.field1141 = new class259(100);
+		if (null == var6) {
+			var6 = new class445(var1, var2, var4, var3);
 		} else {
-			var3.field1141 = new class259(260);
+			var6.method2269();
+			var6.method1252();
+			var6.method2226(var1, var2, var4, var3);
 		}
 
-		var3.field1141.method1353(var1);
-		var3.field1141.method1355(var3.field1136.field3846);
-		var3.field1138 = 0;
-		return var3;
+		this.field1133[0] = var6;
+		if (this.field1132 < 100) {
+			++this.field1132;
+		}
+
+		return var6;
 	}
 
-	@ObfInfo(name = "ao", desc = "(II)I")
-	public static int method688(int var0) {
-		var0 = (var0 & 1431655765) + (var0 >>> 1 & 1431655765);
-		var0 = (var0 & 858993459) + (var0 >>> 2 & 858993459);
-		var0 = (var0 >>> 4) + var0 & 252645135;
-		var0 += var0 >>> 8;
-		var0 += var0 >>> 16;
-		return var0 & 255;
+	class445 method752(int var1) {
+		return var1 >= 0 && var1 < this.field1132 ? this.field1133[var1] : null;
+	}
+
+	int method750() {
+		return this.field1132;
+	}
+
+	static void method754() {
+		class41.field520.clear();
+		class41.field521.method2544();
+		class41.field522.method1607();
+		class41.field523 = 0;
+	}
+
+	static boolean method753() {
+		if (null != Client.field300 && Client.field301 < Client.field300.size()) {
+			while (Client.field301 < Client.field300.size()) {
+				class398 var1 = (class398)Client.field300.get(Client.field301);
+				if (!var1.method2076()) {
+					return false;
+				}
+
+				++Client.field301;
+			}
+
+			return true;
+		} else {
+			return true;
+		}
 	}
 }

@@ -1,28 +1,52 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class326 {
+	byte[] field2903;
+	int field2902;
+	int field2904;
 
-@ObfInfo(name = "gw")
-public class class326 extends class313 {
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = -713647017)
-	int field2626;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = -2110571145)
-	int field2627;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lfn;")
-	final class220 this$0;
-
-	@ObfInfo(name = "<init>", desc = "(Lfn;)V")
-	class326(class220 var1) {
-		this.this$0 = var1;
+	class326() {
+		this.field2903 = null;
+		this.field2902 = 0;
+		this.field2904 = 0;
 	}
 
-	@ObfInfo(name = "au", desc = "(Ltm;I)V")
-	void method1731(class280 var1) {
-		this.field2627 = var1.method1496();
-		this.field2626 = var1.method1496();
+	int method1829(int var1) {
+		int var3 = 0;
+
+		int var4;
+		int var5;
+		for (var4 = 0; var1 >= 8 - this.field2904; var1 -= var5) {
+			var5 = 8 - this.field2904;
+			int var6 = (1 << var5) - 1;
+			var3 += (this.field2903[this.field2902] >> this.field2904 & var6) << var4;
+			this.field2904 = 0;
+			++this.field2902;
+			var4 += var5;
+		}
+
+		if (var1 > 0) {
+			var5 = (1 << var1) - 1;
+			var3 += (this.field2903[this.field2902] >> this.field2904 & var5) << var4;
+			this.field2904 += var1;
+		}
+
+		return var3;
 	}
 
-	@ObfInfo(name = "ae", desc = "(Lfi;B)V")
-	void method1730(class291 var1) {
-		var1.method1587(this.field2627, this.field2626);
+	int method1830() {
+		int var2 = this.field2903[this.field2902] >> this.field2904 & 1;
+		++this.field2904;
+		this.field2902 += this.field2904 >> 3;
+		this.field2904 &= 7;
+		return var2;
+	}
+
+	void method1831(byte[] var1, int var2) {
+		this.field2903 = var1;
+		this.field2902 = var2;
+		this.field2904 = 0;
+	}
+
+	public static String method1832(int var0, boolean var1) {
+		return var1 && var0 >= 0 ? class434.method2205(var0, 10, var1) : Integer.toString(var0);
 	}
 }

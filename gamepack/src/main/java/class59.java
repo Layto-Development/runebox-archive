@@ -1,131 +1,94 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import javax.net.ssl.HttpsURLConnection;
+public class class59 implements class405 {
+	int field618;
+	int field619;
+	int field620;
+	int field621;
+	int field622;
+	int field623;
+	int field624;
+	int field625;
+	int field626;
+	int field627;
+	int field628;
+	int field629;
+	int field630;
+	int field631;
 
-@ObfInfo(name = "qf")
-public class class59 {
-	@ObfInfo(name = "nx", desc = "I", intMultiplier = 183418913)
-	static int field731;
-	@ObfInfo(name = "ai", desc = "Ljava/text/DecimalFormat;")
-	final DecimalFormat field728;
-	@ObfInfo(name = "at", desc = "Ljava/util/Map;")
-	final Map field729;
-	@ObfInfo(name = "ac", desc = "Ljava/util/Map;")
-	final Map field730;
-
-	@ObfInfo(name = "<init>", desc = "()V")
-	public class59() {
-		this.field729 = new HashMap();
-		this.field730 = new HashMap();
-		this.field728 = new DecimalFormat();
-		this.field728.setMaximumFractionDigits(2);
+	class59() {
 	}
 
-	@ObfInfo(name = "au", desc = "(Ljavax/net/ssl/HttpsURLConnection;B)V")
-	public void method471(HttpsURLConnection var1) {
-		Iterator var3 = this.field729.entrySet().iterator();
+	public void method2098(class8 var1) {
+		if (var1.field341 > this.field622) {
+			var1.field341 = this.field622;
+		}
 
-		while (var3.hasNext()) {
-			Entry var4 = (Entry)var3.next();
-			var1.setRequestProperty((String)var4.getKey(), (String)var4.getValue());
+		if (var1.field335 < this.field622) {
+			var1.field335 = this.field622;
+		}
+
+		if (var1.field343 > this.field630) {
+			var1.field343 = this.field630;
+		}
+
+		if (var1.field337 < this.field630) {
+			var1.field337 = this.field630;
 		}
 
 	}
 
-	@ObfInfo(name = "ae", desc = "(I)Ljava/util/Map;")
-	public Map method472() {
-		return this.field729;
-	}
-
-	@ObfInfo(name = "ao", desc = "(Ljava/lang/String;Ljava/lang/String;I)V", opaqueValue = "2091196892")
-	public void method473(String var1, String var2) {
-		if (var1 != null && !var1.isEmpty()) {
-			this.field729.put(var1, var2 != null ? var2 : "");
+	public boolean method2093(int var1, int var2, int var3) {
+		if (var1 >= this.field618 && var1 < this.field620 + this.field618) {
+			return var2 >= (this.field624 << 6) + (this.field619 << 3) && var2 <= (this.field626 << 3) + (this.field624 << 6) + 7 && var3 >= (this.field625 << 3) + (this.field628 << 6) && var3 <= (this.field628 << 6) + (this.field627 << 3) + 7;
+		} else {
+			return false;
 		}
-
 	}
 
-	@ObfInfo(name = "at", desc = "(Ljava/lang/String;I)V", opaqueValue = "446806952")
-	public void method482(String var1) {
-		if (null != var1 && !var1.isEmpty()) {
-			this.field729.remove(var1);
+	public boolean method2094(int var1, int var2) {
+		return var1 >= (this.field623 << 3) + (this.field622 << 6) && var1 <= 7 + (this.field622 << 6) + (this.field621 << 3) && var2 >= (this.field629 << 3) + (this.field630 << 6) && var2 <= (this.field630 << 6) + (this.field631 << 3) + 7;
+	}
+
+	public int[] method2096(int var1, int var2, int var3) {
+		if (!this.method2093(var1, var2, var3)) {
+			return null;
+		} else {
+			int[] var5 = new int[]{this.field623 * 8 - this.field619 * 8 + this.field622 * 64 - this.field624 * 64 + var2, var3 + (this.field630 * 64 - this.field628 * 64) + (this.field629 * 8 - this.field625 * 8)};
+			return var5;
 		}
-
 	}
 
-	@ObfInfo(name = "ac", desc = "(Lqn;Ljava/lang/String;B)V")
-	void method478(class271 var1, String var2) {
-		String var4 = String.format("%s %s", var1.method1425(), var2);
-		this.method473("Authorization", var4);
-	}
-
-	@ObfInfo(name = "ai", desc = "(Ljava/lang/String;I)V")
-	public void method474(String var1) {
-		this.method478(class271.field2219, var1);
-	}
-
-	@ObfInfo(name = "az", desc = "(Ljava/lang/String;I)V")
-	public void method483(String var1) {
-		this.method478(class271.field2220, var1);
-	}
-
-	@ObfInfo(name = "ap", desc = "(Lre;I)V")
-	public void method477(class329 var1) {
-		this.field729.put("Content-Type", var1.method1805());
-	}
-
-	@ObfInfo(name = "aa", desc = "(B)V")
-	public void method475() {
-		this.field729.remove("Content-Type");
-	}
-
-	@ObfInfo(name = "af", desc = "(Lre;B)V")
-	public void method476(class329 var1) {
-		this.method480(var1, 1.0F);
-	}
-
-	@ObfInfo(name = "ad", desc = "(Lre;FI)V")
-	void method480(class329 var1, float var2) {
-		this.field730.put(var1, Math.max(0.0F, Math.min(1.0F, var2)));
-		this.method479();
-	}
-
-	@ObfInfo(name = "aq", desc = "(I)V")
-	void method479() {
-		this.field729.remove("Accept");
-		if (!this.field730.isEmpty()) {
-			this.field729.put("Accept", this.method481());
+	public class29 method2097(int var1, int var2) {
+		if (!this.method2094(var1, var2)) {
+			return null;
+		} else {
+			int var4 = this.field624 * 64 - this.field622 * 64 + var1 + (this.field619 * 8 - this.field623 * 8);
+			int var5 = this.field628 * 64 - this.field630 * 64 + var2 + (this.field625 * 8 - this.field629 * 8);
+			return new class29(this.field618, var4, var5);
 		}
-
 	}
 
-	@ObfInfo(name = "al", desc = "(B)Ljava/lang/String;", opaqueValue = "0")
-	String method481() {
-		ArrayList var2 = new ArrayList(this.field730.entrySet());
-		Collections.sort(var2, new class118(this));
-		StringBuilder var3 = new StringBuilder();
-		Iterator var4 = var2.iterator();
+	public void method2095(class42 var1) {
+		this.field618 = var1.method278();
+		this.field620 = var1.method278();
+		this.field624 = var1.method327();
+		this.field619 = var1.method278();
+		this.field626 = var1.method278();
+		this.field628 = var1.method327();
+		this.field625 = var1.method278();
+		this.field627 = var1.method278();
+		this.field622 = var1.method327();
+		this.field623 = var1.method278();
+		this.field621 = var1.method278();
+		this.field630 = var1.method327();
+		this.field629 = var1.method278();
+		this.field631 = var1.method278();
+		this.method434();
+	}
 
-		while (var4.hasNext()) {
-			Entry var5 = (Entry)var4.next();
-			if (var3.length() > 0) {
-				var3.append(",");
-			}
+	void method434() {
+	}
 
-			var3.append(((class329)var5.getKey()).method1805());
-			float var6 = (Float)var5.getValue();
-			if (var6 < 1.0F) {
-				String var7 = this.field728.format((double)var6);
-				var3.append(";q=").append(var7);
-			}
-		}
-
-		return var3.toString();
+	public static class144[] method430() {
+		return new class144[]{class144.field1377, class144.field1370, class144.field1372, class144.field1373, class144.field1381, class144.field1375, class144.field1371, class144.field1378, class144.field1376, class144.field1379, class144.field1380, class144.field1374};
 	}
 }

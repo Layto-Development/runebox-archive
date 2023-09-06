@@ -1,62 +1,51 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "il")
 public class class36 {
-	@ObfInfo(name = "az", desc = "Lil;")
-	public static final class36 field488;
-	@ObfInfo(name = "ap", desc = "Lil;")
-	public static final class36 field490;
-	@ObfInfo(name = "ac", desc = "Lil;")
-	public static final class36 field492;
-	@ObfInfo(name = "aa", desc = "Lil;")
-	public static final class36 field495;
-	@ObfInfo(name = "ad", desc = "Lil;")
-	public static final class36 field497;
-	@ObfInfo(name = "aq", desc = "Lil;")
-	public static final class36 field498;
-	@ObfInfo(name = "af", desc = "Lil;")
-	public static final class36 field501;
-	@ObfInfo(name = "ae", desc = "Lil;")
-	static final class36 field489;
-	@ObfInfo(name = "au", desc = "Lil;")
-	static final class36 field491;
-	@ObfInfo(name = "ai", desc = "Lil;")
-	static final class36 field493;
-	@ObfInfo(name = "at", desc = "Lil;")
-	static final class36 field496;
-	@ObfInfo(name = "al", desc = "Lil;")
-	static final class36 field499;
-	@ObfInfo(name = "an", desc = "Lil;")
-	static final class36 field500;
-	@ObfInfo(name = "ao", desc = "Lil;")
-	static final class36 field502;
-	@ObfInfo(name = "ar", desc = "I", intMultiplier = 1460826415)
-	public final int field494;
-
-	static {
-		field491 = new class36(0);
-		field489 = new class36(1);
-		field502 = new class36(2);
-		field496 = new class36(3);
-		field492 = new class36(4, class132.field1361);
-		field493 = new class36(5);
-		field488 = new class36(6, class132.field1362);
-		field490 = new class36(7, class132.field1365);
-		field495 = new class36(8, class132.field1366);
-		field501 = new class36(9, class132.field1363);
-		field497 = new class36(10, class132.field1364);
-		field498 = new class36(11, class132.field1360);
-		field499 = new class36(12);
-		field500 = new class36(13);
+	class36() throws Throwable {
 	}
 
-	@ObfInfo(name = "<init>", desc = "(ILhp;)V")
-	class36(int var1, class132 var2) {
-		this.field494 = var1;
+	public static int[] method242(byte[] var0) {
+		if (var0 != null && var0.length != 0 && var0.length <= 8) {
+			int[] var2 = new int[var0.length];
+
+			for (int var3 = 0; var3 < var0.length; ++var3) {
+				if (var0[var3] < 0 || var0[var3] > class147.field1388.length) {
+					return null;
+				}
+
+				var2[var3] = class147.field1388[var0[var3]];
+			}
+
+			return var2;
+		} else {
+			return null;
+		}
 	}
 
-	@ObfInfo(name = "<init>", desc = "(I)V")
-	class36(int var1) {
-		this(var1, (class132)null);
+	static final void method244() {
+		if (Client.field249 != class358.field3038) {
+			Client.field249 = class358.field3038;
+			class112.method696(class358.field3038);
+		}
+
+	}
+
+	static final void method243(int var0, int var1, int var2, int var3, int var4) {
+		class35.field500[0].method207(var0, var1);
+		class35.field500[1].method207(var0, var1 + var3 - 16);
+		class266.method1548(var0, var1 + 16, 16, var3 - 32, Client.field84);
+		int var6 = (var3 - 32) * var3 / var4;
+		if (var6 < 8) {
+			var6 = 8;
+		}
+
+		int var7 = var2 * (var3 - 32 - var6) / (var4 - var3);
+		class266.method1548(var0, var1 + 16 + var7, 16, var6, Client.field195);
+		class266.method1554(var0, var7 + var1 + 16, var6, Client.field274);
+		class266.method1554(var0 + 1, var1 + 16 + var7, var6, Client.field274);
+		class266.method1559(var0, var1 + 16 + var7, 16, Client.field274);
+		class266.method1559(var0, var1 + 17 + var7, 16, Client.field274);
+		class266.method1554(var0 + 15, var1 + 16 + var7, var6, Client.field86);
+		class266.method1554(var0 + 14, var7 + var1 + 17, var6 - 1, Client.field86);
+		class266.method1559(var0, var6 + var1 + 15 + var7, 16, Client.field86);
+		class266.method1559(var0 + 1, var7 + var1 + 14 + var6, 15, Client.field86);
 	}
 }

@@ -1,649 +1,262 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "fi")
 public class class291 {
-	@ObfInfo(name = "ae", desc = "Z")
-	boolean field2299;
-	@ObfInfo(name = "ao", desc = "Z")
-	boolean field2319;
-	@ObfInfo(name = "ak", desc = "Lsf;")
-	class525 field2322;
-	@ObfInfo(name = "az", desc = "I", intMultiplier = -1229768005)
-	int field2303;
-	@ObfInfo(name = "ab", desc = "[I")
-	int[] field2312;
-	@ObfInfo(name = "ag", desc = "[I")
-	int[] field2313;
-	@ObfInfo(name = "at", desc = "J", longMultiplier = 6365319892590491043L)
-	long field2300;
-	@ObfInfo(name = "an", desc = "[J")
-	long[] field2298;
-	@ObfInfo(name = "aj", desc = "[J")
-	long[] field2310;
-	@ObfInfo(name = "ap", desc = "Z")
-	public boolean field2304;
-	@ObfInfo(name = "ax", desc = "[Z")
-	public boolean[] field2315;
-	@ObfInfo(name = "af", desc = "B")
-	public byte field2306;
-	@ObfInfo(name = "ad", desc = "B")
-	public byte field2307;
-	@ObfInfo(name = "aq", desc = "B")
-	public byte field2308;
-	@ObfInfo(name = "aa", desc = "B")
-	public byte field2318;
-	@ObfInfo(name = "ar", desc = "[B")
-	public byte[] field2311;
-	@ObfInfo(name = "as", desc = "I", intMultiplier = -897595547)
-	public int field2301;
-	@ObfInfo(name = "ay", desc = "I", intMultiplier = -1311075045)
-	public int field2302;
-	@ObfInfo(name = "al", desc = "I", intMultiplier = -1116424963)
-	public int field2309;
-	@ObfInfo(name = "ah", desc = "I", intMultiplier = 1570343699)
-	public int field2316;
-	@ObfInfo(name = "ac", desc = "I", intMultiplier = 345317997)
-	public int field2317;
-	@ObfInfo(name = "am", desc = "[I")
-	public int[] field2314;
-	@ObfInfo(name = "ai", desc = "Ljava/lang/String;")
-	public String field2305;
-	@ObfInfo(name = "av", desc = "[Ljava/lang/String;")
-	public String[] field2320;
-	@ObfInfo(name = "aw", desc = "[Ljava/lang/String;")
-	public String[] field2321;
+	public static final class291 field2583;
+	public static final class291 field2584;
+	public static final class291 field2585;
+	public static final class291 field2586;
+	public static final class291 field2587;
+	public static final class291 field2588;
+	public static final class291 field2589;
+	public static final class291 field2590;
+	public static final class291 field2591;
+	public static final class291 field2592;
+	public static final class291 field2593;
+	public static final class291 field2594;
+	public static final class291 field2595;
+	public static final class291 field2596;
+	public static final class291 field2597;
+	public static final class291 field2598;
+	public static final class291 field2599;
+	public static final class291 field2600;
+	public static final class291 field2601;
+	public static final class291 field2602;
+	public static final class291 field2603;
+	public static final class291 field2604;
+	public static final class291 field2605;
+	public static final class291 field2606;
+	public static final class291 field2607;
+	public static final class291 field2608;
+	public static final class291 field2609;
+	public static final class291 field2610;
+	public static final class291 field2611;
+	public static final class291 field2612;
+	public static final class291 field2613;
+	public static final class291 field2614;
+	public static final class291 field2615;
+	public static final class291 field2616;
+	public static final class291 field2617;
+	public static final class291 field2618;
+	public static final class291 field2619;
+	public static final class291 field2620;
+	public static final class291 field2621;
+	public static final class291 field2622;
+	public static final class291 field2623;
+	public static final class291 field2624;
+	public static final class291 field2625;
+	public static final class291 field2626;
+	public static final class291 field2627;
+	public static final class291 field2628;
+	public static final class291 field2629;
+	public static final class291 field2630;
+	public static final class291 field2631;
+	public static final class291 field2632;
+	public static final class291 field2633;
+	public static final class291 field2634;
+	public static final class291 field2635;
+	public static final class291 field2636;
+	public static final class291 field2637;
+	public static final class291 field2638;
+	public static final class291 field2639;
+	public static final class291 field2640;
+	public static final class291 field2641;
+	public static final class291 field2642;
+	public static final class291 field2643;
+	public static final class291 field2644;
+	public static final class291 field2645;
+	public static final class291 field2646;
+	public static final class291 field2647;
+	public static final class291 field2648;
+	public static final class291 field2649;
+	public static final class291 field2650;
+	public static final class291 field2651;
+	public static final class291 field2652;
+	public static final class291 field2653;
+	public static final class291 field2654;
+	public static final class291 field2655;
+	public static final class291 field2656;
+	public static final class291 field2657;
+	public static final class291 field2658;
+	public static final class291 field2659;
+	public static final class291 field2660;
+	public static final class291 field2661;
+	public static final class291 field2662;
+	public static final class291 field2663;
+	public static final class291 field2664;
+	public static final class291 field2665;
+	public static final class291 field2666;
+	public static final class291 field2667;
+	public static final class291 field2668;
+	public static final class291 field2669;
+	public static final class291 field2670;
+	public static final class291 field2671;
+	public static final class291 field2672;
+	public static final class291 field2673;
+	public static final class291 field2674;
+	public static final class291 field2675;
+	public static final class291 field2676;
+	public static final class291 field2677;
+	public static final class291 field2678;
+	public static final class291 field2679;
+	public static final class291 field2680;
+	public static final class291 field2681;
+	public static final class291 field2682;
+	public static final class291 field2683;
+	public static final class291 field2684;
+	public static final class291 field2685;
+	public static final class291 field2686;
+	public static final class291 field2687;
+	public static final class291 field2688;
+	public static final class291 field2689;
+	public static final class291 field2690;
+	public static final class291 field2691;
+	public static final class291 field2692;
+	public static final class291 field2693;
+	public static final class291 field2694;
+	public static final class291 field2695;
+	public static final class291 field2696;
+	public static final class291 field2697;
+	public static final class291 field2698;
+	public static final class291 field2699;
+	public static final class291 field2700;
+	public static final class291 field2702;
+	public static final class291 field2703;
+	public static final class291 field2704;
+	public static final class291 field2705;
+	static final class291 field2701;
+	public final int field2706;
+	public final int field2707;
 
-	@ObfInfo(name = "<init>", desc = "(Ltm;)V")
-	public class291(class280 var1) {
-		this.field2317 = 0;
-		this.field2305 = null;
-		this.field2303 = 0;
-		this.field2316 = -1;
-		this.field2301 = -1;
-		this.method1602(var1);
+	static {
+		field2664 = new class291(0, 5);
+		field2682 = new class291(1, 6);
+		field2585 = new class291(2, 1);
+		field2586 = new class291(3, 17);
+		field2677 = new class291(4, 2);
+		field2588 = new class291(5, 10);
+		field2660 = new class291(6, 6);
+		field2635 = new class291(7, 0);
+		field2599 = new class291(8, 4);
+		field2592 = new class291(9, 7);
+		field2593 = new class291(10, -2);
+		field2594 = new class291(11, 2);
+		field2619 = new class291(12, 8);
+		field2673 = new class291(13, 1);
+		field2597 = new class291(14, -1);
+		field2589 = new class291(15, 6);
+		field2665 = new class291(16, -2);
+		field2600 = new class291(17, -2);
+		field2601 = new class291(18, 2);
+		field2647 = new class291(19, 10);
+		field2603 = new class291(20, 0);
+		field2604 = new class291(21, 2);
+		field2605 = new class291(22, 16);
+		field2606 = new class291(23, -1);
+		field2607 = new class291(24, -2);
+		field2608 = new class291(25, 6);
+		field2609 = new class291(26, 12);
+		field2610 = new class291(27, 9);
+		field2587 = new class291(28, 0);
+		field2612 = new class291(29, 4);
+		field2690 = new class291(30, 8);
+		field2614 = new class291(31, -2);
+		field2615 = new class291(32, 6);
+		field2616 = new class291(33, 8);
+		field2617 = new class291(34, -2);
+		field2618 = new class291(35, 5);
+		field2590 = new class291(36, 2);
+		field2620 = new class291(37, -1);
+		field2621 = new class291(38, -2);
+		field2622 = new class291(39, 6);
+		field2591 = new class291(40, 2);
+		field2624 = new class291(41, 0);
+		field2674 = new class291(42, -2);
+		field2626 = new class291(43, 3);
+		field2627 = new class291(44, 7);
+		field2649 = new class291(45, 2);
+		field2629 = new class291(46, 10);
+		field2630 = new class291(47, 6);
+		field2631 = new class291(48, -1);
+		field2632 = new class291(49, 2);
+		field2633 = new class291(50, -2);
+		field2634 = new class291(51, -2);
+		field2653 = new class291(52, 10);
+		field2637 = new class291(53, 8);
+		field2628 = new class291(54, -2);
+		field2656 = new class291(55, 5);
+		field2639 = new class291(56, -2);
+		field2648 = new class291(57, -2);
+		field2641 = new class291(58, 4);
+		field2642 = new class291(59, 6);
+		field2667 = new class291(60, 6);
+		field2644 = new class291(61, 1);
+		field2645 = new class291(62, 0);
+		field2646 = new class291(63, 5);
+		field2703 = new class291(64, 0);
+		field2687 = new class291(65, 1);
+		field2657 = new class291(66, 6);
+		field2636 = new class291(67, -2);
+		field2651 = new class291(68, -2);
+		field2652 = new class291(69, 1);
+		field2650 = new class291(70, -2);
+		field2654 = new class291(71, 6);
+		field2655 = new class291(72, 0);
+		field2595 = new class291(73, 7);
+		field2691 = new class291(74, 2);
+		field2640 = new class291(75, 2);
+		field2659 = new class291(76, 6);
+		field2688 = new class291(77, -2);
+		field2661 = new class291(78, 4);
+		field2662 = new class291(79, -2);
+		field2663 = new class291(80, -1);
+		field2693 = new class291(81, 8);
+		field2643 = new class291(82, 9);
+		field2666 = new class291(83, 28);
+		field2668 = new class291(84, 8);
+		field2596 = new class291(85, -2);
+		field2669 = new class291(86, 0);
+		field2670 = new class291(87, 0);
+		field2671 = new class291(88, 6);
+		field2658 = new class291(89, 7);
+		field2583 = new class291(90, -2);
+		field2611 = new class291(91, -2);
+		field2675 = new class291(92, 6);
+		field2584 = new class291(93, 5);
+		field2672 = new class291(94, 14);
+		field2638 = new class291(95, 4);
+		field2613 = new class291(96, 4);
+		field2680 = new class291(97, -2);
+		field2681 = new class291(98, 20);
+		field2623 = new class291(99, 4);
+		field2683 = new class291(100, 8);
+		field2684 = new class291(101, -1);
+		field2685 = new class291(102, -1);
+		field2686 = new class291(103, 2);
+		field2696 = new class291(104, 11);
+		field2676 = new class291(105, -2);
+		field2689 = new class291(106, 4);
+		field2602 = new class291(107, -1);
+		field2679 = new class291(108, -1);
+		field2692 = new class291(109, 5);
+		field2625 = new class291(110, 12);
+		field2694 = new class291(111, 8);
+		field2695 = new class291(112, 14);
+		field2598 = new class291(113, 4);
+		field2697 = new class291(114, 5);
+		field2698 = new class291(115, 9);
+		field2699 = new class291(116, 3);
+		field2700 = new class291(117, 5);
+		field2701 = new class291(118, -2);
+		field2702 = new class291(119, 0);
+		field2678 = new class291(120, 7);
+		field2704 = new class291(121, -2);
+		field2705 = new class291(122, 19);
 	}
 
-	@ObfInfo(name = "au", desc = "(II)V", opaqueValue = "835629433")
-	void method1588(int var1) {
-		if (this.field2299) {
-			if (null != this.field2298) {
-				System.arraycopy(this.field2298, 0, this.field2298 = new long[var1], 0, this.field2309);
-			} else {
-				this.field2298 = new long[var1];
-			}
-		}
-
-		if (this.field2319) {
-			if (null != this.field2320) {
-				System.arraycopy(this.field2320, 0, this.field2320 = new String[var1], 0, this.field2309);
-			} else {
-				this.field2320 = new String[var1];
-			}
-		}
-
-		if (null != this.field2311) {
-			System.arraycopy(this.field2311, 0, this.field2311 = new byte[var1], 0, this.field2309);
-		} else {
-			this.field2311 = new byte[var1];
-		}
-
-		if (null != this.field2313) {
-			System.arraycopy(this.field2313, 0, this.field2313 = new int[var1], 0, this.field2309);
-		} else {
-			this.field2313 = new int[var1];
-		}
-
-		if (this.field2314 != null) {
-			System.arraycopy(this.field2314, 0, this.field2314 = new int[var1], 0, this.field2309);
-		} else {
-			this.field2314 = new int[var1];
-		}
-
-		if (null != this.field2315) {
-			System.arraycopy(this.field2315, 0, this.field2315 = new boolean[var1], 0, this.field2309);
-		} else {
-			this.field2315 = new boolean[var1];
-		}
-
+	class291(int var1, int var2) {
+		this.field2706 = var1;
+		this.field2707 = var2;
 	}
 
-	@ObfInfo(name = "ae", desc = "(IB)V", opaqueValue = "15")
-	void method1589(int var1) {
-		if (this.field2299) {
-			if (null != this.field2310) {
-				System.arraycopy(this.field2310, 0, this.field2310 = new long[var1], 0, this.field2302);
-			} else {
-				this.field2310 = new long[var1];
-			}
-		}
-
-		if (this.field2319) {
-			if (null != this.field2321) {
-				System.arraycopy(this.field2321, 0, this.field2321 = new String[var1], 0, this.field2302);
-			} else {
-				this.field2321 = new String[var1];
-			}
-		}
-
-	}
-
-	@ObfInfo(name = "ao", desc = "(Ljava/lang/String;I)I", opaqueValue = "720192251")
-	public int method1595(String var1) {
-		if (null != var1 && var1.length() != 0) {
-			for (int var3 = 0; var3 < this.field2309; ++var3) {
-				if (this.field2320[var3].equals(var1)) {
-					return var3;
-				}
-			}
-
-			return -1;
-		} else {
-			return -1;
-		}
-	}
-
-	@ObfInfo(name = "at", desc = "(IIII)I")
-	public int method1597(int var1, int var2, int var3) {
-		int var5 = var3 == 31 ? -1 : (1 << var3 + 1) - 1;
-		return (this.field2313[var1] & var5) >>> var2;
-	}
-
-	@ObfInfo(name = "ac", desc = "(II)Ljava/lang/Integer;", opaqueValue = "1038796157")
-	public Integer method1590(int var1) {
-		if (null == this.field2322) {
-			return null;
-		} else {
-			class155 var3 = this.field2322.method2558((long)var1);
-			return null != var3 && var3 instanceof class149 ? new Integer(((class149)var3).field1457) : null;
-		}
-	}
-
-	@ObfInfo(name = "ai", desc = "(I)[I", opaqueValue = "-396310664")
-	public int[] method1591() {
-		if (null == this.field2312) {
-			String[] var2 = new String[this.field2309];
-			this.field2312 = new int[this.field2309];
-
-			for (int var3 = 0; var3 < this.field2309; this.field2312[var3] = var3++) {
-				var2[var3] = this.field2320[var3];
-				if (null != var2[var3]) {
-					var2[var3] = var2[var3].toLowerCase();
-				}
-			}
-
-			int[] var4 = this.field2312;
-			class330.method1807(var2, var4, 0, var2.length - 1);
-		}
-
-		return this.field2312;
-	}
-
-	@ObfInfo(name = "az", desc = "(JLjava/lang/String;IB)V", opaqueValue = "7")
-	void method1603(long var1, String var3, int var4) {
-		if (null != var3 && var3.length() == 0) {
-			var3 = null;
-		}
-
-		if (this.field2299 != var1 > 0L) {
-			throw new RuntimeException("");
-		} else if (this.field2319 != (null != var3)) {
-			throw new RuntimeException("");
-		} else {
-			if (var1 > 0L && (this.field2298 == null || this.field2309 >= this.field2298.length) || null != var3 && (this.field2320 == null || this.field2309 >= this.field2320.length)) {
-				this.method1588(this.field2309 + 5);
-			}
-
-			if (this.field2298 != null) {
-				this.field2298[this.field2309] = var1;
-			}
-
-			if (this.field2320 != null) {
-				this.field2320[this.field2309] = var3;
-			}
-
-			if (this.field2316 == -1) {
-				this.field2316 = this.field2309;
-				this.field2311[this.field2309] = 126;
-			} else {
-				this.field2311[this.field2309] = 0;
-			}
-
-			this.field2313[this.field2309] = 0;
-			this.field2314[this.field2309] = var4;
-			this.field2315[this.field2309] = false;
-			++this.field2309;
-			this.field2312 = null;
-		}
-	}
-
-	@ObfInfo(name = "ap", desc = "(IB)V", opaqueValue = "-1")
-	void method1592(int var1) {
-		if (var1 >= 0 && var1 < this.field2309) {
-			--this.field2309;
-			this.field2312 = null;
-			if (this.field2309 == 0) {
-				this.field2298 = null;
-				this.field2320 = null;
-				this.field2311 = null;
-				this.field2313 = null;
-				this.field2314 = null;
-				this.field2315 = null;
-				this.field2316 = -1;
-				this.field2301 = -1;
-			} else {
-				System.arraycopy(this.field2311, var1 + 1, this.field2311, var1, this.field2309 - var1);
-				System.arraycopy(this.field2313, var1 + 1, this.field2313, var1, this.field2309 - var1);
-				System.arraycopy(this.field2314, var1 + 1, this.field2314, var1, this.field2309 - var1);
-				System.arraycopy(this.field2315, var1 + 1, this.field2315, var1, this.field2309 - var1);
-				if (this.field2298 != null) {
-					System.arraycopy(this.field2298, var1 + 1, this.field2298, var1, this.field2309 - var1);
-				}
-
-				if (this.field2320 != null) {
-					System.arraycopy(this.field2320, var1 + 1, this.field2320, var1, this.field2309 - var1);
-				}
-
-				this.method1606();
-			}
-
-		} else {
-			throw new RuntimeException("");
-		}
-	}
-
-	@ObfInfo(name = "aa", desc = "(I)V", opaqueValue = "1152334560")
-	void method1606() {
-		if (this.field2309 == 0) {
-			this.field2316 = -1;
-			this.field2301 = -1;
-		} else {
-			this.field2316 = -1;
-			this.field2301 = -1;
-			int var2 = 0;
-			byte var3 = this.field2311[0];
-
-			for (int var4 = 1; var4 < this.field2309; ++var4) {
-				if (this.field2311[var4] > var3) {
-					if (var3 == 125) {
-						this.field2301 = var2;
-					}
-
-					var2 = var4;
-					var3 = this.field2311[var4];
-				} else if (this.field2301 == -1 && this.field2311[var4] == 125) {
-					this.field2301 = var4;
-				}
-			}
-
-			this.field2316 = var2;
-			if (this.field2316 != -1) {
-				this.field2311[this.field2316] = 126;
-			}
-
-		}
-	}
-
-	@ObfInfo(name = "af", desc = "(JLjava/lang/String;I)V", opaqueValue = "1480101677")
-	void method1593(long var1, String var3) {
-		if (var3 != null && var3.length() == 0) {
-			var3 = null;
-		}
-
-		if (this.field2299 != var1 > 0L) {
-			throw new RuntimeException("");
-		} else if (var3 != null != this.field2319) {
-			throw new RuntimeException("");
-		} else {
-			if (var1 > 0L && (this.field2310 == null || this.field2302 >= this.field2310.length) || null != var3 && (null == this.field2321 || this.field2302 >= this.field2321.length)) {
-				this.method1589(this.field2302 + 5);
-			}
-
-			if (null != this.field2310) {
-				this.field2310[this.field2302] = var1;
-			}
-
-			if (this.field2321 != null) {
-				this.field2321[this.field2302] = var3;
-			}
-
-			++this.field2302;
-		}
-	}
-
-	@ObfInfo(name = "ad", desc = "(II)V", opaqueValue = "509826850")
-	void method1594(int var1) {
-		--this.field2302;
-		if (this.field2302 == 0) {
-			this.field2310 = null;
-			this.field2321 = null;
-		} else {
-			if (null != this.field2310) {
-				System.arraycopy(this.field2310, var1 + 1, this.field2310, var1, this.field2302 - var1);
-			}
-
-			if (this.field2321 != null) {
-				System.arraycopy(this.field2321, var1 + 1, this.field2321, var1, this.field2302 - var1);
-			}
-		}
-
-	}
-
-	@ObfInfo(name = "aq", desc = "(IBB)I", opaqueValue = "1")
-	int method1604(int var1, byte var2) {
-		if (var2 != 126 && var2 != 127) {
-			if (var1 != this.field2316 || this.field2301 != -1 && this.field2311[this.field2301] >= 125) {
-				if (this.field2311[var1] == var2) {
-					return -1;
-				} else {
-					this.field2311[var1] = var2;
-					this.method1606();
-					return var1;
-				}
-			} else {
-				return -1;
-			}
-		} else {
-			return -1;
-		}
-	}
-
-	@ObfInfo(name = "al", desc = "(II)Z", opaqueValue = "1468638319")
-	boolean method1596(int var1) {
-		if (var1 != this.field2316 && this.field2311[var1] != 126) {
-			this.field2311[this.field2316] = 125;
-			this.field2301 = this.field2316;
-			this.field2311[var1] = 126;
-			this.field2316 = var1;
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	@ObfInfo(name = "an", desc = "(IZI)I", opaqueValue = "728034272")
-	int method1605(int var1, boolean var2) {
-		if (this.field2315[var1] == var2) {
-			return -1;
-		} else {
-			this.field2315[var1] = var2;
-			return var1;
-		}
-	}
-
-	@ObfInfo(name = "ar", desc = "(IIIII)I", opaqueValue = "478496279")
-	int method1598(int var1, int var2, int var3, int var4) {
-		int var6 = (1 << var3) - 1;
-		int var7 = var4 == 31 ? -1 : (1 << var4 + 1) - 1;
-		int var8 = var7 ^ var6;
-		var2 <<= var3;
-		var2 &= var8;
-		int var9 = this.field2313[var1];
-		if (var2 == (var9 & var8)) {
-			return -1;
-		} else {
-			var9 &= ~var8;
-			this.field2313[var1] = var9 | var2;
-			return var1;
-		}
-	}
-
-	@ObfInfo(name = "ab", desc = "(III)Z", opaqueValue = "1386960565")
-	boolean method1587(int var1, int var2) {
-		if (null != this.field2322) {
-			class155 var4 = this.field2322.method2558((long)var1);
-			if (null != var4) {
-				if (var4 instanceof class149) {
-					class149 var5 = (class149)var4;
-					if (var5.field1457 == var2) {
-						return false;
-					}
-
-					var5.field1457 = var2;
-					return true;
-				}
-
-				var4.method907();
-			}
-		} else {
-			this.field2322 = new class525(4);
-		}
-
-		this.field2322.method2562(new class149(var2), (long)var1);
-		return true;
-	}
-
-	@ObfInfo(name = "ag", desc = "(IIIIB)Z", opaqueValue = "0")
-	boolean method1599(int var1, int var2, int var3, int var4) {
-		int var6 = (1 << var3) - 1;
-		int var7 = var4 == 31 ? -1 : (1 << var4 + 1) - 1;
-		int var8 = var7 ^ var6;
-		var2 <<= var3;
-		var2 &= var8;
-		if (null != this.field2322) {
-			class155 var9 = this.field2322.method2558((long)var1);
-			if (null != var9) {
-				if (var9 instanceof class149) {
-					class149 var10 = (class149)var9;
-					if (var2 == (var10.field1457 & var8)) {
-						return false;
-					}
-
-					var10.field1457 &= ~var8;
-					var10.field1457 |= var2;
-					return true;
-				}
-
-				var9.method907();
-			}
-		} else {
-			this.field2322 = new class525(4);
-		}
-
-		this.field2322.method2562(new class149(var2), (long)var1);
-		return true;
-	}
-
-	@ObfInfo(name = "am", desc = "(IJ)Z")
-	boolean method1600(int var1, long var2) {
-		if (null != this.field2322) {
-			class155 var4 = this.field2322.method2558((long)var1);
-			if (var4 != null) {
-				if (var4 instanceof class15) {
-					class15 var5 = (class15)var4;
-					if (var5.field352 == var2) {
-						return false;
-					}
-
-					var5.field352 = var2;
-					return true;
-				}
-
-				var4.method907();
-			}
-		} else {
-			this.field2322 = new class525(4);
-		}
-
-		this.field2322.method2562(new class15(var2), (long)var1);
-		return true;
-	}
-
-	@ObfInfo(name = "ax", desc = "(ILjava/lang/String;I)Z", opaqueValue = "-1409513695")
-	boolean method1601(int var1, String var2) {
-		if (var2 == null) {
-			var2 = "";
-		} else if (var2.length() > 80) {
-			var2 = var2.substring(0, 80);
-		}
-
-		if (null != this.field2322) {
-			class155 var4 = this.field2322.method2558((long)var1);
-			if (null != var4) {
-				if (var4 instanceof class45) {
-					class45 var5 = (class45)var4;
-					if (var5.field562 instanceof String) {
-						if (var2.equals(var5.field562)) {
-							return false;
-						}
-
-						var5.method907();
-						this.field2322.method2562(new class45(var2), var5.field1483);
-						return true;
-					}
-				}
-
-				var4.method907();
-			}
-		} else {
-			this.field2322 = new class525(4);
-		}
-
-		this.field2322.method2562(new class45(var2), (long)var1);
-		return true;
-	}
-
-	@ObfInfo(name = "ah", desc = "(Ltm;I)V", opaqueValue = "-2067433980")
-	void method1602(class280 var1) {
-		int var3 = var1.method1492();
-		if (var3 >= 1 && var3 <= 6) {
-			int var4 = var1.method1492();
-			if ((var4 & 1) != 0) {
-				this.field2299 = true;
-			}
-
-			if ((var4 & 2) != 0) {
-				this.field2319 = true;
-			}
-
-			if (!this.field2299) {
-				this.field2298 = null;
-				this.field2310 = null;
-			}
-
-			if (!this.field2319) {
-				this.field2320 = null;
-				this.field2321 = null;
-			}
-
-			this.field2317 = var1.method1496();
-			this.field2303 = var1.method1496();
-			if (var3 <= 3 && this.field2303 != 0) {
-				this.field2303 += 16912800;
-			}
-
-			this.field2309 = var1.method1541();
-			this.field2302 = var1.method1492();
-			this.field2305 = var1.method1500();
-			if (var3 >= 4) {
-				var1.method1496();
-			}
-
-			this.field2304 = var1.method1492() == 1;
-			this.field2318 = var1.method1493();
-			this.field2306 = var1.method1493();
-			this.field2307 = var1.method1493();
-			this.field2308 = var1.method1493();
-			int var5;
-			if (this.field2309 > 0) {
-				if (this.field2299 && (this.field2298 == null || this.field2298.length < this.field2309)) {
-					this.field2298 = new long[this.field2309];
-				}
-
-				if (this.field2319 && (this.field2320 == null || this.field2320.length < this.field2309)) {
-					this.field2320 = new String[this.field2309];
-				}
-
-				if (this.field2311 == null || this.field2311.length < this.field2309) {
-					this.field2311 = new byte[this.field2309];
-				}
-
-				if (null == this.field2313 || this.field2313.length < this.field2309) {
-					this.field2313 = new int[this.field2309];
-				}
-
-				if (this.field2314 == null || this.field2314.length < this.field2309) {
-					this.field2314 = new int[this.field2309];
-				}
-
-				if (null == this.field2315 || this.field2315.length < this.field2309) {
-					this.field2315 = new boolean[this.field2309];
-				}
-
-				for (var5 = 0; var5 < this.field2309; ++var5) {
-					if (this.field2299) {
-						this.field2298[var5] = var1.method1497();
-					}
-
-					if (this.field2319) {
-						this.field2320[var5] = var1.method1551();
-					}
-
-					this.field2311[var5] = var1.method1493();
-					if (var3 >= 2) {
-						this.field2313[var5] = var1.method1496();
-					}
-
-					if (var3 >= 5) {
-						this.field2314[var5] = var1.method1541();
-					} else {
-						this.field2314[var5] = 0;
-					}
-
-					if (var3 >= 6) {
-						this.field2315[var5] = var1.method1492() == 1;
-					} else {
-						this.field2315[var5] = false;
-					}
-				}
-
-				this.method1606();
-			}
-
-			if (this.field2302 > 0) {
-				if (this.field2299 && (this.field2310 == null || this.field2310.length < this.field2302)) {
-					this.field2310 = new long[this.field2302];
-				}
-
-				if (this.field2319 && (null == this.field2321 || this.field2321.length < this.field2302)) {
-					this.field2321 = new String[this.field2302];
-				}
-
-				for (var5 = 0; var5 < this.field2302; ++var5) {
-					if (this.field2299) {
-						this.field2310[var5] = var1.method1497();
-					}
-
-					if (this.field2319) {
-						this.field2321[var5] = var1.method1551();
-					}
-				}
-			}
-
-			if (var3 >= 3) {
-				var5 = var1.method1541();
-				if (var5 > 0) {
-					this.field2322 = new class525(var5 < 16 ? class497.method2492(var5) : 16);
-
-					while (var5-- > 0) {
-						int var6 = var1.method1496();
-						int var7 = var6 & 1073741823;
-						int var8 = var6 >>> 30;
-						if (var8 == 0) {
-							int var9 = var1.method1496();
-							this.field2322.method2562(new class149(var9), (long)var7);
-						} else if (var8 == 1) {
-							long var11 = var1.method1497();
-							this.field2322.method2562(new class15(var11), (long)var7);
-						} else if (var8 == 2) {
-							String var12 = var1.method1500();
-							this.field2322.method2562(new class45(var12), (long)var7);
-						}
-					}
-				}
-			}
-
-		} else {
-			throw new RuntimeException("" + var3);
-		}
+	public static void method1667(class215 var0) {
+		class82.field861 = var0;
 	}
 }

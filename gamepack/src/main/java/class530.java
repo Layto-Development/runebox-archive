@@ -1,15 +1,13 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.applet.Applet;
-import netscape.javascript.JSObject;
-
-@ObfInfo(name = "bh")
 public class class530 {
-	@ObfInfo(name = "<init>", desc = "()V")
-	class530() throws Throwable {
-	}
+	public class530 field4265;
+	public class530 field4266;
 
-	@ObfInfo(name = "au", desc = "(Ljava/applet/Applet;Ljava/lang/String;[Ljava/lang/Object;I)Ljava/lang/Object;")
-	public static Object method2576(Applet var0, String var1, Object[] var2) throws Throwable {
-		return JSObject.getWindow(var0).call(var1, var2);
+	public void method2560() {
+		if (this.field4265 != null) {
+			this.field4265.field4266 = this.field4266;
+			this.field4266.field4265 = this.field4265;
+			this.field4266 = null;
+			this.field4265 = null;
+		}
 	}
 }

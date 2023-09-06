@@ -1,23 +1,37 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class71 implements Comparable {
+	static int field818;
+	class440 field816;
+	class440 field817;
 
-@ObfInfo(name = "au")
-public class class71 implements class84 {
-	@ObfInfo(name = "au", desc = "(Ltm;)Ltm;")
-	public class280 method560(class280 var1) {
-		class280 var2 = new class280(100);
-		this.method505(var1, var2);
-		return var2;
+	class71() {
 	}
 
-	@ObfInfo(name = "ae", desc = "(Ltm;Ltm;)V")
-	void method505(class280 var1, class280 var2) {
-		class184 var3 = new class184(var1);
-		class6 var4 = new class6(var3);
+	public class440 method508() {
+		return this.field816;
+	}
 
-		long var5;
-		for (var5 = 0L; !var4.method290(var3.method1035(), var3.method1036(), var5); ++var5) {
+	public String method509() {
+		return this.field816 == null ? "" : this.field816.method2214();
+	}
+
+	public String method510() {
+		return this.field817 == null ? "" : this.field817.method2214();
+	}
+
+	void method511(class440 var1, class440 var2) {
+		if (var1 == null) {
+			throw new NullPointerException();
+		} else {
+			this.field816 = var1;
+			this.field817 = var2;
 		}
+	}
 
-		var2.method1518(var5);
+	public int method512(class71 var1) {
+		return this.field816.method2213(var1.field816);
+	}
+
+	public int compareTo(Object var1) {
+		return this.method512((class71)var1);
 	}
 }

@@ -1,205 +1,82 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.ArrayList;
 
-@ObfInfo(name = "qc")
-public class class248 extends class153 {
-	@ObfInfo(name = "iv", desc = "Lev;")
-	static class265 field2079;
-	@ObfInfo(name = "ap", desc = "I", intMultiplier = -727783247)
-	int field2074;
-	@ObfInfo(name = "ae", desc = "Lsl;")
-	final class187 field2073;
-	@ObfInfo(name = "ao", desc = "Lql;")
-	final class207 field2078;
-	@ObfInfo(name = "ai", desc = "B")
-	public byte field2076;
-	@ObfInfo(name = "az", desc = "I", intMultiplier = 106239799)
-	public int field2077;
-	@ObfInfo(name = "at", desc = "Ljava/lang/String;")
-	public String field2072;
-	@ObfInfo(name = "ac", desc = "Ljava/lang/String;")
-	public String field2075;
+public class class248 extends class538 {
+	static int field2239;
+	static String field2237;
+	int field2238;
+	// $FF: synthetic field
+	final class464 this$0;
 
-	@ObfInfo(name = "<init>", desc = "(Lsl;Lql;)V")
-	public class248(class187 var1, class207 var2) {
-		super(500);
-		this.field2072 = null;
-		this.field2075 = null;
-		this.field2074 = 1;
-		this.field2073 = var1;
-		this.field2078 = var2;
+	class248(class464 var1) {
+		this.this$0 = var1;
+		this.field2238 = -1;
 	}
 
-	@ObfInfo(name = "au", desc = "(I)Lqs;")
-	class179 method902() {
-		return new class55();
+	void method2583(class42 var1) {
+		this.field2238 = var1.method327();
 	}
 
-	@ObfInfo(name = "ae", desc = "(IB)[Lqs;")
-	class179[] method896(int var1) {
-		return new class55[var1];
+	void method2582(class379 var1) {
+		var1.method2024(this.field2238);
 	}
 
-	@ObfInfo(name = "ao", desc = "(Ljava/lang/String;I)V")
-	final void method1333(String var1) {
-		this.field2072 = class299.method1641(var1);
-	}
+	public static String method1444(String var0) {
+		StringBuilder var2 = new StringBuilder(var0.length());
+		int var3 = 0;
+		int var4 = -1;
 
-	@ObfInfo(name = "az", desc = "(Ljava/lang/String;I)V")
-	final void method1334(String var1) {
-		this.field2075 = class299.method1641(var1);
-	}
-
-	@ObfInfo(name = "ap", desc = "(Ltm;II)V", opaqueValue = "-524626018")
-	public final void method1335(class280 var1, int var2) {
-		this.method1334(var1.method1500());
-		long var4 = var1.method1497();
-		long var7 = var4;
-		String var6;
-		int var9;
-		if (var4 > 0L && var4 < 6582952005840035281L) {
-			if (var4 % 37L == 0L) {
-				var6 = null;
-			} else {
-				var9 = 0;
-
-				for (long var10 = var4; 0L != var10; var10 /= 37L) {
-					++var9;
+		for (int var5 = 0; var5 < var0.length(); ++var5) {
+			char var6 = var0.charAt(var5);
+			if (var6 == '<') {
+				var2.append(var0.substring(var3, var5));
+				var4 = var5;
+			} else if (var6 == '>' && var4 != -1) {
+				String var7 = var0.substring(var4 + 1, var5);
+				var4 = -1;
+				if (var7.equals("lt")) {
+					var2.append("<");
+				} else if (var7.equals("gt")) {
+					var2.append(">");
+				} else if (var7.equals("br")) {
+					var2.append("\n");
 				}
 
-				StringBuilder var12 = new StringBuilder(var9);
-
-				while (var7 != 0L) {
-					long var13 = var7;
-					var7 /= 37L;
-					var12.append(class299.field2407[(int)(var13 - var7 * 37L)]);
-				}
-
-				var6 = var12.reverse().toString();
+				var3 = var5 + 1;
 			}
-		} else {
-			var6 = null;
 		}
 
-		this.method1333(var6);
-		this.field2076 = var1.method1493();
-		short var15;
-		if (var2 == 1) {
-			var9 = var1.method1492();
-			var15 = 255;
-		} else {
-			if (var2 != 2) {
-				throw new IllegalArgumentException("Invalid friend chat full update version: " + var2);
-			}
-
-			var9 = var1.method1504();
-			var15 = -1;
+		if (var3 < var0.length()) {
+			var2.append(var0.substring(var3, var0.length()));
 		}
 
-		if (var15 != var9) {
-			int var11 = var9;
-			this.method884();
-
-			for (int var16 = 0; var16 < var11; ++var16) {
-				class55 var17 = (class55)this.method899(new class353(var1.method1500(), this.field2073));
-				int var14 = var1.method1541();
-				var17.method2219(var14, ++this.field2074 - 1);
-				var17.field3236 = var1.method1493();
-				var1.method1500();
-				this.method1338(var17);
-			}
-
-		}
+		return var2.toString();
 	}
 
-	@ObfInfo(name = "aa", desc = "(Ltm;B)V")
-	public final void method1336(class280 var1, byte var2) {
-		class353 var3 = new class353(var1.method1500(), this.field2073);
-		int var4 = var1.method1541();
-		byte var5 = var1.method1493();
-		boolean var6 = false;
-		if (var5 == -128) {
-			if (var2 == -1) {
-				return;
-			}
-
-			var6 = true;
-		}
-
-		class55 var7;
-		if (var6) {
-			if (var2 == -1) {
-				throw new IllegalStateException();
-			}
-
-			if (this.method905() == 0) {
-				if (var2 == -1) {
-					throw new IllegalStateException();
-				}
-
-				return;
-			}
-
-			var7 = (class55)this.method887(var3);
-			if (var7 != null) {
-				if (var2 == -1) {
-					return;
-				}
-
-				if (var7.method2220() == var4) {
-					if (var2 == -1) {
-						throw new IllegalStateException();
-					}
-
-					this.method888(var7);
-				}
-			}
-		} else {
-			var1.method1500();
-			var7 = (class55)this.method887(var3);
-			if (null == var7) {
-				if (var2 == -1) {
-					throw new IllegalStateException();
-				}
-
-				if (this.method905() > super.field1478) {
-					return;
-				}
-
-				var7 = (class55)this.method899(var3);
-			}
-
-			var7.method2219(var4, ++this.field2074 - 1);
-			var7.field3236 = var5;
-			this.method1338(var7);
-		}
-
+	static boolean method1443(char var0) {
+		return class116.field1109.indexOf(var0) != -1;
 	}
 
-	@ObfInfo(name = "af", desc = "(B)V", opaqueValue = "0")
-	public final void method1337() {
-		for (int var2 = 0; var2 < this.method905(); ++var2) {
-			((class55)this.method892(var2)).method462();
-		}
+	static void method1445(ArrayList var0, int var1, int var2, int var3, int var4) {
+		if (!var0.isEmpty()) {
+			int var6 = (Integer)var0.get(0);
+			if (var6 == -1 && !Client.field275) {
+				class167.method924(0, 0);
+			} else if (var6 != -1 && !class439.method2209(var6) && class176.field1701.method2488() != 0) {
+				ArrayList var7 = new ArrayList();
 
-	}
+				for (int var8 = 0; var8 < var0.size(); ++var8) {
+					var7.add(new class104(class465.field3998, (Integer)var0.get(var8), 0, class176.field1701.method2488(), false));
+				}
 
-	@ObfInfo(name = "ad", desc = "(B)V")
-	public final void method1332(byte var1) {
-		for (int var2 = 0; var2 < this.method905(); ++var2) {
-			if (var1 != -1) {
-				throw new IllegalStateException();
+				if (Client.field275) {
+					class92.field904.clear();
+					class92.field904.addAll(var7);
+					class295.method1677(var1, var2, var3, var4);
+				} else {
+					class81.method545(var7, var1, var2, var3, var4, false);
+				}
 			}
 
-			((class55)this.method892(var2)).method467();
 		}
-
-	}
-
-	@ObfInfo(name = "aq", desc = "(Lqx;I)V", opaqueValue = "-327402440")
-	final void method1338(class55 var1) {
-		if (var1.method1019().equals(this.field2078.method1155())) {
-			this.field2077 = var1.field3236;
-		}
-
 	}
 }

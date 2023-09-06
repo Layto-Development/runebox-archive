@@ -1,29 +1,29 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "fz")
-public class class198 extends class313 {
-	@ObfInfo(name = "ae", desc = "Z")
-	boolean field1806;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = -974781301)
-	int field1807;
+public class class198 extends class538 {
+	boolean field1805;
+	byte field1801;
+	byte field1802;
+	byte field1803;
+	byte field1804;
 	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lfn;")
-	final class220 this$0;
+	final class464 this$0;
 
-	@ObfInfo(name = "<init>", desc = "(Lfn;)V")
-	class198(class220 var1) {
+	class198(class464 var1) {
 		this.this$0 = var1;
-		this.field1807 = -1;
 	}
 
-	@ObfInfo(name = "au", desc = "(Ltm;I)V", opaqueValue = "-1238726644")
-	void method1731(class280 var1) {
-		this.field1807 = var1.method1541();
-		this.field1806 = var1.method1492() == 1;
+	void method2583(class42 var1) {
+		this.field1805 = var1.method278() == 1;
+		this.field1802 = var1.method279();
+		this.field1803 = var1.method279();
+		this.field1801 = var1.method279();
+		this.field1804 = var1.method279();
 	}
 
-	@ObfInfo(name = "ae", desc = "(Lfi;B)V")
-	void method1730(class291 var1) {
-		var1.method1605(this.field1807, this.field1806);
+	void method2582(class379 var1) {
+		var1.field3207 = this.field1805;
+		var1.field3221 = this.field1802;
+		var1.field3209 = this.field1803;
+		var1.field3210 = this.field1801;
+		var1.field3211 = this.field1804;
 	}
 }

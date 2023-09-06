@@ -1,24 +1,30 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.Calendar;
-import java.util.TimeZone;
+public class class539 extends class538 {
+	static class388 field4277;
+	static class60[] field4279;
+	static int[][] field4278;
+	int field4280;
+	// $FF: synthetic field
+	final class464 this$0;
 
-@ObfInfo(name = "mo")
-public class class539 {
-	@ObfInfo(name = "ao", desc = "Ljava/util/Calendar;")
-	public static Calendar field4277;
-	@ObfInfo(name = "ae", desc = "[Ljava/lang/String;")
-	public static final String[] field4276;
-	@ObfInfo(name = "au", desc = "[[Ljava/lang/String;")
-	public static final String[][] field4278;
-
-	static {
-		field4278 = new String[][]{{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}, {"Jan", "Feb", "M\u00e4r", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"}, {"jan", "f\u00e9v", "mars", "avr", "mai", "juin", "juil", "ao\u00fbt", "sept", "oct", "nov", "d\u00e9c"}, {"jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"}, {"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"}, {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}, {"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"}};
-		field4276 = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
-		Calendar.getInstance();
-		field4277 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+	class539(class464 var1) {
+		this.this$0 = var1;
+		this.field4280 = -1;
 	}
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class539() throws Throwable {
+	void method2583(class42 var1) {
+		this.field4280 = var1.method327();
+	}
+
+	void method2582(class379 var1) {
+		var1.method2026(this.field4280);
+	}
+
+	static void method2585(int var0, class29 var1, boolean var2) {
+		class8 var4 = class54.method398().method1124(var0);
+		int var5 = class82.field863.field2543;
+		int var6 = class296.field2735 + (class82.field863.field1555 >> 7);
+		int var7 = (class82.field863.field1526 >> 7) + class164.field1606;
+		class29 var8 = new class29(var5, var6, var7);
+		class54.method398().method1094(var4, var8, var1, var2);
 	}
 }

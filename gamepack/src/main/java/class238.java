@@ -1,161 +1,267 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public final class class238 {
+	static float[] field2196;
+	static int[] field2188;
+	static int[] field2191;
+	static int[] field2199;
+	static int[] field2200;
+	static int[] field2202;
+	static final int[][] field2184;
+	static final int[][] field2206;
+	boolean field2194;
+	int field2195;
+	int field2197;
+	int field2201;
+	int field2204;
+	int[] field2185;
+	int[] field2186;
+	int[] field2187;
+	int[] field2189;
+	int[] field2190;
+	int[] field2192;
+	int[] field2193;
+	int[] field2198;
+	int[] field2203;
+	int[] field2205;
 
-@ObfInfo(name = "rb")
-public class class238 {
-	@ObfInfo(name = "af", desc = "Lui;")
-	static class150 field1988;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 377886279)
-	public int field1984;
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = -1685027045)
-	public int field1985;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = -2074045623)
-	public int field1986;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = 1825313335)
-	public int field1987;
-
-	@ObfInfo(name = "<init>", desc = "(II)V")
-	public class238(int var1, int var2) {
-		this(0, 0, var1, var2);
+	static {
+		field2188 = new int[6];
+		field2200 = new int[6];
+		field2196 = new float[6];
+		field2202 = new int[6];
+		field2199 = new int[6];
+		field2191 = new int[6];
+		field2184 = new int[][]{{1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 2, 6}, {1, 3, 5, 7, 2, 8}, {1, 3, 5, 7, 2, 8}, {1, 3, 5, 7, 11, 12}, {1, 3, 5, 7, 11, 12}, {1, 3, 5, 7, 13, 14}};
+		field2206 = new int[][]{{0, 1, 2, 3, 0, 0, 1, 3}, {1, 1, 2, 3, 1, 0, 1, 3}, {0, 1, 2, 3, 1, 0, 1, 3}, {0, 0, 1, 2, 0, 0, 2, 4, 1, 0, 4, 3}, {0, 0, 1, 4, 0, 0, 4, 3, 1, 1, 2, 4}, {0, 0, 4, 3, 1, 0, 1, 2, 1, 0, 2, 4}, {0, 1, 2, 4, 1, 0, 1, 4, 1, 0, 4, 3}, {0, 4, 1, 2, 0, 4, 2, 5, 1, 0, 4, 5, 1, 0, 5, 3}, {0, 4, 1, 2, 0, 4, 2, 3, 0, 4, 3, 5, 1, 0, 4, 5}, {0, 0, 4, 5, 1, 4, 1, 2, 1, 4, 2, 3, 1, 4, 3, 5}, {0, 0, 1, 5, 0, 1, 4, 5, 0, 1, 2, 4, 1, 0, 5, 3, 1, 5, 4, 3, 1, 4, 2, 3}, {1, 0, 1, 5, 1, 1, 4, 5, 1, 1, 2, 4, 0, 0, 5, 3, 0, 5, 4, 3, 0, 4, 2, 3}, {1, 0, 5, 4, 1, 0, 1, 5, 0, 0, 4, 3, 0, 4, 5, 3, 0, 5, 2, 3, 0, 1, 2, 5}};
 	}
 
-	@ObfInfo(name = "<init>", desc = "(IIII)V")
-	public class238(int var1, int var2, int var3, int var4) {
-		this.method1249(var1, var2);
-		this.method1250(var3, var4);
-	}
+	class238(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19) {
+		this.field2194 = true;
+		if (var6 != var7 || var6 != var8 || var6 != var9) {
+			this.field2194 = false;
+		}
 
-	@ObfInfo(name = "au", desc = "(IIB)V")
-	public void method1249(int var1, int var2) {
-		this.field1987 = var1;
-		this.field1985 = var2;
-	}
+		this.field2195 = var1;
+		this.field2204 = var2;
+		this.field2197 = var18;
+		this.field2201 = var19;
+		short var20 = 128;
+		int var21 = var20 / 2;
+		int var22 = var20 / 4;
+		int var23 = var20 * 3 / 4;
+		int[] var24 = field2184[var1];
+		int var25 = var24.length;
+		this.field2203 = new int[var25];
+		this.field2185 = new int[var25];
+		this.field2186 = new int[var25];
+		int[] var26 = new int[var25];
+		int[] var27 = new int[var25];
+		int var28 = var4 * var20;
+		int var29 = var5 * var20;
 
-	@ObfInfo(name = "ae", desc = "(IIB)V")
-	public void method1250(int var1, int var2) {
-		this.field1986 = var1;
-		this.field1984 = var2;
-	}
-
-	@ObfInfo(name = "ao", desc = "(IIB)Z")
-	public boolean method1251(int var1, int var2, byte var3) {
-		boolean var10000;
-		if (var1 >= this.field1987 && var1 < this.field1986 + this.field1987) {
-			if (var3 >= -1) {
-				throw new IllegalStateException();
+		int var31;
+		int var32;
+		int var33;
+		int var34;
+		int var35;
+		int var36;
+		for (int var30 = 0; var30 < var25; ++var30) {
+			var31 = var24[var30];
+			if ((var31 & 1) == 0 && var31 <= 8) {
+				var31 = (var31 - var2 - var2 - 1 & 7) + 1;
 			}
 
-			if (var2 >= this.field1985) {
-				if (var3 >= -1) {
-					throw new IllegalStateException();
-				}
-
-				if (var2 < this.field1985 + this.field1984) {
-					var10000 = true;
-					return var10000;
-				}
-			}
-		}
-
-		var10000 = false;
-		return var10000;
-	}
-
-	@ObfInfo(name = "toString", desc = "()Ljava/lang/String;")
-	public String toString() {
-		return null;
-	}
-
-	@ObfInfo(name = "at", desc = "(Lrb;Lrb;I)V")
-	public void method1252(class238 var1, class238 var2) {
-		this.method1253(var1, var2);
-		this.method1254(var1, var2);
-	}
-
-	@ObfInfo(name = "ac", desc = "(Lrb;Lrb;I)V", opaqueValue = "-422176099")
-	void method1253(class238 var1, class238 var2) {
-		var2.field1987 = this.field1987;
-		var2.field1986 = this.field1986;
-		if (this.field1987 < var1.field1987) {
-			var2.field1986 = (var2.field1986 * 2133643001 - (var1.field1987 * 2133643001 - this.field1987 * 2133643001)) * -2074045623;
-			var2.field1987 = var1.field1987;
-		}
-
-		if (var2.method1255() > var1.method1255()) {
-			var2.field1986 -= var2.method1255() - var1.method1255();
-		}
-
-		if (var2.field1986 < 0) {
-			var2.field1986 = 0;
-		}
-
-	}
-
-	@ObfInfo(name = "ai", desc = "(Lrb;Lrb;B)V", opaqueValue = "5")
-	void method1254(class238 var1, class238 var2) {
-		var2.field1985 = this.field1985;
-		var2.field1984 = this.field1984;
-		if (this.field1985 < var1.field1985) {
-			var2.field1984 = (var2.field1984 * -584535177 - (var1.field1985 * -584535177 - this.field1985 * -584535177)) * 377886279;
-			var2.field1985 = var1.field1985;
-		}
-
-		if (var2.method1257() > var1.method1257()) {
-			var2.field1984 -= var2.method1257() - var1.method1257();
-		}
-
-		if (var2.field1984 < 0) {
-			var2.field1984 = 0;
-		}
-
-	}
-
-	@ObfInfo(name = "az", desc = "(B)I")
-	int method1255() {
-		return this.field1986 + this.field1987;
-	}
-
-	@ObfInfo(name = "ap", desc = "(I)I")
-	int method1257() {
-		return this.field1985 + this.field1984;
-	}
-
-	@ObfInfo(name = "nz", desc = "(Lmi;I)Z", opaqueValue = "-2754287")
-	static final boolean method1256(class131 var0) {
-		int var2 = var0.field1240;
-		if (var2 == 205) {
-			Client.field80 = 250;
-			return true;
-		} else {
-			int var3;
-			int var4;
-			if (var2 >= 300 && var2 <= 313) {
-				var3 = (var2 - 300) / 2;
-				var4 = var2 & 1;
-				Client.field313.method1127(var3, var4 == 1);
+			if (var31 > 8 && var31 <= 12) {
+				var31 = (var31 - 9 - var2 & 3) + 9;
 			}
 
-			if (var2 >= 314 && var2 <= 323) {
-				var3 = (var2 - 314) / 2;
-				var4 = var2 & 1;
-				Client.field313.method1128(var3, var4 == 1);
+			if (var31 > 12 && var31 <= 16) {
+				var31 = (var31 - 13 - var2 & 3) + 13;
 			}
 
-			if (var2 == 324) {
-				Client.field313.method1135(0);
-			}
-
-			if (var2 == 325) {
-				Client.field313.method1135(1);
-			}
-
-			if (var2 == 326) {
-				class121 var5 = class121.method689(class480.field3888, Client.field92.field2665);
-				Client.field313.method1129(var5.field1141);
-				Client.field92.method1821(var5);
-				return true;
+			if (var31 == 1) {
+				var32 = var28;
+				var33 = var29;
+				var34 = var6;
+				var35 = var10;
+				var36 = var14;
+			} else if (var31 == 2) {
+				var32 = var28 + var21;
+				var33 = var29;
+				var34 = var6 + var7 >> 1;
+				var35 = var10 + var11 >> 1;
+				var36 = var14 + var15 >> 1;
+			} else if (var31 == 3) {
+				var32 = var28 + var20;
+				var33 = var29;
+				var34 = var7;
+				var35 = var11;
+				var36 = var15;
+			} else if (var31 == 4) {
+				var32 = var28 + var20;
+				var33 = var29 + var21;
+				var34 = var7 + var8 >> 1;
+				var35 = var11 + var12 >> 1;
+				var36 = var15 + var16 >> 1;
+			} else if (var31 == 5) {
+				var32 = var28 + var20;
+				var33 = var29 + var20;
+				var34 = var8;
+				var35 = var12;
+				var36 = var16;
+			} else if (var31 == 6) {
+				var32 = var28 + var21;
+				var33 = var29 + var20;
+				var34 = var8 + var9 >> 1;
+				var35 = var12 + var13 >> 1;
+				var36 = var16 + var17 >> 1;
+			} else if (var31 == 7) {
+				var32 = var28;
+				var33 = var29 + var20;
+				var34 = var9;
+				var35 = var13;
+				var36 = var17;
+			} else if (var31 == 8) {
+				var32 = var28;
+				var33 = var29 + var21;
+				var34 = var9 + var6 >> 1;
+				var35 = var13 + var10 >> 1;
+				var36 = var17 + var14 >> 1;
+			} else if (var31 == 9) {
+				var32 = var28 + var21;
+				var33 = var29 + var22;
+				var34 = var6 + var7 >> 1;
+				var35 = var10 + var11 >> 1;
+				var36 = var14 + var15 >> 1;
+			} else if (var31 == 10) {
+				var32 = var28 + var23;
+				var33 = var29 + var21;
+				var34 = var7 + var8 >> 1;
+				var35 = var11 + var12 >> 1;
+				var36 = var15 + var16 >> 1;
+			} else if (var31 == 11) {
+				var32 = var28 + var21;
+				var33 = var29 + var23;
+				var34 = var8 + var9 >> 1;
+				var35 = var12 + var13 >> 1;
+				var36 = var16 + var17 >> 1;
+			} else if (var31 == 12) {
+				var32 = var28 + var22;
+				var33 = var29 + var21;
+				var34 = var9 + var6 >> 1;
+				var35 = var13 + var10 >> 1;
+				var36 = var17 + var14 >> 1;
+			} else if (var31 == 13) {
+				var32 = var28 + var22;
+				var33 = var29 + var22;
+				var34 = var6;
+				var35 = var10;
+				var36 = var14;
+			} else if (var31 == 14) {
+				var32 = var28 + var23;
+				var33 = var29 + var22;
+				var34 = var7;
+				var35 = var11;
+				var36 = var15;
+			} else if (var31 == 15) {
+				var32 = var28 + var23;
+				var33 = var29 + var23;
+				var34 = var8;
+				var35 = var12;
+				var36 = var16;
 			} else {
-				return false;
+				var32 = var28 + var22;
+				var33 = var29 + var23;
+				var34 = var9;
+				var35 = var13;
+				var36 = var17;
+			}
+
+			this.field2203[var30] = var32;
+			this.field2185[var30] = var34;
+			this.field2186[var30] = var33;
+			var26[var30] = var35;
+			var27[var30] = var36;
+		}
+
+		int[] var38 = field2206[var1];
+		var31 = var38.length / 4;
+		this.field2190 = new int[var31];
+		this.field2198 = new int[var31];
+		this.field2205 = new int[var31];
+		this.field2192 = new int[var31];
+		this.field2187 = new int[var31];
+		this.field2189 = new int[var31];
+		if (var3 != -1) {
+			this.field2193 = new int[var31];
+		}
+
+		var32 = 0;
+
+		for (var33 = 0; var33 < var31; ++var33) {
+			var34 = var38[var32];
+			var35 = var38[var32 + 1];
+			var36 = var38[var32 + 2];
+			int var37 = var38[var32 + 3];
+			var32 += 4;
+			if (var35 < 4) {
+				var35 = var35 - var2 & 3;
+			}
+
+			if (var36 < 4) {
+				var36 = var36 - var2 & 3;
+			}
+
+			if (var37 < 4) {
+				var37 = var37 - var2 & 3;
+			}
+
+			this.field2190[var33] = var35;
+			this.field2198[var33] = var36;
+			this.field2205[var33] = var37;
+			if (var34 == 0) {
+				this.field2192[var33] = var26[var35];
+				this.field2187[var33] = var26[var36];
+				this.field2189[var33] = var26[var37];
+				if (this.field2193 != null) {
+					this.field2193[var33] = -1;
+				}
+			} else {
+				this.field2192[var33] = var27[var35];
+				this.field2187[var33] = var27[var36];
+				this.field2189[var33] = var27[var37];
+				if (this.field2193 != null) {
+					this.field2193[var33] = var3;
+				}
 			}
 		}
+
+		var33 = var6;
+		var34 = var7;
+		if (var7 < var6) {
+			var33 = var7;
+		}
+
+		if (var7 > var7) {
+			var34 = var7;
+		}
+
+		if (var8 < var33) {
+			var33 = var8;
+		}
+
+		if (var8 > var34) {
+			var34 = var8;
+		}
+
+		if (var9 < var33) {
+			var33 = var9;
+		}
+
+		if (var9 > var34) {
+			var34 = var9;
+		}
+
+		var33 /= 14;
+		var34 /= 14;
 	}
 }

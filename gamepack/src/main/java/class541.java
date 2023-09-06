@@ -1,130 +1,128 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class541 {
+	boolean field4289;
+	int field4281;
+	int field4282;
+	int field4283;
+	int field4284;
+	int field4285;
+	int field4286;
+	int field4287;
+	int field4288;
+	int field4290;
+	int field4291;
+	int field4292;
+	int field4293;
 
-@ObfInfo(name = "hs")
-public class class541 extends class180 {
-	@ObfInfo(name = "au", desc = "Lnu;")
-	public static class437 field4287;
-	@ObfInfo(name = "ae", desc = "Lle;")
-	public static class7 field4288;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1996012319)
-	int field4289;
-	@ObfInfo(name = "ai", desc = "I", intMultiplier = 1490313473)
-	public int field4290;
-	@ObfInfo(name = "ac", desc = "I", intMultiplier = 371900765)
-	public int field4291;
-	@ObfInfo(name = "az", desc = "I", intMultiplier = -1165742935)
-	public int field4292;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = -1722213545)
-	public int field4293;
-
-	static {
-		field4288 = new class7(64);
-	}
-
-	@ObfInfo(name = "<init>", desc = "()V")
 	public class541() {
-		this.field4289 = 0;
+		this.field4282 = 0;
+		this.field4288 = 0;
 	}
 
-	@ObfInfo(name = "ae", desc = "(I)V")
-	public void method2597() {
-		this.method2600(this.field4289);
+	public void method2590(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9) {
+		this.field4293 = var1;
+		this.field4281 = var2;
+		this.field4283 = var3;
+		this.field4284 = var4;
+		this.field4285 = var5;
+		this.field4286 = var6;
+		this.field4282 = var7;
+		this.field4288 = var8;
+		this.field4289 = var9;
 	}
 
-	@ObfInfo(name = "ao", desc = "(Ltm;II)V", opaqueValue = "816329522")
-	public void method2598(class280 var1, int var2) {
-		while (true) {
-			int var4 = var1.method1492();
-			if (var4 == 0) {
-				return;
-			}
-
-			this.method2599(var1, var4, var2);
-		}
+	public void method2591(int var1, int var2, int var3, int var4) {
+		this.field4290 = var1;
+		this.field4291 = var2;
+		this.field4292 = var3;
+		this.field4287 = var4;
 	}
 
-	@ObfInfo(name = "at", desc = "(Ltm;IIB)V")
-	void method2599(class280 var1, int var2, int var3) {
-		if (var2 == 1) {
-			this.field4289 = var1.method1548();
-		}
-
-	}
-
-	@ObfInfo(name = "ac", desc = "(II)V", opaqueValue = "1559795083")
-	void method2600(int var1) {
-		double var3 = (double)(var1 >> 16 & 255) / 256.0D;
-		double var5 = (double)(var1 >> 8 & 255) / 256.0D;
-		double var7 = (double)(var1 & 255) / 256.0D;
-		double var9 = var3;
-		if (var5 < var3) {
-			var9 = var5;
-		}
-
-		if (var7 < var9) {
-			var9 = var7;
-		}
-
-		double var11 = var3;
-		if (var5 > var3) {
-			var11 = var5;
-		}
-
-		if (var7 > var11) {
-			var11 = var7;
-		}
-
-		double var13 = 0.0D;
-		double var15 = 0.0D;
-		double var17 = (var9 + var11) / 2.0D;
-		if (var11 != var9) {
-			if (var17 < 0.5D) {
-				var15 = (var11 - var9) / (var9 + var11);
+	public void method2592(class246 var1, class253 var2, byte var3) {
+		if (var2 == null) {
+			if (var3 >= -1) {
+				throw new IllegalStateException();
 			}
-
-			if (var17 >= 0.5D) {
-				var15 = (var11 - var9) / (2.0D - var11 - var9);
-			}
-
-			if (var3 == var11) {
-				var13 = (var5 - var7) / (var11 - var9);
-			} else if (var11 == var5) {
-				var13 = (var7 - var3) / (var11 - var9) + 2.0D;
-			} else if (var11 == var7) {
-				var13 = 4.0D + (var3 - var5) / (var11 - var9);
-			}
-		}
-
-		var13 /= 6.0D;
-		this.field4291 = (int)(var15 * 256.0D);
-		this.field4290 = (int)(var17 * 256.0D);
-		if (this.field4291 < 0) {
-			this.field4291 = 0;
-		} else if (this.field4291 > 255) {
-			this.field4291 = 255;
-		}
-
-		if (this.field4290 < 0) {
-			this.field4290 = 0;
-		} else if (this.field4290 > 255) {
-			this.field4290 = 255;
-		}
-
-		if (var17 > 0.5D) {
-			this.field4292 = (int)((1.0D - var17) * var15 * 512.0D);
 		} else {
-			this.field4292 = (int)(var15 * var17 * 512.0D);
+			int var4 = var2.field2066;
+			int var5 = Math.min(this.field4284, (int)((float)var4 * 0.9F));
+			int var6 = var1.method1419(this.field4283);
+			int var7 = var1.method1420(this.field4284);
+			int var8 = this.field4293 - this.field4285 + var6;
+			int var9 = this.field4281 - this.field4286 + var7 + var4;
+			class266.method1555(this.field4293, this.field4281, this.field4293 + this.field4283, this.field4284 + this.field4281);
+			int var10 = this.field4288;
+			int var11 = this.field4282;
+			if (var10 > var11) {
+				int var12 = var10;
+				var10 = var11;
+				var11 = var12;
+			}
+
+			class506 var22 = var1.method1406(0, var10);
+			class506 var13 = var1.method1406(var10, var11);
+			class506 var14 = var1.method1406(var11, var1.method1400());
+			class506 var15 = var1.method1406(0, this.field4282);
+			int var17;
+			int var19;
+			if (!var13.method2433()) {
+				if (var3 >= -1) {
+					throw new IllegalStateException();
+				}
+
+				int var16 = var2.field2070 + var2.field2071;
+
+				for (var17 = 0; var17 < var13.method2434(); ++var17) {
+					if (var3 >= -1) {
+						throw new IllegalStateException();
+					}
+
+					class472 var18 = var13.method2436(var17);
+					var19 = var8 + var18.field4024;
+					int var20 = var2.method1321(var18.field4025);
+					int var21 = var9 + var18.field4027 - var4;
+					class266.method1548(var19, var21, var20, var16, this.field4287);
+				}
+			}
+
+			if (!var22.method2433()) {
+				if (var3 >= -1) {
+					return;
+				}
+
+				var2.method1301(var22, var8, var9, this.field4290, this.field4291, -1);
+			}
+
+			if (!var13.method2433()) {
+				if (var3 >= -1) {
+					throw new IllegalStateException();
+				}
+
+				var2.method1301(var13, var8, var9, this.field4292, this.field4291, -1);
+			}
+
+			if (!var14.method2433()) {
+				if (var3 >= -1) {
+					throw new IllegalStateException();
+				}
+
+				var2.method1301(var14, var8, var9, this.field4290, this.field4291, -1);
+			}
+
+			if (this.field4289) {
+				class180 var23 = var15.method2438();
+				var17 = var8 + (Integer)var23.field1712;
+				int var24 = var9 + (Integer)var23.field1711;
+				var19 = var24 - var5;
+				class266.method1550(var17, var24, var17, var19, this.field4290);
+				if (this.field4291 != -1) {
+					if (var3 >= -1) {
+						return;
+					}
+
+					class266.method1550(var17 + 1, var24 + 1, var17 + 1, var19 + 1, this.field4291);
+				}
+			}
+
 		}
-
-		if (this.field4292 < 1) {
-			this.field4292 = 1;
-		}
-
-		this.field4293 = (int)(var13 * (double)this.field4292);
-	}
-
-	@ObfInfo(name = "au", desc = "(Lnu;I)V")
-	public static void method2601(class437 var0) {
-		field4287 = var0;
 	}
 }

@@ -1,28 +1,41 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.ArrayList;
 
-@ObfInfo(name = "ef")
-public class class181 extends class381 {
-	@ObfInfo(name = "kh", desc = "I", intMultiplier = 1799410691)
-	static int field1636;
-	@ObfInfo(name = "au", desc = "Z")
-	final boolean field1635;
+public class class181 extends class232 {
+	ArrayList field1713;
 
-	@ObfInfo(name = "<init>", desc = "(Z)V")
-	public class181(boolean var1) {
-		this.field1635 = var1;
+	public class181(class232 var1, ArrayList var2) {
+		super(var1);
+		this.field1713 = var2;
+		super.field2101 = "ConcurrentMidiTask";
 	}
 
-	@ObfInfo(name = "au", desc = "(Lqb;Lqb;I)I", opaqueValue = "-893772022")
-	int method1025(class424 var1, class424 var2) {
-		if (var1.field3235 == Client.field27 && var2.field3235 == Client.field27) {
-			return this.field1635 ? var1.field3234 - var2.field3234 : var2.field3234 - var1.field3234;
-		} else {
-			return this.method2031(var1, var2);
+	public boolean method1330() {
+		for (int var2 = 0; var2 < this.field1713.size(); ++var2) {
+			class232 var3 = (class232)this.field1713.get(var2);
+			if (var3 == null) {
+				this.field1713.remove(var2);
+				--var2;
+			} else if (var3.method1330()) {
+				if (var3.method1331()) {
+					this.method1333(var3.method1329());
+					this.field1713.clear();
+					return true;
+				}
+
+				if (var3.method1332() != null) {
+					this.field1713.add(var3.method1332());
+				}
+
+				super.field2103 = var3.field2103;
+				this.field1713.remove(var2);
+				--var2;
+			}
 		}
-	}
 
-	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
-	public int compare(Object var1, Object var2) {
-		return this.method1025((class424)var1, (class424)var2);
+		if (this.field1713.isEmpty()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

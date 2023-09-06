@@ -1,37 +1,52 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.concurrent.Callable;
+import java.util.Arrays;
 
-@ObfInfo(name = "fj")
-class class61 implements Callable {
-	@ObfInfo(name = "cg", desc = "I", intMultiplier = -1603225811)
-	static int field736;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lfv;")
-	final class89 this$0;
-	// $FF: synthetic field
-	@ObfInfo(name = "val$curveLoadJobs", desc = "[Lep;")
-	final class91[] val$curveLoadJobs;
-	// $FF: synthetic field
-	@ObfInfo(name = "val$workEnd", desc = "I")
-	final int val$workEnd;
-	// $FF: synthetic field
-	@ObfInfo(name = "val$workStart", desc = "I")
-	final int val$workStart;
+public class class61 {
+	public static final class61 field792;
+	static final class61 field790;
+	static final class61 field791;
+	static final class61 field793;
+	static final class61 field795;
+	static final class61 field796;
+	static final class61 field797;
+	static final class61[] field798;
+	final int field800;
+	public final int field794;
+	public final int field799;
 
-	@ObfInfo(name = "<init>", desc = "(Lfv;II[Lep;)V")
-	class61(class89 var1, int var2, int var3, class91[] var4) {
-		this.this$0 = var1;
-		this.val$workStart = var2;
-		this.val$workEnd = var3;
-		this.val$curveLoadJobs = var4;
+	static {
+		field793 = new class61(6, 8, 8);
+		field791 = new class61(3, 16, 16);
+		field792 = new class61(0, 32, 32);
+		field790 = new class61(2, 48, 48);
+		field797 = new class61(4, 64, 64);
+		field795 = new class61(5, 96, 96);
+		field796 = new class61(1, 128, 128);
+		field798 = class368.method1971();
+		Arrays.sort(field798, new class466());
 	}
 
-	@ObfInfo(name = "call", desc = "()Ljava/lang/Object;")
-	public Object call() {
-		for (int var1 = this.val$workStart; var1 < this.val$workEnd; ++var1) {
-			this.val$curveLoadJobs[var1].call();
-		}
+	class61(int var1, int var2, int var3) {
+		this.field800 = var1;
+		this.field794 = var2;
+		this.field799 = var3;
+	}
 
-		return null;
+	int method474() {
+		return this.field799 * this.field794;
+	}
+
+	public static void method475() {
+		synchronized(class146.field1386) {
+			if (class146.field1384 != 0) {
+				class146.field1384 = 1;
+				class146.field1387 = true;
+
+				try {
+					class146.field1386.wait();
+				} catch (InterruptedException var4) {
+				}
+			}
+
+		}
 	}
 }

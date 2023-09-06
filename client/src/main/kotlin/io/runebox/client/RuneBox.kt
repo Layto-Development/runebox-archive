@@ -1,7 +1,6 @@
 package io.runebox.client
 
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatAtomOneDarkContrastIJTheme
-import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatAtomOneDarkIJTheme
 import io.runebox.api.Client
 import io.runebox.client.rs.ClientLoader
 import io.runebox.client.ui.ClientUI
@@ -11,14 +10,12 @@ import io.runebox.common.inject
 import org.koin.core.context.startKoin
 import org.koin.core.parameter.parametersOf
 import org.tinylog.kotlin.Logger
-import java.awt.Dimension
-import java.awt.Insets
+import java.io.ByteArrayOutputStream
+import java.io.File
 import java.math.BigInteger
 import java.net.URL
 import java.security.MessageDigest
-import javax.swing.JDialog
-import javax.swing.JFrame
-import javax.swing.UIManager
+import java.util.jar.JarFile
 
 class RuneBox {
 
@@ -91,6 +88,24 @@ class RuneBox {
 
         injectedGamepack.createNewFile()
         injectedGamepack.writeBytes(latestInjectedGamepackBytes)
+    }
+
+    private fun getVanillaGamepackBytes(): ByteArray {
+        val bytes = URL("http://oldschool1.runescape.com/gamepack.jar").openConnection().getInputStream().readAllBytes()
+        val tempJar = File.createTempFile("temp-", "gamepack.jar")
+        tempJar.writeBytes(bytes)
+        val output = ByteArrayOutputStream().also { it.use { bos ->
+            JarFile(tempJar).use { jar ->
+                jar.entries().asSequence().forEach { entry ->
+                    if(entry.name.endsWith(".class")) {
+                        val entryBytes = jar.getInputStream(entry).readAllBytes()
+                        bos.writeBytes(entryBytes)
+                    }
+                }
+            }
+        } }
+        tempJar.delete()
+        return output.toByteArray()
     }
 
     private fun ByteArray.checksum(): String {

@@ -1,27 +1,36 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.net.URL;
 
-@ObfInfo(name = "gv")
-public class class349 extends class518 {
-	@ObfInfo(name = "au", desc = "Ljava/lang/String;")
-	String field2762;
-	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lgf;")
-	final class371 this$0;
+public class class349 {
+	public static short[] field3005;
+	static int field3001;
+	static int field3002;
+	final URL field3000;
+	volatile byte[] field3004;
+	volatile int field3003;
 
-	@ObfInfo(name = "<init>", desc = "(Lgf;Ljava/lang/String;Ljava/lang/String;)V")
-	class349(class371 var1, String var2, String var3) {
-		super(var1, var2);
-		this.this$0 = var1;
-		this.field2762 = var3;
+	static {
+		field3001 = -1;
+		field3002 = -2;
 	}
 
-	@ObfInfo(name = "au", desc = "(B)I")
-	public int method2541() {
-		return 1;
+	class349(URL var1) {
+		this.field3003 = field3001;
+		this.field3000 = var1;
 	}
 
-	@ObfInfo(name = "ae", desc = "(I)Ljava/lang/String;")
-	public String method2539() {
-		return this.field2762;
+	public boolean method1916() {
+		return field3001 != this.field3003;
+	}
+
+	public byte[] method1918() {
+		return this.field3004;
+	}
+
+	public String method1917() {
+		return this.field3000.toString();
+	}
+
+	public static class455[] method1919() {
+		return new class455[]{class455.field3968, class455.field3967, class455.field3969, class455.field3966};
 	}
 }

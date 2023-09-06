@@ -1,75 +1,69 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.Shape;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
-import java.awt.image.DirectColorModel;
-import java.awt.image.Raster;
-import java.awt.image.WritableRaster;
-import java.util.Hashtable;
+public class class97 {
+	boolean field985;
+	class215 field983;
+	int field984;
+	String field982;
 
-@ObfInfo(name = "by")
-public final class class97 extends class482 {
-	@ObfInfo(name = "au", desc = "Ljava/awt/Component;")
-	Component field966;
-	@ObfInfo(name = "ae", desc = "Ljava/awt/Image;")
-	Image field967;
+	class97(class215 var1) {
+		this.field984 = 0;
+		this.field985 = false;
+		this.field983 = var1;
+	}
 
-	@ObfInfo(name = "<init>", desc = "(IILjava/awt/Component;Z)V")
-	class97(int var1, int var2, Component var3, boolean var4) {
-		super.field3941 = var1;
-		super.field3943 = var2;
-		super.field3942 = new int[var2 * var1 + 1];
-		if (var4) {
-			super.field3940 = new float[var2 * var1 + 1];
+	void method640(String var1) {
+		if (null != var1 && !var1.isEmpty()) {
+			if (this.field982 != var1) {
+				this.field982 = var1;
+				this.field984 = 0;
+				this.field985 = false;
+				this.method641();
+			}
+		}
+	}
+
+	int method641() {
+		if (this.field982 == null) {
+			this.field984 = 100;
+			this.field985 = true;
+		} else {
+			if (this.field984 < 33) {
+				if (!this.field983.method1232(class499.field4151.field4154, this.field982)) {
+					return this.field984;
+				}
+
+				this.field984 = 33;
+			}
+
+			if (this.field984 == 33) {
+				if (this.field983.method1234(class499.field4150.field4154, this.field982) && !this.field983.method1232(class499.field4150.field4154, this.field982)) {
+					return this.field984;
+				}
+
+				this.field984 = 66;
+			}
+
+			if (this.field984 == 66) {
+				if (!this.field983.method1232(this.field982, class499.field4153.field4154)) {
+					return this.field984;
+				}
+
+				this.field984 = 100;
+				this.field985 = true;
+			}
 		}
 
-		DataBufferInt var5 = new DataBufferInt(super.field3942, super.field3942.length);
-		DirectColorModel var6 = new DirectColorModel(32, 16711680, 65280, 255);
-		WritableRaster var7 = Raster.createWritableRaster(var6.createCompatibleSampleModel(super.field3941, super.field3943), var5, (Point)null);
-		this.field967 = new BufferedImage(var6, var7, false, new Hashtable());
-		this.method594(var3);
-		this.method2452();
+		return this.field984;
 	}
 
-	@ObfInfo(name = "au", desc = "(Ljava/awt/Component;S)V")
-	final void method594(Component var1) {
-		this.field966 = var1;
+	boolean method642() {
+		return this.field985;
 	}
 
-	@ObfInfo(name = "ae", desc = "(IIB)V")
-	public final void method2449(int var1, int var2) {
-		this.method597(this.field966.getGraphics(), var1, var2);
+	int method643() {
+		return this.field984;
 	}
 
-	@ObfInfo(name = "ao", desc = "(IIIII)V")
-	public final void method2450(int var1, int var2, int var3, int var4) {
-		this.method596(this.field966.getGraphics(), var1, var2, var3, var4);
-	}
-
-	@ObfInfo(name = "at", desc = "(Ljava/awt/Graphics;III)V")
-	final void method597(Graphics var1, int var2, int var3) {
-		try {
-			var1.drawImage(this.field967, var2, var3, this.field966);
-		} catch (Exception var6) {
-			this.field966.repaint();
-		}
-
-	}
-
-	@ObfInfo(name = "ac", desc = "(Ljava/awt/Graphics;IIIII)V")
-	final void method596(Graphics var1, int var2, int var3, int var4, int var5) {
-		try {
-			Shape var7 = var1.getClip();
-			var1.clipRect(var2, var3, var4, var5);
-			var1.drawImage(this.field967, 0, 0, this.field966);
-			var1.setClip(var7);
-		} catch (Exception var8) {
-			this.field966.repaint();
-		}
-
+	public static class115[] method644(class215 var0, int var1, int var2) {
+		return !class85.method558(var0, var1, var2) ? null : class129.method773();
 	}
 }

@@ -1,33 +1,23 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class482 {
+	static int[] field4096;
 
-@ObfInfo(name = "uq")
-public abstract class class482 {
-	@ObfInfo(name = "ai", desc = "[F")
-	protected float[] field3940;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 132368805)
-	public int field3941;
-	@ObfInfo(name = "ac", desc = "I", intMultiplier = 2105446071)
-	public int field3943;
-	@ObfInfo(name = "ao", desc = "[I")
-	public int[] field3942;
+	static {
+		new Object();
+		field4096 = new int[33];
+		field4096[0] = 0;
+		int var0 = 2;
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	protected class482() {
+		for (int var1 = 1; var1 < 33; ++var1) {
+			field4096[var1] = var0 - 1;
+			var0 += var0;
+		}
+
 	}
 
-	@ObfInfo(name = "ae", desc = "(IIB)V")
-	public abstract void method2449(int var1, int var2);
-
-	@ObfInfo(name = "ao", desc = "(IIIII)V")
-	public abstract void method2450(int var1, int var2, int var3, int var4);
-
-	@ObfInfo(name = "as", desc = "(B)V")
-	public final void method2452() {
-		class83.method535(this.field3942, this.field3941, this.field3943, this.field3940);
+	class482() throws Throwable {
 	}
 
-	@ObfInfo(name = "ay", desc = "(ZB)V")
-	public final void method2451(boolean var1) {
-		this.field3940 = var1 ? new float[this.field3943 * this.field3941 + 1] : null;
+	public static class290[] method2398() {
+		return new class290[]{class290.field2582};
 	}
 }

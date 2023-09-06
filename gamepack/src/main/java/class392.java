@@ -1,52 +1,63 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class392 {
+	public static final class392 field3285;
+	public static final class392 field3287;
+	static final class392 field3277;
+	static final class392 field3279;
+	static final class392 field3280;
+	static final class392 field3281;
+	static final class392 field3282;
+	static final class392 field3283;
+	static final class392 field3284;
+	final String field3286;
+	public final int field3278;
 
-@ObfInfo(name = "rp")
-public abstract class class392 extends class24 implements class456 {
-	@ObfInfo(name = "<init>", desc = "(Lns;Lon;I)V")
-	protected class392(class174 var1, class67 var2, int var3) {
-		super(var1, var2, var3);
+	static {
+		field3285 = new class392(8, 0, "", "");
+		field3277 = new class392(4, 1, "", "");
+		field3284 = new class392(1, 2, "", "");
+		field3279 = new class392(6, 3, "", "");
+		field3280 = new class392(2, 4, "", "");
+		field3281 = new class392(0, 5, "", "");
+		field3282 = new class392(5, 6, "", "");
+		field3283 = new class392(7, 7, "", "");
+		field3287 = new class392(3, -1, "", "", true, new class392[]{field3285, field3277, field3284, field3280, field3279});
 	}
 
-	@ObfInfo(name = "au", desc = "(IB)Lrv;")
-	protected abstract class230 method2089(int var1);
-
-	@ObfInfo(name = "ae", desc = "(I)I")
-	public int method2088() {
-		return super.field409;
+	class392(int var1, int var2, String var3, String var4) {
+		this.field3278 = var1;
+		this.field3286 = var4;
 	}
 
-	@ObfInfo(name = "ao", desc = "(IB)Ljava/lang/Object;", opaqueValue = "0")
-	public Object method2383(int var1) {
-		class230 var3 = this.method2089(var1);
-		return null != var3 && var3.method1229() ? var3.method1228() : null;
+	class392(int var1, int var2, String var3, String var4, boolean var5, class392[] var6) {
+		this.field3278 = var1;
+		this.field3286 = var4;
 	}
 
-	@ObfInfo(name = "at", desc = "(Ltm;B)Lud;", opaqueValue = "94")
-	public class10 method2087(class280 var1) {
-		int var3 = var1.method1541();
-		class230 var4 = this.method2089(var3);
-		class10 var5 = new class10(var3);
-		Class var6 = var4.field1961.field577;
-		if (var6 == Integer.class) {
-			var5.field340 = var1.method1496();
-		} else if (var6 == Long.class) {
-			var5.field340 = var1.method1497();
-		} else if (var6 == String.class) {
-			var5.field340 = var1.method1542();
-		} else {
-			if (!class526.class.isAssignableFrom(var6)) {
-				throw new IllegalStateException();
+	public String toString() {
+		return this.field3286;
+	}
+
+	static void method2050(class287 var0, int var1, int var2) {
+		if (var1 == var0.field1570 && var1 != -1) {
+			int var4 = class114.method702(var1).field3311;
+			if (var4 == 1) {
+				var0.field1571 = 0;
+				var0.field1572 = 0;
+				var0.field1587 = var2;
+				var0.field1552 = 0;
 			}
 
-			try {
-				class526 var7 = (class526)var6.newInstance();
-				var7.method2563(var1);
-				var5.field340 = var7;
-			} catch (InstantiationException var8) {
-			} catch (IllegalAccessException var9) {
+			if (var4 == 2) {
+				var0.field1552 = 0;
 			}
+		} else if (var1 == -1 || var0.field1570 == -1 || class114.method702(var1).field3304 >= class114.method702(var0.field1570).field3304) {
+			var0.field1570 = var1;
+			var0.field1571 = 0;
+			var0.field1572 = 0;
+			var0.field1587 = var2;
+			var0.field1552 = 0;
+			var0.field1589 = var0.field1573;
 		}
 
-		return var5;
 	}
 }

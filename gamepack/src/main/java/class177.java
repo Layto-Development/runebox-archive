@@ -1,68 +1,45 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.io.IOException;
-import java.net.Socket;
+public class class177 extends class462 {
+	static class253 field1705;
+	static int[] field1707;
+	int field1702;
+	int field1703;
+	int field1704;
+	int field1706;
 
-@ObfInfo(name = "qy")
-public class class177 extends class112 {
-	@ObfInfo(name = "ar", desc = "[[[I")
-	static int[][][] field1627;
-	@ObfInfo(name = "ae", desc = "Lqa;")
-	class210 field1625;
-	@ObfInfo(name = "ao", desc = "Lqh;")
-	class364 field1624;
-	@ObfInfo(name = "au", desc = "Ljava/net/Socket;")
-	Socket field1626;
-
-	@ObfInfo(name = "<init>", desc = "(Ljava/net/Socket;II)V")
-	public class177(Socket var1, int var2, int var3) throws IOException {
-		this.field1626 = var1;
-		this.field1626.setSoTimeout(30000);
-		this.field1626.setTcpNoDelay(true);
-		this.field1626.setReceiveBufferSize(65536);
-		this.field1626.setSendBufferSize(65536);
-		this.field1625 = new class210(this.field1626.getInputStream(), var2);
-		this.field1624 = new class364(this.field1626.getOutputStream(), var3);
+	class177(int var1, int var2, int var3, int var4) {
+		this.field1706 = var1;
+		this.field1702 = var2;
+		this.field1703 = var3;
+		this.field1704 = var4;
 	}
 
-	@ObfInfo(name = "au", desc = "(IB)Z")
-	public boolean method617(int var1) throws IOException {
-		return this.field1625.method1161(var1);
+	void method1002(int var1, int var2, int var3, int var4) {
+		this.field1706 = var1;
+		this.field1702 = var2;
+		this.field1703 = var3;
+		this.field1704 = var4;
 	}
 
-	@ObfInfo(name = "ae", desc = "(I)I")
-	public int method619() throws IOException {
-		return this.field1625.method1165();
+	public static int method1005(CharSequence var0) {
+		return class492.method2408(var0, 10, true);
 	}
 
-	@ObfInfo(name = "ao", desc = "(I)I")
-	public int method621() throws IOException {
-		return this.field1625.method1162();
-	}
-
-	@ObfInfo(name = "at", desc = "([BIIS)I")
-	public int method618(byte[] var1, int var2, int var3) throws IOException {
-		return this.field1625.method1163(var1, var2, var3);
-	}
-
-	@ObfInfo(name = "ac", desc = "([BIII)V")
-	public void method620(byte[] var1, int var2, int var3) throws IOException {
-		this.field1624.method1993(var1, var2, var3);
-	}
-
-	@ObfInfo(name = "ai", desc = "(I)V")
-	public void method622() {
-		this.field1624.method1992();
-
-		try {
-			this.field1626.close();
-		} catch (IOException var3) {
+	static int method1004(class12 var0, class12 var1, int var2, boolean var3, int var4, boolean var5) {
+		int var7 = class196.method1073(var0, var1, var2, var3);
+		if (var7 != 0) {
+			return var3 ? -var7 : var7;
+		} else if (var4 == -1) {
+			return 0;
+		} else {
+			int var8 = class196.method1073(var0, var1, var4, var5);
+			return var5 ? -var8 : var8;
 		}
-
-		this.field1625.method1164();
 	}
 
-	@ObfInfo(name = "finalize", desc = "()V")
-	protected void finalize() {
-		this.method622();
+	static final void method1003(double var0) {
+		class133.method781(var0);
+		((class348)class133.field1293.field389).method1909(var0);
+		class296.method1691();
+		class176.field1701.method2513(var0);
 	}
 }

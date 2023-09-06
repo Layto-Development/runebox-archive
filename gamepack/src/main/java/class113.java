@@ -1,140 +1,59 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-@ObfInfo(name = "ow")
 public class class113 {
-	@ObfInfo(name = "ae", desc = "Lsj;")
-	class155 field1029;
-	@ObfInfo(name = "au", desc = "Lsj;")
-	public class155 field1030;
+	public class29 field1065;
+	public class29 field1066;
+	public int field1067;
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	public class113() {
-		this.field1030 = new class155();
-		this.field1030.field1482 = this.field1030;
-		this.field1030.field1484 = this.field1030;
+	public class113(int var1, class29 var2, class29 var3) {
+		this.field1067 = var1;
+		this.field1065 = var2;
+		this.field1066 = var3;
 	}
 
-	@ObfInfo(name = "au", desc = "()V")
-	public void method623() {
-		while (true) {
-			class155 var1 = this.field1030.field1482;
-			if (var1 == this.field1030) {
-				this.field1029 = null;
-				return;
+	static final void method698(int var0) {
+		var0 = Math.min(Math.max(var0, 0), 255);
+		if (var0 != class176.field1701.method2488()) {
+			label35: {
+				if (class176.field1701.method2488() == 0) {
+					boolean var2 = !class92.field904.isEmpty();
+					if (var2) {
+						class342 var3 = class465.field3998;
+						if (!class92.field904.isEmpty()) {
+							ArrayList var4 = new ArrayList();
+							Iterator var5 = class92.field904.iterator();
+
+							while (var5.hasNext()) {
+								class104 var6 = (class104)var5.next();
+								var6.field1033 = false;
+								var6.field1031 = false;
+								var6.field1037 = false;
+								var6.field1034 = false;
+								var6.field1029 = var3;
+								var6.field1028 = var0;
+								var6.field1025 = 0.0F;
+								var4.add(var6);
+							}
+
+							class81.method545(var4, class92.field907, class92.field908, class92.field909, class92.field900, false);
+						}
+
+						Client.field275 = false;
+						break label35;
+					}
+				}
+
+				if (var0 == 0) {
+					class167.method924(0, 0);
+					Client.field275 = false;
+				} else {
+					class58.method427(var0, (byte)57);
+				}
 			}
 
-			var1.method907();
-		}
-	}
-
-	@ObfInfo(name = "ae", desc = "(Lsj;)V")
-	public void method631(class155 var1) {
-		if (var1.field1484 != null) {
-			var1.method907();
+			class176.field1701.method2494(var0);
 		}
 
-		var1.field1484 = this.field1030.field1484;
-		var1.field1482 = this.field1030;
-		var1.field1484.field1482 = var1;
-		var1.field1482.field1484 = var1;
-	}
-
-	@ObfInfo(name = "ao", desc = "(Lsj;)V")
-	public void method632(class155 var1) {
-		if (var1.field1484 != null) {
-			var1.method907();
-		}
-
-		var1.field1484 = this.field1030;
-		var1.field1482 = this.field1030.field1482;
-		var1.field1484.field1482 = var1;
-		var1.field1482.field1484 = var1;
-	}
-
-	@ObfInfo(name = "ac", desc = "()Lsj;")
-	public class155 method625() {
-		class155 var1 = this.field1030.field1482;
-		if (var1 == this.field1030) {
-			return null;
-		} else {
-			var1.method907();
-			return var1;
-		}
-	}
-
-	@ObfInfo(name = "ai", desc = "()Lsj;")
-	public class155 method626() {
-		class155 var1 = this.field1030.field1484;
-		if (var1 == this.field1030) {
-			return null;
-		} else {
-			var1.method907();
-			return var1;
-		}
-	}
-
-	@ObfInfo(name = "az", desc = "()Lsj;")
-	public class155 method627() {
-		class155 var1 = this.field1030.field1482;
-		if (var1 == this.field1030) {
-			this.field1029 = null;
-			return null;
-		} else {
-			this.field1029 = var1.field1482;
-			return var1;
-		}
-	}
-
-	@ObfInfo(name = "ap", desc = "()Lsj;")
-	public class155 method628() {
-		class155 var1 = this.field1030.field1484;
-		if (var1 == this.field1030) {
-			this.field1029 = null;
-			return null;
-		} else {
-			this.field1029 = var1.field1484;
-			return var1;
-		}
-	}
-
-	@ObfInfo(name = "aa", desc = "()Lsj;")
-	public class155 method629() {
-		class155 var1 = this.field1029;
-		if (var1 == this.field1030) {
-			this.field1029 = null;
-			return null;
-		} else {
-			this.field1029 = var1.field1482;
-			return var1;
-		}
-	}
-
-	@ObfInfo(name = "af", desc = "()Lsj;")
-	public class155 method633() {
-		class155 var1 = this.field1029;
-		if (var1 == this.field1030) {
-			this.field1029 = null;
-			return null;
-		} else {
-			this.field1029 = var1.field1484;
-			return var1;
-		}
-	}
-
-	@ObfInfo(name = "ad", desc = "()Z")
-	public boolean method630() {
-		return this.field1030.field1482 == this.field1030;
-	}
-
-	@ObfInfo(name = "at", desc = "(Lsj;Lsj;)V")
-	public static void method624(class155 var0, class155 var1) {
-		if (var0.field1484 != null) {
-			var0.method907();
-		}
-
-		var0.field1484 = var1.field1484;
-		var0.field1482 = var1;
-		var0.field1484.field1482 = var0;
-		var0.field1482.field1484 = var0;
 	}
 }

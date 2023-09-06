@@ -1,6 +1,6 @@
 val injectorOnly by configurations.creating
 
-configurations.implementation {
+configurations.compileOnly {
     extendsFrom(injectorOnly)
     isCanBeResolved = true
     isCanBeConsumed = false

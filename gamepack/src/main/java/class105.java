@@ -1,31 +1,145 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Comparator;
 
-@ObfInfo(name = "mm")
-public class class105 {
-	@ObfInfo(name = "au", desc = "[S")
-	public static final short[] field1012;
-	@ObfInfo(name = "ao", desc = "[S")
-	public static final short[] field1013;
-	@ObfInfo(name = "at", desc = "[[S")
-	public static final short[][] field1014;
-	@ObfInfo(name = "ae", desc = "[[S")
-	public static final short[][] field1015;
-	@ObfInfo(name = "ud", desc = "Lcx;")
-	static class124 field1016;
+public class class105 implements Comparator {
+	public static boolean[] field1038;
+	static int field1039;
 
-	static {
-		field1012 = new short[]{6798, 8741, 25238, 4626, 4550};
-		field1015 = new short[][]{{6798, 107, 10283, 16, 4797, 7744, 5799, 4634, -31839, 22433, 2983, -11343, 8, 5281, 10438, 3650, -27322, -21845, 200, 571, 908, 21830, 28946, -15701, -14010, -22122, 937, 8130, -13422, 30385}, {8741, 12, -1506, -22374, 7735, 8404, 1701, -27106, 24094, 10153, -8915, 4783, 1341, 16578, -30533, 25239, 8, 5281, 10438, 3650, -27322, -21845, 200, 571, 908, 21830, 28946, -15701, -14010}, {25238, 8742, 12, -1506, -22374, 7735, 8404, 1701, -27106, 24094, 10153, -8915, 4783, 1341, 16578, -30533, 8, 5281, 10438, 3650, -27322, -21845, 200, 571, 908, 21830, 28946, -15701, -14010}, {4626, 11146, 6439, 12, 4758, 10270}, {4550, 4537, 5681, 5673, 5790, 6806, 8076, 4574, 17050, 0, 127, -31821, -17991}};
-		field1013 = new short[]{-10304, 9104, -1, -1, -1};
-		field1014 = new short[][]{{6554, 115, 10304, 28, 5702, 7756, 5681, 4510, -31835, 22437, 2859, -11339, 16, 5157, 10446, 3658, -27314, -21965, 472, 580, 784, 21966, 28950, -15697, -14002, -22116, 945, 8144, -13414, 30389}, {9104, 10275, 7595, 3610, 7975, 8526, 918, -26734, 24466, 10145, -6882, 5027, 1457, 16565, -30545, 25486, 24, 5392, 10429, 3673, -27335, -21957, 192, 687, 412, 21821, 28835, -15460, -14019}, new short[0], new short[0], new short[0]};
+	class105() {
 	}
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class105() throws Throwable {
+	int method680(class351 var1, class351 var2) {
+		return var1.field3007 - var2.field3007;
 	}
 
-	@ObfInfo(name = "ad", desc = "(CI)Z", opaqueValue = "770001992")
-	public static boolean method608(char var0) {
-		return var0 >= '0' && var0 <= '9';
+	public int compare(Object var1, Object var2) {
+		return this.method680((class351)var1, (class351)var2);
+	}
+
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
+
+	static final void method677(int var0, int var1, boolean var2) {
+		if (!var2 || class38.field501 != var0 || class384.field3237 != var1) {
+			class38.field501 = var0;
+			class384.field3237 = var1;
+			class104.method675(25);
+			class200.method1140(class433.field3551, true);
+			int var4 = class296.field2735;
+			int var5 = class164.field1606;
+			class296.field2735 = (var0 - 6) * 8;
+			class164.field1606 = (var1 - 6) * 8;
+			int var6 = class296.field2735 - var4;
+			int var7 = class164.field1606 - var5;
+			var4 = class296.field2735;
+			var5 = class164.field1606;
+
+			int var8;
+			int var10;
+			int[] var10000;
+			for (var8 = 0; var8 < 65536; ++var8) {
+				class102 var9 = Client.field63[var8];
+				if (var9 != null) {
+					for (var10 = 0; var10 < 10; ++var10) {
+						var10000 = var9.field1600;
+						var10000[var10] -= var6;
+						var10000 = var9.field1597;
+						var10000[var10] -= var7;
+					}
+
+					var9.field1555 -= var6 * 128;
+					var9.field1526 -= var7 * 128;
+				}
+			}
+
+			for (var8 = 0; var8 < 2048; ++var8) {
+				class287 var20 = Client.field176[var8];
+				if (null != var20) {
+					for (var10 = 0; var10 < 10; ++var10) {
+						var10000 = var20.field1600;
+						var10000[var10] -= var6;
+						var10000 = var20.field1597;
+						var10000[var10] -= var7;
+					}
+
+					var20.field1555 -= var6 * 128;
+					var20.field1526 -= var7 * 128;
+				}
+			}
+
+			byte var19 = 0;
+			byte var21 = 104;
+			byte var22 = 1;
+			if (var6 < 0) {
+				var19 = 103;
+				var21 = -1;
+				var22 = -1;
+			}
+
+			byte var11 = 0;
+			byte var12 = 104;
+			byte var13 = 1;
+			if (var7 < 0) {
+				var11 = 103;
+				var12 = -1;
+				var13 = -1;
+			}
+
+			int var15;
+			for (int var14 = var19; var14 != var21; var14 += var22) {
+				for (var15 = var11; var15 != var12; var15 += var13) {
+					int var16 = var6 + var14;
+					int var17 = var7 + var15;
+
+					for (int var18 = 0; var18 < 4; ++var18) {
+						if (var16 >= 0 && var17 >= 0 && var16 < 104 && var17 < 104) {
+							Client.field143[var18][var14][var15] = Client.field143[var18][var16][var17];
+						} else {
+							Client.field143[var18][var14][var15] = null;
+						}
+					}
+				}
+			}
+
+			for (class353 var23 = (class353)Client.field144.method563(); null != var23; var23 = (class353)Client.field144.method565()) {
+				var23.field3021 -= var6;
+				var23.field3027 -= var7;
+				if (var23.field3021 < 0 || var23.field3027 < 0 || var23.field3021 >= 104 || var23.field3027 >= 104) {
+					var23.method2269();
+				}
+			}
+
+			if (Client.field254 != 0) {
+				Client.field254 -= var6;
+				Client.field177 -= var7;
+			}
+
+			Client.field258 = 0;
+			Client.field264 = false;
+			class375.field3180 -= var6 << 7;
+			class196.field1796 -= var7 << 7;
+			class314.field2821 -= var6 << 7;
+			class358.field3040 -= var7 << 7;
+			Client.field249 = -1;
+			Client.field273.method559();
+			Client.field130.method559();
+
+			for (var15 = 0; var15 < 4; ++var15) {
+				Client.field78[var15].method532();
+			}
+
+		}
+	}
+
+	static final void method678(int var0) {
+		if (class292.method1669(var0)) {
+			class517.method2520(class160.field1484[var0], -1);
+		}
+	}
+
+	static void method679(int var0) {
+		if (var0 != Client.field39) {
+			Client.field39 = var0;
+		}
 	}
 }

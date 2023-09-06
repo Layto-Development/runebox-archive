@@ -1,124 +1,30 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.security.Principal;
-import java.security.cert.Certificate;
-import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSessionContext;
-import javax.security.cert.X509Certificate;
-
-@ObfInfo(name = "am")
-class class450 implements SSLSession {
+public class class450 extends class40 {
+	byte field3940;
+	byte field3941;
+	String field3942;
 	// $FF: synthetic field
-	@ObfInfo(name = "this$1", desc = "Lal;")
-	final class304 this$1;
+	final class90 this$0;
 
-	@ObfInfo(name = "<init>", desc = "(Lal;)V")
-	class450(class304 var1) {
-		this.this$1 = var1;
+	class450(class90 var1) {
+		this.this$0 = var1;
 	}
 
-	@ObfInfo(name = "getApplicationBufferSize", desc = "()I")
-	public int getApplicationBufferSize() {
-		return 0;
+	void method258(class42 var1) {
+		this.field3942 = var1.method337();
+		if (null != this.field3942) {
+			var1.method278();
+			this.field3940 = var1.method279();
+			this.field3941 = var1.method279();
+		}
+
 	}
 
-	@ObfInfo(name = "getCipherSuite", desc = "()Ljava/lang/String;")
-	public String getCipherSuite() {
-		throw new UnsupportedOperationException();
-	}
+	void method259(class419 var1) {
+		var1.field3501 = this.field3942;
+		if (null != this.field3942) {
+			var1.field3496 = this.field3940;
+			var1.field3500 = this.field3941;
+		}
 
-	@ObfInfo(name = "getCreationTime", desc = "()J")
-	public long getCreationTime() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getId", desc = "()[B")
-	public byte[] getId() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getLastAccessedTime", desc = "()J")
-	public long getLastAccessedTime() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getLocalCertificates", desc = "()[Ljava/security/cert/Certificate;")
-	public Certificate[] getLocalCertificates() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getLocalPrincipal", desc = "()Ljava/security/Principal;")
-	public Principal getLocalPrincipal() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getPacketBufferSize", desc = "()I")
-	public int getPacketBufferSize() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getPeerCertificateChain", desc = "()[Ljavax/security/cert/X509Certificate;")
-	public X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
-		return null;
-	}
-
-	@ObfInfo(name = "getPeerCertificates", desc = "()[Ljava/security/cert/Certificate;")
-	public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
-		return this.this$1.field2458;
-	}
-
-	@ObfInfo(name = "getPeerHost", desc = "()Ljava/lang/String;")
-	public String getPeerHost() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getPeerPort", desc = "()I")
-	public int getPeerPort() {
-		return 0;
-	}
-
-	@ObfInfo(name = "getPeerPrincipal", desc = "()Ljava/security/Principal;")
-	public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
-		return null;
-	}
-
-	@ObfInfo(name = "getProtocol", desc = "()Ljava/lang/String;")
-	public String getProtocol() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getSessionContext", desc = "()Ljavax/net/ssl/SSLSessionContext;")
-	public SSLSessionContext getSessionContext() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getValue", desc = "(Ljava/lang/String;)Ljava/lang/Object;")
-	public Object getValue(String var1) {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "getValueNames", desc = "()[Ljava/lang/String;")
-	public String[] getValueNames() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "invalidate", desc = "()V")
-	public void invalidate() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "isValid", desc = "()Z")
-	public boolean isValid() {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "putValue", desc = "(Ljava/lang/String;Ljava/lang/Object;)V")
-	public void putValue(String var1, Object var2) {
-		throw new UnsupportedOperationException();
-	}
-
-	@ObfInfo(name = "removeValue", desc = "(Ljava/lang/String;)V")
-	public void removeValue(String var1) {
-		throw new UnsupportedOperationException();
 	}
 }

@@ -1,25 +1,73 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.Iterator;
 
-@ObfInfo(name = "ir")
-public final class class301 {
-	@ObfInfo(name = "ac", desc = "Lik;")
-	class510 field2434;
-	@ObfInfo(name = "at", desc = "Lik;")
-	class510 field2435;
-	@ObfInfo(name = "ai", desc = "Lik;")
-	class510 field2437;
-	@ObfInfo(name = "ap", desc = "I", intMultiplier = -835782095)
-	int field2432;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = 1271816875)
-	int field2433;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = 2104974675)
-	int field2436;
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = 575975751)
-	int field2439;
-	@ObfInfo(name = "az", desc = "J", longMultiplier = 6788186902421729923L)
-	long field2438;
+public class class301 implements Iterator {
+	class462 field2754;
+	class462 field2756;
+	class526 field2753;
+	int field2755;
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class301() {
+	public class301(class526 var1) {
+		this.field2756 = null;
+		this.field2753 = var1;
+		this.method1697();
+	}
+
+	void method1697() {
+		this.field2754 = this.field2753.field4247[0].field3986;
+		this.field2755 = 1;
+		this.field2756 = null;
+	}
+
+	public class462 method1698() {
+		this.method1697();
+		return (class462)this.next();
+	}
+
+	public Object next() {
+		class462 var1;
+		if (this.field2754 != this.field2753.field4247[this.field2755 - 1]) {
+			var1 = this.field2754;
+			this.field2754 = var1.field3986;
+			this.field2756 = var1;
+			return var1;
+		} else {
+			do {
+				if (this.field2755 >= this.field2753.field4246) {
+					return null;
+				}
+
+				var1 = this.field2753.field4247[this.field2755++].field3986;
+			} while(var1 == this.field2753.field4247[this.field2755 - 1]);
+
+			this.field2754 = var1.field3986;
+			this.field2756 = var1;
+			return var1;
+		}
+	}
+
+	public boolean hasNext() {
+		if (this.field2754 != this.field2753.field4247[this.field2755 - 1]) {
+			return true;
+		} else {
+			while (this.field2755 < this.field2753.field4246) {
+				if (this.field2753.field4247[this.field2755++].field3986 != this.field2753.field4247[this.field2755 - 1]) {
+					this.field2754 = this.field2753.field4247[this.field2755 - 1].field3986;
+					return true;
+				}
+
+				this.field2754 = this.field2753.field4247[this.field2755 - 1];
+			}
+
+			return false;
+		}
+	}
+
+	public void remove() {
+		if (this.field2756 == null) {
+			throw new IllegalStateException();
+		} else {
+			this.field2756.method2269();
+			this.field2756 = null;
+		}
 	}
 }

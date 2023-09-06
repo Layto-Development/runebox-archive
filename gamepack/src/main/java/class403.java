@@ -1,78 +1,53 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.util.Map;
+public class class403 implements class213 {
+	public final class532 field3382;
 
-@ObfInfo(name = "as")
-public class class403 {
-	@ObfInfo(name = "au", desc = "I", intMultiplier = 1053019723)
-	final int field3127;
-	@ObfInfo(name = "ao", desc = "Ljava/lang/String;")
-	final String field3126;
-	@ObfInfo(name = "ae", desc = "Ljava/util/Map;")
-	final Map field3125;
+	public class403(class424 var1) {
+		this(new class339(var1));
+	}
 
-	@ObfInfo(name = "<init>", desc = "(Ljava/net/HttpURLConnection;)V")
-	class403(HttpURLConnection var1) throws IOException {
-		this.field3127 = var1.getResponseCode();
-		var1.getResponseMessage();
-		this.field3125 = var1.getHeaderFields();
-		StringBuilder var2 = new StringBuilder();
-		InputStream var3 = this.field3127 >= 300 ? var1.getErrorStream() : var1.getInputStream();
-		if (var3 != null) {
-			InputStreamReader var4 = new InputStreamReader(var3);
-			BufferedReader var5 = new BufferedReader(var4);
+	class403(class339 var1) {
+		this.field3382 = var1;
+	}
 
-			String var6;
-			while ((var6 = var5.readLine()) != null) {
-				var2.append(var6);
+	public int method2084(int var1) {
+		return this.field3382.method2566(var1);
+	}
+
+	static float method2085(class415 var0, float var1) {
+		if (var0 == null) {
+			return 0.0F;
+		} else {
+			float var3;
+			if (var0.field3472 == var1) {
+				var3 = 0.0F;
+			} else if (var1 == var0.field3473) {
+				var3 = 1.0F;
+			} else {
+				var3 = (var1 - var0.field3472) / (var0.field3473 - var0.field3472);
 			}
 
-			var3.close();
+			float var4;
+			if (var0.field3469) {
+				var4 = var3;
+			} else {
+				class525.field4243[3] = var0.field3471;
+				class525.field4243[2] = var0.field3476;
+				class525.field4243[1] = var0.field3475;
+				class525.field4243[0] = var0.field3474 - var3;
+				class525.field4244[0] = 0.0F;
+				class525.field4244[1] = 0.0F;
+				class525.field4244[2] = 0.0F;
+				class525.field4244[3] = 0.0F;
+				class525.field4244[4] = 0.0F;
+				int var5 = class417.method2145(class525.field4243, 3, 0.0F, true, 1.0F, true, class525.field4244);
+				if (var5 == 1) {
+					var4 = class525.field4244[0];
+				} else {
+					var4 = 0.0F;
+				}
+			}
+
+			return var4 * (var0.field3478 + var4 * (var4 * var0.field3466 + var0.field3479)) + var0.field3489;
 		}
-
-		this.field3126 = var2.toString();
-	}
-
-	@ObfInfo(name = "<init>", desc = "(Ljava/lang/String;)V")
-	class403(String var1) {
-		this.field3127 = 400;
-		this.field3125 = null;
-		this.field3126 = "";
-	}
-
-	@ObfInfo(name = "au", desc = "(S)I")
-	public int method2124() {
-		return this.field3127;
-	}
-
-	@ObfInfo(name = "ae", desc = "(B)Ljava/util/Map;")
-	public Map method2125() {
-		return this.field3125;
-	}
-
-	@ObfInfo(name = "ao", desc = "(I)Ljava/lang/String;")
-	public String method2126() {
-		return this.field3126;
-	}
-
-	@ObfInfo(name = "ao", desc = "(Lto;B)I", opaqueValue = "71")
-	static int method2127(class259 var0) {
-		int var2 = var0.method1359(2);
-		int var3;
-		if (var2 == 0) {
-			var3 = 0;
-		} else if (var2 == 1) {
-			var3 = var0.method1359(5);
-		} else if (var2 == 2) {
-			var3 = var0.method1359(8);
-		} else {
-			var3 = var0.method1359(11);
-		}
-
-		return var3;
 	}
 }

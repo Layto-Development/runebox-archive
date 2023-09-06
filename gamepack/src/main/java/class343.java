@@ -1,66 +1,64 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Shape;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
+import java.awt.image.DirectColorModel;
+import java.awt.image.Raster;
+import java.awt.image.WritableRaster;
+import java.util.Hashtable;
 
-@ObfInfo(name = "ka")
-public class class343 {
-	@ObfInfo(name = "fb", desc = "J", longMultiplier = -8732969090401109105L)
-	static long field2706;
-	@ObfInfo(name = "au", desc = "Lka;")
-	static final class343 field2703;
-	@ObfInfo(name = "ae", desc = "Lka;")
-	static final class343 field2705;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = -1287567465)
-	final int field2704;
+public final class class343 extends class88 {
+	Component field2973;
+	Image field2974;
 
-	static {
-		field2703 = new class343(0);
-		field2705 = new class343(1);
+	class343(int var1, int var2, Component var3, boolean var4) {
+		super.field880 = var1;
+		super.field882 = var2;
+		super.field881 = new int[var2 * var1 + 1];
+		if (var4) {
+			super.field879 = new float[var2 * var1 + 1];
+		}
+
+		DataBufferInt var5 = new DataBufferInt(super.field881, super.field881.length);
+		DirectColorModel var6 = new DirectColorModel(32, 16711680, 65280, 255);
+		WritableRaster var7 = Raster.createWritableRaster(var6.createCompatibleSampleModel(super.field880, super.field882), var5, (Point)null);
+		this.field2974 = new BufferedImage(var6, var7, false, new Hashtable());
+		this.method1884(var3);
+		this.method607();
 	}
 
-	@ObfInfo(name = "<init>", desc = "(I)V")
-	class343(int var1) {
-		this.field2704 = var1;
+	final void method1884(Component var1) {
+		this.field2973 = var1;
 	}
 
-	@ObfInfo(name = "aa", desc = "(Ljava/util/ArrayList;ZI)V", opaqueValue = "544527881")
-	static void method1880(ArrayList var0, boolean var1) {
-		if (!var1) {
-			class303.field2448.clear();
-		}
+	public final void method604(int var1, int var2) {
+		this.method1886(this.field2973.getGraphics(), var1, var2);
+	}
 
-		Iterator var3 = var0.iterator();
+	public final void method605(int var1, int var2, int var3, int var4) {
+		this.method1885(this.field2973.getGraphics(), var1, var2, var3, var4);
+	}
 
-		while (var3.hasNext()) {
-			class503 var4 = (class503)var3.next();
-			if (var4.field4057 != -1 && var4.field4058 != -1) {
-				if (!var1) {
-					class303.field2448.add(var4);
-				}
-
-				class303.field2454.add(var4);
-			}
+	final void method1886(Graphics var1, int var2, int var3) {
+		try {
+			var1.drawImage(this.field2974, var2, var3, this.field2973);
+		} catch (Exception var6) {
+			this.field2973.repaint();
 		}
 
 	}
 
-	@ObfInfo(name = "jt", desc = "(II)V", opaqueValue = "617389636")
-	static void method1881(int var0) {
-		Client.field257 = 0L;
-		if (var0 >= 2) {
-			Client.field258 = true;
-		} else {
-			Client.field258 = false;
-		}
-
-		if (Client.method212() == 1) {
-			class51.field585.method1883(765, 503);
-		} else {
-			class51.field585.method1883(7680, 2160);
-		}
-
-		if (Client.field111 >= 25) {
-			Client.method150();
+	final void method1885(Graphics var1, int var2, int var3, int var4, int var5) {
+		try {
+			Shape var7 = var1.getClip();
+			var1.clipRect(var2, var3, var4, var5);
+			var1.drawImage(this.field2974, 0, 0, this.field2973);
+			var1.setClip(var7);
+		} catch (Exception var8) {
+			this.field2973.repaint();
 		}
 
 	}

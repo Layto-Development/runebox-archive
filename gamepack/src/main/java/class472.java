@@ -1,17 +1,11 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "pu")
 public class class472 {
-	@ObfInfo(name = "au", desc = "I", intMultiplier = -482776237)
-	int field3807;
+	static class419 field4026;
+	public char field4025;
+	public int field4024;
+	public int field4027;
 
-	@ObfInfo(name = "<init>", desc = "(IZ)V")
-	class472(int var1, boolean var2) {
-		this.field3807 = var1;
-	}
-
-	@ObfInfo(name = "au", desc = "(S)I")
-	public int method2427() {
-		return this.field3807;
+	class472() {
+		this.field4024 = 0;
+		this.field4027 = 0;
 	}
 }

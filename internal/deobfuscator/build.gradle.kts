@@ -1,6 +1,10 @@
 import org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler
+import java.io.ByteArrayInputStream
 import java.net.URL
+import java.util.jar.JarEntry
 import java.util.jar.JarFile
+import java.util.jar.JarOutputStream
+import java.util.zip.ZipInputStream
 
 plugins {
     java
@@ -13,9 +17,9 @@ dependencies {
     implementation("org.ow2.asm:asm-util:_")
     implementation("org.ow2.asm:asm-tree:_")
     implementation("com.google.guava:guava:_")
-    runtimeOnly("org.bouncycastle:bcprov-jdk15on:1.52")
-    runtimeOnly("org.json:json:20220320")
-    runtimeOnly(project(":runebox-deobfuscator-includes"))
+    //runtimeOnly("org.bouncycastle:bcprov-jdk15on:1.52")
+    //runtimeOnly("org.json:json:20220320")
+    runtimeOnly(project(":runebox-deobfuscator-annotations"))
 }
 
 tasks {
@@ -34,7 +38,7 @@ tasks {
         group = "internal"
         mainClass.set("io.runebox.internal.deobfuscator.Deobfuscator")
         workingDir = project.projectDir
-        args = listOf("build/deob/gamepack.jar", "build/deob/gamepack.deob.jar")
+        args = listOf("build/deob/gamepack.jar", "build/deob/gamepack.deob.jar", "-t")
         classpath = sourceSets["main"].runtimeClasspath
     }
 }
@@ -49,9 +53,26 @@ fun downloadGamepack() {
     file.parentFile.mkdirs()
     file.createNewFile()
 
-    file.writeBytes(url.readBytes())
+    val tempJar = file(file.absolutePath+".tmp")
+    tempJar.createNewFile()
+    tempJar.writeBytes(url.readBytes())
 
-    println("Completed download of gamepack.jar.")
+    JarOutputStream(file.outputStream()).use { jos ->
+        JarFile(tempJar).use { jar ->
+            jar.entries().asSequence().forEach { entry ->
+                if(entry.name.endsWith(".class")) {
+                    val bytes = jar.getInputStream(entry).readAllBytes()
+                    jos.putNextEntry(JarEntry(entry.name))
+                    jos.write(bytes)
+                    jos.closeEntry()
+                }
+            }
+        }
+    }
+
+    tempJar.deleteRecursively()
+
+    println("Completed download of vanilla gamepack.jar.")
 }
 
 fun decompileGamepack() {

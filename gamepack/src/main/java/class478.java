@@ -1,181 +1,42 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.math.BigInteger;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.Random;
-
-@ObfInfo(name = "cj")
 public class class478 {
-	@ObfInfo(name = "cd", desc = "I", intMultiplier = 401845471)
-	static int field3816;
-	@ObfInfo(name = "ac", desc = "Ljava/math/BigInteger;")
-	static final BigInteger field3817;
-	@ObfInfo(name = "ai", desc = "Ljava/math/BigInteger;")
-	static final BigInteger field3818;
+	String field4065;
+	String field4067;
+	public final class522 field4064;
+	public final int field4068;
+	public final long field4066;
 
-	static {
-		field3817 = new BigInteger("80782894952180643741752986186714059433953886149239752893425047584684715842049");
-		field3818 = new BigInteger("7237300117305667488707183861728052766358166655052137727439795191253340127955075499635575104901523446809299097934591732635674173519120047404024393881551683");
+	class478(class42 var1, byte var2, int var3) {
+		this.field4067 = var1.method286();
+		this.field4065 = var1.method286();
+		this.field4068 = var1.method327();
+		this.field4066 = var1.method283();
+		int var4 = var1.method282();
+		int var5 = var1.method282();
+		this.field4064 = new class522();
+		this.field4064.method2532(2);
+		this.field4064.method2536(var2);
+		this.field4064.field4233 = var4;
+		this.field4064.field4231 = var5;
+		this.field4064.field4232 = 0;
+		this.field4064.field4228 = 0;
+		this.field4064.field4229 = var3;
 	}
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class478() throws Throwable {
+	public String method2387() {
+		return this.field4067;
 	}
 
-	@ObfInfo(name = "au", desc = "(JLjava/lang/String;B)I")
-	static final int method2442(long var0, String var2) {
-		Random var4 = new Random();
-		class280 var5 = new class280(128);
-		class280 var6 = new class280(128);
-		int[] var7 = new int[]{var4.nextInt(), var4.nextInt(), (int)(var0 >> 32), (int)var0};
-		var5.method1481(10);
-
-		int var8;
-		for (var8 = 0; var8 < 4; ++var8) {
-			var5.method1547(var4.nextInt());
-		}
-
-		var5.method1547(var7[0]);
-		var5.method1547(var7[1]);
-		var5.method1518(var0);
-		var5.method1518(0L);
-
-		for (var8 = 0; var8 < 4; ++var8) {
-			var5.method1547(var4.nextInt());
-		}
-
-		var5.method1525(field3817, field3818);
-		var6.method1481(10);
-
-		for (var8 = 0; var8 < 3; ++var8) {
-			var6.method1547(var4.nextInt());
-		}
-
-		var6.method1518(var4.nextLong());
-		var6.method1482(var4.nextLong());
-		Client.method201(var6);
-		var6.method1518(var4.nextLong());
-		var6.method1525(field3817, field3818);
-		var8 = class280.method1555(var2);
-		if (var8 % 8 != 0) {
-			var8 += 8 - var8 % 8;
-		}
-
-		class280 var9 = new class280(var8);
-		var9.method1484(var2);
-		var9.field2254 = var8;
-		var9.method1509(var7);
-		class280 var10 = new class280(var9.field2254 + var6.field2254 + var5.field2254 + 5);
-		var10.method1481(2);
-		var10.method1481(var5.field2254);
-		var10.method1486(var5.field2252, 0, var5.field2254);
-		var10.method1481(var6.field2254);
-		var10.method1486(var6.field2252, 0, var6.field2254);
-		var10.method1522(var9.field2254);
-		var10.method1486(var9.field2252, 0, var9.field2254);
-		byte[] var12 = var10.field2252;
-		String var11 = class323.method1788(var12, 0, var12.length);
-		String var13 = var11;
-
-		try {
-			URL var14 = new URL(Client.method207("services", false) + "m=accountappeal/login.ws");
-			URLConnection var15 = var14.openConnection();
-			var15.setDoInput(true);
-			var15.setDoOutput(true);
-			var15.setConnectTimeout(5000);
-			OutputStreamWriter var16 = new OutputStreamWriter(var15.getOutputStream());
-			String var18 = "data2=" + class340.method1874(var13) + "&dest=";
-			int var20 = "passwordchoice.ws".length();
-			StringBuilder var21 = new StringBuilder(var20);
-
-			for (int var22 = 0; var22 < var20; ++var22) {
-				char var23 = "passwordchoice.ws".charAt(var22);
-				if ((var23 < 'a' || var23 > 'z') && (var23 < 'A' || var23 > 'Z') && (var23 < '0' || var23 > '9') && var23 != '.' && var23 != '-' && var23 != '*' && var23 != '_') {
-					if (var23 == ' ') {
-						var21.append('+');
-					} else {
-						byte var24 = class244.method1270(var23);
-						var21.append('%');
-						int var25 = var24 >> 4 & 15;
-						if (var25 >= 10) {
-							var21.append((char)(var25 + 55));
-						} else {
-							var21.append((char)(var25 + 48));
-						}
-
-						var25 = var24 & 15;
-						if (var25 >= 10) {
-							var21.append((char)(var25 + 55));
-						} else {
-							var21.append((char)(var25 + 48));
-						}
-					}
-				} else {
-					var21.append(var23);
-				}
-			}
-
-			String var19 = var21.toString();
-			var16.write(var18 + var19);
-			var16.flush();
-			InputStream var27 = var15.getInputStream();
-			var10 = new class280(new byte[1000]);
-
-			do {
-				int var28 = var27.read(var10.field2252, var10.field2254, 1000 - var10.field2254);
-				if (var28 == -1) {
-					var16.close();
-					var27.close();
-					String var29 = new String(var10.field2252);
-					if (var29.startsWith("OFFLINE")) {
-						return 4;
-					} else if (var29.startsWith("WRONG")) {
-						return 7;
-					} else if (var29.startsWith("RELOAD")) {
-						return 3;
-					} else if (var29.startsWith("Not permitted for social network accounts.")) {
-						return 6;
-					} else {
-						var10.method1553(var7);
-
-						while (var10.field2254 > 0 && var10.field2252[var10.field2254 - 1] == 0) {
-							--var10.field2254;
-						}
-
-						var29 = new String(var10.field2252, 0, var10.field2254);
-						if (method2441(var29)) {
-							class341.method1876(var29, true, false);
-							return 2;
-						} else {
-							return 5;
-						}
-					}
-				}
-
-				var10.field2254 += var28;
-			} while(var10.field2254 < 1000);
-
-			return 5;
-		} catch (Throwable var26) {
-			var26.printStackTrace();
-			return 5;
-		}
+	public String method2386() {
+		return this.field4065;
 	}
 
-	@ObfInfo(name = "ae", desc = "(Ljava/lang/String;I)Z")
-	static boolean method2441(String var0) {
-		if (null == var0) {
-			return false;
-		} else {
-			try {
-				new URL(var0);
-				return true;
-			} catch (MalformedURLException var3) {
-				return false;
-			}
+	static float method2388(float[] var0, int var1, float var2) {
+		float var4 = var0[var1];
+
+		for (int var5 = var1 - 1; var5 >= 0; --var5) {
+			var4 = var4 * var2 + var0[var5];
 		}
+
+		return var4;
 	}
 }

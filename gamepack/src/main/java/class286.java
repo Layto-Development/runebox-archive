@@ -1,92 +1,66 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+final class class286 implements class187 {
+	static class342 field2521;
 
-@ObfInfo(name = "ij")
-public class class286 {
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1394945579)
-	int field2279;
-	@ObfInfo(name = "at", desc = "I", intMultiplier = 190927925)
-	int field2280;
-	@ObfInfo(name = "az", desc = "I", intMultiplier = 1383698847)
-	final int field2281;
-	@ObfInfo(name = "ai", desc = "[I")
-	final int[] field2277;
-	@ObfInfo(name = "ac", desc = "[I")
-	final int[] field2283;
-	@ObfInfo(name = "ae", desc = "[[I")
-	final int[][] field2278;
-	@ObfInfo(name = "au", desc = "[[I")
-	final int[][] field2282;
-
-	@ObfInfo(name = "<init>", desc = "(II)V")
-	public class286(int var1, int var2) {
-		this.field2282 = new int[var1][var2];
-		this.field2278 = new int[var1][var2];
-		int var3 = var1 * var2;
-		int var4 = class497.method2492(var3 / 4);
-		this.field2283 = new int[var4];
-		this.field2277 = new int[var4];
-		this.field2281 = var4 - 1;
+	void method1628(Integer var1, class42 var2) {
+		var2.method333(var1);
 	}
 
-	@ObfInfo(name = "au", desc = "(B)V", opaqueValue = "63")
-	void method1584() {
-		for (int var2 = 0; var2 < this.field2282.length; ++var2) {
-			for (int var3 = 0; var3 < this.field2282[var2].length; ++var3) {
-				this.field2282[var2][var3] = 0;
-				this.field2278[var2][var3] = 99999999;
+	public Object method1035(class42 var1) {
+		return var1.method282();
+	}
+
+	public void method1036(Object var1, class42 var2) {
+		this.method1628((Integer)var1, var2);
+	}
+
+	static int method1629(int var0, class167 var1, boolean var2) {
+		class60 var4;
+		if (var0 != 1927 && var0 != 2927) {
+			int var9;
+			if (var0 == 1928) {
+				var4 = var2 ? class491.field4134 : class52.field599;
+				var9 = class139.field1344[--class203.field1903];
+				if (var9 >= 1 && var9 <= 10) {
+					class434 var10 = new class434(var9, var4.field644, var4.field763, var4.field772);
+					class139.field1341.add(var10);
+					return 1;
+				} else {
+					throw new RuntimeException();
+				}
+			} else if (var0 == 2928) {
+				class203.field1903 -= 3;
+				int var8 = class139.field1344[class203.field1903];
+				var9 = class139.field1344[class203.field1903 + 1];
+				int var6 = class139.field1344[2 + class203.field1903];
+				if (var6 >= 1 && var6 <= 10) {
+					class434 var7 = new class434(var6, var8, var9, class366.method1967(var8).field772);
+					class139.field1341.add(var7);
+					return 1;
+				} else {
+					throw new RuntimeException();
+				}
+			} else {
+				return 2;
+			}
+		} else if (class139.field1342 >= 10) {
+			throw new RuntimeException();
+		} else {
+			if (var0 >= 2000) {
+				var4 = class366.method1967(class139.field1344[--class203.field1903]);
+			} else {
+				var4 = var2 ? class491.field4134 : class52.field599;
+			}
+
+			if (null == var4.field638) {
+				return 0;
+			} else {
+				class309 var5 = new class309();
+				var5.field2791 = var4;
+				var5.field2794 = var4.field638;
+				var5.field2801 = 1 + class139.field1342;
+				Client.field218.method567(var5);
+				return 1;
 			}
 		}
-
-	}
-
-	@ObfInfo(name = "ae", desc = "(III)V")
-	void method1574(int var1, int var2) {
-		this.field2279 = var1;
-		this.field2280 = var2;
-	}
-
-	@ObfInfo(name = "ao", desc = "(B)I")
-	int method1575() {
-		return this.field2279;
-	}
-
-	@ObfInfo(name = "at", desc = "(B)I")
-	int method1576() {
-		return this.field2280;
-	}
-
-	@ObfInfo(name = "ac", desc = "(I)I")
-	int method1577() {
-		return this.field2282.length;
-	}
-
-	@ObfInfo(name = "ai", desc = "(B)I")
-	int method1582() {
-		return this.field2282[0].length;
-	}
-
-	@ObfInfo(name = "az", desc = "(I)[[I")
-	int[][] method1583() {
-		return this.field2282;
-	}
-
-	@ObfInfo(name = "ap", desc = "(I)[[I")
-	int[][] method1578() {
-		return this.field2278;
-	}
-
-	@ObfInfo(name = "aa", desc = "(I)[I")
-	int[] method1579() {
-		return this.field2283;
-	}
-
-	@ObfInfo(name = "af", desc = "(I)[I")
-	int[] method1580() {
-		return this.field2277;
-	}
-
-	@ObfInfo(name = "ad", desc = "(B)I")
-	int method1581() {
-		return this.field2281;
 	}
 }

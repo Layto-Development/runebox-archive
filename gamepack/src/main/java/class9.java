@@ -1,26 +1,37 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class9 extends class304 {
+	boolean field348;
+	boolean field349;
 
-@ObfInfo(name = "el")
-public class class9 extends class381 {
-	@ObfInfo(name = "au", desc = "Z")
-	final boolean field339;
-
-	@ObfInfo(name = "<init>", desc = "(Z)V")
-	public class9(boolean var1) {
-		this.field339 = var1;
+	class9() {
 	}
 
-	@ObfInfo(name = "au", desc = "(Lqb;Lqb;I)I", opaqueValue = "1675983004")
-	int method295(class424 var1, class424 var2) {
-		if (var1.field3235 != var2.field3235) {
-			return this.field339 ? var1.field3235 - var2.field3235 : var2.field3235 - var1.field3235;
+	int method89(class9 var1) {
+		if (super.field2769 == Client.field3 && var1.field2769 != Client.field3) {
+			return -1;
+		} else if (var1.field2769 == Client.field3 && Client.field3 != super.field2769) {
+			return 1;
+		} else if (super.field2769 != 0 && var1.field2769 == 0) {
+			return -1;
+		} else if (var1.field2769 != 0 && super.field2769 == 0) {
+			return 1;
+		} else if (this.field348 && !var1.field348) {
+			return -1;
+		} else if (!this.field348 && var1.field348) {
+			return 1;
+		} else if (this.field349 && !var1.field349) {
+			return -1;
+		} else if (!this.field349 && var1.field349) {
+			return 1;
 		} else {
-			return this.method2031(var1, var2);
+			return super.field2769 != 0 ? super.field2768 - var1.field2768 : var1.field2768 - super.field2768;
 		}
 	}
 
-	@ObfInfo(name = "compare", desc = "(Ljava/lang/Object;Ljava/lang/Object;)I")
-	public int compare(Object var1, Object var2) {
-		return this.method295((class424)var1, (class424)var2);
+	public int method512(class71 var1) {
+		return this.method89((class9)var1);
+	}
+
+	public int compareTo(Object var1) {
+		return this.method89((class9)var1);
 	}
 }

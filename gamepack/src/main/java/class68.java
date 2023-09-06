@@ -1,18 +1,9 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public interface class68 {
+	boolean method496(int var1);
 
-@ObfInfo(name = "kl")
-public class class68 {
-	@ObfInfo(name = "ae", desc = "Lmc;")
-	public class50 field771;
-	@ObfInfo(name = "ao", desc = "Lmc;")
-	public class50 field772;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = 397416983)
-	public int field773;
+	boolean method497(char var1);
 
-	@ObfInfo(name = "<init>", desc = "(ILmc;Lmc;)V")
-	public class68(int var1, class50 var2, class50 var3) {
-		this.field773 = var1;
-		this.field771 = var2;
-		this.field772 = var3;
-	}
+	boolean method498(int var1);
+
+	boolean method499(boolean var1);
 }

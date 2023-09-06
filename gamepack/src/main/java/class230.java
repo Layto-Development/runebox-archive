@@ -1,65 +1,58 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class230 implements class367 {
+	static final class230 field2089;
+	static final class230 field2090;
+	static final class230 field2093;
+	final int field2092;
+	public final int field2091;
 
-@ObfInfo(name = "rv")
-public abstract class class230 implements class99 {
-	@ObfInfo(name = "au", desc = "Ltb;")
-	class49 field1961;
-
-	@ObfInfo(name = "<init>", desc = "(I)V")
-	class230(int var1) {
+	static {
+		field2090 = new class230(0, 0);
+		field2093 = new class230(2, 1);
+		field2089 = new class230(1, 2);
 	}
 
-	@ObfInfo(name = "au", desc = "(Ltm;II)V")
-	abstract void method1227(class280 var1, int var2);
+	class230(int var1, int var2) {
+		this.field2091 = var1;
+		this.field2092 = var2;
+	}
 
-	@ObfInfo(name = "ac", desc = "(Ltm;B)V", opaqueValue = "0")
-	public void method1226(class280 var1) {
-		while (true) {
-			int var3 = var1.method1492();
-			if (var3 == 0) {
-				return;
-			}
+	public int method1970() {
+		return this.field2092;
+	}
 
-			class311 var4 = (class311)class216.method1198(class311.method1724(), var3);
-			if (var4 != null) {
-				switch(var4.field2525) {
-				case 0:
-					int var5 = var1.method1492();
-					this.field1961 = class76.method517(var5);
-					if (this.field1961 != null) {
-						break;
-					}
+	public static void method1324(class382 var0) {
+		class92.field906.remove(var0);
+	}
 
-					throw new IllegalStateException("Unknown ScriptVarType ID in VarType.decode: " + var5);
-				case 1:
-					var1.method1542();
-					break;
-				case 2:
-					class100[] var6 = new class100[]{class100.field984, class100.field981, class100.field982, class100.field980};
-					class216.method1198(var6, var1.method1492());
-					break;
-				default:
-					throw new IllegalStateException("Unrecognised VarTypeEncodingKey - " + var4);
-				}
-			} else {
-				this.method1227(var1, var3);
-			}
+	static int method1325(int var0) {
+		class121 var2 = (class121)class41.field520.get(var0);
+		return null == var2 ? 0 : var2.method750();
+	}
+
+	public static String method1323(String var0) {
+		return var0 != null && !var0.isEmpty() && var0.charAt(0) != '#' ? var0 : "";
+	}
+
+	static String method1326(String var0, boolean var1) {
+		String var3 = var1 ? "https://" : "http://";
+		if (Client.field28 == 1) {
+			var0 = var0 + "-wtrc";
+		} else if (Client.field28 == 2) {
+			var0 = var0 + "-wtqa";
+		} else if (Client.field28 == 3) {
+			var0 = var0 + "-wtwip";
+		} else if (Client.field28 == 5) {
+			var0 = var0 + "-wti";
+		} else if (Client.field28 == 4) {
+			var0 = "local";
 		}
-	}
 
-	@ObfInfo(name = "ai", desc = "(I)Z", opaqueValue = "-2027714469")
-	boolean method1229() {
-		return this.field1961 != null;
-	}
-
-	@ObfInfo(name = "az", desc = "(B)Ljava/lang/Object;", opaqueValue = "-1")
-	Object method1228() {
-		if (class49.field579 == this.field1961) {
-			return 0;
-		} else if (class49.field580 == this.field1961) {
-			return -1L;
-		} else {
-			return class49.field574 == this.field1961 ? "" : null;
+		String var4 = "";
+		if (null != class354.field3029) {
+			var4 = "/p=" + class354.field3029;
 		}
+
+		String var5 = "runescape.com";
+		return var3 + var0 + "." + var5 + "/l=" + class395.field3318 + "/a=" + class498.field4147 + var4 + "/";
 	}
 }

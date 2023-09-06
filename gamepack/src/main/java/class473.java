@@ -1,22 +1,43 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class473 {
+	class530 field4028;
+	class530 field4029;
 
-@ObfInfo(name = "tz")
-final class class473 implements class422 {
-	@ObfInfo(name = "cy", desc = "I", intMultiplier = 724816653)
-	static int field3808;
-
-	@ObfInfo(name = "ai", desc = "(Ljava/lang/String;Ltm;I)V")
-	void method2428(String var1, class280 var2) {
-		var2.method1484(var1);
+	public class473() {
+		this.field4029 = new class530();
+		this.field4029.field4266 = this.field4029;
+		this.field4029.field4265 = this.field4029;
 	}
 
-	@ObfInfo(name = "ae", desc = "(Ltm;I)Ljava/lang/Object;")
-	public Object method2209(class280 var1) {
-		return var1.method1500();
+	public void method2290(class530 var1) {
+		if (var1.field4265 != null) {
+			var1.method2560();
+		}
+
+		var1.field4265 = this.field4029.field4265;
+		var1.field4266 = this.field4029;
+		var1.field4265.field4266 = var1;
+		var1.field4266.field4265 = var1;
 	}
 
-	@ObfInfo(name = "au", desc = "(Ljava/lang/Object;Ltm;I)V")
-	public void method2210(Object var1, class280 var2) {
-		this.method2428((String)var1, var2);
+	public class530 method2292() {
+		class530 var1 = this.field4029.field4266;
+		if (var1 == this.field4029) {
+			this.field4028 = null;
+			return null;
+		} else {
+			this.field4028 = var1.field4266;
+			return var1;
+		}
+	}
+
+	public class530 method2291() {
+		class530 var1 = this.field4028;
+		if (var1 == this.field4029) {
+			this.field4028 = null;
+			return null;
+		} else {
+			this.field4028 = var1.field4266;
+			return var1;
+		}
 	}
 }

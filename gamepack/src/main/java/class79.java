@@ -1,29 +1,34 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "nl")
-public class class79 {
-	@ObfInfo(name = "ao", desc = "[I")
-	public static int[] field834;
-	@ObfInfo(name = "ae", desc = "[Z")
-	public static final boolean[] field832;
-	@ObfInfo(name = "an", desc = "Luk;")
-	static class398 field833;
+public final class class79 {
+	public static final char[] field841;
+	static class342 field843;
+	static long[] field842;
 
 	static {
-		field832 = new boolean[]{true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false};
-		field834 = new int[99];
-		int var0 = 0;
+		field841 = new char[]{'_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+		field842 = new long[12];
 
-		for (int var1 = 0; var1 < 99; ++var1) {
-			int var2 = var1 + 1;
-			int var3 = (int)((double)var2 + 300.0D * Math.pow(2.0D, (double)var2 / 7.0D));
-			var0 += var3;
-			field834[var1] = var0 / 4;
+		for (int var0 = 0; var0 < field842.length; ++var0) {
+			field842[var0] = (long)Math.pow(37.0D, (double)var0);
 		}
 
 	}
 
-	@ObfInfo(name = "<init>", desc = "()V")
 	class79() throws Throwable {
+	}
+
+	static void method536() {
+		for (class154 var1 = (class154)class154.field1438.method563(); var1 != null; var1 = (class154)class154.field1438.method565()) {
+			if (null != var1.field1447) {
+				class539.field4277.method2040(var1.field1447);
+				var1.field1447 = null;
+			}
+
+			if (var1.field1443 != null) {
+				class539.field4277.method2040(var1.field1443);
+				var1.field1443 = null;
+			}
+		}
+
+		class154.field1438.method559();
 	}
 }

@@ -1,43 +1,55 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class334 implements class367 {
+	static class25 field2929;
+	static class419 field2930;
+	static final class334 field2925;
+	static final class334 field2926;
+	static final class334 field2927;
+	final int field2928;
+	public final int field2924;
 
-@ObfInfo(name = "dt")
-public class class334 implements Runnable {
-	@ObfInfo(name = "ja", desc = "I", intMultiplier = 1283573311)
-	static int field2657;
-	@ObfInfo(name = "au", desc = "Z")
-	boolean field2656;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = 1540170903)
-	int field2652;
-	@ObfInfo(name = "at", desc = "[I")
-	int[] field2653;
-	@ObfInfo(name = "ac", desc = "[I")
-	int[] field2654;
-	@ObfInfo(name = "ae", desc = "Ljava/lang/Object;")
-	Object field2651;
-	@ObfInfo(name = "ai", desc = "[J")
-	long[] field2655;
-
-	@ObfInfo(name = "<init>", desc = "()V")
-	class334() {
-		this.field2656 = true;
-		this.field2651 = new Object();
-		this.field2652 = 0;
-		this.field2653 = new int[500];
-		this.field2654 = new int[500];
-		this.field2655 = new long[500];
+	static {
+		field2927 = new class334(1, 0);
+		field2925 = new class334(0, 1);
+		field2926 = new class334(2, 2);
 	}
 
-	@ObfInfo(name = "run", desc = "()V")
-	public void run() {
-		for (; this.field2656; class296.method1638(50L)) {
-			synchronized(this.field2651) {
-				if (this.field2652 < 500) {
-					this.field2653[this.field2652] = class166.field1580;
-					this.field2654[this.field2652] = class166.field1563;
-					this.field2655[this.field2652] = class166.field1571;
-					++this.field2652;
+	class334(int var1, int var2) {
+		this.field2924 = var1;
+		this.field2928 = var2;
+	}
+
+	public int method1970() {
+		return this.field2928;
+	}
+
+	public static void method1847(String[] var0, int[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var5 = (var3 + var2) / 2;
+			int var6 = var2;
+			String var7 = var0[var5];
+			var0[var5] = var0[var3];
+			var0[var3] = var7;
+			int var8 = var1[var5];
+			var1[var5] = var1[var3];
+			var1[var3] = var8;
+
+			for (int var9 = var2; var9 < var3; ++var9) {
+				if (var7 == null || null != var0[var9] && var0[var9].compareTo(var7) < (var9 & 1)) {
+					String var10 = var0[var9];
+					var0[var9] = var0[var6];
+					var0[var6] = var10;
+					int var11 = var1[var9];
+					var1[var9] = var1[var6];
+					var1[var6++] = var11;
 				}
 			}
+
+			var0[var3] = var0[var6];
+			var0[var6] = var7;
+			var1[var3] = var1[var6];
+			var1[var6] = var8;
+			method1847(var0, var1, var2, var6 - 1);
+			method1847(var0, var1, var6 + 1, var3);
 		}
 
 	}

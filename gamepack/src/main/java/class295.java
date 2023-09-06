@@ -1,85 +1,75 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.SourceDataLine;
-import javax.sound.sampled.DataLine.Info;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-@ObfInfo(name = "aw")
-public class class295 extends class429 {
-	@ObfInfo(name = "at", desc = "[B")
-	byte[] field2386;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = -572121459)
-	int field2385;
-	@ObfInfo(name = "au", desc = "Ljavax/sound/sampled/AudioFormat;")
-	AudioFormat field2383;
-	@ObfInfo(name = "ae", desc = "Ljavax/sound/sampled/SourceDataLine;")
-	SourceDataLine field2384;
+public class class295 {
+	static long field2730;
+	static final class295 field2727;
+	static final class295 field2729;
+	final int field2728;
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class295() {
+	static {
+		field2727 = new class295(0);
+		field2729 = new class295(1);
 	}
 
-	@ObfInfo(name = "au", desc = "(I)V", opaqueValue = "590134754")
-	protected void method2242() {
-		this.field2383 = new AudioFormat((float)class429.field3242, 16, class429.field3257 ? 2 : 1, true, false);
-		this.field2386 = new byte[256 << (class429.field3257 ? 2 : 1)];
+	class295(int var1) {
+		this.field2728 = var1;
 	}
 
-	@ObfInfo(name = "ae", desc = "(IB)V", opaqueValue = "-1")
-	protected void method2236(int var1) throws LineUnavailableException {
-		try {
-			Info var3 = new Info(SourceDataLine.class, this.field2383, var1 << (class429.field3257 ? 2 : 1));
-			this.field2384 = (SourceDataLine)AudioSystem.getLine(var3);
-			this.field2384.open();
-			this.field2384.start();
-			this.field2385 = var1;
-		} catch (LineUnavailableException var4) {
-			if (class121.method688(var1) != 1) {
-				this.method2236(class497.method2492(var1));
-			} else {
-				this.field2384 = null;
-				throw var4;
+	static void method1678(ArrayList var0, boolean var1) {
+		if (!var1) {
+			class92.field904.clear();
+		}
+
+		Iterator var3 = var0.iterator();
+
+		while (var3.hasNext()) {
+			class104 var4 = (class104)var3.next();
+			if (var4.field1026 != -1 && var4.field1027 != -1) {
+				if (!var1) {
+					class92.field904.add(var4);
+				}
+
+				class92.field910.add(var4);
 			}
 		}
+
 	}
 
-	@ObfInfo(name = "ao", desc = "(I)I", opaqueValue = "-1430038546")
-	protected int method2237() {
-		return this.field2385 - (this.field2384.available() >> (class429.field3257 ? 2 : 1));
+	public static void method1677(int var0, int var1, int var2, int var3) {
+		class92.field907 = var0;
+		class92.field908 = var1;
+		class92.field909 = var2;
+		class92.field900 = var3;
 	}
 
-	@ObfInfo(name = "at", desc = "()V")
-	protected void method2230() {
-		int var1 = 256;
-		if (class429.field3257) {
-			var1 <<= 1;
+	public static String method1679(char var0, int var1) {
+		char[] var3 = new char[var1];
+
+		for (int var4 = 0; var4 < var1; ++var4) {
+			var3[var4] = var0;
 		}
 
-		for (int var2 = 0; var2 < var1; ++var2) {
-			int var3 = super.field3247[var2];
-			if ((var3 + 8388608 & -16777216) != 0) {
-				var3 = 8388607 ^ var3 >> 31;
-			}
-
-			this.field2386[var2 * 2] = (byte)(var3 >> 8);
-			this.field2386[var2 * 2 + 1] = (byte)(var3 >> 16);
-		}
-
-		this.field2384.write(this.field2386, 0, var1 << 1);
+		return new String(var3);
 	}
 
-	@ObfInfo(name = "ac", desc = "(I)V")
-	protected void method2238() {
-		if (null != this.field2384) {
-			this.field2384.close();
-			this.field2384 = null;
+	static void method1680(int var0) {
+		Client.field233 = 0L;
+		if (var0 >= 2) {
+			Client.field234 = true;
+		} else {
+			Client.field234 = false;
 		}
 
-	}
+		if (class185.method1022() == 1) {
+			class466.field3999.method942(765, 503);
+		} else {
+			class466.field3999.method942(7680, 2160);
+		}
 
-	@ObfInfo(name = "ai", desc = "(B)V")
-	protected void method2239() {
-		this.field2384.flush();
+		if (Client.field87 >= 25) {
+			class445.method2232();
+		}
+
 	}
 }

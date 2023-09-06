@@ -1,26 +1,18 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class462 {
+	public class462 field3986;
+	public class462 field3988;
+	public long field3987;
 
-@ObfInfo(name = "qu")
-public class class462 extends class179 {
-	@ObfInfo(name = "au", desc = "I", intMultiplier = -1984190391)
-	int field3755;
-
-	@ObfInfo(name = "<init>", desc = "()V")
-	class462() {
+	public void method2269() {
+		if (this.field3988 != null) {
+			this.field3988.field3986 = this.field3986;
+			this.field3986.field3988 = this.field3988;
+			this.field3986 = null;
+			this.field3988 = null;
+		}
 	}
 
-	@ObfInfo(name = "au", desc = "(Lqu;I)I")
-	int method2396(class462 var1) {
-		return this.field3755 - var1.field3755;
-	}
-
-	@ObfInfo(name = "ae", desc = "(Lqs;I)I")
-	public int method1023(class179 var1) {
-		return this.method2396((class462)var1);
-	}
-
-	@ObfInfo(name = "compareTo", desc = "(Ljava/lang/Object;)I")
-	public int compareTo(Object var1) {
-		return this.method2396((class462)var1);
+	public boolean method2270() {
+		return this.field3988 != null;
 	}
 }

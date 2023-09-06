@@ -1,30 +1,39 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
-
-@ObfInfo(name = "ag")
-public class class527 implements ThreadFactory {
+public class class527 extends class538 {
+	static class115 field4251;
+	static Thread field4254;
+	int field4253;
+	long field4252;
 	// $FF: synthetic field
-	@ObfInfo(name = "this$0", desc = "Lar;")
-	final class129 this$0;
-	@ObfInfo(name = "au", desc = "Ljava/lang/ThreadGroup;")
-	final ThreadGroup field4207;
-	@ObfInfo(name = "ae", desc = "Ljava/util/concurrent/atomic/AtomicInteger;")
-	final AtomicInteger field4206;
+	final class464 this$0;
 
-	@ObfInfo(name = "<init>", desc = "(Lar;)V")
-	class527(class129 var1) {
+	class527(class464 var1) {
 		this.this$0 = var1;
-		this.field4206 = new AtomicInteger(1);
-		SecurityManager var2 = System.getSecurityManager();
-		this.field4207 = var2 != null ? var2.getThreadGroup() : Thread.currentThread().getThreadGroup();
 	}
 
-	@ObfInfo(name = "newThread", desc = "(Ljava/lang/Runnable;)Ljava/lang/Thread;")
-	public Thread newThread(Runnable var1) {
-		Thread var2 = new Thread(this.field4207, var1, this.this$0.field1166 + "-rest-request-" + this.field4206.getAndIncrement(), 0L);
-		var2.setDaemon(true);
-		var2.setPriority(5);
-		return var2;
+	void method2583(class42 var1) {
+		this.field4253 = var1.method282();
+		this.field4252 = var1.method283();
+	}
+
+	void method2582(class379 var1) {
+		var1.method2030(this.field4253, this.field4252);
+	}
+
+	static final void method2550() {
+		for (class402 var1 = (class402)Client.field273.method563(); var1 != null; var1 = (class402)Client.field273.method565()) {
+			if (var1.field3373 == class358.field3038 && !var1.field3379) {
+				if (Client.field306 >= var1.field3372) {
+					var1.method2082(Client.field82);
+					if (var1.field3379) {
+						var1.method2269();
+					} else {
+						class415.field3487.method1762(var1.field3373, var1.field3374, var1.field3375, var1.field3371, 60, var1, 0, -1L, false);
+					}
+				}
+			} else {
+				var1.method2269();
+			}
+		}
+
 	}
 }

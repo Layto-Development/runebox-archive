@@ -1,35 +1,45 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "hp")
 public class class132 {
-	@ObfInfo(name = "ju", desc = "[[B")
-	static byte[][] field1367;
-	@ObfInfo(name = "ae", desc = "Lhp;")
-	static final class132 field1360;
-	@ObfInfo(name = "ao", desc = "Lhp;")
-	static final class132 field1361;
-	@ObfInfo(name = "at", desc = "Lhp;")
-	static final class132 field1362;
-	@ObfInfo(name = "ac", desc = "Lhp;")
-	static final class132 field1363;
-	@ObfInfo(name = "az", desc = "Lhp;")
-	static final class132 field1364;
-	@ObfInfo(name = "ai", desc = "Lhp;")
-	static final class132 field1365;
-	@ObfInfo(name = "au", desc = "Lhp;")
-	static final class132 field1366;
+	int field1281;
+	int field1282;
+	int field1283;
+	int field1284;
+	int field1285;
+	String field1286;
+	String field1287;
 
-	static {
-		field1366 = new class132(0, class36.field495);
-		field1360 = new class132(1, class36.field498);
-		field1361 = new class132(2, class36.field492);
-		field1362 = new class132(3, class36.field488);
-		field1363 = new class132(4, class36.field501);
-		field1365 = new class132(5, class36.field490);
-		field1364 = new class132(6, class36.field497);
+	class132() {
 	}
 
-	@ObfInfo(name = "<init>", desc = "(ILil;)V")
-	class132(int var1, class36 var2) {
+	public static final void method778(int var0, int var1) {
+		class277.field2453 = var0;
+		class277.field2456 = var1;
+		class277.field2457 = true;
+		class277.field2460 = 0;
+		class277.field2455 = false;
+	}
+
+	static int method779(int var0, class167 var1, boolean var2) {
+		class60 var4 = class366.method1967(class139.field1344[--class203.field1903]);
+		if (var0 == 2500) {
+			class139.field1344[++class203.field1903 - 1] = var4.field645;
+			return 1;
+		} else if (var0 == 2501) {
+			class139.field1344[++class203.field1903 - 1] = var4.field658;
+			return 1;
+		} else if (var0 == 2502) {
+			class139.field1344[++class203.field1903 - 1] = var4.field659;
+			return 1;
+		} else if (var0 == 2503) {
+			class139.field1344[++class203.field1903 - 1] = var4.field636;
+			return 1;
+		} else if (var0 == 2504) {
+			class139.field1344[++class203.field1903 - 1] = var4.field662 ? 1 : 0;
+			return 1;
+		} else if (var0 == 2505) {
+			class139.field1344[++class203.field1903 - 1] = var4.field661;
+			return 1;
+		} else {
+			return 2;
+		}
 	}
 }

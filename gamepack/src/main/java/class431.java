@@ -1,26 +1,39 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.io.IOException;
+import java.util.Iterator;
 
-@ObfInfo(name = "mp")
-public class class431 {
-	@ObfInfo(name = "ae", desc = "Lml;")
-	class421 field3266;
-	@ObfInfo(name = "ao", desc = "Lbj;")
-	class435 field3271;
-	@ObfInfo(name = "au", desc = "Lmb;")
-	public class4 field3268;
-	@ObfInfo(name = "az", desc = "[Ljava/lang/Object;")
-	public Object[] field3265;
-	@ObfInfo(name = "at", desc = "[Ljava/lang/Object;")
-	public Object[] field3267;
-	@ObfInfo(name = "ac", desc = "[Ljava/lang/Object;")
-	public Object[] field3269;
-	@ObfInfo(name = "ai", desc = "[Ljava/lang/Object;")
-	public Object[] field3270;
+public abstract class class431 {
+	static class431 field3536;
 
-	@ObfInfo(name = "<init>", desc = "()V")
 	class431() {
-		this.field3268 = new class4();
-		this.field3266 = new class421();
-		this.field3271 = new class435();
+	}
+
+	public abstract boolean method2189(int var1) throws IOException;
+
+	public abstract int method2190(byte[] var1, int var2, int var3) throws IOException;
+
+	public abstract int method2191() throws IOException;
+
+	public abstract int method2193() throws IOException;
+
+	public abstract void method2192(byte[] var1, int var2, int var3) throws IOException;
+
+	public abstract void method2194();
+
+	public static int method2196(String var0) {
+		return var0.length() + 1;
+	}
+
+	static final void method2195() {
+		Iterator var1 = class41.field521.iterator();
+
+		while (var1.hasNext()) {
+			class445 var2 = (class445)var1.next();
+			var2.method2228();
+		}
+
+		if (null != class141.field1358) {
+			class141.field1358.method818((byte)-1);
+		}
+
 	}
 }

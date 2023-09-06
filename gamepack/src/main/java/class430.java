@@ -1,52 +1,18 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+public class class430 extends class232 {
+	static class453 field3535;
 
-@ObfInfo(name = "ox")
-public class class430 {
-	@ObfInfo(name = "ae", desc = "Lri;")
-	class205 field3263;
-	@ObfInfo(name = "au", desc = "Lri;")
-	class205 field3264;
-
-	@ObfInfo(name = "<init>", desc = "()V")
-	public class430() {
-		this.field3264 = new class205();
-		this.field3264.field1859 = this.field3264;
-		this.field3264.field1858 = this.field3264;
+	public class430(class232 var1) {
+		super(var1);
+		super.field2101 = "SwapSongTask";
 	}
 
-	@ObfInfo(name = "au", desc = "(Lri;)V")
-	public void method2247(class205 var1) {
-		if (var1.field1858 != null) {
-			var1.method1153();
+	public boolean method1330() {
+		if (class92.field903.size() > 1 && class92.field903.get(0) != null && ((class104)class92.field903.get(0)).field1032.method163() && class92.field903.get(1) != null && ((class104)class92.field903.get(1)).field1032.method163()) {
+			class104 var2 = (class104)class92.field903.get(0);
+			class92.field903.set(0, class92.field903.get(1));
+			class92.field903.set(1, var2);
 		}
 
-		var1.field1858 = this.field3264.field1858;
-		var1.field1859 = this.field3264;
-		var1.field1858.field1859 = var1;
-		var1.field1859.field1858 = var1;
-	}
-
-	@ObfInfo(name = "ae", desc = "()Lri;")
-	public class205 method2249() {
-		class205 var1 = this.field3264.field1859;
-		if (var1 == this.field3264) {
-			this.field3263 = null;
-			return null;
-		} else {
-			this.field3263 = var1.field1859;
-			return var1;
-		}
-	}
-
-	@ObfInfo(name = "ao", desc = "()Lri;")
-	public class205 method2248() {
-		class205 var1 = this.field3263;
-		if (var1 == this.field3264) {
-			this.field3263 = null;
-			return null;
-		} else {
-			this.field3263 = var1.field1859;
-			return var1;
-		}
+		return true;
 	}
 }

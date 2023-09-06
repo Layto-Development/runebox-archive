@@ -1,26 +1,45 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.util.HashMap;
 
-@ObfInfo(name = "sj")
 public class class155 {
-	@ObfInfo(name = "hw", desc = "Lsj;")
-	public class155 field1482;
-	@ObfInfo(name = "hy", desc = "Lsj;")
-	public class155 field1484;
-	@ObfInfo(name = "hq", desc = "J")
-	public long field1483;
+	static int[] field1455;
+	class215 field1454;
+	class215 field1456;
+	HashMap field1453;
 
-	@ObfInfo(name = "gg", desc = "()V")
-	public void method907() {
-		if (this.field1484 != null) {
-			this.field1484.field1482 = this.field1482;
-			this.field1482.field1484 = this.field1484;
-			this.field1482 = null;
-			this.field1484 = null;
-		}
+	public class155(class215 var1, class215 var2) {
+		this.field1456 = var1;
+		this.field1454 = var2;
+		this.field1453 = new HashMap();
 	}
 
-	@ObfInfo(name = "gw", desc = "()Z")
-	public boolean method908() {
-		return this.field1484 != null;
+	public HashMap method887(class182[] var1) {
+		HashMap var3 = new HashMap();
+		class182[] var4 = var1;
+
+		for (int var5 = 0; var5 < var4.length; ++var5) {
+			class182 var6 = var4[var5];
+			if (this.field1453.containsKey(var6)) {
+				var3.put(var6, this.field1453.get(var6));
+			} else {
+				class215 var8 = this.field1456;
+				class215 var9 = this.field1454;
+				String var10 = var6.field1718;
+				class253 var7;
+				if (!var8.method1234(var10, "")) {
+					var7 = null;
+				} else {
+					int var11 = var8.method1237(var10);
+					int var12 = var8.method1229(var11, "");
+					var7 = class528.method2553(var8, var9, var11, var12);
+				}
+
+				if (null != var7) {
+					this.field1453.put(var6, var7);
+					var3.put(var6, var7);
+				}
+			}
+		}
+
+		return var3;
 	}
 }

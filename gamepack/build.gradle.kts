@@ -1,18 +1,11 @@
-@file:Suppress("VulnerableLibrariesLocal")
-
 plugins {
-    kotlin("jvm")
+    java
 }
 
 dependencies {
-    implementation(project(":runebox-deobfuscator-includes"))
+    implementation(project(":runebox-deobfuscator-annotations"))
     implementation("org.bouncycastle:bcprov-jdk15on:1.52")
     implementation("org.json:json:20220320")
-    implementation("com.google.guava:guava:_")
-
-    testImplementation(kotlin("stdlib"))
-    testImplementation(kotlin("reflect"))
-    testImplementation(kotlin("test"))
 }
 
 tasks.test {

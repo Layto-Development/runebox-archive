@@ -1,48 +1,87 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
-
-@ObfInfo(name = "bw")
-public abstract class class449 extends class155 {
-	@ObfInfo(name = "am", desc = "Lcp;")
-	class218 field3389;
-	@ObfInfo(name = "ab", desc = "Lbw;")
-	class449 field3386;
-	@ObfInfo(name = "ag", desc = "I")
-	int field3387;
-	@ObfInfo(name = "ax", desc = "Z")
-	volatile boolean field3388;
-
-	@ObfInfo(name = "<init>", desc = "()V")
-	protected class449() {
-		this.field3388 = true;
+public class class449 {
+	class449() throws Throwable {
 	}
 
-	@ObfInfo(name = "ai", desc = "()Lbw;")
-	protected abstract class449 method2354();
+	static final void method2240(boolean var0, class347 var1) {
+		while (true) {
+			byte var3 = 16;
+			int var4 = 1 << var3;
+			if (var1.method1904(Client.field68.field2429) >= var3 + 12) {
+				int var5 = var1.method1903(var3);
+				if (var5 != var4 - 1) {
+					boolean var6 = false;
+					if (null == Client.field63[var5]) {
+						Client.field63[var5] = new class102();
+						var6 = true;
+					}
 
-	@ObfInfo(name = "az", desc = "()Lbw;")
-	protected abstract class449 method2355();
+					class102 var7 = Client.field63[var5];
+					Client.field2[++Client.field64 - 1] = var5;
+					var7.field1590 = Client.field306;
+					int var9;
+					if (var0) {
+						var9 = var1.method1903(8);
+						if (var9 > 127) {
+							var9 -= 256;
+						}
+					} else {
+						var9 = var1.method1903(5);
+						if (var9 > 15) {
+							var9 -= 32;
+						}
+					}
 
-	@ObfInfo(name = "ap", desc = "()I")
-	protected abstract int method2352();
+					boolean var11 = var1.method1903(1) == 1;
+					if (var11) {
+						var1.method1903(32);
+					}
 
-	@ObfInfo(name = "ad", desc = "(I)V")
-	protected abstract void method2356(int var1);
+					int var8 = var1.method1903(1);
+					int var12 = Client.field184[var1.method1903(3)];
+					if (var6) {
+						var7.field1566 = var7.field1527 = var12;
+					}
 
-	@ObfInfo(name = "aa", desc = "([III)V")
-	protected abstract void method2357(int[] var1, int var2, int var3);
+					var7.field1018 = class150.method861(var1.method1903(14));
+					int var13 = var1.method1903(1);
+					if (var13 == 1) {
+						Client.field214[++Client.field117 - 1] = var5;
+					}
 
-	@ObfInfo(name = "br", desc = "()I")
-	int method2353() {
-		return 255;
-	}
+					int var10;
+					if (var0) {
+						var10 = var1.method1903(8);
+						if (var10 > 127) {
+							var10 -= 256;
+						}
+					} else {
+						var10 = var1.method1903(5);
+						if (var10 > 15) {
+							var10 -= 32;
+						}
+					}
 
-	@ObfInfo(name = "fq", desc = "([III)V")
-	final void method2358(int[] var1, int var2, int var3) {
-		if (this.field3388) {
-			this.method2357(var1, var2, var3);
-		} else {
-			this.method2356(var3);
+					class469.method2287(var7);
+					if (var7.field1594 == 0) {
+						var7.field1527 = 0;
+					}
+
+					var7.method658(class82.field863.field1600[0] + var9, class82.field863.field1597[0] + var10, var8 == 1);
+					continue;
+				}
+			}
+
+			var1.method1906();
+			return;
 		}
+	}
 
+	static void method2239() {
+		class22.method185();
+		Client.field158[0] = class433.field3783;
+		Client.field277[0] = "";
+		Client.field196[0] = 1006;
+		Client.field160[0] = false;
+		Client.field152 = 1;
 	}
 }

@@ -1,23 +1,24 @@
-import io.runebox.internal.deobfuscator.includes.ObfInfo;
+import java.awt.datatransfer.Clipboard;
+import java.util.Comparator;
 
-@ObfInfo(name = "iy")
-public final class class355 {
-	@ObfInfo(name = "al", desc = "Lbg;")
-	public static class426 field2801;
-	@ObfInfo(name = "au", desc = "I", intMultiplier = -2013789607)
-	int field2802;
-	@ObfInfo(name = "ae", desc = "I", intMultiplier = -562400569)
-	int field2805;
-	@ObfInfo(name = "ai", desc = "I", intMultiplier = 416833439)
-	int field2806;
-	@ObfInfo(name = "ao", desc = "I", intMultiplier = 170483739)
-	int field2807;
-	@ObfInfo(name = "at", desc = "Lik;")
-	public class510 field2804;
-	@ObfInfo(name = "ac", desc = "J", longMultiplier = -7416437096913740991L)
-	public long field2803;
+final class class355 implements Comparator {
+	int method1936(class478 var1, class478 var2) {
+		return var1.field4064.field4231 < var2.field4064.field4231 ? -1 : (var1.field4064.field4231 == var2.field4064.field4231 ? 0 : 1);
+	}
 
-	@ObfInfo(name = "<init>", desc = "()V")
-	class355() {
+	public int compare(Object var1, Object var2) {
+		return this.method1936((class478)var1, (class478)var2);
+	}
+
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
+
+	public static void method1937() {
+		class493.field4136 = new class55();
+	}
+
+	public static Clipboard method1938() {
+		return class466.field3999.method946();
 	}
 }
