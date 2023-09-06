@@ -18,8 +18,7 @@ dependencies {
     implementation("org.ow2.asm:asm-util:_")
     implementation("org.ow2.asm:asm-tree:_")
     implementation("com.google.guava:guava:_")
-    //runtimeOnly("org.bouncycastle:bcprov-jdk15on:1.52")
-    //runtimeOnly("org.json:json:20220320")
+    implementation("org.jgrapht:jgrapht-core:_")
     runtimeOnly(project(":runebox-deobfuscator-annotations"))
 }
 
