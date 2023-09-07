@@ -1,42 +1,45 @@
-public final class class249 extends class462 {
-	boolean field2240;
-	boolean field2255;
-	boolean field2256;
-	class238 field2245;
-	class249 field2262;
-	class267 field2251;
-	class400 field2248;
-	class436 field2250;
-	class469 field2241;
-	class491[] field2258;
-	class52 field2244;
-	int field2242;
-	int field2243;
-	int field2246;
-	int field2247;
-	int field2249;
-	int field2253;
-	int field2254;
-	int field2257;
-	int field2259;
-	int field2260;
-	int field2261;
-	int[] field2252;
+public class class249 {
+    static class372 field1902;
+    public int field1896;
+    public int field1897;
+    public int field1899;
+    public int field1900;
+    public int field1901;
+    byte field1898;
 
-	class249(int var1, int var2, int var3) {
-		this.field2258 = new class491[5];
-		this.field2252 = new int[5];
-		this.field2253 = 0;
-		this.field2243 = this.field2259 = var1;
-		this.field2246 = var2;
-		this.field2242 = var3;
-	}
+    public class249() {
+    }
 
-	static String method1447(int var0) {
-		return "<img=" + var0 + ">";
-	}
+    public class249(class78 var1, boolean var2) {
+        this.field1898 = var1.method261();
+        this.field1897 = var1.method309();
+        this.field1901 = var1.method264();
+        this.field1899 = var1.method264();
+        this.field1900 = var1.method264();
+        this.field1896 = var1.method264();
+    }
 
-	static class429 method1446(int var0) {
-		return class516.method2515(var0, (byte)6) != 0 ? null : class505.method2430(var0);
-	}
+    void method1113(Integer var1) {
+    }
+
+    public int method1114() {
+        return this.field1898 & 7;
+    }
+
+    public int method1115() {
+        return (this.field1898 & 8) == 8 ? 1 : 0;
+    }
+
+    void method1112(int var1) {
+        this.field1898 &= -8;
+        this.field1898 = (byte) (this.field1898 | 2);
+    }
+
+    void method1116(int var1) {
+        this.field1898 &= -9;
+        if (var1 == 1) {
+            this.field1898 = (byte) (this.field1898 | 8);
+        }
+
+    }
 }

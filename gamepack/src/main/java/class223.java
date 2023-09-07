@@ -1,19 +1,95 @@
-public final class class223 {
-	final int[] field2034;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URLConnection;
 
-	class223() {
-		this.field2034 = new int[4096];
-	}
+public class class223 extends class357 {
+    public static int field1763;
+    static int field1765;
+    final boolean field1764;
 
-	class223(int[] var1) {
-		this.field2034 = var1;
-	}
+    public class223(boolean var1, int var2) {
+        super(var2);
+        this.field1764 = var1;
+    }
 
-	final int method1262(int var1, int var2) {
-		return this.field2034[var1 + var2 * 64];
-	}
+    @Override
+    void method1697(class244 var1) throws IOException {
+        URLConnection var3 = null;
+        boolean var10 = false;
 
-	static class109[] method1261() {
-		return new class109[]{class109.field1052, class109.field1055, class109.field1049, class109.field1050, class109.field1051, class109.field1047};
-	}
+        label124:
+        {
+            HttpURLConnection var13;
+            label125:
+            {
+                try {
+                    var10 = true;
+                    String var4 = var1.field1861.getProtocol();
+                    if (var4.equals("http")) {
+                        var3 = this.method1033(var1);
+                    } else {
+                        if (!var4.equals("https")) {
+                            var1.field1864 = class244.field1863;
+                            var10 = false;
+                            break label124;
+                        }
+
+                        var3 = this.method1034(var1);
+                    }
+
+                    this.method1698(var3, var1);
+                    var10 = false;
+                    break label125;
+                } catch (IOException var11) {
+                    var1.field1864 = class244.field1863;
+                    var10 = false;
+                } finally {
+                    if (var10) {
+                        if (null != var3 && var3 instanceof HttpURLConnection) {
+                            HttpURLConnection var7 = (HttpURLConnection) var3;
+                            var7.disconnect();
+                        }
+
+                    }
+                }
+
+                if (null != var3 && var3 instanceof HttpURLConnection) {
+                    var13 = (HttpURLConnection) var3;
+                    var13.disconnect();
+                }
+
+                return;
+            }
+
+            if (null != var3 && var3 instanceof HttpURLConnection) {
+                var13 = (HttpURLConnection) var3;
+                var13.disconnect();
+            }
+
+            return;
+        }
+
+        if (null != var3 && var3 instanceof HttpURLConnection) {
+            HttpURLConnection var5 = (HttpURLConnection) var3;
+            var5.disconnect();
+        }
+
+    }
+
+    URLConnection method1033(class244 var1) throws IOException {
+        URLConnection var3 = var1.field1861.openConnection();
+        this.method1702(var3);
+        return var3;
+    }
+
+    URLConnection method1034(class244 var1) throws IOException {
+        HttpsURLConnection var3 = (HttpsURLConnection) var1.field1861.openConnection();
+        if (!this.field1764) {
+            var3.setSSLSocketFactory(class408.method1857());
+        }
+
+        this.method1702(var3);
+        return var3;
+    }
 }

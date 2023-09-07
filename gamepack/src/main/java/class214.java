@@ -1,53 +1,35 @@
-public class class214 extends class40 {
-	public static class215 field2006;
-	byte field2004;
-	int field2003;
-	String field2005;
-	// $FF: synthetic field
-	final class90 this$0;
+import java.util.concurrent.Callable;
 
-	class214(class90 var1) {
-		this.this$0 = var1;
-		this.field2005 = null;
-	}
+public class class214 implements Callable {
+    static class444 field1735;
+    static int field1736;
+    static int field1737;
+    // $FF: synthetic field
+    final class228 this$0;
+    final class245 field1732;
+    final class329 field1734;
+    final class478 field1731;
+    final int field1733;
 
-	void method258(class42 var1) {
-		if (var1.method278() != 255) {
-			--var1.field527;
-			var1.method283();
-		}
+    class214(class228 var1, class329 var2, class478 var3, class245 var4, int var5) {
+        this.this$0 = var1;
+        this.field1734 = var2;
+        this.field1731 = var3;
+        this.field1732 = var4;
+        this.field1733 = var5;
+    }
 
-		this.field2005 = var1.method337();
-		this.field2003 = var1.method327();
-		this.field2004 = var1.method279();
-		var1.method283();
-	}
+    @Override
+    public Object call() {
+        this.field1734.method1526();
+        class329[][] var1;
+        if (class478.field3420 == this.field1731) {
+            var1 = this.this$0.field1784;
+        } else {
+            var1 = this.this$0.field1790;
+        }
 
-	void method259(class419 var1) {
-		class395 var3 = new class395();
-		var3.field3320 = new class440(this.field2005);
-		var3.field3322 = this.field2003;
-		var3.field3321 = this.field2004;
-		var1.method2155(var3);
-	}
-
-	static String method1210(class42 var0, int var1) {
-		try {
-			int var3 = var0.method325();
-			if (var3 > var1) {
-				var3 = var1;
-			}
-
-			byte[] var4 = new byte[var3];
-			var0.field527 += class496.field4140.method2580(var0.field525, var0.field527, var4, 0, var3);
-			String var5 = class313.method1750(var4, 0, var3);
-			return var5;
-		} catch (Exception var6) {
-			return "Cabbage";
-		}
-	}
-
-	static int method1211(int var0) {
-		return (int)Math.pow(2.0D, (double)(7.0F + (float)var0 / 256.0F));
-	}
+        var1[this.field1733][this.field1732.method1094()] = this.field1734;
+        return null;
+    }
 }

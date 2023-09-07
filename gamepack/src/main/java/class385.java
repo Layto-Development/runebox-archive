@@ -1,22 +1,38 @@
-public class class385 implements class367 {
-	public static final class385 field3241;
-	static final class385 field3239;
-	static final class385 field3242;
-	final int field3240;
-	public final int field3238;
+public class class385 {
+    static class262 field2763;
 
-	static {
-		field3241 = new class385(0, 0);
-		field3239 = new class385(1, 1);
-		field3242 = new class385(2, 2);
-	}
+    class385() throws Throwable {
+    }
 
-	class385(int var1, int var2) {
-		this.field3238 = var1;
-		this.field3240 = var2;
-	}
+    public static void method1779(class262 var0) {
+        field2763 = var0;
+    }
 
-	public int method1970() {
-		return this.field3240;
-	}
+    public static int method1781(class78 var0, String var1) {
+        int var3 = var0.field697;
+        byte[] var4 = class209.method997(var1);
+        var0.method304(var4.length);
+        var0.field697 += field2763.method1149(var4, 0, var4.length, var0.field695, var0.field697);
+        return var0.field697 - var3;
+    }
+
+    public static String method1782(class78 var0) {
+        return method1780(var0, 32767);
+    }
+
+    static String method1780(class78 var0, int var1) {
+        try {
+            int var3 = var0.method307();
+            if (var3 > 32767) {
+                var3 = 32767;
+            }
+
+            byte[] var4 = new byte[var3];
+            var0.field697 += field2763.method1150(var0.field695, var0.field697, var4, 0, var3);
+            String var5 = class209.method999(var4, 0, var3);
+            return var5;
+        } catch (Exception var6) {
+            return "Cabbage";
+        }
+    }
 }

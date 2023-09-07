@@ -1,25 +1,25 @@
-import java.io.File;
+public class class297 implements class330 {
+    static final class297 field2150;
+    static class239 field2148;
 
-public class class297 {
-	public static class413 field2738;
-	public static class413 field2739;
-	public static class413 field2740;
-	static int field2737;
-	static int field2741;
-	static File field2736;
-	static File field2743;
-	static String[] field2742;
+    static {
+        field2150 = new class297(0, 0);
+    }
 
-	static {
-		field2738 = null;
-		field2739 = null;
-		field2740 = null;
-	}
+    public final int field2149;
+    final int field2147;
 
-	class297() throws Throwable {
-	}
+    class297(int var1, int var2) {
+        this.field2149 = var1;
+        this.field2147 = var2;
+    }
 
-	static int method1692(int var0) {
-		return class15.field382[var0];
-	}
+    public static class297[] method1324() {
+        return new class297[]{field2150};
+    }
+
+    @Override
+    public int method1533() {
+        return this.field2147;
+    }
 }

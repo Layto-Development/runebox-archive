@@ -1,41 +1,28 @@
-public class class518 extends class218 {
-	static String field4224;
+public class class518 {
+    static int field4176;
+    static int field4181;
+    static long field4182;
+    class518 field4180;
+    float field4175;
+    float field4177;
+    float field4178;
+    float field4179;
+    float field4183;
+    int field4174;
 
-	static {
-		new class344(64);
-	}
+    class518() {
+        this.field4183 = Float.MAX_VALUE;
+        this.field4175 = Float.MAX_VALUE;
+        this.field4178 = Float.MAX_VALUE;
+        this.field4179 = Float.MAX_VALUE;
+    }
 
-	class518() throws Throwable {
-	}
-
-	public static boolean method2526(char var0) {
-		return var0 >= 'A' && var0 <= 'Z' || var0 >= 'a' && var0 <= 'z';
-	}
-
-	static void method2525(boolean var0) {
-		if (var0) {
-			class312.method1747();
-		} else {
-			for (int var2 = 0; var2 < class92.field903.size(); ++var2) {
-				class104 var3 = (class104)class92.field903.get(var2);
-				if (var3 == null) {
-					class92.field903.remove(var2);
-					--var2;
-				} else if (var3.field1034) {
-					if (var3.field1032.field431 > 0) {
-						--var3.field1032.field431;
-					}
-
-					var3.field1032.method168();
-					var3.field1032.method166();
-					var3.field1032.method130(0);
-					class92.field903.remove(var2);
-					--var2;
-				} else {
-					var3.field1034 = true;
-				}
-			}
-		}
-
-	}
+    void method2515(class78 var1, int var2) {
+        this.field4174 = var1.method262();
+        this.field4177 = var1.method266();
+        this.field4183 = var1.method266();
+        this.field4175 = var1.method266();
+        this.field4178 = var1.method266();
+        this.field4179 = var1.method266();
+    }
 }

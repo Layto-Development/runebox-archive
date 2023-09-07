@@ -1,100 +1,66 @@
-public class class80 {
-	static int[] field844;
-	static int[] field846;
-	static int[] field849;
-	static int[] field850;
-	boolean field854;
-	class43 field845;
-	int field848;
-	int[] field847;
-	int[] field851;
-	int[] field852;
-	int[] field853;
+import java.applet.Applet;
+import java.io.*;
 
-	static {
-		field850 = new int[500];
-		field844 = new int[500];
-		field846 = new int[500];
-		field849 = new int[500];
-	}
+public class class80 extends RuntimeException {
+    public static int field703;
+    public static int field704;
+    public static int field707;
+    public static Applet field701;
+    public static String field700;
+    static int[][] field705;
+    String field702;
+    Throwable field706;
 
-	class80(byte[] var1, class43 var2) {
-		this.field845 = null;
-		this.field848 = -1;
-		this.field854 = false;
-		this.field845 = var2;
-		class42 var3 = new class42(var1);
-		class42 var4 = new class42(var1);
-		var3.field527 = 2;
-		int var5 = var3.method278();
-		int var6 = -1;
-		int var7 = 0;
-		var4.field527 = var3.field527 + var5;
+    class80(Throwable var1, String var2) {
+        this.field702 = var2;
+        this.field706 = var1;
+    }
 
-		int var8;
-		for (var8 = 0; var8 < var5; ++var8) {
-			int var9 = var3.method278();
-			if (var9 > 0) {
-				if (this.field845.field531[var8] != 0) {
-					for (int var10 = var8 - 1; var10 > var6; --var10) {
-						if (this.field845.field531[var10] == 0) {
-							field850[var7] = var10;
-							field844[var7] = 0;
-							field846[var7] = 0;
-							field849[var7] = 0;
-							++var7;
-							break;
-						}
-					}
-				}
+    static String method326(Throwable var0) throws IOException {
+        String var2;
+        if (var0 instanceof class80) {
+            class80 var3 = (class80) var0;
+            var2 = var3.field702 + " | ";
+            var0 = var3.field706;
+        } else {
+            var2 = "";
+        }
 
-				field850[var7] = var8;
-				short var11 = 0;
-				if (this.field845.field531[var8] == 3) {
-					var11 = 128;
-				}
+        StringWriter var13 = new StringWriter();
+        PrintWriter var4 = new PrintWriter(var13);
+        var0.printStackTrace(var4);
+        var4.close();
+        String var5 = var13.toString();
+        BufferedReader var6 = new BufferedReader(new StringReader(var5));
+        String var7 = var6.readLine();
 
-				if ((var9 & 1) != 0) {
-					field844[var7] = var4.method289();
-				} else {
-					field844[var7] = var11;
-				}
+        while (true) {
+            while (true) {
+                String var8 = var6.readLine();
+                if (var8 == null) {
+                    var2 = var2 + "| " + var7;
+                    return var2;
+                }
 
-				if ((var9 & 2) != 0) {
-					field846[var7] = var4.method289();
-				} else {
-					field846[var7] = var11;
-				}
+                int var9 = var8.indexOf(40);
+                int var10 = var8.indexOf(41, var9 + 1);
+                if (var9 >= 0 && var10 >= 0) {
+                    String var11 = var8.substring(var9 + 1, var10);
+                    int var12 = var11.indexOf(".java:");
+                    if (var12 >= 0) {
+                        var11 = var11.substring(0, var12) + var11.substring(var12 + 5);
+                        var2 = var2 + var11 + ' ';
+                        continue;
+                    }
 
-				if ((var9 & 4) != 0) {
-					field849[var7] = var4.method289();
-				} else {
-					field849[var7] = var11;
-				}
+                    var8 = var8.substring(0, var9);
+                }
 
-				var6 = var8;
-				++var7;
-				if (this.field845.field531[var8] == 5) {
-					this.field854 = true;
-				}
-			}
-		}
-
-		if (var4.field527 != var1.length) {
-		}
-
-		this.field848 = var7;
-		this.field847 = new int[var7];
-		this.field851 = new int[var7];
-		this.field852 = new int[var7];
-		this.field853 = new int[var7];
-
-		for (var8 = 0; var8 < var7; ++var8) {
-			this.field847[var8] = field850[var8];
-			this.field851[var8] = field844[var8];
-			this.field852[var8] = field846[var8];
-			this.field853[var8] = field849[var8];
-		}
-
-	}
+                var8 = var8.trim();
+                var8 = var8.substring(var8.lastIndexOf(32) + 1);
+                var8 = var8.substring(var8.lastIndexOf(9) + 1);
+                var2 = var2 + var8 + ' ';
+            }
+        }
+    }
 }

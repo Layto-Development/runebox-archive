@@ -1,63 +1,55 @@
-public class class392 {
-	public static final class392 field3285;
-	public static final class392 field3287;
-	static final class392 field3277;
-	static final class392 field3279;
-	static final class392 field3280;
-	static final class392 field3281;
-	static final class392 field3282;
-	static final class392 field3283;
-	static final class392 field3284;
-	final String field3286;
-	public final int field3278;
+import java.util.Iterator;
 
-	static {
-		field3285 = new class392(8, 0, "", "");
-		field3277 = new class392(4, 1, "", "");
-		field3284 = new class392(1, 2, "", "");
-		field3279 = new class392(6, 3, "", "");
-		field3280 = new class392(2, 4, "", "");
-		field3281 = new class392(0, 5, "", "");
-		field3282 = new class392(5, 6, "", "");
-		field3283 = new class392(7, 7, "", "");
-		field3287 = new class392(3, -1, "", "", true, new class392[]{field3285, field3277, field3284, field3280, field3279});
-	}
+public class class392 extends class337 {
+    static class398 field2785;
 
-	class392(int var1, int var2, String var3, String var4) {
-		this.field3278 = var1;
-		this.field3286 = var4;
-	}
+    public class392(class337 var1) {
+        super(var1);
+        super.field2442 = "AddRequestTask";
+    }
 
-	class392(int var1, int var2, String var3, String var4, boolean var5, class392[] var6) {
-		this.field3278 = var1;
-		this.field3286 = var4;
-	}
+    @Override
+    public boolean method1595() {
+        while (!class141.field1247.isEmpty()) {
+            class537 var2 = class141.field1247.peek();
+            if (var2 == null) {
+                class141.field1247.pop();
+            } else {
+                var2.field4273 = this.method1816();
+                class141.field1240.add(var2);
+                class141.field1247.pop();
+            }
+        }
 
-	public String toString() {
-		return this.field3286;
-	}
+        return true;
+    }
 
-	static void method2050(class287 var0, int var1, int var2) {
-		if (var1 == var0.field1570 && var1 != -1) {
-			int var4 = class114.method702(var1).field3311;
-			if (var4 == 1) {
-				var0.field1571 = 0;
-				var0.field1572 = 0;
-				var0.field1587 = var2;
-				var0.field1552 = 0;
-			}
+    class468 method1816() {
+        class468 var2 = null;
+        Iterator<class468> var3 = class141.field1238.iterator();
 
-			if (var4 == 2) {
-				var0.field1552 = 0;
-			}
-		} else if (var1 == -1 || var0.field1570 == -1 || class114.method702(var1).field3304 >= class114.method702(var0.field1570).field3304) {
-			var0.field1570 = var1;
-			var0.field1571 = 0;
-			var0.field1572 = 0;
-			var0.field1587 = var2;
-			var0.field1552 = 0;
-			var0.field1589 = var0.field1573;
-		}
+        while (true) {
+            class468 var4;
+            do {
+                do {
+                    if (!var3.hasNext()) {
+                        if (null != var2) {
+                            ++var2.field3347;
+                            if (var2.method2157() == 0 && var2.method2162()) {
+                                var2.method2166();
+                                var2.method2164();
+                                var2.method2134(0);
+                            }
+                        }
 
-	}
+                        return var2;
+                    }
+
+                    var4 = var3.next();
+                } while (var4 == null);
+            } while (null != var2 && var2.field3347 <= var4.field3347 && (var4.method2157() != 0 || !var4.method2162()));
+
+            var2 = var4;
+        }
+    }
 }

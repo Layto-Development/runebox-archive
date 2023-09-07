@@ -1,15 +1,18 @@
-import java.util.concurrent.ThreadFactory;
+import java.util.Calendar;
+import java.util.TimeZone;
 
-class class336 implements ThreadFactory {
-	static class288 field2933;
-	// $FF: synthetic field
-	final class18 this$0;
+public class class336 {
+    public static final String[] field2437;
+    public static final String[][] field2439;
+    public static Calendar field2438;
 
-	class336(class18 var1) {
-		this.this$0 = var1;
-	}
+    static {
+        field2439 = new String[][]{{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}, {"Jan", "Feb", "M\u00e4r", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"}, {"jan", "f\u00e9v", "mars", "avr", "mai", "juin", "juil", "ao\u00fbt", "sept", "oct", "nov", "d\u00e9c"}, {"jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"}, {"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"}, {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}, {"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"}};
+        field2437 = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+        Calendar.getInstance();
+        field2438 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+    }
 
-	public Thread newThread(Runnable var1) {
-		return new Thread(var1, "OSRS WAV Load");
-	}
+    class336() throws Throwable {
+    }
 }

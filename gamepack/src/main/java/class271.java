@@ -1,14 +1,12 @@
+import netscape.javascript.JSObject;
+
+import java.applet.Applet;
+
 public class class271 {
-	public static final class271 field2442;
-	public static final class271 field2443;
-	public static final class271 field2444;
+    class271() throws Throwable {
+    }
 
-	static {
-		field2444 = new class271();
-		field2443 = new class271();
-		field2442 = new class271();
-	}
-
-	class271() {
-	}
+    public static Object method1215(Applet var0, String var1, Object[] var2) throws Throwable {
+        return JSObject.getWindow(var0).call(var1, var2);
+    }
 }

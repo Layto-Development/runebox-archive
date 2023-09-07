@@ -1,28 +1,43 @@
-public class class421 extends class40 {
-	byte field3509;
-	int field3510;
-	int field3512;
-	String field3511;
-	// $FF: synthetic field
-	final class90 this$0;
+public class class421 {
+    int[] field2913;
 
-	class421(class90 var1) {
-		this.this$0 = var1;
-		this.field3512 = -1;
-	}
+    public class421(int[] var1) {
+        int var2;
+        for (var2 = 1; var2 <= (var1.length >> 1) + var1.length; var2 <<= 1) {
+        }
 
-	void method258(class42 var1) {
-		this.field3512 = var1.method327();
-		this.field3509 = var1.method279();
-		this.field3510 = var1.method327();
-		var1.method283();
-		this.field3511 = var1.method286();
-	}
+        this.field2913 = new int[var2 + var2];
 
-	void method259(class419 var1) {
-		class395 var3 = (class395)var1.field3498.get(this.field3512);
-		var3.field3321 = this.field3509;
-		var3.field3322 = this.field3510;
-		var3.field3320 = new class440(this.field3511);
-	}
+        int var3;
+        for (var3 = 0; var3 < var2 + var2; ++var3) {
+            this.field2913[var3] = -1;
+        }
+
+        int var4;
+        for (var3 = 0; var3 < var1.length; this.field2913[1 + var4 + var4] = var3++) {
+            for (var4 = var1[var3] & var2 - 1; this.field2913[1 + var4 + var4] != -1; var4 = var4 + 1 & var2 - 1) {
+            }
+
+            this.field2913[var4 + var4] = var1[var3];
+        }
+
+    }
+
+    public int method1938(int var1) {
+        int var3 = (this.field2913.length >> 1) - 1;
+        int var4 = var1 & var3;
+
+        while (true) {
+            int var5 = this.field2913[1 + var4 + var4];
+            if (var5 == -1) {
+                return -1;
+            }
+
+            if (this.field2913[var4 + var4] == var1) {
+                return var5;
+            }
+
+            var4 = var4 + 1 & var3;
+        }
+    }
 }

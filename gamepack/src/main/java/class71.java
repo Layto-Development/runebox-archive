@@ -1,37 +1,43 @@
-public class class71 implements Comparable {
-	static int field818;
-	class440 field816;
-	class440 field817;
+public class class71 {
+    static final class71 field660;
+    static final class71 field661;
+    static final class71 field662;
+    static final class71 field663;
+    static final class71 field664;
+    static final class71 field665;
+    static final class71 field666;
+    static final class71 field667;
+    static final class71 field668;
+    static final class71 field669;
+    static final class71 field670;
+    static final class71 field671;
+    static final class71 field672;
+    static final class71 field673;
+    static final class71 field675;
+    static final class71 field676;
 
-	class71() {
-	}
+    static {
+        field662 = new class71(0);
+        field661 = new class71(1);
+        field667 = new class71(2);
+        field663 = new class71(3);
+        field660 = new class71(4);
+        field665 = new class71(5);
+        field676 = new class71(6);
+        field666 = new class71(7);
+        field669 = new class71(8);
+        field664 = new class71(9);
+        field670 = new class71(10);
+        field671 = new class71(11);
+        field672 = new class71(12);
+        field673 = new class71(13);
+        field668 = new class71(14);
+        field675 = new class71(15);
+    }
 
-	public class440 method508() {
-		return this.field816;
-	}
+    int field674;
 
-	public String method509() {
-		return this.field816 == null ? "" : this.field816.method2214();
-	}
-
-	public String method510() {
-		return this.field817 == null ? "" : this.field817.method2214();
-	}
-
-	void method511(class440 var1, class440 var2) {
-		if (var1 == null) {
-			throw new NullPointerException();
-		} else {
-			this.field816 = var1;
-			this.field817 = var2;
-		}
-	}
-
-	public int method512(class71 var1) {
-		return this.field816.method2213(var1.field816);
-	}
-
-	public int compareTo(Object var1) {
-		return this.method512((class71)var1);
-	}
+    class71(int var1) {
+        this.field674 = var1;
+    }
 }

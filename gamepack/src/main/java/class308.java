@@ -1,60 +1,35 @@
-import java.lang.management.GarbageCollectorMXBean;
+public class class308 extends class418 {
+    long field2255;
 
-public class class308 {
-	static GarbageCollectorMXBean field2781;
-	public int field2779;
-	public int field2780;
-	public int field2782;
-	public int field2783;
-	public int field2784;
-	public int field2785;
-	public int field2786;
-	public int field2787;
-	public int field2788;
-	public int field2789;
-	public int field2790;
+    public class308() {
+        this.field2255 = System.nanoTime();
+    }
 
-	public class308() {
-		this.field2790 = -1;
-		this.field2780 = -1;
-		this.field2783 = -1;
-		this.field2782 = -1;
-		this.field2788 = -1;
-		this.field2779 = -1;
-		this.field2785 = -1;
-		this.field2786 = -1;
-		this.field2787 = -1;
-		this.field2784 = -1;
-		this.field2789 = -1;
-	}
+    @Override
+    public void method1933() {
+        this.field2255 = System.nanoTime();
+    }
 
-	public void method1740(class215 var1) {
-		byte[] var3 = var1.method1219(class256.field2363.field2362);
-		class42 var4 = new class42(var3);
+    @Override
+    public int method1934(int var1, int var2) {
+        long var4 = 1000000L * (long) var2;
+        long var6 = this.field2255 - System.nanoTime();
+        if (var6 < var4) {
+            var6 = var4;
+        }
 
-		while (true) {
-			int var5 = var4.method278();
-			if (var5 == 0) {
-				return;
-			}
+        class316.method1394(var6 / 1000000L);
+        long var8 = System.nanoTime();
 
-			switch(var5) {
-			case 1:
-				var4.method334();
-				break;
-			case 2:
-				this.field2790 = var4.method326();
-				this.field2780 = var4.method326();
-				this.field2783 = var4.method326();
-				this.field2782 = var4.method326();
-				this.field2788 = var4.method326();
-				this.field2779 = var4.method326();
-				this.field2785 = var4.method326();
-				this.field2786 = var4.method326();
-				this.field2787 = var4.method326();
-				this.field2784 = var4.method326();
-				this.field2789 = var4.method326();
-			}
-		}
-	}
+        int var10;
+        for (var10 = 0; var10 < 10 && (var10 < 1 || this.field2255 < var8); this.field2255 += 1000000L * (long) var1) {
+            ++var10;
+        }
+
+        if (this.field2255 < var8) {
+            this.field2255 = var8;
+        }
+
+        return var10;
+    }
 }

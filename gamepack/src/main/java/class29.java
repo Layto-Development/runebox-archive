@@ -1,67 +1,125 @@
-public class class29 {
-	static byte[][] field463;
-	public int field460;
-	public int field461;
-	public int field462;
+import java.util.Comparator;
 
-	public class29(int var1, int var2, int var3) {
-		this.field461 = var1;
-		this.field460 = var2;
-		this.field462 = var3;
-	}
+public class class29 implements Comparator {
+    static class16 field162;
+    static class539[] field164;
+    static int field161;
+    boolean field163;
 
-	public class29(class29 var1) {
-		this.field461 = var1.field461;
-		this.field460 = var1.field460;
-		this.field462 = var1.field462;
-	}
+    class29() {
+    }
 
-	public class29(int var1) {
-		if (var1 == -1) {
-			this.field461 = -1;
-		} else {
-			this.field461 = var1 >> 28 & 3;
-			this.field460 = var1 >> 14 & 16383;
-			this.field462 = var1 & 16383;
-		}
+    static final void method88(int var0, int var1, int var2, int var3, boolean var4) {
+        if (var2 < 1) {
+            var2 = 1;
+        }
 
-	}
+        if (var3 < 1) {
+            var3 = 1;
+        }
 
-	public int method213() {
-		int var3 = this.field461;
-		int var4 = this.field460;
-		int var5 = this.field462;
-		int var2 = var3 << 28 | var4 << 14 | var5;
-		return var2;
-	}
+        int var6 = var3 - 334;
+        int var7;
+        if (var6 < 0) {
+            var7 = Client.field4048;
+        } else if (var6 >= 100) {
+            var7 = Client.field3934;
+        } else {
+            var7 = Client.field4048 + var6 * (Client.field3934 - Client.field4048) / 100;
+        }
 
-	public boolean equals(Object var1) {
-		if (this == var1) {
-			return true;
-		} else {
-			return !(var1 instanceof class29) ? false : this.method211((class29)var1);
-		}
-	}
+        int var8 = 512 * var3 * var7 / (var2 * 334);
+        int var9;
+        int var10;
+        short var17;
+        if (var8 < Client.field4054) {
+            var17 = Client.field4054;
+            var7 = var2 * var17 * 334 / (var3 * 512);
+            if (var7 > Client.field3884) {
+                var7 = Client.field3884;
+                var9 = var3 * var7 * 512 / (var17 * 334);
+                var10 = (var2 - var9) / 2;
+                if (var4) {
+                    class415.method1908();
+                    class415.method1914(var0, var1, var10, var3, -16777216);
+                    class415.method1914(var0 + var2 - var10, var1, var10, var3, -16777216);
+                }
 
-	boolean method211(class29 var1) {
-		if (var1.field461 != this.field461) {
-			return false;
-		} else if (this.field460 != var1.field460) {
-			return false;
-		} else {
-			return var1.field462 == this.field462;
-		}
-	}
+                var0 += var10;
+                var2 -= var10 * 2;
+            }
+        } else if (var8 > Client.field4055) {
+            var17 = Client.field4055;
+            var7 = var17 * var2 * 334 / (var3 * 512);
+            if (var7 < Client.field4052) {
+                var7 = Client.field4052;
+                var9 = var17 * var2 * 334 / (var7 * 512);
+                var10 = (var3 - var9) / 2;
+                if (var4) {
+                    class415.method1908();
+                    class415.method1914(var0, var1, var2, var10, -16777216);
+                    class415.method1914(var0, var3 + var1 - var10, var2, var10, -16777216);
+                }
 
-	public int hashCode() {
-		return this.method213();
-	}
+                var1 += var10;
+                var3 -= var10 * 2;
+            }
+        }
 
-	public String toString() {
-		return this.method212(",");
-	}
+        Client.field4060 = var7 * var3 / 334;
+        if (var2 != Client.field3991 || Client.field3866 != var3) {
+            int[] var18 = new int[9];
 
-	String method212(String var1) {
-		return this.field461 + var1 + (this.field460 >> 6) + var1 + (this.field462 >> 6) + var1 + (this.field460 & 63) + var1 + (this.field462 & 63);
-	}
+            for (var10 = 0; var10 < var18.length; ++var10) {
+                int var11 = var10 * 32 + 128 + 15;
+                int var12 = Client.method2415(var11);
+                int var13 = class334.field2429[var11];
+                int var15 = var3 - 334;
+                if (var15 < 0) {
+                    var15 = 0;
+                } else if (var15 > 100) {
+                    var15 = 100;
+                }
+
+                int var16 = Client.field4050 + var15 * (Client.field4051 - Client.field4050) / 100;
+                int var14 = var16 * var12 / 256;
+                var18[var10] = var14 * var13 >> 16;
+            }
+
+            class158.method774(var18, 500, 800, var2 * 334 / var3, 334);
+        }
+
+        Client.field4056 = var0;
+        Client.field4057 = var1;
+        Client.field3991 = var2;
+        Client.field3866 = var3;
+    }
+
+    int method89(class142 var1, class142 var2) {
+        if (var2.field1252 == var1.field1252) {
+            return 0;
+        } else {
+            if (this.field163) {
+                if (var1.field1252 == Client.field3775) {
+                    return -1;
+                }
+
+                if (var2.field1252 == Client.field3775) {
+                    return 1;
+                }
+            }
+
+            return var1.field1252 < var2.field1252 ? -1 : 1;
+        }
+    }
+
+    @Override
+    public int compare(Object var1, Object var2) {
+        return this.method89((class142) var1, (class142) var2);
+    }
+
+    @Override
+    public boolean equals(Object var1) {
+        return super.equals(var1);
+    }
 }

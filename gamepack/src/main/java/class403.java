@@ -1,53 +1,60 @@
-public class class403 implements class213 {
-	public final class532 field3382;
+public final class class403 {
+    public static final char[] field2857;
+    static class372 field2859;
+    static long[] field2858;
 
-	public class403(class424 var1) {
-		this(new class339(var1));
-	}
+    static {
+        field2857 = new char[]{'_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+        field2858 = new long[12];
 
-	class403(class339 var1) {
-		this.field3382 = var1;
-	}
+        for (int var0 = 0; var0 < field2858.length; ++var0) {
+            field2858[var0] = (long) Math.pow(37.0D, var0);
+        }
 
-	public int method2084(int var1) {
-		return this.field3382.method2566(var1);
-	}
+    }
 
-	static float method2085(class415 var0, float var1) {
-		if (var0 == null) {
-			return 0.0F;
-		} else {
-			float var3;
-			if (var0.field3472 == var1) {
-				var3 = 0.0F;
-			} else if (var1 == var0.field3473) {
-				var3 = 1.0F;
-			} else {
-				var3 = (var1 - var0.field3472) / (var0.field3473 - var0.field3472);
-			}
+    class403() throws Throwable {
+    }
 
-			float var4;
-			if (var0.field3469) {
-				var4 = var3;
-			} else {
-				class525.field4243[3] = var0.field3471;
-				class525.field4243[2] = var0.field3476;
-				class525.field4243[1] = var0.field3475;
-				class525.field4243[0] = var0.field3474 - var3;
-				class525.field4244[0] = 0.0F;
-				class525.field4244[1] = 0.0F;
-				class525.field4244[2] = 0.0F;
-				class525.field4244[3] = 0.0F;
-				class525.field4244[4] = 0.0F;
-				int var5 = class417.method2145(class525.field4243, 3, 0.0F, true, 1.0F, true, class525.field4244);
-				if (var5 == 1) {
-					var4 = class525.field4244[0];
-				} else {
-					var4 = 0.0F;
-				}
-			}
+    public static String method1852(long var0) {
+        if (var0 > 0L && var0 < 6582952005840035281L) {
+            if (0L == var0 % 37L) {
+                return null;
+            } else {
+                int var2 = 0;
 
-			return var4 * (var0.field3478 + var4 * (var4 * var0.field3466 + var0.field3479)) + var0.field3489;
-		}
-	}
+                for (long var3 = var0; var3 != 0L; var3 /= 37L) {
+                    ++var2;
+                }
+
+                StringBuilder var5;
+                char var8;
+                for (var5 = new StringBuilder(var2); var0 != 0L; var5.append(var8)) {
+                    long var6 = var0;
+                    var0 /= 37L;
+                    var8 = field2857[(int) (var6 - var0 * 37L)];
+                    if (var8 == '_') {
+                        int var9 = var5.length() - 1;
+                        var5.setCharAt(var9, Character.toUpperCase(var5.charAt(var9)));
+                        var8 = 160;
+                    }
+                }
+
+                var5.reverse();
+                var5.setCharAt(0, Character.toUpperCase(var5.charAt(0)));
+                return var5.toString();
+            }
+        } else {
+            return null;
+        }
+    }
+
+    public static String method1853(CharSequence var0) {
+        String var2 = method1852(class528.method2520(var0));
+        if (var2 == null) {
+            var2 = "";
+        }
+
+        return var2;
+    }
 }

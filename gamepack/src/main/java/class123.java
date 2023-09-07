@@ -1,121 +1,93 @@
-public class class123 extends class462 {
-	boolean field1140;
-	boolean field1147;
-	int field1136;
-	int field1137;
-	int field1139;
-	int field1141;
-	int field1142;
-	int field1143;
-	int field1144;
-	int field1145;
-	int field1146;
-	int field1152;
-	int field1153;
-	int field1154;
-	int field1155;
-	int field1158;
-	int field1159;
-	int[] field1138;
-	String field1148;
-	String field1149;
-	String field1150;
-	String field1151;
-	String field1156;
-	String field1157;
-	String field1160;
-	String field1161;
+public class class123 extends class275 {
+    int field1112;
+    int field1113;
+    int field1114;
+    int field1115;
 
-	class123(int var1, boolean var2, int var3, int var4, int var5, int var6, int var7, boolean var8, int var9, int var10, int var11, int var12, String var13, String var14, String var15, String var16, int var17, int var18, int var19, int var20, String var21, String var22, int[] var23, int var24, String var25, String var26) {
-		this.field1138 = new int[3];
-		this.field1139 = var1;
-		this.field1140 = var2;
-		this.field1141 = var3;
-		this.field1142 = var4;
-		this.field1137 = var5;
-		this.field1144 = var6;
-		this.field1154 = var7;
-		this.field1147 = var8;
-		this.field1145 = var9;
-		this.field1136 = var10;
-		this.field1146 = var11;
-		this.field1143 = var12;
-		this.field1148 = var13;
-		this.field1149 = var14;
-		this.field1150 = var15;
-		this.field1151 = var16;
-		this.field1152 = var17;
-		this.field1153 = var18;
-		this.field1158 = var19;
-		this.field1155 = var20;
-		this.field1156 = var21;
-		this.field1157 = var22;
-		this.field1138 = var23;
-		this.field1159 = var24;
-		this.field1160 = var25;
-		this.field1161 = var26;
-	}
+    class123() {
+    }
 
-	public void method758(class42 var1) {
-		var1.method267(9);
-		var1.method267(this.field1139);
-		var1.method267(this.field1140 ? 1 : 0);
-		var1.method308(this.field1141);
-		var1.method267(this.field1142);
-		var1.method267(this.field1137);
-		var1.method267(this.field1144);
-		var1.method267(this.field1154);
-		var1.method267(this.field1147 ? 1 : 0);
-		var1.method308(this.field1145);
-		var1.method267(this.field1136);
-		var1.method319(this.field1146);
-		var1.method308(this.field1143);
-		var1.method271(this.field1148);
-		var1.method271(this.field1149);
-		var1.method271(this.field1150);
-		var1.method271(this.field1151);
-		var1.method267(this.field1153);
-		var1.method308(this.field1152);
-		var1.method271(this.field1156);
-		var1.method271(this.field1157);
-		var1.method267(this.field1158);
-		var1.method267(this.field1155);
+    void method557(class78 var1) {
+        int var3 = var1.method260();
+        if (class301.field2164.field2165 != var3) {
+            throw new IllegalStateException("");
+        } else {
+            super.field2009 = var1.method260();
+            super.field2010 = var1.method260();
+            super.field2014 = var1.method309();
+            super.field2012 = var1.method309();
+            this.field1113 = var1.method260();
+            this.field1114 = var1.method260();
+            super.field2008 = var1.method309();
+            super.field2015 = var1.method309();
+            this.field1112 = var1.method260();
+            this.field1115 = var1.method260();
+            super.field2016 = var1.method308();
+            super.field2006 = var1.method308();
+        }
+    }
 
-		for (int var3 = 0; var3 < this.field1138.length; ++var3) {
-			var1.method333(this.field1138[var3]);
-		}
+    @Override
+    void method1236(class78 var1) {
+        super.field2010 = Math.min(super.field2010, 4);
+        super.field2013 = new short[1][64][64];
+        super.field2011 = new short[super.field2010][64][64];
+        super.field2020 = new byte[super.field2010][64][64];
+        super.field2007 = new byte[super.field2010][64][64];
+        super.field2017 = new class455[super.field2010][64][64][];
+        int var3 = var1.method260();
+        if (class288.field2108.field2107 != var3) {
+            throw new IllegalStateException("");
+        } else {
+            int var4 = var1.method260();
+            int var5 = var1.method260();
+            int var6 = var1.method260();
+            int var7 = var1.method260();
+            if (super.field2008 == var4 && var5 == super.field2015 && var6 == this.field1112 && this.field1115 == var7) {
+                for (int var8 = 0; var8 < 8; ++var8) {
+                    for (int var9 = 0; var9 < 8; ++var9) {
+                        this.method1238(var8 + this.field1112 * 8, var9 + this.field1115 * 8, var1);
+                    }
+                }
 
-		var1.method333(this.field1159);
-		var1.method271(this.field1160);
-		var1.method271(this.field1161);
-	}
+            } else {
+                throw new IllegalStateException("");
+            }
+        }
+    }
 
-	public int method759() {
-		byte var2 = 39;
-		String var5 = this.field1148;
-		int var4 = var5.length() + 2;
-		int var27 = var4 + var2;
-		String var8 = this.field1149;
-		int var7 = var8.length() + 2;
-		var27 += var7;
-		String var11 = this.field1150;
-		int var10 = var11.length() + 2;
-		var27 += var10;
-		String var14 = this.field1151;
-		int var13 = var14.length() + 2;
-		var27 += var13;
-		String var17 = this.field1156;
-		int var16 = var17.length() + 2;
-		var27 += var16;
-		String var20 = this.field1157;
-		int var19 = var20.length() + 2;
-		var27 += var19;
-		String var23 = this.field1160;
-		int var22 = var23.length() + 2;
-		var27 += var22;
-		String var26 = this.field1161;
-		int var25 = var26.length() + 2;
-		var27 += var25;
-		return var27;
-	}
+    @Override
+    public boolean equals(Object var1) {
+        if (!(var1 instanceof class123)) {
+            return false;
+        } else {
+            class123 var2 = (class123) var1;
+            if (super.field2008 == var2.field2008 && var2.field2015 == super.field2015) {
+                return var2.field1112 == this.field1112 && this.field1115 == var2.field1115;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return super.field2008 | super.field2015 << 8 | this.field1112 << 16 | this.field1115 << 24;
+    }
+
+    int method560() {
+        return this.field1113;
+    }
+
+    int method561() {
+        return this.field1114;
+    }
+
+    int method559() {
+        return this.field1112;
+    }
+
+    int method558() {
+        return this.field1115;
+    }
 }

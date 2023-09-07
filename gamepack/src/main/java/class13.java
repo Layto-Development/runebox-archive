@@ -1,70 +1,58 @@
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.Future;
 
-public final class class13 extends class480 {
-	int field376;
-	int field377;
-	int field378;
+public class class13 {
+    protected static String field55;
+    static class135 field57;
+    String field56;
+    Future field58;
 
-	class13() {
-		this.field378 = 31;
-	}
+    class13(Future var1) {
+        this.field58 = var1;
+    }
 
-	void method121(int var1) {
-		this.field378 = var1;
-	}
+    class13(String var1) {
+        this.method33(var1);
+    }
 
-	boolean method120(int var1) {
-		if (var1 >= 0 && var1 <= 4) {
-			return (this.field378 & 1 << var1) != 0;
-		} else {
-			return true;
-		}
-	}
+    void method33(String var1) {
+        if (null == var1) {
+            var1 = "";
+        }
 
-	protected final class250 method2393() {
-		return class67.method492(this.field376).method1185(this.field377);
-	}
+        this.field56 = var1;
+        if (null != this.field58) {
+            this.field58.cancel(true);
+            this.field58 = null;
+        }
 
-	public static final class337 method123(class302 var0, int var1, int var2) {
-		if (class337.field2934 == 0) {
-			throw new IllegalStateException();
-		} else if (var1 >= 0 && var1 < 2) {
-			if (var2 < 256) {
-				var2 = 256;
-			}
+    }
 
-			try {
-				class337 var4 = class400.field3354.method1746();
-				var4.field2939 = new int[256 * (class337.field2949 ? 2 : 1)];
-				var4.field2944 = var2;
-				var4.method1865();
-				var4.field2943 = 1024 + (var2 & -1024);
-				if (var4.field2943 > 16384) {
-					var4.field2943 = 16384;
-				}
+    public final String method37() {
+        return this.field56;
+    }
 
-				var4.method1858(var4.field2943);
-				if (class337.field2937 > 0 && null == class306.field2774) {
-					class306.field2774 = new class474();
-					class337.field2936 = Executors.newScheduledThreadPool(1);
-					class337.field2936.scheduleAtFixedRate(class306.field2774, 0L, 10L, TimeUnit.MILLISECONDS);
-				}
+    public boolean method35() {
+        return null != this.field56 || this.field58 == null;
+    }
 
-				if (class306.field2774 != null) {
-					if (null != class306.field2774.field4031[var1]) {
-						throw new IllegalArgumentException();
-					}
+    public final boolean method34() {
+        return this.method35() || this.field58.isDone();
+    }
 
-					class306.field2774.field4031[var1] = var4;
-				}
-
-				return var4;
-			} catch (Throwable var5) {
-				return new class337();
-			}
-		} else {
-			throw new IllegalArgumentException();
-		}
-	}
+    public final class69 method36() {
+        if (this.method35()) {
+            return new class69(this.field56);
+        } else if (!this.method34()) {
+            return null;
+        } else {
+            try {
+                return (class69) this.field58.get();
+            } catch (Exception var4) {
+                String var3 = "Error retrieving REST request reply";
+                System.err.println(var3 + "\r\n" + var4);
+                this.method33(var3);
+                return new class69(var3);
+            }
+        }
+    }
 }

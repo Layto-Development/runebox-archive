@@ -1,90 +1,77 @@
-public class class492 implements class311 {
-	class492() {
-	}
+import java.util.Locale;
 
-	public class337 method1746() {
-		return new class361();
-	}
+@class428
+@class50
+public class class492 implements class330 {
+    public static final class492 field3612;
+    public static final class492 field3615;
+    public static final class492 field3618;
+    static final class492 field3611;
+    static final class492 field3616;
+    static final class492 field3621;
+    static final class492 field3623;
+    static final class492[] field3620;
+    public static class68 field3613;
+    static class194 field3622;
 
-	public static class459 method2409(int var0) {
-		class459[] var2 = class244.method1393();
+    static {
+        field3618 = new class492("EN", "en", "English", class4.field11, 0, "GB");
+        field3623 = new class492("DE", "de", "German", class4.field11, 1, "DE");
+        field3612 = new class492("FR", "fr", "French", class4.field11, 2, "FR");
+        field3621 = new class492("PT", "pt", "Portuguese", class4.field11, 3, "BR");
+        field3611 = new class492("NL", "nl", "Dutch", class4.field23, 4, "NL");
+        field3615 = new class492("ES", "es", "Spanish", class4.field23, 5, "ES");
+        field3616 = new class492("ES_MX", "es-mx", "Spanish (Latin American)", class4.field11, 6, "MX");
+        class492[] var0 = method2242();
+        field3620 = new class492[var0.length];
+        class492[] var1 = var0;
 
-		for (int var3 = 0; var3 < var2.length; ++var3) {
-			class459 var4 = var2[var3];
-			if (var4.field3974 == var0) {
-				return var4;
-			}
-		}
+        for (int var2 = 0; var2 < var1.length; ++var2) {
+            class492 var3 = var1[var2];
+            if (field3620[var3.field3619] != null) {
+                throw new IllegalStateException();
+            }
 
-		return null;
-	}
+            field3620[var3.field3619] = var3;
+        }
 
-	public static int method2408(CharSequence var0, int var1, boolean var2) {
-		if (var1 >= 2 && var1 <= 36) {
-			boolean var4 = false;
-			boolean var5 = false;
-			int var6 = 0;
-			int var7 = var0.length();
+    }
 
-			for (int var8 = 0; var8 < var7; ++var8) {
-				char var9 = var0.charAt(var8);
-				if (var8 == 0) {
-					if (var9 == '-') {
-						var4 = true;
-						continue;
-					}
+    final int field3619;
+    final String field3614;
+    final String field3617;
 
-					if (var9 == '+' && var2) {
-						continue;
-					}
-				}
+    class492(String var1, String var2, String var3, class4 var4, int var5, String var6) {
+        this.field3617 = var1;
+        this.field3614 = var2;
+        this.field3619 = var5;
+        if (var6 != null) {
+            new Locale(var2.substring(0, 2), var6);
+        } else {
+            new Locale(var2.substring(0, 2));
+        }
 
-				int var11;
-				if (var9 >= '0' && var9 <= '9') {
-					var11 = var9 - '0';
-				} else if (var9 >= 'A' && var9 <= 'Z') {
-					var11 = var9 - '7';
-				} else {
-					if (var9 < 'a' || var9 > 'z') {
-						throw new NumberFormatException();
-					}
+    }
 
-					var11 = var9 - 'W';
-				}
+    static class492[] method2242() {
+        return new class492[]{field3615, field3623, field3612, field3616, field3611, field3618, field3621};
+    }
 
-				if (var11 >= var1) {
-					throw new NumberFormatException();
-				}
+    public static class492 method2241(int var0) {
+        return var0 >= 0 && var0 < field3620.length ? field3620[var0] : null;
+    }
 
-				if (var4) {
-					var11 = -var11;
-				}
+    String method2243() {
+        return this.field3614;
+    }
 
-				int var10 = var6 * var1 + var11;
-				if (var6 != var10 / var1) {
-					throw new NumberFormatException();
-				}
+    @Override
+    public int method1533() {
+        return this.field3619;
+    }
 
-				var6 = var10;
-				var5 = true;
-			}
-
-			if (!var5) {
-				throw new NumberFormatException();
-			} else {
-				return var6;
-			}
-		} else {
-			throw new IllegalArgumentException("" + var1);
-		}
-	}
-
-	static final void method2410(int var0, int var1, int var2, int var3) {
-		for (int var5 = 0; var5 < Client.field174; ++var5) {
-			if (Client.field230[var5] + Client.field228[var5] > var0 && Client.field228[var5] < var2 + var0 && Client.field231[var5] + Client.field229[var5] > var1 && Client.field229[var5] < var3 + var1) {
-				Client.field226[var5] = true;
-			}
-		}
-
-	}
+    @Override
+    public String toString() {
+        return this.method2243().toLowerCase(Locale.ENGLISH);
+    }
 }

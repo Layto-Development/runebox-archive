@@ -1,72 +1,101 @@
-public class class131 extends class538 {
-	public static short[][] field1279;
-	int field1276;
-	int field1277;
-	int field1278;
-	int field1280;
-	// $FF: synthetic field
-	final class464 this$0;
+public class class131 {
+    class374[] field1156;
+    int field1157;
+    int field1158;
 
-	class131(class464 var1) {
-		this.this$0 = var1;
-		this.field1278 = -1;
-	}
+    class131(class78 var1) {
+        this.field1156 = new class374[10];
 
-	void method2583(class42 var1) {
-		this.field1278 = var1.method327();
-		this.field1277 = var1.method282();
-		this.field1280 = var1.method278();
-		this.field1276 = var1.method278();
-	}
+        for (int var2 = 0; var2 < 10; ++var2) {
+            int var3 = var1.method260();
+            if (var3 != 0) {
+                --var1.field697;
+                this.field1156[var2] = new class374();
+                this.field1156[var2].method1761(var1);
+            }
+        }
 
-	void method2582(class379 var1) {
-		var1.method2028(this.field1278, this.field1277, this.field1280, this.field1276);
-	}
+        this.field1157 = var1.method309();
+        this.field1158 = var1.method309();
+    }
 
-	static final void method777() {
-		int var1;
-		int var2;
-		int var3;
-		if (!Client.field265) {
-			var1 = 64 + class481.field4081 * 128;
-			var2 = class47.field542 * 128 + 64;
-			var3 = class454.method2262(var1, var2, class358.field3038) - class243.field2219;
-			class525.method2542(var1, var3, var2);
-		} else if (null != Client.field268) {
-			class375.field3180 = Client.field268.method1340();
-			class196.field1796 = Client.field268.method1341();
-			if (Client.field267) {
-				class463.field3989 = Client.field268.method1342();
-			} else {
-				class463.field3989 = class454.method2262(class375.field3180, class196.field1796, class358.field3038) - Client.field268.method1342();
-			}
+    public static class131 method590(class68 var0, int var1, int var2) {
+        byte[] var3 = var0.method188(var1, var2);
+        return var3 == null ? null : new class131(new class78(var3));
+    }
 
-			Client.field268.method1048();
-		}
+    public class433 method588() {
+        byte[] var1 = this.method591();
+        return new class433(22050, var1, this.field1157 * 22050 / 1000, this.field1158 * 22050 / 1000);
+    }
 
-		if (!Client.field266) {
-			var1 = 64 + class353.field3015 * 128;
-			var2 = class82.field860 * 128 + 64;
-			var3 = class454.method2262(var1, var2, class358.field3038) - class401.field3369;
-			int var4 = var1 - class375.field3180;
-			int var5 = var3 - class463.field3989;
-			int var6 = var2 - class196.field1796;
-			int var7 = (int)Math.sqrt((double)(var6 * var6 + var4 * var4));
-			int var8 = (int)(Math.atan2((double)var5, (double)var7) * 325.9490051269531D) & 2047;
-			int var9 = (int)(Math.atan2((double)var4, (double)var6) * -325.9490051269531D) & 2047;
-			class483.method2400(var8, var9);
-		} else {
-			if (Client.field85 != null) {
-				class452.field3956 = Client.field85.method1439();
-				class452.field3956 = Math.min(Math.max(class452.field3956, 128), 383);
-				Client.field85.method1048();
-			}
+    public final int method589() {
+        int var1 = 9999999;
 
-			if (Client.field59 != null) {
-				class175.field1694 = Client.field59.method1439() & 2047;
-				Client.field59.method1048();
-			}
-		}
+        int var2;
+        for (var2 = 0; var2 < 10; ++var2) {
+            if (this.field1156[var2] != null && this.field1156[var2].field2708 / 20 < var1) {
+                var1 = this.field1156[var2].field2708 / 20;
+            }
+        }
 
-	}
+        if (this.field1157 < this.field1158 && this.field1157 / 20 < var1) {
+            var1 = this.field1157 / 20;
+        }
+
+        if (var1 != 9999999 && var1 != 0) {
+            for (var2 = 0; var2 < 10; ++var2) {
+                if (this.field1156[var2] != null) {
+                    class374 var10000 = this.field1156[var2];
+                    var10000.field2708 -= var1 * 20;
+                }
+            }
+
+            if (this.field1157 < this.field1158) {
+                this.field1157 -= var1 * 20;
+                this.field1158 -= var1 * 20;
+            }
+
+            return var1;
+        } else {
+            return 0;
+        }
+    }
+
+    final byte[] method591() {
+        int var1 = 0;
+
+        int var2;
+        for (var2 = 0; var2 < 10; ++var2) {
+            if (this.field1156[var2] != null && this.field1156[var2].field2700 + this.field1156[var2].field2708 > var1) {
+                var1 = this.field1156[var2].field2700 + this.field1156[var2].field2708;
+            }
+        }
+
+        if (var1 == 0) {
+            return new byte[0];
+        } else {
+            var2 = var1 * 22050 / 1000;
+            byte[] var3 = new byte[var2];
+
+            for (int var4 = 0; var4 < 10; ++var4) {
+                if (this.field1156[var4] != null) {
+                    int var5 = this.field1156[var4].field2700 * 22050 / 1000;
+                    int var6 = this.field1156[var4].field2708 * 22050 / 1000;
+                    int[] var7 = this.field1156[var4].method1760(var5, this.field1156[var4].field2700);
+
+                    for (int var8 = 0; var8 < var5; ++var8) {
+                        int var9 = var3[var8 + var6] + (var7[var8] >> 8);
+                        if ((var9 + 128 & -256) != 0) {
+                            var9 = var9 >> 31 ^ 127;
+                        }
+
+                        var3[var8 + var6] = (byte) var9;
+                    }
+                }
+            }
+
+            return var3;
+        }
+    }
 }

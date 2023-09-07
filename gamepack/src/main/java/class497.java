@@ -1,36 +1,39 @@
-public final class class497 {
-	class218 field4141;
+public class class497 {
+    static final int field3632;
+    static final int field3633;
 
-	public class497() {
-		this.field4141 = new class218();
-		this.field4141.field2029 = this.field4141;
-		this.field4141.field2030 = this.field4141;
-	}
+    static {
+        field3632 = (int) (Math.pow(2.0D, 4.0D) - 1.0D);
+        field3633 = (int) (Math.pow(2.0D, 8.0D) - 1.0D);
+    }
 
-	public void method2414(class218 var1) {
-		if (var1.field2030 != null) {
-			var1.method1252();
-		}
+    class497() throws Throwable {
+    }
 
-		var1.field2030 = this.field4141.field2030;
-		var1.field2029 = this.field4141;
-		var1.field2030.field2029 = var1;
-		var1.field2029.field2030 = var1;
-	}
+    public static int method2249(int var0) {
+        return var0 >>> 12;
+    }
 
-	public void method2412(class218 var1) {
-		if (var1.field2030 != null) {
-			var1.method1252();
-		}
+    public static int method2250(int var0) {
+        return var0 >>> 4 & field3633;
+    }
 
-		var1.field2030 = this.field4141;
-		var1.field2029 = this.field4141.field2029;
-		var1.field2030.field2029 = var1;
-		var1.field2029.field2030 = var1;
-	}
+    public static int method2251(int var0) {
+        return (var0 & field3632) - 1;
+    }
 
-	public class218 method2413() {
-		class218 var1 = this.field4141.field2029;
-		return var1 == this.field4141 ? null : var1;
-	}
+    static Object[] method2248(class78 var0, int[] var1) {
+        int var3 = var0.method307();
+        Object[] var4 = new Object[var3 * var1.length];
+
+        for (int var5 = 0; var5 < var3; ++var5) {
+            for (int var6 = 0; var6 < var1.length; ++var6) {
+                int var7 = var6 + var1.length * var5;
+                class432 var8 = class406.method1856(var1[var6]);
+                var4[var7] = var8.method1971(var0);
+            }
+        }
+
+        return var4;
+    }
 }

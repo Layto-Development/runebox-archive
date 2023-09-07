@@ -1,248 +1,600 @@
 public class class133 {
-	public static class17 field1293;
-	public static int[] field1288;
-	public static int[] field1289;
-	public static int[] field1291;
-	static class193 field1294;
-	static int[] field1290;
-	static int[] field1292;
-	static final class193 field1295;
-	static final class193 field1296;
+    public boolean field1165;
+    public boolean[] field1176;
+    public byte field1167;
+    public byte field1168;
+    public byte field1169;
+    public byte field1179;
+    public byte[] field1172;
+    public int field1162;
+    public int field1163;
+    public int field1170;
+    public int field1177;
+    public int field1178;
+    public int[] field1175;
+    public String field1166;
+    public String[] field1181;
+    public String[] field1182;
+    boolean field1160;
+    boolean field1180;
+    class208 field1183;
+    int field1164;
+    int[] field1173;
+    int[] field1174;
+    long field1161;
+    long[] field1159;
+    long[] field1171;
 
-	static {
-		field1288 = new int[65536];
-		field1292 = new int[512];
-		field1290 = new int[2048];
-		field1291 = new int[2048];
-		field1289 = new int[2048];
+    public class133(class78 var1) {
+        this.field1178 = 0;
+        this.field1166 = null;
+        this.field1164 = 0;
+        this.field1177 = -1;
+        this.field1162 = -1;
+        this.method608(var1);
+    }
 
-		int var0;
-		for (var0 = 1; var0 < 512; ++var0) {
-			field1292[var0] = 32768 / var0;
-		}
+    void method594(int var1) {
+        if (this.field1160) {
+            if (null != this.field1159) {
+                System.arraycopy(this.field1159, 0, this.field1159 = new long[var1], 0, this.field1170);
+            } else {
+                this.field1159 = new long[var1];
+            }
+        }
 
-		for (var0 = 1; var0 < 2048; ++var0) {
-			field1290[var0] = 65536 / var0;
-		}
+        if (this.field1180) {
+            if (null != this.field1181) {
+                System.arraycopy(this.field1181, 0, this.field1181 = new String[var1], 0, this.field1170);
+            } else {
+                this.field1181 = new String[var1];
+            }
+        }
 
-		for (var0 = 0; var0 < 2048; ++var0) {
-			field1291[var0] = (int)(65536.0D * Math.sin((double)var0 * 0.0030679615D));
-			field1289[var0] = (int)(65536.0D * Math.cos((double)var0 * 0.0030679615D));
-		}
+        if (null != this.field1172) {
+            System.arraycopy(this.field1172, 0, this.field1172 = new byte[var1], 0, this.field1170);
+        } else {
+            this.field1172 = new byte[var1];
+        }
 
-		field1293 = new class17();
-		field1295 = new class373(field1293);
-		field1296 = new class195(field1293);
-		field1294 = field1295;
-	}
+        if (null != this.field1174) {
+            System.arraycopy(this.field1174, 0, this.field1174 = new int[var1], 0, this.field1170);
+        } else {
+            this.field1174 = new int[var1];
+        }
 
-	class133() throws Throwable {
-	}
+        if (this.field1175 != null) {
+            System.arraycopy(this.field1175, 0, this.field1175 = new int[var1], 0, this.field1170);
+        } else {
+            this.field1175 = new int[var1];
+        }
 
-	public static void method792(boolean var0) {
-		if (var0 && class266.field2407 != null) {
-			field1294 = field1296;
-		} else {
-			field1294 = field1295;
-		}
+        if (null != this.field1176) {
+            System.arraycopy(this.field1176, 0, this.field1176 = new boolean[var1], 0, this.field1170);
+        } else {
+            this.field1176 = new boolean[var1];
+        }
 
-	}
+    }
 
-	public static void method780(class360 var0) {
-		field1293.field389 = var0;
-	}
+    void method595(int var1) {
+        if (this.field1160) {
+            if (null != this.field1171) {
+                System.arraycopy(this.field1171, 0, this.field1171 = new long[var1], 0, this.field1163);
+            } else {
+                this.field1171 = new long[var1];
+            }
+        }
 
-	public static void method781(double var0) {
-		method799(var0, 0, 512);
-	}
+        if (this.field1180) {
+            if (null != this.field1182) {
+                System.arraycopy(this.field1182, 0, this.field1182 = new String[var1], 0, this.field1163);
+            } else {
+                this.field1182 = new String[var1];
+            }
+        }
 
-	static void method799(double var0, int var2, int var3) {
-		int var4 = var2 * 128;
+    }
 
-		for (int var5 = var2; var5 < var3; ++var5) {
-			double var6 = (double)(var5 >> 3) / 64.0D + 0.0078125D;
-			double var8 = (double)(var5 & 7) / 8.0D + 0.0625D;
+    public int method601(String var1) {
+        if (null != var1 && var1.length() != 0) {
+            for (int var3 = 0; var3 < this.field1170; ++var3) {
+                if (this.field1181[var3].equals(var1)) {
+                    return var3;
+                }
+            }
 
-			for (int var10 = 0; var10 < 128; ++var10) {
-				double var11 = (double)var10 / 128.0D;
-				double var13 = var11;
-				double var15 = var11;
-				double var17 = var11;
-				if (var8 != 0.0D) {
-					double var19;
-					if (var11 < 0.5D) {
-						var19 = var11 * (var8 + 1.0D);
-					} else {
-						var19 = var11 + var8 - var11 * var8;
-					}
+            return -1;
+        } else {
+            return -1;
+        }
+    }
 
-					double var21 = var11 * 2.0D - var19;
-					double var23 = var6 + 0.3333333333333333D;
-					if (var23 > 1.0D) {
-						--var23;
-					}
+    public int method603(int var1, int var2, int var3) {
+        int var5 = var3 == 31 ? -1 : (1 << var3 + 1) - 1;
+        return (this.field1174[var1] & var5) >>> var2;
+    }
 
-					double var27 = var6 - 0.3333333333333333D;
-					if (var27 < 0.0D) {
-						++var27;
-					}
+    public Integer method596(int var1) {
+        if (null == this.field1183) {
+            return null;
+        } else {
+            class70 var3 = this.field1183.method990(var1);
+            return null != var3 && var3 instanceof class170 ? Integer.valueOf(((class170) var3).field1437) : null;
+        }
+    }
 
-					if (var23 * 6.0D < 1.0D) {
-						var13 = var21 + (var19 - var21) * 6.0D * var23;
-					} else if (var23 * 2.0D < 1.0D) {
-						var13 = var19;
-					} else if (var23 * 3.0D < 2.0D) {
-						var13 = var21 + (var19 - var21) * (0.6666666666666666D - var23) * 6.0D;
-					} else {
-						var13 = var21;
-					}
+    public int[] method597() {
+        if (null == this.field1173) {
+            String[] var2 = new String[this.field1170];
+            this.field1173 = new int[this.field1170];
 
-					if (var6 * 6.0D < 1.0D) {
-						var15 = var21 + (var19 - var21) * 6.0D * var6;
-					} else if (var6 * 2.0D < 1.0D) {
-						var15 = var19;
-					} else if (var6 * 3.0D < 2.0D) {
-						var15 = var21 + (var19 - var21) * (0.6666666666666666D - var6) * 6.0D;
-					} else {
-						var15 = var21;
-					}
+            for (int var3 = 0; var3 < this.field1170; this.field1173[var3] = var3++) {
+                var2[var3] = this.field1181[var3];
+                if (null != var2[var3]) {
+                    var2[var3] = var2[var3].toLowerCase();
+                }
+            }
 
-					if (var27 * 6.0D < 1.0D) {
-						var17 = var21 + (var19 - var21) * 6.0D * var27;
-					} else if (var27 * 2.0D < 1.0D) {
-						var17 = var19;
-					} else if (var27 * 3.0D < 2.0D) {
-						var17 = var21 + (var19 - var21) * (0.6666666666666666D - var27) * 6.0D;
-					} else {
-						var17 = var21;
-					}
-				}
+            int[] var4 = this.field1173;
+            class240.method1073(var2, var4, 0, var2.length - 1);
+        }
 
-				int var30 = (int)(var13 * 256.0D);
-				int var20 = (int)(var15 * 256.0D);
-				int var29 = (int)(var17 * 256.0D);
-				int var22 = (var30 << 16) + (var20 << 8) + var29;
-				var22 = method798(var22, var0);
-				if (var22 == 0) {
-					var22 = 1;
-				}
+        return this.field1173;
+    }
 
-				field1288[var4++] = var22;
-			}
-		}
+    void method609(long var1, String var3, int var4) {
+        if (null != var3 && var3.length() == 0) {
+            var3 = null;
+        }
 
-	}
+        if (this.field1160 != var1 > 0L) {
+            throw new RuntimeException("");
+        } else if (this.field1180 == (null != var3)) {
+            throw new RuntimeException("");
+        } else {
+            if (var1 > 0L && (this.field1159 == null || this.field1170 >= this.field1159.length) || null != var3 && (this.field1181 == null || this.field1170 >= this.field1181.length)) {
+                this.method594(this.field1170 + 5);
+            }
 
-	static int method798(int var0, double var1) {
-		double var3 = (double)(var0 >> 16) / 256.0D;
-		double var5 = (double)(var0 >> 8 & 255) / 256.0D;
-		double var7 = (double)(var0 & 255) / 256.0D;
-		var3 = Math.pow(var3, var1);
-		var5 = Math.pow(var5, var1);
-		var7 = Math.pow(var7, var1);
-		int var9 = (int)(var3 * 256.0D);
-		int var10 = (int)(var5 * 256.0D);
-		int var11 = (int)(var7 * 256.0D);
-		return (var9 << 16) + (var10 << 8) + var11;
-	}
+            if (this.field1159 != null) {
+                this.field1159[this.field1170] = var1;
+            }
 
-	static int method783() {
-		return field1293.field387;
-	}
+            if (this.field1181 != null) {
+                this.field1181[this.field1170] = var3;
+            }
 
-	static int method784() {
-		return field1293.field396;
-	}
+            if (this.field1177 == -1) {
+                this.field1177 = this.field1170;
+                this.field1172[this.field1170] = 126;
+            } else {
+                this.field1172[this.field1170] = 0;
+            }
 
-	static int method785() {
-		return field1293.field392;
-	}
+            this.field1174[this.field1170] = 0;
+            this.field1175[this.field1170] = var4;
+            this.field1176[this.field1170] = false;
+            ++this.field1170;
+            this.field1173 = null;
+        }
+    }
 
-	static int method782() {
-		return field1293.field398;
-	}
+    void method598(int var1) {
+        if (var1 >= 0 && var1 < this.field1170) {
+            --this.field1170;
+            this.field1173 = null;
+            if (this.field1170 == 0) {
+                this.field1159 = null;
+                this.field1181 = null;
+                this.field1172 = null;
+                this.field1174 = null;
+                this.field1175 = null;
+                this.field1176 = null;
+                this.field1177 = -1;
+                this.field1162 = -1;
+            } else {
+                System.arraycopy(this.field1172, var1 + 1, this.field1172, var1, this.field1170 - var1);
+                System.arraycopy(this.field1174, var1 + 1, this.field1174, var1, this.field1170 - var1);
+                System.arraycopy(this.field1175, var1 + 1, this.field1175, var1, this.field1170 - var1);
+                System.arraycopy(this.field1176, var1 + 1, this.field1176, var1, this.field1170 - var1);
+                if (this.field1159 != null) {
+                    System.arraycopy(this.field1159, var1 + 1, this.field1159, var1, this.field1170 - var1);
+                }
 
-	static int method786() {
-		return field1293.field400;
-	}
+                if (this.field1181 != null) {
+                    System.arraycopy(this.field1181, var1 + 1, this.field1181, var1, this.field1170 - var1);
+                }
 
-	static int method787() {
-		return field1293.field399;
-	}
+                this.method612();
+            }
 
-	public static int method788() {
-		return field1293.field390;
-	}
+        } else {
+            throw new RuntimeException("");
+        }
+    }
 
-	static int method789() {
-		return field1293.field395;
-	}
+    void method612() {
+        if (this.field1170 == 0) {
+            this.field1177 = -1;
+            this.field1162 = -1;
+        } else {
+            this.field1177 = -1;
+            this.field1162 = -1;
+            int var2 = 0;
+            byte var3 = this.field1172[0];
 
-	public static void method790(int[] var0, int var1, int var2, float[] var3) {
-		if (var3 == null && field1294 == field1296) {
-			field1294 = field1295;
-		}
+            for (int var4 = 1; var4 < this.field1170; ++var4) {
+                if (this.field1172[var4] > var3) {
+                    if (var3 == 125) {
+                        this.field1162 = var2;
+                    }
 
-		field1294.method1050(var0, var1, var2, var3);
-	}
+                    var2 = var4;
+                    var3 = this.field1172[var4];
+                } else if (this.field1162 == -1 && this.field1172[var4] == 125) {
+                    this.field1162 = var4;
+                }
+            }
 
-	public static void method791() {
-		method800(class266.field2409, class266.field2410, class266.field2403, class266.field2408);
-	}
+            this.field1177 = var2;
+            if (this.field1177 != -1) {
+                this.field1172[this.field1177] = 126;
+            }
 
-	static void method800(int var0, int var1, int var2, int var3) {
-		field1293.field395 = var2 - var0;
-		field1293.field393 = var3 - var1;
-		method793();
-		if (field1293.field397.length < field1293.field393) {
-			field1293.field397 = new int[class476.method2304(field1293.field393)];
-		}
+        }
+    }
 
-		int var4 = var1 * class266.field2404 + var0;
+    void method599(long var1, String var3) {
+        if (var3 != null && var3.length() == 0) {
+            var3 = null;
+        }
 
-		for (int var5 = 0; var5 < field1293.field393; ++var5) {
-			field1293.field397[var5] = var4;
-			var4 += class266.field2404;
-		}
+        if (this.field1160 != var1 > 0L) {
+            throw new RuntimeException("");
+        } else if (var3 == null == this.field1180) {
+            throw new RuntimeException("");
+        } else {
+            if (var1 > 0L && (this.field1171 == null || this.field1163 >= this.field1171.length) || null != var3 && (null == this.field1182 || this.field1163 >= this.field1182.length)) {
+                this.method595(this.field1163 + 5);
+            }
 
-	}
+            if (null != this.field1171) {
+                this.field1171[this.field1163] = var1;
+            }
 
-	public static void method793() {
-		field1293.method127();
-	}
+            if (this.field1182 != null) {
+                this.field1182[this.field1163] = var3;
+            }
 
-	public static void method802(int var0, int var1) {
-		int var2 = field1293.field397[0];
-		int var3 = var2 / class266.field2404;
-		int var4 = var2 - var3 * class266.field2404;
-		field1293.method129(var0, var4, var1, var3);
-	}
+            ++this.field1163;
+        }
+    }
 
-	public static void method794(int var0, int var1, int var2) {
-		field1293.method128(var0, var1, var2);
-	}
+    void method600(int var1) {
+        --this.field1163;
+        if (this.field1163 == 0) {
+            this.field1171 = null;
+            this.field1182 = null;
+        } else {
+            if (null != this.field1171) {
+                System.arraycopy(this.field1171, var1 + 1, this.field1171, var1, this.field1163 - var1);
+            }
 
-	static void method797(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9, int var10, int var11) {
-		field1294.method1054(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11);
-	}
+            if (this.field1182 != null) {
+                System.arraycopy(this.field1182, var1 + 1, this.field1182, var1, this.field1163 - var1);
+            }
+        }
 
-	public static void method804(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9) {
-		field1294.method1055(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
-	}
+    }
 
-	static void method795(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21) {
-		field1294.method1056(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18, var19, var20, var21);
-	}
+    int method610(int var1, byte var2) {
+        if (var2 != 126 && var2 != 127) {
+            if (var1 != this.field1177 || this.field1162 != -1 && this.field1172[this.field1162] >= 125) {
+                if (this.field1172[var1] == var2) {
+                    return -1;
+                } else {
+                    this.field1172[var1] = var2;
+                    this.method612();
+                    return var1;
+                }
+            } else {
+                return -1;
+            }
+        } else {
+            return -1;
+        }
+    }
 
-	static void method796(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21) {
-		field1294.method1053(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18, var19, var20, var21);
-	}
+    boolean method602(int var1) {
+        if (var1 != this.field1177 && this.field1172[var1] != 126) {
+            this.field1172[this.field1177] = 125;
+            this.field1162 = this.field1177;
+            this.field1172[var1] = 126;
+            this.field1177 = var1;
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-	static void method801(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9, int var10, int var11, byte var12, byte var13, byte var14, byte var15) {
-		field1294.method1052(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15);
-	}
+    int method611(int var1, boolean var2) {
+        if (this.field1176[var1] == var2) {
+            return -1;
+        } else {
+            this.field1176[var1] = var2;
+            return var1;
+        }
+    }
 
-	static void method803(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9, byte var10, byte var11, byte var12, byte var13) {
-		field1294.method1049(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13);
-	}
+    int method604(int var1, int var2, int var3, int var4) {
+        int var6 = (1 << var3) - 1;
+        int var7 = var4 == 31 ? -1 : (1 << var4 + 1) - 1;
+        int var8 = var7 ^ var6;
+        var2 <<= var3;
+        var2 &= var8;
+        int var9 = this.field1174[var1];
+        if (var2 == (var9 & var8)) {
+            return -1;
+        } else {
+            var9 &= ~var8;
+            this.field1174[var1] = var9 | var2;
+            return var1;
+        }
+    }
+
+    boolean method593(int var1, int var2) {
+        if (null != this.field1183) {
+            class70 var4 = this.field1183.method990(var1);
+            if (null != var4) {
+                if (var4 instanceof class170) {
+                    class170 var5 = (class170) var4;
+                    if (var5.field1437 == var2) {
+                        return false;
+                    }
+
+                    var5.field1437 = var2;
+                    return true;
+                }
+
+                var4.method221();
+            }
+        } else {
+            this.field1183 = new class208(4);
+        }
+
+        this.field1183.method994(new class170(var2), var1);
+        return true;
+    }
+
+    boolean method605(int var1, int var2, int var3, int var4) {
+        int var6 = (1 << var3) - 1;
+        int var7 = var4 == 31 ? -1 : (1 << var4 + 1) - 1;
+        int var8 = var7 ^ var6;
+        var2 <<= var3;
+        var2 &= var8;
+        if (null != this.field1183) {
+            class70 var9 = this.field1183.method990(var1);
+            if (null != var9) {
+                if (var9 instanceof class170) {
+                    class170 var10 = (class170) var9;
+                    if (var2 == (var10.field1437 & var8)) {
+                        return false;
+                    }
+
+                    var10.field1437 &= ~var8;
+                    var10.field1437 |= var2;
+                    return true;
+                }
+
+                var9.method221();
+            }
+        } else {
+            this.field1183 = new class208(4);
+        }
+
+        this.field1183.method994(new class170(var2), var1);
+        return true;
+    }
+
+    boolean method606(int var1, long var2) {
+        if (null != this.field1183) {
+            class70 var4 = this.field1183.method990(var1);
+            if (var4 != null) {
+                if (var4 instanceof class282) {
+                    class282 var5 = (class282) var4;
+                    if (var5.field2052 == var2) {
+                        return false;
+                    }
+
+                    var5.field2052 = var2;
+                    return true;
+                }
+
+                var4.method221();
+            }
+        } else {
+            this.field1183 = new class208(4);
+        }
+
+        this.field1183.method994(new class282(var2), var1);
+        return true;
+    }
+
+    boolean method607(int var1, String var2) {
+        if (var2 == null) {
+            var2 = "";
+        } else if (var2.length() > 80) {
+            var2 = var2.substring(0, 80);
+        }
+
+        if (null != this.field1183) {
+            class70 var4 = this.field1183.method990(var1);
+            if (null != var4) {
+                if (var4 instanceof class371) {
+                    class371 var5 = (class371) var4;
+                    if (var5.field2646 instanceof String) {
+                        if (var2.equals(var5.field2646)) {
+                            return false;
+                        }
+
+                        var5.method221();
+                        this.field1183.method994(new class371(var2), var5.field658);
+                        return true;
+                    }
+                }
+
+                var4.method221();
+            }
+        } else {
+            this.field1183 = new class208(4);
+        }
+
+        this.field1183.method994(new class371(var2), var1);
+        return true;
+    }
+
+    void method608(class78 var1) {
+        int var3 = var1.method260();
+        if (var3 >= 1 && var3 <= 6) {
+            int var4 = var1.method260();
+            if ((var4 & 1) != 0) {
+                this.field1160 = true;
+            }
+
+            if ((var4 & 2) != 0) {
+                this.field1180 = true;
+            }
+
+            if (!this.field1160) {
+                this.field1159 = null;
+                this.field1171 = null;
+            }
+
+            if (!this.field1180) {
+                this.field1181 = null;
+                this.field1182 = null;
+            }
+
+            this.field1178 = var1.method264();
+            this.field1164 = var1.method264();
+            if (var3 <= 3 && this.field1164 != 0) {
+                this.field1164 += 16912800;
+            }
+
+            this.field1170 = var1.method309();
+            this.field1163 = var1.method260();
+            this.field1166 = var1.method268();
+            if (var3 >= 4) {
+                var1.method264();
+            }
+
+            this.field1165 = var1.method260() == 1;
+            this.field1179 = var1.method261();
+            this.field1167 = var1.method261();
+            this.field1168 = var1.method261();
+            this.field1169 = var1.method261();
+            int var5;
+            if (this.field1170 > 0) {
+                if (this.field1160 && (this.field1159 == null || this.field1159.length < this.field1170)) {
+                    this.field1159 = new long[this.field1170];
+                }
+
+                if (this.field1180 && (this.field1181 == null || this.field1181.length < this.field1170)) {
+                    this.field1181 = new String[this.field1170];
+                }
+
+                if (this.field1172 == null || this.field1172.length < this.field1170) {
+                    this.field1172 = new byte[this.field1170];
+                }
+
+                if (null == this.field1174 || this.field1174.length < this.field1170) {
+                    this.field1174 = new int[this.field1170];
+                }
+
+                if (this.field1175 == null || this.field1175.length < this.field1170) {
+                    this.field1175 = new int[this.field1170];
+                }
+
+                if (null == this.field1176 || this.field1176.length < this.field1170) {
+                    this.field1176 = new boolean[this.field1170];
+                }
+
+                for (var5 = 0; var5 < this.field1170; ++var5) {
+                    if (this.field1160) {
+                        this.field1159[var5] = var1.method265();
+                    }
+
+                    if (this.field1180) {
+                        this.field1181[var5] = var1.method319();
+                    }
+
+                    this.field1172[var5] = var1.method261();
+                    if (var3 >= 2) {
+                        this.field1174[var5] = var1.method264();
+                    }
+
+                    if (var3 >= 5) {
+                        this.field1175[var5] = var1.method309();
+                    } else {
+                        this.field1175[var5] = 0;
+                    }
+
+                    if (var3 >= 6) {
+                        this.field1176[var5] = var1.method260() == 1;
+                    } else {
+                        this.field1176[var5] = false;
+                    }
+                }
+
+                this.method612();
+            }
+
+            if (this.field1163 > 0) {
+                if (this.field1160 && (this.field1171 == null || this.field1171.length < this.field1163)) {
+                    this.field1171 = new long[this.field1163];
+                }
+
+                if (this.field1180 && (null == this.field1182 || this.field1182.length < this.field1163)) {
+                    this.field1182 = new String[this.field1163];
+                }
+
+                for (var5 = 0; var5 < this.field1163; ++var5) {
+                    if (this.field1160) {
+                        this.field1171[var5] = var1.method265();
+                    }
+
+                    if (this.field1180) {
+                        this.field1182[var5] = var1.method319();
+                    }
+                }
+            }
+
+            if (var3 >= 3) {
+                var5 = var1.method309();
+                if (var5 > 0) {
+                    this.field1183 = new class208(var5 < 16 ? class82.method332(var5) : 16);
+
+                    while (var5-- > 0) {
+                        int var6 = var1.method264();
+                        int var7 = var6 & 1073741823;
+                        int var8 = var6 >>> 30;
+                        if (var8 == 0) {
+                            int var9 = var1.method264();
+                            this.field1183.method994(new class170(var9), var7);
+                        } else if (var8 == 1) {
+                            long var11 = var1.method265();
+                            this.field1183.method994(new class282(var11), var7);
+                        } else if (var8 == 2) {
+                            String var12 = var1.method268();
+                            this.field1183.method994(new class371(var12), var7);
+                        }
+                    }
+                }
+            }
+
+        } else {
+            throw new RuntimeException(String.valueOf(var3));
+        }
+    }
 }

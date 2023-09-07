@@ -1,29 +1,41 @@
-public class class281 extends class462 {
-	static class25 field2507;
-	static class254 field2506;
-	int[] field2504;
-	int[] field2505;
+public class class281 extends class324 {
+    class540 field2050;
+    class540 field2051;
 
-	static {
-		field2506 = new class254(32);
-	}
+    class281() {
+        this.field2050 = class540.field4293;
+        this.field2051 = class540.field4293;
+    }
 
-	class281() {
-		this.field2505 = new int[]{-1};
-		this.field2504 = new int[]{0};
-	}
+    void method1275() {
+        this.field2050 = class540.field4293;
+    }
 
-	public static void method1599() {
-		class209.field1929.clear();
-	}
+    public final boolean method1276() {
+        if (this.field2050 == class540.field4293) {
+            this.method1279();
+        }
 
-	static final void method1600(int var0, int var1) {
-		if (Client.field81 == 2) {
-			class358.method1942(Client.field190 + (Client.field27 - class296.field2735 << 7), Client.field223 + (Client.field170 - class164.field1606 << 7), Client.field34 * 2);
-			if (Client.field121 > -1 && Client.field306 % 20 < 10) {
-				class398.field3353[0].method732(Client.field121 + var0 - 12, var1 + Client.field122 - 28);
-			}
+        return this.field2050 == class540.field4292;
+    }
 
-		}
-	}
+    void method1279() {
+        this.field2050 = class153.field1320.field2963.method64(super.field2028) ? class540.field4292 : class540.field4291;
+    }
+
+    void method1280() {
+        this.field2051 = class540.field4293;
+    }
+
+    public final boolean method1277() {
+        if (class540.field4293 == this.field2051) {
+            this.method1278();
+        }
+
+        return this.field2051 == class540.field4292;
+    }
+
+    void method1278() {
+        this.field2051 = class153.field1320.field2962.method64(super.field2028) ? class540.field4292 : class540.field4291;
+    }
 }

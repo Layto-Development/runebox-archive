@@ -1,41 +1,56 @@
-public class class72 {
-	static int field819;
+public abstract class class72 implements class14 {
+    class432 field677;
 
-	class72() throws Throwable {
-	}
+    class72(int var1) {
+    }
 
-	static final void method513(byte[] var0, int var1, int var2, int var3, int var4, class76[] var5) {
-		int var8;
-		int var9;
-		for (int var7 = 0; var7 < 4; ++var7) {
-			for (var8 = 0; var8 < 64; ++var8) {
-				for (var9 = 0; var9 < 64; ++var9) {
-					if (var8 + var1 > 0 && var1 + var8 < 103 && var9 + var2 > 0 && var2 + var9 < 103) {
-						int[] var10000 = var5[var7].field839[var8 + var1];
-						var10000[var2 + var9] &= -16777217;
-					}
-				}
-			}
-		}
+    abstract void method224(class78 var1, int var2);
 
-		class42 var13 = new class42(var0);
+    public void method223(class78 var1) {
+        while (true) {
+            int var3 = var1.method260();
+            if (var3 == 0) {
+                return;
+            }
 
-		for (var8 = 0; var8 < 4; ++var8) {
-			for (var9 = 0; var9 < 64; ++var9) {
-				for (int var10 = 0; var10 < 64; ++var10) {
-					int var11 = var1 + var9;
-					int var12 = var2 + var10;
-					class24.method200(var13, var8, var11, var12, var3 + var11, var12 + var4, 0);
-				}
-			}
-		}
+            class377 var4 = (class377) class27.method80(class377.method1765(), var3);
+            if (var4 != null) {
+                switch (var4.field2726) {
+                    case 0:
+                        int var5 = var1.method260();
+                        this.field677 = class406.method1856(var5);
+                        if (this.field677 != null) {
+                            break;
+                        }
 
-	}
+                        throw new IllegalStateException("Unknown ScriptVarType ID in VarType.decode: " + var5);
+                    case 1:
+                        var1.method310();
+                        break;
+                    case 2:
+                        class400[] var6 = new class400[]{class400.field2834, class400.field2831, class400.field2832, class400.field2830};
+                        class27.method80(var6, var1.method260());
+                        break;
+                    default:
+                        throw new IllegalStateException("Unrecognised VarTypeEncodingKey - " + var4);
+                }
+            } else {
+                this.method224(var1, var3);
+            }
+        }
+    }
 
-	public static void method514() {
-		class60.field750.method1887();
-		class60.field639.method1887();
-		class60.field640.method1887();
-		class60.field633.method1887();
-	}
+    boolean method226() {
+        return this.field677 != null;
+    }
+
+    Object method225() {
+        if (class432.field2942 == this.field677) {
+            return 0;
+        } else if (class432.field2943 == this.field677) {
+            return -1L;
+        } else {
+            return class432.field2937 == this.field677 ? "" : null;
+        }
+    }
 }

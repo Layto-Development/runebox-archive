@@ -1,32 +1,20 @@
-public class class75 implements class367 {
-	public static final class75 field828;
-	public static final class75 field829;
-	static final class75 field827;
-	static final class75 field830;
-	static final class75 field833;
-	static final class75 field834;
-	final int field831;
-	final int field832;
+import java.io.IOException;
 
-	static {
-		field829 = new class75(1, 0);
-		field828 = new class75(5, 2);
-		field834 = new class75(2, 5);
-		field830 = new class75(0, 6);
-		field827 = new class75(4, 7);
-		field833 = new class75(3, 8);
-	}
+public abstract class class75 {
+    static class75 field692;
 
-	class75(int var1, int var2) {
-		this.field831 = var1;
-		this.field832 = var2;
-	}
+    class75() {
+    }
 
-	public int method1970() {
-		return this.field832;
-	}
+    public abstract boolean method227(int var1) throws IOException;
 
-	public boolean method523() {
-		return this == field828;
-	}
+    public abstract int method228(byte[] var1, int var2, int var3) throws IOException;
+
+    public abstract int method229() throws IOException;
+
+    public abstract int method231() throws IOException;
+
+    public abstract void method230(byte[] var1, int var2, int var3) throws IOException;
+
+    public abstract void method232();
 }

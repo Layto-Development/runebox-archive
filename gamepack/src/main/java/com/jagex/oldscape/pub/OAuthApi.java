@@ -1,13 +1,13 @@
 package com.jagex.oldscape.pub;
 
 public interface OAuthApi {
-	boolean isOnLoginScreen();
+    boolean isOnLoginScreen();
 
-	long getAccountHash();
+    long getAccountHash();
 
-	void setClient(int var1);
+    void setClient(int var1);
 
-	void setOtlTokenRequester(OtlTokenRequester var1);
+    void setOtlTokenRequester(OtlTokenRequester var1);
 
-	void setRefreshTokenRequester(RefreshAccessTokenRequester var1);
+    void setRefreshTokenRequester(RefreshAccessTokenRequester var1);
 }

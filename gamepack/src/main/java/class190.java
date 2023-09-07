@@ -1,125 +1,169 @@
-public class class190 extends class218 {
-	public static class215 field1758;
-	public static class344 field1759;
-	public static class344 field1760;
-	int field1767;
-	int field1768;
-	public int field1761;
-	public int field1762;
-	public int field1763;
-	public int field1764;
-	public int field1765;
-	public int field1766;
-	public int field1769;
-	public int field1770;
+public class class190 implements class498 {
+    int field1550;
+    int field1551;
+    int field1552;
 
-	static {
-		field1759 = new class344(64);
-		field1760 = new class344(64);
-	}
+    @Override
+    public class135 method2252() {
+        byte var2;
+        if (class157.field1342.startsWith("win")) {
+            var2 = 1;
+        } else if (class157.field1342.startsWith("mac")) {
+            var2 = 2;
+        } else if (class157.field1342.startsWith("linux")) {
+            var2 = 3;
+        } else {
+            var2 = 4;
+        }
 
-	public class190() {
-		this.field1764 = 255;
-		this.field1763 = 255;
-		this.field1766 = -1;
-		this.field1765 = 1;
-		this.field1762 = 70;
-		this.field1767 = -1;
-		this.field1768 = -1;
-		this.field1769 = 30;
-		this.field1770 = 0;
-	}
+        String var3;
+        try {
+            var3 = System.getProperty("os.arch").toLowerCase();
+        } catch (Exception var31) {
+            var3 = "";
+        }
 
-	public void method1043(class42 var1) {
-		while (true) {
-			int var3 = var1.method278();
-			if (var3 == 0) {
-				return;
-			}
+        String var4;
+        try {
+            var4 = System.getProperty("os.version").toLowerCase();
+        } catch (Exception var30) {
+            var4 = "";
+        }
 
-			this.method1040(var1, var3);
-		}
-	}
+        String var5 = "Unknown";
+        String var6 = "1.1";
 
-	void method1040(class42 var1, int var2) {
-		if (var2 == 1) {
-			var1.method327();
-		} else if (var2 == 2) {
-			this.field1764 = var1.method278();
-		} else if (var2 == 3) {
-			this.field1763 = var1.method278();
-		} else if (var2 == 4) {
-			this.field1766 = 0;
-		} else if (var2 == 5) {
-			this.field1762 = var1.method327();
-		} else if (var2 == 6) {
-			var1.method278();
-		} else if (var2 == 7) {
-			this.field1767 = var1.method326();
-		} else if (var2 == 8) {
-			this.field1768 = var1.method326();
-		} else if (var2 == 11) {
-			this.field1766 = var1.method327();
-		} else if (var2 == 14) {
-			this.field1769 = var1.method278();
-		} else if (var2 == 15) {
-			this.field1770 = var1.method278();
-		}
+        try {
+            var5 = System.getProperty("java.vendor");
+            var6 = System.getProperty("java.version");
+        } catch (Exception var29) {
+        }
 
-	}
+        boolean var7;
+        var7 = var3.startsWith("amd64") || var3.startsWith("x86_64");
 
-	public class115 method1041() {
-		if (this.field1767 < 0) {
-			return null;
-		} else {
-			class115 var2 = (class115)field1760.method1890((long)this.field1767);
-			if (var2 != null) {
-				return var2;
-			} else {
-				var2 = class38.method253(class519.field4225, this.field1767, 0);
-				if (null != var2) {
-					field1760.method1889(var2, (long)this.field1767);
-				}
+        byte var8 = 0;
+        if (var2 == 1) {
+            if (var4.indexOf("4.0") != -1) {
+                var8 = 1;
+            } else if (var4.indexOf("4.1") != -1) {
+                var8 = 2;
+            } else if (var4.indexOf("4.9") != -1) {
+                var8 = 3;
+            } else if (var4.indexOf("5.0") != -1) {
+                var8 = 4;
+            } else if (var4.indexOf("5.1") != -1) {
+                var8 = 5;
+            } else if (var4.indexOf("5.2") != -1) {
+                var8 = 8;
+            } else if (var4.indexOf("6.0") != -1) {
+                var8 = 6;
+            } else if (var4.indexOf("6.1") != -1) {
+                var8 = 7;
+            } else if (var4.indexOf("6.2") != -1) {
+                var8 = 9;
+            } else if (var4.indexOf("6.3") != -1) {
+                var8 = 10;
+            } else if (var4.indexOf("10.0") != -1) {
+                var8 = 11;
+            }
+        } else if (var2 == 2) {
+            if (var4.indexOf("10.4") != -1) {
+                var8 = 20;
+            } else if (var4.indexOf("10.5") != -1) {
+                var8 = 21;
+            } else if (var4.indexOf("10.6") != -1) {
+                var8 = 22;
+            } else if (var4.indexOf("10.7") != -1) {
+                var8 = 23;
+            } else if (var4.indexOf("10.8") != -1) {
+                var8 = 24;
+            } else if (var4.indexOf("10.9") != -1) {
+                var8 = 25;
+            } else if (var4.indexOf("10.10") != -1) {
+                var8 = 26;
+            } else if (var4.indexOf("10.11") != -1) {
+                var8 = 27;
+            } else if (var4.indexOf("10.12") != -1) {
+                var8 = 28;
+            } else if (var4.indexOf("10.13") != -1) {
+                var8 = 29;
+            }
+        }
 
-				return var2;
-			}
-		}
-	}
+        byte var9;
+        if (var5.toLowerCase().indexOf("sun") != -1) {
+            var9 = 1;
+        } else if (var5.toLowerCase().indexOf("microsoft") != -1) {
+            var9 = 2;
+        } else if (var5.toLowerCase().indexOf("apple") != -1) {
+            var9 = 3;
+        } else if (var5.toLowerCase().indexOf("oracle") != -1) {
+            var9 = 5;
+        } else {
+            var9 = 4;
+        }
 
-	public class115 method1042() {
-		if (this.field1768 < 0) {
-			return null;
-		} else {
-			class115 var2 = (class115)field1760.method1890((long)this.field1768);
-			if (var2 != null) {
-				return var2;
-			} else {
-				var2 = class38.method253(class519.field4225, this.field1768, 0);
-				if (null != var2) {
-					field1760.method1889(var2, (long)this.field1768);
-				}
+        this.method883(var6);
+        boolean var10 = false;
+        int var11 = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
+        int var12;
+        if (this.field1551 > 3) {
+            var12 = Runtime.getRuntime().availableProcessors();
+        } else {
+            var12 = 0;
+        }
 
-				return var2;
-			}
-		}
-	}
+        boolean var13 = false;
+        String var14 = "";
+        String var15 = "";
+        String var16 = "";
+        String var17 = "";
+        String var18 = "";
+        String var19 = "";
+        boolean var20 = false;
+        boolean var21 = false;
+        boolean var22 = false;
+        boolean var23 = false;
+        int[] var24 = new int[3];
+        boolean var25 = false;
+        String var26 = "";
+        String var27 = "";
+        boolean var28 = false;
+        return new class135(var2, var7, var8, var9, this.field1551, this.field1552, this.field1550, false, var11, var12, 0, 0, var14, var15, var16, var17, 0, 0, 0, 0, var18, var19, var24, 0, "", "");
+    }
 
-	public static int method1044(int var0) {
-		return var0 >> 11 & 63;
-	}
+    void method883(String var1) {
+        if (var1.startsWith("1.")) {
+            this.method882(var1);
+        } else {
+            this.method881(var1);
+        }
 
-	static class253 method1039(byte[] var0) {
-		if (null == var0) {
-			return null;
-		} else {
-			class253 var2 = new class253(var0, class49.field588, class517.field4221, class177.field1707, class420.field3504, class101.field1016, class29.field463);
-			class49.field588 = null;
-			class517.field4221 = null;
-			class177.field1707 = null;
-			class420.field3504 = null;
-			class101.field1016 = null;
-			class29.field463 = (byte[][])null;
-			return var2;
-		}
-	}
+    }
+
+    void method882(String var1) {
+        String[] var3 = var1.split("\\.");
+
+        try {
+            this.field1551 = Integer.parseInt(var3[1]);
+            var3 = var3[2].split("_");
+            this.field1552 = Integer.parseInt(var3[0]);
+            this.field1550 = Integer.parseInt(var3[1]);
+        } catch (Exception var5) {
+        }
+
+    }
+
+    void method881(String var1) {
+        String[] var3 = var1.split("\\.");
+
+        try {
+            this.field1551 = Integer.parseInt(var3[0]);
+            this.field1552 = Integer.parseInt(var3[1]);
+            this.field1550 = Integer.parseInt(var3[2]);
+        } catch (Exception var5) {
+        }
+
+    }
 }

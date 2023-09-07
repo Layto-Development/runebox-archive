@@ -1,7 +1,7 @@
 package com.jagex.oldscape.pub;
 
 public interface OtlTokenResponse {
-	boolean isSuccess();
+    boolean isSuccess();
 
-	String getToken();
+    String getToken();
 }

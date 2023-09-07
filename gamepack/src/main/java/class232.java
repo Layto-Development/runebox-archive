@@ -1,82 +1,78 @@
-public abstract class class232 {
-	boolean field2102;
-	boolean field2103;
-	class232 field2099;
-	String field2100;
-	String field2101;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine.Info;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.SourceDataLine;
 
-	class232(class232 var1) {
-		this.field2099 = var1;
-	}
+public class class232 extends class398 {
+    byte[] field1824;
+    int field1823;
+    AudioFormat field1821;
+    SourceDataLine field1822;
 
-	public abstract boolean method1330();
+    class232() {
+    }
 
-	public boolean method1331() {
-		return this.field2102;
-	}
+    @Override
+    protected void method1834() {
+        this.field1821 = new AudioFormat((float) class398.field2800, 16, class398.field2815 ? 2 : 1, true, false);
+        this.field1824 = new byte[256 << (class398.field2815 ? 2 : 1)];
+    }
 
-	public boolean method1334() {
-		return this.field2103;
-	}
+    @Override
+    protected void method1828(int var1) throws LineUnavailableException {
+        try {
+            Info var3 = new Info(SourceDataLine.class, this.field1821, var1 << (class398.field2815 ? 2 : 1));
+            this.field1822 = (SourceDataLine) AudioSystem.getLine(var3);
+            this.field1822.open();
+            this.field1822.start();
+            this.field1823 = var1;
+        } catch (LineUnavailableException var4) {
+            if (class46.method133(var1) != 1) {
+                this.method1828(class82.method332(var1));
+            } else {
+                this.field1822 = null;
+                throw var4;
+            }
+        }
+    }
 
-	public String method1329() {
-		return "Error in task: " + this.field2101 + ", Error message: " + this.field2100;
-	}
+    @Override
+    protected int method1829() {
+        return this.field1823 - (this.field1822.available() >> (class398.field2815 ? 2 : 1));
+    }
 
-	public class232 method1332() {
-		return this.field2099;
-	}
+    @Override
+    protected void method1822() {
+        short var1 = 256;
+        if (class398.field2815) {
+            var1 = 512;
+        }
 
-	void method1333(String var1) {
-		this.field2102 = true;
-		this.field2100 = var1;
-	}
+        for (int var2 = 0; var2 < var1; ++var2) {
+            int var3 = super.field2805[var2];
+            if ((var3 + 8388608 & -16777216) != 0) {
+                var3 = 8388607 ^ var3 >> 31;
+            }
 
-	public static boolean method1335(int var0) {
-		return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
-	}
+            this.field1824[var2 * 2] = (byte) (var3 >> 8);
+            this.field1824[var2 * 2 + 1] = (byte) (var3 >> 16);
+        }
 
-	public static int method1337(int var0) {
-		return class370.field3103[var0 & 16383];
-	}
+        this.field1822.write(this.field1824, 0, var1 << 1);
+    }
 
-	static final void method1336(class60 var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-		if (Client.field88) {
-			Client.field207 = 32;
-		} else {
-			Client.field207 = 0;
-		}
+    @Override
+    protected void method1830() {
+        if (null != this.field1822) {
+            this.field1822.close();
+            this.field1822 = null;
+        }
 
-		Client.field88 = false;
-		int var8;
-		if (class184.field1735 == 1 || !class30.field467 && class184.field1735 == 4) {
-			if (var5 >= var1 && var5 < var1 + 16 && var6 >= var2 && var6 < var2 + 16) {
-				var0.field677 -= 4;
-				class185.method1024(var0);
-			} else if (var5 >= var1 && var5 < var1 + 16 && var6 >= var2 + var3 - 16 && var6 < var2 + var3) {
-				var0.field677 += 4;
-				class185.method1024(var0);
-			} else if (var5 >= var1 - Client.field207 && var5 < Client.field207 + var1 + 16 && var6 >= var2 + 16 && var6 < var2 + var3 - 16) {
-				var8 = var3 * (var3 - 32) / var4;
-				if (var8 < 8) {
-					var8 = 8;
-				}
+    }
 
-				int var9 = var6 - var2 - 16 - var8 / 2;
-				int var10 = var3 - 32 - var8;
-				var0.field677 = var9 * (var4 - var3) / var10;
-				class185.method1024(var0);
-				Client.field88 = true;
-			}
-		}
-
-		if (Client.field216 != 0) {
-			var8 = var0.field659;
-			if (var5 >= var1 - var8 && var6 >= var2 && var5 < var1 + 16 && var6 <= var3 + var2) {
-				var0.field677 += Client.field216 * 45;
-				class185.method1024(var0);
-			}
-		}
-
-	}
+    @Override
+    protected void method1831() {
+        this.field1822.flush();
+    }
 }

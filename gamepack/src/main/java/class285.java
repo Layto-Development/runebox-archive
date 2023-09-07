@@ -1,40 +1,76 @@
-import java.util.List;
+import java.util.Iterator;
 
-public class class285 extends class218 {
-	public static class215 field2519;
-	static class135 field2520;
-	static class25 field2515;
-	static class344 field2516;
-	static List field2518;
-	public boolean field2517;
+public class class285 implements Iterator {
+    class208 field2087;
+    class70 field2088;
+    class70 field2090;
+    int field2089;
 
-	static {
-		field2516 = new class344(64);
-	}
+    public class285(class208 var1) {
+        this.field2090 = null;
+        this.field2087 = var1;
+        this.method1297();
+    }
 
-	class285() {
-		this.field2517 = false;
-	}
+    void method1297() {
+        this.field2088 = this.field2087.field1680[0].field657;
+        this.field2089 = 1;
+        this.field2090 = null;
+    }
 
-	void method1626(class42 var1) {
-		while (true) {
-			int var3 = var1.method278();
-			if (var3 == 0) {
-				return;
-			}
+    public class70 method1298() {
+        this.method1297();
+        return (class70) this.next();
+    }
 
-			this.method1625(var1, var3);
-		}
-	}
+    @Override
+    public Object next() {
+        class70 var1;
+        if (this.field2088 != this.field2087.field1680[this.field2089 - 1]) {
+            var1 = this.field2088;
+            this.field2088 = var1.field657;
+            this.field2090 = var1;
+            return var1;
+        } else {
+            do {
+                if (this.field2089 >= this.field2087.field1679) {
+                    return null;
+                }
 
-	void method1625(class42 var1, int var2) {
-		if (var2 == 2) {
-			this.field2517 = true;
-		}
+                var1 = this.field2087.field1680[this.field2089++].field657;
+            } while (var1 == this.field2087.field1680[this.field2089 - 1]);
 
-	}
+            this.field2088 = var1.field657;
+            this.field2090 = var1;
+            return var1;
+        }
+    }
 
-	static class12 method1627() {
-		return class12.field365 < class12.field369 ? class225.field2044[++class12.field365 - 1] : null;
-	}
+    @Override
+    public boolean hasNext() {
+        if (this.field2088 != this.field2087.field1680[this.field2089 - 1]) {
+            return true;
+        } else {
+            while (this.field2089 < this.field2087.field1679) {
+                if (this.field2087.field1680[this.field2089++].field657 != this.field2087.field1680[this.field2089 - 1]) {
+                    this.field2088 = this.field2087.field1680[this.field2089 - 1].field657;
+                    return true;
+                }
+
+                this.field2088 = this.field2087.field1680[this.field2089 - 1];
+            }
+
+            return false;
+        }
+    }
+
+    @Override
+    public void remove() {
+        if (this.field2090 == null) {
+            throw new IllegalStateException();
+        } else {
+            this.field2090.method221();
+            this.field2090 = null;
+        }
+    }
 }

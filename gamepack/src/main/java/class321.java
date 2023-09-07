@@ -1,111 +1,139 @@
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import javax.net.ssl.HttpsURLConnection;
-
 public class class321 {
-	static int field2896;
-	final DecimalFormat field2893;
-	final Map field2894;
-	final Map field2895;
+    public final int field2317;
+    final class534[] field2319;
+    public class321 field2327;
+    boolean field2325;
+    boolean field2329;
+    class534 field2316;
+    class534 field2322;
+    class534 field2324;
+    class534[] field2320;
+    class534[] field2321;
+    float[][] field2318;
+    float[][] field2323;
+    float[][] field2326;
+    float[][] field2328;
 
-	public class321() {
-		this.field2894 = new HashMap();
-		this.field2895 = new HashMap();
-		this.field2893 = new DecimalFormat();
-		this.field2893.setMaximumFractionDigits(2);
-	}
+    public class321(int var1, class78 var2, boolean var3) {
+        this.field2322 = new class534();
+        this.field2325 = true;
+        this.field2324 = new class534();
+        this.field2329 = true;
+        this.field2316 = new class534();
+        this.field2317 = var2.method262();
+        this.field2319 = new class534[var1];
+        this.field2320 = new class534[this.field2319.length];
+        this.field2321 = new class534[this.field2319.length];
+        this.field2318 = new float[this.field2319.length][3];
 
-	public void method1814(HttpsURLConnection var1) {
-		Iterator var3 = this.field2894.entrySet().iterator();
+        for (int var4 = 0; var4 < this.field2319.length; ++var4) {
+            this.field2319[var4] = new class534(var2, var3);
+            this.field2318[var4][0] = var2.method266();
+            this.field2318[var4][1] = var2.method266();
+            this.field2318[var4][2] = var2.method266();
+        }
 
-		while (var3.hasNext()) {
-			Entry var4 = (Entry)var3.next();
-			var1.setRequestProperty((String)var4.getKey(), (String)var4.getValue());
-		}
+        this.method1412();
+    }
 
-	}
+    void method1412() {
+        this.field2326 = new float[this.field2319.length][3];
+        this.field2323 = new float[this.field2319.length][3];
+        this.field2328 = new float[this.field2319.length][3];
+        class534 var2;
+        synchronized (class534.field4248) {
+            if (class326.field2367 == 0) {
+                var2 = new class534();
+            } else {
+                class534.field4248[--class326.field2367].method2562();
+                var2 = class534.field4248[class326.field2367];
+            }
+        }
 
-	public Map method1815() {
-		return this.field2894;
-	}
+        class534 var3 = var2;
 
-	public void method1816(String var1, String var2) {
-		if (var1 != null && !var1.isEmpty()) {
-			this.field2894.put(var1, var2 != null ? var2 : "");
-		}
+        for (int var4 = 0; var4 < this.field2319.length; ++var4) {
+            class534 var5 = this.method1422(var4);
+            var3.method2569(var5);
+            var3.method2574();
+            this.field2326[var4] = var3.method2561();
+            this.field2323[var4][0] = var5.field4249[12];
+            this.field2323[var4][1] = var5.field4249[13];
+            this.field2323[var4][2] = var5.field4249[14];
+            this.field2328[var4] = var5.method2568();
+        }
 
-	}
+        var3.method2571();
+    }
 
-	public void method1825(String var1) {
-		if (null != var1 && !var1.isEmpty()) {
-			this.field2894.remove(var1);
-		}
+    class534 method1422(int var1) {
+        return this.field2319[var1];
+    }
 
-	}
+    class534 method1414(int var1) {
+        if (this.field2320[var1] == null) {
+            this.field2320[var1] = new class534(this.method1422(var1));
+            if (null != this.field2327) {
+                this.field2320[var1].method2572(this.field2327.method1414(var1));
+            } else {
+                this.field2320[var1].method2572(class534.field4250);
+            }
+        }
 
-	void method1821(class330 var1, String var2) {
-		String var4 = String.format("%s %s", var1.method1843(), var2);
-		this.method1816("Authorization", var4);
-	}
+        return this.field2320[var1];
+    }
 
-	public void method1817(String var1) {
-		this.method1821(class330.field2911, var1);
-	}
+    class534 method1421(int var1) {
+        if (this.field2321[var1] == null) {
+            this.field2321[var1] = new class534(this.method1414(var1));
+            this.field2321[var1].method2574();
+        }
 
-	public void method1826(String var1) {
-		this.method1821(class330.field2912, var1);
-	}
+        return this.field2321[var1];
+    }
 
-	public void method1820(class272 var1) {
-		this.field2894.put("Content-Type", var1.method1588());
-	}
+    void method1415(class534 var1) {
+        this.field2322.method2569(var1);
+        this.field2325 = true;
+        this.field2329 = true;
+    }
 
-	public void method1818() {
-		this.field2894.remove("Content-Type");
-	}
+    class534 method1416() {
+        return this.field2322;
+    }
 
-	public void method1819(class272 var1) {
-		this.method1823(var1, 1.0F);
-	}
+    class534 method1417() {
+        if (this.field2325) {
+            this.field2324.method2569(this.method1416());
+            if (null != this.field2327) {
+                this.field2324.method2572(this.field2327.method1417());
+            }
 
-	void method1823(class272 var1, float var2) {
-		this.field2895.put(var1, Math.max(0.0F, Math.min(1.0F, var2)));
-		this.method1822();
-	}
+            this.field2325 = false;
+        }
 
-	void method1822() {
-		this.field2894.remove("Accept");
-		if (!this.field2895.isEmpty()) {
-			this.field2894.put("Accept", this.method1824());
-		}
+        return this.field2324;
+    }
 
-	}
+    public class534 method1413(int var1) {
+        if (this.field2329) {
+            this.field2316.method2569(this.method1421(var1));
+            this.field2316.method2572(this.method1417());
+            this.field2329 = false;
+        }
 
-	String method1824() {
-		ArrayList var2 = new ArrayList(this.field2895.entrySet());
-		Collections.sort(var2, new class340(this));
-		StringBuilder var3 = new StringBuilder();
-		Iterator var4 = var2.iterator();
+        return this.field2316;
+    }
 
-		while (var4.hasNext()) {
-			Entry var5 = (Entry)var4.next();
-			if (var3.length() > 0) {
-				var3.append(",");
-			}
+    float[] method1418(int var1) {
+        return this.field2326[var1];
+    }
 
-			var3.append(((class272)var5.getKey()).method1588());
-			float var6 = (Float)var5.getValue();
-			if (var6 < 1.0F) {
-				String var7 = this.field2893.format((double)var6);
-				var3.append(";q=").append(var7);
-			}
-		}
+    float[] method1419(int var1) {
+        return this.field2323[var1];
+    }
 
-		return var3.toString();
-	}
+    float[] method1420(int var1) {
+        return this.field2328[var1];
+    }
 }

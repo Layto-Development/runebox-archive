@@ -1,56 +1,98 @@
-public class class82 extends class218 {
-	public static class344 field857;
-	static class215 field861;
-	static class287 field863;
-	static int field860;
-	static final int[] field856;
-	public int field858;
-	public int field859;
-	public int field862;
+public class class82 {
+    static int[] field712;
 
-	static {
-		field857 = new class344(64);
-		field856 = new int[32];
-		int var0 = 2;
+    static {
+        new Object();
+        field712 = new int[33];
+        field712[0] = 0;
+        int var0 = 2;
 
-		for (int var1 = 0; var1 < 32; ++var1) {
-			field856[var1] = var0 - 1;
-			var0 += var0;
-		}
+        for (int var1 = 1; var1 < 33; ++var1) {
+            field712[var1] = var0 - 1;
+            var0 += var0;
+        }
 
-	}
+    }
 
-	class82() {
-	}
+    class82() throws Throwable {
+    }
 
-	void method547(class42 var1) {
-		while (true) {
-			int var3 = var1.method278();
-			if (var3 == 0) {
-				return;
-			}
+    public static int method330(int var0, int var1) {
+        int var3;
+        for (var3 = 1; var1 > 1; var1 >>= 1) {
+            if ((var1 & 1) != 0) {
+                var3 *= var0;
+            }
 
-			this.method548(var1, var3);
-		}
-	}
+            var0 *= var0;
+        }
 
-	void method548(class42 var1, int var2) {
-		if (var2 == 1) {
-			this.field858 = var1.method327();
-			this.field859 = var1.method278();
-			this.field862 = var1.method278();
-		}
+        if (var1 == 1) {
+            return var0 * var3;
+        } else {
+            return var3;
+        }
+    }
 
-	}
+    public static int method329(int var0) {
+        return field712[var0];
+    }
 
-	public static int method549(CharSequence var0) {
-		int var2 = var0.length();
-		int var3 = 0;
+    public static int method331(int var0, int var1, int var2) {
+        int var4 = method329(var2 - var1 + 1);
+        var4 <<= var1;
+        return var0 & ~var4;
+    }
 
-		for (int var4 = 0; var4 < var2; ++var4) {
-			var3 = (var3 << 5) - var3 + var0.charAt(var4);
-		}
+    public static int method333(int var0, int var1, int var2) {
+        int var4 = method329(var2 - var1 + 1);
+        var4 <<= var1;
+        var0 |= var4;
+        return var0;
+    }
 
-		return var3;
-	}
+    public static int method332(int var0) {
+        --var0;
+        var0 |= var0 >>> 1;
+        var0 |= var0 >>> 2;
+        var0 |= var0 >>> 4;
+        var0 |= var0 >>> 8;
+        var0 |= var0 >>> 16;
+        return var0 + 1;
+    }
+
+    public static int method327(int var0) {
+        int var2 = 0;
+        if (var0 < 0 || var0 >= 65536) {
+            var0 >>>= 16;
+            var2 += 16;
+        }
+
+        if (var0 >= 256) {
+            var0 >>>= 8;
+            var2 += 8;
+        }
+
+        if (var0 >= 16) {
+            var0 >>>= 4;
+            var2 += 4;
+        }
+
+        if (var0 >= 4) {
+            var0 >>>= 2;
+            var2 += 2;
+        }
+
+        if (var0 >= 1) {
+            var0 >>>= 1;
+            ++var2;
+        }
+
+        return var2 + var0;
+    }
+
+    public static int method328(int var0, int var1) {
+        int var3 = var0 >>> 31;
+        return (var0 + var3) / var1 - var3;
+    }
 }

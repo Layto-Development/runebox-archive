@@ -1,43 +1,22 @@
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+public class class339 {
+    public static final boolean[] field2450;
+    public static int[] field2452;
+    static class539 field2451;
 
-public class class339 implements class532 {
-	Map field2956;
-	final class390 field2955;
+    static {
+        field2450 = new boolean[]{true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false};
+        field2452 = new int[99];
+        int var0 = 0;
 
-	public class339(class390 var1) {
-		this.field2955 = var1;
-	}
+        for (int var1 = 0; var1 < 99; ++var1) {
+            int var2 = var1 + 1;
+            int var3 = (int) ((double) var2 + 300.0D * Math.pow(2.0D, (double) var2 / 7.0D));
+            var0 += var3;
+            field2452[var1] = var0 / 4;
+        }
 
-	public int method2566(int var1) {
-		if (null != this.field2956) {
-			class322 var3 = (class322)this.field2956.get(var1);
-			if (var3 != null) {
-				return (Integer)var3.field2897;
-			}
-		}
+    }
 
-		return (Integer)this.field2955.method2048(var1);
-	}
-
-	public void method2565(int var1, Object var2) {
-		if (null == this.field2956) {
-			this.field2956 = new HashMap();
-			this.field2956.put(var1, new class322(var1, var2));
-		} else {
-			class322 var4 = (class322)this.field2956.get(var1);
-			if (null == var4) {
-				this.field2956.put(var1, new class322(var1, var2));
-			} else {
-				var4.field2897 = var2;
-			}
-		}
-
-	}
-
-	public Iterator iterator() {
-		return this.field2956 == null ? Collections.emptyList().iterator() : this.field2956.values().iterator();
-	}
+    class339() throws Throwable {
+    }
 }

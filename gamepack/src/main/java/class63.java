@@ -1,120 +1,136 @@
-public class class63 extends class218 {
-	public static class215 field806;
-	public static class344 field807;
-	static int[] field804;
-	class526 field805;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 
-	static {
-		field807 = new class344(64);
-	}
+public class class63 {
+    static byte[][] field626;
+    static byte[][] field627;
+    static byte[][] field628;
+    static byte[][] field629;
+    static int field618;
+    static int field619;
+    static int field620;
+    static int field621;
+    static int field622;
+    static int field623;
+    static int field625;
+    static int field630;
+    static ArrayList<Integer> field624;
 
-	class63() {
-	}
+    static {
+        field630 = 0;
+        field620 = 0;
+        field621 = 0;
+        field622 = 0;
+        field618 = 1000;
+        field623 = 250;
+        field619 = 100;
+        field625 = 50;
+        field626 = new byte[1000][];
+        field627 = new byte[250][];
+        field628 = new byte[100][];
+        field629 = new byte[50][];
+        field624 = new ArrayList<Integer>();
+        method182();
+        new HashMap();
+    }
 
-	void method476() {
-	}
+    class63() throws Throwable {
+    }
 
-	void method477(class42 var1) {
-		while (true) {
-			int var3 = var1.method278();
-			if (var3 == 0) {
-				return;
-			}
+    public static void method184(int[] var0, int[] var1) {
+        if (null != var0 && var1 != null) {
+            class186.field1534 = var0;
+            class86.field736 = new int[var0.length];
+            class130.field1151 = new byte[var0.length][][];
 
-			this.method480(var1, var3);
-		}
-	}
+            for (int var3 = 0; var3 < class186.field1534.length; ++var3) {
+                class130.field1151[var3] = new byte[var1[var3]][];
+                field624.add(var0[var3]);
+            }
 
-	void method480(class42 var1, int var2) {
-		if (var2 == 249) {
-			this.field805 = class475.method2299(var1, this.field805);
-		}
+            Collections.sort(field624);
+        } else {
+            class186.field1534 = null;
+            class86.field736 = null;
+            class130.field1151 = null;
+            method182();
+        }
+    }
 
-	}
+    static void method182() {
+        field624.clear();
+        field624.add(100);
+        field624.add(5000);
+        field624.add(10000);
+        field624.add(30000);
+    }
 
-	public int method478(int var1, int var2) {
-		return class57.method420(this.field805, var1, var2);
-	}
+    public static synchronized byte[] method181(int var0, boolean var1) {
+        byte[] var5;
+        if ((var0 == 100 || var0 < 100 && var1) && field630 > 0) {
+            var5 = field626[--field630];
+            field626[field630] = null;
+            return var5;
+        } else if ((var0 == 5000 || var0 < 5000 && var1) && field620 > 0) {
+            var5 = field627[--field620];
+            field627[field620] = null;
+            return var5;
+        } else if ((var0 == 10000 || var0 < 10000 && var1) && field621 > 0) {
+            var5 = field628[--field621];
+            field628[field621] = null;
+            return var5;
+        } else if ((var0 == 30000 || var0 < 30000 && var1) && field622 > 0) {
+            var5 = field629[--field622];
+            field629[field622] = null;
+            return var5;
+        } else {
+            int var3;
+            if (null != class130.field1151) {
+                for (var3 = 0; var3 < class186.field1534.length; ++var3) {
+                    if ((var0 == class186.field1534[var3] || var0 < class186.field1534[var3] && var1) && class86.field736[var3] > 0) {
+                        byte[] var4 = class130.field1151[var3][--class86.field736[var3]];
+                        class130.field1151[var3][class86.field736[var3]] = null;
+                        return var4;
+                    }
+                }
+            }
 
-	public String method479(int var1, String var2) {
-		class526 var5 = this.field805;
-		String var4;
-		if (var5 == null) {
-			var4 = var2;
-		} else {
-			class509 var6 = (class509)var5.method2543((long)var1);
-			if (null == var6) {
-				var4 = var2;
-			} else {
-				var4 = (String)var6.field4186;
-			}
-		}
+            if (var1 && null != class186.field1534) {
+                for (var3 = 0; var3 < class186.field1534.length; ++var3) {
+                    if (var0 <= class186.field1534[var3] && class86.field736[var3] < class130.field1151[var3].length) {
+                        return new byte[class186.field1534[var3]];
+                    }
+                }
+            }
 
-		return var4;
-	}
+            return new byte[var0];
+        }
+    }
 
-	public static class409 method481(int var0) {
-		class409 var2 = (class409)class409.field3413.method1890((long)var0);
-		if (var2 != null) {
-			return var2;
-		} else {
-			byte[] var3 = class409.field3425.method1212(13, var0);
-			var2 = new class409();
-			var2.field3415 = var0;
-			if (var3 != null) {
-				var2.method2108(new class42(var3));
-			}
+    public static synchronized byte[] method183(int var0) {
+        return method181(var0, false);
+    }
 
-			class409.field3413.method1889(var2, (long)var0);
-			return var2;
-		}
-	}
+    public static synchronized void method185(byte[] var0) {
+        if (var0.length == 100 && field630 < field618) {
+            field626[++field630 - 1] = var0;
+        } else if (var0.length == 5000 && field620 < field623) {
+            field627[++field620 - 1] = var0;
+        } else if (var0.length == 10000 && field621 < field619) {
+            field628[++field621 - 1] = var0;
+        } else if (var0.length == 30000 && field622 < field625) {
+            field629[++field622 - 1] = var0;
+        } else {
+            if (null != class130.field1151) {
+                for (int var2 = 0; var2 < class186.field1534.length; ++var2) {
+                    if (class186.field1534[var2] == var0.length && class86.field736[var2] < class130.field1151[var2].length) {
+                        class130.field1151[var2][class86.field736[var2]++] = var0;
+                        return;
+                    }
+                }
+            }
 
-	static final int method483() {
-		if (class176.field1701.method2487()) {
-			return class358.field3038;
-		} else {
-			int var1 = class454.method2262(class375.field3180, class196.field1796, class358.field3038);
-			return var1 - class463.field3989 < 800 && (class38.field513[class358.field3038][class375.field3180 >> 7][class196.field1796 >> 7] & 4) != 0 ? class358.field3038 : 3;
-		}
-	}
-
-	static final void method482(class60 var0) {
-		int var2 = var0.field670;
-		if (var2 == 324) {
-			if (Client.field109 == -1) {
-				Client.field109 = var0.field730;
-				Client.field291 = var0.field678;
-			}
-
-			if (Client.field289.field3054 == 1) {
-				var0.field730 = Client.field109;
-			} else {
-				var0.field730 = Client.field291;
-			}
-
-		} else if (var2 == 325) {
-			if (Client.field109 == -1) {
-				Client.field109 = var0.field730;
-				Client.field291 = var0.field678;
-			}
-
-			if (Client.field289.field3054 == 1) {
-				var0.field730 = Client.field291;
-			} else {
-				var0.field730 = Client.field109;
-			}
-
-		} else if (var2 == 327) {
-			var0.field694 = 150;
-			var0.field712 = (int)(Math.sin((double)Client.field306 / 40.0D) * 256.0D) & 2047;
-			var0.field686 = 5;
-			var0.field687 = 0;
-		} else if (var2 == 328) {
-			var0.field694 = 150;
-			var0.field712 = (int)(Math.sin((double)Client.field306 / 40.0D) * 256.0D) & 2047;
-			var0.field686 = 5;
-			var0.field687 = 1;
-		}
-	}
+        }
+    }
 }

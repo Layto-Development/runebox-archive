@@ -1,347 +1,143 @@
-import java.util.zip.CRC32;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 
-public class class342 extends class215 {
-	static CRC32 field2968;
-	boolean field2961;
-	boolean field2965;
-	class124 field2963;
-	class124 field2971;
-	class288 field2972;
-	int field2962;
-	int field2964;
-	int field2969;
-	int field2970;
-	volatile boolean[] field2966;
-	volatile int field2967;
+public final class class342 {
+    final class121 field2461;
+    final class252 field2458;
+    final class252 field2459;
+    final int field2462;
+    final Comparator field2463;
+    final Map<Object, class328> field2457;
+    final long field2460;
 
-	static {
-		field2968 = new CRC32();
-	}
+    public class342(int var1, class121 var2) {
+        this(-1L, var1, var2);
+    }
 
-	public class342(class124 var1, class124 var2, class288 var3, int var4, boolean var5, boolean var6, boolean var7, boolean var8) {
-		super(var5, var6);
-		this.field2967 = 0;
-		this.field2965 = false;
-		this.field2970 = -1;
-		this.field2961 = false;
-		this.field2963 = var1;
-		this.field2971 = var2;
-		this.field2964 = var4;
-		this.field2965 = var7;
-		this.field2961 = var8;
-		this.field2972 = var3;
-		this.field2972.method1649(this, this.field2964);
-	}
+    class342(long var1, int var3, class121 var4) {
+        this.field2463 = new class504(this);
+        this.field2460 = var1;
+        this.field2462 = var3;
+        this.field2461 = var4;
+        if (this.field2462 == -1) {
+            this.field2457 = new HashMap<Object, class328>(64);
+            this.field2458 = new class252(64, this.field2463);
+            this.field2459 = null;
+        } else {
+            if (this.field2461 == null) {
+                throw new IllegalArgumentException("");
+            }
 
-	public boolean method1880() {
-		return this.field2967 == 1;
-	}
+            this.field2457 = new HashMap<Object, class328>(this.field2462);
+            this.field2458 = new class252(this.field2462, this.field2463);
+            this.field2459 = new class252(this.field2462);
+        }
 
-	public int method1874() {
-		if (this.field2967 == 1 || this.field2961 && this.field2967 == 2) {
-			return 100;
-		} else if (super.field2015 != null) {
-			return 99;
-		} else {
-			int var2 = this.field2972.method1656(255, this.field2964);
-			if (var2 >= 100) {
-				var2 = 99;
-			}
+    }
 
-			return var2;
-		}
-	}
+    boolean method1608() {
+        return this.field2462 != -1;
+    }
 
-	void method1230(int var1) {
-		this.field2972.method1654(this.field2964, var1);
-	}
+    public Object method1609(Object var1, byte var2) {
+        synchronized (this) {
+            if (this.field2460 != -1L) {
+                this.method1611();
+            }
 
-	void method1222(int var1) {
-		if (null != this.field2963 && null != this.field2966 && this.field2966[var1]) {
-			class124 var3 = this.field2963;
-			byte[] var5 = null;
-			synchronized(class146.field1385) {
-				for (class329 var7 = (class329)class146.field1385.method563(); null != var7; var7 = (class329)class146.field1385.method565()) {
-					if ((long)var1 == var7.field3987 && var7.field2909 == var3 && var7.field2908 == 0) {
-						var5 = var7.field2907;
-						break;
-					}
-				}
-			}
+            class328 var4 = this.field2457.get(var1);
+            if (var4 == null) {
+                return null;
+            } else {
+                this.method1612(var4, false);
+                return var4.field2389;
+            }
+        }
+    }
 
-			if (var5 != null) {
-				this.method1883(var3, var1, var5, true);
-			} else {
-				byte[] var6 = var3.method760(var1);
-				this.method1883(var3, var1, var6, true);
-			}
-		} else {
-			this.field2972.method1651(this, this.field2964, var1, super.field2010[var1], (byte)2, true);
-		}
+    public Object method1610(Object var1, Object var2) {
+        synchronized (this) {
+            if (this.field2460 != -1L) {
+                this.method1611();
+            }
 
-	}
+            class328 var5 = this.field2457.get(var1);
+            if (null != var5) {
+                Object var9 = var5.field2389;
+                var5.field2389 = var2;
+                this.method1612(var5, false);
+                return var9;
+            } else {
+                class328 var6;
+                if (this.method1608() && this.field2457.size() == this.field2462) {
+                    var6 = (class328) this.field2459.remove();
+                    this.field2457.remove(var6.field2390);
+                    this.field2458.remove(var6);
+                }
 
-	void method1879() {
-		this.field2967 = 2;
-		super.field2021 = new int[0];
-		super.field2010 = new int[0];
-		super.field2011 = new int[0];
-		super.field2012 = new int[0];
-		super.field2008 = new int[0][];
-		super.field2015 = new Object[0];
-		super.field2017 = new Object[0][];
-	}
+                var6 = new class328(var2, var1);
+                this.field2457.put(var1, var6);
+                this.method1612(var6, true);
+                return null;
+            }
+        }
+    }
 
-	void method1875(int var1, int var2, byte var3) {
-		this.field2962 = var1;
-		this.field2969 = var2;
-		if (this.field2971 != null) {
-			if (var3 == -1) {
-				throw new IllegalStateException();
-			}
+    void method1612(class328 var1, boolean var2) {
+        if (!var2) {
+            this.field2458.remove(var1);
+            if (this.method1608() && !this.field2459.remove(var1)) {
+                throw new IllegalStateException("");
+            }
+        }
 
-			int var4 = this.field2964;
-			class124 var5 = this.field2971;
-			byte[] var7 = null;
-			synchronized(class146.field1385) {
-				for (class329 var9 = (class329)class146.field1385.method563(); null != var9; var9 = (class329)class146.field1385.method565()) {
-					if (var9.field3987 == (long)var4) {
-						if (var3 == -1) {
-							throw new IllegalStateException();
-						}
+        var1.field2391 = System.currentTimeMillis();
+        if (this.method1608()) {
+            switch (this.field2461.field1095) {
+                case 0:
+                    var1.field2392 = var1.field2391;
+                    break;
+                case 1:
+                    ++var1.field2392;
+            }
 
-						if (var5 == var9.field2909) {
-							if (var3 == -1) {
-								throw new IllegalStateException();
-							}
+            this.field2459.add(var1);
+        }
 
-							if (var9.field2908 == 0) {
-								if (var3 == -1) {
-									throw new IllegalStateException();
-								}
+        this.field2458.add(var1);
+    }
 
-								var7 = var9.field2907;
-								break;
-							}
-						}
-					}
-				}
-			}
+    void method1611() {
+        if (this.field2460 == -1L) {
+            throw new IllegalStateException("");
+        } else {
+            long var2 = System.currentTimeMillis() - this.field2460;
 
-			if (null != var7) {
-				if (var3 == -1) {
-					throw new IllegalStateException();
-				}
+            while (!this.field2458.isEmpty()) {
+                class328 var4 = (class328) this.field2458.peek();
+                if (var4.field2391 >= var2) {
+                    return;
+                }
 
-				this.method1883(var5, var4, var7, true);
-			} else {
-				byte[] var8 = var5.method760(var4);
-				this.method1883(var5, var4, var8, true);
-			}
-		} else {
-			this.field2972.method1651(this, 255, this.field2964, this.field2962, (byte)0, true);
-		}
+                this.field2457.remove(var4.field2390);
+                this.field2458.remove(var4);
+                if (this.method1608()) {
+                    this.field2459.remove(var4);
+                }
+            }
 
-	}
+        }
+    }
 
-	void method1876(int var1, byte[] var2, boolean var3, boolean var4) {
-		if (var3) {
-			if (this.field2967 == 1) {
-				throw new RuntimeException();
-			}
+    public void method1607() {
+        synchronized (this) {
+            this.field2457.clear();
+            this.field2458.clear();
+            if (this.method1608()) {
+                this.field2459.clear();
+            }
 
-			if (null != this.field2971) {
-				int var6 = this.field2964;
-				class124 var7 = this.field2971;
-				class329 var8 = new class329();
-				var8.field2908 = 0;
-				var8.field3987 = (long)var6;
-				var8.field2907 = var2;
-				var8.field2909 = var7;
-				synchronized(class146.field1385) {
-					class146.field1385.method567(var8);
-				}
-
-				class69.method501();
-			}
-
-			this.method1235(var2);
-			this.method1881();
-		} else {
-			var2[var2.length - 2] = (byte)(super.field2011[var1] >> 8);
-			var2[var2.length - 1] = (byte)super.field2011[var1];
-			if (null != this.field2963) {
-				class124 var14 = this.field2963;
-				class329 var16 = new class329();
-				var16.field2908 = 0;
-				var16.field3987 = (long)var1;
-				var16.field2907 = var2;
-				var16.field2909 = var14;
-				synchronized(class146.field1385) {
-					class146.field1385.method567(var16);
-				}
-
-				class69.method501();
-				this.field2966[var1] = true;
-			}
-
-			if (var4) {
-				Object[] var15 = super.field2015;
-				Object var17;
-				if (var2 == null) {
-					var17 = null;
-				} else if (var2.length > 136) {
-					class53 var9 = new class53();
-					var9.method1007(var2);
-					var17 = var9;
-				} else {
-					var17 = var2;
-				}
-
-				var15[var1] = var17;
-			}
-		}
-
-	}
-
-	public void method1883(class124 var1, int var2, byte[] var3, boolean var4) {
-		int var6;
-		if (var1 == this.field2971) {
-			if (this.field2967 == 1) {
-				throw new RuntimeException();
-			} else if (null == var3) {
-				this.field2972.method1651(this, 255, this.field2964, this.field2962, (byte)0, true);
-			} else {
-				field2968.reset();
-				field2968.update(var3, 0, var3.length);
-				var6 = (int)field2968.getValue();
-				if (var6 != this.field2962) {
-					this.field2972.method1651(this, 255, this.field2964, this.field2962, (byte)0, true);
-				} else {
-					class42 var12 = new class42(class81.method538(var3));
-					int var13 = var12.method278();
-					if (var13 != 5 && var13 != 6) {
-						throw new RuntimeException(var13 + "," + this.field2964 + "," + var2);
-					} else {
-						int var9 = 0;
-						if (var13 >= 6) {
-							var9 = var12.method282();
-						}
-
-						if (this.field2969 != var9) {
-							this.field2972.method1651(this, 255, this.field2964, this.field2962, (byte)0, true);
-						} else {
-							this.method1235(var3);
-							this.method1881();
-						}
-					}
-				}
-			}
-		} else {
-			if (!var4 && this.field2970 == var2) {
-				this.field2967 = 1;
-			}
-
-			if (null != var3 && var3.length > 2) {
-				field2968.reset();
-				field2968.update(var3, 0, var3.length - 2);
-				var6 = (int)field2968.getValue();
-				int var7 = ((var3[var3.length - 2] & 255) << 8) + (var3[var3.length - 1] & 255);
-				if (var6 == super.field2010[var2] && super.field2011[var2] == var7) {
-					this.field2966[var2] = true;
-					if (var4) {
-						Object[] var8 = super.field2015;
-						Object var10;
-						if (var3 == null) {
-							var10 = null;
-						} else if (var3.length > 136) {
-							class53 var11 = new class53();
-							var11.method1007(var3);
-							var10 = var11;
-						} else {
-							var10 = var3;
-						}
-
-						var8[var2] = var10;
-					}
-
-				} else {
-					this.field2966[var2] = false;
-					if (this.field2965 || var4) {
-						this.field2972.method1651(this, this.field2964, var2, super.field2010[var2], (byte)2, var4);
-					}
-
-				}
-			} else {
-				this.field2966[var2] = false;
-				if (this.field2965 || var4) {
-					this.field2972.method1651(this, this.field2964, var2, super.field2010[var2], (byte)2, var4);
-				}
-
-			}
-		}
-	}
-
-	void method1881() {
-		this.field2966 = new boolean[super.field2015.length];
-
-		int var2;
-		for (var2 = 0; var2 < this.field2966.length; ++var2) {
-			this.field2966[var2] = false;
-		}
-
-		if (null == this.field2963) {
-			this.field2967 = 1;
-		} else {
-			this.field2970 = -1;
-
-			for (var2 = 0; var2 < this.field2966.length; ++var2) {
-				if (super.field2012[var2] > 0) {
-					class52.method387(var2, this.field2963, this);
-					this.field2970 = var2;
-				}
-			}
-
-			if (this.field2970 == -1) {
-				this.field2967 = 1;
-			}
-
-		}
-	}
-
-	int method1218(int var1) {
-		if (null != super.field2015[var1]) {
-			return 100;
-		} else {
-			return this.field2966[var1] ? 100 : this.field2972.method1656(this.field2964, var1);
-		}
-	}
-
-	public boolean method1877(int var1) {
-		return this.field2966[var1];
-	}
-
-	public boolean method1878(int var1) {
-		return this.method1223(var1) != null;
-	}
-
-	public int method1882() {
-		int var2 = 0;
-		int var3 = 0;
-
-		int var4;
-		for (var4 = 0; var4 < super.field2015.length; ++var4) {
-			if (super.field2012[var4] > 0) {
-				var2 += 100;
-				var3 += this.method1218(var4);
-			}
-		}
-
-		if (var2 == 0) {
-			return 100;
-		} else {
-			var4 = var3 * 100 / var2;
-			return var4;
-		}
-	}
+        }
+    }
 }

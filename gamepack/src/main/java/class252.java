@@ -1,68 +1,190 @@
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.util.*;
 
-public class class252 implements class427 {
-	final MessageDigest field2352;
+public class class252 extends AbstractQueue {
+    static class188 field1914;
+    final Comparator field1912;
+    class62[] field1911;
+    int field1909;
+    int field1913;
+    Map<Object, class62> field1910;
 
-	class252(class362 var1) {
-		this.field2352 = this.method1488();
-	}
+    public class252(int var1) {
+        this(var1, null);
+    }
 
-	boolean method1490(int var1, String var2, long var3) {
-		byte[] var5 = this.method1487(var2, var3);
-		return method1486(var5) >= var1;
-	}
+    public class252(int var1, Comparator var2) {
+        this.field1909 = 0;
+        this.field1911 = new class62[var1];
+        this.field1910 = new HashMap<Object, class62>();
+        this.field1912 = var2;
+    }
 
-	byte[] method1487(String var1, long var2) {
-		StringBuilder var4 = new StringBuilder();
-		var4.append(var1).append(Long.toHexString(var2));
-		this.field2352.reset();
+    void method1125() {
+        int var2 = (this.field1911.length << 1) + 1;
+        this.field1911 = Arrays.copyOf(this.field1911, var2);
+    }
 
-		try {
-			this.field2352.update(var4.toString().getBytes("UTF-8"));
-		} catch (UnsupportedEncodingException var6) {
-			var6.printStackTrace();
-		}
+    @Override
+    public int size() {
+        return this.field1913;
+    }
 
-		return this.field2352.digest();
-	}
+    @Override
+    public boolean offer(Object var1) {
+        if (this.field1910.containsKey(var1)) {
+            throw new IllegalArgumentException("");
+        } else {
+            ++this.field1909;
+            int var2 = this.field1913;
+            if (var2 >= this.field1911.length) {
+                this.method1125();
+            }
 
-	MessageDigest method1488() {
-		try {
-			return MessageDigest.getInstance("SHA-256");
-		} catch (NoSuchAlgorithmException var2) {
-			var2.printStackTrace();
-			return null;
-		}
-	}
+            ++this.field1913;
+            if (var2 == 0) {
+                this.field1911[0] = new class62(var1, 0);
+                this.field1910.put(var1, this.field1911[0]);
+            } else {
+                this.field1911[var2] = new class62(var1, var2);
+                this.field1910.put(var1, this.field1911[var2]);
+                this.method1126(var2);
+            }
 
-	static int method1486(byte[] var0) {
-		int var1 = 0;
-		byte[] var2 = var0;
+            return true;
+        }
+    }
 
-		for (int var3 = 0; var3 < var2.length; ++var3) {
-			byte var4 = var2[var3];
-			int var5 = method1489(var4);
-			var1 += var5;
-			if (var5 != 8) {
-				break;
-			}
-		}
+    @Override
+    public Object peek() {
+        return this.field1913 == 0 ? null : this.field1911[0].field616;
+    }
 
-		return var1;
-	}
+    @Override
+    public Object poll() {
+        if (this.field1913 == 0) {
+            return null;
+        } else {
+            ++this.field1909;
+            Object var1 = this.field1911[0].field616;
+            this.field1910.remove(var1);
+            --this.field1913;
+            if (this.field1913 == 0) {
+                this.field1911[this.field1913] = null;
+            } else {
+                this.field1911[0] = this.field1911[this.field1913];
+                this.field1911[0].field615 = 0;
+                this.field1911[this.field1913] = null;
+                this.method1127(0);
+            }
 
-	static int method1489(byte var0) {
-		int var1 = 0;
-		if (var0 == 0) {
-			var1 = 8;
-		} else {
-			for (int var2 = var0 & 255; (var2 & 128) == 0; var2 <<= 1) {
-				++var1;
-			}
-		}
+            return var1;
+        }
+    }
 
-		return var1;
-	}
+    @Override
+    public boolean remove(Object var1) {
+        class62 var2 = this.field1910.remove(var1);
+        if (var2 == null) {
+            return false;
+        } else {
+            ++this.field1909;
+            --this.field1913;
+            if (this.field1913 == var2.field615) {
+                this.field1911[this.field1913] = null;
+                return true;
+            } else {
+                class62 var3 = this.field1911[this.field1913];
+                this.field1911[this.field1913] = null;
+                this.field1911[var2.field615] = var3;
+                this.field1911[var2.field615].field615 = var2.field615;
+                this.method1127(var2.field615);
+                if (this.field1911[var2.field615] == var3) {
+                    this.method1126(var2.field615);
+                }
+
+                return true;
+            }
+        }
+    }
+
+    void method1126(int var1) {
+        class62 var3;
+        int var4;
+        for (var3 = this.field1911[var1]; var1 > 0; var1 = var4) {
+            var4 = var1 - 1 >>> 1;
+            class62 var5 = this.field1911[var4];
+            if (null != this.field1912) {
+                if (this.field1912.compare(var3.field616, var5.field616) >= 0) {
+                    break;
+                }
+            } else if (((Comparable) var3.field616).compareTo(var5.field616) >= 0) {
+                break;
+            }
+
+            this.field1911[var1] = var5;
+            this.field1911[var1].field615 = var1;
+        }
+
+        this.field1911[var1] = var3;
+        this.field1911[var1].field615 = var1;
+    }
+
+    void method1127(int var1) {
+        class62 var3 = this.field1911[var1];
+
+        int var9;
+        for (int var4 = this.field1913 >>> 1; var1 < var4; var1 = var9) {
+            int var5 = 1 + (var1 << 1);
+            class62 var6 = this.field1911[var5];
+            int var7 = (var1 << 1) + 2;
+            class62 var8 = this.field1911[var7];
+            if (this.field1912 != null) {
+                if (var7 < this.field1913 && this.field1912.compare(var6.field616, var8.field616) > 0) {
+                    var9 = var7;
+                } else {
+                    var9 = var5;
+                }
+            } else if (var7 < this.field1913 && ((Comparable) var6.field616).compareTo(var8.field616) > 0) {
+                var9 = var7;
+            } else {
+                var9 = var5;
+            }
+
+            if (this.field1912 != null) {
+                if (this.field1912.compare(var3.field616, this.field1911[var9].field616) <= 0) {
+                    break;
+                }
+            } else if (((Comparable) var3.field616).compareTo(this.field1911[var9].field616) <= 0) {
+                break;
+            }
+
+            this.field1911[var1] = this.field1911[var9];
+            this.field1911[var1].field615 = var1;
+        }
+
+        this.field1911[var1] = var3;
+        this.field1911[var1].field615 = var1;
+    }
+
+    @Override
+    public boolean contains(Object var1) {
+        return this.field1910.containsKey(var1);
+    }
+
+    @Override
+    public Object[] toArray() {
+        Object[] var1 = super.toArray();
+        if (null != this.field1912) {
+            Arrays.sort(var1, this.field1912);
+        } else {
+            Arrays.sort(var1);
+        }
+
+        return var1;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new class425(this);
+    }
 }

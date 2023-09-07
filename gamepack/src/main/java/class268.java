@@ -1,26 +1,23 @@
 import java.util.Comparator;
 
-public abstract class class268 implements Comparator {
-	static class115 field2420;
-	Comparator field2421;
+public class class268 implements Comparator {
+    static Client field1973;
+    static class539 field1974;
 
-	protected class268() {
-	}
+    class268() {
+    }
 
-	final void method1567(Comparator var1) {
-		if (this.field2421 == null) {
-			this.field2421 = var1;
-		} else if (this.field2421 instanceof class268) {
-			((class268)this.field2421).method1567(var1);
-		}
+    int method1159(class159 var1, class159 var2) {
+        return var1.method792() - var2.method792();
+    }
 
-	}
+    @Override
+    public int compare(Object var1, Object var2) {
+        return this.method1159((class159) var1, (class159) var2);
+    }
 
-	protected final int method1568(class71 var1, class71 var2) {
-		return this.field2421 == null ? 0 : this.field2421.compare(var1, var2);
-	}
-
-	public boolean equals(Object var1) {
-		return super.equals(var1);
-	}
+    @Override
+    public boolean equals(Object var1) {
+        return super.equals(var1);
+    }
 }

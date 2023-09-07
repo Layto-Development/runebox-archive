@@ -1,18 +1,21 @@
-public abstract class class502 {
-	public int field4161;
-	public int field4162;
-	public int field4163;
-	public int field4164;
+public class class502 extends class438 {
+    // $FF: synthetic field
+    final class423 this$0;
+    int field3690;
+    String field3689;
 
-	protected class502() {
-	}
+    class502(class423 var1) {
+        this.this$0 = var1;
+    }
 
-	protected abstract boolean method2421(int var1, int var2, int var3, class76 var4);
+    @Override
+    void method2006(class78 var1) {
+        this.field3690 = var1.method264();
+        this.field3689 = var1.method268();
+    }
 
-	static void method2420() {
-		if (Client.field241) {
-			class366.method1968(class82.field863, false);
-		}
-
-	}
+    @Override
+    void method2005(class133 var1) {
+        var1.method607(this.field3690, this.field3689);
+    }
 }

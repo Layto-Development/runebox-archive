@@ -1,39 +1,50 @@
+import java.io.File;
+import java.io.RandomAccessFile;
+
 public class class153 {
-	int[] field1433;
-	short[] field1434;
+    public static class435 field1320;
+    static class539[] field1321;
 
-	public class153(class375 var1) {
-		this.field1433 = new int[8];
-		this.field1434 = new short[8];
-		int var2 = 0;
-		if (var1.method2003()) {
-			var2 = var1.method2004().length;
-			System.arraycopy(var1.method2004(), 0, this.field1433, 0, var2);
-			System.arraycopy(var1.method2006(), 0, this.field1434, 0, var2);
-		}
+    class153() throws Throwable {
+    }
 
-		for (int var3 = var2; var3 < 8; ++var3) {
-			this.field1433[var3] = -1;
-			this.field1434[var3] = -1;
-		}
+    static File method720(String var0) {
+        if (!class66.field634) {
+            throw new RuntimeException("");
+        } else {
+            File var2 = class66.field636.get(var0);
+            if (var2 != null) {
+                return var2;
+            } else {
+                File var3 = new File(class66.field635, var0);
+                RandomAccessFile var4 = null;
 
-	}
+                try {
+                    File var5 = new File(var3.getParent());
+                    if (!var5.exists()) {
+                        throw new RuntimeException("");
+                    } else {
+                        var4 = new RandomAccessFile(var3, "rw");
+                        int var6 = var4.read();
+                        var4.seek(0L);
+                        var4.write(var6);
+                        var4.seek(0L);
+                        var4.close();
+                        class66.field636.put(var0, var3);
+                        return var3;
+                    }
+                } catch (Exception var8) {
+                    try {
+                        if (var4 != null) {
+                            var4.close();
+                            var4 = null;
+                        }
+                    } catch (Exception var7) {
+                    }
 
-	public int[] method879() {
-		return this.field1433;
-	}
-
-	public short[] method880() {
-		return this.field1434;
-	}
-
-	public void method881(int var1, int var2, short var3) {
-		this.field1433[var1] = var2;
-		this.field1434[var1] = var3;
-	}
-
-	public void method882(int[] var1, short[] var2) {
-		this.field1433 = var1;
-		this.field1434 = var2;
-	}
+                    throw new RuntimeException();
+                }
+            }
+        }
+    }
 }

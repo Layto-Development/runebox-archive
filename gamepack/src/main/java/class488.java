@@ -1,127 +1,209 @@
-public class class488 {
-	static class253 field4114;
-	static class431 field4112;
-	static int[] field4115;
-	boolean field4110;
-	boolean[] field4113;
-	class345 field4116;
-	int[] field4111;
-	int[] field4117;
+public class class488 implements class234 {
+    public static final class488 field3497;
+    public static final class488 field3498;
+    public static final class488 field3499;
+    public static final class488 field3500;
+    public static final class488 field3501;
+    public static final class488 field3502;
+    public static final class488 field3503;
+    public static final class488 field3504;
+    public static final class488 field3505;
+    public static final class488 field3507;
+    public static final class488 field3508;
+    public static final class488 field3509;
+    public static final class488 field3510;
+    public static final class488 field3511;
+    public static final class488 field3512;
+    public static final class488 field3513;
+    public static final class488 field3514;
+    public static final class488 field3515;
+    public static final class488 field3517;
+    public static final class488 field3519;
+    public static final class488 field3520;
+    public static final class488 field3521;
+    public static final class488 field3522;
+    public static final class488 field3523;
+    public static final class488 field3524;
+    public static final class488 field3525;
+    public static final class488 field3526;
+    public static final class488 field3527;
+    public static final class488 field3529;
+    public static final class488 field3530;
+    public static final class488 field3531;
+    public static final class488 field3532;
+    public static final class488 field3533;
+    public static final class488 field3534;
+    public static final class488 field3535;
+    public static final class488 field3536;
+    public static final class488 field3537;
+    public static final class488 field3538;
+    public static final class488 field3540;
+    public static final class488 field3541;
+    public static final class488 field3542;
+    public static final class488 field3543;
+    public static final class488 field3544;
+    public static final class488 field3545;
+    public static final class488 field3546;
+    public static final class488 field3547;
+    public static final class488 field3548;
+    public static final class488 field3549;
+    public static final class488 field3550;
+    public static final class488 field3551;
+    public static final class488 field3552;
+    public static final class488 field3553;
+    public static final class488 field3554;
+    public static final class488 field3555;
+    public static final class488 field3556;
+    public static final class488 field3558;
+    public static final class488 field3559;
+    public static final class488 field3560;
+    public static final class488 field3561;
+    public static final class488 field3562;
+    public static final class488 field3563;
+    public static final class488 field3564;
+    public static final class488 field3565;
+    public static final class488 field3566;
+    public static final class488 field3568;
+    public static final class488 field3569;
+    public static final class488 field3570;
+    public static final class488 field3571;
+    public static final class488 field3572;
+    public static final class488 field3573;
+    public static final class488 field3574;
+    public static final class488 field3575;
+    public static final class488 field3576;
+    public static final class488 field3577;
+    public static final class488 field3578;
+    public static final class488 field3579;
+    public static final class488 field3580;
+    public static final class488 field3581;
+    public static final class488 field3582;
+    public static final class488 field3583;
+    public static final class488 field3584;
+    public static final class488 field3585;
+    public static final class488 field3586;
+    public static final class488 field3587;
+    public static final class488 field3588;
+    public static final class488 field3589;
+    public static final class488 field3590;
+    public static final class488 field3591;
+    public static final class488 field3592;
+    public static final class488 field3593;
+    public static final class488 field3594;
+    public static final class488 field3595;
+    public static final class488 field3596;
+    static final class488 field3506;
+    static final class488 field3518;
+    static final class488 field3528;
+    static final class488 field3539;
+    static final class488 field3557;
 
-	class488(class345 var1, boolean var2, int[] var3, int[] var4, boolean[] var5) {
-		this.field4116 = var1;
-		this.field4110 = var2;
-		this.field4111 = var3;
-		this.field4117 = var4;
-		this.field4113 = var5;
-	}
+    static {
+        field3557 = new class488(0, 2);
+        field3498 = new class488(1, 8);
+        field3499 = new class488(2, -1);
+        field3500 = new class488(3, 7);
+        field3552 = new class488(4, -1);
+        field3530 = new class488(5, 8);
+        field3502 = new class488(6, 8);
+        field3574 = new class488(7, 4);
+        field3505 = new class488(8, 0);
+        field3506 = new class488(9, -1);
+        field3507 = new class488(10, 3);
+        field3580 = new class488(11, -1);
+        field3559 = new class488(12, 15);
+        field3510 = new class488(13, 3);
+        field3511 = new class488(14, 16);
+        field3509 = new class488(15, -1);
+        field3513 = new class488(16, 8);
+        field3543 = new class488(17, 0);
+        field3515 = new class488(18, 15);
+        field3504 = new class488(19, -1);
+        field3596 = new class488(20, 3);
+        field3585 = new class488(21, -1);
+        field3519 = new class488(22, -2);
+        field3520 = new class488(23, 4);
+        field3521 = new class488(24, 0);
+        field3531 = new class488(25, 7);
+        field3523 = new class488(26, 8);
+        field3524 = new class488(27, 9);
+        field3525 = new class488(28, 7);
+        field3497 = new class488(29, -2);
+        field3528 = new class488(30, 2);
+        field3548 = new class488(31, 3);
+        field3529 = new class488(32, 8);
+        field3535 = new class488(33, 6);
+        field3586 = new class488(34, 3);
+        field3542 = new class488(35, 3);
+        field3533 = new class488(36, 7);
+        field3534 = new class488(37, -1);
+        field3503 = new class488(38, -1);
+        field3536 = new class488(39, 7);
+        field3537 = new class488(40, 0);
+        field3538 = new class488(41, -1);
+        field3539 = new class488(42, -1);
+        field3501 = new class488(43, -1);
+        field3541 = new class488(44, 7);
+        field3518 = new class488(45, 7);
+        field3540 = new class488(46, 6);
+        field3549 = new class488(47, 1);
+        field3545 = new class488(48, 3);
+        field3595 = new class488(49, -1);
+        field3547 = new class488(50, 7);
+        field3508 = new class488(51, 11);
+        field3512 = new class488(52, 4);
+        field3550 = new class488(53, 3);
+        field3551 = new class488(54, 15);
+        field3544 = new class488(55, 8);
+        field3553 = new class488(56, 6);
+        field3554 = new class488(57, -1);
+        field3555 = new class488(58, 11);
+        field3556 = new class488(59, 3);
+        field3558 = new class488(60, 13);
+        field3592 = new class488(61, 3);
+        field3583 = new class488(62, 2);
+        field3560 = new class488(63, 3);
+        field3561 = new class488(64, 2);
+        field3562 = new class488(65, 2);
+        field3563 = new class488(66, 3);
+        field3564 = new class488(67, -1);
+        field3565 = new class488(68, 8);
+        field3566 = new class488(69, 11);
+        field3517 = new class488(70, -1);
+        field3568 = new class488(71, 7);
+        field3569 = new class488(72, -1);
+        field3570 = new class488(73, 7);
+        field3571 = new class488(74, -1);
+        field3572 = new class488(75, 0);
+        field3573 = new class488(76, 8);
+        field3589 = new class488(77, 15);
+        field3575 = new class488(78, 11);
+        field3576 = new class488(79, 7);
+        field3577 = new class488(80, 3);
+        field3578 = new class488(81, 3);
+        field3579 = new class488(82, 10);
+        field3526 = new class488(83, -1);
+        field3581 = new class488(84, -1);
+        field3582 = new class488(85, -2);
+        field3532 = new class488(86, -1);
+        field3584 = new class488(87, -1);
+        field3522 = new class488(88, 4);
+        field3546 = new class488(89, 8);
+        field3587 = new class488(90, 5);
+        field3588 = new class488(91, 2);
+        field3590 = new class488(92, 4);
+        field3527 = new class488(93, 16);
+        field3591 = new class488(94, 4);
+        field3514 = new class488(95, 22);
+        field3593 = new class488(96, 1);
+        field3594 = new class488(97, 1);
+    }
 
-	void method2404(float[] var1, int var2) {
-		int var4 = this.field4116.field2982.length;
-		class345 var10000 = this.field4116;
-		int var5 = class345.field2981[this.field4116.field2980 - 1];
-		boolean[] var6 = this.field4113;
-		this.field4113[1] = true;
-		var6[0] = true;
+    final int field3516;
+    final int field3567;
 
-		int var7;
-		int var8;
-		int var9;
-		int var10;
-		int var11;
-		for (var7 = 2; var7 < var4; ++var7) {
-			var8 = this.field4116.method1895(this.field4111, var7);
-			var9 = this.field4116.method1892(this.field4111, var7);
-			var10 = this.field4116.method1893(this.field4111[var8], this.field4117[var8], this.field4111[var9], this.field4117[var9], this.field4111[var7]);
-			var11 = this.field4117[var7];
-			int var12 = var5 - var10;
-			int var14 = (var12 < var10 ? var12 : var10) << 1;
-			if (var11 != 0) {
-				boolean[] var15 = this.field4113;
-				this.field4113[var9] = true;
-				var15[var8] = true;
-				this.field4113[var7] = true;
-				if (var11 >= var14) {
-					this.field4117[var7] = var12 > var10 ? var11 - var10 + var10 : var12 + (var10 - var11) - 1;
-				} else {
-					this.field4117[var7] = (var11 & 1) != 0 ? var10 - (var11 + 1) / 2 : var10 + var11 / 2;
-				}
-			} else {
-				this.field4113[var7] = false;
-				this.field4117[var7] = var10;
-			}
-		}
-
-		this.method2406(0, var4 - 1);
-		var7 = 0;
-		var8 = this.field4116.field2980 * this.field4117[0];
-
-		for (var9 = 1; var9 < var4; ++var9) {
-			if (this.field4113[var9]) {
-				var10 = this.field4111[var9];
-				var11 = this.field4117[var9] * this.field4116.field2980;
-				this.field4116.method1891(var7, var8, var10, var11, var1, var2);
-				if (var10 >= var2) {
-					return;
-				}
-
-				var7 = var10;
-				var8 = var11;
-			}
-		}
-
-		var10000 = this.field4116;
-		float var17 = class345.field2983[var8];
-
-		for (var10 = var7; var10 < var2; ++var10) {
-			var1[var10] *= var17;
-		}
-
-	}
-
-	boolean method2405() {
-		return this.field4110;
-	}
-
-	void method2406(int var1, int var2) {
-		if (var1 < var2) {
-			int var4 = var1;
-			int var5 = this.field4111[var1];
-			int var6 = this.field4117[var1];
-			boolean var7 = this.field4113[var1];
-
-			for (int var8 = var1 + 1; var8 <= var2; ++var8) {
-				int var9 = this.field4111[var8];
-				if (var9 < var5) {
-					this.field4111[var4] = var9;
-					this.field4117[var4] = this.field4117[var8];
-					this.field4113[var4] = this.field4113[var8];
-					++var4;
-					this.field4111[var8] = this.field4111[var4];
-					this.field4117[var8] = this.field4117[var4];
-					this.field4113[var8] = this.field4113[var4];
-				}
-			}
-
-			this.field4111[var4] = var5;
-			this.field4117[var4] = var6;
-			this.field4113[var4] = var7;
-			this.method2406(var1, var4 - 1);
-			this.method2406(var4 + 1, var2);
-		}
-	}
-
-	static int method2403(char var0, class168 var1) {
-		int var3 = var0 << 4;
-		if (Character.isUpperCase(var0) || Character.isTitleCase(var0)) {
-			var0 = Character.toLowerCase(var0);
-			var3 = 1 + (var0 << 4);
-		}
-
-		if (var0 == 241 && var1 == class168.field1633) {
-			var3 = 1762;
-		}
-
-		return var3;
-	}
+    class488(int var1, int var2) {
+        this.field3516 = var1;
+        this.field3567 = var2;
+    }
 }

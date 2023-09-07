@@ -1,12 +1,17 @@
-public class class125 {
-	static final int field1167;
-	static final int field1168;
+import java.util.Comparator;
 
-	static {
-		field1167 = (int)(Math.pow(2.0D, 4.0D) - 1.0D);
-		field1168 = (int)(Math.pow(2.0D, 8.0D) - 1.0D);
-	}
+final class class125 implements Comparator {
+    int method579(class142 var1, class142 var2) {
+        return var1.field1248.field1901 < var2.field1248.field1901 ? -1 : (var1.field1248.field1901 == var2.field1248.field1901 ? 0 : 1);
+    }
 
-	class125() throws Throwable {
-	}
+    @Override
+    public int compare(Object var1, Object var2) {
+        return this.method579((class142) var1, (class142) var2);
+    }
+
+    @Override
+    public boolean equals(Object var1) {
+        return super.equals(var1);
+    }
 }

@@ -1,122 +1,137 @@
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+public final class class143 extends class490 {
+    boolean field1255;
+    class124 field1279;
+    double field1265;
+    double field1270;
+    double field1271;
+    double field1272;
+    double field1273;
+    double field1274;
+    double field1275;
+    double field1277;
+    int field1253;
+    int field1254;
+    int field1256;
+    int field1257;
+    int field1258;
+    int field1259;
+    int field1260;
+    int field1261;
+    int field1262;
+    int field1263;
+    int field1264;
+    int field1266;
+    int field1267;
+    int field1268;
+    int field1269;
+    int field1276;
+    int field1278;
+    int field1280;
+    int field1281;
 
-public class class143 extends class8 {
-	HashSet field1367;
-	HashSet field1368;
-	List field1369;
+    class143(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11) {
+        this.field1255 = false;
+        this.field1280 = 0;
+        this.field1281 = 0;
+        this.field1266 = var1;
+        this.field1254 = var2;
+        this.field1264 = var3;
+        this.field1253 = var4;
+        this.field1262 = var5;
+        this.field1278 = var6;
+        this.field1263 = var7;
+        this.field1256 = var8;
+        this.field1268 = var9;
+        this.field1267 = var10;
+        this.field1258 = var11;
+        this.field1255 = false;
+        int var12 = class115.method525(this.field1266).field1063;
+        if (var12 != -1) {
+            this.field1279 = class124.method575(var12);
+        } else {
+            this.field1279 = null;
+        }
 
-	class143() {
-	}
+    }
 
-	void method845(class42 var1, class42 var2, int var3, boolean var4) {
-		this.method66(var1, var3);
-		int var6 = var2.method327();
-		this.field1367 = new HashSet(var6);
+    class143(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12) {
+        this(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, var12);
+        this.field1269 = var10;
+    }
 
-		int var7;
-		for (var7 = 0; var7 < var6; ++var7) {
-			class152 var8 = new class152();
+    void method658(int var1, int var2, int var3, int var4) {
+        this.field1259 = var1;
+        this.field1260 = var2;
+        this.field1261 = var3;
+        double var6;
+        if (!this.field1255) {
+            var6 = this.field1259 - this.field1264;
+            double var8 = this.field1260 - this.field1253;
+            double var10 = Math.sqrt(var6 * var6 + var8 * var8);
+            this.field1277 = (double) this.field1264 + (double) this.field1268 * var6 / var10;
+            this.field1270 = (double) this.field1253 + (double) this.field1268 * var8 / var10;
+            this.field1271 = this.field1262;
+        }
 
-			try {
-				var8.method877(var2);
-			} catch (IllegalStateException var12) {
-				continue;
-			}
+        var6 = this.field1263 + 1 - var4;
+        this.field1272 = ((double) this.field1259 - this.field1277) / var6;
+        this.field1273 = ((double) this.field1260 - this.field1270) / var6;
+        this.field1274 = Math.sqrt(this.field1273 * this.field1273 + this.field1272 * this.field1272);
+        if (!this.field1255) {
+            this.field1275 = -this.field1274 * Math.tan((double) this.field1256 * 0.02454369D);
+        }
 
-			this.field1367.add(var8);
-		}
+        this.field1265 = ((double) this.field1261 - this.field1271 - this.field1275 * var6) * 2.0D / (var6 * var6);
+    }
 
-		var7 = var2.method327();
-		this.field1368 = new HashSet(var7);
+    void method659(int var1) {
+        this.field1255 = true;
+        this.field1277 += this.field1272 * (double) var1;
+        this.field1270 += (double) var1 * this.field1273;
+        this.field1271 += this.field1265 * 0.5D * (double) var1 * (double) var1 + (double) var1 * this.field1275;
+        this.field1275 += this.field1265 * (double) var1;
+        this.field1257 = (int) (Math.atan2(this.field1272, this.field1273) * 325.949D) + 1024 & 2047;
+        this.field1276 = (int) (Math.atan2(this.field1275, this.field1274) * 325.949D) & 2047;
+        if (this.field1279 != null) {
+            if (!this.field1279.method574()) {
+                this.field1281 += var1;
 
-		for (int var13 = 0; var13 < var7; ++var13) {
-			class418 var9 = new class418();
+                while (true) {
+                    do {
+                        do {
+                            if (this.field1281 <= this.field1279.field1135[this.field1280]) {
+                                return;
+                            }
 
-			try {
-				var9.method2147(var2);
-			} catch (IllegalStateException var11) {
-				continue;
-			}
+                            this.field1281 -= this.field1279.field1135[this.field1280];
+                            ++this.field1280;
+                        } while (this.field1280 < this.field1279.field1124.length);
 
-			this.field1368.add(var9);
-		}
+                        this.field1280 -= this.field1279.field1128;
+                    } while (this.field1280 >= 0 && this.field1280 < this.field1279.field1124.length);
 
-		this.method844(var2, var4);
-	}
+                    this.field1280 = 0;
+                }
+            } else {
+                this.field1280 += var1;
+                int var3 = this.field1279.method571();
+                if (this.field1280 >= var3) {
+                    this.field1280 = var3 - this.field1279.field1128;
+                }
+            }
+        }
 
-	void method844(class42 var1, boolean var2) {
-		this.field1369 = new LinkedList();
-		int var4 = var1.method327();
+    }
 
-		for (int var5 = 0; var5 < var4; ++var5) {
-			int var6 = var1.method326();
-			class29 var7 = new class29(var1.method282());
-			boolean var8 = var1.method278() == 1;
-			if (var2 || !var8) {
-				this.field1369.add(new class524((class29)null, var7, var6, (class197)null));
-			}
-		}
-
-	}
-
-	static void method847(boolean var0) {
-		if (!class466.field3999.method7() && !class466.field3999.method8() && !class466.field3999.method30((byte)116)) {
-			class116.field1101 = class433.field3750;
-			class116.field1099 = class433.field3751;
-			class116.field1100 = class433.field3713;
-			class337.method1864(2);
-			if (var0) {
-				class116.field1103 = "";
-			}
-
-			if (null == class116.field1110 || class116.field1110.length() <= 0) {
-				if (class176.field1701.method2500() != null) {
-					class116.field1110 = class176.field1701.method2500();
-					Client.field57 = true;
-				} else {
-					Client.field57 = false;
-				}
-			}
-
-			class235.method1356();
-		} else {
-			class337.method1864(10);
-		}
-	}
-
-	static void method846(boolean var0) {
-		byte var2 = 0;
-		boolean var3 = class176.field1701.method2501() >= Client.field8;
-		if (!var3) {
-			var2 = 12;
-		} else if (class466.field3999.method7() || class466.field3999.method8() || class466.field3999.method30((byte)106)) {
-			var2 = 10;
-		}
-
-		class337.method1864(var2);
-		if (var0) {
-			class116.field1110 = "";
-			class116.field1103 = "";
-			class242.field2213 = 0;
-			class110.field1061 = "";
-		}
-
-		if (null == class116.field1110 || class116.field1110.length() <= 0) {
-			if (class176.field1701.method2500() != null) {
-				class116.field1110 = class176.field1701.method2500();
-				Client.field57 = true;
-			} else {
-				Client.field57 = false;
-			}
-		}
-
-		if (Client.field57 && class116.field1110 != null && class116.field1110.length() > 0) {
-			class116.field1108 = 1;
-		} else {
-			class116.field1108 = 0;
-		}
-
-	}
+    @Override
+    protected class448 method2238() {
+        class115 var2 = class115.method525(this.field1266);
+        class448 var3 = var2.method521(this.field1280);
+        if (null == var3) {
+            return null;
+        } else {
+            var3.method2066(this.field1276);
+            return var3;
+        }
+    }
 }

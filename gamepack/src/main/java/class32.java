@@ -1,110 +1,630 @@
-public class class32 extends class218 {
-	public static class215 field476;
-	public static class344 field477;
-	int field478;
-	public int field479;
-	public int field480;
-	public int field481;
-	public int field482;
+public class class32 {
+    public static String field173;
+    public static String field174;
+    public static String field175;
+    public static String field176;
+    public static String field177;
+    public static String field178;
+    public static String field179;
+    public static String field180;
+    public static String field181;
+    public static String field182;
+    public static String field183;
+    public static String field184;
+    public static String field185;
+    public static String field186;
+    public static String field187;
+    public static String field188;
+    public static String field189;
+    public static String field190;
+    public static String field191;
+    public static String field192;
+    public static String field193;
+    public static String field194;
+    public static String field195;
+    public static String field196;
+    public static String field197;
+    public static String field198;
+    public static String field199;
+    public static String field200;
+    public static String field201;
+    public static String field202;
+    public static String field203;
+    public static String field204;
+    public static String field205;
+    public static String field206;
+    public static String field207;
+    public static String field208;
+    public static String field209;
+    public static String field210;
+    public static String field211;
+    public static String field212;
+    public static String field213;
+    public static String field214;
+    public static String field215;
+    public static String field216;
+    public static String field217;
+    public static String field218;
+    public static String field219;
+    public static String field220;
+    public static String field221;
+    public static String field222;
+    public static String field223;
+    public static String field224;
+    public static String field225;
+    public static String field226;
+    public static String field227;
+    public static String field228;
+    public static String field229;
+    public static String field230;
+    public static String field231;
+    public static String field232;
+    public static String field233;
+    public static String field234;
+    public static String field235;
+    public static String field236;
+    public static String field237;
+    public static String field238;
+    public static String field239;
+    public static String field240;
+    public static String field241;
+    public static String field242;
+    public static String field243;
+    public static String field244;
+    public static String field245;
+    public static String field246;
+    public static String field247;
+    public static String field248;
+    public static String field249;
+    public static String field250;
+    public static String field251;
+    public static String field252;
+    public static String field253;
+    public static String field254;
+    public static String field255;
+    public static String field256;
+    public static String field257;
+    public static String field258;
+    public static String field259;
+    public static String field260;
+    public static String field261;
+    public static String field262;
+    public static String field263;
+    public static String field264;
+    public static String field265;
+    public static String field266;
+    public static String field267;
+    public static String field268;
+    public static String field269;
+    public static String field270;
+    public static String field271;
+    public static String field272;
+    public static String field273;
+    public static String field274;
+    public static String field275;
+    public static String field276;
+    public static String field277;
+    public static String field278;
+    public static String field279;
+    public static String field280;
+    public static String field281;
+    public static String field282;
+    public static String field283;
+    public static String field284;
+    public static String field285;
+    public static String field286;
+    public static String field287;
+    public static String field288;
+    public static String field289;
+    public static String field290;
+    public static String field291;
+    public static String field292;
+    public static String field293;
+    public static String field294;
+    public static String field295;
+    public static String field296;
+    public static String field297;
+    public static String field298;
+    public static String field299;
+    public static String field300;
+    public static String field301;
+    public static String field302;
+    public static String field303;
+    public static String field304;
+    public static String field305;
+    public static String field306;
+    public static String field307;
+    public static String field308;
+    public static String field309;
+    public static String field310;
+    public static String field311;
+    public static String field312;
+    public static String field313;
+    public static String field314;
+    public static String field315;
+    public static String field316;
+    public static String field317;
+    public static String field318;
+    public static String field319;
+    public static String field320;
+    public static String field321;
+    public static String field322;
+    public static String field323;
+    public static String field324;
+    public static String field325;
+    public static String field326;
+    public static String field327;
+    public static String field329;
+    public static String field330;
+    public static String field331;
+    public static String field332;
+    public static String field333;
+    public static String field334;
+    public static String field335;
+    public static String field336;
+    public static String field337;
+    public static String field338;
+    public static String field339;
+    public static String field340;
+    public static String field341;
+    public static String field342;
+    public static String field343;
+    public static String field344;
+    public static String field345;
+    public static String field346;
+    public static String field347;
+    public static String field348;
+    public static String field349;
+    public static String field350;
+    public static String field351;
+    public static String field352;
+    public static String field353;
+    public static String field354;
+    public static String field355;
+    public static String field356;
+    public static String field357;
+    public static String field358;
+    public static String field359;
+    public static String field360;
+    public static String field361;
+    public static String field362;
+    public static String field363;
+    public static String field364;
+    public static String field365;
+    public static String field366;
+    public static String field367;
+    public static String field368;
+    public static String field369;
+    public static String field370;
+    public static String field371;
+    public static String field372;
+    public static String field373;
+    public static String field374;
+    public static String field375;
+    public static String field376;
+    public static String field377;
+    public static String field378;
+    public static String field379;
+    public static String field380;
+    public static String field381;
+    public static String field382;
+    public static String field383;
+    public static String field384;
+    public static String field385;
+    public static String field386;
+    public static String field387;
+    public static String field388;
+    public static String field389;
+    public static String field390;
+    public static String field391;
+    public static String field392;
+    public static String field393;
+    public static String field394;
+    public static String field395;
+    public static String field396;
+    public static String field397;
+    public static String field398;
+    public static String field399;
+    public static String field400;
+    public static String field401;
+    public static String field402;
+    public static String field403;
+    public static String field404;
+    public static String field405;
+    public static String field406;
+    public static String field407;
+    public static String field408;
+    public static String field409;
+    public static String field410;
+    public static String field411;
+    public static String field412;
+    public static String field413;
+    public static String field414;
+    public static String field415;
+    public static String field416;
+    public static String field417;
+    public static String field418;
+    public static String field419;
+    public static String field420;
+    public static String field421;
+    public static String field422;
+    public static String field423;
+    public static String field424;
+    public static String field425;
+    public static String field426;
+    public static String field427;
+    public static String field428;
+    public static String field429;
+    public static String field430;
+    public static String field431;
+    public static String field432;
+    public static String field433;
+    public static String field434;
+    public static String field435;
+    public static String field436;
+    public static String field437;
+    public static String field438;
+    public static String field439;
+    public static String field440;
+    public static String field441;
+    public static String field442;
+    public static String field443;
+    public static String field444;
+    public static String field445;
+    public static String field446;
+    public static String field447;
+    public static String field448;
+    public static String field449;
+    public static String field450;
+    public static String field451;
+    public static String field452;
+    public static String field453;
+    public static String field454;
+    public static String field455;
+    public static String field456;
+    public static String field457;
+    public static String field458;
+    public static String field459;
+    public static String field460;
+    public static String field461;
+    public static String field462;
+    public static String field463;
+    public static String field464;
+    public static String field465;
+    public static String field466;
+    public static String field467;
+    public static String field468;
+    public static String field469;
+    public static String field470;
+    public static String field471;
+    public static String field472;
+    public static String field473;
+    public static String field474;
+    public static String field475;
+    public static String field476;
+    public static String field477;
+    public static String field478;
+    public static String field479;
+    public static String field480;
+    public static String field481;
+    public static String field482;
+    public static String field483;
+    static String field328;
 
-	static {
-		field477 = new class344(64);
-	}
+    static {
+        field402 = " (Members)";
+        field336 = "Take";
+        field345 = "Drop";
+        field425 = "Hidden";
+        field177 = "Ok";
+        field455 = "Select";
+        field179 = "Continue";
+        field211 = "Discard";
+        field483 = "null";
+        field182 = "Trust this computer";
+        field299 = "for 30 days: ";
+        field184 = "Loading - please wait.";
+        field185 = "Connection lost";
+        field186 = "Please wait - attempting to reestablish";
+        field187 = "Starting game engine...";
+        field188 = "Prepared visibility map";
+        field213 = "Connecting to update server";
+        field190 = "Checking for updates - ";
+        field191 = "Loaded update list";
+        field192 = "Prepared sound engine";
+        field385 = "Loading fonts - ";
+        field194 = "Loaded fonts";
+        field195 = "Loading title screen - ";
+        field196 = "Loaded title screen";
+        field197 = "Loading config - ";
+        field390 = "Loaded config";
+        field199 = "Loading sprites - ";
+        field200 = "Loaded sprites";
+        field201 = "Loading textures - ";
+        field479 = "Loaded textures";
+        field307 = "Loaded input handler";
+        field226 = "Loading wordpack - ";
+        field205 = "Loaded wordpack";
+        field206 = "Loading interfaces - ";
+        field207 = "Loaded interfaces";
+        field208 = "Loading world map - ";
+        field308 = "Loaded world map";
+        field328 = "Please visit the support page for assistance.";
+        field289 = "View Appeal Options";
+        field212 = "Recover Account";
+        field330 = "";
+        field214 = "Please enter a 6-digit PIN.";
+        field293 = "";
+        field216 = "You have only just left another world.";
+        field217 = "Your profile will be transferred in:";
+        field396 = " seconds.";
+        field219 = "Connection timed out.";
+        field220 = "Please try using a different world.";
+        field365 = "";
+        field382 = "Error connecting to server.";
+        field223 = "Please try using a different world.";
+        field224 = "";
+        field225 = "No response from server.";
+        field258 = "Please try using a different world.";
+        field389 = "";
+        field278 = "Your account has been involved";
+        field218 = "in serious rule breaking.";
+        field230 = "";
+        field231 = "Either your account is still logged in, or the last";
+        field232 = "world you were using has become unavailable.";
+        field233 = "Please try again later.";
+        field234 = "RuneScape has been updated!";
+        field235 = "Please reload this page.";
+        field203 = "";
+        field176 = "This world is full.";
+        field238 = "Please use a different world.";
+        field392 = "";
+        field240 = "Unable to connect.";
+        field241 = "Login server offline.";
+        field314 = "";
+        field243 = "Login limit exceeded.";
+        field244 = "Too many connections from your address.";
+        field415 = "";
+        field251 = "Unable to connect.";
+        field247 = "Bad session id.";
+        field248 = "";
+        field249 = "We suspect someone knows your password.";
+        field250 = "Press 'change your password' on front page.";
+        field448 = "";
+        field252 = "You need a members account to login to this world.";
+        field253 = "Please subscribe, or use a different world.";
+        field254 = "";
+        field255 = "Could not complete login.";
+        field333 = "Please try using a different world.";
+        field257 = "";
+        field452 = "The server is being updated.";
+        field259 = "Please wait 1 minute and try again.";
+        field260 = "";
+        field261 = "Too many login attempts.";
+        field262 = "You can use the Jagex Launcher to continue playing.";
+        field391 = "Press the button below to download it now.";
+        field303 = "To access this free world, log into a";
+        field419 = "members world and move your character";
+        field266 = "to a non-members area.";
+        field267 = "Your account has been locked due to";
+        field268 = "suspicious activity.";
+        field269 = "Please recover your account.";
+        field361 = "This world is running a closed Beta.";
+        field304 = "Sorry invited players only.";
+        field272 = "Please use a different world.";
+        field375 = "Invalid loginserver requested.";
+        field274 = "Please try using a different world.";
+        field300 = "";
+        field276 = "Malformed login packet.";
+        field343 = "Please try again.";
+        field362 = "";
+        field279 = "No reply from loginserver.";
+        field280 = "Please wait 1 minute and try again.";
+        field174 = "";
+        field282 = "Error loading your profile.";
+        field283 = "Please contact customer support.";
+        field344 = "";
+        field285 = "Unexpected loginserver response.";
+        field286 = "Please try using a different world.";
+        field287 = "";
+        field288 = "This computers address has been blocked";
+        field265 = "as it was used to break our rules.";
+        field290 = "";
+        field442 = "";
+        field292 = "Service unavailable.";
+        field270 = "";
+        field294 = "";
+        field209 = "Please enter your username/email address.";
+        field296 = "";
+        field297 = "";
+        field298 = "Please enter your password.";
+        field222 = "";
+        field433 = "Your account must have a displayname set";
+        field301 = "in order to play the game.  Please set it";
+        field302 = "via the website, or the main game.";
+        field263 = "The unpaid balance on your account needs";
+        field271 = "to be resolved before you can play.";
+        field305 = field328;
+        field306 = "Your account is currently inaccessible.";
+        field335 = "Please try again in a few minutes.";
+        field450 = "";
+        field309 = "You need to vote to play!";
+        field310 = "Visit runescape.com and vote,";
+        field311 = "and then come back here!";
+        field312 = "Sorry, but your account is not eligible to play.";
+        field354 = "For more information, please take a look at";
+        field323 = "our privacy policy.";
+        field427 = "Privacy Policy";
+        field468 = "Enter the 6-digit code generated by your";
+        field181 = "authenticator app.";
+        field318 = "";
+        field319 = "The code you entered was incorrect.";
+        field320 = "Please try again.";
+        field321 = "";
+        field341 = "Login attempt timed out.";
+        field315 = "Please try again.";
+        field324 = "";
+        field325 = "You were signed out.";
+        field326 = "Please sign in again.";
+        field327 = "";
+        field379 = "Failed to login.";
+        field329 = "Please try again.";
+        field348 = "";
+        field331 = "Unexpected server response";
+        field193 = "Please try using a different world.";
+        field239 = "";
+        field334 = " has logged in.";
+        field228 = " has logged out.";
+        field317 = "Unable to find ";
+        field337 = "Use";
+        field338 = "Examine";
+        field339 = "Attack";
+        field340 = "Choose Option";
+        field204 = " more options";
+        field342 = "Walk here";
+        field183 = "level-";
+        field347 = "skill-";
+        field445 = "Please wait...";
+        field418 = "Close";
+        field221 = " ";
+        field242 = "M";
+        field349 = "M";
+        field350 = "K";
+        field351 = "K";
+        field352 = "World";
+        field353 = "Your friend list is full. Max of 200 for free users, and 400 for members";
+        field175 = " is already on your friend list";
+        field355 = "Your ignore list is full. Max of 100 for free users, and 400 for members";
+        field356 = " is already on your ignore list";
+        field357 = "You can't add yourself to your own friend list";
+        field358 = "You can't add yourself to your own ignore list";
+        field359 = "Please remove ";
+        field360 = " from your ignore list first";
+        field173 = "Please remove ";
+        field332 = " from your friend list first";
+        field273 = "yellow:";
+        field364 = "red:";
+        field275 = "green:";
+        field366 = "cyan:";
+        field245 = "purple:";
+        field368 = "white:";
+        field369 = "flash1:";
+        field180 = "flash2:";
+        field215 = "flash3:";
+        field237 = "glow1:";
+        field281 = "glow2:";
+        field374 = "glow3:";
+        field291 = "rainbow:";
+        field376 = "pattern";
+        field377 = "wave:";
+        field378 = "wave2:";
+        field227 = "shake:";
+        field380 = "scroll:";
+        field264 = "slide:";
+        field363 = "RuneScape is loading - please wait...";
+        field383 = "";
+        field384 = "Enter your username/email & password.";
+        field346 = "";
+        field202 = "Warning!";
+        field387 = "This is a <col=ff0000>PvP<col=ffffff> world.";
+        field388 = "Players can attack each other";
+        field189 = "almost everywhere.";
+        field478 = "This is a <col=ffff00>High Risk<col=ffffff> world.";
+        field412 = "The Protect Item prayer will";
+        field472 = "not work on this world.";
+        field393 = "This is a <col=ffff00>High Risk <col=ff0000>PvP<col=ffffff> world.";
+        field394 = "Players can attack each other almost everywhere";
+        field395 = "and the Protect Item prayer won't work.";
+        field406 = "This is a <col=00ffff>Beta<col=ffffff> world.";
+        field397 = "Your normal account will not be affected.";
+        field398 = "";
+        field399 = "Authenticator";
+        field400 = "";
+        field401 = "Connecting to server...";
+        field386 = "";
+        field403 = "The game servers are currently being updated.";
+        field404 = "Please wait a few minutes and try again.";
+        field405 = "";
+        field420 = "";
+        field407 = "You were disconnected from the server.";
+        field408 = "";
+        field409 = "Login: ";
+        field410 = "Password: ";
+        field411 = "PIN: ";
+        field454 = "Welcome to RuneScape";
+        field413 = "New User";
+        field414 = "Existing User";
+        field370 = "Login";
+        field416 = "Cancel";
+        field417 = "Remember username";
+        field371 = "Hide username";
+        field424 = "Incorrect username or password.";
+        field236 = "If you have upgraded to a Jagex Account, you";
+        field421 = "need to log in using the <u=ffd200><col=ffd200>Jagex Launcher</col></u> instead.";
+        field422 = "Try again";
+        field423 = "Forgotten password?";
+        field373 = "Forgotten your password?";
+        field295 = "Username/email: ";
+        field426 = "Recover";
+        field466 = "Back";
+        field381 = "Can't login? Click here.";
+        field429 = "Still having trouble logging in?";
+        field430 = "Having trouble logging in?";
+        field431 = "";
+        field432 = "Page has opened in the browser.";
+        field316 = "";
+        field434 = "Please enter your username.";
+        field435 = "If you created your account after November";
+        field436 = "2010, this will be the creation email address.";
+        field437 = field431;
+        field438 = field432;
+        field439 = field316;
+        field471 = "";
+        field441 = "Error connecting to server.";
+        field246 = "";
+        field443 = "The part of the website you are trying";
+        field444 = "to connect to is offline at the moment.";
+        field428 = "Please try again later.";
+        field446 = "Sorry, there was an error trying to";
+        field447 = "log you in to this part of the website.";
+        field440 = "Please try again later.";
+        field449 = "";
+        field210 = "Error connecting to server.";
+        field313 = "";
+        field178 = "You must enter a valid login to proceed. For accounts";
+        field453 = "created after 24th November 2010, please use your";
+        field277 = "email address. Otherwise please use your username.";
+        field451 = "Your date of birth isn't set.";
+        field456 = "Please verify your account status by";
+        field457 = "setting your date of birth.";
+        field458 = "Set Date of Birth";
+        field459 = "Your date of birth information is waiting";
+        field460 = "to be reviewed by our staff.";
+        field461 = "It will be processed shortly.";
+        field462 = "Before using this app, please read and accept our";
+        field463 = "<col=ffd200>terms of use</col>, <col=ffd200>privacy policy</col>, and <col=ffd200>end user licence</col>";
+        field464 = "<col=ffd200>agreement (EULA)</col>.";
+        field465 = "By accepting, you agree to these documents.";
+        field229 = "You must accept our terms of use, privacy policy,";
+        field467 = "and end user licence agreement to continue.";
+        field284 = "Accept";
+        field469 = "Decline";
+        field470 = "Select a world";
+        field198 = "Members only world";
+        field256 = "Free world";
+        field473 = "World";
+        field474 = "Players";
+        field475 = "Location";
+        field476 = "Type";
+        field477 = "OFF";
+        field372 = "FULL";
+        field322 = "Loading...";
+        field480 = "Click to switch";
+        field481 = "Download Launcher";
+        field482 = "https://oldschool.runescape.com/launcher";
+        field367 = "https://support.runescape.com/hc/en-gb/articles/360001552065";
+    }
 
-	public class32() {
-		this.field478 = 0;
-	}
-
-	public void method222() {
-		this.method225(this.field478);
-	}
-
-	public void method223(class42 var1, int var2) {
-		while (true) {
-			int var4 = var1.method278();
-			if (var4 == 0) {
-				return;
-			}
-
-			this.method224(var1, var4, var2);
-		}
-	}
-
-	void method224(class42 var1, int var2, int var3) {
-		if (var2 == 1) {
-			this.field478 = var1.method334();
-		}
-
-	}
-
-	void method225(int var1) {
-		double var3 = (double)(var1 >> 16 & 255) / 256.0D;
-		double var5 = (double)(var1 >> 8 & 255) / 256.0D;
-		double var7 = (double)(var1 & 255) / 256.0D;
-		double var9 = var3;
-		if (var5 < var3) {
-			var9 = var5;
-		}
-
-		if (var7 < var9) {
-			var9 = var7;
-		}
-
-		double var11 = var3;
-		if (var5 > var3) {
-			var11 = var5;
-		}
-
-		if (var7 > var11) {
-			var11 = var7;
-		}
-
-		double var13 = 0.0D;
-		double var15 = 0.0D;
-		double var17 = (var9 + var11) / 2.0D;
-		if (var11 != var9) {
-			if (var17 < 0.5D) {
-				var15 = (var11 - var9) / (var9 + var11);
-			}
-
-			if (var17 >= 0.5D) {
-				var15 = (var11 - var9) / (2.0D - var11 - var9);
-			}
-
-			if (var3 == var11) {
-				var13 = (var5 - var7) / (var11 - var9);
-			} else if (var11 == var5) {
-				var13 = (var7 - var3) / (var11 - var9) + 2.0D;
-			} else if (var11 == var7) {
-				var13 = 4.0D + (var3 - var5) / (var11 - var9);
-			}
-		}
-
-		var13 /= 6.0D;
-		this.field480 = (int)(var15 * 256.0D);
-		this.field479 = (int)(var17 * 256.0D);
-		if (this.field480 < 0) {
-			this.field480 = 0;
-		} else if (this.field480 > 255) {
-			this.field480 = 255;
-		}
-
-		if (this.field479 < 0) {
-			this.field479 = 0;
-		} else if (this.field479 > 255) {
-			this.field479 = 255;
-		}
-
-		if (var17 > 0.5D) {
-			this.field481 = (int)((1.0D - var17) * var15 * 512.0D);
-		} else {
-			this.field481 = (int)(var15 * var17 * 512.0D);
-		}
-
-		if (this.field481 < 1) {
-			this.field481 = 1;
-		}
-
-		this.field482 = (int)(var13 * (double)this.field481);
-	}
+    class32() throws Throwable {
+    }
 }

@@ -1,41 +1,49 @@
-final class class188 implements class65 {
-	public static String field1754;
-	static class342 field1755;
-	// $FF: synthetic field
-	final class60 val$cc;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
-	class188(class60 var1) {
-		this.val$cc = var1;
-	}
+public class class188 {
+    public static Comparator field1537;
+    public static Comparator field1539;
+    public static Comparator field1540;
+    public static Comparator field1541;
 
-	public void method486() {
-		if (this.val$cc != null && this.val$cc.method459().field1042 != null) {
-			class309 var2 = new class309();
-			var2.method1742(this.val$cc);
-			var2.method1743(this.val$cc.method459().field1042);
-			class289.method1659().method567(var2);
-		}
+    static {
+        field1537 = new class429();
+        new class220();
+        field1541 = new class125();
+        field1539 = new class526();
+        field1540 = new class310();
+    }
 
-	}
+    public final List field1538;
 
-	static final int method1037(int var0, int var1, int var2) {
-		if (var2 > 179) {
-			var1 /= 2;
-		}
+    public class188(class78 var1, boolean var2) {
+        int var3 = var1.method309();
+        boolean var4 = var1.method260() == 1;
+        byte var5;
+        if (var4) {
+            var5 = 1;
+        } else {
+            var5 = 0;
+        }
 
-		if (var2 > 192) {
-			var1 /= 2;
-		}
+        int var6 = var1.method309();
+        this.field1538 = new ArrayList(var6);
 
-		if (var2 > 217) {
-			var1 /= 2;
-		}
+        for (int var7 = 0; var7 < var6; ++var7) {
+            this.field1538.add(new class142(var1, var5, var3));
+        }
 
-		if (var2 > 243) {
-			var1 /= 2;
-		}
+    }
 
-		int var4 = (var1 / 32 << 7) + (var0 / 4 << 10) + var2 / 2;
-		return var4;
-	}
+    public void method874(Comparator var1, boolean var2) {
+        if (var2) {
+            Collections.sort(this.field1538, var1);
+        } else {
+            Collections.sort(this.field1538, Collections.reverseOrder(var1));
+        }
+
+    }
 }

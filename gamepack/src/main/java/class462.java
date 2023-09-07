@@ -1,18 +1,24 @@
-public class class462 {
-	public class462 field3986;
-	public class462 field3988;
-	public long field3987;
+public final class class462 {
+    static int field3166;
+    int field3163;
+    int field3164;
+    int field3165;
+    int field3167;
+    int field3168;
+    int field3169;
+    int field3170;
+    int field3171;
+    int field3172;
+    int field3173;
+    int field3174;
+    int field3175;
+    int field3176;
+    int field3177;
+    int field3178;
+    int field3179;
+    int field3180;
+    int field3181;
 
-	public void method2269() {
-		if (this.field3988 != null) {
-			this.field3988.field3986 = this.field3986;
-			this.field3986.field3988 = this.field3988;
-			this.field3986 = null;
-			this.field3988 = null;
-		}
-	}
-
-	public boolean method2270() {
-		return this.field3988 != null;
-	}
+    class462() {
+    }
 }

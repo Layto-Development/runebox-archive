@@ -1,22 +1,13 @@
 public class class341 {
-	public static int[] field2960;
-	public static final boolean[] field2958;
-	static class25 field2959;
+    class529 field2455;
+    int field2454;
+    int field2456;
+    String field2453;
 
-	static {
-		field2958 = new boolean[]{true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false};
-		field2960 = new int[99];
-		int var0 = 0;
-
-		for (int var1 = 0; var1 < 99; ++var1) {
-			int var2 = var1 + 1;
-			int var3 = (int)((double)var2 + 300.0D * Math.pow(2.0D, (double)var2 / 7.0D));
-			var0 += var3;
-			field2960[var1] = var0 / 4;
-		}
-
-	}
-
-	class341() throws Throwable {
-	}
+    class341(String var1, int var2, int var3, class529 var4) {
+        this.field2453 = var1;
+        this.field2456 = var2;
+        this.field2454 = var3;
+        this.field2455 = var4;
+    }
 }

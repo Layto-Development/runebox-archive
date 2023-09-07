@@ -1,127 +1,21 @@
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URLConnection;
-import javax.net.ssl.HttpsURLConnection;
+public class class237 {
+    public static final short[] field1829;
+    public static final short[] field1830;
+    public static final short[][] field1831;
+    public static final short[][] field1832;
+    static class107 field1833;
 
-public class class237 extends class296 {
-	public static int field2181;
-	static int field2183;
-	final boolean field2182;
+    static {
+        field1829 = new short[]{6798, 8741, 25238, 4626, 4550};
+        field1832 = new short[][]{{6798, 107, 10283, 16, 4797, 7744, 5799, 4634, -31839, 22433, 2983, -11343, 8, 5281, 10438, 3650, -27322, -21845, 200, 571, 908, 21830, 28946, -15701, -14010, -22122, 937, 8130, -13422, 30385}, {8741, 12, -1506, -22374, 7735, 8404, 1701, -27106, 24094, 10153, -8915, 4783, 1341, 16578, -30533, 25239, 8, 5281, 10438, 3650, -27322, -21845, 200, 571, 908, 21830, 28946, -15701, -14010}, {25238, 8742, 12, -1506, -22374, 7735, 8404, 1701, -27106, 24094, 10153, -8915, 4783, 1341, 16578, -30533, 8, 5281, 10438, 3650, -27322, -21845, 200, 571, 908, 21830, 28946, -15701, -14010}, {4626, 11146, 6439, 12, 4758, 10270}, {4550, 4537, 5681, 5673, 5790, 6806, 8076, 4574, 17050, 0, 127, -31821, -17991}};
+        field1830 = new short[]{-10304, 9104, -1, -1, -1};
+        field1831 = new short[][]{{6554, 115, 10304, 28, 5702, 7756, 5681, 4510, -31835, 22437, 2859, -11339, 16, 5157, 10446, 3658, -27314, -21965, 472, 580, 784, 21966, 28950, -15697, -14002, -22116, 945, 8144, -13414, 30389}, {9104, 10275, 7595, 3610, 7975, 8526, 918, -26734, 24466, 10145, -6882, 5027, 1457, 16565, -30545, 25486, 24, 5392, 10429, 3673, -27335, -21957, 192, 687, 412, 21821, 28835, -15460, -14019}, new short[0], new short[0], new short[0]};
+    }
 
-	public class237(boolean var1, int var2) {
-		super(var2);
-		this.field2182 = var1;
-	}
+    class237() throws Throwable {
+    }
 
-	void method1681(class349 var1) throws IOException {
-		URLConnection var3 = null;
-		boolean var10 = false;
-
-		label124: {
-			HttpURLConnection var13;
-			label125: {
-				try {
-					var10 = true;
-					String var4 = var1.field3000.getProtocol();
-					if (var4.equals("http")) {
-						var3 = this.method1358(var1);
-					} else {
-						if (!var4.equals("https")) {
-							var1.field3003 = class349.field3002;
-							var10 = false;
-							break label124;
-						}
-
-						var3 = this.method1359(var1);
-					}
-
-					this.method1683(var3, var1);
-					var10 = false;
-					break label125;
-				} catch (IOException var11) {
-					var1.field3003 = class349.field3002;
-					var10 = false;
-				} finally {
-					if (var10) {
-						if (null != var3 && var3 instanceof HttpURLConnection) {
-							HttpURLConnection var7 = (HttpURLConnection)var3;
-							var7.disconnect();
-						}
-
-					}
-				}
-
-				if (null != var3 && var3 instanceof HttpURLConnection) {
-					var13 = (HttpURLConnection)var3;
-					var13.disconnect();
-				}
-
-				return;
-			}
-
-			if (null != var3 && var3 instanceof HttpURLConnection) {
-				var13 = (HttpURLConnection)var3;
-				var13.disconnect();
-			}
-
-			return;
-		}
-
-		if (null != var3 && var3 instanceof HttpURLConnection) {
-			HttpURLConnection var5 = (HttpURLConnection)var3;
-			var5.disconnect();
-		}
-
-	}
-
-	URLConnection method1358(class349 var1) throws IOException {
-		URLConnection var3 = var1.field3000.openConnection();
-		this.method1687(var3);
-		return var3;
-	}
-
-	URLConnection method1359(class349 var1) throws IOException {
-		HttpsURLConnection var3 = (HttpsURLConnection)var1.field3000.openConnection();
-		if (!this.field2182) {
-			var3.setSSLSocketFactory(class21.method183());
-		}
-
-		this.method1687(var3);
-		return var3;
-	}
-
-	static class230[] method1362() {
-		return new class230[]{class230.field2090, class230.field2089, class230.field2093};
-	}
-
-	static void method1361() {
-		for (class534 var1 = (class534)Client.field24.method1493(); var1 != null; var1 = (class534)Client.field24.method1494()) {
-			int var2 = var1.field4270;
-			if (class292.method1669(var2)) {
-				boolean var3 = true;
-				class60[] var4 = class160.field1484[var2];
-
-				int var5;
-				for (var5 = 0; var5 < var4.length; ++var5) {
-					if (null != var4[var5]) {
-						var3 = var4[var5].field724;
-						break;
-					}
-				}
-
-				if (!var3) {
-					var5 = (int)var1.field3987;
-					class60 var6 = class366.method1967(var5);
-					if (var6 != null) {
-						class185.method1024(var6);
-					}
-				}
-			}
-		}
-
-	}
-
-	static final void method1363() {
-		Client.field209 = Client.field5;
-	}
+    public static boolean method1067(char var0) {
+        return var0 >= '0' && var0 <= '9';
+    }
 }

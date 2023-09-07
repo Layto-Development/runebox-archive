@@ -1,42 +1,40 @@
-public class class478 {
-	String field4065;
-	String field4067;
-	public final class522 field4064;
-	public final int field4068;
-	public final long field4066;
+public class class478 implements class330 {
+    static final class478 field3412;
+    static final class478 field3414;
+    static final class478 field3415;
+    static final class478 field3416;
+    static final class478 field3417;
+    static final class478 field3420;
 
-	class478(class42 var1, byte var2, int var3) {
-		this.field4067 = var1.method286();
-		this.field4065 = var1.method286();
-		this.field4068 = var1.method327();
-		this.field4066 = var1.method283();
-		int var4 = var1.method282();
-		int var5 = var1.method282();
-		this.field4064 = new class522();
-		this.field4064.method2532(2);
-		this.field4064.method2536(var2);
-		this.field4064.field4233 = var4;
-		this.field4064.field4231 = var5;
-		this.field4064.field4232 = 0;
-		this.field4064.field4228 = 0;
-		this.field4064.field4229 = var3;
-	}
+    static {
+        field3417 = new class478(0, 0, null, 0);
+        field3420 = new class478(1, 1, null, 9);
+        field3414 = new class478(2, 2, null, 3);
+        field3415 = new class478(3, 3, null, 6);
+        field3416 = new class478(4, 4, null, 1);
+        field3412 = new class478(5, 5, null, 3);
+    }
 
-	public String method2387() {
-		return this.field4067;
-	}
+    final int field3413;
+    final int field3418;
+    final int field3419;
 
-	public String method2386() {
-		return this.field4065;
-	}
+    class478(int var1, int var2, String var3, int var4) {
+        this.field3418 = var1;
+        this.field3419 = var2;
+        this.field3413 = var4;
+    }
 
-	static float method2388(float[] var0, int var1, float var2) {
-		float var4 = var0[var1];
+    static class478[] method2187() {
+        return new class478[]{field3417, field3420, field3414, field3415, field3416, field3412};
+    }
 
-		for (int var5 = var1 - 1; var5 >= 0; --var5) {
-			var4 = var4 * var2 + var0[var5];
-		}
+    int method2186() {
+        return this.field3413;
+    }
 
-		return var4;
-	}
+    @Override
+    public int method1533() {
+        return this.field3419;
+    }
 }

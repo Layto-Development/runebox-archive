@@ -1,35 +1,32 @@
-public final class class142 implements Comparable {
-	Object field1363;
-	Object field1364;
-	long field1365;
-	long field1366;
+public class class142 {
+    public final class249 field1248;
+    public final int field1252;
+    public final long field1250;
+    String field1249;
+    String field1251;
 
-	class142(Object var1, Object var2) {
-		this.field1363 = var1;
-		this.field1364 = var2;
-	}
+    class142(class78 var1, byte var2, int var3) {
+        this.field1251 = var1.method268();
+        this.field1249 = var1.method268();
+        this.field1252 = var1.method309();
+        this.field1250 = var1.method265();
+        int var4 = var1.method264();
+        int var5 = var1.method264();
+        this.field1248 = new class249();
+        this.field1248.method1112(2);
+        this.field1248.method1116(var2);
+        this.field1248.field1901 = var4;
+        this.field1248.field1899 = var5;
+        this.field1248.field1900 = 0;
+        this.field1248.field1896 = 0;
+        this.field1248.field1897 = var3;
+    }
 
-	int method843(class142 var1) {
-		if (this.field1366 < var1.field1366) {
-			return -1;
-		} else {
-			return this.field1366 > var1.field1366 ? 1 : 0;
-		}
-	}
+    public String method657() {
+        return this.field1251;
+    }
 
-	public boolean equals(Object var1) {
-		if (var1 instanceof class142) {
-			return this.field1364.equals(((class142)var1).field1364);
-		} else {
-			throw new IllegalArgumentException();
-		}
-	}
-
-	public int hashCode() {
-		return this.field1364.hashCode();
-	}
-
-	public int compareTo(Object var1) {
-		return this.method843((class142)var1);
-	}
+    public String method656() {
+        return this.field1249;
+    }
 }

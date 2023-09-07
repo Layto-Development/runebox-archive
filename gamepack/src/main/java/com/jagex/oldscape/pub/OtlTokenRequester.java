@@ -5,5 +5,5 @@ import java.util.Map;
 import java.util.concurrent.Future;
 
 public interface OtlTokenRequester {
-	Future request(String var1, URL var2, Map var3, String var4);
+    Future<OtlTokenResponse> request(String var1, URL var2, Map<String, String> var3, String var4);
 }

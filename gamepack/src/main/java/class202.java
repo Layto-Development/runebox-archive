@@ -1,65 +1,28 @@
-public final class class202 {
-	boolean[] field1870;
-	boolean[] field1891;
-	byte field1879;
-	byte[] field1871;
-	byte[] field1883;
-	byte[] field1888;
-	byte[] field1892;
-	byte[] field1895;
-	byte[] field1896;
-	byte[][] field1877;
-	int field1866;
-	int field1872;
-	int field1873;
-	int field1875;
-	int field1876;
-	int field1880;
-	int field1881;
-	int field1882;
-	int field1884;
-	int field1885;
-	int field1887;
-	int field1889;
-	int field1897;
-	int field1898;
-	int field1902;
-	int[] field1878;
-	int[] field1886;
-	int[] field1894;
-	int[] field1901;
-	int[][] field1890;
-	int[][] field1899;
-	int[][] field1900;
-	final int field1865;
-	final int field1867;
-	final int field1868;
-	final int field1869;
-	final int field1874;
-	final int field1893;
+public class class202 extends class438 {
+    static class372 field1656;
+    // $FF: synthetic field
+    final class423 this$0;
+    String field1654;
+    long field1655;
 
-	class202() {
-		this.field1874 = 4096;
-		this.field1865 = 16;
-		this.field1867 = 258;
-		this.field1868 = 6;
-		this.field1869 = 50;
-		this.field1893 = 18002;
-		this.field1897 = 0;
-		this.field1872 = 0;
-		this.field1886 = new int[256];
-		this.field1894 = new int[257];
-		this.field1870 = new boolean[256];
-		this.field1891 = new boolean[16];
-		this.field1892 = new byte[256];
-		this.field1888 = new byte[4096];
-		this.field1878 = new int[16];
-		this.field1895 = new byte[18002];
-		this.field1896 = new byte[18002];
-		this.field1877 = new byte[6][258];
-		this.field1890 = new int[6][258];
-		this.field1899 = new int[6][258];
-		this.field1900 = new int[6][258];
-		this.field1901 = new int[6];
-	}
+    class202(class423 var1) {
+        this.this$0 = var1;
+        this.field1655 = -1L;
+        this.field1654 = null;
+    }
+
+    @Override
+    void method2006(class78 var1) {
+        if (var1.method260() != 255) {
+            --var1.field697;
+            this.field1655 = var1.method265();
+        }
+
+        this.field1654 = var1.method319();
+    }
+
+    @Override
+    void method2005(class133 var1) {
+        var1.method609(this.field1655, this.field1654, 0);
+    }
 }

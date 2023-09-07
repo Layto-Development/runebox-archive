@@ -1,27 +1,18 @@
-import java.util.Comparator;
+public class class519 {
+    public static int field4188;
+    // $FF: synthetic field
+    final class456 this$0;
+    public float[] field4185;
+    public int field4184;
+    public int field4186;
+    public int field4187;
+    public String field4189;
 
-class class519 implements Comparator {
-	static class215 field4225;
-	// $FF: synthetic field
-	final class407 this$0;
-
-	class519(class407 var1) {
-		this.this$0 = var1;
-	}
-
-	int method2527(class142 var1, class142 var2) {
-		if (var1.field1365 > var2.field1365) {
-			return 1;
-		} else {
-			return var1.field1365 < var2.field1365 ? -1 : 0;
-		}
-	}
-
-	public int compare(Object var1, Object var2) {
-		return this.method2527((class142)var1, (class142)var2);
-	}
-
-	public boolean equals(Object var1) {
-		return super.equals(var1);
-	}
+    class519(class456 var1) {
+        this.this$0 = var1;
+        this.field4185 = new float[4];
+        this.field4186 = 1;
+        this.field4187 = 1;
+        this.field4184 = 0;
+    }
 }

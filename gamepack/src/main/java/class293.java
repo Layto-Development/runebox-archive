@@ -1,108 +1,111 @@
-import java.util.Comparator;
+public class class293 {
+    int field2122;
+    int field2123;
+    int field2124;
+    int field2125;
+    int field2126;
+    int field2127;
+    int[] field2128;
 
-public class class293 implements Comparator {
-	static int field2725;
-	final boolean field2726;
+    class293() {
+        class480 var1 = class442.field2977;
+        this.field2125 = var1.method2225(16);
+        this.field2123 = var1.method2225(24);
+        this.field2122 = var1.method2225(24);
+        this.field2124 = var1.method2225(24) + 1;
+        this.field2126 = var1.method2225(6) + 1;
+        this.field2127 = var1.method2225(8);
+        int[] var2 = new int[this.field2126];
 
-	public class293(boolean var1) {
-		this.field2726 = var1;
-	}
+        int var3;
+        for (var3 = 0; var3 < this.field2126; ++var3) {
+            int var4 = 0;
+            int var5 = var1.method2225(3);
+            boolean var6 = var1.method2226() != 0;
+            if (var6) {
+                var4 = var1.method2225(5);
+            }
 
-	int method1674(class304 var1, class304 var2) {
-		return this.field2726 ? var1.field2768 - var2.field2768 : var2.field2768 - var1.field2768;
-	}
+            var2[var3] = var4 << 3 | var5;
+        }
 
-	public int compare(Object var1, Object var2) {
-		return this.method1674((class304)var1, (class304)var2);
-	}
+        this.field2128 = new int[this.field2126 * 8];
 
-	public boolean equals(Object var1) {
-		return super.equals(var1);
-	}
+        for (var3 = 0; var3 < this.field2126 * 8; ++var3) {
+            this.field2128[var3] = (var2[var3 >> 3] & 1 << (var3 & 7)) != 0 ? var1.method2225(8) : -1;
+        }
 
-	static float method1675(class415 var0, float var1, boolean var2) {
-		float var4 = 0.0F;
-		if (null != var0 && var0.method2141() != 0) {
-			float var5 = (float)var0.field3470[0].field986;
-			float var6 = (float)var0.field3470[var0.method2141() - 1].field986;
-			float var7 = var6 - var5;
-			if ((double)var7 == 0.0D) {
-				return var0.field3470[0].field989;
-			} else {
-				float var8 = 0.0F;
-				if (var1 > var6) {
-					var8 = (var1 - var6) / var7;
-				} else {
-					var8 = (var1 - var5) / var7;
-				}
+    }
 
-				double var9 = (double)((int)var8);
-				float var11 = Math.abs((float)((double)var8 - var9));
-				float var12 = var11 * var7;
-				var9 = Math.abs(var9 + 1.0D);
-				double var13 = var9 / 2.0D;
-				double var15 = (double)((int)var13);
-				var11 = (float)(var13 - var15);
-				float var17;
-				float var18;
-				if (var2) {
-					if (class224.field2042 == var0.field3468) {
-						if ((double)var11 != 0.0D) {
-							var12 += var5;
-						} else {
-							var12 = var6 - var12;
-						}
-					} else if (var0.field3468 != class224.field2037 && var0.field3468 != class224.field2038) {
-						if (class224.field2039 == var0.field3468) {
-							var12 = var5 - var1;
-							var17 = var0.field3470[0].field995;
-							var18 = var0.field3470[0].field987;
-							var4 = var0.field3470[0].field989;
-							if (0.0D != (double)var17) {
-								var4 -= var12 * var18 / var17;
-							}
+    void method1318(float[] var1, int var2, boolean var3, class480 var4) {
+        int var5;
+        for (var5 = 0; var5 < var2; ++var5) {
+            var1[var5] = 0.0F;
+        }
 
-							return var4;
-						}
-					} else {
-						var12 = var6 - var12;
-					}
-				} else if (class224.field2042 == var0.field3488) {
-					if ((double)var11 != 0.0D) {
-						var12 = var6 - var12;
-					} else {
-						var12 += var5;
-					}
-				} else if (class224.field2037 != var0.field3488 && var0.field3488 != class224.field2038) {
-					if (var0.field3488 == class224.field2039) {
-						var12 = var1 - var6;
-						var17 = var0.field3470[var0.method2141() - 1].field990;
-						var18 = var0.field3470[var0.method2141() - 1].field991;
-						var4 = var0.field3470[var0.method2141() - 1].field989;
-						if (0.0D != (double)var17) {
-							var4 += var18 * var12 / var17;
-						}
+        if (!var3) {
+            var5 = class442.field2980[this.field2127].field4090;
+            int var6 = this.field2122 - this.field2123;
+            int var7 = var6 / this.field2124;
+            int[] var8 = new int[var7];
 
-						return var4;
-					}
-				} else {
-					var12 += var5;
-				}
+            for (int var9 = 0; var9 < 8; ++var9) {
+                int var10 = 0;
 
-				var4 = class43.method341(var0, var12);
-				float var19;
-				if (var2 && class224.field2038 == var0.field3468) {
-					var19 = var0.field3470[var0.method2141() - 1].field989 - var0.field3470[0].field989;
-					var4 = (float)((double)var4 - (double)var19 * var9);
-				} else if (!var2 && var0.field3488 == class224.field2038) {
-					var19 = var0.field3470[var0.method2141() - 1].field989 - var0.field3470[0].field989;
-					var4 = (float)((double)var4 + (double)var19 * var9);
-				}
+                while (var10 < var7) {
+                    int var11;
+                    int var12;
+                    if (var9 == 0) {
+                        var11 = class442.field2980[this.field2127].method2499(var4);
 
-				return var4;
-			}
-		} else {
-			return var4;
-		}
-	}
+                        for (var12 = var5 - 1; var12 >= 0; --var12) {
+                            if (var10 + var12 < var7) {
+                                var8[var10 + var12] = var11 % this.field2126;
+                            }
+
+                            var11 /= this.field2126;
+                        }
+                    }
+
+                    for (var11 = 0; var11 < var5; ++var11) {
+                        var12 = var8[var10];
+                        int var13 = this.field2128[var12 * 8 + var9];
+                        if (var13 >= 0) {
+                            int var14 = this.field2123 + var10 * this.field2124;
+                            class513 var15 = class442.field2980[var13];
+                            int var16;
+                            if (this.field2125 == 0) {
+                                var16 = this.field2124 / var15.field4090;
+
+                                for (int var20 = 0; var20 < var16; ++var20) {
+                                    float[] var21 = var15.method2498(var4);
+
+                                    for (int var19 = 0; var19 < var15.field4090; ++var19) {
+                                        var1[var14 + var20 + var19 * var16] += var21[var19];
+                                    }
+                                }
+                            } else {
+                                var16 = 0;
+
+                                while (var16 < this.field2124) {
+                                    float[] var17 = var15.method2498(var4);
+
+                                    for (int var18 = 0; var18 < var15.field4090; ++var18) {
+                                        var1[var14 + var16] += var17[var18];
+                                        ++var16;
+                                    }
+                                }
+                            }
+                        }
+
+                        ++var10;
+                        if (var10 >= var7) {
+                            break;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
 }

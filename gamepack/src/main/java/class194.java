@@ -1,79 +1,41 @@
-public class class194 extends class50 {
-	int field1781;
-	int field1782;
-	int field1784;
-	int field1786;
-	long field1783;
-	long[] field1785;
+public class class194 {
+    public static final class194 field1604;
+    public static final class194 field1606;
+    static final class194 field1596;
+    static final class194 field1598;
+    static final class194 field1599;
+    static final class194 field1600;
+    static final class194 field1601;
+    static final class194 field1602;
+    static final class194 field1603;
 
-	public class194() {
-		this.field1785 = new long[10];
-		this.field1782 = 256;
-		this.field1784 = 1;
-		this.field1781 = 0;
-		this.field1783 = class172.method977();
+    static {
+        field1604 = new class194(8, 0, "", "");
+        field1596 = new class194(4, 1, "", "");
+        field1603 = new class194(1, 2, "", "");
+        field1598 = new class194(6, 3, "", "");
+        field1599 = new class194(2, 4, "", "");
+        field1600 = new class194(0, 5, "", "");
+        field1601 = new class194(5, 6, "", "");
+        field1602 = new class194(7, 7, "", "");
+        field1606 = new class194(3, -1, "", "", true, new class194[]{field1604, field1596, field1603, field1599, field1598});
+    }
 
-		for (int var1 = 0; var1 < 10; ++var1) {
-			this.field1785[var1] = this.field1783;
-		}
+    public final int field1597;
+    final String field1605;
 
-	}
+    class194(int var1, int var2, String var3, String var4) {
+        this.field1597 = var1;
+        this.field1605 = var4;
+    }
 
-	public void method378() {
-		for (int var2 = 0; var2 < 10; ++var2) {
-			this.field1785[var2] = 0L;
-		}
+    class194(int var1, int var2, String var3, String var4, boolean var5, class194[] var6) {
+        this.field1597 = var1;
+        this.field1605 = var4;
+    }
 
-	}
-
-	public int method379(int var1, int var2) {
-		int var4 = this.field1782;
-		int var5 = this.field1784;
-		this.field1782 = 300;
-		this.field1784 = 1;
-		this.field1783 = class172.method977();
-		if (0L == this.field1785[this.field1786]) {
-			this.field1782 = var4;
-			this.field1784 = var5;
-		} else if (this.field1783 > this.field1785[this.field1786]) {
-			this.field1782 = (int)((long)(var1 * 2560) / (this.field1783 - this.field1785[this.field1786]));
-		}
-
-		if (this.field1782 < 25) {
-			this.field1782 = 25;
-		}
-
-		if (this.field1782 > 256) {
-			this.field1782 = 256;
-			this.field1784 = (int)((long)var1 - (this.field1783 - this.field1785[this.field1786]) / 10L);
-		}
-
-		if (this.field1784 > var1) {
-			this.field1784 = var1;
-		}
-
-		this.field1785[this.field1786] = this.field1783;
-		this.field1786 = (1 + this.field1786) % 10;
-		int var6;
-		if (this.field1784 > 1) {
-			for (var6 = 0; var6 < 10; ++var6) {
-				if (0L != this.field1785[var6]) {
-					this.field1785[var6] += (long)this.field1784;
-				}
-			}
-		}
-
-		if (this.field1784 < var2) {
-			this.field1784 = var2;
-		}
-
-		class353.method1925((long)this.field1784);
-
-		for (var6 = 0; this.field1781 < 256; this.field1781 += this.field1782) {
-			++var6;
-		}
-
-		this.field1781 &= 255;
-		return var6;
-	}
+    @Override
+    public String toString() {
+        return this.field1605;
+    }
 }

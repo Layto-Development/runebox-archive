@@ -40,8 +40,13 @@ class Deobfuscator(
         register<GetPathErrorFixer>()
         register<FieldSorter>()
         register<MethodSorter>()
+        register<CopyPropagatationFixer>()
+        register<ConstantArgumentRemover>()
+        register<CounterRemover>()
+        register<OverrideAnnotationAdder>()
         register<DeadCodeRemover>()
         register<EmptyClassRemover>()
+        register<ClassVersionUpgrader>()
 
         Logger.info("Registered ${transformers.size} bytecode transformers.")
     }

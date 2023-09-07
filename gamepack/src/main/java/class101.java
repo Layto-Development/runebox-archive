@@ -1,57 +1,30 @@
-public class class101 extends class218 {
-	static class215 field1013;
-	static class344 field1012;
-	static int[] field1016;
-	public int[][] field1014;
-	public Object[][] field1015;
+public class class101 extends class438 {
+    // $FF: synthetic field
+    final class423 this$0;
+    int field999;
+    String field998;
+    long field1000;
 
-	static {
-		field1012 = new class344(64);
-	}
+    class101(class423 var1) {
+        this.this$0 = var1;
+        this.field1000 = -1L;
+        this.field998 = null;
+        this.field999 = 0;
+    }
 
-	class101() {
-	}
+    @Override
+    void method2006(class78 var1) {
+        if (var1.method260() != 255) {
+            --var1.field697;
+            this.field1000 = var1.method265();
+        }
 
-	void method650(class42 var1) {
-		while (true) {
-			int var3 = var1.method278();
-			if (var3 == 0) {
-				return;
-			}
+        this.field998 = var1.method319();
+        this.field999 = var1.method309();
+    }
 
-			this.method651(var1, var3);
-		}
-	}
-
-	void method651(class42 var1, int var2) {
-		if (var2 == 1) {
-			int var4 = var1.method278();
-			if (this.field1014 == null) {
-				this.field1014 = new int[var4][];
-			}
-
-			for (int var5 = var1.method278(); var5 != 255; var5 = var1.method278()) {
-				int var6 = var5 & 127;
-				boolean var7 = (var5 & 128) != 0;
-				int[] var8 = new int[var1.method278()];
-
-				for (int var9 = 0; var9 < var8.length; ++var9) {
-					var8[var9] = var1.method325();
-				}
-
-				this.field1014[var6] = var8;
-				if (var7) {
-					if (null == this.field1015) {
-						this.field1015 = new Object[this.field1014.length][];
-					}
-
-					this.field1015[var6] = class451.method2251(var1, var8);
-				}
-			}
-		}
-
-	}
-
-	void method652() {
-	}
+    @Override
+    void method2005(class133 var1) {
+        var1.method609(this.field1000, this.field998, this.field999);
+    }
 }

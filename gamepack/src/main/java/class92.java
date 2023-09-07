@@ -1,35 +1,39 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class class92 {
-	public static class215 field898;
-	public static class215 field899;
-	public static class215 field902;
-	public static int field900;
-	public static int field907;
-	public static int field908;
-	public static int field909;
-	public static ArrayList field901;
-	public static ArrayList field903;
-	public static ArrayList field904;
-	public static ArrayList field905;
-	public static LinkedList field910;
-	public static final List field906;
+    static int field763;
+    final class38 field760;
+    final class78 field762;
+    ExecutorService field761;
+    Future field764;
 
-	static {
-		field901 = null;
-		field910 = new LinkedList();
-		field903 = new ArrayList(3);
-		field904 = new ArrayList(3);
-		field905 = new ArrayList();
-		field906 = new ArrayList();
-		field907 = 0;
-		field908 = 0;
-		field909 = 0;
-		field900 = 0;
-	}
+    public class92(class78 var1, class38 var2) {
+        this.field761 = Executors.newSingleThreadExecutor();
+        this.field762 = var1;
+        this.field760 = var2;
+        this.method358();
+    }
 
-	class92() throws Throwable {
-	}
+    public boolean method360() {
+        return this.field764.isDone();
+    }
+
+    public void method357() {
+        this.field761.shutdown();
+        this.field761 = null;
+    }
+
+    public class78 method359() {
+        try {
+            return (class78) this.field764.get();
+        } catch (Exception var3) {
+            return null;
+        }
+    }
+
+    void method358() {
+        this.field764 = this.field761.submit(new class162(this, this.field762, this.field760));
+    }
 }

@@ -1,6 +1,9 @@
-public abstract class class428 extends class462 {
-	int field3524;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-	class428() {
-	}
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface class428 {
 }

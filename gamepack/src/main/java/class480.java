@@ -1,35 +1,48 @@
-public abstract class class480 extends class218 {
-	public int field4080;
+public class class480 {
+    byte[] field3458;
+    int field3457;
+    int field3459;
 
-	protected class480() {
-		this.field4080 = 1000;
-	}
+    class480() {
+        this.field3458 = null;
+        this.field3457 = 0;
+        this.field3459 = 0;
+    }
 
-	void method2392(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, long var9) {
-		class250 var11 = this.method2393();
-		if (var11 != null) {
-			this.field4080 = var11.field4080;
-			var11.method2392(var1, var2, var3, var4, var5, var6, var7, var8, var9);
-		}
+    int method2225(int var1) {
+        int var3 = 0;
 
-	}
+        int var4;
+        int var5;
+        for (var4 = 0; var1 >= 8 - this.field3459; var1 -= var5) {
+            var5 = 8 - this.field3459;
+            int var6 = (1 << var5) - 1;
+            var3 += (this.field3458[this.field3457] >> this.field3459 & var6) << var4;
+            this.field3459 = 0;
+            ++this.field3457;
+            var4 += var5;
+        }
 
-	protected class250 method2393() {
-		return null;
-	}
+        if (var1 > 0) {
+            var5 = (1 << var1) - 1;
+            var3 += (this.field3458[this.field3457] >> this.field3459 & var5) << var4;
+            this.field3459 += var1;
+        }
 
-	public static void method2395() {
-		class207.field1917.method1887();
-	}
+        return var3;
+    }
 
-	static final void method2394() {
-		if (Client.field56 > 0) {
-			class124.method763();
-		} else {
-			Client.field71.method64();
-			class104.method675(40);
-			class431.field3536 = Client.field68.method1573();
-			Client.field68.method1572();
-		}
-	}
+    int method2226() {
+        int var2 = this.field3458[this.field3457] >> this.field3459 & 1;
+        ++this.field3459;
+        this.field3457 += this.field3459 >> 3;
+        this.field3459 &= 7;
+        return var2;
+    }
+
+    void method2227(byte[] var1, int var2) {
+        this.field3458 = var1;
+        this.field3457 = 0;
+        this.field3459 = 0;
+    }
 }

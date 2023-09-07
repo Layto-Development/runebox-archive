@@ -1,215 +1,174 @@
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.awt.*;
 
-public class class51 extends class268 {
-	static byte[][] field592;
-	final boolean field591;
+public final class class51 extends class70 {
+    static class372 field573;
+    static class43 field560;
+    static int field557;
+    static Font field572;
 
-	public class51(boolean var1) {
-		this.field591 = var1;
-	}
+    static {
+        field560 = new class43();
+    }
 
-	int method382(class304 var1, class304 var2) {
-		if (var1.field2769 != 0) {
-			if (var2.field2769 == 0) {
-				return this.field591 ? -1 : 1;
-			}
-		} else if (var2.field2769 != 0) {
-			return this.field591 ? 1 : -1;
-		}
+    class304 field570;
+    class409 field565;
+    class409 field569;
+    int field558;
+    int field559;
+    int field561;
+    int field562;
+    int field563;
+    int field564;
+    int field566;
+    int field568;
+    int field571;
+    int field574;
+    int[] field567;
 
-		return this.method1568(var1, var2);
-	}
+    class51() {
+    }
 
-	public int compare(Object var1, Object var2) {
-		return this.method382((class304)var1, (class304)var2);
-	}
+    static void method144() {
+        for (class51 var1 = (class51) field560.method122(); var1 != null; var1 = (class51) field560.method124()) {
+            if (null != var1.field569) {
+                class173.field1454.method1720(var1.field569);
+                var1.field569 = null;
+            }
 
-	static float[] method384(JSONObject var0, String var1) throws JSONException {
-		float[] var3 = new float[4];
+            if (var1.field565 != null) {
+                class173.field1454.method1720(var1.field565);
+                var1.field565 = null;
+            }
+        }
 
-		try {
-			JSONArray var4 = var0.getJSONArray(var1);
-			var3[0] = (float)var4.optDouble(0, 0.0D);
-			var3[1] = (float)var4.optDouble(1, 0.0D);
-			var3[2] = (float)var4.optDouble(2, 1.0D);
-			var3[3] = (float)var4.optDouble(3, 1.0D);
-		} catch (JSONException var5) {
-			var3[0] = 0.0F;
-			var3[1] = 0.0F;
-			var3[2] = 1.0F;
-			var3[3] = 1.0F;
-		}
+        field560.method118();
+    }
 
-		return var3;
-	}
+    static void method143(int var0, int var1, int var2, class304 var3, int var4) {
+        class51 var6 = new class51();
+        var6.field558 = var0;
+        var6.field559 = var1 * 128;
+        var6.field571 = var2 * 128;
+        int var7 = var3.field2190;
+        int var8 = var3.field2175;
+        if (var4 == 1 || var4 == 3) {
+            var7 = var3.field2175;
+            var8 = var3.field2190;
+        }
 
-	static final void method383(class163 var0) {
-		var0.field1533 = false;
-		if (var0.field1538 != -1) {
-			class393 var2 = class114.method702(var0.field1538);
-			if (null != var2) {
-				if (!var2.method2062() && null != var2.field3296) {
-					++var0.field1568;
-					if (var0.field1525 < var2.field3296.length && var0.field1568 > var2.field3307[var0.field1525]) {
-						var0.field1568 = 1;
-						++var0.field1525;
-						class209.method1178(var2, var0.field1525, var0.field1555, var0.field1526);
-					}
+        var6.field561 = 128 * (var7 + var1);
+        var6.field562 = (var2 + var8) * 128;
+        var6.field564 = var3.field2219;
+        var6.field563 = var3.field2220 * 128;
+        var6.field568 = var3.field2221;
+        var6.field566 = var3.field2222;
+        var6.field567 = var3.field2213;
+        if (null != var3.field2216) {
+            var6.field570 = var3;
+            var6.method141();
+        }
 
-					if (var0.field1525 >= var2.field3296.length) {
-						if (var2.field3300 > 0) {
-							var0.field1525 -= var2.field3300;
-							if (var2.field3308) {
-								++var0.field1569;
-							}
+        field560.method126(var6);
+        if (null != var6.field567) {
+            var6.field574 = var6.field568 + (int) (Math.random() * (double) (var6.field566 - var6.field568));
+        }
 
-							if (var0.field1525 < 0 || var0.field1525 >= var2.field3296.length || var2.field3308 && var0.field1569 >= var2.field3289) {
-								var0.field1568 = 0;
-								var0.field1525 = 0;
-								var0.field1569 = 0;
-							}
-						} else {
-							var0.field1568 = 0;
-							var0.field1525 = 0;
-						}
+    }
 
-						class209.method1178(var2, var0.field1525, var0.field1555, var0.field1526);
-					}
-				} else if (var2.method2062()) {
-					++var0.field1525;
-					int var3 = var2.method2059();
-					if (var0.field1525 < var3) {
-						class206.method1153(var2, var0.field1525, var0.field1555, var0.field1526);
-					} else {
-						if (var2.field3300 > 0) {
-							var0.field1525 -= var2.field3300;
-							if (var2.field3308) {
-								++var0.field1569;
-							}
+    static void method142(int var0, int var1, int var2, int var3) {
+        for (class51 var5 = (class51) field560.method122(); var5 != null; var5 = (class51) field560.method124()) {
+            if (var5.field564 != -1 || var5.field567 != null) {
+                int var6 = 0;
+                if (var1 > var5.field561) {
+                    var6 = (var1 - var5.field561);
+                } else if (var1 < var5.field559) {
+                    var6 = (var5.field559 - var1);
+                }
 
-							if (var0.field1525 < 0 || var0.field1525 >= var3 || var2.field3308 && var0.field1569 >= var2.field3289) {
-								var0.field1525 = 0;
-								var0.field1568 = 0;
-								var0.field1569 = 0;
-							}
-						} else {
-							var0.field1568 = 0;
-							var0.field1525 = 0;
-						}
+                if (var2 > var5.field562) {
+                    var6 += var2 - var5.field562;
+                } else if (var2 < var5.field571) {
+                    var6 += var5.field571 - var2;
+                }
 
-						class206.method1153(var2, var0.field1525, var0.field1555, var0.field1526);
-					}
-				} else {
-					var0.field1538 = -1;
-				}
-			} else {
-				var0.field1538 = -1;
-			}
-		}
+                if (var6 - 64 <= var5.field563 && class290.field2121.method2555() != 0 && var0 == var5.field558) {
+                    var6 -= 64;
+                    if (var6 < 0) {
+                        var6 = 0;
+                    }
 
-		class301 var7 = new class301(var0.method903());
+                    int var7 = (var5.field563 - var6) * class290.field2121.method2555() / var5.field563;
+                    if (var5.field569 == null) {
+                        if (var5.field564 >= 0) {
+                            class131 var8 = class131.method590(class215.field1739, var5.field564, 0);
+                            if (var8 != null) {
+                                class433 var9 = var8.method588().method1973(class237.field1833);
+                                class409 var10 = class409.method1892(var9, 100, var7);
+                                var10.method1862(-1);
+                                class173.field1454.method1730(var10);
+                                var5.field569 = var10;
+                            }
+                        }
+                    } else {
+                        var5.field569.method1863(var7);
+                    }
 
-		int var4;
-		for (class508 var8 = (class508)var7.method1698(); null != var8; var8 = (class508)var7.next()) {
-			if (var8.field4185 != -1 && Client.field306 >= var8.field4184) {
-				var4 = class63.method481(var8.field4185).field3417;
-				if (var4 == -1) {
-					var8.method2269();
-					--var0.field1576;
-				} else {
-					var8.field4182 = Math.max(var8.field4182, 0);
-					class393 var5 = class114.method702(var4);
-					if (null != var5.field3296 && !var5.method2062()) {
-						++var8.field4181;
-						if (var8.field4182 < var5.field3296.length && var8.field4181 > var5.field3307[var8.field4182]) {
-							var8.field4181 = 1;
-							++var8.field4182;
-							class209.method1178(var5, var8.field4182, var0.field1555, var0.field1526);
-						}
+                    if (var5.field565 == null) {
+                        if (null != var5.field567 && (var5.field574 -= var3) <= 0) {
+                            int var12 = (int) (Math.random() * (double) var5.field567.length);
+                            class131 var13 = class131.method590(class215.field1739, var5.field567[var12], 0);
+                            if (null != var13) {
+                                class433 var14 = var13.method588().method1973(class237.field1833);
+                                class409 var11 = class409.method1892(var14, 100, var7);
+                                var11.method1862(0);
+                                class173.field1454.method1730(var11);
+                                var5.field565 = var11;
+                                var5.field574 = var5.field568 + (int) (Math.random() * (double) (var5.field566 - var5.field568));
+                            }
+                        }
+                    } else {
+                        var5.field565.method1863(var7);
+                        if (!var5.field565.method222()) {
+                            var5.field565 = null;
+                        }
+                    }
+                } else {
+                    if (null != var5.field569) {
+                        class173.field1454.method1720(var5.field569);
+                        var5.field569 = null;
+                    }
 
-						if (var8.field4182 >= var5.field3296.length) {
-							var8.method2269();
-							--var0.field1576;
-						}
-					} else if (var5.method2062()) {
-						++var8.field4182;
-						int var6 = var5.method2059();
-						if (var8.field4182 < var6) {
-							class206.method1153(var5, var8.field4182, var0.field1555, var0.field1526);
-						} else {
-							var8.method2269();
-							--var0.field1576;
-						}
-					} else {
-						var8.method2269();
-						--var0.field1576;
-					}
-				}
-			}
-		}
+                    if (var5.field565 != null) {
+                        class173.field1454.method1720(var5.field565);
+                        var5.field565 = null;
+                    }
+                }
+            }
+        }
 
-		class393 var9;
-		if (var0.field1570 != -1 && var0.field1587 <= 1) {
-			var9 = class114.method702(var0.field1570);
-			if (var9.field3309 == 1 && var0.field1589 > 0 && var0.field1581 <= Client.field306 && var0.field1582 < Client.field306) {
-				var0.field1587 = 1;
-				return;
-			}
-		}
+    }
 
-		if (var0.field1570 != -1 && var0.field1587 == 0) {
-			var9 = class114.method702(var0.field1570);
-			if (var9 != null) {
-				if (!var9.method2062() && var9.field3296 != null) {
-					++var0.field1572;
-					if (var0.field1571 < var9.field3296.length && var0.field1572 > var9.field3307[var0.field1571]) {
-						var0.field1572 = 1;
-						++var0.field1571;
-						class209.method1178(var9, var0.field1571, var0.field1555, var0.field1526);
-					}
+    void method141() {
+        int var2 = this.field564;
+        class304 var3 = this.field570.method1346();
+        if (var3 != null) {
+            this.field564 = var3.field2219;
+            this.field563 = var3.field2220 * 128;
+            this.field568 = var3.field2221;
+            this.field566 = var3.field2222;
+            this.field567 = var3.field2213;
+        } else {
+            this.field564 = -1;
+            this.field563 = 0;
+            this.field568 = 0;
+            this.field566 = 0;
+            this.field567 = null;
+        }
 
-					if (var0.field1571 >= var9.field3296.length) {
-						var0.field1571 -= var9.field3300;
-						++var0.field1552;
-						if (var0.field1552 >= var9.field3289) {
-							var0.field1570 = -1;
-						} else if (var0.field1571 >= 0 && var0.field1571 < var9.field3296.length) {
-							class209.method1178(var9, var0.field1571, var0.field1555, var0.field1526);
-						} else {
-							var0.field1570 = -1;
-						}
-					}
+        if (var2 != this.field564 && this.field569 != null) {
+            class173.field1454.method1720(this.field569);
+            this.field569 = null;
+        }
 
-					var0.field1533 = var9.field3303;
-				} else if (var9.method2062()) {
-					++var0.field1571;
-					var4 = var9.method2059();
-					if (var0.field1571 < var4) {
-						class206.method1153(var9, var0.field1571, var0.field1555, var0.field1526);
-					} else {
-						var0.field1571 -= var9.field3300;
-						++var0.field1552;
-						if (var0.field1552 >= var9.field3289) {
-							var0.field1570 = -1;
-						} else if (var0.field1571 >= 0 && var0.field1571 < var4) {
-							class206.method1153(var9, var0.field1571, var0.field1555, var0.field1526);
-						} else {
-							var0.field1570 = -1;
-						}
-					}
-				} else {
-					var0.field1570 = -1;
-				}
-			} else {
-				var0.field1570 = -1;
-			}
-		}
-
-		if (var0.field1587 > 0) {
-			--var0.field1587;
-		}
-
-	}
+    }
 }

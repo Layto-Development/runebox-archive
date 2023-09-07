@@ -1,26 +1,25 @@
-public class class447 {
-	static int[] field3937;
-	int[] field3932;
-	short[] field3933;
-	short[] field3935;
-	public boolean field3936;
-	public long field3934;
+public class class447 implements class330 {
+    public static final class447 field3028;
+    public static final class447 field3029;
+    public static final class447 field3030;
+    public static final class447 field3033;
+    static byte[][][] field3032;
 
-	public class447(long var1, int[] var3, short[] var4, short[] var5, boolean var6) {
-		this.field3936 = false;
-		this.field3934 = var1;
-		this.field3932 = var3;
-		this.field3933 = var4;
-		this.field3935 = var5;
-		this.field3936 = var6;
-	}
+    static {
+        field3028 = new class447((byte) -1);
+        field3029 = new class447((byte) 0);
+        field3033 = new class447((byte) 1);
+        field3030 = new class447((byte) 2);
+    }
 
-	public static int method2236(int var0) {
-		return var0 >>> 4 & class125.field1168;
-	}
+    public byte field3031;
 
-	static int method2235(class60 var0) {
-		class380 var2 = (class380)Client.field222.method1492((long)var0.field763 + ((long)var0.field644 << 32));
-		return var2 != null ? var2.field3226 : var0.field715;
-	}
+    class447(byte var1) {
+        this.field3031 = var1;
+    }
+
+    @Override
+    public int method1533() {
+        return this.field3031;
+    }
 }

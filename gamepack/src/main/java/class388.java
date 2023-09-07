@@ -1,147 +1,120 @@
-public class class388 extends class372 {
-	class86 field3267;
-	class86 field3270;
-	int field3268;
-	int field3269;
+import javax.net.ssl.SSLPeerUnverifiedException;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSessionContext;
+import javax.security.cert.X509Certificate;
+import java.security.Principal;
+import java.security.cert.Certificate;
 
-	public class388() {
-		this.field3270 = new class86();
-		this.field3267 = new class86();
-		this.field3269 = 0;
-		this.field3268 = -1;
-	}
+class class388 implements SSLSession {
+    // $FF: synthetic field
+    final class264 this$1;
 
-	public final synchronized void method2045(class372 var1) {
-		this.field3270.method568(var1);
-	}
+    class388(class264 var1) {
+        this.this$1 = var1;
+    }
 
-	public final synchronized void method2040(class372 var1) {
-		var1.method2269();
-	}
+    @Override
+    public int getApplicationBufferSize() {
+        return 0;
+    }
 
-	void method2041() {
-		if (this.field3269 > 0) {
-			for (class27 var1 = (class27)this.field3267.method563(); var1 != null; var1 = (class27)this.field3267.method565()) {
-				var1.field459 -= this.field3269;
-			}
+    @Override
+    public String getCipherSuite() {
+        throw new UnsupportedOperationException();
+    }
 
-			this.field3268 -= this.field3269;
-			this.field3269 = 0;
-		}
+    @Override
+    public long getCreationTime() {
+        throw new UnsupportedOperationException();
+    }
 
-	}
+    @Override
+    public byte[] getId() {
+        throw new UnsupportedOperationException();
+    }
 
-	void method2042(class462 var1, class27 var2) {
-		while (var1 != this.field3267.field868 && ((class27)var1).field459 <= var2.field459) {
-			var1 = var1.field3986;
-		}
+    @Override
+    public long getLastAccessedTime() {
+        throw new UnsupportedOperationException();
+    }
 
-		class86.method560(var2, var1);
-		this.field3268 = ((class27)this.field3267.field868.field3986).field459;
-	}
+    @Override
+    public Certificate[] getLocalCertificates() {
+        throw new UnsupportedOperationException();
+    }
 
-	void method2043(class27 var1) {
-		var1.method2269();
-		var1.method209();
-		class462 var2 = this.field3267.field868.field3986;
-		if (var2 == this.field3267.field868) {
-			this.field3268 = -1;
-		} else {
-			this.field3268 = ((class27)var2).field459;
-		}
+    @Override
+    public Principal getLocalPrincipal() {
+        throw new UnsupportedOperationException();
+    }
 
-	}
+    @Override
+    public int getPacketBufferSize() {
+        throw new UnsupportedOperationException();
+    }
 
-	protected class372 method1980() {
-		return (class372)this.field3270.method563();
-	}
+    @Override
+    public X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
+        return null;
+    }
 
-	protected class372 method1981() {
-		return (class372)this.field3270.method565();
-	}
+    @Override
+    public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
+        return this.this$1.field1954;
+    }
 
-	protected int method1978() {
-		return 0;
-	}
+    @Override
+    public String getPeerHost() {
+        throw new UnsupportedOperationException();
+    }
 
-	public final synchronized void method1983(int[] var1, int var2, int var3) {
-		do {
-			if (this.field3268 < 0) {
-				this.method2044(var1, var2, var3);
-				return;
-			}
+    @Override
+    public int getPeerPort() {
+        return 0;
+    }
 
-			if (this.field3269 + var3 < this.field3268) {
-				this.field3269 += var3;
-				this.method2044(var1, var2, var3);
-				return;
-			}
+    @Override
+    public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
+        return null;
+    }
 
-			int var4 = this.field3268 - this.field3269;
-			this.method2044(var1, var2, var4);
-			var2 += var4;
-			var3 -= var4;
-			this.field3269 += var4;
-			this.method2041();
-			class27 var5 = (class27)this.field3267.method563();
-			synchronized(var5) {
-				int var7 = var5.method210(this);
-				if (var7 < 0) {
-					var5.field459 = 0;
-					this.method2043(var5);
-				} else {
-					var5.field459 = var7;
-					this.method2042(var5.field3986, var5);
-				}
-			}
-		} while(var3 != 0);
+    @Override
+    public String getProtocol() {
+        throw new UnsupportedOperationException();
+    }
 
-	}
+    @Override
+    public SSLSessionContext getSessionContext() {
+        throw new UnsupportedOperationException();
+    }
 
-	void method2044(int[] var1, int var2, int var3) {
-		for (class372 var4 = (class372)this.field3270.method563(); var4 != null; var4 = (class372)this.field3270.method565()) {
-			var4.method1984(var1, var2, var3);
-		}
+    @Override
+    public Object getValue(String var1) {
+        throw new UnsupportedOperationException();
+    }
 
-	}
+    @Override
+    public String[] getValueNames() {
+        throw new UnsupportedOperationException();
+    }
 
-	public final synchronized void method1982(int var1) {
-		do {
-			if (this.field3268 < 0) {
-				this.method2046(var1);
-				return;
-			}
+    @Override
+    public void invalidate() {
+        throw new UnsupportedOperationException();
+    }
 
-			if (this.field3269 + var1 < this.field3268) {
-				this.field3269 += var1;
-				this.method2046(var1);
-				return;
-			}
+    @Override
+    public boolean isValid() {
+        throw new UnsupportedOperationException();
+    }
 
-			int var2 = this.field3268 - this.field3269;
-			this.method2046(var2);
-			var1 -= var2;
-			this.field3269 += var2;
-			this.method2041();
-			class27 var3 = (class27)this.field3267.method563();
-			synchronized(var3) {
-				int var5 = var3.method210(this);
-				if (var5 < 0) {
-					var3.field459 = 0;
-					this.method2043(var3);
-				} else {
-					var3.field459 = var5;
-					this.method2042(var3.field3986, var3);
-				}
-			}
-		} while(var1 != 0);
+    @Override
+    public void putValue(String var1, Object var2) {
+        throw new UnsupportedOperationException();
+    }
 
-	}
-
-	void method2046(int var1) {
-		for (class372 var2 = (class372)this.field3270.method563(); var2 != null; var2 = (class372)this.field3270.method565()) {
-			var2.method1982(var1);
-		}
-
-	}
+    @Override
+    public void removeValue(String var1) {
+        throw new UnsupportedOperationException();
+    }
 }

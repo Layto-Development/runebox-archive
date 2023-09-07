@@ -1,29 +1,76 @@
-import java.math.BigInteger;
-
 public class class423 {
-	static int field3513;
-	static final BigInteger field3514;
-	static final BigInteger field3515;
+    static class97 field2915;
+    public int field2916;
+    class247 field2917;
+    long field2918;
 
-	static {
-		field3514 = new BigInteger("80782894952180643741752986186714059433953886149239752893425047584684715842049");
-		field3515 = new BigInteger("7237300117305667488707183861728052766358166655052137727439795191253340127955075499635575104901523446809299097934591732635674173519120047404024393881551683");
-	}
+    public class423(class78 var1) {
+        this.field2916 = -1;
+        this.field2917 = new class247();
+        this.method1944(var1);
+    }
 
-	class423() throws Throwable {
-	}
+    public static class46 method1945(byte var0) {
+        return class46.field540 == 0 ? new class46() : class46.field539[--class46.field540];
+    }
 
-	static void method2168() {
-		Client.field83 = null;
-		class527.field4251 = null;
-		class316.field2828 = null;
-		class189.field1757 = null;
-		class140.field1346 = null;
-		class398.field3353 = null;
-		class445.field3912 = null;
-		class517.field4223 = null;
-		class207.field1912 = null;
-		class35.field500 = null;
-		class265.field2402 = null;
-	}
+    void method1944(class78 var1) {
+        this.field2918 = var1.method265();
+        this.field2916 = var1.method264();
+
+        for (int var3 = var1.method260(); var3 != 0; var3 = var1.method260()) {
+            Object var4;
+            if (var3 == 3) {
+                var4 = new class217(this);
+            } else if (var3 == 1) {
+                var4 = new class202(this);
+            } else if (var3 == 13) {
+                var4 = new class101(this);
+            } else if (var3 == 4) {
+                var4 = new class109(this);
+            } else if (var3 == 6) {
+                var4 = new class165(this);
+            } else if (var3 == 5) {
+                var4 = new class18(this);
+            } else if (var3 == 2) {
+                var4 = new class164(this);
+            } else if (var3 == 7) {
+                var4 = new class348(this);
+            } else if (var3 == 14) {
+                var4 = new class53(this);
+            } else if (var3 == 8) {
+                var4 = new class183(this);
+            } else if (var3 == 9) {
+                var4 = new class169(this);
+            } else if (var3 == 10) {
+                var4 = new class502(this);
+            } else if (var3 == 11) {
+                var4 = new class474(this);
+            } else if (var3 == 12) {
+                var4 = new class128(this);
+            } else {
+                if (var3 != 15) {
+                    throw new RuntimeException("");
+                }
+
+                var4 = new class173(this);
+            }
+
+            ((class438) var4).method2006(var1);
+            this.field2917.method1100((class70) var4);
+        }
+
+    }
+
+    public void method1943(class133 var1) {
+        if (var1.field1161 == this.field2918 && this.field2916 == var1.field1178) {
+            for (class438 var3 = (class438) this.field2917.method1106(); null != var3; var3 = (class438) this.field2917.method1102()) {
+                var3.method2005(var1);
+            }
+
+            ++var1.field1178;
+        } else {
+            throw new RuntimeException("");
+        }
+    }
 }

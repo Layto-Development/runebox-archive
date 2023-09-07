@@ -1,27 +1,62 @@
-public class class389 {
-	public static class215 field3271;
-	public static final char[] field3272;
+public class class389 extends class70 {
+    class5 field2778;
 
-	static {
-		field3272 = new char[]{'\u20ac', '\u0000', '\u201a', '\u0192', '\u201e', '\u2026', '\u2020', '\u2021', '\u02c6', '\u2030', '\u0160', '\u2039', '\u0152', '\u0000', '\u017d', '\u0000', '\u0000', '\u2018', '\u2019', '\u201c', '\u201d', '\u2022', '\u2013', '\u2014', '\u02dc', '\u2122', '\u0161', '\u203a', '\u0153', '\u0000', '\u017e', '\u0178'};
-	}
+    public class389() {
+        this.field2778 = null;
+    }
 
-	class389() throws Throwable {
-	}
+    class389(class442 var1) {
+        if (var1 != null) {
+            this.field2778 = new class5(var1, null);
+        }
+    }
 
-	public static class82 method2047(int var0) {
-		class82 var2 = (class82)class82.field857.method1890((long)var0);
-		if (var2 != null) {
-			return var2;
-		} else {
-			byte[] var3 = class82.field861.method1212(14, var0);
-			var2 = new class82();
-			if (var3 != null) {
-				var2.method547(new class42(var3));
-			}
+    public class389(class433 var1) {
+        this.field2778 = new class5(null, var1);
+    }
 
-			class82.field857.method1889(var2, (long)var0);
-			return var2;
-		}
-	}
+    public boolean method1806(byte var1) {
+        return null == this.field2778;
+    }
+
+    public class433 method1808() {
+        if (null != this.field2778 && this.field2778.field25.tryLock()) {
+            class433 var2;
+            try {
+                var2 = this.method1805();
+            } finally {
+                this.field2778.field25.unlock();
+            }
+
+            return var2;
+        } else {
+            return null;
+        }
+    }
+
+    public class433 method1807() {
+        if (this.field2778 != null) {
+            this.field2778.field25.lock();
+
+            class433 var2;
+            try {
+                var2 = this.method1805();
+            } finally {
+                this.field2778.field25.unlock();
+            }
+
+            return var2;
+        } else {
+            return null;
+        }
+    }
+
+    class433 method1805() {
+        if (this.field2778.field24 == null) {
+            this.field2778.field24 = this.field2778.field29.method2017(null);
+            this.field2778.field29 = null;
+        }
+
+        return this.field2778.field24;
+    }
 }

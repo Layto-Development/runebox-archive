@@ -1,40 +1,67 @@
-import java.util.Iterator;
+public class class276 extends class510 {
+    static class289 field2022;
 
-public class class276 implements Iterator {
-	class218 field2450;
-	class218 field2451;
-	class282 field2449;
+    static {
+        field2022 = new class289(64);
+    }
 
-	class276(class282 var1) {
-		this.field2451 = null;
-		this.field2449 = var1;
-		this.field2450 = this.field2449.field2509.field2029;
-		this.field2451 = null;
-	}
+    public int field2021;
 
-	public Object next() {
-		class218 var1 = this.field2450;
-		if (var1 == this.field2449.field2509) {
-			var1 = null;
-			this.field2450 = null;
-		} else {
-			this.field2450 = var1.field2029;
-		}
+    class276() {
+        this.field2021 = 0;
+    }
 
-		this.field2451 = var1;
-		return var1;
-	}
+    public static void method1246(class68 var0) {
+        class179.field1519 = var0;
+    }
 
-	public boolean hasNext() {
-		return this.field2450 != this.field2449.field2509;
-	}
+    public static class276 method1245(int var0) {
+        class276 var2 = (class276) field2022.method1307(var0);
+        if (null != var2) {
+            return var2;
+        } else {
+            byte[] var3 = class179.field1519.method188(5, var0);
+            var2 = new class276();
+            if (var3 != null) {
+                var2.method1242(new class78(var3));
+            }
 
-	public void remove() {
-		if (this.field2451 == null) {
-			throw new IllegalStateException();
-		} else {
-			this.field2451.method1252();
-			this.field2451 = null;
-		}
-	}
+            field2022.method1306(var2, var0);
+            return var2;
+        }
+    }
+
+    static void method1244() {
+        if (Client.field3867) {
+            class97 var1 = class97.method421(class4.field22, Client.field3943);
+            if (null != var1 && var1.field886 != null) {
+                class26 var2 = new class26();
+                var2.field138 = var1;
+                var2.field141 = var1.field886;
+                class269.method1200(var2);
+            }
+
+            Client.field3909 = -1;
+            Client.field3867 = false;
+            Client.method2424(var1);
+        }
+    }
+
+    void method1242(class78 var1) {
+        while (true) {
+            int var3 = var1.method260();
+            if (var3 == 0) {
+                return;
+            }
+
+            this.method1243(var1, var3);
+        }
+    }
+
+    void method1243(class78 var1, int var2) {
+        if (var2 == 2) {
+            this.field2021 = var1.method309();
+        }
+
+    }
 }

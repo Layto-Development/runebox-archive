@@ -1,54 +1,40 @@
-public class class394 implements class367 {
-	public static final class394 field3312;
-	public static final class394 field3313;
-	public static final class394 field3314;
-	public static final class394 field3317;
-	static byte[][][] field3316;
-	public byte field3315;
+import java.util.Iterator;
 
-	static {
-		field3312 = new class394((byte)-1);
-		field3313 = new class394((byte)0);
-		field3317 = new class394((byte)1);
-		field3314 = new class394((byte)2);
-	}
+public class class394 extends class337 {
+    static boolean field2787;
 
-	class394(byte var1) {
-		this.field3315 = var1;
-	}
+    public class394(class337 var1) {
+        super(var1);
+        super.field2442 = "StartSongTask";
+    }
 
-	public int method1970() {
-		return this.field3315;
-	}
+    @Override
+    public boolean method1595() {
+        Iterator<class537> var2 = class141.field1240.iterator();
 
-	static String method2064(int var0) {
-		return "<col=" + Integer.toHexString(var0) + ">";
-	}
+        while (var2.hasNext()) {
+            class537 var3 = var2.next();
+            if (null != var3 && !var3.field4274 && null != var3.field4273) {
+                try {
+                    var3.field4273.method2137();
+                    var3.field4273.method2134(0);
+                    if (var3.field4277 != null) {
+                        var3.field4273.method2138(var3.field4277, var3.field4271);
+                    }
 
-	public static int method2067(int var0) {
-		return (var0 & class125.field1167) - 1;
-	}
+                    var3.field4277 = null;
+                    var3.field4276 = null;
+                    var3.field4270 = null;
+                    var3.field4274 = true;
+                } catch (Exception var5) {
+                    class157.method728(null, var5);
+                    this.method1598(var5.getMessage());
+                    return true;
+                }
+            }
+        }
 
-	static void method2066(int var0) {
-		if (var0 != -1) {
-			if (class292.method1669(var0)) {
-				class60[] var2 = class160.field1484[var0];
-
-				for (int var3 = 0; var3 < var2.length; ++var3) {
-					class60 var4 = var2[var3];
-					if (null != var4.field728) {
-						class309 var5 = new class309();
-						var5.field2791 = var4;
-						var5.field2794 = var4.field728;
-						class102.method670(var5, 5000000, 0);
-					}
-				}
-
-			}
-		}
-	}
-
-	static Object method2065(int var0) {
-		return class439.method2210((class140)class451.method2249(class140.method841(), var0));
-	}
+        super.field2444 = true;
+        return true;
+    }
 }

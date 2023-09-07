@@ -1,26 +1,44 @@
-public class class485 implements class367 {
-	static final class485 field4099;
-	static final class485 field4100;
-	static final class485 field4101;
-	static final class485 field4104;
-	static final class485 field4105;
-	final int field4102;
-	final int field4103;
+public class class485 {
+    static int field3485;
 
-	static {
-		field4104 = new class485(0, -1);
-		field4100 = new class485(1, 1);
-		field4099 = new class485(2, 7);
-		field4101 = new class485(3, 8);
-		field4105 = new class485(4, 9);
-	}
+    class485() throws Throwable {
+    }
 
-	class485(int var1, int var2) {
-		this.field4103 = var1;
-		this.field4102 = var2;
-	}
+    static void method2234(int var0, int var1) {
+        int var3 = class303.field2170.method921(class32.field340);
 
-	public int method1970() {
-		return this.field4102;
-	}
+        int var4;
+        int var5;
+        for (var4 = 0; var4 < Client.field3924; ++var4) {
+            var5 = class303.field2170.method921(Client.method2410(var4));
+            if (var5 > var3) {
+                var3 = var5;
+            }
+        }
+
+        var3 += 8;
+        var4 = Client.field3924 * 15 + 22;
+        var5 = var0 - var3 / 2;
+        if (var5 + var3 > class223.field1763) {
+            var5 = class223.field1763 - var3;
+        }
+
+        if (var5 < 0) {
+            var5 = 0;
+        }
+
+        int var6 = var1;
+        if (var1 + var4 > class519.field4188) {
+            var6 = class519.field4188 - var4;
+        }
+
+        if (var6 < 0) {
+            var6 = 0;
+        }
+
+        class264.field1952 = var5;
+        class255.field1918 = var6;
+        class19.field67 = var3;
+        class462.field3166 = Client.field3924 * 15 + 22;
+    }
 }

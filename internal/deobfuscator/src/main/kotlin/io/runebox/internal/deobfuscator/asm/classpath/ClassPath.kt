@@ -7,8 +7,8 @@ import org.objectweb.asm.Opcodes.ACC_STATIC
 import org.objectweb.asm.commons.Remapper
 
 class ClassPath(
-    private val classLoader: ClassLoader,
-    private val pool: ClassPool
+    val classLoader: ClassLoader,
+    val pool: ClassPool
 ) {
 
     private val cache = mutableMapOf<String, ClassInfo?>()

@@ -1,120 +1,140 @@
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.ProtocolException;
-import java.net.URL;
-import javax.net.ssl.HttpsURLConnection;
+public class class503 extends class490 {
+    class124 field3691;
+    int field3692;
+    int field3693;
+    int field3694;
+    int field3695;
+    int field3696;
+    int field3697;
+    int field3698;
+    int field3699;
 
-public class class503 {
-	static class342 field4165;
-	boolean field4167;
-	boolean field4169;
-	class305 field4168;
-	int field4171;
-	final class148 field4172;
-	final class321 field4166;
-	final HttpsURLConnection field4170;
+    class503(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, class490 var9) {
+        this.field3694 = var1;
+        this.field3692 = var2;
+        this.field3693 = var3;
+        this.field3697 = var4;
+        this.field3695 = var5;
+        this.field3696 = var6;
+        if (var7 != -1) {
+            this.field3691 = class124.method575(var7);
+            this.field3698 = 0;
+            this.field3699 = Client.field4078 - 1;
+            if (this.field3691.field1139 == 0 && null != var9 && var9 instanceof class503) {
+                class503 var10 = (class503) var9;
+                if (this.field3691 == var10.field3691) {
+                    this.field3698 = var10.field3698;
+                    this.field3699 = var10.field3699;
+                    return;
+                }
+            }
 
-	public class503(URL var1, class148 var2, boolean var3) throws IOException {
-		this(var1, var2, new class321(), var3);
-	}
+            if (var8 && this.field3691.field1128 != -1) {
+                if (!this.field3691.method574()) {
+                    this.field3698 = (int) (Math.random() * (double) this.field3691.field1124.length);
+                    this.field3699 -= (int) (Math.random() * (double) this.field3691.field1135[this.field3698]);
+                } else {
+                    this.field3698 = (int) (Math.random() * (double) this.field3691.method571());
+                }
+            }
+        }
 
-	public class503(URL var1, class148 var2, class321 var3, boolean var4) throws IOException {
-		this.field4169 = false;
-		this.field4167 = false;
-		this.field4171 = 300000;
-		if (!var2.method857()) {
-			throw new UnsupportedEncodingException("Unsupported request method used " + var2.method855());
-		} else {
-			this.field4170 = (HttpsURLConnection)var1.openConnection();
-			if (!var4) {
-				this.field4170.setSSLSocketFactory(class21.method183());
-			}
+    }
 
-			this.field4172 = var2;
-			this.field4166 = null != var3 ? var3 : new class321();
-		}
-	}
+    static int method2275(int var0, class443 var1, boolean var2) {
+        class97 var4 = var2 ? class325.field2365 : class140.field1233;
+        if (var0 == 1700) {
+            class269.field1988[++class56.field597 - 1] = var4.field919;
+            return 1;
+        } else if (var0 == 1701) {
+            if (var4.field919 != -1) {
+                class269.field1988[++class56.field597 - 1] = var4.field920;
+            } else {
+                class269.field1988[++class56.field597 - 1] = 0;
+            }
 
-	public class321 method2426() {
-		return this.field4166;
-	}
+            return 1;
+        } else if (var0 == 1702) {
+            class269.field1988[++class56.field597 - 1] = var4.field910;
+            return 1;
+        } else if (var0 == 1707) {
+            class269.field1988[++class56.field597 - 1] = var4.method416() ? 1 : 0;
+            return 1;
+        } else if (var0 == 1708) {
+            return class269.method1197(var4);
+        } else {
+            return var0 == 1709 ? class269.method1207(var4) : 2;
+        }
+    }
 
-	public void method2422(class305 var1) {
-		if (!this.field4169) {
-			if (var1 == null) {
-				this.field4166.method1825("Content-Type");
-				this.field4168 = null;
-			} else {
-				this.field4168 = var1;
-				if (this.field4168.method1732() != null) {
-					this.field4166.method1820(this.field4168.method1732());
-				} else {
-					this.field4166.method1818();
-				}
+    @Override
+    protected final class448 method2238() {
+        int var3;
+        if (null != this.field3691) {
+            int var2 = Client.field4078 - this.field3699;
+            if (var2 > 100 && this.field3691.field1128 > 0) {
+                var2 = 100;
+            }
 
-			}
-		}
-	}
+            if (this.field3691.method574()) {
+                var3 = this.field3691.method571();
+                this.field3698 += var2;
+                var2 = 0;
+                if (this.field3698 >= var3) {
+                    this.field3698 = var3 - this.field3691.field1128;
+                    if (this.field3698 < 0 || this.field3698 > var3) {
+                        this.field3691 = null;
+                    }
+                }
+            } else {
+                label69:
+                {
+                    do {
+                        do {
+                            if (var2 <= this.field3691.field1135[this.field3698]) {
+                                break label69;
+                            }
 
-	void method2423() throws ProtocolException {
-		if (!this.field4169) {
-			this.field4170.setRequestMethod(this.field4172.method855());
-			this.field4166.method1814(this.field4170);
-			if (this.field4172.method856() && this.field4168 != null) {
-				this.field4170.setDoOutput(true);
-				ByteArrayOutputStream var2 = new ByteArrayOutputStream();
+                            var2 -= this.field3691.field1135[this.field3698];
+                            ++this.field3698;
+                        } while (this.field3698 < this.field3691.field1124.length);
 
-				try {
-					var2.write(this.field4168.method1731());
-					var2.writeTo(this.field4170.getOutputStream());
-				} catch (IOException var12) {
-					var12.printStackTrace();
-				} finally {
-					try {
-						var2.close();
-					} catch (IOException var11) {
-						var11.printStackTrace();
-					}
+                        this.field3698 -= this.field3691.field1128;
+                    } while (this.field3698 >= 0 && this.field3698 < this.field3691.field1124.length);
 
-				}
-			}
+                    this.field3691 = null;
+                }
+            }
 
-			this.field4170.setConnectTimeout(this.field4171);
-			this.field4170.setInstanceFollowRedirects(this.field4167);
-			this.field4169 = true;
-		}
-	}
+            this.field3699 = Client.field4078 - var2;
+        }
 
-	boolean method2425() throws IOException {
-		if (!this.field4169) {
-			this.method2423();
-		}
+        class304 var13 = class192.method892(this.field3694, (byte) 42);
+        if (var13.field2216 != null) {
+            var13 = var13.method1346();
+        }
 
-		this.field4170.connect();
-		return this.field4170.getResponseCode() == -1;
-	}
+        if (null == var13) {
+            return null;
+        } else {
+            int var4;
+            if (this.field3693 != 1 && this.field3693 != 3) {
+                var3 = var13.field2190;
+                var4 = var13.field2175;
+            } else {
+                var3 = var13.field2175;
+                var4 = var13.field2190;
+            }
 
-	class4 method2424() {
-		try {
-			if (!this.field4169 || this.field4170.getResponseCode() == -1) {
-				return new class4("No REST response has been received yet.");
-			}
-		} catch (IOException var11) {
-			this.field4170.disconnect();
-			return new class4("Error decoding REST response code: " + var11.getMessage());
-		}
-
-		class4 var4;
-		try {
-			class4 var2 = new class4(this.field4170);
-			return var2;
-		} catch (IOException var9) {
-			var4 = new class4("Error decoding REST response: " + var9.getMessage());
-		} finally {
-			this.field4170.disconnect();
-		}
-
-		return var4;
-	}
+            int var5 = this.field3695 + (var3 >> 1);
+            int var6 = (var3 + 1 >> 1) + this.field3695;
+            int var7 = this.field3696 + (var4 >> 1);
+            int var8 = this.field3696 + (var4 + 1 >> 1);
+            int[][] var9 = class122.field1107[this.field3697];
+            int var10 = var9[var5][var8] + var9[var5][var7] + var9[var6][var7] + var9[var6][var8] >> 2;
+            int var11 = (this.field3695 << 7) + (var3 << 6);
+            int var12 = (this.field3696 << 7) + (var4 << 6);
+            return var13.method1344(this.field3692, this.field3693, var9, var11, var10, var12, this.field3691, this.field3698);
+        }
+    }
 }

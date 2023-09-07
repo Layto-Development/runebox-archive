@@ -1,15 +1,38 @@
-import java.math.BigInteger;
+import java.util.ArrayList;
 
-public class class487 {
-	static class115[] field4107;
-	static final BigInteger field4108;
-	static final BigInteger field4109;
+public class class487 extends class337 {
+    ArrayList<class337> field3496;
 
-	static {
-		field4108 = new BigInteger("10001", 16);
-		field4109 = new BigInteger("9d65aa39691f5fadd6296eeee7726eab566ecc003adda321a1bf18f94cce90d5198fcdf30dca1deef73fa1deb8c1ed0731e3f4712b23ab9f180de4946043ea93a3fef2c0099f69c64d0be204a1415322032e6f60aca9aa2a420c696627b2ed49a7970bdfe1cdcf1446fa65530a3bb0b1573a3effc1086fa29016ff9cc35e8951", 16);
-	}
+    public class487(class337 var1, ArrayList<class337> var2) {
+        super(var1);
+        this.field3496 = var2;
+        super.field2442 = "ConcurrentMidiTask";
+    }
 
-	class487() throws Throwable {
-	}
+    @Override
+    public boolean method1595() {
+        for (int var2 = 0; var2 < this.field3496.size(); ++var2) {
+            class337 var3 = this.field3496.get(var2);
+            if (var3 == null) {
+                this.field3496.remove(var2);
+                --var2;
+            } else if (var3.method1595()) {
+                if (var3.method1596()) {
+                    this.method1598(var3.method1594());
+                    this.field3496.clear();
+                    return true;
+                }
+
+                if (var3.method1597() != null) {
+                    this.field3496.add(var3.method1597());
+                }
+
+                super.field2444 = var3.field2444;
+                this.field3496.remove(var2);
+                --var2;
+            }
+        }
+
+		return this.field3496.isEmpty();
+    }
 }

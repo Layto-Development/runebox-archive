@@ -11,15 +11,12 @@ import io.runebox.plugin.PluginModule
 import io.runebox.plugin.RuneBoxPluginManager
 import org.koin.core.context.startKoin
 import org.koin.core.parameter.parametersOf
-import org.refactoringminer.api.Refactoring
-import org.refactoringminer.api.RefactoringHandler
-import org.refactoringminer.api.RefactoringType
-import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl
 import org.tinylog.kotlin.Logger
 import java.io.File
 import java.math.BigInteger
 import java.net.URL
 import java.security.MessageDigest
+import java.util.concurrent.Executors
 
 
 class RuneBox {
@@ -54,6 +51,12 @@ class RuneBox {
          */
         this.setupSwingDefaults()
         ui.init()
+
+        Executors.newSingleThreadExecutor().execute {
+            while(true) {
+
+            }
+        }
     }
 
     private fun checkDirs() {

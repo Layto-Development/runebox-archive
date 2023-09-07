@@ -1,35 +1,29 @@
-import java.applet.Applet;
+import java.util.Comparator;
 
-public class class504 {
-	static int field4175;
-	static Applet field4174;
-	static String field4173;
+class class504 implements Comparator {
+    static class68 field3700;
+    // $FF: synthetic field
+    final class342 this$0;
 
-	static {
-		field4174 = null;
-		field4173 = "";
-	}
+    class504(class342 var1) {
+        this.this$0 = var1;
+    }
 
-	class504() throws Throwable {
-	}
+    int method2276(class328 var1, class328 var2) {
+        if (var1.field2391 > var2.field2391) {
+            return 1;
+        } else {
+            return var1.field2391 < var2.field2391 ? -1 : 0;
+        }
+    }
 
-	static final void method2428(String var0) {
-		class69.method503(var0 + class433.field3723);
-	}
+    @Override
+    public int compare(Object var1, Object var2) {
+        return this.method2276((class328) var1, (class328) var2);
+    }
 
-	static final void method2429(class372 var0) {
-		var0.field3109 = false;
-		if (var0.field3110 != null) {
-			var0.field3110.field3524 = 0;
-		}
-
-		for (class372 var2 = var0.method1980(); null != var2; var2 = var0.method1981()) {
-			method2429(var2);
-		}
-
-	}
-
-	static int method2427(int var0, class167 var1, boolean var2) {
-		return 2;
-	}
+    @Override
+    public boolean equals(Object var1) {
+        return super.equals(var1);
+    }
 }

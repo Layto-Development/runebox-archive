@@ -1,12 +1,16 @@
-public class class256 {
-	static final class256 field2363;
-	final int field2362;
+public final class class256 {
+    public class490 field1924;
+    public class490 field1926;
+    public long field1925;
+    int field1919;
+    int field1920;
+    int field1921;
+    int field1922;
+    int field1923;
+    int field1927;
 
-	static {
-		field2363 = new class256(3);
-	}
-
-	class256(int var1) {
-		this.field2362 = var1;
-	}
+    class256() {
+        this.field1925 = 0L;
+        this.field1927 = 0;
+    }
 }

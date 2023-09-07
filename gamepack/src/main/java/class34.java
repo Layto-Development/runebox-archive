@@ -1,143 +1,109 @@
 public class class34 {
-	boolean field492;
-	boolean field496;
-	class264 field483;
-	class264 field489;
-	class264 field491;
-	class264[] field487;
-	class264[] field488;
-	float[][] field485;
-	float[][] field490;
-	float[][] field493;
-	float[][] field495;
-	final class264[] field486;
-	public class34 field494;
-	public final int field484;
+    static char[] field488;
+    static char[] field489;
+    static char[] field490;
+    static class372 field491;
+    static int[] field487;
 
-	public class34(int var1, class42 var2, boolean var3) {
-		this.field489 = new class264();
-		this.field492 = true;
-		this.field491 = new class264();
-		this.field496 = true;
-		this.field483 = new class264();
-		this.field484 = var2.method280();
-		this.field486 = new class264[var1];
-		this.field487 = new class264[this.field486.length];
-		this.field488 = new class264[this.field486.length];
-		this.field485 = new float[this.field486.length][3];
+    static {
+        field489 = new char[64];
 
-		for (int var4 = 0; var4 < this.field486.length; ++var4) {
-			this.field486[var4] = new class264(var2, var3);
-			this.field485[var4][0] = var2.method284();
-			this.field485[var4][1] = var2.method284();
-			this.field485[var4][2] = var2.method284();
-		}
+        int var0;
+        for (var0 = 0; var0 < 26; ++var0) {
+            field489[var0] = (char) (var0 + 65);
+        }
 
-		this.method227();
-	}
+        for (var0 = 26; var0 < 52; ++var0) {
+            field489[var0] = (char) (var0 + 97 - 26);
+        }
 
-	void method227() {
-		this.field493 = new float[this.field486.length][3];
-		this.field490 = new float[this.field486.length][3];
-		this.field495 = new float[this.field486.length][3];
-		class264 var2;
-		synchronized(class264.field2387) {
-			if (class514.field4192 == 0) {
-				var2 = new class264();
-			} else {
-				class264.field2387[--class514.field4192].method1523();
-				var2 = class264.field2387[class514.field4192];
-			}
-		}
+        for (var0 = 52; var0 < 62; ++var0) {
+            field489[var0] = (char) (var0 + 48 - 52);
+        }
 
-		class264 var3 = var2;
+        field489[62] = '+';
+        field489[63] = '/';
+        field490 = new char[64];
 
-		for (int var4 = 0; var4 < this.field486.length; ++var4) {
-			class264 var5 = this.method237(var4);
-			var3.method1530(var5);
-			var3.method1535();
-			this.field493[var4] = var3.method1522();
-			this.field490[var4][0] = var5.field2388[12];
-			this.field490[var4][1] = var5.field2388[13];
-			this.field490[var4][2] = var5.field2388[14];
-			this.field495[var4] = var5.method1529();
-		}
+        for (var0 = 0; var0 < 26; ++var0) {
+            field490[var0] = (char) (var0 + 65);
+        }
 
-		var3.method1532();
-	}
+        for (var0 = 26; var0 < 52; ++var0) {
+            field490[var0] = (char) (var0 + 97 - 26);
+        }
 
-	class264 method237(int var1) {
-		return this.field486[var1];
-	}
+        for (var0 = 52; var0 < 62; ++var0) {
+            field490[var0] = (char) (var0 + 48 - 52);
+        }
 
-	class264 method229(int var1) {
-		if (this.field487[var1] == null) {
-			this.field487[var1] = new class264(this.method237(var1));
-			if (null != this.field494) {
-				this.field487[var1].method1533(this.field494.method229(var1));
-			} else {
-				this.field487[var1].method1533(class264.field2389);
-			}
-		}
+        field490[62] = '*';
+        field490[63] = '-';
+        field488 = new char[64];
 
-		return this.field487[var1];
-	}
+        for (var0 = 0; var0 < 26; ++var0) {
+            field488[var0] = (char) (var0 + 65);
+        }
 
-	class264 method236(int var1) {
-		if (this.field488[var1] == null) {
-			this.field488[var1] = new class264(this.method229(var1));
-			this.field488[var1].method1535();
-		}
+        for (var0 = 26; var0 < 52; ++var0) {
+            field488[var0] = (char) (var0 + 97 - 26);
+        }
 
-		return this.field488[var1];
-	}
+        for (var0 = 52; var0 < 62; ++var0) {
+            field488[var0] = (char) (var0 + 48 - 52);
+        }
 
-	void method230(class264 var1) {
-		this.field489.method1530(var1);
-		this.field492 = true;
-		this.field496 = true;
-	}
+        field488[62] = '-';
+        field488[63] = '_';
+        field487 = new int[128];
 
-	class264 method231() {
-		return this.field489;
-	}
+        for (var0 = 0; var0 < field487.length; ++var0) {
+            field487[var0] = -1;
+        }
 
-	class264 method232() {
-		if (this.field492) {
-			this.field491.method1530(this.method231());
-			if (null != this.field494) {
-				this.field491.method1533(this.field494.method232());
-			}
+        for (var0 = 65; var0 <= 90; ++var0) {
+            field487[var0] = var0 - 65;
+        }
 
-			this.field492 = false;
-		}
+        for (var0 = 97; var0 <= 122; ++var0) {
+            field487[var0] = var0 - 97 + 26;
+        }
 
-		return this.field491;
-	}
+        for (var0 = 48; var0 <= 57; ++var0) {
+            field487[var0] = 52 + (var0 - 48);
+        }
 
-	public class264 method228(int var1) {
-		if (this.field496) {
-			this.field483.method1530(this.method236(var1));
-			this.field483.method1533(this.method232());
-			this.field496 = false;
-		}
+        int[] var2 = field487;
+        field487[43] = 62;
+        var2[42] = 62;
+        int[] var1 = field487;
+        field487[47] = 63;
+        var1[45] = 63;
+    }
 
-		return this.field483;
-	}
+    class34() throws Throwable {
+    }
 
-	float[] method233(int var1) {
-		return this.field493[var1];
-	}
+    public static String method99(byte[] var0, int var1, int var2) {
+        StringBuilder var4 = new StringBuilder();
 
-	float[] method234(int var1) {
-		return this.field490[var1];
-	}
+        for (int var5 = 0; var5 < var2; var5 += 3) {
+            int var6 = var0[var5] & 255;
+            var4.append(field489[var6 >>> 2]);
+            if (var5 < var2 - 1) {
+                int var7 = var0[var5 + 1] & 255;
+                var4.append(field489[(var6 & 3) << 4 | var7 >>> 4]);
+                if (var5 < var2 - 2) {
+                    int var8 = var0[var5 + 2] & 255;
+                    var4.append(field489[(var7 & 15) << 2 | var8 >>> 6]).append(field489[var8 & 63]);
+                } else {
+                    var4.append(field489[(var7 & 15) << 2]).append("=");
+                }
+            } else {
+                var4.append(field489[(var6 & 3) << 4]).append("==");
+            }
+        }
 
-	float[] method235(int var1) {
-		return this.field495[var1];
-	}
-
-	public static int method238(int var0) {
-		return var0 != 0 && var0 != 1 ? -1 : 0;
-	}
+        return var4.toString();
+    }
 }

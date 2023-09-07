@@ -5,5 +5,5 @@ import java.util.Map;
 import java.util.concurrent.Future;
 
 public interface RefreshAccessTokenRequester {
-	Future request(String var1, URL var2, Map var3, String var4);
+    Future<RefreshAccessTokenResponse> request(String var1, URL var2, Map<String, String> var3, String var4);
 }

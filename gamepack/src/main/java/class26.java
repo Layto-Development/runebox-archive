@@ -1,23 +1,30 @@
-import java.util.concurrent.Callable;
+public class class26 extends class70 {
+    boolean field149;
+    class97 field138;
+    class97 field144;
+    int field139;
+    int field140;
+    int field142;
+    int field143;
+    int field145;
+    int field146;
+    int field148;
+    Object[] field141;
+    String field147;
 
-public class class26 implements Callable {
-	static class342 field457;
-	final class130 field456;
-	final class42 field458;
-	// $FF: synthetic field
-	final class56 this$0;
+    public class26() {
+        this.field145 = 76;
+    }
 
-	class26(class56 var1, class42 var2, class130 var3) {
-		this.this$0 = var1;
-		this.field458 = var2;
-		this.field456 = var3;
-	}
+    public void method78(Object[] var1) {
+        this.field141 = var1;
+    }
 
-	public Object call() {
-		return this.field456.method774(this.field458);
-	}
+    public void method76(int var1) {
+        this.field145 = var1;
+    }
 
-	static int method208() {
-		return class15.field382.length;
-	}
+    public void method77(class97 var1) {
+        this.field138 = var1;
+    }
 }

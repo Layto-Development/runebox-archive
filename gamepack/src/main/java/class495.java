@@ -1,20 +1,19 @@
-public class class495 extends class232 {
-	static String[] field4139;
-	int field4138;
-	long field4137;
+public class class495 {
+    public static final class495 field3627;
+    static final class495 field3628;
 
-	public class495(class232 var1, int var2) {
-		super(var1);
-		this.field4138 = var2;
-		super.field2101 = "DelayFadeTask";
-	}
+    static {
+        field3627 = new class495("application/json");
+        field3628 = new class495("text/plain");
+    }
 
-	public boolean method1330() {
-		if (this.field4137 < (long)this.field4138) {
-			++this.field4137;
-			return false;
-		} else {
-			return true;
-		}
-	}
+    String field3629;
+
+    class495(String var1) {
+        this.field3629 = var1;
+    }
+
+    public String method2246() {
+        return this.field3629;
+    }
 }

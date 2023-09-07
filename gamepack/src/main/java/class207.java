@@ -1,123 +1,88 @@
-public class class207 extends class218 {
-	public static class215 field1922;
-	public static class344 field1917;
-	static class115[] field1912;
-	public boolean field1913;
-	public int field1910;
-	public int field1911;
-	public int field1914;
-	public int field1915;
-	public int field1916;
-	public int field1918;
-	public int field1919;
-	public int field1920;
-	public int field1921;
+import java.util.Iterator;
 
-	static {
-		field1917 = new class344(64);
-	}
+public class class207 implements Iterable {
+    public class510 field1678;
+    class510 field1677;
 
-	public class207() {
-		this.field1911 = 0;
-		this.field1910 = -1;
-		this.field1913 = true;
-		this.field1914 = -1;
-	}
+    public class207() {
+        this.field1678 = new class510();
+        this.field1678.field3769 = this.field1678;
+        this.field1678.field3770 = this.field1678;
+    }
 
-	public void method1156() {
-		if (this.field1914 != -1) {
-			this.method1158(this.field1914);
-			this.field1919 = this.field1915;
-			this.field1918 = this.field1916;
-			this.field1920 = this.field1921;
-		}
+    public static void method984(class510 var0, class510 var1) {
+        if (var0.field3770 != null) {
+            var0.method2300();
+        }
 
-		this.method1158(this.field1911);
-	}
+        var0.field3770 = var1;
+        var0.field3769 = var1.field3769;
+        var0.field3770.field3769 = var0;
+        var0.field3769.field3770 = var0;
+    }
 
-	public void method1157(class42 var1, int var2) {
-		while (true) {
-			int var4 = var1.method278();
-			if (var4 == 0) {
-				return;
-			}
+    public void method989() {
+        while (this.field1678.field3769 != this.field1678) {
+            this.field1678.field3769.method2300();
+        }
 
-			this.method1155(var1, var4, var2);
-		}
-	}
+    }
 
-	void method1155(class42 var1, int var2, int var3) {
-		if (var2 == 1) {
-			this.field1911 = var1.method334();
-		} else if (var2 == 2) {
-			this.field1910 = var1.method278();
-		} else if (var2 == 5) {
-			this.field1913 = false;
-		} else if (var2 == 7) {
-			this.field1914 = var1.method334();
-		} else if (var2 == 8) {
-		}
+    public void method983(class510 var1) {
+        if (var1.field3770 != null) {
+            var1.method2300();
+        }
 
-	}
+        var1.field3770 = this.field1678.field3770;
+        var1.field3769 = this.field1678;
+        var1.field3770.field3769 = var1;
+        var1.field3769.field3770 = var1;
+    }
 
-	void method1158(int var1) {
-		double var3 = (double)(var1 >> 16 & 255) / 256.0D;
-		double var5 = (double)(var1 >> 8 & 255) / 256.0D;
-		double var7 = (double)(var1 & 255) / 256.0D;
-		double var9 = var3;
-		if (var5 < var3) {
-			var9 = var5;
-		}
+    public class510 method985() {
+        class510 var1 = this.field1678.field3769;
+        if (var1 == this.field1678) {
+            return null;
+        } else {
+            var1.method2300();
+            return var1;
+        }
+    }
 
-		if (var7 < var9) {
-			var9 = var7;
-		}
+    public class510 method986() {
+        return this.method987(null);
+    }
 
-		double var11 = var3;
-		if (var5 > var3) {
-			var11 = var5;
-		}
+    class510 method987(class510 var1) {
+        class510 var2;
+        if (var1 == null) {
+            var2 = this.field1678.field3769;
+        } else {
+            var2 = var1;
+        }
 
-		if (var7 > var11) {
-			var11 = var7;
-		}
+        if (var2 == this.field1678) {
+            this.field1677 = null;
+            return null;
+        } else {
+            this.field1677 = var2.field3769;
+            return var2;
+        }
+    }
 
-		double var13 = 0.0D;
-		double var15 = 0.0D;
-		double var17 = (var9 + var11) / 2.0D;
-		if (var11 != var9) {
-			if (var17 < 0.5D) {
-				var15 = (var11 - var9) / (var11 + var9);
-			}
+    public class510 method988() {
+        class510 var1 = this.field1677;
+        if (var1 == this.field1678) {
+            this.field1677 = null;
+            return null;
+        } else {
+            this.field1677 = var1.field3769;
+            return var1;
+        }
+    }
 
-			if (var17 >= 0.5D) {
-				var15 = (var11 - var9) / (2.0D - var11 - var9);
-			}
-
-			if (var11 == var3) {
-				var13 = (var5 - var7) / (var11 - var9);
-			} else if (var11 == var5) {
-				var13 = 2.0D + (var7 - var3) / (var11 - var9);
-			} else if (var11 == var7) {
-				var13 = (var3 - var5) / (var11 - var9) + 4.0D;
-			}
-		}
-
-		var13 /= 6.0D;
-		this.field1915 = (int)(var13 * 256.0D);
-		this.field1916 = (int)(var15 * 256.0D);
-		this.field1921 = (int)(var17 * 256.0D);
-		if (this.field1916 < 0) {
-			this.field1916 = 0;
-		} else if (this.field1916 > 255) {
-			this.field1916 = 255;
-		}
-
-		if (this.field1921 < 0) {
-			this.field1921 = 0;
-		} else if (this.field1921 > 255) {
-			this.field1921 = 255;
-		}
-
-	}
+    @Override
+    public Iterator iterator() {
+        return new class366(this);
+    }
 }

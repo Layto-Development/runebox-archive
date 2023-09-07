@@ -1,9 +1,9 @@
 package com.jagex.oldscape.pub;
 
 public interface RefreshAccessTokenResponse {
-	boolean isSuccess();
+    boolean isSuccess();
 
-	String getAccessToken();
+    String getAccessToken();
 
-	String getRefreshToken();
+    String getRefreshToken();
 }

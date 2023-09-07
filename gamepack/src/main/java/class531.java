@@ -1,56 +1,109 @@
-public abstract class class531 implements class438 {
-	class140 field4267;
+public class class531 implements Runnable {
+    public static final class43 field4228;
+    public static class43 field4226;
+    static boolean field4230;
+    static int field4227;
+    static Object field4229;
 
-	class531(int var1) {
-	}
+    static {
+        field4228 = new class43();
+        field4226 = new class43();
+        field4227 = 0;
+        field4230 = false;
+        field4229 = new Object();
+    }
 
-	abstract void method2562(class42 var1, int var2);
+    class531() {
+    }
 
-	public void method2561(class42 var1) {
-		while (true) {
-			int var3 = var1.method278();
-			if (var3 == 0) {
-				return;
-			}
+    static void method2524(int var0, class239 var1, class372 var2) {
+        class489 var4 = new class489();
+        var4.field3598 = 1;
+        var4.field658 = var0;
+        var4.field3599 = var1;
+        var4.field3600 = var2;
+        synchronized (field4228) {
+            field4228.method126(var4);
+        }
 
-			class468 var4 = (class468)class451.method2249(class330.method1844(), var3);
-			if (var4 != null) {
-				switch(var4.field4009) {
-				case 0:
-					int var5 = var1.method278();
-					this.field4267 = class393.method2063(var5);
-					if (this.field4267 != null) {
-						break;
-					}
+        method2522();
+    }
 
-					throw new IllegalStateException("Unknown ScriptVarType ID in VarType.decode: " + var5);
-				case 1:
-					var1.method328();
-					break;
-				case 2:
-					class11[] var6 = new class11[]{class11.field363, class11.field360, class11.field361, class11.field359};
-					class451.method2249(var6, var1.method278());
-					break;
-				default:
-					throw new IllegalStateException("Unrecognised VarTypeEncodingKey - " + var4);
-				}
-			} else {
-				this.method2562(var1, var3);
-			}
-		}
-	}
+    static void method2522() {
+        synchronized (field4229) {
+            if (field4227 == 0) {
+                class169.field1436 = new Thread(new class531());
+                class169.field1436.setDaemon(true);
+                class169.field1436.start();
+                class169.field1436.setPriority(5);
+            }
 
-	boolean method2564() {
-		return this.field4267 != null;
-	}
+            field4227 = 600;
+            field4230 = false;
+        }
+    }
 
-	Object method2563() {
-		if (class140.field1352 == this.field4267) {
-			return 0;
-		} else if (class140.field1353 == this.field4267) {
-			return -1L;
-		} else {
-			return class140.field1347 == this.field4267 ? "" : null;
-		}
-	}
+    public static void method2523() {
+        synchronized (field4229) {
+            if (field4227 != 0) {
+                field4227 = 1;
+                field4230 = true;
+
+                try {
+                    field4229.wait();
+                } catch (InterruptedException var4) {
+                }
+            }
+
+        }
+    }
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                class489 var1;
+                synchronized (field4228) {
+                    var1 = (class489) field4228.method122();
+                }
+
+                if (var1 != null) {
+                    if (var1.field3598 == 0) {
+                        var1.field3599.method1070((int) var1.field658, var1.field3597, var1.field3597.length);
+                        synchronized (field4228) {
+                            var1.method221();
+                        }
+                    } else if (var1.field3598 == 1) {
+                        var1.field3597 = var1.field3599.method1069((int) var1.field658);
+                        synchronized (field4228) {
+                            field4226.method126(var1);
+                        }
+                    }
+
+                    synchronized (field4229) {
+                        if ((field4230 || field4227 <= 1) && field4228.method125()) {
+                            field4227 = 0;
+                            field4229.notifyAll();
+                            return;
+                        }
+
+                        field4227 = 600;
+                    }
+                } else {
+                    class316.method1394(100L);
+                    synchronized (field4229) {
+                        if ((field4230 || field4227 <= 1) && field4228.method125()) {
+                            field4227 = 0;
+                            field4229.notifyAll();
+                            return;
+                        }
+
+                        --field4227;
+                    }
+                }
+            }
+        } catch (Exception var13) {
+            class157.method728(null, var13);
+        }
+    }
 }
