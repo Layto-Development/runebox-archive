@@ -1,30 +1,39 @@
 public class class3 {
-    int field3;
-    int field4;
-    int[] field5;
-    int[] field6;
 
-    class3() {
-        class480 var1 = class442.field2977;
-        var1.method2225(16);
-        this.field4 = var1.method2226() != 0 ? var1.method2225(4) + 1 : 1;
-        if (var1.method2226() != 0) {
-            var1.method2225(8);
-        }
+	class374[] field4;
 
-        var1.method2225(2);
-        if (this.field4 > 1) {
-            this.field3 = var1.method2225(4);
-        }
+	int field3;
 
-        this.field5 = new int[this.field4];
-        this.field6 = new int[this.field4];
+	class3() {
+		this.field4 = new class374[100];
+	}
 
-        for (int var2 = 0; var2 < this.field4; ++var2) {
-            var1.method2225(8);
-            this.field5[var2] = var1.method2225(8);
-            this.field6[var2] = var1.method2225(8);
-        }
+	class374 method8(int var1, String var2, String var3, String var4) {
+		class374 var6 = this.field4[99];
+		for (int var7 = this.field3; var7 > 0; --var7) {
+			if (var7 != 100) {
+				this.field4[var7] = this.field4[var7 - 1];
+			}
+		}
+		if (null == var6) {
+			var6 = new class374(var1, var2, var4, var3);
+		} else {
+			var6.method318();
+			var6.method1674();
+			var6.method1990(var1, var2, var4, var3);
+		}
+		this.field4[0] = var6;
+		if (this.field3 < 100) {
+			++this.field3;
+		}
+		return var6;
+	}
 
-    }
+	class374 method9(int var1) {
+		return var1 >= 0 && var1 < this.field3 ? this.field4[var1] : null;
+	}
+
+	int method7() {
+		return this.field3;
+	}
 }

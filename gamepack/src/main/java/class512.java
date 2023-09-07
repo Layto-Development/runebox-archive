@@ -1,25 +1,42 @@
+import java.awt.image.BufferedImage;
+import java.awt.image.PixelGrabber;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
 public class class512 {
-    static final class512 field4080;
-    static final class512 field4081;
-    static final class512 field4082;
-    static final class512 field4083;
 
-    static {
-        field4082 = new class512("LIVE", 0);
-        field4080 = new class512("BUILDLIVE", 3);
-        field4081 = new class512("RC", 1);
-        field4083 = new class512("WIP", 2);
-    }
+	static int field4087;
 
-    public final int field4084;
-    public final String field4079;
+	static String field4086;
 
-    class512(String var1, int var2) {
-        this.field4079 = var1;
-        this.field4084 = var2;
-    }
+	static {
+		ImageIO.setUseCache(false);
+	}
 
-    public static class512[] method2496() {
-        return new class512[]{field4082, field4081, field4083, field4080};
-    }
+	class512() throws Throwable {
+	}
+
+	static boolean method2460(int var0, int var1, int var2) {
+		return var0 >= 0 && var0 < 4 && var1 >= 0 && var1 < 104 && var2 >= 0 && var2 < 104;
+	}
+
+	public static final class84 method2461(byte[] var0) {
+		BufferedImage var2 = null;
+		try {
+			Class var3 = ImageIO.class;
+			synchronized (ImageIO.class) {
+				var2 = ImageIO.read(new ByteArrayInputStream(var0));
+			}
+			int var10 = var2.getWidth();
+			int var4 = var2.getHeight();
+			int[] var5 = new int[var4 * var10];
+			PixelGrabber var6 = new PixelGrabber(var2, 0, 0, var10, var4, var5, 0, var10);
+			var6.grabPixels();
+			return new class84(var5, var10, var4);
+		} catch (IOException var8) {
+		} catch (InterruptedException var9) {
+		}
+		return new class84(0, 0);
+	}
 }

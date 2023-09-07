@@ -1,141 +1,101 @@
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.Iterator;
+public class class466 {
 
-public final class class466 extends Canvas {
-    static class100 field3310;
-    static class352 field3313;
-    static int field3312;
-    static long field3311;
-    Component field3314;
+	static int[] field3690;
 
-    class466(Component var1) {
-        this.field3314 = var1;
-    }
+	static int[] field3692;
 
-    static void method2132() {
-        int var4;
-        for (int var1 = 0; var1 < Client.field4030; ++var1) {
-            int var10002 = Client.field3987[var1]--;
-            if (Client.field3987[var1] >= -10) {
-                class131 var11 = Client.field3819[var1];
-                if (var11 == null) {
-                    class131 var10000 = null;
-                    var11 = class131.method590(class215.field1739, Client.field4031[var1], 0);
-                    if (null == var11) {
-                        continue;
-                    }
+	static int[] field3695;
 
-                    int[] var19 = Client.field3987;
-                    var19[var1] += var11.method589();
-                    Client.field3819[var1] = var11;
-                }
+	static int[] field3696;
 
-                if (Client.field3987[var1] < 0) {
-                    int var3;
-                    if (Client.field3782[var1] != 0) {
-                        var4 = 128 * (Client.field3782[var1] & 255);
-                        int var5 = Client.field3782[var1] >> 16 & 255;
-                        int var6 = var5 * 128 + 64 - class180.field1528.field4121;
-                        if (var6 < 0) {
-                            var6 = -var6;
-                        }
+	boolean field3700;
 
-                        int var7 = Client.field3782[var1] >> 8 & 255;
-                        int var8 = 64 + var7 * 128 - class180.field1528.field4092;
-                        if (var8 < 0) {
-                            var8 = -var8;
-                        }
+	class413 field3691;
 
-                        int var9 = var8 + var6 - 128;
-                        if (var9 > var4) {
-                            Client.field3987[var1] = -100;
-                            continue;
-                        }
+	int field3694;
 
-                        if (var9 < 0) {
-                            var9 = 0;
-                        }
+	int[] field3693;
 
-                        var3 = (var4 - var9) * class290.field2121.method2555() / var4;
-                    } else {
-                        var3 = class290.field2121.method2537();
-                    }
+	int[] field3697;
 
-                    if (var3 > 0) {
-                        class433 var14 = var11.method588().method1973(class237.field1833);
-                        class409 var15 = class409.method1892(var14, 100, var3);
-                        var15.method1862(Client.field4032[var1] - 1);
-                        class173.field1454.method1730(var15);
-                    }
+	int[] field3698;
 
-                    Client.field3987[var1] = -100;
-                }
-            } else {
-                --Client.field4030;
+	int[] field3699;
 
-                for (int var2 = var1; var2 < Client.field4030; ++var2) {
-                    Client.field4031[var2] = Client.field4031[var2 + 1];
-                    Client.field3819[var2] = Client.field3819[var2 + 1];
-                    Client.field4032[var2] = Client.field4032[var2 + 1];
-                    Client.field3987[var2] = Client.field3987[var2 + 1];
-                    Client.field3782[var2] = Client.field3782[var2 + 1];
-                }
+	static {
+		field3696 = new int[500];
+		field3690 = new int[500];
+		field3692 = new int[500];
+		field3695 = new int[500];
+	}
 
-                --var1;
-            }
-        }
-
-        if (Client.field4047) {
-            boolean var10;
-            if (!class141.field1242.isEmpty()) {
-                var10 = true;
-            } else if (!class141.field1240.isEmpty() && class141.field1240.get(0) != null && class141.field1240.get(0).field4273 != null) {
-                var10 = class141.field1240.get(0).field4273.method2162();
-            } else {
-                var10 = false;
-            }
-
-            if (!var10) {
-                if (class290.field2121.method2529() != 0) {
-                    boolean var12 = !class141.field1241.isEmpty();
-                    if (var12) {
-                        class372 var13 = class34.field491;
-                        var4 = class290.field2121.method2529();
-                        if (!class141.field1241.isEmpty()) {
-                            ArrayList<class537> var16 = new ArrayList<>();
-                            Iterator<class537> var17 = class141.field1241.iterator();
-
-                            while (var17.hasNext()) {
-                                class537 var18 = var17.next();
-                                var18.field4274 = false;
-                                var18.field4272 = false;
-                                var18.field4278 = false;
-                                var18.field4275 = false;
-                                var18.field4270 = var13;
-                                var18.field4269 = var4;
-                                var18.field4266 = 0.0F;
-                                var16.add(var18);
-                            }
-
-                            class141.method648(var16, class141.field1244, class141.field1245, class141.field1246, class141.field1237, false);
-                        }
-                    }
-                }
-
-                Client.field4047 = false;
-            }
-        }
-
-    }
-
-    @Override
-    public void update(Graphics var1) {
-        this.field3314.update(var1);
-    }
-
-    @Override
-    public void paint(Graphics var1) {
-        this.field3314.paint(var1);
-    }
+	class466(byte[] var1, class413 var2) {
+		this.field3691 = null;
+		this.field3694 = -1;
+		this.field3700 = false;
+		this.field3691 = var2;
+		class187 var3 = new class187(var1);
+		class187 var4 = new class187(var1);
+		var3.field1832 = 2;
+		int var5 = var3.method1096();
+		int var6 = -1;
+		int var7 = 0;
+		var4.field1832 = var3.field1832 + var5;
+		int var8;
+		for (var8 = 0; var8 < var5; ++var8) {
+			int var9 = var3.method1096();
+			if (var9 > 0) {
+				if (this.field3691.field3211[var8] != 0) {
+					for (int var10 = var8 - 1; var10 > var6; --var10) {
+						if (this.field3691.field3211[var10] == 0) {
+							field3696[var7] = var10;
+							field3690[var7] = 0;
+							field3692[var7] = 0;
+							field3695[var7] = 0;
+							++var7;
+							break;
+						}
+					}
+				}
+				field3696[var7] = var8;
+				short var11 = 0;
+				if (this.field3691.field3211[var8] == 3) {
+					var11 = 128;
+				}
+				if ((var9 & 1) != 0) {
+					field3690[var7] = var4.method1107();
+				} else {
+					field3690[var7] = var11;
+				}
+				if ((var9 & 2) != 0) {
+					field3692[var7] = var4.method1107();
+				} else {
+					field3692[var7] = var11;
+				}
+				if ((var9 & 4) != 0) {
+					field3695[var7] = var4.method1107();
+				} else {
+					field3695[var7] = var11;
+				}
+				var6 = var8;
+				++var7;
+				if (this.field3691.field3211[var8] == 5) {
+					this.field3700 = true;
+				}
+			}
+		}
+		if (var4.field1832 != var1.length) {
+		}
+		this.field3694 = var7;
+		this.field3693 = new int[var7];
+		this.field3697 = new int[var7];
+		this.field3698 = new int[var7];
+		this.field3699 = new int[var7];
+		for (var8 = 0; var8 < var7; ++var8) {
+			this.field3693[var8] = field3696[var8];
+			this.field3697[var8] = field3690[var8];
+			this.field3698[var8] = field3692[var8];
+			this.field3699[var8] = field3695[var8];
+		}
+	}
 }

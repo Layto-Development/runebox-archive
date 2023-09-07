@@ -1,14 +1,18 @@
-public class class510 extends class70 {
-    public class510 field3769;
-    public class510 field3770;
-    public long field3771;
+import java.util.Comparator;
 
-    public void method2300() {
-        if (this.field3770 != null) {
-            this.field3770.field3769 = this.field3769;
-            this.field3769.field3770 = this.field3770;
-            this.field3769 = null;
-            this.field3770 = null;
-        }
-    }
+final class class510 implements Comparator {
+
+	int method2458(class342 var1, class342 var2) {
+		return var1.method1797().compareTo(var2.method1797());
+	}
+
+	@Override
+	public int compare(Object var1, Object var2) {
+		return this.method2458((class342) var1, (class342) var2);
+	}
+
+	@Override
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

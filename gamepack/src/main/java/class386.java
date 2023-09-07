@@ -1,17 +1,18 @@
-final class class386 implements class84 {
-    static int field2764;
+import java.util.Comparator;
 
-    void method1783(String var1, class78 var2) {
-        var2.method252(var1);
-    }
+final class class386 implements Comparator {
 
-    @Override
-    public Object method336(class78 var1) {
-        return var1.method268();
-    }
+	int method2012(class342 var1, class342 var2) {
+		return var1.field2601 < var2.field2601 ? -1 : var2.field2601 == var1.field2601 ? 0 : 1;
+	}
 
-    @Override
-    public void method337(Object var1, class78 var2) {
-        this.method1783((String) var1, var2);
-    }
+	@Override
+	public int compare(Object var1, Object var2) {
+		return this.method2012((class342) var1, (class342) var2);
+	}
+
+	@Override
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

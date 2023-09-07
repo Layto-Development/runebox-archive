@@ -1,33 +1,43 @@
-import java.net.URL;
+public final class class244 {
 
-public class class244 {
-    public static short[] field1866;
-    static int field1862;
-    static int field1863;
+	static int field2068;
 
-    static {
-        field1862 = -1;
-        field1863 = -2;
-    }
+	int field2065;
 
-    final URL field1861;
-    volatile byte[] field1865;
-    volatile int field1864;
+	int field2066;
 
-    class244(URL var1) {
-        this.field1864 = field1862;
-        this.field1861 = var1;
-    }
+	int field2067;
 
-    public boolean method1091() {
-        return field1862 != this.field1864;
-    }
+	int field2069;
 
-    public byte[] method1093() {
-        return this.field1865;
-    }
+	int field2070;
 
-    public String method1092() {
-        return this.field1861.toString();
-    }
+	int field2071;
+
+	int field2072;
+
+	int field2073;
+
+	int field2074;
+
+	int field2075;
+
+	int field2076;
+
+	int field2077;
+
+	int field2078;
+
+	int field2079;
+
+	int field2080;
+
+	int field2081;
+
+	int field2082;
+
+	int field2083;
+
+	class244() {
+	}
 }

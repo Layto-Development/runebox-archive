@@ -1,114 +1,103 @@
-import java.util.Iterator;
+public class class107 extends class463 {
 
-public class class107 {
-    public static class68 field1031;
-    static Iterator<Integer> field1033;
-    int field1032;
-    int field1035;
-    int[][] field1034;
+	int field1292;
 
-    public class107(int var1, int var2) {
-        if (var2 != var1) {
-            int var4 = var1;
-            int var5 = var2;
-            if (var2 > var1) {
-                var4 = var2;
-                var5 = var1;
-            }
+	final class79 field1291;
 
-            while (var5 != 0) {
-                int var6 = var4 % var5;
-                var4 = var5;
-                var5 = var6;
-            }
+	public class104 field1290;
 
-            var1 /= var4;
-            var2 /= var4;
-            this.field1032 = var1;
-            this.field1035 = var2;
-            this.field1034 = new int[var1][14];
+	public class107(class79 var1) {
+		super(400);
+		this.field1292 = 1;
+		this.field1290 = new class104();
+		this.field1291 = var1;
+	}
 
-            for (int var7 = 0; var7 < var1; ++var7) {
-                int[] var8 = this.field1034[var7];
-                double var9 = 6.0D + (double) var7 / (double) var1;
-                int var11 = (int) Math.floor(1.0D + (var9 - 7.0D));
-                if (var11 < 0) {
-                    var11 = 0;
-                }
+	@Override
+	class194 method2282() {
+		return new class175();
+	}
 
-                int var12 = (int) Math.ceil(var9 + 7.0D);
-                if (var12 > 14) {
-                    var12 = 14;
-                }
+	@Override
+	class194[] method2276(int var1) {
+		return new class175[var1];
+	}
 
-                for (double var13 = (double) var2 / (double) var1; var11 < var12; ++var11) {
-                    double var15 = ((double) var11 - var9) * 3.141592653589793D;
-                    double var17 = var13;
-                    if (var15 < -1.0E-4D || var15 > 1.0E-4D) {
-                        var17 = var13 * (Math.sin(var15) / var15);
-                    }
+	public boolean method651(class78 var1, boolean var2) {
+		class175 var4 = (class175) this.method2266(var1);
+		return null != var4;
+	}
 
-                    var17 *= 0.54D + 0.46D * Math.cos(0.2243994752564138D * ((double) var11 - var9));
-                    var8[var11] = (int) Math.floor(0.5D + var17 * 65536.0D);
-                }
-            }
-
-        }
-    }
-
-    byte[] method499(byte[] var1) {
-        if (null != this.field1034) {
-            int var3 = (int) ((long) this.field1035 * (long) var1.length / (long) this.field1032) + 14;
-            int[] var4 = new int[var3];
-            int var5 = 0;
-            int var6 = 0;
-
-            int var7;
-            for (var7 = 0; var7 < var1.length; ++var7) {
-                byte var8 = var1[var7];
-                int[] var9 = this.field1034[var6];
-
-                int var10;
-                for (var10 = 0; var10 < 14; ++var10) {
-                    var4[var10 + var5] += var8 * var9[var10];
-                }
-
-                var6 += this.field1035;
-                var10 = var6 / this.field1032;
-                var5 += var10;
-                var6 -= var10 * this.field1032;
-            }
-
-            var1 = new byte[var3];
-
-            for (var7 = 0; var7 < var3; ++var7) {
-                int var11 = 32768 + var4[var7] >> 16;
-                if (var11 < -128) {
-                    var1[var7] = -128;
-                } else if (var11 > 127) {
-                    var1[var7] = 127;
-                } else {
-                    var1[var7] = (byte) var11;
-                }
-            }
-        }
-
-        return var1;
-    }
-
-    int method500(int var1) {
-        if (null != this.field1034) {
-            var1 = (int) ((long) var1 * (long) this.field1035 / (long) this.field1032);
-        }
-
-        return var1;
-    }
-
-    int method498(int var1) {
-        if (this.field1034 != null) {
-            var1 = 6 + (int) ((long) var1 * (long) this.field1035 / (long) this.field1032);
-        }
-
-        return var1;
-    }
+	public void method652(class187 var1, int var2, byte var3) {
+		while (true) {
+			if (var1.field1832 < var2) {
+				boolean var4 = var1.method1096() == 1;
+				class78 var5 = new class78(var1.method1104(), this.field1291);
+				class78 var6 = new class78(var1.method1104(), this.field1291);
+				int var7 = var1.method1145();
+				int var8 = var1.method1096();
+				int var9 = var1.method1096();
+				boolean var10 = (var9 & 2) != 0;
+				boolean var11 = (var9 & 1) != 0;
+				if (var7 > 0) {
+					var1.method1104();
+					var1.method1096();
+					var1.method1100();
+				}
+				var1.method1104();
+				if (var5 != null && var5.method323()) {
+					class175 var12 = (class175) this.method2267(var5);
+					if (var4) {
+						class175 var13 = (class175) this.method2267(var6);
+						if (var13 != null && var13 != var12) {
+							if (var12 != null) {
+								this.method2268(var13);
+							} else {
+								var12 = var13;
+							}
+						}
+					}
+					if (null != var12) {
+						this.method2271(var12, var5, var6);
+						if (var12.field1577 != var7) {
+							boolean var15 = true;
+							for (class280 var14 = (class280) this.field1290.method642(); null != var14; var14 = (class280) this.field1290.method641()) {
+								if (var14.field2282.equals(var5)) {
+									if (var7 != 0 && var14.field2283 == 0) {
+										var14.method926();
+										var15 = false;
+									} else if (var7 == 0 && var14.field2283 != 0) {
+										var14.method926();
+										var15 = false;
+									}
+								}
+							}
+							if (var15) {
+								this.field1290.method640(new class280(var5, var7));
+							}
+						}
+					} else {
+						if (this.method2285() >= 400) {
+							continue;
+						}
+						var12 = (class175) this.method2269(var5, var6);
+					}
+					if (var7 != var12.field1577) {
+						var12.field1576 = ++this.field1292 - 1;
+						if (var12.field1577 == -1 && var7 == 0) {
+							var12.field1576 = -(var12.field1576 * -1297576351) * -585067103;
+						}
+						var12.field1577 = var7;
+					}
+					var12.field1578 = var8;
+					var12.field1753 = var10;
+					var12.field1754 = var11;
+					continue;
+				}
+				throw new IllegalStateException();
+			}
+			this.method2286();
+			return;
+		}
+	}
 }

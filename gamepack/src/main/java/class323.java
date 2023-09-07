@@ -1,79 +1,37 @@
-import java.util.Arrays;
+public class class323 implements class517 {
 
-public class class323 {
-    static String field2347;
-    int[] field2345;
-    int[] field2346;
+	public static final class323 field2515;
 
-    public class323() {
-        this.field2345 = new int[112];
-        this.field2346 = new int[192];
-        Arrays.fill(this.field2345, 3);
-        Arrays.fill(this.field2346, 3);
-    }
+	public static final class323 field2516;
 
-    public void method1428(int var1, int var2) {
-        if (this.method1433(var1) && this.method1430(var2)) {
-            this.field2345[var1] = var2;
-        }
+	public static final class323 field2517;
 
-    }
+	public static final class323 field2521;
 
-    public void method1431(char var1, int var2) {
-        if (this.method1426(var1) && this.method1430(var2)) {
-            this.field2346[var1] = var2;
-        }
+	static final class323 field2518;
 
-    }
+	static final class323 field2520;
 
-    public int method1425(int var1) {
-        return this.method1433(var1) ? this.field2345[var1] : 0;
-    }
+	static final class323[] field2514;
 
-    public int method1429(char var1) {
-        return this.method1426(var1) ? this.field2346[var1] : 0;
-    }
+	public final int field2519;
 
-    public boolean method1423(int var1) {
-        return this.method1433(var1) && (this.field2345[var1] == 1 || this.field2345[var1] == 3);
-    }
+	static {
+		field2521 = new class323(14, 0);
+		field2520 = new class323(15, 4);
+		field2515 = new class323(16, -2);
+		field2516 = new class323(18, -2);
+		field2517 = new class323(19, -2);
+		field2518 = new class323(27, 0);
+		field2514 = new class323[32];
+		class323[] var0 = new class323[] { field2521, field2520, field2516, field2518, field2517, field2515 };
+		class323[] var1 = var0;
+		for (int var2 = 0; var2 < var1.length; ++var2) {
+			field2514[var1[var2].field2519] = var1[var2];
+		}
+	}
 
-    public boolean method1427(char var1) {
-        return this.method1426(var1) && (this.field2346[var1] == 1 || this.field2346[var1] == 3);
-    }
-
-    public boolean method1432(int var1) {
-        return this.method1433(var1) && (this.field2345[var1] == 2 || this.field2345[var1] == 3);
-    }
-
-    public boolean method1424(char var1) {
-        return this.method1426(var1) && (this.field2346[var1] == 2 || this.field2346[var1] == 3);
-    }
-
-    boolean method1433(int var1) {
-        if (var1 >= 0 && var1 < 112) {
-            return true;
-        } else {
-            System.out.println("Invalid keycode: " + var1);
-            return false;
-        }
-    }
-
-    boolean method1426(char var1) {
-        if (var1 >= 0 && var1 < 192) {
-            return true;
-        } else {
-            System.out.println("Invalid keychar: " + var1);
-            return false;
-        }
-    }
-
-    boolean method1430(int var1) {
-        if (var1 >= 0 && var1 < 4) {
-            return true;
-        } else {
-            System.out.println("Invalid mode: " + var1);
-            return false;
-        }
-    }
+	class323(int var1, int var2) {
+		this.field2519 = var1;
+	}
 }

@@ -1,101 +1,63 @@
+import java.awt.FontMetrics;
+
 public class class240 {
-    class240() throws Throwable {
-    }
 
-    public static void method1072(String[] var0, short[] var1, int var2, int var3) {
-        if (var2 < var3) {
-            int var5 = (var3 + var2) / 2;
-            int var6 = var2;
-            String var7 = var0[var5];
-            var0[var5] = var0[var3];
-            var0[var3] = var7;
-            short var8 = var1[var5];
-            var1[var5] = var1[var3];
-            var1[var3] = var8;
+	static class214 field2045;
 
-            for (int var9 = var2; var9 < var3; ++var9) {
-                if (var7 == null || null != var0[var9] && var0[var9].compareTo(var7) < (var9 & 1)) {
-                    String var10 = var0[var9];
-                    var0[var9] = var0[var6];
-                    var0[var6] = var10;
-                    short var11 = var1[var9];
-                    var1[var9] = var1[var6];
-                    var1[var6++] = var11;
-                }
-            }
+	static FontMetrics field2044;
 
-            var0[var3] = var0[var6];
-            var0[var6] = var7;
-            var1[var3] = var1[var6];
-            var1[var6] = var8;
-            method1072(var0, var1, var2, var6 - 1);
-            method1072(var0, var1, var6 + 1, var3);
-        }
+	class240() throws Throwable {
+	}
 
-    }
-
-    public static void method1073(String[] var0, int[] var1, int var2, int var3) {
-        if (var2 < var3) {
-            int var5 = (var3 + var2) / 2;
-            int var6 = var2;
-            String var7 = var0[var5];
-            var0[var5] = var0[var3];
-            var0[var3] = var7;
-            int var8 = var1[var5];
-            var1[var5] = var1[var3];
-            var1[var3] = var8;
-
-            for (int var9 = var2; var9 < var3; ++var9) {
-                if (var7 == null || null != var0[var9] && var0[var9].compareTo(var7) < (var9 & 1)) {
-                    String var10 = var0[var9];
-                    var0[var9] = var0[var6];
-                    var0[var6] = var10;
-                    int var11 = var1[var9];
-                    var1[var9] = var1[var6];
-                    var1[var6++] = var11;
-                }
-            }
-
-            var0[var3] = var0[var6];
-            var0[var6] = var7;
-            var1[var3] = var1[var6];
-            var1[var6] = var8;
-            method1073(var0, var1, var2, var6 - 1);
-            method1073(var0, var1, var6 + 1, var3);
-        }
-
-    }
-
-    public static void method1074(int[] var0, int[] var1, int var2, int var3) {
-        if (var2 < var3) {
-            int var5 = (var2 + var3) / 2;
-            int var6 = var2;
-            int var7 = var0[var5];
-            var0[var5] = var0[var3];
-            var0[var3] = var7;
-            int var8 = var1[var5];
-            var1[var5] = var1[var3];
-            var1[var3] = var8;
-            int var9 = var7 == Integer.MAX_VALUE ? 0 : 1;
-
-            for (int var10 = var2; var10 < var3; ++var10) {
-                if (var0[var10] < (var10 & var9) + var7) {
-                    int var11 = var0[var10];
-                    var0[var10] = var0[var6];
-                    var0[var6] = var11;
-                    int var12 = var1[var10];
-                    var1[var10] = var1[var6];
-                    var1[var6++] = var12;
-                }
-            }
-
-            var0[var3] = var0[var6];
-            var0[var6] = var7;
-            var1[var3] = var1[var6];
-            var1[var6] = var8;
-            method1074(var0, var1, var2, var6 - 1);
-            method1074(var0, var1, var6 + 1, var3);
-        }
-
-    }
+	static final void method1411(String var0) {
+		if (var0.equalsIgnoreCase("toggleroof")) {
+			class83.field841.method999(!class83.field841.method1000());
+			if (class83.field841.method1000()) {
+				class156.method918(99, "", "Roofs are now all hidden");
+			} else {
+				class156.method918(99, "", "Roofs will only be removed selectively");
+			}
+		}
+		if (var0.startsWith("zbuf")) {
+			boolean var2 = class514.method2470(var0.substring(5).trim()) == 1;
+			class501.field4023.method2533(var2);
+			class238.method1398(var2);
+		}
+		if (var0.equalsIgnoreCase("z")) {
+			Client.field962 = !Client.field962;
+		}
+		if (var0.equalsIgnoreCase("displayfps")) {
+			class83.field841.method1003();
+		}
+		if (var0.equalsIgnoreCase("renderself")) {
+			Client.field1136 = !Client.field1136;
+		}
+		if (var0.equalsIgnoreCase("mouseovertext")) {
+			Client.field1058 = !Client.field1058;
+		}
+		if (Client.field986 >= 2) {
+			if (var0.equalsIgnoreCase("errortest")) {
+				throw new RuntimeException();
+			}
+			if (var0.equalsIgnoreCase("showcoord")) {
+				class26.field125.field2372 = !class26.field125.field2372;
+			}
+			if (var0.equalsIgnoreCase("fpson")) {
+				class83.field841.method1002(true);
+			}
+			if (var0.equalsIgnoreCase("fpsoff")) {
+				class83.field841.method1002(false);
+			}
+			if (var0.equalsIgnoreCase("gc")) {
+				System.gc();
+			}
+			if (var0.equalsIgnoreCase("clientdrop")) {
+				Client.method533();
+			}
+		}
+		class457 var3 = class457.method2237(class483.field3873, Client.field963.field1603);
+		var3.field3487.method1085(var0.length() + 1);
+		var3.field3487.method1088(var0);
+		Client.field963.method911(var3);
+	}
 }

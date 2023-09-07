@@ -1,84 +1,185 @@
-public class class148 extends class510 {
-    static class289 field1301;
-    static class68 field1302;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
 
-    static {
-        field1301 = new class289(64);
-    }
+public class class148 implements Runnable {
 
-    public int field1304;
-    int[][] field1303;
-    Object[][] field1305;
+	byte[] field1560;
 
-    class148() {
-        this.field1304 = -1;
-    }
+	int field1558;
 
-    public static void method714(class68 var0) {
-        field1302 = var0;
-    }
+	int field1559;
 
-    public static class148 method713(int var0) {
-        class148 var2 = (class148) field1301.method1307(var0);
-        if (null != var2) {
-            return var2;
-        } else {
-            byte[] var3 = field1302.method188(38, var0);
-            var2 = new class148();
-            if (null != var3) {
-                var2.method711(new class78(var3));
-            }
+	int field1561;
 
-            var2.method709();
-            field1301.method1306(var2, var0);
-            return var2;
-        }
-    }
+	IOException field1562;
 
-    public static void method712() {
-        field1301.method1304();
-    }
+	InputStream field1563;
 
-    void method711(class78 var1) {
-        while (true) {
-            int var3 = var1.method260();
-            if (var3 == 0) {
-                return;
-            }
+	Thread field1557;
 
-            this.method708(var1, var3);
-        }
-    }
+	class148(InputStream var1, int var2) {
+		this.field1561 = 0;
+		this.field1558 = 0;
+		this.field1563 = var1;
+		this.field1559 = var2 + 1;
+		this.field1560 = new byte[this.field1559];
+		this.field1557 = new Thread(this);
+		this.field1557.setDaemon(true);
+		this.field1557.start();
+	}
 
-    public Object[] method710(int var1) {
-        return null == this.field1305 ? null : this.field1305[var1];
-    }
+	@Override
+	public void run() {
+		while (true) {
+			int var1;
+			synchronized (this) {
+				while (true) {
+					if (null != this.field1562) {
+						return;
+					}
+					if (this.field1561 == 0) {
+						var1 = this.field1559 - this.field1558 - 1;
+					} else if (this.field1561 <= this.field1558) {
+						var1 = this.field1559 - this.field1558;
+					} else {
+						var1 = this.field1561 - this.field1558 - 1;
+					}
+					if (var1 > 0) {
+						break;
+					}
+					try {
+						this.wait();
+					} catch (InterruptedException var9) {
+					}
+				}
+			}
+			int var2;
+			try {
+				var2 = this.field1563.read(this.field1560, this.field1558, var1);
+				if (var2 == -1) {
+					throw new EOFException();
+				}
+			} catch (IOException var10) {
+				IOException var3 = var10;
+				synchronized (this) {
+					this.field1562 = var3;
+					return;
+				}
+			}
+			synchronized (this) {
+				this.field1558 = (this.field1558 + var2) % this.field1559;
+			}
+		}
+	}
 
-    void method708(class78 var1, int var2) {
-        if (var2 == 3) {
-            int var4 = var1.method260();
-            if (null == this.field1305) {
-                this.field1305 = new Object[var4][];
-                this.field1303 = new int[var4][];
-            }
+	boolean method899(int var1) throws IOException {
+		if (var1 == 0) {
+			return true;
+		} else if (var1 > 0 && var1 < this.field1559) {
+			synchronized (this) {
+				int var4;
+				if (this.field1561 <= this.field1558) {
+					var4 = this.field1558 - this.field1561;
+				} else {
+					var4 = this.field1559 - this.field1561 + this.field1558;
+				}
+				if (var4 < var1) {
+					if (this.field1562 != null) {
+						throw new IOException(this.field1562.toString());
+					} else {
+						this.notifyAll();
+						return false;
+					}
+				} else {
+					return true;
+				}
+			}
+		} else {
+			throw new IOException();
+		}
+	}
 
-            for (int var5 = var1.method260(); var5 != 255; var5 = var1.method260()) {
-                int var6 = var1.method260();
-                int[] var7 = new int[var6];
+	int method903() throws IOException {
+		synchronized (this) {
+			int var3;
+			if (this.field1561 <= this.field1558) {
+				var3 = this.field1558 - this.field1561;
+			} else {
+				var3 = this.field1559 - this.field1561 + this.field1558;
+			}
+			if (var3 <= 0 && this.field1562 != null) {
+				throw new IOException(this.field1562.toString());
+			} else {
+				this.notifyAll();
+				return var3;
+			}
+		}
+	}
 
-                for (int var8 = 0; var8 < var6; ++var8) {
-                    var7[var8] = var1.method307();
-                }
+	int method900() throws IOException {
+		synchronized (this) {
+			if (this.field1561 == this.field1558) {
+				if (this.field1562 != null) {
+					throw new IOException(this.field1562.toString());
+				} else {
+					return -1;
+				}
+			} else {
+				int var3 = this.field1560[this.field1561] & 255;
+				this.field1561 = (this.field1561 + 1) % this.field1559;
+				this.notifyAll();
+				return var3;
+			}
+		}
+	}
 
-                this.field1305[var5] = class497.method2248(var1, var7);
-                this.field1303[var5] = var7;
-            }
-        } else if (var2 == 4) {
-            this.field1304 = var1.method276();
-        }
+	int method901(byte[] var1, int var2, int var3) throws IOException {
+		if (var3 >= 0 && var2 >= 0 && var2 + var3 <= var1.length) {
+			synchronized (this) {
+				int var6;
+				if (this.field1561 <= this.field1558) {
+					var6 = this.field1558 - this.field1561;
+				} else {
+					var6 = this.field1558 + (this.field1559 - this.field1561);
+				}
+				if (var3 > var6) {
+					var3 = var6;
+				}
+				if (var3 == 0 && null != this.field1562) {
+					throw new IOException(this.field1562.toString());
+				} else {
+					if (this.field1561 + var3 <= this.field1559) {
+						System.arraycopy(this.field1560, this.field1561, var1, var2, var3);
+					} else {
+						int var7 = this.field1559 - this.field1561;
+						System.arraycopy(this.field1560, this.field1561, var1, var2, var7);
+						System.arraycopy(this.field1560, 0, var1, var7 + var2, var3 - var7);
+					}
+					this.field1561 = (this.field1561 + var3) % this.field1559;
+					this.notifyAll();
+					return var3;
+				}
+			}
+		} else {
+			throw new IOException();
+		}
+	}
 
-    }
+	void method902() {
+		synchronized (this) {
+			if (null == this.field1562) {
+				this.field1562 = new IOException("");
+			}
+			this.notifyAll();
+		}
+		try {
+			this.field1557.join();
+		} catch (InterruptedException var4) {
+		}
+	}
 
-    void method709() {
-    }
+	public static void method898(class338 var0) {
+		class251.field2121 = var0;
+	}
 }

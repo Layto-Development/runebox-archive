@@ -1,15 +1,31 @@
-public class class12 implements class103 {
-    public final class150 field54;
+public final class class12 {
 
-    public class12(class35 var1) {
-        this(new class286(var1));
-    }
+	public static class358[] field68;
 
-    class12(class286 var1) {
-        this.field54 = var1;
-    }
+	int field59;
 
-    public int method32(int var1) {
-        return this.field54.method716(var1);
-    }
+	int field60;
+
+	int field61;
+
+	int field62;
+
+	int field63;
+
+	int field64;
+
+	int field65;
+
+	int field70;
+
+	public class189 field66;
+
+	public class189 field67;
+
+	public long field69;
+
+	class12() {
+		this.field69 = 0L;
+		this.field70 = 0;
+	}
 }

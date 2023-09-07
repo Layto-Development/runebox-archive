@@ -1,62 +1,39 @@
-public class class389 extends class70 {
-    class5 field2778;
+public class class389 implements class228 {
 
-    public class389() {
-        this.field2778 = null;
-    }
+	public static class336 field3103;
 
-    class389(class442 var1) {
-        if (var1 != null) {
-            this.field2778 = new class5(var1, null);
-        }
-    }
+	static class13 field3098;
 
-    public class389(class433 var1) {
-        this.field2778 = new class5(null, var1);
-    }
+	static final class389 field3099;
 
-    public boolean method1806(byte var1) {
-        return null == this.field2778;
-    }
+	static final class389 field3100;
 
-    public class433 method1808() {
-        if (null != this.field2778 && this.field2778.field25.tryLock()) {
-            class433 var2;
-            try {
-                var2 = this.method1805();
-            } finally {
-                this.field2778.field25.unlock();
-            }
+	static final class389 field3101;
 
-            return var2;
-        } else {
-            return null;
-        }
-    }
+	static final class389 field3102;
 
-    public class433 method1807() {
-        if (this.field2778 != null) {
-            this.field2778.field25.lock();
+	static final class389 field3104;
 
-            class433 var2;
-            try {
-                var2 = this.method1805();
-            } finally {
-                this.field2778.field25.unlock();
-            }
+	final int field3105;
 
-            return var2;
-        } else {
-            return null;
-        }
-    }
+	static {
+		field3104 = new class389(0);
+		field3099 = new class389(1);
+		field3102 = new class389(2);
+		field3100 = new class389(3);
+		field3101 = new class389(4);
+	}
 
-    class433 method1805() {
-        if (this.field2778.field24 == null) {
-            this.field2778.field24 = this.field2778.field29.method2017(null);
-            this.field2778.field29 = null;
-        }
+	class389(int var1) {
+		this.field3105 = var1;
+	}
 
-        return this.field2778.field24;
-    }
+	@Override
+	public int method1362() {
+		return this.field3105;
+	}
+
+	static class389[] method2023() {
+		return new class389[] { field3102, field3104, field3100, field3099, field3101 };
+	}
 }

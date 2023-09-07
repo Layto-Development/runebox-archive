@@ -1,65 +1,23 @@
-public final class class22 {
-    final int field104;
-    final int field76;
-    final int field78;
-    final int field79;
-    final int field80;
-    final int field85;
-    boolean[] field102;
-    boolean[] field81;
-    byte field90;
-    byte[] field103;
-    byte[] field106;
-    byte[] field107;
-    byte[] field82;
-    byte[] field94;
-    byte[] field99;
-    byte[][] field88;
-    int field100;
-    int field108;
-    int field109;
-    int field113;
-    int field77;
-    int field83;
-    int field84;
-    int field86;
-    int field87;
-    int field91;
-    int field92;
-    int field93;
-    int field95;
-    int field96;
-    int field98;
-    int[] field105;
-    int[] field112;
-    int[] field89;
-    int[] field97;
-    int[][] field101;
-    int[][] field110;
-    int[][] field111;
+public class class22 {
 
-    class22() {
-        this.field85 = 4096;
-        this.field76 = 16;
-        this.field78 = 258;
-        this.field79 = 6;
-        this.field80 = 50;
-        this.field104 = 18002;
-        this.field108 = 0;
-        this.field83 = 0;
-        this.field97 = new int[256];
-        this.field105 = new int[257];
-        this.field81 = new boolean[256];
-        this.field102 = new boolean[16];
-        this.field103 = new byte[256];
-        this.field99 = new byte[4096];
-        this.field89 = new int[16];
-        this.field106 = new byte[18002];
-        this.field107 = new byte[18002];
-        this.field88 = new byte[6][258];
-        this.field101 = new int[6][258];
-        this.field110 = new int[6][258];
-        this.field111 = new int[6][258];
-        this.field112 = new int[6];
-    }
+	static int[] field116;
+
+	int[] field111;
+
+	short[] field112;
+
+	short[] field114;
+
+	public boolean field115;
+
+	public long field113;
+
+	public class22(long var1, int[] var3, short[] var4, short[] var5, boolean var6) {
+		this.field115 = false;
+		this.field113 = var1;
+		this.field111 = var3;
+		this.field112 = var4;
+		this.field114 = var5;
+		this.field115 = var6;
+	}
 }

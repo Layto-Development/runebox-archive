@@ -1,84 +1,77 @@
-import org.bouncycastle.crypto.tls.TlsClientProtocol;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+public class class408 extends class310 {
 
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.security.SecureRandom;
-import java.security.Security;
+	static class106 field3186;
 
-public class class408 extends SSLSocketFactory {
-    static class408 field2872;
+	static class338 field3188;
 
-    static {
-        if (Security.getProvider("BC") == null) {
-            Security.addProvider(new BouncyCastleProvider());
-        }
+	static int field3189;
 
-    }
+	boolean field3184;
 
-    SecureRandom field2871;
+	char field3185;
 
-    class408() {
-        this.field2871 = new SecureRandom();
-    }
+	public int field3183;
 
-    public static class408 method1857() {
-        if (field2872 == null) {
-            field2872 = new class408();
-        }
+	public String field3187;
 
-        return field2872;
-    }
+	static {
+		field3186 = new class106(64);
+	}
 
-    @Override
-    public Socket createSocket(Socket var1, String var2, int var3, boolean var4) throws IOException {
-        if (null == var1) {
-            var1 = new Socket();
-        }
+	class408() {
+		this.field3184 = true;
+	}
 
-        if (!var1.isConnected()) {
-            var1.connect(new InetSocketAddress(var2, var3));
-        }
+	void method2075() {
+	}
 
-        TlsClientProtocol var5 = new TlsClientProtocol(var1.getInputStream(), var1.getOutputStream(), this.field2871);
-        return this.method1858(var2, var5);
-    }
+	void method2076(class187 var1) {
+		while (true) {
+			int var3 = var1.method1096();
+			if (var3 == 0) {
+				return;
+			}
+			this.method2077(var1, var3);
+		}
+	}
 
-    @Override
-    public String[] getDefaultCipherSuites() {
-        return null;
-    }
+	void method2077(class187 var1, int var2) {
+		if (var2 == 1) {
+			this.field3185 = class111.method669(var1.method1097());
+		} else if (var2 == 2) {
+			this.field3183 = var1.method1100();
+		} else if (var2 == 4) {
+			this.field3184 = false;
+		} else if (var2 == 5) {
+			this.field3187 = var1.method1104();
+		}
+	}
 
-    @Override
-    public String[] getSupportedCipherSuites() {
-        return null;
-    }
+	public boolean method2078() {
+		return this.field3185 == 's';
+	}
 
-    @Override
-    public Socket createSocket(String var1, int var2) throws IOException {
-        return null;
-    }
+	public static void method2080(class338 var0) {
+		field3188 = var0;
+	}
 
-    @Override
-    public Socket createSocket(InetAddress var1, int var2) throws IOException {
-        return null;
-    }
+	public static class408 method2081(int var0) {
+		class408 var2 = (class408) field3186.method648((long) var0);
+		if (null != var2) {
+			return var2;
+		} else {
+			byte[] var3 = field3188.method1762(11, var0);
+			var2 = new class408();
+			if (var3 != null) {
+				var2.method2076(new class187(var3));
+			}
+			var2.method2075();
+			field3186.method647(var2, (long) var0);
+			return var2;
+		}
+	}
 
-    @Override
-    public Socket createSocket(String var1, int var2, InetAddress var3, int var4) throws IOException {
-        return null;
-    }
-
-    @Override
-    public Socket createSocket(InetAddress var1, int var2, InetAddress var3, int var4) throws IOException {
-        return null;
-    }
-
-    SSLSocket method1858(String var1, TlsClientProtocol var2) {
-        return new class264(this, var2, var1);
-    }
+	public static void method2079() {
+		field3186.method645();
+	}
 }

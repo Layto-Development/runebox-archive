@@ -1,31 +1,114 @@
-public class class10 {
-    public static int[] field46;
-    public static int[] field48;
-    static int[] field45;
-    static int[] field47;
+public abstract class class10 {
 
-    static {
-        field45 = new int[32];
-        int var0 = 2;
+	static int field58;
 
-        for (int var1 = 0; var1 < 32; ++var1) {
-            field45[var1] = var0 - 1;
-            var0 += var0;
-        }
+	double field54;
 
-        field48 = new int[4000];
-        field46 = new int[4000];
-    }
+	int field55;
 
-    class10() throws Throwable {
-    }
+	int field56;
 
-    public static int method20(int var0) {
-        class180 var2 = class180.method864(var0);
-        int var3 = var2.field1523;
-        int var4 = var2.field1524;
-        int var5 = var2.field1527;
-        int var6 = field45[var5 - var4];
-        return field46[var3] >> var4 & var6;
-    }
+	int field57;
+
+	class10(int var1, int var2) {
+		this.field57 = 0;
+		this.field55 = 0;
+		this.field54 = 0.0D;
+		this.field56 = 0;
+		this.field57 = var1;
+		this.field55 = 0;
+		this.field56 = var2 >= 0 && var2 <= 27 ? var2 : 0;
+		this.field54 = method32(this.field55, this.field57, this.field56);
+	}
+
+	public void method31() {
+		if (this.field55 < this.field57) {
+			++this.field55;
+			this.field54 = method32(this.field55, this.field57, this.field56);
+		}
+	}
+
+	double method30() {
+		return this.field54;
+	}
+
+	static double method32(int var0, int var1, int var2) {
+		double var4 = var1 > 0 ? (double) Math.max(0.0F, Math.min(1.0F, (float) var0 / (float) var1)) : 1.0D;
+		if (var4 > 0.0D && var4 < 1.0D) {
+			double var6;
+			double var8;
+			switch(var2) {
+				case 0:
+					return var4;
+				case 1:
+					return 1.0D - Math.cos(var4 * 3.141592653589793D / 2.0D);
+				case 2:
+					return Math.sin(var4 * 3.141592653589793D / 2.0D);
+				case 3:
+					return -(Math.cos(var4 * 3.141592653589793D) - 1.0D) / 2.0D;
+				case 4:
+					return var4 * var4;
+				case 5:
+					return 1.0D - (1.0D - var4) * (1.0D - var4);
+				case 6:
+					return var4 < 0.5D ? var4 * 2.0D * var4 : 1.0D - Math.pow(2.0D + var4 * -2.0D, 2.0D) / 2.0D;
+				case 7:
+					return var4 * var4 * var4;
+				case 8:
+					return 1.0D - Math.pow(1.0D - var4, 3.0D);
+				case 9:
+					return var4 < 0.5D ? var4 * var4 * 4.0D * var4 : 1.0D - Math.pow(2.0D + var4 * -2.0D, 3.0D) / 2.0D;
+				case 10:
+					return var4 * var4 * var4 * var4;
+				case 11:
+					return 1.0D - Math.pow(1.0D - var4, 4.0D);
+				case 12:
+					return var4 < 0.5D ? var4 * var4 * var4 * var4 * 8.0D : 1.0D - Math.pow(2.0D + var4 * -2.0D, 4.0D) / 2.0D;
+				case 13:
+					return var4 * var4 * var4 * var4 * var4;
+				case 14:
+					return 1.0D - Math.pow(1.0D - var4, 5.0D);
+				case 15:
+					return var4 < 0.5D ? var4 * var4 * 8.0D * var4 * var4 * var4 : 1.0D - Math.pow(var4 * -2.0D + 2.0D, 5.0D) / 2.0D;
+				case 16:
+					return Math.pow(2.0D, var4 * 10.0D - 10.0D);
+				case 17:
+					return 1.0D - Math.pow(2.0D, var4 * -10.0D);
+				case 18:
+					return var4 < 0.5D ? Math.pow(2.0D, 10.0D + var4 * 20.0D) / 2.0D : (2.0D - Math.pow(2.0D, 10.0D + var4 * -20.0D)) / 2.0D;
+				case 19:
+					return 1.0D - Math.sqrt(1.0D - Math.pow(var4, 2.0D));
+				case 20:
+					return Math.sqrt(1.0D - Math.pow(var4 - 1.0D, 2.0D));
+				case 21:
+					return var4 < 0.5D ? (1.0D - Math.sqrt(1.0D - Math.pow(var4 * 2.0D, 2.0D))) / 2.0D : (Math.sqrt(1.0D - Math.pow(2.0D + var4 * -2.0D, 2.0D)) + 1.0D) / 2.0D;
+				case 22:
+					var6 = 1.70158D;
+					var8 = 2.70158D;
+					return var4 * 2.70158D * var4 * var4 - var4 * 1.70158D * var4;
+				case 23:
+					var6 = 1.70158D;
+					var8 = 2.70158D;
+					return 1.0D + 2.70158D * Math.pow(var4 - 1.0D, 3.0D) + 1.70158D * Math.pow(var4 - 1.0D, 2.0D);
+				case 24:
+					var6 = 1.70158D;
+					var8 = 2.5949095D;
+					return var4 < 0.5D ? Math.pow(var4 * 2.0D, 2.0D) * (var4 * 7.189819D - 2.5949095D) / 2.0D : (Math.pow(var4 * 2.0D - 2.0D, 2.0D) * (3.5949095D * (var4 * 2.0D - 2.0D) + 2.5949095D) + 2.0D) / 2.0D;
+				case 25:
+					var6 = 2.0943951023931953D;
+					return -Math.pow(2.0D, var4 * 10.0D - 10.0D) * Math.sin((var4 * 10.0D - 10.75D) * 2.0943951023931953D);
+				case 26:
+					var6 = 2.0943951023931953D;
+					return Math.pow(2.0D, var4 * -10.0D) * Math.sin(2.0943951023931953D * (var4 * 10.0D - 0.75D)) + 1.0D;
+				case 27:
+					var6 = 1.3962634015954636D;
+					var8 = Math.sin((var4 * 20.0D - 11.125D) * 1.3962634015954636D);
+					return var4 < 0.5D ? -(Math.pow(2.0D, var4 * 20.0D - 10.0D) * var8) / 2.0D : Math.pow(2.0D, 10.0D + var4 * -20.0D) * var8 / 2.0D + 1.0D;
+				default:
+					return var4;
+			}
+		} else {
+			return var4 <= 0.0D ? 0.0D : 1.0D;
+		}
+	}
 }

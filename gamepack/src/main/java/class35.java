@@ -1,45 +1,81 @@
-public abstract class class35 extends class354 implements class132 {
-    protected class35(class120 var1, class492 var2, int var3) {
-        super(var1, var2, var3);
-    }
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.security.SecureRandom;
+import java.security.Security;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+import org.bouncycastle.crypto.tls.TlsClientProtocol;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-    protected abstract class72 method103(int var1);
+public class class35 extends SSLSocketFactory {
 
-    public int method102() {
-        return super.field2557;
-    }
+	static class35 field184;
 
-    @Override
-    public Object method592(int var1) {
-        class72 var3 = this.method103(var1);
-        return null != var3 && var3.method226() ? var3.method225() : null;
-    }
+	SecureRandom field183;
 
-    public class2 method101(class78 var1) {
-        int var3 = var1.method309();
-        class72 var4 = this.method103(var3);
-        class2 var5 = new class2(var3);
-        Class var6 = var4.field677.field2940;
-        if (var6 == Integer.class) {
-            var5.field1 = var1.method264();
-        } else if (var6 == Long.class) {
-            var5.field1 = var1.method265();
-        } else if (var6 == String.class) {
-            var5.field1 = var1.method310();
-        } else {
-            if (!class312.class.isAssignableFrom(var6)) {
-                throw new IllegalStateException();
-            }
+	static {
+		if (Security.getProvider("BC") == null) {
+			Security.addProvider(new BouncyCastleProvider());
+		}
+	}
 
-            try {
-                class312 var7 = (class312) var6.newInstance();
-                var7.method1372(var1);
-                var5.field1 = var7;
-            } catch (InstantiationException var8) {
-            } catch (IllegalAccessException var9) {
-            }
-        }
+	class35() {
+		this.field183 = new SecureRandom();
+	}
 
-        return var5;
-    }
+	@Override
+	public Socket createSocket(Socket var1, String var2, int var3, boolean var4) throws IOException {
+		if (null == var1) {
+			var1 = new Socket();
+		}
+		if (!var1.isConnected()) {
+			var1.connect(new InetSocketAddress(var2, var3));
+		}
+		TlsClientProtocol var5 = new TlsClientProtocol(var1.getInputStream(), var1.getOutputStream(), this.field183);
+		return this.method158(var2, var5);
+	}
+
+	@Override
+	public String[] getDefaultCipherSuites() {
+		return null;
+	}
+
+	@Override
+	public String[] getSupportedCipherSuites() {
+		return null;
+	}
+
+	@Override
+	public Socket createSocket(String var1, int var2) throws IOException, UnknownHostException {
+		return null;
+	}
+
+	@Override
+	public Socket createSocket(InetAddress var1, int var2) throws IOException {
+		return null;
+	}
+
+	@Override
+	public Socket createSocket(String var1, int var2, InetAddress var3, int var4) throws IOException, UnknownHostException {
+		return null;
+	}
+
+	@Override
+	public Socket createSocket(InetAddress var1, int var2, InetAddress var3, int var4) throws IOException {
+		return null;
+	}
+
+	SSLSocket method158(String var1, TlsClientProtocol var2) {
+		return new class538(this, var2, var1);
+	}
+
+	public static class35 method157() {
+		if (field184 == null) {
+			field184 = new class35();
+		}
+		return field184;
+	}
 }

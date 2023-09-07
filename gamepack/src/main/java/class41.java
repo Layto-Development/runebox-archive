@@ -1,60 +1,106 @@
-public class class41 implements class330 {
-    static final class41 field506;
-    static final class41 field507;
-    static final class41 field508;
-    static final class41 field510;
-    static final class41 field511;
-    static final class41 field512;
-    static final class41 field513;
-    static final class41 field514;
-    static final class41 field515;
-    static final class41 field516;
-    static final class41 field517;
-    static final class41 field518;
-    static final class41 field519;
-    static final class41 field520;
-    static final class41 field521;
-    static final class41 field522;
-    static final class41 field526;
+import java.applet.Applet;
+import java.awt.Desktop;
+import java.awt.Desktop.Action;
+import java.net.URI;
+import java.net.URL;
+import netscape.javascript.JSObject;
 
-    static {
-        field510 = new class41(0, -1, true, false, true);
-        field507 = new class41(1, 0, true, true, true);
-        field508 = new class41(2, 1, true, true, false);
-        field513 = new class41(3, 2, false, false, true);
-        field526 = new class41(4, 3, false, false, true);
-        field511 = new class41(5, 10, false, false, true);
-        field516 = new class41(6, 22, false, false, true);
-        field519 = new class41(7, 41, false, false, true);
-        field514 = new class41(8, 42, false, false, true);
-        field515 = new class41(9, 43, false, false, true);
-        field512 = new class41(10, 44, false, false, true);
-        field517 = new class41(11, 45, false, false, true);
-        field518 = new class41(12, 46, false, false, true);
-        field506 = new class41(13, 47, false, false, true);
-        field520 = new class41(14, 48, false, false, true);
-        field521 = new class41(15, 49, false, false, true);
-        field522 = new class41(16, 52, false, false, true);
-    }
+public class class41 {
 
-    public final boolean field509;
-    public final boolean field525;
-    public final int field524;
-    final int field523;
+	static int field203;
 
-    class41(int var1, int var2, boolean var3, boolean var4, boolean var5) {
-        this.field523 = var1;
-        this.field524 = var2;
-        this.field525 = var4;
-        this.field509 = var5;
-    }
+	static Applet field202;
 
-    public static class41[] method116() {
-        return new class41[]{field512, field526, field506, field508, field507, field517, field515, field513, field510, field522, field521, field520, field511, field518, field516, field519, field514};
-    }
+	static String field201;
 
-    @Override
-    public int method1533() {
-        return this.field523;
-    }
+	static {
+		field202 = null;
+		field201 = "";
+	}
+
+	class41() throws Throwable {
+	}
+
+	public static void method176(Applet var0, String var1) {
+		field202 = var0;
+		if (null != var1) {
+			field201 = var1;
+		}
+	}
+
+	public static void method177(String var0, boolean var1, boolean var2) {
+		if (var1) {
+			if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
+				try {
+					Desktop.getDesktop().browse(new URI(var0));
+					return;
+				} catch (Exception var5) {
+				}
+			}
+			if (field201.startsWith("win")) {
+				method178(var0, 0);
+			} else if (field201.startsWith("mac")) {
+				method179(var0, 1, "openjs");
+			} else {
+				method178(var0, 2);
+			}
+		} else {
+			method178(var0, 3);
+		}
+	}
+
+	static boolean method178(String var0, int var1) {
+		return method179(var0, var1, "openjs");
+	}
+
+	static boolean method179(String var0, int var1, String var2) {
+		if (var1 == 0) {
+			try {
+				if (!field201.startsWith("win")) {
+					throw new Exception();
+				} else if (!var0.startsWith("http://") && !var0.startsWith("https://")) {
+					throw new Exception();
+				} else {
+					String var12 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
+					for (int var5 = 0; var5 < var0.length(); ++var5) {
+						if (var12.indexOf(var0.charAt(var5)) == -1) {
+							throw new Exception();
+						}
+					}
+					Runtime.getRuntime().exec("cmd /c start \"j\" \"" + var0 + "\"");
+					return true;
+				}
+			} catch (Throwable var6) {
+				return false;
+			}
+		} else if (var1 == 1) {
+			try {
+				Object var11 = class318.method1698(field202, var2, new Object[] { (new URL(field202.getCodeBase(), var0)).toString() });
+				return var11 != null;
+			} catch (Throwable var7) {
+				return false;
+			}
+		} else if (var1 == 2) {
+			try {
+				field202.getAppletContext().showDocument(new URL(field202.getCodeBase(), var0), "_blank");
+				return true;
+			} catch (Exception var8) {
+				return false;
+			}
+		} else if (var1 == 3) {
+			try {
+				Applet var4 = field202;
+				JSObject.getWindow(var4).call("loggedout", (Object[]) null);
+			} catch (Throwable var10) {
+			}
+			try {
+				field202.getAppletContext().showDocument(new URL(field202.getCodeBase(), var0), "_top");
+				return true;
+			} catch (Exception var9) {
+				return false;
+			}
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
 }

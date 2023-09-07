@@ -1,62 +1,86 @@
-public class class139 {
-    static class372 field1226;
-    static short[][][] field1225;
-    class321[] field1223;
-    int field1224;
+import java.util.Iterator;
 
-    class139(class78 var1, int var2) {
-        this.field1223 = new class321[var2];
-        this.field1224 = var1.method260();
+public class class139 implements Iterable {
 
-        for (int var3 = 0; var3 < this.field1223.length; ++var3) {
-            class321 var4 = new class321(this.field1224, var1, false);
-            this.field1223[var3] = var4;
-        }
+	class310 field1533;
 
-        this.method647();
-    }
+	public class310 field1534;
 
-    void method647() {
-        class321[] var2 = this.field1223;
+	public class139() {
+		this.field1534 = new class310();
+		this.field1534.field2427 = this.field1534;
+		this.field1534.field2428 = this.field1534;
+	}
 
-        for (int var3 = 0; var3 < var2.length; ++var3) {
-            class321 var4 = var2[var3];
-            if (var4.field2317 >= 0) {
-                var4.field2327 = this.field1223[var4.field2317];
-            }
-        }
+	public void method879() {
+		while (this.field1534.field2427 != this.field1534) {
+			this.field1534.field2427.method1674();
+		}
+	}
 
-    }
+	public void method873(class310 var1) {
+		if (var1.field2428 != null) {
+			var1.method1674();
+		}
+		var1.field2428 = this.field1534.field2428;
+		var1.field2427 = this.field1534;
+		var1.field2428.field2427 = var1;
+		var1.field2427.field2428 = var1;
+	}
 
-    public int method642() {
-        return this.field1223.length;
-    }
+	public class310 method875() {
+		class310 var1 = this.field1534.field2427;
+		if (var1 == this.field1534) {
+			return null;
+		} else {
+			var1.method1674();
+			return var1;
+		}
+	}
 
-    class321 method643(int var1) {
-        return var1 >= this.method642() ? null : this.field1223[var1];
-    }
+	public class310 method876() {
+		return this.method877((class310) null);
+	}
 
-    class321[] method644() {
-        return this.field1223;
-    }
+	class310 method877(class310 var1) {
+		class310 var2;
+		if (var1 == null) {
+			var2 = this.field1534.field2427;
+		} else {
+			var2 = var1;
+		}
+		if (var2 == this.field1534) {
+			this.field1533 = null;
+			return null;
+		} else {
+			this.field1533 = var2.field2427;
+			return var2;
+		}
+	}
 
-    void method645(class228 var1, int var2) {
-        this.method646(var1, var2, null, false);
-    }
+	public class310 method878() {
+		class310 var1 = this.field1533;
+		if (var1 == this.field1534) {
+			this.field1533 = null;
+			return null;
+		} else {
+			this.field1533 = var1.field2427;
+			return var1;
+		}
+	}
 
-    void method646(class228 var1, int var2, boolean[] var3, boolean var4) {
-        int var6 = var1.method1041();
-        int var7 = 0;
-        class321[] var8 = this.method644();
+	@Override
+	public Iterator iterator() {
+		return new class376(this);
+	}
 
-        for (int var9 = 0; var9 < var8.length; ++var9) {
-            class321 var10 = var8[var9];
-            if (null == var3 || var4 == var3[var7]) {
-                var1.method1043(var2, var10, var7, var6);
-            }
-
-            ++var7;
-        }
-
-    }
+	public static void method874(class310 var0, class310 var1) {
+		if (var0.field2428 != null) {
+			var0.method1674();
+		}
+		var0.field2428 = var1;
+		var0.field2427 = var1.field2427;
+		var0.field2428.field2427 = var0;
+		var0.field2427.field2428 = var0;
+	}
 }

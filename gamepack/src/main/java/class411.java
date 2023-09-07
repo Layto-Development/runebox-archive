@@ -1,19 +1,37 @@
-public class class411 {
-    static final class411 field2897;
-    static final class411 field2898;
+public class class411 extends class417 {
 
-    static {
-        field2897 = new class411("Basic");
-        field2898 = new class411("Bearer");
-    }
+	boolean field3205;
 
-    final String field2899;
+	byte field3201;
 
-    class411(String var1) {
-        this.field2899 = var1;
-    }
+	byte field3202;
 
-    String method1902() {
-        return this.field2899;
-    }
+	byte field3203;
+
+	byte field3204;
+
+	// $FF: synthetic field
+	final class400 this$0;
+
+	class411(class400 var1) {
+		this.this$0 = var1;
+	}
+
+	@Override
+	void method2095(class187 var1) {
+		this.field3205 = var1.method1096() == 1;
+		this.field3202 = var1.method1097();
+		this.field3203 = var1.method1097();
+		this.field3201 = var1.method1097();
+		this.field3204 = var1.method1097();
+	}
+
+	@Override
+	void method2094(class518 var1) {
+		var1.field4106 = this.field3205;
+		var1.field4120 = this.field3202;
+		var1.field4108 = this.field3203;
+		var1.field4109 = this.field3201;
+		var1.field4110 = this.field3204;
+	}
 }

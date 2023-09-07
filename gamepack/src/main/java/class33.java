@@ -1,110 +1,57 @@
-import netscape.javascript.JSObject;
-
-import java.applet.Applet;
-import java.awt.*;
-import java.awt.Desktop.Action;
-import java.net.URI;
-import java.net.URL;
-
 public class class33 {
-    static int field486;
-    static Applet field485;
-    static String field484;
 
-    static {
-        field485 = null;
-        field484 = "";
-    }
+	public static final class33 field167;
 
-    class33() throws Throwable {
-    }
+	public static final class33 field169;
 
-    public static void method95(Applet var0, String var1) {
-        field485 = var0;
-        if (null != var1) {
-            field484 = var1;
-        }
+	public static final class33 field171;
 
-    }
+	public static final class33 field174;
 
-    public static void method96(String var0, boolean var1, boolean var2) {
-        if (var1) {
-            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
-                try {
-                    Desktop.getDesktop().browse(new URI(var0));
-                    return;
-                } catch (Exception var5) {
-                }
-            }
+	public static final class33 field176;
 
-            if (field484.startsWith("win")) {
-                method97(var0, 0);
-            } else if (field484.startsWith("mac")) {
-                method98(var0, 1, "openjs");
-            } else {
-                method97(var0, 2);
-            }
-        } else {
-            method97(var0, 3);
-        }
+	public static final class33 field177;
 
-    }
+	public static final class33 field180;
 
-    static boolean method97(String var0, int var1) {
-        return method98(var0, var1, "openjs");
-    }
+	static final class33 field168;
 
-    static boolean method98(String var0, int var1, String var2) {
-        if (var1 == 0) {
-            try {
-                if (!field484.startsWith("win")) {
-                    throw new Exception();
-                } else if (!var0.startsWith("http://") && !var0.startsWith("https://")) {
-                    throw new Exception();
-                } else {
-                    String var12 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
+	static final class33 field170;
 
-                    for (int var5 = 0; var5 < var0.length(); ++var5) {
-                        if (var12.indexOf(var0.charAt(var5)) == -1) {
-                            throw new Exception();
-                        }
-                    }
+	static final class33 field172;
 
-                    Runtime.getRuntime().exec("cmd /c start \"j\" \"" + var0 + "\"");
-                    return true;
-                }
-            } catch (Throwable var6) {
-                return false;
-            }
-        } else if (var1 == 1) {
-            try {
-                Object var11 = class271.method1215(field485, var2, new Object[]{(new URL(field485.getCodeBase(), var0)).toString()});
-                return var11 != null;
-            } catch (Throwable var7) {
-                return false;
-            }
-        } else if (var1 == 2) {
-            try {
-                field485.getAppletContext().showDocument(new URL(field485.getCodeBase(), var0), "_blank");
-                return true;
-            } catch (Exception var8) {
-                return false;
-            }
-        } else if (var1 == 3) {
-            try {
-                Applet var4 = field485;
-                JSObject.getWindow(var4).call("loggedout", (Object[]) null);
-            } catch (Throwable var10) {
-            }
+	static final class33 field175;
 
-            try {
-                field485.getAppletContext().showDocument(new URL(field485.getCodeBase(), var0), "_top");
-                return true;
-            } catch (Exception var9) {
-                return false;
-            }
-        } else {
-            throw new IllegalArgumentException();
-        }
-    }
+	static final class33 field178;
+
+	static final class33 field179;
+
+	static final class33 field181;
+
+	public final int field173;
+
+	static {
+		field170 = new class33(0);
+		field168 = new class33(1);
+		field181 = new class33(2);
+		field175 = new class33(3);
+		field171 = new class33(4, class127.field1458);
+		field172 = new class33(5);
+		field167 = new class33(6, class127.field1459);
+		field169 = new class33(7, class127.field1462);
+		field174 = new class33(8, class127.field1463);
+		field180 = new class33(9, class127.field1460);
+		field176 = new class33(10, class127.field1461);
+		field177 = new class33(11, class127.field1457);
+		field178 = new class33(12);
+		field179 = new class33(13);
+	}
+
+	class33(int var1, class127 var2) {
+		this.field173 = var1;
+	}
+
+	class33(int var1) {
+		this(var1, (class127) null);
+	}
 }

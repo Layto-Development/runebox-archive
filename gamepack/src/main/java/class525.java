@@ -1,20 +1,30 @@
-public class class525 extends class156 {
-    final boolean field4203;
+import java.util.Iterator;
 
-    public class525(boolean var1) {
-        this.field4203 = var1;
-    }
+class class525 implements Iterator {
 
-    int method2518(class324 var1, class324 var2) {
-        if (var1.field2349 != var2.field2349) {
-            return this.field4203 ? var1.field2349 - var2.field2349 : var2.field2349 - var1.field2349;
-        } else {
-            return this.method727(var1, var2);
-        }
-    }
+	int field4172;
 
-    @Override
-    public int compare(Object var1, Object var2) {
-        return this.method2518((class324) var1, (class324) var2);
-    }
+	// $FF: synthetic field
+	final class335 this$0;
+
+	class525(class335 var1) {
+		this.this$0 = var1;
+	}
+
+	@Override
+	public boolean hasNext() {
+		return this.field4172 < this.this$0.method2230();
+	}
+
+	@Override
+	public Object next() {
+		int var1 = ++this.field4172 - 1;
+		class56 var2 = (class56) this.this$0.field2561.method1166((long) var1);
+		return null != var2 ? var2 : this.this$0.method1755(var1);
+	}
+
+	@Override
+	public void remove() {
+		throw new UnsupportedOperationException();
+	}
 }

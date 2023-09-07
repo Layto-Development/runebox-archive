@@ -1,20 +1,22 @@
-public class class218 {
-    static boolean field1747;
-    static int[] field1744;
-    public short[] field1745;
-    public short[] field1746;
+public class class218 extends class417 {
 
-    public class218(int var1) {
-        class508 var2 = class508.method2299(var1);
-        if (var2.method2296()) {
-            this.field1745 = new short[var2.field3723.length];
-            System.arraycopy(var2.field3723, 0, this.field1745, 0, this.field1745.length);
-        }
+	int field1949;
 
-        if (var2.method2293()) {
-            this.field1746 = new short[var2.field3725.length];
-            System.arraycopy(var2.field3725, 0, this.field1746, 0, this.field1746.length);
-        }
+	// $FF: synthetic field
+	final class400 this$0;
 
-    }
+	class218(class400 var1) {
+		this.this$0 = var1;
+		this.field1949 = -1;
+	}
+
+	@Override
+	void method2095(class187 var1) {
+		this.field1949 = var1.method1145();
+	}
+
+	@Override
+	void method2094(class518 var1) {
+		var1.method2502(this.field1949);
+	}
 }

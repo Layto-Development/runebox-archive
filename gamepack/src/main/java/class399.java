@@ -1,35 +1,89 @@
-public class class399 implements class330 {
-    static final class399 field2822;
-    static final class399 field2823;
-    static final class399 field2824;
-    static final class399 field2825;
-    static final class399 field2828;
-    static final class399 field2829;
-    static class8 field2821;
+public class class399 {
 
-    static {
-        field2829 = new class399(0, -1);
-        field2822 = new class399(1, 2);
-        field2823 = new class399(2, 3);
-        field2824 = new class399(3, 4);
-        field2828 = new class399(4, 5);
-        field2825 = new class399(5, 6);
-    }
+	int field3163;
 
-    final int field2826;
-    final int field2827;
+	int field3165;
 
-    class399(int var1, int var2) {
-        this.field2826 = var1;
-        this.field2827 = var2;
-    }
+	int field3166;
 
-    static class399[] method1839() {
-        return new class399[]{field2822, field2824, field2828, field2829, field2823, field2825};
-    }
+	int field3167;
 
-    @Override
-    public int method1533() {
-        return this.field2827;
-    }
+	long field3159;
+
+	long field3160;
+
+	long field3161;
+
+	long field3162;
+
+	long field3168;
+
+	public boolean field3164;
+
+	public class399() {
+		this.field3160 = -1L;
+		this.field3159 = -1L;
+		this.field3164 = false;
+		this.field3161 = 0L;
+		this.field3162 = 0L;
+		this.field3168 = 0L;
+		this.field3163 = 0;
+		this.field3165 = 0;
+		this.field3166 = 0;
+		this.field3167 = 0;
+	}
+
+	public void method2051() {
+		this.field3160 = class48.method197();
+	}
+
+	public void method2056() {
+		if (-1L != this.field3160) {
+			this.field3162 = class48.method197() - this.field3160;
+			this.field3160 = -1L;
+		}
+	}
+
+	public void method2052(int var1) {
+		this.field3159 = class48.method197();
+		this.field3163 = var1;
+	}
+
+	public void method2053() {
+		if (-1L != this.field3159) {
+			this.field3161 = class48.method197() - this.field3159;
+			this.field3159 = -1L;
+		}
+		++this.field3166;
+		this.field3164 = true;
+	}
+
+	public void method2054() {
+		this.field3164 = false;
+		this.field3165 = 0;
+	}
+
+	public void method2050() {
+		this.method2053();
+	}
+
+	public void method2055(class187 var1) {
+		method2057(var1, this.field3162);
+		method2057(var1, this.field3161);
+		method2057(var1, this.field3168);
+		var1.method1126(this.field3163);
+		var1.method1126(this.field3165);
+		var1.method1126(this.field3166);
+		var1.method1126(this.field3167);
+	}
+
+	static void method2057(class187 var0, long var1) {
+		var1 /= 10L;
+		if (var1 < 0L) {
+			var1 = 0L;
+		} else if (var1 > 65535L) {
+			var1 = 65535L;
+		}
+		var0.method1126((int) var1);
+	}
 }

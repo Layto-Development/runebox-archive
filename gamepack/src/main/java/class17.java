@@ -1,31 +1,39 @@
-import java.awt.*;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
+public abstract class class17 {
 
-public final class class17 implements class420, MouseWheelListener {
-    int field64;
+	boolean field90;
 
-    class17() {
-        this.field64 = 0;
-    }
+	boolean field91;
 
-    void method42(Component var1) {
-        var1.addMouseWheelListener(this);
-    }
+	class17 field87;
 
-    void method44(Component var1) {
-        var1.removeMouseWheelListener(this);
-    }
+	String field88;
 
-    @Override
-    public synchronized void mouseWheelMoved(MouseWheelEvent var1) {
-        this.field64 += var1.getWheelRotation();
-    }
+	String field89;
 
-    @Override
-    public synchronized int method1937() {
-        int var2 = this.field64;
-        this.field64 = 0;
-        return var2;
-    }
+	class17(class17 var1) {
+		this.field87 = var1;
+	}
+
+	public abstract boolean method51();
+
+	public boolean method52() {
+		return this.field90;
+	}
+
+	public boolean method55() {
+		return this.field91;
+	}
+
+	public String method50() {
+		return "Error in task: " + this.field89 + ", Error message: " + this.field88;
+	}
+
+	public class17 method53() {
+		return this.field87;
+	}
+
+	void method54(String var1) {
+		this.field90 = true;
+		this.field88 = var1;
+	}
 }

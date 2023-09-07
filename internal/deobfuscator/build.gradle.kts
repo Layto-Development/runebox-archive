@@ -21,7 +21,7 @@ dependencies {
     implementation("org.ow2.asm:asm-tree:_")
     implementation("com.google.guava:guava:_")
     implementation("org.jgrapht:jgrapht-core:_")
-    implementation("com.github.javaparser:javaparser-core:_")
+    implementation("com.github.javaparser:javaparser-symbol-solver-core:_")
     runtimeOnly(project(":runebox-deobfuscator-annotations"))
     implementation("org.bouncycastle:bcprov-jdk15on:1.52")
     implementation("org.json:json:20220320")
@@ -33,31 +33,31 @@ java.sourceSets["main"].java {
 
 tasks {
 
-    create("downloadGamepack") {
+    val downloadVanillaGamepack by register("downloadVanillaGamepack") {
         group = "internal"
         doLast { downloadGamepack() }
     }
 
 
-    create<JavaExec>("deobfuscateBytecode") {
+    val deobfuscateBytecode = create<JavaExec>("deobfuscateBytecode") {
         mainClass.set("io.runebox.internal.deobfuscator.bytecode.BytecodeDeobfuscator")
         workingDir = project.projectDir
-        args = listOf("build/deob/gamepack.jar", "build/deob/gamepack.deob.jar", "-t")
+        args = listOf("build/deob/gamepack.jar", "build/deob/gamepack.deob.jar")
         classpath = sourceSets["main"].runtimeClasspath
     }
 
-    create<JavaExec>("deobfuscateAst") {
+    val deobfuscateAst = create<JavaExec>("deobfuscateAst") {
         mainClass.set("io.runebox.internal.deobfuscator.ast.AstDeobfuscator")
         workingDir = project.projectDir
         args = listOf("build/deob/decomp/", "build/deob/decomp/")
         classpath = sourceSets["main"].runtimeClasspath
     }
 
-    create("decompileDeobGamepack") {
+    val decompileDeobGamepack by register("decompileDeobGamepack") {
         doLast { decompileGamepack(file("build/deob/gamepack.jar"), file("build/deob/gamepack.deob.jar")) }
     }
 
-    create<Jar>("compileDecompiledDeobSources") {
+    val compileDecompiledDeobSources = create<Jar>("compileDecompiledDeobSources") {
         dependsOn(compileJava.get())
         doFirst {
             if(file("build/deob/gamepack.deob.jar").exists()) {
@@ -72,13 +72,14 @@ tasks {
         from(file("build/classes/java/main/"))
     }
 
-    register("deobfuscateGamepack") {
-        dependsOn(build)
+    val deobfuscateGamepack by register("deobfuscateGamepack") {
         group = "internal"
-        finalizedBy("deobfuscateBytecode")
-        finalizedBy("decompileDeobGamepack")
-        finalizedBy("deobfuscateAst")
     }
+
+    deobfuscateGamepack.finalizedBy(deobfuscateBytecode)
+    deobfuscateBytecode.finalizedBy(decompileDeobGamepack)
+    decompileDeobGamepack.finalizedBy(deobfuscateAst)
+    deobfuscateAst.finalizedBy(compileDecompiledDeobSources)
 }
 
 fun downloadGamepack() {

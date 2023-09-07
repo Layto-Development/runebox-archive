@@ -1,3 +1,7 @@
-public interface class132 {
-    Object method592(int var1);
+public class class132 {
+
+	static byte[][][] field1475;
+
+	class132() throws Throwable {
+	}
 }

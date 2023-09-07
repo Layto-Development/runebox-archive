@@ -1,70 +1,104 @@
-import java.security.SecureRandom;
+public final class class83 {
 
-public final class class83 extends class490 {
-    static SecureRandom field723;
-    boolean field721;
-    class124 field718;
-    int field713;
-    int field714;
-    int field715;
-    int field716;
-    int field717;
-    int field719;
-    int field720;
-    int field722;
+	static class173 field841;
 
-    class83(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-        this.field719 = 0;
-        this.field720 = 0;
-        this.field721 = false;
-        this.field722 = var1;
-        this.field715 = var2;
-        this.field716 = var3;
-        this.field717 = var4;
-        this.field713 = var5;
-        this.field714 = var7 + var6;
-        int var8 = class115.method525(this.field722).field1063;
-        if (var8 != -1) {
-            this.field721 = false;
-            this.field718 = class124.method575(var8);
-        } else {
-            this.field721 = true;
-        }
+	static class83[] field837;
 
-    }
+	static int field836;
 
-    void method334(int var1) {
-        if (!this.field721) {
-            this.field720 += var1;
-            if (!this.field718.method574()) {
-                while (this.field720 > this.field718.field1135[this.field719]) {
-                    this.field720 -= this.field718.field1135[this.field719];
-                    ++this.field719;
-                    if (this.field719 >= this.field718.field1124.length) {
-                        this.field721 = true;
-                        break;
-                    }
-                }
-            } else {
-                this.field719 += var1;
-                if (this.field719 >= this.field718.method571()) {
-                    this.field721 = true;
-                }
-            }
+	float field835;
 
-        }
-    }
+	float field838;
 
-    @Override
-    protected class448 method2238() {
-        class115 var2 = class115.method525(this.field722);
-        class448 var3;
-        if (!this.field721) {
-            var3 = var2.method521(this.field719);
-        } else {
-            var3 = var2.method521(-1);
-        }
+	float field839;
 
-        return var3;
-    }
+	float field840;
+
+	static {
+		field837 = new class83[0];
+		method350(100);
+		new class83();
+	}
+
+	class83() {
+		this.method346();
+	}
+
+	public void method348() {
+		synchronized (field837) {
+			if (class392.field3110 < field836 - 1) {
+				field837[++class392.field3110 - 1] = this;
+			}
+		}
+	}
+
+	void method344(float var1, float var2, float var3, float var4) {
+		this.field839 = var1;
+		this.field838 = var2;
+		this.field840 = var3;
+		this.field835 = var4;
+	}
+
+	public void method345(float var1, float var2, float var3, float var4) {
+		float var6 = (float) Math.sin((double) (var4 * 0.5F));
+		float var7 = (float) Math.cos((double) (var4 * 0.5F));
+		this.field839 = var6 * var1;
+		this.field838 = var2 * var6;
+		this.field840 = var6 * var3;
+		this.field835 = var7;
+	}
+
+	final void method346() {
+		this.field840 = 0.0F;
+		this.field838 = 0.0F;
+		this.field839 = 0.0F;
+		this.field835 = 1.0F;
+	}
+
+	public final void method347(class83 var1) {
+		this.method344(this.field839 * var1.field835 + this.field835 * var1.field839 + this.field840 * var1.field838 - this.field838 * var1.field840, var1.field840 * this.field839 + this.field835 * var1.field838 + (var1.field835 * this.field838 - this.field840 * var1.field839), var1.field840 * this.field835 + (this.field840 * var1.field835 + this.field838 * var1.field839 - var1.field838 * this.field839), this.field835 * var1.field835 - this.field839 * var1.field839 - this.field838 * var1.field838 - var1.field840 * this.field840);
+	}
+
+	@Override
+	public boolean equals(Object var1) {
+		if (!(var1 instanceof class83)) {
+			return false;
+		} else {
+			class83 var2 = (class83) var1;
+			return var2.field839 == this.field839 && var2.field838 == this.field838 && var2.field840 == this.field840 && this.field835 == var2.field835;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		boolean var1 = true;
+		float var2 = 1.0F;
+		var2 = this.field839 + var2 * 31.0F;
+		var2 = this.field838 + var2 * 31.0F;
+		var2 = this.field840 + var2 * 31.0F;
+		var2 = this.field835 + var2 * 31.0F;
+		return (int) var2;
+	}
+
+	@Override
+	public String toString() {
+		return this.field839 + "," + this.field838 + "," + this.field840 + "," + this.field835;
+	}
+
+	static void method350(int var0) {
+		field836 = 100;
+		field837 = new class83[100];
+		class392.field3110 = 0;
+	}
+
+	public static class83 method349() {
+		synchronized (field837) {
+			if (class392.field3110 == 0) {
+				return new class83();
+			} else {
+				field837[--class392.field3110].method346();
+				return field837[class392.field3110];
+			}
+		}
+	}
 }

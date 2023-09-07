@@ -1,16 +1,24 @@
-public final class class256 {
-    public class490 field1924;
-    public class490 field1926;
-    public long field1925;
-    int field1919;
-    int field1920;
-    int field1921;
-    int field1922;
-    int field1923;
-    int field1927;
+public class class256 extends class417 {
 
-    class256() {
-        this.field1925 = 0L;
-        this.field1927 = 0;
-    }
+	int field2141;
+
+	String field2140;
+
+	// $FF: synthetic field
+	final class400 this$0;
+
+	class256(class400 var1) {
+		this.this$0 = var1;
+	}
+
+	@Override
+	void method2095(class187 var1) {
+		this.field2141 = var1.method1100();
+		this.field2140 = var1.method1104();
+	}
+
+	@Override
+	void method2094(class518 var1) {
+		var1.method2511(this.field2141, this.field2140);
+	}
 }

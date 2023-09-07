@@ -1,38 +1,60 @@
-public class class278 implements Comparable {
-    static int field2030;
-    class358 field2028;
-    class358 field2029;
+public class class278 {
 
-    class278() {
-    }
+	boolean field2272;
 
-    public class358 method1247() {
-        return this.field2028;
-    }
+	int field2268;
 
-    public String method1248() {
-        return this.field2028 == null ? "" : this.field2028.method1706();
-    }
+	int field2273;
 
-    public String method1249() {
-        return this.field2029 == null ? "" : this.field2029.method1706();
-    }
+	int field2274;
 
-    void method1250(class358 var1, class358 var2) {
-        if (var1 == null) {
-            throw new NullPointerException();
-        } else {
-            this.field2028 = var1;
-            this.field2029 = var2;
-        }
-    }
+	int field2275;
 
-    public int method1251(class278 var1) {
-        return this.field2028.method1705(var1.field2028);
-    }
+	int field2276;
 
-    @Override
-    public int compareTo(Object var1) {
-        return this.method1251((class278) var1);
-    }
+	int field2277;
+
+	int field2279;
+
+	int field2280;
+
+	int field2281;
+
+	int[] field2278;
+
+	public boolean field2269;
+
+	public class40 field2270;
+
+	public int field2271;
+
+	class278() {
+		this.field2272 = false;
+		this.field2269 = true;
+		this.field2275 = 0;
+		this.field2271 = 512;
+		this.field2278 = new int[1024];
+	}
+
+	void method1553() {
+		this.field2268 = this.field2276 / 2;
+		this.field2277 = this.field2274 / 2;
+		this.field2273 = -this.field2268;
+		this.field2279 = this.field2276 - this.field2268;
+		this.field2280 = -this.field2277;
+		this.field2281 = this.field2274 - this.field2277;
+	}
+
+	void method1555(int var1, int var2, int var3, int var4) {
+		this.field2268 = var1 - var2;
+		this.field2277 = var3 - var4;
+		this.field2273 = -this.field2268;
+		this.field2279 = this.field2276 - this.field2268;
+		this.field2280 = -this.field2277;
+		this.field2281 = this.field2274 - this.field2277;
+	}
+
+	void method1554(int var1, int var2, int var3) {
+		this.field2272 = var1 < 0 || var1 > this.field2276 || var2 < 0 || var2 > this.field2276 || var3 < 0 || var3 > this.field2276;
+	}
 }

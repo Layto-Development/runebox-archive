@@ -1,67 +1,45 @@
-public class class376 {
-    static int field2725;
+import java.util.Iterator;
 
-    class376() throws Throwable {
-    }
+public class class376 implements Iterator {
 
-    public static final int method1764(double var0, double var2, double var4) {
-        double var6 = var4;
-        double var8 = var4;
-        double var10 = var4;
-        if (var2 != 0.0D) {
-            double var12;
-            if (var4 < 0.5D) {
-                var12 = var4 * (var2 + 1.0D);
-            } else {
-                var12 = var4 + var2 - var4 * var2;
-            }
+	class139 field3037;
 
-            double var14 = var4 * 2.0D - var12;
-            double var16 = var0 + 0.3333333333333333D;
-            if (var16 > 1.0D) {
-                --var16;
-            }
+	class310 field3038;
 
-            double var20 = var0 - 0.3333333333333333D;
-            if (var20 < 0.0D) {
-                ++var20;
-            }
+	class310 field3039;
 
-            if (var16 * 6.0D < 1.0D) {
-                var6 = var16 * (var12 - var14) * 6.0D + var14;
-            } else if (var16 * 2.0D < 1.0D) {
-                var6 = var12;
-            } else if (var16 * 3.0D < 2.0D) {
-                var6 = 6.0D * (0.6666666666666666D - var16) * (var12 - var14) + var14;
-            } else {
-                var6 = var14;
-            }
+	class376(class139 var1) {
+		this.field3039 = null;
+		this.field3037 = var1;
+		this.field3038 = this.field3037.field1534.field2427;
+		this.field3039 = null;
+	}
 
-            if (var0 * 6.0D < 1.0D) {
-                var8 = var0 * 6.0D * (var12 - var14) + var14;
-            } else if (var0 * 2.0D < 1.0D) {
-                var8 = var12;
-            } else if (var0 * 3.0D < 2.0D) {
-                var8 = (var12 - var14) * (0.6666666666666666D - var0) * 6.0D + var14;
-            } else {
-                var8 = var14;
-            }
+	@Override
+	public Object next() {
+		class310 var1 = this.field3038;
+		if (var1 == this.field3037.field1534) {
+			var1 = null;
+			this.field3038 = null;
+		} else {
+			this.field3038 = var1.field2427;
+		}
+		this.field3039 = var1;
+		return var1;
+	}
 
-            if (var20 * 6.0D < 1.0D) {
-                var10 = var20 * 6.0D * (var12 - var14) + var14;
-            } else if (var20 * 2.0D < 1.0D) {
-                var10 = var12;
-            } else if (var20 * 3.0D < 2.0D) {
-                var10 = (var12 - var14) * (0.6666666666666666D - var20) * 6.0D + var14;
-            } else {
-                var10 = var14;
-            }
-        }
+	@Override
+	public boolean hasNext() {
+		return this.field3038 != this.field3037.field1534;
+	}
 
-        int var22 = (int) (var6 * 256.0D);
-        int var13 = (int) (var8 * 256.0D);
-        int var23 = (int) (var10 * 256.0D);
-        int var15 = var23 + (var13 << 8) + (var22 << 16);
-        return var15;
-    }
+	@Override
+	public void remove() {
+		if (this.field3039 == null) {
+			throw new IllegalStateException();
+		} else {
+			this.field3039.method1674();
+			this.field3039 = null;
+		}
+	}
 }

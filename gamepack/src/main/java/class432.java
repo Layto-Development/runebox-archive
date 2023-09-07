@@ -1,50 +1,146 @@
-public class class432 implements class330 {
-    public static final class432 field2937;
-    public static final class432 field2942;
-    public static final class432 field2943;
-    static class331[] field2936;
+public class class432 extends class77 {
 
-    static {
-        field2942 = new class432(1, 0, Integer.class, new class452());
-        field2943 = new class432(0, 1, Long.class, new class380());
-        field2937 = new class432(2, 2, String.class, new class386());
-    }
+	boolean field3383;
 
-    public final class84 field2941;
-    public final int field2938;
-    public final int field2939;
-    public final Class field2940;
+	boolean field3390;
 
-    class432(int var1, int var2, Class var3, class84 var4) {
-        this.field2938 = var1;
-        this.field2939 = var2;
-        this.field2940 = var3;
-        this.field2941 = var4;
-    }
+	int field3379;
 
-    public static class432[] method1972() {
-        return new class432[]{field2942, field2937, field2943};
-    }
+	int field3380;
 
-    public static class432 method1970(Class var0) {
-        class432[] var2 = method1972();
+	int field3382;
 
-        for (int var3 = 0; var3 < var2.length; ++var3) {
-            class432 var4 = var2[var3];
-            if (var4.field2940 == var0) {
-                return var4;
-            }
-        }
+	int field3384;
 
-        return null;
-    }
+	int field3385;
 
-    @Override
-    public int method1533() {
-        return this.field2939;
-    }
+	int field3386;
 
-    public Object method1971(class78 var1) {
-        return this.field2941.method336(var1);
-    }
+	int field3387;
+
+	int field3388;
+
+	int field3389;
+
+	int field3395;
+
+	int field3396;
+
+	int field3397;
+
+	int field3398;
+
+	int field3401;
+
+	int field3402;
+
+	int[] field3381;
+
+	String field3391;
+
+	String field3392;
+
+	String field3393;
+
+	String field3394;
+
+	String field3399;
+
+	String field3400;
+
+	String field3403;
+
+	String field3404;
+
+	class432(int var1, boolean var2, int var3, int var4, int var5, int var6, int var7, boolean var8, int var9, int var10, int var11, int var12, String var13, String var14, String var15, String var16, int var17, int var18, int var19, int var20, String var21, String var22, int[] var23, int var24, String var25, String var26) {
+		this.field3381 = new int[3];
+		this.field3382 = var1;
+		this.field3383 = var2;
+		this.field3384 = var3;
+		this.field3385 = var4;
+		this.field3380 = var5;
+		this.field3387 = var6;
+		this.field3397 = var7;
+		this.field3390 = var8;
+		this.field3388 = var9;
+		this.field3379 = var10;
+		this.field3389 = var11;
+		this.field3386 = var12;
+		this.field3391 = var13;
+		this.field3392 = var14;
+		this.field3393 = var15;
+		this.field3394 = var16;
+		this.field3395 = var17;
+		this.field3396 = var18;
+		this.field3401 = var19;
+		this.field3398 = var20;
+		this.field3399 = var21;
+		this.field3400 = var22;
+		this.field3381 = var23;
+		this.field3402 = var24;
+		this.field3403 = var25;
+		this.field3404 = var26;
+	}
+
+	public void method2164(class187 var1) {
+		var1.method1085(9);
+		var1.method1085(this.field3382);
+		var1.method1085(this.field3383 ? 1 : 0);
+		var1.method1126(this.field3384);
+		var1.method1085(this.field3385);
+		var1.method1085(this.field3380);
+		var1.method1085(this.field3387);
+		var1.method1085(this.field3397);
+		var1.method1085(this.field3390 ? 1 : 0);
+		var1.method1126(this.field3388);
+		var1.method1085(this.field3379);
+		var1.method1137(this.field3389);
+		var1.method1126(this.field3386);
+		var1.method1089(this.field3391);
+		var1.method1089(this.field3392);
+		var1.method1089(this.field3393);
+		var1.method1089(this.field3394);
+		var1.method1085(this.field3396);
+		var1.method1126(this.field3395);
+		var1.method1089(this.field3399);
+		var1.method1089(this.field3400);
+		var1.method1085(this.field3401);
+		var1.method1085(this.field3398);
+		for (int var3 = 0; var3 < this.field3381.length; ++var3) {
+			var1.method1151(this.field3381[var3]);
+		}
+		var1.method1151(this.field3402);
+		var1.method1089(this.field3403);
+		var1.method1089(this.field3404);
+	}
+
+	public int method2165() {
+		boolean var2 = true;
+		boolean var3 = true;
+		String var5 = this.field3391;
+		int var4 = var5.length() + 2;
+		int var27 = var4 + 39;
+		String var8 = this.field3392;
+		int var7 = var8.length() + 2;
+		var27 += var7;
+		String var11 = this.field3393;
+		int var10 = var11.length() + 2;
+		var27 += var10;
+		String var14 = this.field3394;
+		int var13 = var14.length() + 2;
+		var27 += var13;
+		String var17 = this.field3399;
+		int var16 = var17.length() + 2;
+		var27 += var16;
+		String var20 = this.field3400;
+		int var19 = var20.length() + 2;
+		var27 += var19;
+		String var23 = this.field3403;
+		int var22 = var23.length() + 2;
+		var27 += var22;
+		String var26 = this.field3404;
+		int var25 = var26.length() + 2;
+		var27 += var25;
+		return var27;
+	}
 }

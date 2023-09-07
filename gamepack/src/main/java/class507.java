@@ -1,42 +1,46 @@
-public class class507 extends class144 {
-    int field3706;
-    int field3707;
-    int field3708;
-    int field3709;
-    int field3710;
-    int field3711;
+import java.util.HashMap;
 
-    public class507(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-        super(var7, var8);
-        this.field3710 = 0;
-        this.field3707 = 0;
-        this.field3708 = 0;
-        this.field3709 = 0;
-        this.field3706 = 0;
-        this.field3711 = 0;
-        this.field3710 = var1;
-        this.field3707 = var2;
-        this.field3708 = var3;
-        this.field3709 = var4;
-        this.field3706 = var5;
-        this.field3711 = var6;
-    }
+public class class507 {
 
-    @Override
-    public int method661() {
-        double var2 = this.method2118();
-        return (int) Math.round((double) (this.field3709 - this.field3710) * var2 + (double) this.field3710);
-    }
+	static int[] field4073;
 
-    @Override
-    public int method662() {
-        double var2 = this.method2118();
-        return (int) Math.round(var2 * (double) (this.field3706 - this.field3707) + (double) this.field3707);
-    }
+	class338 field4072;
 
-    @Override
-    public int method663() {
-        double var2 = this.method2118();
-        return (int) Math.round((double) this.field3708 + (double) (this.field3711 - this.field3708) * var2);
-    }
+	class338 field4074;
+
+	HashMap field4071;
+
+	public class507(class338 var1, class338 var2) {
+		this.field4074 = var1;
+		this.field4072 = var2;
+		this.field4071 = new HashMap();
+	}
+
+	public HashMap method2455(class152[] var1) {
+		HashMap var3 = new HashMap();
+		class152[] var4 = var1;
+		for (int var5 = 0; var5 < var4.length; ++var5) {
+			class152 var6 = var4[var5];
+			if (this.field4071.containsKey(var6)) {
+				var3.put(var6, this.field4071.get(var6));
+			} else {
+				class338 var8 = this.field4074;
+				class338 var9 = this.field4072;
+				String var10 = var6.field1583;
+				class61 var7;
+				if (!var8.method1784(var10, "")) {
+					var7 = null;
+				} else {
+					int var11 = var8.method1787(var10);
+					int var12 = var8.method1779(var11, "");
+					var7 = class494.method2368(var8, var9, var11, var12);
+				}
+				if (null != var7) {
+					this.field4071.put(var6, var7);
+					var3.put(var6, var7);
+				}
+			}
+		}
+		return var3;
+	}
 }

@@ -1,3388 +1,495 @@
-public class class314 extends class110 {
-    class314(class364 var1) {
-        super(var1);
-    }
-
-    static final boolean method1385(float var0, float var1) {
-        return var1 > var0;
-    }
-
-    static final void method1378(int[] var0, float[] var1, int[] var2, int var3, int var4, int var5, float var6) {
-        if (method1385(var1[var3], var6)) {
-            int var7 = var2[(var5 & 4032) + (var5 >>> 26)];
-            var0[var3] = ((var7 & 16711935) * var4 & -16711936) + ((var7 & 65280) * var4 & 16711680) >> 8;
-            var1[var3] = var6;
-        }
-
-    }
-
-    static final void method1383(int[] var0, float[] var1, int[] var2, int var3, int var4, int var5, float var6) {
-        int var7 = var2[(var5 & 4032) + (var5 >>> 26)];
-        if (var7 != 0) {
-            if (method1385(var1[var3], var6)) {
-                var0[var3] = ((var7 & 16711935) * var4 & -16711936) + ((var7 & 65280) * var4 & 16711680) >> 8;
-                var1[var3] = var6;
-            }
-
-        }
-    }
-
-    static final void method1379(int[] var0, float[] var1, int[] var2, int var3, int var4, int var5, float var6) {
-        if (method1385(var1[var3], var6)) {
-            int var7 = var2[(var5 & 16256) + (var5 >>> 25)];
-            var0[var3] = ((var7 & 16711935) * var4 & -16711936) + ((var7 & 65280) * var4 & 16711680) >> 8;
-            var1[var3] = var6;
-        }
-
-    }
-
-    static final void method1380(int[] var0, float[] var1, int[] var2, int var3, int var4, int var5, float var6) {
-        int var7 = var2[(var5 & 16256) + (var5 >>> 25)];
-        if (var7 != 0) {
-            if (method1385(var1[var3], var6)) {
-                var0[var3] = ((var7 & 16711935) * var4 & -16711936) + ((var7 & 65280) * var4 & 16711680) >> 8;
-                var1[var3] = var6;
-            }
-
-        }
-    }
-
-    @Override
-    void method512(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, int var11, int var12) {
-        int var13 = var5 - var4;
-        int var14 = var2 - var1;
-        int var15 = var6 - var4;
-        int var16 = var3 - var1;
-        int var17 = var11 - var10;
-        int var18 = var12 - var10;
-        float var19 = var8 - var7;
-        float var20 = var9 - var7;
-        int var21;
-        if (var3 != var2) {
-            var21 = (var6 - var5 << 14) / (var3 - var2);
-        } else {
-            var21 = 0;
-        }
-
-        int var22;
-        if (var2 != var1) {
-            var22 = (var13 << 14) / var14;
-        } else {
-            var22 = 0;
-        }
-
-        int var23;
-        if (var3 != var1) {
-            var23 = (var15 << 14) / var16;
-        } else {
-            var23 = 0;
-        }
-
-        int var24 = var13 * var16 - var15 * var14;
-        if (var24 != 0) {
-            int var25 = (var17 * var16 - var18 * var14 << 8) / var24;
-            int var26 = (var18 * var13 - var17 * var15 << 8) / var24;
-            float var27 = (var19 * (float) var16 - var20 * (float) var14) / (float) var24;
-            float var28 = (var20 * (float) var13 - var19 * (float) var15) / (float) var24;
-            int[] var29 = super.field1046.field2614;
-            int var30 = super.field1046.field2610;
-            if (var1 <= var2 && var1 <= var3) {
-                if (var1 < var30) {
-                    if (var2 > var30) {
-                        var2 = var30;
-                    }
-
-                    if (var3 > var30) {
-                        var3 = var30;
-                    }
-
-                    var10 = (var10 << 8) - var25 * var4 + var25;
-                    var7 = var7 - var27 * (float) var4 + var27;
-                    if (var2 < var3) {
-                        var6 = var4 <<= 14;
-                        if (var1 < 0) {
-                            var6 -= var23 * var1;
-                            var4 -= var22 * var1;
-                            var10 -= var26 * var1;
-                            var7 -= var28 * (float) var1;
-                            var1 = 0;
-                        }
-
-                        var5 <<= 14;
-                        if (var2 < 0) {
-                            var5 -= var21 * var2;
-                            var2 = 0;
-                        }
-
-                        if ((var1 == var2 || var23 >= var22) && (var1 != var2 || var23 <= var21)) {
-                            var3 -= var2;
-                            var2 -= var1;
-                            var1 = var29[var1];
-
-                            while (true) {
-                                --var2;
-                                if (var2 < 0) {
-                                    while (true) {
-                                        --var3;
-                                        if (var3 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1375(class415.field2905, var1, 0, 0, var5 >> 14, var6 >> 14, var10, var25, var7, var27);
-                                        var6 += var23;
-                                        var5 += var21;
-                                        var10 += var26;
-                                        var1 += class415.field2903;
-                                        var7 += var28;
-                                    }
-                                }
-
-                                this.method1375(class415.field2905, var1, 0, 0, var4 >> 14, var6 >> 14, var10, var25, var7, var27);
-                                var6 += var23;
-                                var4 += var22;
-                                var10 += var26;
-                                var1 += class415.field2903;
-                                var7 += var28;
-                            }
-                        } else {
-                            var3 -= var2;
-                            var2 -= var1;
-                            var1 = var29[var1];
-
-                            while (true) {
-                                --var2;
-                                if (var2 < 0) {
-                                    while (true) {
-                                        --var3;
-                                        if (var3 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1375(class415.field2905, var1, 0, 0, var6 >> 14, var5 >> 14, var10, var25, var7, var27);
-                                        var6 += var23;
-                                        var5 += var21;
-                                        var10 += var26;
-                                        var1 += class415.field2903;
-                                        var7 += var28;
-                                    }
-                                }
-
-                                this.method1375(class415.field2905, var1, 0, 0, var6 >> 14, var4 >> 14, var10, var25, var7, var27);
-                                var6 += var23;
-                                var4 += var22;
-                                var10 += var26;
-                                var1 += class415.field2903;
-                                var7 += var28;
-                            }
-                        }
-                    } else {
-                        var5 = var4 <<= 14;
-                        if (var1 < 0) {
-                            var5 -= var23 * var1;
-                            var4 -= var22 * var1;
-                            var10 -= var26 * var1;
-                            var7 -= var28 * (float) var1;
-                            var1 = 0;
-                        }
-
-                        var6 <<= 14;
-                        if (var3 < 0) {
-                            var6 -= var21 * var3;
-                            var3 = 0;
-                        }
-
-                        if (var1 != var3 && var23 < var22 || var1 == var3 && var21 > var22) {
-                            var2 -= var3;
-                            var3 -= var1;
-                            var1 = var29[var1];
-
-                            while (true) {
-                                --var3;
-                                if (var3 < 0) {
-                                    while (true) {
-                                        --var2;
-                                        if (var2 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1375(class415.field2905, var1, 0, 0, var6 >> 14, var4 >> 14, var10, var25, var7, var27);
-                                        var6 += var21;
-                                        var4 += var22;
-                                        var10 += var26;
-                                        var1 += class415.field2903;
-                                        var7 += var28;
-                                    }
-                                }
-
-                                this.method1375(class415.field2905, var1, 0, 0, var5 >> 14, var4 >> 14, var10, var25, var7, var27);
-                                var5 += var23;
-                                var4 += var22;
-                                var10 += var26;
-                                var1 += class415.field2903;
-                                var7 += var28;
-                            }
-                        } else {
-                            var2 -= var3;
-                            var3 -= var1;
-                            var1 = var29[var1];
-
-                            while (true) {
-                                --var3;
-                                if (var3 < 0) {
-                                    while (true) {
-                                        --var2;
-                                        if (var2 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1375(class415.field2905, var1, 0, 0, var4 >> 14, var6 >> 14, var10, var25, var7, var27);
-                                        var6 += var21;
-                                        var4 += var22;
-                                        var10 += var26;
-                                        var1 += class415.field2903;
-                                        var7 += var28;
-                                    }
-                                }
-
-                                this.method1375(class415.field2905, var1, 0, 0, var4 >> 14, var5 >> 14, var10, var25, var7, var27);
-                                var5 += var23;
-                                var4 += var22;
-                                var10 += var26;
-                                var1 += class415.field2903;
-                                var7 += var28;
-                            }
-                        }
-                    }
-                }
-            } else if (var2 <= var3) {
-                if (var2 < var30) {
-                    if (var3 > var30) {
-                        var3 = var30;
-                    }
-
-                    if (var1 > var30) {
-                        var1 = var30;
-                    }
-
-                    var11 = (var11 << 8) - var25 * var5 + var25;
-                    var8 = var8 - var27 * (float) var5 + var27;
-                    if (var3 < var1) {
-                        var4 = var5 <<= 14;
-                        if (var2 < 0) {
-                            var4 -= var22 * var2;
-                            var5 -= var21 * var2;
-                            var11 -= var26 * var2;
-                            var8 -= var28 * (float) var2;
-                            var2 = 0;
-                        }
-
-                        var6 <<= 14;
-                        if (var3 < 0) {
-                            var6 -= var23 * var3;
-                            var3 = 0;
-                        }
-
-                        if ((var2 == var3 || var22 >= var21) && (var2 != var3 || var22 <= var23)) {
-                            var1 -= var3;
-                            var3 -= var2;
-                            var2 = var29[var2];
-
-                            while (true) {
-                                --var3;
-                                if (var3 < 0) {
-                                    while (true) {
-                                        --var1;
-                                        if (var1 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1375(class415.field2905, var2, 0, 0, var6 >> 14, var4 >> 14, var11, var25, var8, var27);
-                                        var4 += var22;
-                                        var6 += var23;
-                                        var11 += var26;
-                                        var2 += class415.field2903;
-                                        var8 += var28;
-                                    }
-                                }
-
-                                this.method1375(class415.field2905, var2, 0, 0, var5 >> 14, var4 >> 14, var11, var25, var8, var27);
-                                var4 += var22;
-                                var5 += var21;
-                                var11 += var26;
-                                var2 += class415.field2903;
-                                var8 += var28;
-                            }
-                        } else {
-                            var1 -= var3;
-                            var3 -= var2;
-                            var2 = var29[var2];
-
-                            while (true) {
-                                --var3;
-                                if (var3 < 0) {
-                                    while (true) {
-                                        --var1;
-                                        if (var1 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1375(class415.field2905, var2, 0, 0, var4 >> 14, var6 >> 14, var11, var25, var8, var27);
-                                        var4 += var22;
-                                        var6 += var23;
-                                        var11 += var26;
-                                        var2 += class415.field2903;
-                                        var8 += var28;
-                                    }
-                                }
-
-                                this.method1375(class415.field2905, var2, 0, 0, var4 >> 14, var5 >> 14, var11, var25, var8, var27);
-                                var4 += var22;
-                                var5 += var21;
-                                var11 += var26;
-                                var2 += class415.field2903;
-                                var8 += var28;
-                            }
-                        }
-                    } else {
-                        var6 = var5 <<= 14;
-                        if (var2 < 0) {
-                            var6 -= var22 * var2;
-                            var5 -= var21 * var2;
-                            var11 -= var26 * var2;
-                            var8 -= var28 * (float) var2;
-                            var2 = 0;
-                        }
-
-                        var4 <<= 14;
-                        if (var1 < 0) {
-                            var4 -= var23 * var1;
-                            var1 = 0;
-                        }
-
-                        if (var22 < var21) {
-                            var3 -= var1;
-                            var1 -= var2;
-                            var2 = var29[var2];
-
-                            while (true) {
-                                --var1;
-                                if (var1 < 0) {
-                                    while (true) {
-                                        --var3;
-                                        if (var3 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1375(class415.field2905, var2, 0, 0, var4 >> 14, var5 >> 14, var11, var25, var8, var27);
-                                        var4 += var23;
-                                        var5 += var21;
-                                        var11 += var26;
-                                        var2 += class415.field2903;
-                                        var8 += var28;
-                                    }
-                                }
-
-                                this.method1375(class415.field2905, var2, 0, 0, var6 >> 14, var5 >> 14, var11, var25, var8, var27);
-                                var6 += var22;
-                                var5 += var21;
-                                var11 += var26;
-                                var2 += class415.field2903;
-                                var8 += var28;
-                            }
-                        } else {
-                            var3 -= var1;
-                            var1 -= var2;
-                            var2 = var29[var2];
-
-                            while (true) {
-                                --var1;
-                                if (var1 < 0) {
-                                    while (true) {
-                                        --var3;
-                                        if (var3 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1375(class415.field2905, var2, 0, 0, var5 >> 14, var4 >> 14, var11, var25, var8, var27);
-                                        var4 += var23;
-                                        var5 += var21;
-                                        var11 += var26;
-                                        var2 += class415.field2903;
-                                        var8 += var28;
-                                    }
-                                }
-
-                                this.method1375(class415.field2905, var2, 0, 0, var5 >> 14, var6 >> 14, var11, var25, var8, var27);
-                                var6 += var22;
-                                var5 += var21;
-                                var11 += var26;
-                                var2 += class415.field2903;
-                                var8 += var28;
-                            }
-                        }
-                    }
-                }
-            } else if (var3 < var30) {
-                if (var1 > var30) {
-                    var1 = var30;
-                }
-
-                if (var2 > var30) {
-                    var2 = var30;
-                }
-
-                var12 = (var12 << 8) - var25 * var6 + var25;
-                var9 = var9 - var27 * (float) var6 + var27;
-                if (var1 < var2) {
-                    var5 = var6 <<= 14;
-                    if (var3 < 0) {
-                        var5 -= var21 * var3;
-                        var6 -= var23 * var3;
-                        var12 -= var26 * var3;
-                        var9 -= var28 * (float) var3;
-                        var3 = 0;
-                    }
-
-                    var4 <<= 14;
-                    if (var1 < 0) {
-                        var4 -= var22 * var1;
-                        var1 = 0;
-                    }
-
-                    if (var21 < var23) {
-                        var2 -= var1;
-                        var1 -= var3;
-                        var3 = var29[var3];
-
-                        while (true) {
-                            --var1;
-                            if (var1 < 0) {
-                                while (true) {
-                                    --var2;
-                                    if (var2 < 0) {
-                                        return;
-                                    }
-
-                                    this.method1375(class415.field2905, var3, 0, 0, var5 >> 14, var4 >> 14, var12, var25, var9, var27);
-                                    var5 += var21;
-                                    var4 += var22;
-                                    var12 += var26;
-                                    var3 += class415.field2903;
-                                    var9 += var28;
-                                }
-                            }
-
-                            this.method1375(class415.field2905, var3, 0, 0, var5 >> 14, var6 >> 14, var12, var25, var9, var27);
-                            var5 += var21;
-                            var6 += var23;
-                            var12 += var26;
-                            var3 += class415.field2903;
-                            var9 += var28;
-                        }
-                    } else {
-                        var2 -= var1;
-                        var1 -= var3;
-                        var3 = var29[var3];
-
-                        while (true) {
-                            --var1;
-                            if (var1 < 0) {
-                                while (true) {
-                                    --var2;
-                                    if (var2 < 0) {
-                                        return;
-                                    }
-
-                                    this.method1375(class415.field2905, var3, 0, 0, var4 >> 14, var5 >> 14, var12, var25, var9, var27);
-                                    var5 += var21;
-                                    var4 += var22;
-                                    var12 += var26;
-                                    var3 += class415.field2903;
-                                    var9 += var28;
-                                }
-                            }
-
-                            this.method1375(class415.field2905, var3, 0, 0, var6 >> 14, var5 >> 14, var12, var25, var9, var27);
-                            var5 += var21;
-                            var6 += var23;
-                            var12 += var26;
-                            var3 += class415.field2903;
-                            var9 += var28;
-                        }
-                    }
-                } else {
-                    var4 = var6 <<= 14;
-                    if (var3 < 0) {
-                        var4 -= var21 * var3;
-                        var6 -= var23 * var3;
-                        var12 -= var26 * var3;
-                        var9 -= var28 * (float) var3;
-                        var3 = 0;
-                    }
-
-                    var5 <<= 14;
-                    if (var2 < 0) {
-                        var5 -= var22 * var2;
-                        var2 = 0;
-                    }
-
-                    if (var21 < var23) {
-                        var1 -= var2;
-                        var2 -= var3;
-                        var3 = var29[var3];
-
-                        while (true) {
-                            --var2;
-                            if (var2 < 0) {
-                                while (true) {
-                                    --var1;
-                                    if (var1 < 0) {
-                                        return;
-                                    }
-
-                                    this.method1375(class415.field2905, var3, 0, 0, var5 >> 14, var6 >> 14, var12, var25, var9, var27);
-                                    var5 += var22;
-                                    var6 += var23;
-                                    var12 += var26;
-                                    var3 += class415.field2903;
-                                    var9 += var28;
-                                }
-                            }
-
-                            this.method1375(class415.field2905, var3, 0, 0, var4 >> 14, var6 >> 14, var12, var25, var9, var27);
-                            var4 += var21;
-                            var6 += var23;
-                            var12 += var26;
-                            var3 += class415.field2903;
-                            var9 += var28;
-                        }
-                    } else {
-                        var1 -= var2;
-                        var2 -= var3;
-                        var3 = var29[var3];
-
-                        while (true) {
-                            --var2;
-                            if (var2 < 0) {
-                                while (true) {
-                                    --var1;
-                                    if (var1 < 0) {
-                                        return;
-                                    }
-
-                                    this.method1375(class415.field2905, var3, 0, 0, var6 >> 14, var5 >> 14, var12, var25, var9, var27);
-                                    var5 += var22;
-                                    var6 += var23;
-                                    var12 += var26;
-                                    var3 += class415.field2903;
-                                    var9 += var28;
-                                }
-                            }
-
-                            this.method1375(class415.field2905, var3, 0, 0, var6 >> 14, var4 >> 14, var12, var25, var9, var27);
-                            var4 += var21;
-                            var6 += var23;
-                            var12 += var26;
-                            var3 += class415.field2903;
-                            var9 += var28;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    final void method1377(int[] var1, float[] var2, int var3, int var4, float var5) {
-        int var6 = method1385(var2[var3], var5) ? 1 : 0;
-        int var7 = 1 - var6;
-        var1[var3] = var6 * var4 + var7 * var1[var3];
-        var2[var3] = (float) var6 * var5 + (float) var7 * var2[var3];
-    }
-
-    final void method1373(int[] var1, float[] var2, int var3, int var4, float var5) {
-        if (method1385(var2[var3], var5)) {
-            int var6 = (var4 & (var4 >> 31 & 1) - 1) >> 8;
-            var1[var3] = super.field1048[var6];
-            var2[var3] = var5;
-        }
-
-    }
-
-    final void method1382(int[] var1, float[] var2, int var3, int var4, int var5, float var6) {
-        if (method1385(var2[var3], var6)) {
-            int var7 = var1[var3];
-            var1[var3] = var4 + ((var7 & 16711935) * var5 >> 8 & 16711935) + ((var7 & 65280) * var5 >> 8 & 65280);
-        }
-
-    }
-
-    final void method1374(int[] var1, float[] var2, int var3, int var4, int var5, int var6, float var7) {
-        if (method1385(var2[var3], var7)) {
-            boolean var8 = false;
-            int var9 = super.field1048[0];
-            var9 = ((var9 & 16711935) * var6 >> 8 & 16711935) + ((var9 & 65280) * var6 >> 8 & 65280);
-            int var10 = var1[var3];
-            var1[var3] = var9 + ((var10 & 16711935) * var5 >> 8 & 16711935) + ((var10 & 65280) * var5 >> 8 & 65280);
-        }
-
-    }
-
-    final void method1375(int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, float var9, float var10) {
-        if (super.field1046.field2608) {
-            if (var6 > super.field1046.field2612) {
-                var6 = super.field1046.field2612;
-            }
-
-            if (var5 < 0) {
-                var5 = 0;
-            }
-        }
-
-        if (var5 < var6) {
-            var2 += var5;
-            var7 += var8 * var5;
-            var9 += var10 * (float) var5;
-            int var11;
-            int var12;
-            if (super.field1046.field2605) {
-                var4 = var6 - var5 >> 2;
-                var8 <<= 2;
-                if (super.field1046.field2611 == 0) {
-                    if (var4 > 0) {
-                        do {
-                            var11 = (var7 & (var7 >> 31 & 1) - 1) >> 8;
-                            var3 = super.field1048[var11];
-                            var7 += var8;
-                            this.method1377(var1, class415.field2906, var2, var3, var9);
-                            var9 += var10;
-                            ++var2;
-                            this.method1377(var1, class415.field2906, var2, var3, var9);
-                            var9 += var10;
-                            ++var2;
-                            this.method1377(var1, class415.field2906, var2, var3, var9);
-                            var9 += var10;
-                            ++var2;
-                            this.method1377(var1, class415.field2906, var2, var3, var9);
-                            var9 += var10;
-                            ++var2;
-                            --var4;
-                        } while (var4 > 0);
-                    }
-
-                    var4 = var6 - var5 & 3;
-                    if (var4 > 0) {
-                        var11 = (var7 & (var7 >> 31 & 1) - 1) >> 8;
-                        var3 = super.field1048[var11];
-
-                        do {
-                            this.method1377(var1, class415.field2906, var2, var3, var9);
-                            var9 += var10;
-                            ++var2;
-                            --var4;
-                        } while (var4 > 0);
-                    }
-                } else {
-                    var11 = super.field1046.field2611;
-                    var12 = 256 - super.field1046.field2611;
-                    int var13;
-                    if (var4 > 0) {
-                        do {
-                            var13 = (var7 & (var7 >> 31 & 1) - 1) >> 8;
-                            var3 = super.field1048[var13];
-                            var7 += var8;
-                            var3 = ((var3 & 16711935) * var12 >> 8 & 16711935) + ((var3 & 65280) * var12 >> 8 & 65280);
-                            this.method1382(var1, class415.field2906, var2, var3, var11, var9);
-                            ++var2;
-                            var9 += var10;
-                            this.method1382(var1, class415.field2906, var2, var3, var11, var9);
-                            ++var2;
-                            var9 += var10;
-                            this.method1382(var1, class415.field2906, var2, var3, var11, var9);
-                            ++var2;
-                            var9 += var10;
-                            this.method1382(var1, class415.field2906, var2, var3, var11, var9);
-                            ++var2;
-                            var9 += var10;
-                            --var4;
-                        } while (var4 > 0);
-                    }
-
-                    var4 = var6 - var5 & 3;
-                    if (var4 > 0) {
-                        var13 = (var7 & (var7 >> 31 & 1) - 1) >> 8;
-                        var3 = super.field1048[var13];
-                        var3 = ((var3 & 16711935) * var12 >> 8 & 16711935) + ((var3 & 65280) * var12 >> 8 & 65280);
-
-                        do {
-                            this.method1382(var1, class415.field2906, var2, var3, var11, var9);
-                            ++var2;
-                            var9 += var10;
-                            --var4;
-                        } while (var4 > 0);
-                    }
-                }
-
-            } else {
-                var4 = var6 - var5;
-                if (super.field1046.field2611 == 0) {
-                    do {
-                        this.method1373(var1, class415.field2906, var2, var7, var9);
-                        var9 += var10;
-                        ++var2;
-                        var7 += var8;
-                        --var4;
-                    } while (var4 > 0);
-                } else {
-                    var11 = super.field1046.field2611;
-                    var12 = 256 - super.field1046.field2611;
-
-                    do {
-                        this.method1374(var1, class415.field2906, var2, 0, var11, var12, var9);
-                        var9 += var10;
-                        ++var2;
-                        var7 += var8;
-                        --var4;
-                    } while (var4 > 0);
-                }
-
-            }
-        }
-    }
-
-    @Override
-    void method513(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10) {
-        int var11 = var5 - var4;
-        int var12 = var2 - var1;
-        int var13 = var6 - var4;
-        int var14 = var3 - var1;
-        float var15 = var8 - var7;
-        float var16 = var9 - var7;
-        int var17;
-        if (var3 != var2) {
-            var17 = (var6 - var5 << 14) / (var3 - var2);
-        } else {
-            var17 = 0;
-        }
-
-        int var18;
-        if (var2 != var1) {
-            var18 = (var11 << 14) / var12;
-        } else {
-            var18 = 0;
-        }
-
-        int var19;
-        if (var3 != var1) {
-            var19 = (var13 << 14) / var14;
-        } else {
-            var19 = 0;
-        }
-
-        int var20 = var11 * var14 - var13 * var12;
-        if (var20 != 0) {
-            float var21 = (var15 * (float) var14 - var16 * (float) var12) / (float) var20;
-            float var22 = (var16 * (float) var11 - var15 * (float) var13) / (float) var20;
-            int[] var23 = super.field1046.field2614;
-            int var24 = super.field1046.field2610;
-            if (var1 <= var2 && var1 <= var3) {
-                if (var1 < var24) {
-                    if (var2 > var24) {
-                        var2 = var24;
-                    }
-
-                    if (var3 > var24) {
-                        var3 = var24;
-                    }
-
-                    var7 = var7 - var21 * (float) var4 + var21;
-                    if (var2 < var3) {
-                        var6 = var4 <<= 14;
-                        if (var1 < 0) {
-                            var6 -= var19 * var1;
-                            var4 -= var18 * var1;
-                            var7 -= var22 * (float) var1;
-                            var1 = 0;
-                        }
-
-                        var5 <<= 14;
-                        if (var2 < 0) {
-                            var5 -= var17 * var2;
-                            var2 = 0;
-                        }
-
-                        if ((var1 == var2 || var19 >= var18) && (var1 != var2 || var19 <= var17)) {
-                            var3 -= var2;
-                            var2 -= var1;
-                            var1 = var23[var1];
-
-                            while (true) {
-                                --var2;
-                                if (var2 < 0) {
-                                    while (true) {
-                                        --var3;
-                                        if (var3 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1376(class415.field2905, var1, var10, 0, var5 >> 14, var6 >> 14, var7, var21);
-                                        var6 += var19;
-                                        var5 += var17;
-                                        var1 += class415.field2903;
-                                        var7 += var22;
-                                    }
-                                }
-
-                                this.method1376(class415.field2905, var1, var10, 0, var4 >> 14, var6 >> 14, var7, var21);
-                                var6 += var19;
-                                var4 += var18;
-                                var1 += class415.field2903;
-                                var7 += var22;
-                            }
-                        } else {
-                            var3 -= var2;
-                            var2 -= var1;
-                            var1 = var23[var1];
-
-                            while (true) {
-                                --var2;
-                                if (var2 < 0) {
-                                    while (true) {
-                                        --var3;
-                                        if (var3 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1376(class415.field2905, var1, var10, 0, var6 >> 14, var5 >> 14, var7, var21);
-                                        var6 += var19;
-                                        var5 += var17;
-                                        var1 += class415.field2903;
-                                        var7 += var22;
-                                    }
-                                }
-
-                                this.method1376(class415.field2905, var1, var10, 0, var6 >> 14, var4 >> 14, var7, var21);
-                                var6 += var19;
-                                var4 += var18;
-                                var1 += class415.field2903;
-                                var7 += var22;
-                            }
-                        }
-                    } else {
-                        var5 = var4 <<= 14;
-                        if (var1 < 0) {
-                            var5 -= var19 * var1;
-                            var4 -= var18 * var1;
-                            var7 -= var22 * (float) var1;
-                            var1 = 0;
-                        }
-
-                        var6 <<= 14;
-                        if (var3 < 0) {
-                            var6 -= var17 * var3;
-                            var3 = 0;
-                        }
-
-                        if (var1 != var3 && var19 < var18 || var1 == var3 && var17 > var18) {
-                            var2 -= var3;
-                            var3 -= var1;
-                            var1 = var23[var1];
-
-                            while (true) {
-                                --var3;
-                                if (var3 < 0) {
-                                    while (true) {
-                                        --var2;
-                                        if (var2 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1376(class415.field2905, var1, var10, 0, var6 >> 14, var4 >> 14, var7, var21);
-                                        var6 += var17;
-                                        var4 += var18;
-                                        var1 += class415.field2903;
-                                        var7 += var22;
-                                    }
-                                }
-
-                                this.method1376(class415.field2905, var1, var10, 0, var5 >> 14, var4 >> 14, var7, var21);
-                                var5 += var19;
-                                var4 += var18;
-                                var1 += class415.field2903;
-                                var7 += var22;
-                            }
-                        } else {
-                            var2 -= var3;
-                            var3 -= var1;
-                            var1 = var23[var1];
-
-                            while (true) {
-                                --var3;
-                                if (var3 < 0) {
-                                    while (true) {
-                                        --var2;
-                                        if (var2 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1376(class415.field2905, var1, var10, 0, var4 >> 14, var6 >> 14, var7, var21);
-                                        var6 += var17;
-                                        var4 += var18;
-                                        var1 += class415.field2903;
-                                        var7 += var22;
-                                    }
-                                }
-
-                                this.method1376(class415.field2905, var1, var10, 0, var4 >> 14, var5 >> 14, var7, var21);
-                                var5 += var19;
-                                var4 += var18;
-                                var1 += class415.field2903;
-                                var7 += var22;
-                            }
-                        }
-                    }
-                }
-            } else if (var2 <= var3) {
-                if (var2 < var24) {
-                    if (var3 > var24) {
-                        var3 = var24;
-                    }
-
-                    if (var1 > var24) {
-                        var1 = var24;
-                    }
-
-                    var8 = var8 - var21 * (float) var5 + var21;
-                    if (var3 < var1) {
-                        var4 = var5 <<= 14;
-                        if (var2 < 0) {
-                            var4 -= var18 * var2;
-                            var5 -= var17 * var2;
-                            var8 -= var22 * (float) var2;
-                            var2 = 0;
-                        }
-
-                        var6 <<= 14;
-                        if (var3 < 0) {
-                            var6 -= var19 * var3;
-                            var3 = 0;
-                        }
-
-                        if ((var2 == var3 || var18 >= var17) && (var2 != var3 || var18 <= var19)) {
-                            var1 -= var3;
-                            var3 -= var2;
-                            var2 = var23[var2];
-
-                            while (true) {
-                                --var3;
-                                if (var3 < 0) {
-                                    while (true) {
-                                        --var1;
-                                        if (var1 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1376(class415.field2905, var2, var10, 0, var6 >> 14, var4 >> 14, var8, var21);
-                                        var4 += var18;
-                                        var6 += var19;
-                                        var2 += class415.field2903;
-                                        var8 += var22;
-                                    }
-                                }
-
-                                this.method1376(class415.field2905, var2, var10, 0, var5 >> 14, var4 >> 14, var8, var21);
-                                var4 += var18;
-                                var5 += var17;
-                                var2 += class415.field2903;
-                                var8 += var22;
-                            }
-                        } else {
-                            var1 -= var3;
-                            var3 -= var2;
-                            var2 = var23[var2];
-
-                            while (true) {
-                                --var3;
-                                if (var3 < 0) {
-                                    while (true) {
-                                        --var1;
-                                        if (var1 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1376(class415.field2905, var2, var10, 0, var4 >> 14, var6 >> 14, var8, var21);
-                                        var4 += var18;
-                                        var6 += var19;
-                                        var2 += class415.field2903;
-                                        var8 += var22;
-                                    }
-                                }
-
-                                this.method1376(class415.field2905, var2, var10, 0, var4 >> 14, var5 >> 14, var8, var21);
-                                var4 += var18;
-                                var5 += var17;
-                                var2 += class415.field2903;
-                                var8 += var22;
-                            }
-                        }
-                    } else {
-                        var6 = var5 <<= 14;
-                        if (var2 < 0) {
-                            var6 -= var18 * var2;
-                            var5 -= var17 * var2;
-                            var8 -= var22 * (float) var2;
-                            var2 = 0;
-                        }
-
-                        var4 <<= 14;
-                        if (var1 < 0) {
-                            var4 -= var19 * var1;
-                            var1 = 0;
-                        }
-
-                        if (var18 < var17) {
-                            var3 -= var1;
-                            var1 -= var2;
-                            var2 = var23[var2];
-
-                            while (true) {
-                                --var1;
-                                if (var1 < 0) {
-                                    while (true) {
-                                        --var3;
-                                        if (var3 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1376(class415.field2905, var2, var10, 0, var4 >> 14, var5 >> 14, var8, var21);
-                                        var4 += var19;
-                                        var5 += var17;
-                                        var2 += class415.field2903;
-                                        var8 += var22;
-                                    }
-                                }
-
-                                this.method1376(class415.field2905, var2, var10, 0, var6 >> 14, var5 >> 14, var8, var21);
-                                var6 += var18;
-                                var5 += var17;
-                                var2 += class415.field2903;
-                                var8 += var22;
-                            }
-                        } else {
-                            var3 -= var1;
-                            var1 -= var2;
-                            var2 = var23[var2];
-
-                            while (true) {
-                                --var1;
-                                if (var1 < 0) {
-                                    while (true) {
-                                        --var3;
-                                        if (var3 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1376(class415.field2905, var2, var10, 0, var5 >> 14, var4 >> 14, var8, var21);
-                                        var4 += var19;
-                                        var5 += var17;
-                                        var2 += class415.field2903;
-                                        var8 += var22;
-                                    }
-                                }
-
-                                this.method1376(class415.field2905, var2, var10, 0, var5 >> 14, var6 >> 14, var8, var21);
-                                var6 += var18;
-                                var5 += var17;
-                                var2 += class415.field2903;
-                                var8 += var22;
-                            }
-                        }
-                    }
-                }
-            } else if (var3 < var24) {
-                if (var1 > var24) {
-                    var1 = var24;
-                }
-
-                if (var2 > var24) {
-                    var2 = var24;
-                }
-
-                var9 = var9 - var21 * (float) var6 + var21;
-                if (var1 < var2) {
-                    var5 = var6 <<= 14;
-                    if (var3 < 0) {
-                        var5 -= var17 * var3;
-                        var6 -= var19 * var3;
-                        var9 -= var22 * (float) var3;
-                        var3 = 0;
-                    }
-
-                    var4 <<= 14;
-                    if (var1 < 0) {
-                        var4 -= var18 * var1;
-                        var1 = 0;
-                    }
-
-                    if (var17 < var19) {
-                        var2 -= var1;
-                        var1 -= var3;
-                        var3 = var23[var3];
-
-                        while (true) {
-                            --var1;
-                            if (var1 < 0) {
-                                while (true) {
-                                    --var2;
-                                    if (var2 < 0) {
-                                        return;
-                                    }
-
-                                    this.method1376(class415.field2905, var3, var10, 0, var5 >> 14, var4 >> 14, var9, var21);
-                                    var5 += var17;
-                                    var4 += var18;
-                                    var3 += class415.field2903;
-                                    var9 += var22;
-                                }
-                            }
-
-                            this.method1376(class415.field2905, var3, var10, 0, var5 >> 14, var6 >> 14, var9, var21);
-                            var5 += var17;
-                            var6 += var19;
-                            var3 += class415.field2903;
-                            var9 += var22;
-                        }
-                    } else {
-                        var2 -= var1;
-                        var1 -= var3;
-                        var3 = var23[var3];
-
-                        while (true) {
-                            --var1;
-                            if (var1 < 0) {
-                                while (true) {
-                                    --var2;
-                                    if (var2 < 0) {
-                                        return;
-                                    }
-
-                                    this.method1376(class415.field2905, var3, var10, 0, var4 >> 14, var5 >> 14, var9, var21);
-                                    var5 += var17;
-                                    var4 += var18;
-                                    var3 += class415.field2903;
-                                    var9 += var22;
-                                }
-                            }
-
-                            this.method1376(class415.field2905, var3, var10, 0, var6 >> 14, var5 >> 14, var9, var21);
-                            var5 += var17;
-                            var6 += var19;
-                            var3 += class415.field2903;
-                            var9 += var22;
-                        }
-                    }
-                } else {
-                    var4 = var6 <<= 14;
-                    if (var3 < 0) {
-                        var4 -= var17 * var3;
-                        var6 -= var19 * var3;
-                        var9 -= var22 * (float) var3;
-                        var3 = 0;
-                    }
-
-                    var5 <<= 14;
-                    if (var2 < 0) {
-                        var5 -= var18 * var2;
-                        var2 = 0;
-                    }
-
-                    if (var17 < var19) {
-                        var1 -= var2;
-                        var2 -= var3;
-                        var3 = var23[var3];
-
-                        while (true) {
-                            --var2;
-                            if (var2 < 0) {
-                                while (true) {
-                                    --var1;
-                                    if (var1 < 0) {
-                                        return;
-                                    }
-
-                                    this.method1376(class415.field2905, var3, var10, 0, var5 >> 14, var6 >> 14, var9, var21);
-                                    var5 += var18;
-                                    var6 += var19;
-                                    var3 += class415.field2903;
-                                    var9 += var22;
-                                }
-                            }
-
-                            this.method1376(class415.field2905, var3, var10, 0, var4 >> 14, var6 >> 14, var9, var21);
-                            var4 += var17;
-                            var6 += var19;
-                            var3 += class415.field2903;
-                            var9 += var22;
-                        }
-                    } else {
-                        var1 -= var2;
-                        var2 -= var3;
-                        var3 = var23[var3];
-
-                        while (true) {
-                            --var2;
-                            if (var2 < 0) {
-                                while (true) {
-                                    --var1;
-                                    if (var1 < 0) {
-                                        return;
-                                    }
-
-                                    this.method1376(class415.field2905, var3, var10, 0, var6 >> 14, var5 >> 14, var9, var21);
-                                    var5 += var18;
-                                    var6 += var19;
-                                    var3 += class415.field2903;
-                                    var9 += var22;
-                                }
-                            }
-
-                            this.method1376(class415.field2905, var3, var10, 0, var6 >> 14, var4 >> 14, var9, var21);
-                            var4 += var17;
-                            var6 += var19;
-                            var3 += class415.field2903;
-                            var9 += var22;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    final void method1376(int[] var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8) {
-        if (super.field1046.field2608) {
-            if (var6 > super.field1046.field2612) {
-                var6 = super.field1046.field2612;
-            }
-
-            if (var5 < 0) {
-                var5 = 0;
-            }
-        }
-
-        if (var5 < var6) {
-            var2 += var5;
-            var4 = var6 - var5 >> 2;
-            var7 += var8 * (float) var5;
-            if (super.field1046.field2611 != 0) {
-                if (super.field1046.field2611 == 254) {
-                    while (true) {
-                        --var4;
-                        if (var4 < 0) {
-                            var4 = var6 - var5 & 3;
-
-                            while (true) {
-                                --var4;
-                                if (var4 < 0) {
-                                    return;
-                                }
-
-                                var1[var2++] = var1[var2];
-                            }
-                        }
-
-                        var1[var2++] = var1[var2];
-                        var1[var2++] = var1[var2];
-                        var1[var2++] = var1[var2];
-                        var1[var2++] = var1[var2];
-                    }
-                } else {
-                    int var9 = super.field1046.field2611;
-                    int var10 = 256 - super.field1046.field2611;
-                    var3 = ((var3 & 16711935) * var10 >> 8 & 16711935) + ((var3 & 65280) * var10 >> 8 & 65280);
-
-                    while (true) {
-                        --var4;
-                        if (var4 < 0) {
-                            var4 = var6 - var5 & 3;
-
-                            while (true) {
-                                --var4;
-                                if (var4 < 0) {
-                                    return;
-                                }
-
-                                this.method1382(var1, class415.field2906, var2, var3, var9, var7);
-                                ++var2;
-                                var7 += var8;
-                            }
-                        }
-
-                        this.method1382(var1, class415.field2906, var2, var3, var9, var7);
-                        ++var2;
-                        var7 += var8;
-                        this.method1382(var1, class415.field2906, var2, var3, var9, var7);
-                        ++var2;
-                        var7 += var8;
-                        this.method1382(var1, class415.field2906, var2, var3, var9, var7);
-                        ++var2;
-                        var7 += var8;
-                        this.method1382(var1, class415.field2906, var2, var3, var9, var7);
-                        ++var2;
-                        var7 += var8;
-                    }
-                }
-            } else {
-                while (true) {
-                    --var4;
-                    if (var4 < 0) {
-                        var4 = var6 - var5 & 3;
-
-                        while (true) {
-                            --var4;
-                            if (var4 < 0) {
-                                return;
-                            }
-
-                            this.method1377(var1, class415.field2906, var2, var3, var7);
-                            var7 += var8;
-                            ++var2;
-                        }
-                    }
-
-                    this.method1377(var1, class415.field2906, var2, var3, var7);
-                    var7 += var8;
-                    ++var2;
-                    this.method1377(var1, class415.field2906, var2, var3, var7);
-                    var7 += var8;
-                    ++var2;
-                    this.method1377(var1, class415.field2906, var2, var3, var7);
-                    var7 += var8;
-                    ++var2;
-                    this.method1377(var1, class415.field2906, var2, var3, var7);
-                    var7 += var8;
-                    ++var2;
-                }
-            }
-        }
-    }
-
-    @Override
-    void method514(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
-        int[] var23 = super.field1046.field2606.method1335(var22);
-        int var24;
-        if (var23 == null) {
-            var24 = super.field1046.field2606.method1332(var22);
-            this.method512(var1, var2, var3, var4, var5, var6, var7, var8, var9, method509(var24, var10), method509(var24, var11), method509(var24, var12));
-        } else {
-            super.field1047 = super.field1046.field2606.method1333(var22);
-            super.field1049 = super.field1046.field2606.method1334(var22);
-            var24 = var5 - var4;
-            int var25 = var2 - var1;
-            int var26 = var6 - var4;
-            int var27 = var3 - var1;
-            int var28 = var11 - var10;
-            int var29 = var12 - var10;
-            int var30 = 0;
-            if (var2 != var1) {
-                var30 = (var5 - var4 << 14) / (var2 - var1);
-            }
-
-            int var31 = 0;
-            if (var3 != var2) {
-                var31 = (var6 - var5 << 14) / (var3 - var2);
-            }
-
-            int var32 = 0;
-            if (var3 != var1) {
-                var32 = (var4 - var6 << 14) / (var1 - var3);
-            }
-
-            int var33 = var24 * var27 - var26 * var25;
-            if (var33 != 0) {
-                int var34 = (var28 * var27 - var29 * var25 << 9) / var33;
-                int var35 = (var29 * var24 - var28 * var26 << 9) / var33;
-                float var36 = var8 - var7;
-                float var37 = var9 - var7;
-                float var38 = (var36 * (float) var27 - var37 * (float) var25) / (float) var33;
-                float var39 = (var37 * (float) var24 - var36 * (float) var26) / (float) var33;
-                int var40 = super.field1046.field2607;
-                var14 = var13 - var14;
-                var17 = var16 - var17;
-                var20 = var19 - var20;
-                var15 -= var13;
-                var18 -= var16;
-                var21 -= var19;
-                int var41 = var15 * var16 - var18 * var13 << 14;
-                int var42 = (int) (((long) ((long) (long) var18 * var19 - (long) (long) var21 * var16) << 3 << 14) / (long) var40);
-                int var43 = (int) (((long) ((long) (long) var21 * var13 - (long) (long) var15 * var19) << 14) / (long) var40);
-                int var44 = var14 * var16 - var17 * var13 << 14;
-                int var45 = (int) (((long) ((long) (long) var17 * var19 - (long) (long) var20 * var16) << 3 << 14) / (long) var40);
-                int var46 = (int) (((long) ((long) (long) var20 * var13 - (long) (long) var14 * var19) << 14) / (long) var40);
-                int var47 = var17 * var15 - var14 * var18 << 14;
-                int var48 = (int) (((long) ((long) (long) var20 * var18 - (long) (long) var17 * var21) << 3 << 14) / (long) var40);
-                int var49 = (int) (((long) ((long) (long) var14 * var21 - (long) (long) var20 * var15) << 14) / (long) var40);
-                int[] var50 = super.field1046.field2614;
-                int var51 = super.field1046.field2610;
-                int var52;
-                if (var1 <= var2 && var1 <= var3) {
-                    if (var1 < var51) {
-                        if (var2 > var51) {
-                            var2 = var51;
-                        }
-
-                        if (var3 > var51) {
-                            var3 = var51;
-                        }
-
-                        var10 = (var10 << 9) - var34 * var4 + var34;
-                        var7 = var7 - var38 * (float) var4 + var38;
-                        if (var2 < var3) {
-                            var6 = var4 <<= 14;
-                            if (var1 < 0) {
-                                var6 -= var32 * var1;
-                                var4 -= var30 * var1;
-                                var10 -= var35 * var1;
-                                var7 -= var39 * (float) var1;
-                                var1 = 0;
-                            }
-
-                            var5 <<= 14;
-                            if (var2 < 0) {
-                                var5 -= var31 * var2;
-                                var2 = 0;
-                            }
-
-                            var52 = var1 - super.field1046.field2613;
-                            var41 += var43 * var52;
-                            var44 += var46 * var52;
-                            var47 += var49 * var52;
-                            if (var1 != var2 && var32 < var30 || var1 == var2 && var32 > var31) {
-                                var3 -= var2;
-                                var2 -= var1;
-                                var1 = var50[var1];
-
-                                while (true) {
-                                    --var2;
-                                    if (var2 < 0) {
-                                        while (true) {
-                                            --var3;
-                                            if (var3 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1384(class415.field2905, var23, 0, 0, var1, var6 >> 14, var5 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                            var6 += var32;
-                                            var5 += var31;
-                                            var10 += var35;
-                                            var1 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var7 += var39;
-                                        }
-                                    }
-
-                                    this.method1384(class415.field2905, var23, 0, 0, var1, var6 >> 14, var4 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                    var6 += var32;
-                                    var4 += var30;
-                                    var10 += var35;
-                                    var1 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var7 += var39;
-                                }
-                            } else {
-                                var3 -= var2;
-                                var2 -= var1;
-                                var1 = var50[var1];
-
-                                while (true) {
-                                    --var2;
-                                    if (var2 < 0) {
-                                        while (true) {
-                                            --var3;
-                                            if (var3 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1384(class415.field2905, var23, 0, 0, var1, var5 >> 14, var6 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                            var6 += var32;
-                                            var5 += var31;
-                                            var10 += var35;
-                                            var1 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var7 += var39;
-                                        }
-                                    }
-
-                                    this.method1384(class415.field2905, var23, 0, 0, var1, var4 >> 14, var6 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                    var6 += var32;
-                                    var4 += var30;
-                                    var10 += var35;
-                                    var1 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var7 += var39;
-                                }
-                            }
-                        } else {
-                            var5 = var4 <<= 14;
-                            if (var1 < 0) {
-                                var5 -= var32 * var1;
-                                var4 -= var30 * var1;
-                                var10 -= var35 * var1;
-                                var7 -= var39 * (float) var1;
-                                var1 = 0;
-                            }
-
-                            var6 <<= 14;
-                            if (var3 < 0) {
-                                var6 -= var31 * var3;
-                                var3 = 0;
-                            }
-
-                            var52 = var1 - super.field1046.field2613;
-                            var41 += var43 * var52;
-                            var44 += var46 * var52;
-                            var47 += var49 * var52;
-                            if ((var1 == var3 || var32 >= var30) && (var1 != var3 || var31 <= var30)) {
-                                var2 -= var3;
-                                var3 -= var1;
-                                var1 = var50[var1];
-
-                                while (true) {
-                                    --var3;
-                                    if (var3 < 0) {
-                                        while (true) {
-                                            --var2;
-                                            if (var2 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1384(class415.field2905, var23, 0, 0, var1, var4 >> 14, var6 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                            var6 += var31;
-                                            var4 += var30;
-                                            var10 += var35;
-                                            var1 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var7 += var39;
-                                        }
-                                    }
-
-                                    this.method1384(class415.field2905, var23, 0, 0, var1, var4 >> 14, var5 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                    var5 += var32;
-                                    var4 += var30;
-                                    var10 += var35;
-                                    var1 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var7 += var39;
-                                }
-                            } else {
-                                var2 -= var3;
-                                var3 -= var1;
-                                var1 = var50[var1];
-
-                                while (true) {
-                                    --var3;
-                                    if (var3 < 0) {
-                                        while (true) {
-                                            --var2;
-                                            if (var2 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1384(class415.field2905, var23, 0, 0, var1, var6 >> 14, var4 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                            var6 += var31;
-                                            var4 += var30;
-                                            var10 += var35;
-                                            var1 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var7 += var39;
-                                        }
-                                    }
-
-                                    this.method1384(class415.field2905, var23, 0, 0, var1, var5 >> 14, var4 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                    var5 += var32;
-                                    var4 += var30;
-                                    var10 += var35;
-                                    var1 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var7 += var39;
-                                }
-                            }
-                        }
-                    }
-                } else if (var2 <= var3) {
-                    if (var2 < var51) {
-                        if (var3 > var51) {
-                            var3 = var51;
-                        }
-
-                        if (var1 > var51) {
-                            var1 = var51;
-                        }
-
-                        var11 = (var11 << 9) - var34 * var5 + var34;
-                        var8 = var8 - var38 * (float) var5 + var38;
-                        if (var3 < var1) {
-                            var4 = var5 <<= 14;
-                            if (var2 < 0) {
-                                var4 -= var30 * var2;
-                                var5 -= var31 * var2;
-                                var11 -= var35 * var2;
-                                var8 -= var39 * (float) var2;
-                                var2 = 0;
-                            }
-
-                            var6 <<= 14;
-                            if (var3 < 0) {
-                                var6 -= var32 * var3;
-                                var3 = 0;
-                            }
-
-                            var52 = var2 - super.field1046.field2613;
-                            var41 += var43 * var52;
-                            var44 += var46 * var52;
-                            var47 += var49 * var52;
-                            if (var2 != var3 && var30 < var31 || var2 == var3 && var30 > var32) {
-                                var1 -= var3;
-                                var3 -= var2;
-                                var2 = var50[var2];
-
-                                while (true) {
-                                    --var3;
-                                    if (var3 < 0) {
-                                        while (true) {
-                                            --var1;
-                                            if (var1 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1384(class415.field2905, var23, 0, 0, var2, var4 >> 14, var6 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                            var4 += var30;
-                                            var6 += var32;
-                                            var11 += var35;
-                                            var2 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var8 += var39;
-                                        }
-                                    }
-
-                                    this.method1384(class415.field2905, var23, 0, 0, var2, var4 >> 14, var5 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                    var4 += var30;
-                                    var5 += var31;
-                                    var11 += var35;
-                                    var2 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var8 += var39;
-                                }
-                            } else {
-                                var1 -= var3;
-                                var3 -= var2;
-                                var2 = var50[var2];
-
-                                while (true) {
-                                    --var3;
-                                    if (var3 < 0) {
-                                        while (true) {
-                                            --var1;
-                                            if (var1 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1384(class415.field2905, var23, 0, 0, var2, var6 >> 14, var4 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                            var4 += var30;
-                                            var6 += var32;
-                                            var11 += var35;
-                                            var2 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var8 += var39;
-                                        }
-                                    }
-
-                                    this.method1384(class415.field2905, var23, 0, 0, var2, var5 >> 14, var4 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                    var4 += var30;
-                                    var5 += var31;
-                                    var11 += var35;
-                                    var2 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var8 += var39;
-                                }
-                            }
-                        } else {
-                            var6 = var5 <<= 14;
-                            if (var2 < 0) {
-                                var6 -= var30 * var2;
-                                var5 -= var31 * var2;
-                                var11 -= var35 * var2;
-                                var8 -= var39 * (float) var2;
-                                var2 = 0;
-                            }
-
-                            var4 <<= 14;
-                            if (var1 < 0) {
-                                var4 -= var32 * var1;
-                                var1 = 0;
-                            }
-
-                            var52 = var2 - super.field1046.field2613;
-                            var41 += var43 * var52;
-                            var44 += var46 * var52;
-                            var47 += var49 * var52;
-                            if (var30 < var31) {
-                                var3 -= var1;
-                                var1 -= var2;
-                                var2 = var50[var2];
-
-                                while (true) {
-                                    --var1;
-                                    if (var1 < 0) {
-                                        while (true) {
-                                            --var3;
-                                            if (var3 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1384(class415.field2905, var23, 0, 0, var2, var4 >> 14, var5 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                            var4 += var32;
-                                            var5 += var31;
-                                            var11 += var35;
-                                            var2 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var8 += var39;
-                                        }
-                                    }
-
-                                    this.method1384(class415.field2905, var23, 0, 0, var2, var6 >> 14, var5 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                    var6 += var30;
-                                    var5 += var31;
-                                    var11 += var35;
-                                    var2 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var8 += var39;
-                                }
-                            } else {
-                                var3 -= var1;
-                                var1 -= var2;
-                                var2 = var50[var2];
-
-                                while (true) {
-                                    --var1;
-                                    if (var1 < 0) {
-                                        while (true) {
-                                            --var3;
-                                            if (var3 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1384(class415.field2905, var23, 0, 0, var2, var5 >> 14, var4 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                            var4 += var32;
-                                            var5 += var31;
-                                            var11 += var35;
-                                            var2 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var8 += var39;
-                                        }
-                                    }
-
-                                    this.method1384(class415.field2905, var23, 0, 0, var2, var5 >> 14, var6 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                    var6 += var30;
-                                    var5 += var31;
-                                    var11 += var35;
-                                    var2 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var8 += var39;
-                                }
-                            }
-                        }
-                    }
-                } else if (var3 < var51) {
-                    if (var1 > var51) {
-                        var1 = var51;
-                    }
-
-                    if (var2 > var51) {
-                        var2 = var51;
-                    }
-
-                    var12 = (var12 << 9) - var34 * var6 + var34;
-                    var9 = var9 - var38 * (float) var6 + var38;
-                    if (var1 < var2) {
-                        var5 = var6 <<= 14;
-                        if (var3 < 0) {
-                            var5 -= var31 * var3;
-                            var6 -= var32 * var3;
-                            var12 -= var35 * var3;
-                            var9 -= var39 * (float) var3;
-                            var3 = 0;
-                        }
-
-                        var4 <<= 14;
-                        if (var1 < 0) {
-                            var4 -= var30 * var1;
-                            var1 = 0;
-                        }
-
-                        var52 = var3 - super.field1046.field2613;
-                        var41 += var43 * var52;
-                        var44 += var46 * var52;
-                        var47 += var49 * var52;
-                        if (var31 < var32) {
-                            var2 -= var1;
-                            var1 -= var3;
-                            var3 = var50[var3];
-
-                            while (true) {
-                                --var1;
-                                if (var1 < 0) {
-                                    while (true) {
-                                        --var2;
-                                        if (var2 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1384(class415.field2905, var23, 0, 0, var3, var5 >> 14, var4 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                        var5 += var31;
-                                        var4 += var30;
-                                        var12 += var35;
-                                        var3 += class415.field2903;
-                                        var41 += var43;
-                                        var44 += var46;
-                                        var47 += var49;
-                                        var9 += var39;
-                                    }
-                                }
-
-                                this.method1384(class415.field2905, var23, 0, 0, var3, var5 >> 14, var6 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                var5 += var31;
-                                var6 += var32;
-                                var12 += var35;
-                                var3 += class415.field2903;
-                                var41 += var43;
-                                var44 += var46;
-                                var47 += var49;
-                                var9 += var39;
-                            }
-                        } else {
-                            var2 -= var1;
-                            var1 -= var3;
-                            var3 = var50[var3];
-
-                            while (true) {
-                                --var1;
-                                if (var1 < 0) {
-                                    while (true) {
-                                        --var2;
-                                        if (var2 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1384(class415.field2905, var23, 0, 0, var3, var4 >> 14, var5 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                        var5 += var31;
-                                        var4 += var30;
-                                        var12 += var35;
-                                        var3 += class415.field2903;
-                                        var41 += var43;
-                                        var44 += var46;
-                                        var47 += var49;
-                                        var9 += var39;
-                                    }
-                                }
-
-                                this.method1384(class415.field2905, var23, 0, 0, var3, var6 >> 14, var5 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                var5 += var31;
-                                var6 += var32;
-                                var12 += var35;
-                                var3 += class415.field2903;
-                                var41 += var43;
-                                var44 += var46;
-                                var47 += var49;
-                                var9 += var39;
-                            }
-                        }
-                    } else {
-                        var4 = var6 <<= 14;
-                        if (var3 < 0) {
-                            var4 -= var31 * var3;
-                            var6 -= var32 * var3;
-                            var12 -= var35 * var3;
-                            var9 -= var39 * (float) var3;
-                            var3 = 0;
-                        }
-
-                        var5 <<= 14;
-                        if (var2 < 0) {
-                            var5 -= var30 * var2;
-                            var2 = 0;
-                        }
-
-                        var52 = var3 - super.field1046.field2613;
-                        var41 += var43 * var52;
-                        var44 += var46 * var52;
-                        var47 += var49 * var52;
-                        if (var31 < var32) {
-                            var1 -= var2;
-                            var2 -= var3;
-                            var3 = var50[var3];
-
-                            while (true) {
-                                --var2;
-                                if (var2 < 0) {
-                                    while (true) {
-                                        --var1;
-                                        if (var1 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1384(class415.field2905, var23, 0, 0, var3, var5 >> 14, var6 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                        var5 += var30;
-                                        var6 += var32;
-                                        var12 += var35;
-                                        var3 += class415.field2903;
-                                        var41 += var43;
-                                        var44 += var46;
-                                        var47 += var49;
-                                        var9 += var39;
-                                    }
-                                }
-
-                                this.method1384(class415.field2905, var23, 0, 0, var3, var4 >> 14, var6 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                var4 += var31;
-                                var6 += var32;
-                                var12 += var35;
-                                var3 += class415.field2903;
-                                var41 += var43;
-                                var44 += var46;
-                                var47 += var49;
-                                var9 += var39;
-                            }
-                        } else {
-                            var1 -= var2;
-                            var2 -= var3;
-                            var3 = var50[var3];
-
-                            while (true) {
-                                --var2;
-                                if (var2 < 0) {
-                                    while (true) {
-                                        --var1;
-                                        if (var1 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1384(class415.field2905, var23, 0, 0, var3, var6 >> 14, var5 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                        var5 += var30;
-                                        var6 += var32;
-                                        var12 += var35;
-                                        var3 += class415.field2903;
-                                        var41 += var43;
-                                        var44 += var46;
-                                        var47 += var49;
-                                        var9 += var39;
-                                    }
-                                }
-
-                                this.method1384(class415.field2905, var23, 0, 0, var3, var6 >> 14, var4 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                var4 += var31;
-                                var6 += var32;
-                                var12 += var35;
-                                var3 += class415.field2903;
-                                var41 += var43;
-                                var44 += var46;
-                                var47 += var49;
-                                var9 += var39;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    final void method1384(int[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, float var10, float var11, int var12, int var13, int var14, int var15, int var16, int var17) {
-        if (super.field1046.field2608) {
-            if (var7 > super.field1046.field2612) {
-                var7 = super.field1046.field2612;
-            }
-
-            if (var6 < 0) {
-                var6 = 0;
-            }
-        }
-
-        if (var6 < var7) {
-            var5 += var6;
-            var8 += var9 * var6;
-            var10 += var11 * (float) var6;
-            int var20 = var7 - var6;
-            int var10000;
-            int var18;
-            int var19;
-            int var21;
-            int var22;
-            int var23;
-            int var24;
-            int var25;
-            int var26;
-            if (super.field1047) {
-                var26 = var6 - super.field1046.field2604;
-                var12 += (var15 >> 3) * var26;
-                var13 += (var16 >> 3) * var26;
-                var14 += (var17 >> 3) * var26;
-                var25 = var14 >> 12;
-                if (var25 != 0) {
-                    var21 = var12 / var25;
-                    var22 = var13 / var25;
-                    if (var21 < 0) {
-                        var21 = 0;
-                    } else if (var21 > 4032) {
-                        var21 = 4032;
-                    }
-                } else {
-                    var21 = 0;
-                    var22 = 0;
-                }
-
-                var12 += var15;
-                var13 += var16;
-                var14 += var17;
-                var25 = var14 >> 12;
-                if (var25 != 0) {
-                    var23 = var12 / var25;
-                    var24 = var13 / var25;
-                    if (var23 < 0) {
-                        var23 = 0;
-                    } else if (var23 > 4032) {
-                        var23 = 4032;
-                    }
-                } else {
-                    var23 = 0;
-                    var24 = 0;
-                }
-
-                var3 = (var21 << 20) + var22;
-                var19 = (var23 - var21 >> 3 << 20) + (var24 - var22 >> 3);
-                var20 >>= 3;
-                var9 <<= 3;
-                var18 = var8 >> 8;
-                if (super.field1049) {
-                    if (var20 > 0) {
-                        do {
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var10000 = var3 + var19;
-                            var10 += var11;
-                            var21 = var23;
-                            var22 = var24;
-                            var12 += var15;
-                            var13 += var16;
-                            var14 += var17;
-                            var25 = var14 >> 12;
-                            if (var25 != 0) {
-                                var23 = var12 / var25;
-                                var24 = var13 / var25;
-                                if (var23 < 0) {
-                                    var23 = 0;
-                                } else if (var23 > 4032) {
-                                    var23 = 4032;
-                                }
-                            } else {
-                                var23 = 0;
-                                var24 = 0;
-                            }
-
-                            var3 = (var21 << 20) + var22;
-                            var19 = (var23 - var21 >> 3 << 20) + (var24 - var22 >> 3);
-                            var8 += var9;
-                            var18 = var8 >> 8;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-
-                    var20 = var7 - var6 & 7;
-                    if (var20 > 0) {
-                        do {
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-                } else {
-                    if (var20 > 0) {
-                        do {
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var10000 = var3 + var19;
-                            var10 += var11;
-                            var21 = var23;
-                            var22 = var24;
-                            var12 += var15;
-                            var13 += var16;
-                            var14 += var17;
-                            var25 = var14 >> 12;
-                            if (var25 != 0) {
-                                var23 = var12 / var25;
-                                var24 = var13 / var25;
-                                if (var23 < 0) {
-                                    var23 = 0;
-                                } else if (var23 > 4032) {
-                                    var23 = 4032;
-                                }
-                            } else {
-                                var23 = 0;
-                                var24 = 0;
-                            }
-
-                            var3 = (var21 << 20) + var22;
-                            var19 = (var23 - var21 >> 3 << 20) + (var24 - var22 >> 3);
-                            var8 += var9;
-                            var18 = var8 >> 8;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-
-                    var20 = var7 - var6 & 7;
-                    if (var20 > 0) {
-                        do {
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-                }
-            } else {
-                var26 = var6 - super.field1046.field2604;
-                var12 += (var15 >> 3) * var26;
-                var13 += (var16 >> 3) * var26;
-                var14 += (var17 >> 3) * var26;
-                var25 = var14 >> 14;
-                if (var25 != 0) {
-                    var21 = var12 / var25;
-                    var22 = var13 / var25;
-                    if (var21 < 0) {
-                        var21 = 0;
-                    } else if (var21 > 16256) {
-                        var21 = 16256;
-                    }
-                } else {
-                    var21 = 0;
-                    var22 = 0;
-                }
-
-                var12 += var15;
-                var13 += var16;
-                var14 += var17;
-                var25 = var14 >> 14;
-                if (var25 != 0) {
-                    var23 = var12 / var25;
-                    var24 = var13 / var25;
-                    if (var23 < 0) {
-                        var23 = 0;
-                    } else if (var23 > 16256) {
-                        var23 = 16256;
-                    }
-                } else {
-                    var23 = 0;
-                    var24 = 0;
-                }
-
-                var3 = (var21 << 18) + var22;
-                var19 = (var23 - var21 >> 3 << 18) + (var24 - var22 >> 3);
-                var20 >>= 3;
-                var9 <<= 3;
-                var18 = var8 >> 8;
-                if (super.field1049) {
-                    if (var20 > 0) {
-                        do {
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var10000 = var3 + var19;
-                            var10 += var11;
-                            var21 = var23;
-                            var22 = var24;
-                            var12 += var15;
-                            var13 += var16;
-                            var14 += var17;
-                            var25 = var14 >> 14;
-                            if (var25 != 0) {
-                                var23 = var12 / var25;
-                                var24 = var13 / var25;
-                                if (var23 < 0) {
-                                    var23 = 0;
-                                } else if (var23 > 16256) {
-                                    var23 = 16256;
-                                }
-                            } else {
-                                var23 = 0;
-                                var24 = 0;
-                            }
-
-                            var3 = (var21 << 18) + var22;
-                            var19 = (var23 - var21 >> 3 << 18) + (var24 - var22 >> 3);
-                            var8 += var9;
-                            var18 = var8 >> 8;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-
-                    var20 = var7 - var6 & 7;
-                    if (var20 > 0) {
-                        do {
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-                } else {
-                    if (var20 > 0) {
-                        do {
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var10000 = var3 + var19;
-                            var10 += var11;
-                            var21 = var23;
-                            var22 = var24;
-                            var12 += var15;
-                            var13 += var16;
-                            var14 += var17;
-                            var25 = var14 >> 14;
-                            if (var25 != 0) {
-                                var23 = var12 / var25;
-                                var24 = var13 / var25;
-                                if (var23 < 0) {
-                                    var23 = 0;
-                                } else if (var23 > 16256) {
-                                    var23 = 16256;
-                                }
-                            } else {
-                                var23 = 0;
-                                var24 = 0;
-                            }
-
-                            var3 = (var21 << 18) + var22;
-                            var19 = (var23 - var21 >> 3 << 18) + (var24 - var22 >> 3);
-                            var8 += var9;
-                            var18 = var8 >> 8;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-
-                    var20 = var7 - var6 & 7;
-                    if (var20 > 0) {
-                        do {
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-                }
-            }
-
-        }
-    }
-
-    @Override
-    void method511(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
-        int[] var23 = super.field1046.field2606.method1335(var22);
-        int var24;
-        if (var23 == null) {
-            var24 = super.field1046.field2606.method1332(var22);
-            this.method512(var1, var2, var3, var4, var5, var6, var7, var8, var9, method509(var24, var10), method509(var24, var11), method509(var24, var12));
-        } else {
-            super.field1047 = super.field1046.field2606.method1333(var22);
-            super.field1049 = super.field1046.field2606.method1334(var22);
-            var24 = var5 - var4;
-            int var25 = var2 - var1;
-            int var26 = var6 - var4;
-            int var27 = var3 - var1;
-            int var28 = var11 - var10;
-            int var29 = var12 - var10;
-            int var30 = 0;
-            if (var2 != var1) {
-                var30 = (var5 - var4 << 14) / (var2 - var1);
-            }
-
-            int var31 = 0;
-            if (var3 != var2) {
-                var31 = (var6 - var5 << 14) / (var3 - var2);
-            }
-
-            int var32 = 0;
-            if (var3 != var1) {
-                var32 = (var4 - var6 << 14) / (var1 - var3);
-            }
-
-            int var33 = var24 * var27 - var26 * var25;
-            if (var33 != 0) {
-                int var34 = (var28 * var27 - var29 * var25 << 9) / var33;
-                int var35 = (var29 * var24 - var28 * var26 << 9) / var33;
-                float var36 = var8 - var7;
-                float var37 = var9 - var7;
-                float var38 = (var36 * (float) var27 - var37 * (float) var25) / (float) var33;
-                float var39 = (var37 * (float) var24 - var36 * (float) var26) / (float) var33;
-                int var40 = super.field1046.field2607;
-                var14 = var13 - var14;
-                var17 = var16 - var17;
-                var20 = var19 - var20;
-                var15 -= var13;
-                var18 -= var16;
-                var21 -= var19;
-                int var41 = var15 * var16 - var18 * var13 << 14;
-                int var42 = (int) (((long) ((long) (long) var18 * var19 - (long) (long) var21 * var16) << 14) / (long) var40);
-                int var43 = (int) (((long) ((long) (long) var21 * var13 - (long) (long) var15 * var19) << 14) / (long) var40);
-                int var44 = var14 * var16 - var17 * var13 << 14;
-                int var45 = (int) (((long) ((long) (long) var17 * var19 - (long) (long) var20 * var16) << 14) / (long) var40);
-                int var46 = (int) (((long) ((long) (long) var20 * var13 - (long) (long) var14 * var19) << 14) / (long) var40);
-                int var47 = var17 * var15 - var14 * var18 << 14;
-                int var48 = (int) (((long) ((long) (long) var20 * var18 - (long) (long) var17 * var21) << 14) / (long) var40);
-                int var49 = (int) (((long) ((long) (long) var14 * var21 - (long) (long) var20 * var15) << 14) / (long) var40);
-                int[] var50 = super.field1046.field2614;
-                int var51 = super.field1046.field2610;
-                int var52;
-                if (var1 <= var2 && var1 <= var3) {
-                    if (var1 < var51) {
-                        if (var2 > var51) {
-                            var2 = var51;
-                        }
-
-                        if (var3 > var51) {
-                            var3 = var51;
-                        }
-
-                        var10 = (var10 << 9) - var34 * var4 + var34;
-                        var7 = var7 - var38 * (float) var4 + var38;
-                        if (var2 < var3) {
-                            var6 = var4 <<= 14;
-                            if (var1 < 0) {
-                                var6 -= var32 * var1;
-                                var4 -= var30 * var1;
-                                var7 -= var39 * (float) var1;
-                                var10 -= var35 * var1;
-                                var1 = 0;
-                            }
-
-                            var5 <<= 14;
-                            if (var2 < 0) {
-                                var5 -= var31 * var2;
-                                var2 = 0;
-                            }
-
-                            var52 = var1 - super.field1046.field2613;
-                            var41 += var43 * var52;
-                            var44 += var46 * var52;
-                            var47 += var49 * var52;
-                            if (var1 != var2 && var32 < var30 || var1 == var2 && var32 > var31) {
-                                var3 -= var2;
-                                var2 -= var1;
-                                var1 = var50[var1];
-
-                                while (true) {
-                                    --var2;
-                                    if (var2 < 0) {
-                                        while (true) {
-                                            --var3;
-                                            if (var3 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1381(class415.field2905, var23, 0, 0, var1, var6 >> 14, var5 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                            var6 += var32;
-                                            var5 += var31;
-                                            var10 += var35;
-                                            var1 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var7 += var39;
-                                        }
-                                    }
-
-                                    this.method1381(class415.field2905, var23, 0, 0, var1, var6 >> 14, var4 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                    var6 += var32;
-                                    var4 += var30;
-                                    var10 += var35;
-                                    var1 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var7 += var39;
-                                }
-                            } else {
-                                var3 -= var2;
-                                var2 -= var1;
-                                var1 = var50[var1];
-
-                                while (true) {
-                                    --var2;
-                                    if (var2 < 0) {
-                                        while (true) {
-                                            --var3;
-                                            if (var3 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1381(class415.field2905, var23, 0, 0, var1, var5 >> 14, var6 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                            var6 += var32;
-                                            var5 += var31;
-                                            var10 += var35;
-                                            var1 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var7 += var39;
-                                        }
-                                    }
-
-                                    this.method1381(class415.field2905, var23, 0, 0, var1, var4 >> 14, var6 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                    var6 += var32;
-                                    var4 += var30;
-                                    var10 += var35;
-                                    var1 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var7 += var39;
-                                }
-                            }
-                        } else {
-                            var5 = var4 <<= 14;
-                            if (var1 < 0) {
-                                var5 -= var32 * var1;
-                                var4 -= var30 * var1;
-                                var7 -= var39 * (float) var1;
-                                var10 -= var35 * var1;
-                                var1 = 0;
-                            }
-
-                            var6 <<= 14;
-                            if (var3 < 0) {
-                                var6 -= var31 * var3;
-                                var3 = 0;
-                            }
-
-                            var52 = var1 - super.field1046.field2613;
-                            var41 += var43 * var52;
-                            var44 += var46 * var52;
-                            var47 += var49 * var52;
-                            if ((var1 == var3 || var32 >= var30) && (var1 != var3 || var31 <= var30)) {
-                                var2 -= var3;
-                                var3 -= var1;
-                                var1 = var50[var1];
-
-                                while (true) {
-                                    --var3;
-                                    if (var3 < 0) {
-                                        while (true) {
-                                            --var2;
-                                            if (var2 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1381(class415.field2905, var23, 0, 0, var1, var4 >> 14, var6 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                            var6 += var31;
-                                            var4 += var30;
-                                            var10 += var35;
-                                            var1 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var7 += var39;
-                                        }
-                                    }
-
-                                    this.method1381(class415.field2905, var23, 0, 0, var1, var4 >> 14, var5 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                    var5 += var32;
-                                    var4 += var30;
-                                    var10 += var35;
-                                    var1 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var7 += var39;
-                                }
-                            } else {
-                                var2 -= var3;
-                                var3 -= var1;
-                                var1 = var50[var1];
-
-                                while (true) {
-                                    --var3;
-                                    if (var3 < 0) {
-                                        while (true) {
-                                            --var2;
-                                            if (var2 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1381(class415.field2905, var23, 0, 0, var1, var6 >> 14, var4 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                            var6 += var31;
-                                            var4 += var30;
-                                            var10 += var35;
-                                            var1 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var7 += var39;
-                                        }
-                                    }
-
-                                    this.method1381(class415.field2905, var23, 0, 0, var1, var5 >> 14, var4 >> 14, var10, var34, var7, var38, var41, var44, var47, var42, var45, var48);
-                                    var5 += var32;
-                                    var4 += var30;
-                                    var10 += var35;
-                                    var1 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var7 += var39;
-                                }
-                            }
-                        }
-                    }
-                } else if (var2 <= var3) {
-                    if (var2 < var51) {
-                        if (var3 > var51) {
-                            var3 = var51;
-                        }
-
-                        if (var1 > var51) {
-                            var1 = var51;
-                        }
-
-                        var11 = (var11 << 9) - var34 * var5 + var34;
-                        var8 = var8 - var38 * (float) var5 + var38;
-                        if (var3 < var1) {
-                            var4 = var5 <<= 14;
-                            if (var2 < 0) {
-                                var4 -= var30 * var2;
-                                var5 -= var31 * var2;
-                                var8 -= var39 * (float) var2;
-                                var11 -= var35 * var2;
-                                var2 = 0;
-                            }
-
-                            var6 <<= 14;
-                            if (var3 < 0) {
-                                var6 -= var32 * var3;
-                                var3 = 0;
-                            }
-
-                            var52 = var2 - super.field1046.field2613;
-                            var41 += var43 * var52;
-                            var44 += var46 * var52;
-                            var47 += var49 * var52;
-                            if (var2 != var3 && var30 < var31 || var2 == var3 && var30 > var32) {
-                                var1 -= var3;
-                                var3 -= var2;
-                                var2 = var50[var2];
-
-                                while (true) {
-                                    --var3;
-                                    if (var3 < 0) {
-                                        while (true) {
-                                            --var1;
-                                            if (var1 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1381(class415.field2905, var23, 0, 0, var2, var4 >> 14, var6 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                            var4 += var30;
-                                            var6 += var32;
-                                            var11 += var35;
-                                            var2 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var8 += var39;
-                                        }
-                                    }
-
-                                    this.method1381(class415.field2905, var23, 0, 0, var2, var4 >> 14, var5 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                    var4 += var30;
-                                    var5 += var31;
-                                    var11 += var35;
-                                    var2 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var8 += var39;
-                                }
-                            } else {
-                                var1 -= var3;
-                                var3 -= var2;
-                                var2 = var50[var2];
-
-                                while (true) {
-                                    --var3;
-                                    if (var3 < 0) {
-                                        while (true) {
-                                            --var1;
-                                            if (var1 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1381(class415.field2905, var23, 0, 0, var2, var6 >> 14, var4 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                            var4 += var30;
-                                            var6 += var32;
-                                            var11 += var35;
-                                            var2 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var8 += var39;
-                                        }
-                                    }
-
-                                    this.method1381(class415.field2905, var23, 0, 0, var2, var5 >> 14, var4 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                    var4 += var30;
-                                    var5 += var31;
-                                    var11 += var35;
-                                    var2 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var8 += var39;
-                                }
-                            }
-                        } else {
-                            var6 = var5 <<= 14;
-                            if (var2 < 0) {
-                                var6 -= var30 * var2;
-                                var5 -= var31 * var2;
-                                var8 -= var39 * (float) var2;
-                                var11 -= var35 * var2;
-                                var2 = 0;
-                            }
-
-                            var4 <<= 14;
-                            if (var1 < 0) {
-                                var4 -= var32 * var1;
-                                var1 = 0;
-                            }
-
-                            var52 = var2 - super.field1046.field2613;
-                            var41 += var43 * var52;
-                            var44 += var46 * var52;
-                            var47 += var49 * var52;
-                            if (var30 < var31) {
-                                var3 -= var1;
-                                var1 -= var2;
-                                var2 = var50[var2];
-
-                                while (true) {
-                                    --var1;
-                                    if (var1 < 0) {
-                                        while (true) {
-                                            --var3;
-                                            if (var3 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1381(class415.field2905, var23, 0, 0, var2, var4 >> 14, var5 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                            var4 += var32;
-                                            var5 += var31;
-                                            var11 += var35;
-                                            var2 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var8 += var39;
-                                        }
-                                    }
-
-                                    this.method1381(class415.field2905, var23, 0, 0, var2, var6 >> 14, var5 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                    var6 += var30;
-                                    var5 += var31;
-                                    var11 += var35;
-                                    var2 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var8 += var39;
-                                }
-                            } else {
-                                var3 -= var1;
-                                var1 -= var2;
-                                var2 = var50[var2];
-
-                                while (true) {
-                                    --var1;
-                                    if (var1 < 0) {
-                                        while (true) {
-                                            --var3;
-                                            if (var3 < 0) {
-                                                return;
-                                            }
-
-                                            this.method1381(class415.field2905, var23, 0, 0, var2, var5 >> 14, var4 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                            var4 += var32;
-                                            var5 += var31;
-                                            var11 += var35;
-                                            var2 += class415.field2903;
-                                            var41 += var43;
-                                            var44 += var46;
-                                            var47 += var49;
-                                            var8 += var39;
-                                        }
-                                    }
-
-                                    this.method1381(class415.field2905, var23, 0, 0, var2, var5 >> 14, var6 >> 14, var11, var34, var8, var38, var41, var44, var47, var42, var45, var48);
-                                    var6 += var30;
-                                    var5 += var31;
-                                    var11 += var35;
-                                    var2 += class415.field2903;
-                                    var41 += var43;
-                                    var44 += var46;
-                                    var47 += var49;
-                                    var8 += var39;
-                                }
-                            }
-                        }
-                    }
-                } else if (var3 < var51) {
-                    if (var1 > var51) {
-                        var1 = var51;
-                    }
-
-                    if (var2 > var51) {
-                        var2 = var51;
-                    }
-
-                    var12 = (var12 << 9) - var34 * var6 + var34;
-                    var9 = var9 - var38 * (float) var6 + var38;
-                    if (var1 < var2) {
-                        var5 = var6 <<= 14;
-                        if (var3 < 0) {
-                            var5 -= var31 * var3;
-                            var6 -= var32 * var3;
-                            var9 -= var39 * (float) var3;
-                            var12 -= var35 * var3;
-                            var3 = 0;
-                        }
-
-                        var4 <<= 14;
-                        if (var1 < 0) {
-                            var4 -= var30 * var1;
-                            var1 = 0;
-                        }
-
-                        var52 = var3 - super.field1046.field2613;
-                        var41 += var43 * var52;
-                        var44 += var46 * var52;
-                        var47 += var49 * var52;
-                        if (var31 < var32) {
-                            var2 -= var1;
-                            var1 -= var3;
-                            var3 = var50[var3];
-
-                            while (true) {
-                                --var1;
-                                if (var1 < 0) {
-                                    while (true) {
-                                        --var2;
-                                        if (var2 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1381(class415.field2905, var23, 0, 0, var3, var5 >> 14, var4 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                        var5 += var31;
-                                        var4 += var30;
-                                        var12 += var35;
-                                        var3 += class415.field2903;
-                                        var41 += var43;
-                                        var44 += var46;
-                                        var47 += var49;
-                                        var9 += var39;
-                                    }
-                                }
-
-                                this.method1381(class415.field2905, var23, 0, 0, var3, var5 >> 14, var6 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                var5 += var31;
-                                var6 += var32;
-                                var12 += var35;
-                                var3 += class415.field2903;
-                                var41 += var43;
-                                var44 += var46;
-                                var47 += var49;
-                                var9 += var39;
-                            }
-                        } else {
-                            var2 -= var1;
-                            var1 -= var3;
-                            var3 = var50[var3];
-
-                            while (true) {
-                                --var1;
-                                if (var1 < 0) {
-                                    while (true) {
-                                        --var2;
-                                        if (var2 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1381(class415.field2905, var23, 0, 0, var3, var4 >> 14, var5 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                        var5 += var31;
-                                        var4 += var30;
-                                        var12 += var35;
-                                        var3 += class415.field2903;
-                                        var41 += var43;
-                                        var44 += var46;
-                                        var47 += var49;
-                                        var9 += var39;
-                                    }
-                                }
-
-                                this.method1381(class415.field2905, var23, 0, 0, var3, var6 >> 14, var5 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                var5 += var31;
-                                var6 += var32;
-                                var12 += var35;
-                                var3 += class415.field2903;
-                                var41 += var43;
-                                var44 += var46;
-                                var47 += var49;
-                                var9 += var39;
-                            }
-                        }
-                    } else {
-                        var4 = var6 <<= 14;
-                        if (var3 < 0) {
-                            var4 -= var31 * var3;
-                            var6 -= var32 * var3;
-                            var9 -= var39 * (float) var3;
-                            var12 -= var35 * var3;
-                            var3 = 0;
-                        }
-
-                        var5 <<= 14;
-                        if (var2 < 0) {
-                            var5 -= var30 * var2;
-                            var2 = 0;
-                        }
-
-                        var52 = var3 - super.field1046.field2613;
-                        var41 += var43 * var52;
-                        var44 += var46 * var52;
-                        var47 += var49 * var52;
-                        if (var31 < var32) {
-                            var1 -= var2;
-                            var2 -= var3;
-                            var3 = var50[var3];
-
-                            while (true) {
-                                --var2;
-                                if (var2 < 0) {
-                                    while (true) {
-                                        --var1;
-                                        if (var1 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1381(class415.field2905, var23, 0, 0, var3, var5 >> 14, var6 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                        var5 += var30;
-                                        var6 += var32;
-                                        var12 += var35;
-                                        var3 += class415.field2903;
-                                        var41 += var43;
-                                        var44 += var46;
-                                        var47 += var49;
-                                        var9 += var39;
-                                    }
-                                }
-
-                                this.method1381(class415.field2905, var23, 0, 0, var3, var4 >> 14, var6 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                var4 += var31;
-                                var6 += var32;
-                                var12 += var35;
-                                var3 += class415.field2903;
-                                var41 += var43;
-                                var44 += var46;
-                                var47 += var49;
-                                var9 += var39;
-                            }
-                        } else {
-                            var1 -= var2;
-                            var2 -= var3;
-                            var3 = var50[var3];
-
-                            while (true) {
-                                --var2;
-                                if (var2 < 0) {
-                                    while (true) {
-                                        --var1;
-                                        if (var1 < 0) {
-                                            return;
-                                        }
-
-                                        this.method1381(class415.field2905, var23, 0, 0, var3, var6 >> 14, var5 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                        var5 += var30;
-                                        var6 += var32;
-                                        var12 += var35;
-                                        var3 += class415.field2903;
-                                        var41 += var43;
-                                        var44 += var46;
-                                        var47 += var49;
-                                        var9 += var39;
-                                    }
-                                }
-
-                                this.method1381(class415.field2905, var23, 0, 0, var3, var6 >> 14, var4 >> 14, var12, var34, var9, var38, var41, var44, var47, var42, var45, var48);
-                                var4 += var31;
-                                var6 += var32;
-                                var12 += var35;
-                                var3 += class415.field2903;
-                                var41 += var43;
-                                var44 += var46;
-                                var47 += var49;
-                                var9 += var39;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    final void method1381(int[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, float var10, float var11, int var12, int var13, int var14, int var15, int var16, int var17) {
-        if (super.field1046.field2608) {
-            if (var7 > super.field1046.field2612) {
-                var7 = super.field1046.field2612;
-            }
-
-            if (var6 < 0) {
-                var6 = 0;
-            }
-        }
-
-        if (var6 < var7) {
-            var5 += var6;
-            var8 += var9 * var6;
-            var10 += var11 * (float) var6;
-            int var20 = var7 - var6;
-            int var18;
-            int var19;
-            int var21;
-            int var22;
-            int var23;
-            int var24;
-            int var25;
-            int var26;
-            if (super.field1047) {
-                var26 = var6 - super.field1046.field2604;
-                var12 += var15 * var26;
-                var13 += var16 * var26;
-                var14 += var17 * var26;
-                var25 = var14 >> 12;
-                if (var25 != 0) {
-                    var21 = var12 / var25;
-                    var22 = var13 / var25;
-                } else {
-                    var21 = 0;
-                    var22 = 0;
-                }
-
-                var12 += var15 * var20;
-                var13 += var16 * var20;
-                var14 += var17 * var20;
-                var25 = var14 >> 12;
-                if (var25 != 0) {
-                    var23 = var12 / var25;
-                    var24 = var13 / var25;
-                } else {
-                    var23 = 0;
-                    var24 = 0;
-                }
-
-                var3 = (var21 << 20) + var22;
-                var19 = ((var23 - var21) / var20 << 20) + (var24 - var22) / var20;
-                var20 >>= 3;
-                var9 <<= 3;
-                var18 = var8 >> 8;
-                if (super.field1049) {
-                    if (var20 > 0) {
-                        do {
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            var8 += var9;
-                            var18 = var8 >> 8;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-
-                    var20 = var7 - var6 & 7;
-                    if (var20 > 0) {
-                        do {
-                            method1378(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-                } else {
-                    if (var20 > 0) {
-                        do {
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            var8 += var9;
-                            var18 = var8 >> 8;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-
-                    var20 = var7 - var6 & 7;
-                    if (var20 > 0) {
-                        do {
-                            method1383(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-                }
-            } else {
-                var26 = var6 - super.field1046.field2604;
-                var12 += var15 * var26;
-                var13 += var16 * var26;
-                var14 += var17 * var26;
-                var25 = var14 >> 14;
-                if (var25 != 0) {
-                    var21 = var12 / var25;
-                    var22 = var13 / var25;
-                } else {
-                    var21 = 0;
-                    var22 = 0;
-                }
-
-                var12 += var15 * var20;
-                var13 += var16 * var20;
-                var14 += var17 * var20;
-                var25 = var14 >> 14;
-                if (var25 != 0) {
-                    var23 = var12 / var25;
-                    var24 = var13 / var25;
-                } else {
-                    var23 = 0;
-                    var24 = 0;
-                }
-
-                var3 = (var21 << 18) + var22;
-                var19 = ((var23 - var21) / var20 << 18) + (var24 - var22) / var20;
-                var20 >>= 3;
-                var9 <<= 3;
-                var18 = var8 >> 8;
-                if (super.field1049) {
-                    if (var20 > 0) {
-                        do {
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            var8 += var9;
-                            var18 = var8 >> 8;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-
-                    var20 = var7 - var6 & 7;
-                    if (var20 > 0) {
-                        do {
-                            method1379(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-                } else {
-                    if (var20 > 0) {
-                        do {
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            var8 += var9;
-                            var18 = var8 >> 8;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-
-                    var20 = var7 - var6 & 7;
-                    if (var20 > 0) {
-                        do {
-                            method1380(var1, class415.field2906, var2, var5, var18, var3, var10);
-                            ++var5;
-                            var3 += var19;
-                            var10 += var11;
-                            --var20;
-                        } while (var20 > 0);
-                    }
-                }
-            }
-
-        }
-    }
+public class class314 extends class310 {
+
+	public static class106 field2436;
+
+	public static class106 field2442;
+
+	public static class338 field2434;
+
+	public static class338 field2435;
+
+	static int field2470;
+
+	class419 field2453;
+
+	int field2456;
+
+	int field2464;
+
+	int field2465;
+
+	int field2468;
+
+	int field2471;
+
+	int field2472;
+
+	int[] field2441;
+
+	int[] field2457;
+
+	int[] field2476;
+
+	short[] field2459;
+
+	short[] field2474;
+
+	short[] field2479;
+
+	public boolean field2433;
+
+	public boolean field2462;
+
+	public boolean field2466;
+
+	public boolean field2473;
+
+	public boolean field2475;
+
+	public int field2438;
+
+	public int field2440;
+
+	public int field2443;
+
+	public int field2444;
+
+	public int field2445;
+
+	public int field2446;
+
+	public int field2447;
+
+	public int field2448;
+
+	public int field2449;
+
+	public int field2450;
+
+	public int field2451;
+
+	public int field2452;
+
+	public int field2455;
+
+	public int field2460;
+
+	public int field2461;
+
+	public int field2463;
+
+	public int field2469;
+
+	public int field2477;
+
+	public int field2478;
+
+	public int[] field2467;
+
+	public String field2439;
+
+	public String[] field2437;
+
+	public short[] field2454;
+
+	public short[] field2458;
+
+	static {
+		field2436 = new class106(64);
+		field2442 = new class106(50);
+	}
+
+	class314() {
+		this.field2439 = class55.field629;
+		this.field2440 = 1;
+		this.field2443 = -1;
+		this.field2444 = -1;
+		this.field2445 = -1;
+		this.field2460 = -1;
+		this.field2447 = -1;
+		this.field2448 = -1;
+		this.field2449 = -1;
+		this.field2450 = -1;
+		this.field2451 = -1;
+		this.field2452 = -1;
+		this.field2477 = -1;
+		this.field2446 = -1;
+		this.field2455 = -1;
+		this.field2461 = -1;
+		this.field2478 = -1;
+		this.field2437 = new String[5];
+		this.field2462 = true;
+		this.field2463 = -1;
+		this.field2464 = 128;
+		this.field2456 = 128;
+		this.field2466 = false;
+		this.field2465 = 0;
+		this.field2468 = 0;
+		this.field2469 = 32;
+		this.field2471 = -1;
+		this.field2472 = -1;
+		this.field2473 = true;
+		this.field2433 = true;
+		this.field2475 = false;
+		this.field2476 = null;
+		this.field2474 = null;
+	}
+
+	void method1680() {
+	}
+
+	void method1681(class187 var1, byte var2) {
+		while (true) {
+			int var3 = var1.method1096();
+			if (var3 == 0) {
+				return;
+			}
+			this.method1682(var1, var3);
+		}
+	}
+
+	void method1682(class187 var1, int var2) {
+		int var4;
+		int var5;
+		if (var2 == 1) {
+			var4 = var1.method1096();
+			this.field2457 = new int[var4];
+			for (var5 = 0; var5 < var4; ++var5) {
+				this.field2457[var5] = var1.method1145();
+			}
+		} else if (var2 == 2) {
+			this.field2439 = var1.method1104();
+		} else if (var2 == 12) {
+			this.field2440 = var1.method1096();
+		} else if (var2 == 13) {
+			this.field2443 = var1.method1145();
+		} else if (var2 == 14) {
+			this.field2460 = var1.method1145();
+		} else if (var2 == 15) {
+			this.field2444 = var1.method1145();
+		} else if (var2 == 16) {
+			this.field2445 = var1.method1145();
+		} else if (var2 == 17) {
+			this.field2460 = var1.method1145();
+			this.field2447 = var1.method1145();
+			this.field2448 = var1.method1145();
+			this.field2449 = var1.method1145();
+		} else if (var2 == 18) {
+			var1.method1145();
+		} else if (var2 >= 30 && var2 < 35) {
+			this.field2437[var2 - 30] = var1.method1104();
+			if (this.field2437[var2 - 30].equalsIgnoreCase(class55.field571)) {
+				this.field2437[var2 - 30] = null;
+			}
+		} else if (var2 == 40) {
+			var4 = var1.method1096();
+			this.field2479 = new short[var4];
+			this.field2458 = new short[var4];
+			for (var5 = 0; var5 < var4; ++var5) {
+				this.field2479[var5] = (short) var1.method1145();
+				this.field2458[var5] = (short) var1.method1145();
+			}
+		} else if (var2 == 41) {
+			var4 = var1.method1096();
+			this.field2459 = new short[var4];
+			this.field2454 = new short[var4];
+			for (var5 = 0; var5 < var4; ++var5) {
+				this.field2459[var5] = (short) var1.method1145();
+				this.field2454[var5] = (short) var1.method1145();
+			}
+		} else if (var2 == 60) {
+			var4 = var1.method1096();
+			this.field2441 = new int[var4];
+			for (var5 = 0; var5 < var4; ++var5) {
+				this.field2441[var5] = var1.method1145();
+			}
+		} else if (var2 == 93) {
+			this.field2462 = false;
+		} else if (var2 == 95) {
+			this.field2463 = var1.method1145();
+		} else if (var2 == 97) {
+			this.field2464 = var1.method1145();
+		} else if (var2 == 98) {
+			this.field2456 = var1.method1145();
+		} else if (var2 == 99) {
+			this.field2466 = true;
+		} else if (var2 == 100) {
+			this.field2465 = var1.method1097();
+		} else if (var2 == 101) {
+			this.field2468 = var1.method1097() * 5;
+		} else {
+			int var6;
+			if (var2 == 102) {
+				var4 = var1.method1096();
+				var5 = 0;
+				for (var6 = var4; var6 != 0; var6 >>= 1) {
+					++var5;
+				}
+				this.field2476 = new int[var5];
+				this.field2474 = new short[var5];
+				for (int var7 = 0; var7 < var5; ++var7) {
+					if ((var4 & 1 << var7) == 0) {
+						this.field2476[var7] = -1;
+						this.field2474[var7] = -1;
+					} else {
+						this.field2476[var7] = var1.method1144();
+						this.field2474[var7] = (short) var1.method1108();
+					}
+				}
+			} else if (var2 == 103) {
+				this.field2469 = var1.method1145();
+			} else if (var2 != 106 && var2 != 118) {
+				if (var2 == 107) {
+					this.field2473 = false;
+				} else if (var2 == 109) {
+					this.field2433 = false;
+				} else if (var2 == 111) {
+					this.field2475 = true;
+				} else if (var2 == 114) {
+					this.field2450 = var1.method1145();
+				} else if (var2 == 115) {
+					this.field2450 = var1.method1145();
+					this.field2451 = var1.method1145();
+					this.field2452 = var1.method1145();
+					this.field2477 = var1.method1145();
+				} else if (var2 == 116) {
+					this.field2446 = var1.method1145();
+				} else if (var2 == 117) {
+					this.field2446 = var1.method1145();
+					this.field2455 = var1.method1145();
+					this.field2461 = var1.method1145();
+					this.field2478 = var1.method1145();
+				} else if (var2 == 249) {
+					this.field2453 = class437.method2178(var1, this.field2453);
+				}
+			} else {
+				this.field2471 = var1.method1145();
+				if (this.field2471 == 65535) {
+					this.field2471 = -1;
+				}
+				this.field2472 = var1.method1145();
+				if (this.field2472 == 65535) {
+					this.field2472 = -1;
+				}
+				var4 = -1;
+				if (var2 == 118) {
+					var4 = var1.method1145();
+					if (var4 == 65535) {
+						var4 = -1;
+					}
+				}
+				var5 = var1.method1096();
+				this.field2467 = new int[var5 + 2];
+				for (var6 = 0; var6 <= var5; ++var6) {
+					this.field2467[var6] = var1.method1145();
+					if (this.field2467[var6] == 65535) {
+						this.field2467[var6] = -1;
+					}
+				}
+				this.field2467[var5 + 1] = var4;
+			}
+		}
+	}
+
+	public final class113 method1683(class67 var1, int var2, class67 var3, int var4, class22 var5) {
+		if (null != this.field2467) {
+			class314 var12 = this.method1685();
+			return null == var12 ? null : var12.method1683(var1, var2, var3, var4, var5);
+		} else {
+			long var7 = (long) this.field2438;
+			if (var5 != null) {
+				var7 |= var5.field113 << 16;
+			}
+			class113 var9 = (class113) field2442.method648(var7);
+			if (var9 == null) {
+				class462 var10 = this.method1693(this.field2457, var5);
+				if (null == var10) {
+					return null;
+				}
+				var9 = var10.method2255(this.field2465 + 64, this.field2468 + 850, -30, -50, -30);
+				field2442.method647(var9, var7);
+			}
+			class113 var11;
+			if (var1 != null && var3 != null) {
+				var11 = var1.method301(var9, var2, var3, var4);
+			} else if (null != var1) {
+				var11 = var1.method299(var9, var2);
+			} else if (var3 != null) {
+				var11 = var3.method299(var9, var4);
+			} else {
+				var11 = var9.method678(true);
+			}
+			if (this.field2464 != 128 || this.field2456 != 128) {
+				var11.method692(this.field2464, this.field2456, this.field2464);
+			}
+			return var11;
+		}
+	}
+
+	public final class462 method1684(class22 var1) {
+		if (null != this.field2467) {
+			class314 var3 = this.method1685();
+			return null == var3 ? null : var3.method1684(var1);
+		} else {
+			return this.method1693(this.field2441, var1);
+		}
+	}
+
+	class462 method1693(int[] var1, class22 var2) {
+		int[] var4 = var1;
+		if (var2 != null && null != var2.field111) {
+			var4 = var2.field111;
+		}
+		if (var4 == null) {
+			return null;
+		} else {
+			boolean var5 = false;
+			for (int var6 = 0; var6 < var4.length; ++var6) {
+				if (var4[var6] != -1 && !field2435.method1764(var4[var6], 0)) {
+					var5 = true;
+				}
+			}
+			if (var5) {
+				return null;
+			} else {
+				class462[] var10 = new class462[var4.length];
+				for (int var7 = 0; var7 < var4.length; ++var7) {
+					var10[var7] = class462.method2259(field2435, var4[var7], 0);
+				}
+				class462 var11;
+				if (var10.length == 1) {
+					var11 = var10[0];
+					if (var11 == null) {
+						var11 = new class462(var10, var10.length);
+					}
+				} else {
+					var11 = new class462(var10, var10.length);
+				}
+				short[] var8;
+				int var9;
+				if (this.field2479 != null) {
+					var8 = this.field2458;
+					if (var2 != null && null != var2.field112) {
+						var8 = var2.field112;
+					}
+					for (var9 = 0; var9 < this.field2479.length; ++var9) {
+						var11.method2258(this.field2479[var9], var8[var9]);
+					}
+				}
+				if (this.field2459 != null) {
+					var8 = this.field2454;
+					if (var2 != null && null != var2.field114) {
+						var8 = var2.field114;
+					}
+					for (var9 = 0; var9 < this.field2459.length; ++var9) {
+						var11.method2249(this.field2459[var9], var8[var9]);
+					}
+				}
+				return var11;
+			}
+		}
+	}
+
+	public final class314 method1685() {
+		int var2 = -1;
+		if (this.field2471 != -1) {
+			var2 = class410.method2082(this.field2471);
+		} else if (this.field2472 != -1) {
+			var2 = class410.field3198[this.field2472];
+		}
+		int var3;
+		if (var2 >= 0 && var2 < this.field2467.length - 1) {
+			var3 = this.field2467[var2];
+		} else {
+			var3 = this.field2467[this.field2467.length - 1];
+		}
+		return var3 != -1 ? method1695(var3) : null;
+	}
+
+	public boolean method1689() {
+		if (null == this.field2467) {
+			return true;
+		} else {
+			int var2 = -1;
+			if (this.field2471 != -1) {
+				var2 = class410.method2082(this.field2471);
+			} else if (this.field2472 != -1) {
+				var2 = class410.field3198[this.field2472];
+			}
+			if (var2 >= 0 && var2 < this.field2467.length) {
+				return this.field2467[var2] != -1;
+			} else {
+				return this.field2467[this.field2467.length - 1] != -1;
+			}
+		}
+	}
+
+	public int method1694(int var1, int var2) {
+		class419 var5 = this.field2453;
+		int var4;
+		if (var5 == null) {
+			var4 = var2;
+		} else {
+			class239 var6 = (class239) var5.method2105((long) var1);
+			if (var6 == null) {
+				var4 = var2;
+			} else {
+				var4 = var6.field2043;
+			}
+		}
+		return var4;
+	}
+
+	public String method1692(int var1, String var2) {
+		class419 var5 = this.field2453;
+		String var4;
+		if (var5 == null) {
+			var4 = var2;
+		} else {
+			class47 var6 = (class47) var5.method2105((long) var1);
+			if (null == var6) {
+				var4 = var2;
+			} else {
+				var4 = (String) var6.field233;
+			}
+		}
+		return var4;
+	}
+
+	public boolean method1687() {
+		return this.field2476 != null && this.field2474 != null;
+	}
+
+	public int[] method1688() {
+		return this.field2476;
+	}
+
+	public int method1686(int var1) {
+		return this.field2476 != null && var1 < this.field2476.length ? this.field2476[var1] : -1;
+	}
+
+	public short[] method1690() {
+		return this.field2474;
+	}
+
+	public short method1691(int var1) {
+		return null != this.field2474 && var1 < this.field2474.length ? this.field2474[var1] : -1;
+	}
+
+	public static class314 method1695(int var0) {
+		class314 var2 = (class314) field2436.method648((long) var0);
+		if (null != var2) {
+			return var2;
+		} else {
+			byte[] var3 = field2434.method1762(9, var0);
+			var2 = new class314();
+			var2.field2438 = var0;
+			if (null != var3) {
+				var2.method1681(new class187(var3), (byte) 61);
+			}
+			var2.method1680();
+			field2436.method647(var2, (long) var0);
+			return var2;
+		}
+	}
 }

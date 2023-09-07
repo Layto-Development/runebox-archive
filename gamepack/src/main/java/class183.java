@@ -1,21 +1,9 @@
-public class class183 extends class438 {
-    // $FF: synthetic field
-    final class423 this$0;
-    int field1531;
-    int field1532;
+public class class183 {
 
-    class183(class423 var1) {
-        this.this$0 = var1;
-    }
+	class183() throws Throwable {
+	}
 
-    @Override
-    void method2006(class78 var1) {
-        this.field1532 = var1.method264();
-        this.field1531 = var1.method264();
-    }
-
-    @Override
-    void method2005(class133 var1) {
-        var1.method593(this.field1532, this.field1531);
-    }
+	public static boolean method1071(int var0) {
+		return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
+	}
 }

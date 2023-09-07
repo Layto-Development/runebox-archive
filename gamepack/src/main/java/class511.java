@@ -1,39 +1,23 @@
-public class class511 {
-    int[] field3772;
-    short[] field3773;
+public class class511 extends class7 {
 
-    public class511(class345 var1) {
-        this.field3772 = new int[8];
-        this.field3773 = new short[8];
-        int var2 = 0;
-        if (var1.method1627()) {
-            var2 = var1.method1628().length;
-            System.arraycopy(var1.method1628(), 0, this.field3772, 0, var2);
-            System.arraycopy(var1.method1630(), 0, this.field3773, 0, var2);
-        }
+	static int field4085;
 
-        for (int var3 = var2; var3 < 8; ++var3) {
-            this.field3772[var3] = -1;
-            this.field3773[var3] = -1;
-        }
+	final boolean field4084;
 
-    }
+	public class511(boolean var1) {
+		this.field4084 = var1;
+	}
 
-    public int[] method2301() {
-        return this.field3772;
-    }
+	int method2459(class150 var1, class150 var2) {
+		if (var1.field1577 == Client.field898 && var2.field1577 == Client.field898) {
+			return this.field4084 ? var1.field1576 - var2.field1576 : var2.field1576 - var1.field1576;
+		} else {
+			return this.method19(var1, var2);
+		}
+	}
 
-    public short[] method2302() {
-        return this.field3773;
-    }
-
-    public void method2303(int var1, int var2, short var3) {
-        this.field3772[var1] = var2;
-        this.field3773[var1] = var3;
-    }
-
-    public void method2304(int[] var1, short[] var2) {
-        this.field3772 = var1;
-        this.field3773 = var2;
-    }
+	@Override
+	public int compare(Object var1, Object var2) {
+		return this.method2459((class150) var1, (class150) var2);
+	}
 }

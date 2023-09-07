@@ -1,44 +1,76 @@
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.Random;
 
-public class class355 implements class501 {
-    final Map<String, String> field2558;
+public class class355 {
 
-    public class355(Map<String, String> var1) {
-        this.field2558 = var1;
-    }
+	class355() throws Throwable {
+	}
 
-    @Override
-    public class495 method2274() {
-        return null;
-    }
+	public static void method1865(byte[] var0, int var1, byte[] var2, int var3, int var4) {
+		if (var0 == var2) {
+			if (var1 == 0) {
+				return;
+			}
+			if (0 > var1 && 0 < var1 + 24) {
+				--var4;
+				var1 += 23;
+				var3 = 23;
+				var4 = var1 - 23;
+				for (var4 += 7; var1 >= var4; var2[var3--] = var0[var1--]) {
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+				}
+				for (var4 -= 7; var1 >= var4; var2[var3--] = var0[var1--]) {
+				}
+				return;
+			}
+		}
+		var4 = 24 + var1;
+		for (var4 -= 7; var1 < var4; var2[var3++] = var0[var1++]) {
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+		}
+		for (var4 += 7; var1 < var4; var2[var3++] = var0[var1++]) {
+		}
+	}
 
-    @Override
-    public byte[] method2273() throws UnsupportedEncodingException {
-        return this.method1690().getBytes(StandardCharsets.UTF_8);
-    }
+	public static void method1867(int[] var0, int var1, int var2) {
+		for (var2 = 0 + var2 - 7; var1 < var2; var0[var1++] = 0) {
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+		}
+		for (var2 += 7; var1 < var2; var0[var1++] = 0) {
+		}
+	}
 
-    public String method1690() throws UnsupportedEncodingException {
-        StringBuilder var2 = new StringBuilder();
-        Iterator<Entry<String, String>> var3 = this.field2558.entrySet().iterator();
-
-        while (var3.hasNext()) {
-            Entry<String, String> var4 = var3.next();
-            String var5 = URLEncoder.encode(var4.getKey(), StandardCharsets.UTF_8);
-            String var6 = URLEncoder.encode(var4.getValue(), StandardCharsets.UTF_8);
-            var2.append(var5).append("=").append(var6).append("&");
-        }
-
-        if (var2.length() == 0) {
-            return "";
-        } else {
-            var2.deleteCharAt(var2.length() - 1);
-            var2.insert(0, "?");
-            return var2.toString();
-        }
-    }
+	public static void method1866(int[] var0, int var1, int var2, int var3) {
+		if (var2 == 0 && var3 == 0) {
+			var2 = (int) (Math.random() * 2.147483647E9D);
+			var3 = (int) (Math.random() * 2.147483647E9D);
+		}
+		long var4 = (long) var2 << 32 | (long) var3;
+		Random var6 = new Random(var4);
+		for (int var7 = var1 - 1; var7 > 0; --var7) {
+			int var8 = var6.nextInt(var7 + 1);
+			if (var7 != var8) {
+				int var9 = var0[var7];
+				var0[var7] = var0[var8];
+				var0[var8] = var9;
+			}
+		}
+	}
 }

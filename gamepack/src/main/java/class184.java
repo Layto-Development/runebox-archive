@@ -1,61 +1,93 @@
-import java.util.ArrayList;
-import java.util.Iterator;
+public class class184 implements class228 {
 
-public class class184 extends class337 {
-    ArrayList<class537> field1533;
+	public static final class184 field1789;
 
-    public class184(class337 var1, ArrayList<class537> var2) {
-        super(var1);
-        super.field2442 = "ClearRequestTask";
-        this.field1533 = var2;
-    }
+	public static final class184 field1790;
 
-    @Override
-    public boolean method1595() {
-        if (this.field1533.isEmpty()) {
-            return true;
-        } else {
-            Iterator<class537> var2 = this.field1533.iterator();
+	public static final class184 field1792;
 
-            while (var2.hasNext()) {
-                class537 var3 = var2.next();
+	public static final class184 field1808;
 
-                try {
-                    if (class141.field1240.contains(var3)) {
-                        if (null == var3) {
-                            class141.field1240.remove(var3);
-                        } else {
-                            if (var3.field4273.field3347 > 0) {
-                                --var3.field4273.field3347;
-                            }
+	public static final class184 field1809;
 
-                            if (var3.field4273.field3347 == 0) {
-                                var3.field4273.method2166();
-                                var3.field4273.method2164();
-                                var3.field4273.method2134(0);
-                            }
+	static final class184 field1787;
 
-                            int var4 = var3.field4267;
-                            int var5 = var3.field4268;
-                            Iterator<Client> var6 = class141.field1243.iterator();
+	static final class184 field1788;
 
-                            while (var6.hasNext()) {
-                                class541 var7 = var6.next();
-                                var7.method2591(var4, var5);
-                            }
+	static final class184 field1791;
 
-                            class141.field1240.remove(var3);
-                        }
-                    }
-                } catch (Exception var8) {
-                    class157.method728(null, var8);
-                    this.method1598(var8.getMessage());
-                    class141.field1240.clear();
-                    return true;
-                }
-            }
+	static final class184 field1793;
 
-            return true;
-        }
-    }
+	static final class184 field1794;
+
+	static final class184 field1796;
+
+	static final class184 field1797;
+
+	static final class184 field1798;
+
+	static final class184 field1799;
+
+	static final class184 field1800;
+
+	static final class184 field1801;
+
+	static final class184 field1802;
+
+	static final class184 field1803;
+
+	static final class184 field1804;
+
+	static final class184 field1805;
+
+	static final class184 field1806;
+
+	static final class184 field1807;
+
+	static final class184 field1810;
+
+	public final int field1795;
+
+	static {
+		field1792 = new class184(0, 0);
+		field1788 = new class184(1, 0);
+		field1789 = new class184(2, 0);
+		field1790 = new class184(3, 0);
+		field1808 = new class184(9, 2);
+		field1804 = new class184(4, 1);
+		field1793 = new class184(5, 1);
+		field1794 = new class184(6, 1);
+		field1798 = new class184(7, 1);
+		field1791 = new class184(8, 1);
+		field1797 = new class184(12, 2);
+		field1799 = new class184(13, 2);
+		field1806 = new class184(14, 2);
+		field1800 = new class184(15, 2);
+		field1801 = new class184(16, 2);
+		field1802 = new class184(17, 2);
+		field1787 = new class184(18, 2);
+		field1803 = new class184(19, 2);
+		field1805 = new class184(20, 2);
+		field1796 = new class184(21, 2);
+		field1807 = new class184(10, 2);
+		field1810 = new class184(11, 2);
+		field1809 = new class184(22, 3);
+	}
+
+	class184(int var1, int var2) {
+		this.field1795 = var1;
+	}
+
+	@Override
+	public int method1362() {
+		return this.field1795;
+	}
+
+	public static boolean method1073(int var0) {
+		return var0 >= field1792.field1795 && var0 <= field1790.field1795 || var0 == field1808.field1795;
+	}
+
+	public static boolean method1074(int var0) {
+		return var0 >= field1807.field1795 && var0 <= field1810.field1795;
+	}
 }

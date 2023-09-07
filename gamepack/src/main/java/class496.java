@@ -1,73 +1,104 @@
-import java.awt.*;
+import java.util.Iterator;
 
 public class class496 {
-    static class539 field3631;
-    static FontMetrics field3630;
 
-    class496() throws Throwable {
-    }
+	public static class338 field3988;
 
-    static final void method2247(String var0) {
-        if (var0.equalsIgnoreCase("toggleroof")) {
-            class290.field2121.method2527(!class290.field2121.method2528());
-            if (class290.field2121.method2528()) {
-                class157.method729(99, "", "Roofs are now all hidden");
-            } else {
-                class157.method729(99, "", "Roofs will only be removed selectively");
-            }
-        }
+	static Iterator field3990;
 
-        if (var0.startsWith("zbuf")) {
-            boolean var2 = class95.method368(var0.substring(5).trim()) == 1;
-            class268.field1973.method2199(var2);
-            class334.method1580(var2);
-        }
+	int field3989;
 
-        if (var0.equalsIgnoreCase("z")) {
-            Client.field3839 = !Client.field3839;
-        }
+	int field3992;
 
-        if (var0.equalsIgnoreCase("displayfps")) {
-            class290.field2121.method2531();
-        }
+	int[][] field3991;
 
-        if (var0.equalsIgnoreCase("renderself")) {
-            Client.field4013 = !Client.field4013;
-        }
+	public class496(int var1, int var2) {
+		if (var2 != var1) {
+			int var4 = var1;
+			int var5 = var2;
+			if (var2 > var1) {
+				var4 = var2;
+				var5 = var1;
+			}
+			while (var5 != 0) {
+				int var6 = var4 % var5;
+				var4 = var5;
+				var5 = var6;
+			}
+			var1 /= var4;
+			var2 /= var4;
+			this.field3989 = var1;
+			this.field3992 = var2;
+			this.field3991 = new int[var1][14];
+			for (int var7 = 0; var7 < var1; ++var7) {
+				int[] var8 = this.field3991[var7];
+				double var9 = 6.0D + (double) var7 / (double) var1;
+				int var11 = (int) Math.floor(1.0D + (var9 - 7.0D));
+				if (var11 < 0) {
+					var11 = 0;
+				}
+				int var12 = (int) Math.ceil(var9 + 7.0D);
+				if (var12 > 14) {
+					var12 = 14;
+				}
+				for (double var13 = (double) var2 / (double) var1; var11 < var12; ++var11) {
+					double var15 = ((double) var11 - var9) * 3.141592653589793D;
+					double var17 = var13;
+					if (var15 < -1.0E-4D || var15 > 1.0E-4D) {
+						var17 = var13 * (Math.sin(var15) / var15);
+					}
+					var17 *= 0.54D + 0.46D * Math.cos(0.2243994752564138D * ((double) var11 - var9));
+					var8[var11] = (int) Math.floor(0.5D + var17 * 65536.0D);
+				}
+			}
+		}
+	}
 
-        if (var0.equalsIgnoreCase("mouseovertext")) {
-            Client.field3935 = !Client.field3935;
-        }
+	byte[] method2375(byte[] var1) {
+		if (null != this.field3991) {
+			int var3 = (int) ((long) this.field3992 * (long) var1.length / (long) this.field3989) + 14;
+			int[] var4 = new int[var3];
+			int var5 = 0;
+			int var6 = 0;
+			int var7;
+			for (var7 = 0; var7 < var1.length; ++var7) {
+				byte var8 = var1[var7];
+				int[] var9 = this.field3991[var6];
+				int var10;
+				for (var10 = 0; var10 < 14; ++var10) {
+					var4[var10 + var5] += var8 * var9[var10];
+				}
+				var6 += this.field3992;
+				var10 = var6 / this.field3989;
+				var5 += var10;
+				var6 -= var10 * this.field3989;
+			}
+			var1 = new byte[var3];
+			for (var7 = 0; var7 < var3; ++var7) {
+				int var11 = 32768 + var4[var7] >> 16;
+				if (var11 < -128) {
+					var1[var7] = -128;
+				} else if (var11 > 127) {
+					var1[var7] = 127;
+				} else {
+					var1[var7] = (byte) var11;
+				}
+			}
+		}
+		return var1;
+	}
 
-        if (Client.field3863 >= 2) {
-            if (var0.equalsIgnoreCase("errortest")) {
-                throw new RuntimeException();
-            }
+	int method2376(int var1) {
+		if (null != this.field3991) {
+			var1 = (int) ((long) var1 * (long) this.field3992 / (long) this.field3989);
+		}
+		return var1;
+	}
 
-            if (var0.equalsIgnoreCase("showcoord")) {
-                class466.field3310.field943 = !class466.field3310.field943;
-            }
-
-            if (var0.equalsIgnoreCase("fpson")) {
-                class290.field2121.method2530(true);
-            }
-
-            if (var0.equalsIgnoreCase("fpsoff")) {
-                class290.field2121.method2530(false);
-            }
-
-            if (var0.equalsIgnoreCase("gc")) {
-                System.gc();
-            }
-
-            if (var0.equalsIgnoreCase("clientdrop")) {
-                Client.method2425();
-            }
-        }
-
-        class46 var3 = class46.method134(class488.field3580, Client.field3840.field2238);
-        var3.field541.method249(var0.length() + 1);
-        var3.field541.method252(var0);
-        Client.field3840.method1359(var3);
-    }
+	int method2374(int var1) {
+		if (this.field3991 != null) {
+			var1 = 6 + (int) ((long) var1 * (long) this.field3992 / (long) this.field3989);
+		}
+		return var1;
+	}
 }

@@ -1,25 +1,21 @@
-public class class406 {
-    static final int[] field2870;
+import java.io.IOException;
 
-    static {
-        field2870 = new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, -1, 1, -1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 3, 3, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-    }
+public abstract class class406 {
 
-    class406() throws Throwable {
-    }
+	static class406 field3181;
 
-    public static int method1855(int var0) {
-        return var0 != 0 && var0 != 1 ? -1 : 0;
-    }
+	class406() {
+	}
 
-    public static class432 method1856(int var0) {
-        int var2 = field2870[var0];
-        if (var2 == 1) {
-            return class432.field2942;
-        } else if (var2 == 2) {
-            return class432.field2937;
-        } else {
-            return var2 == 3 ? class432.field2943 : null;
-        }
-    }
+	public abstract boolean method2068(int var1) throws IOException;
+
+	public abstract int method2069(byte[] var1, int var2, int var3) throws IOException;
+
+	public abstract int method2070() throws IOException;
+
+	public abstract int method2072() throws IOException;
+
+	public abstract void method2071(byte[] var1, int var2, int var3) throws IOException;
+
+	public abstract void method2073();
 }

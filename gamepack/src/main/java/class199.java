@@ -1,127 +1,120 @@
-import java.util.Arrays;
+public class class199 extends class310 {
 
-public class class199 implements class200 {
-    public char field1635;
-    public int field1638;
-    public int field1648;
-    public int[] field1637;
-    boolean[] field1636;
-    boolean[] field1644;
-    boolean[] field1645;
-    char[] field1642;
-    int field1640;
-    int field1641;
-    int field1643;
-    int field1647;
-    int[] field1639;
-    int[] field1646;
+	public static class106 field1870;
 
-    public class199() {
-        this.field1642 = new char[128];
-        this.field1646 = new int[128];
-        this.field1637 = new int[128];
-        this.field1638 = 0;
-        this.field1639 = new int[128];
-        this.field1640 = 0;
-        this.field1647 = 0;
-        this.field1641 = 0;
-        this.field1643 = 0;
-        this.field1644 = new boolean[112];
-        this.field1645 = new boolean[112];
-        this.field1636 = new boolean[112];
-    }
+	public static class106 field1871;
 
-    @Override
-    public boolean method965(int var1) {
-        this.method960(var1);
-        this.field1644[var1] = true;
-        this.field1645[var1] = true;
-        this.field1636[var1] = false;
-        this.field1637[++this.field1638 - 1] = var1;
-        return true;
-    }
+	public static class338 field1869;
 
-    @Override
-    public boolean method963(int var1) {
-        this.field1644[var1] = false;
-        this.field1645[var1] = false;
-        this.field1636[var1] = true;
-        this.field1639[++this.field1640 - 1] = var1;
-        return true;
-    }
+	int field1878;
 
-    @Override
-    public boolean method964(char var1) {
-        int var3 = 1 + this.field1641 & 127;
-        if (this.field1647 != var3) {
-            this.field1646[this.field1641] = -1;
-            this.field1642[this.field1641] = var1;
-            this.field1641 = var3;
-        }
+	int field1879;
 
-        return false;
-    }
+	public int field1872;
 
-    void method960(int var1) {
-        int var3 = this.field1641 + 1 & 127;
-        if (this.field1647 != var3) {
-            this.field1646[this.field1641] = var1;
-            this.field1642[this.field1641] = 0;
-            this.field1641 = var3;
-        }
+	public int field1873;
 
-    }
+	public int field1874;
 
-    @Override
-    public boolean method966(boolean var1) {
-        return false;
-    }
+	public int field1875;
 
-    public void method953() {
-        this.field1647 = this.field1643;
-        this.field1643 = this.field1641;
-        this.field1638 = 0;
-        this.field1640 = 0;
-        Arrays.fill(this.field1645, false);
-        Arrays.fill(this.field1636, false);
-    }
+	public int field1876;
 
-    public final boolean method959() {
-        if (this.field1647 == this.field1643) {
-            return false;
-        } else {
-            this.field1648 = this.field1646[this.field1647];
-            this.field1635 = this.field1642[this.field1647];
-            this.field1647 = 1 + this.field1647 & 127;
-            return true;
-        }
-    }
+	public int field1877;
 
-    public boolean method954(int var1) {
-        return var1 >= 0 && var1 < 112 && this.field1645[var1];
-    }
+	public int field1880;
 
-    public boolean method958(int var1) {
-        return var1 >= 0 && var1 < 112 && this.field1644[var1];
-    }
+	public int field1881;
 
-    public boolean method951(int var1) {
-        return var1 >= 0 && var1 < 112 && this.field1636[var1];
-    }
+	static {
+		field1870 = new class106(64);
+		field1871 = new class106(64);
+	}
 
-    public int[] method955() {
-        int[] var2 = new int[this.field1638];
+	public class199() {
+		this.field1875 = 255;
+		this.field1874 = 255;
+		this.field1877 = -1;
+		this.field1876 = 1;
+		this.field1873 = 70;
+		this.field1878 = -1;
+		this.field1879 = -1;
+		this.field1880 = 30;
+		this.field1881 = 0;
+	}
 
-        System.arraycopy(this.field1637, 0, var2, 0, this.field1638);
+	public void method1208(class187 var1) {
+		while (true) {
+			int var3 = var1.method1096();
+			if (var3 == 0) {
+				return;
+			}
+			this.method1205(var1, var3);
+		}
+	}
 
-        return var2;
-    }
+	void method1205(class187 var1, int var2) {
+		if (var2 == 1) {
+			var1.method1145();
+		} else if (var2 == 2) {
+			this.field1875 = var1.method1096();
+		} else if (var2 == 3) {
+			this.field1874 = var1.method1096();
+		} else if (var2 == 4) {
+			this.field1877 = 0;
+		} else if (var2 == 5) {
+			this.field1873 = var1.method1145();
+		} else if (var2 == 6) {
+			var1.method1096();
+		} else if (var2 == 7) {
+			this.field1878 = var1.method1144();
+		} else if (var2 == 8) {
+			this.field1879 = var1.method1144();
+		} else if (var2 == 11) {
+			this.field1877 = var1.method1145();
+		} else if (var2 == 14) {
+			this.field1880 = var1.method1096();
+		} else if (var2 == 15) {
+			this.field1881 = var1.method1096();
+		}
+	}
 
-    public int[] method956() {
-        int[] var2 = new int[this.field1640];
+	public class84 method1206() {
+		if (this.field1878 < 0) {
+			return null;
+		} else {
+			class84 var2 = (class84) field1871.method648((long) this.field1878);
+			if (var2 != null) {
+				return var2;
+			} else {
+				var2 = class502.method2418(class49.field235, this.field1878, 0);
+				if (null != var2) {
+					field1871.method647(var2, (long) this.field1878);
+				}
+				return var2;
+			}
+		}
+	}
 
-        System.arraycopy(this.field1639, 0, var2, 0, this.field1640);
+	public class84 method1207() {
+		if (this.field1879 < 0) {
+			return null;
+		} else {
+			class84 var2 = (class84) field1871.method648((long) this.field1879);
+			if (var2 != null) {
+				return var2;
+			} else {
+				var2 = class502.method2418(class49.field235, this.field1879, 0);
+				if (null != var2) {
+					field1871.method647(var2, (long) this.field1879);
+				}
+				return var2;
+			}
+		}
+	}
 
-        return var2;
-    }
+	public static void method1209(class338 var0, class338 var1) {
+		field1869 = var0;
+		class49.field235 = var1;
+	}
 }

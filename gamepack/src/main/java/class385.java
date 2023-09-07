@@ -1,38 +1,23 @@
-public class class385 {
-    static class262 field2763;
+final class class385 implements class140 {
 
-    class385() throws Throwable {
-    }
+	public static String field3081;
 
-    public static void method1779(class262 var0) {
-        field2763 = var0;
-    }
+	static class13 field3082;
 
-    public static int method1781(class78 var0, String var1) {
-        int var3 = var0.field697;
-        byte[] var4 = class209.method997(var1);
-        var0.method304(var4.length);
-        var0.field697 += field2763.method1149(var4, 0, var4.length, var0.field695, var0.field697);
-        return var0.field697 - var3;
-    }
+	// $FF: synthetic field
+	final class354 val$cc;
 
-    public static String method1782(class78 var0) {
-        return method1780(var0, 32767);
-    }
+	class385(class354 var1) {
+		this.val$cc = var1;
+	}
 
-    static String method1780(class78 var0, int var1) {
-        try {
-            int var3 = var0.method307();
-            if (var3 > 32767) {
-                var3 = 32767;
-            }
-
-            byte[] var4 = new byte[var3];
-            var0.field697 += field2763.method1150(var0.field695, var0.field697, var4, 0, var3);
-            String var5 = class209.method999(var4, 0, var3);
-            return var5;
-        } catch (Exception var6) {
-            return "Cabbage";
-        }
-    }
+	@Override
+	public void method880() {
+		if (this.val$cc != null && this.val$cc.method1842().field3192 != null) {
+			class165 var2 = new class165();
+			var2.method966(this.val$cc);
+			var2.method967(this.val$cc.method1842().field3192);
+			Client.method459().method2222(var2);
+		}
+	}
 }

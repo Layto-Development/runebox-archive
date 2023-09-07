@@ -1,38 +1,55 @@
-public final class class328 implements Comparable {
-    Object field2389;
-    Object field2390;
-    long field2391;
-    long field2392;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-    class328(Object var1, Object var2) {
-        this.field2389 = var1;
-        this.field2390 = var2;
-    }
+public class class328 {
 
-    int method1523(class328 var1) {
-        if (this.field2392 < var1.field2392) {
-            return -1;
-        } else {
-            return this.field2392 > var1.field2392 ? 1 : 0;
-        }
-    }
+	static long field2535;
 
-    @Override
-    public boolean equals(Object var1) {
-        if (var1 instanceof class328) {
-            return this.field2390.equals(((class328) var1).field2390);
-        } else {
-            throw new IllegalArgumentException();
-        }
-    }
+	static final class328 field2532;
 
-    @Override
-    public int hashCode() {
-        return this.field2390.hashCode();
-    }
+	static final class328 field2534;
 
-    @Override
-    public int compareTo(Object var1) {
-        return this.method1523((class328) var1);
-    }
+	final int field2533;
+
+	static {
+		field2532 = new class328(0);
+		field2534 = new class328(1);
+	}
+
+	class328(int var1) {
+		this.field2533 = var1;
+	}
+
+	static void method1728(ArrayList var0, boolean var1) {
+		if (!var1) {
+			class388.field3091.clear();
+		}
+		Iterator var3 = var0.iterator();
+		while (var3.hasNext()) {
+			class490 var4 = (class490) var3.next();
+			if (var4.field3950 != -1 && var4.field3951 != -1) {
+				if (!var1) {
+					class388.field3091.add(var4);
+				}
+				class388.field3097.add(var4);
+			}
+		}
+	}
+
+	static void method1729(int var0) {
+		Client.field1128 = 0L;
+		if (var0 >= 2) {
+			Client.field1129 = true;
+		} else {
+			Client.field1129 = false;
+		}
+		if (Client.method531() == 1) {
+			class501.field4023.method2522(765, 503);
+		} else {
+			class501.field4023.method2522(7680, 2160);
+		}
+		if (Client.field982 >= 25) {
+			Client.method469();
+		}
+	}
 }

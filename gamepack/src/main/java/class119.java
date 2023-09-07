@@ -1,85 +1,63 @@
-import java.io.*;
+import java.io.IOException;
+import java.net.Socket;
 
-public final class class119 {
-    final long field1084;
-    RandomAccessFile field1083;
-    long field1085;
+public class class119 extends class406 {
 
-    public class119(File var1, String var2, long var3) throws IOException {
-        if (var3 == -1L) {
-            var3 = Long.MAX_VALUE;
-        }
+	static int[][][] field1432;
 
-        if (var1.length() > var3) {
-            var1.delete();
-        }
+	class148 field1430;
 
-        this.field1083 = new RandomAccessFile(var1, var2);
-        this.field1084 = var3;
-        this.field1085 = 0L;
-        int var5 = this.field1083.read();
-        if (var5 != -1 && !var2.equals("r")) {
-            this.field1083.seek(0L);
-            this.field1083.write(var5);
-        }
+	class486 field1429;
 
-        this.field1083.seek(0L);
-    }
+	Socket field1431;
 
-    void method530(long var1) throws IOException {
-        this.field1083.seek(var1);
-        this.field1085 = var1;
-    }
+	public class119(Socket var1, int var2, int var3) throws IOException {
+		this.field1431 = var1;
+		this.field1431.setSoTimeout(30000);
+		this.field1431.setTcpNoDelay(true);
+		this.field1431.setReceiveBufferSize(65536);
+		this.field1431.setSendBufferSize(65536);
+		this.field1430 = new class148(this.field1431.getInputStream(), var2);
+		this.field1429 = new class486(this.field1431.getOutputStream(), var3);
+	}
 
-    public void method531(byte[] var1, int var2, int var3) throws IOException {
-        if ((long) var3 + this.field1085 > this.field1084) {
-            this.field1083.seek(this.field1084);
-            this.field1083.write(1);
-            throw new EOFException();
-        } else {
-            this.field1083.write(var1, var2, var3);
-            this.field1085 += var3;
-        }
-    }
+	@Override
+	public boolean method2068(int var1) throws IOException {
+		return this.field1430.method899(var1);
+	}
 
-    public void method534() throws IOException {
-        this.method535(false);
-    }
+	@Override
+	public int method2070() throws IOException {
+		return this.field1430.method903();
+	}
 
-    public void method535(boolean var1) throws IOException {
-        if (null != this.field1083) {
-            if (var1) {
-                try {
-                    this.field1083.getFD().sync();
-                } catch (SyncFailedException var4) {
-                }
-            }
+	@Override
+	public int method2072() throws IOException {
+		return this.field1430.method900();
+	}
 
-            this.field1083.close();
-            this.field1083 = null;
-        }
+	@Override
+	public int method2069(byte[] var1, int var2, int var3) throws IOException {
+		return this.field1430.method901(var1, var2, var3);
+	}
 
-    }
+	@Override
+	public void method2071(byte[] var1, int var2, int var3) throws IOException {
+		this.field1429.method2342(var1, 0, var3);
+	}
 
-    public long method532() throws IOException {
-        return this.field1083.length();
-    }
+	@Override
+	public void method2073() {
+		this.field1429.method2341();
+		try {
+			this.field1431.close();
+		} catch (IOException var3) {
+		}
+		this.field1430.method902();
+	}
 
-    public int method533(byte[] var1, int var2, int var3) throws IOException {
-        int var5 = this.field1083.read(var1, var2, var3);
-        if (var5 > 0) {
-            this.field1085 += var5;
-        }
-
-        return var5;
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        if (this.field1083 != null) {
-            System.out.println();
-            this.method534();
-        }
-
-    }
+	@Override
+	protected void finalize() {
+		this.method2073();
+	}
 }

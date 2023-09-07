@@ -1,27 +1,42 @@
-public class class529 {
-    public static final class529 field4214;
-    public static final class529 field4215;
-    public static final class529 field4220;
-    static class244 field4221;
-    static class512 field4219;
+public class class529 extends class423 {
 
-    static {
-        field4220 = new class529(2, 0, 4);
-        field4215 = new class529(0, 1, 2);
-        field4214 = new class529(1, 2, 0);
-    }
+	int field4187;
 
-    final int field4216;
-    final int field4217;
-    final int field4218;
+	public boolean field4191;
 
-    class529(int var1, int var2, int var3) {
-        this.field4216 = var1;
-        this.field4217 = var2;
-        this.field4218 = var3;
-    }
+	public byte[] field4188;
 
-    boolean method2521(float var1) {
-        return var1 >= (float) this.field4218;
-    }
+	public int field4189;
+
+	public int field4190;
+
+	class529(int var1, byte[] var2, int var3, int var4) {
+		this.field4190 = var1;
+		this.field4188 = var2;
+		this.field4189 = var3;
+		this.field4187 = var4;
+	}
+
+	class529(int var1, byte[] var2, int var3, int var4, boolean var5) {
+		this.field4190 = var1;
+		this.field4188 = var2;
+		this.field4189 = var3;
+		this.field4187 = var4;
+		this.field4191 = var5;
+	}
+
+	public class529 method2564(class496 var1) {
+		this.field4188 = var1.method2375(this.field4188);
+		this.field4190 = var1.method2376(this.field4190);
+		if (this.field4189 == this.field4187) {
+			this.field4189 = this.field4187 = var1.method2374(this.field4189);
+		} else {
+			this.field4189 = var1.method2374(this.field4189);
+			this.field4187 = var1.method2374(this.field4187);
+			if (this.field4189 == this.field4187) {
+				--this.field4189;
+			}
+		}
+		return this;
+	}
 }

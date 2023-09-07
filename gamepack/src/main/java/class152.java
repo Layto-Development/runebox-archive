@@ -1,32 +1,31 @@
-public class class152 implements class234 {
-    public static final class152 field1313;
-    public static final class152 field1314;
-    public static final class152 field1315;
-    public static final class152 field1319;
-    static final class152 field1316;
-    static final class152 field1318;
-    static final class152[] field1312;
+public class class152 {
 
-    static {
-        field1319 = new class152(14, 0);
-        field1318 = new class152(15, 4);
-        field1313 = new class152(16, -2);
-        field1314 = new class152(18, -2);
-        field1315 = new class152(19, -2);
-        field1316 = new class152(27, 0);
-        field1312 = new class152[32];
-        class152[] var0 = new class152[]{field1319, field1318, field1314, field1316, field1315, field1313};
-        class152[] var1 = var0;
+	public static final class152 field1579;
 
-        for (int var2 = 0; var2 < var1.length; ++var2) {
-            field1312[var1[var2].field1317] = var1[var2];
-        }
+	public static final class152 field1580;
 
-    }
+	public static final class152 field1581;
 
-    public final int field1317;
+	public static final class152 field1582;
 
-    class152(int var1, int var2) {
-        this.field1317 = var1;
-    }
+	public static final class152 field1584;
+
+	public static final class152 field1586;
+
+	static int field1585;
+
+	String field1583;
+
+	static {
+		field1582 = new class152("p11_full");
+		field1581 = new class152("p12_full");
+		field1584 = new class152("b12_full");
+		field1580 = new class152("verdana_11pt_regular");
+		field1586 = new class152("verdana_13pt_regular");
+		field1579 = new class152("verdana_15pt_regular");
+	}
+
+	class152(String var1) {
+		this.field1583 = var1;
+	}
 }

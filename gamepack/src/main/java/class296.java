@@ -1,23 +1,16 @@
-public class class296 {
-    final int field2144;
-    final int field2145;
-    final String field2146;
+public final class class296 {
 
-    class296(int var1, int var2, String var3) {
-        this.field2144 = var1;
-        this.field2145 = var2;
-        this.field2146 = var3;
-    }
+	final int[] field2344;
 
-    class296(class78 var1) {
-        this(var1.method260(), var1.method260(), var1.method268());
-    }
+	class296() {
+		this.field2344 = new int[4096];
+	}
 
-    String method1322() {
-        return Integer.toHexString(this.field2144) + Integer.toHexString(this.field2145) + this.field2146;
-    }
+	class296(int[] var1) {
+		this.field2344 = var1;
+	}
 
-    int method1321() {
-        return this.field2145;
-    }
+	final int method1593(int var1, int var2) {
+		return this.field2344[var1 + var2 * 64];
+	}
 }

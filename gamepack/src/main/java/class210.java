@@ -1,31 +1,16 @@
-public class class210 {
-    static final int[] field1686;
-    static final int[] field1687;
+final class class210 implements class378 {
 
-    static {
-        field1686 = new int[16384];
-        field1687 = new int[16384];
-        double var0 = 3.834951969714103E-4D;
+	void method1263(Long var1, class187 var2) {
+		var2.method1122(var1);
+	}
 
-        for (int var2 = 0; var2 < 16384; ++var2) {
-            field1686[var2] = (int) (16384.0D * Math.sin((double) var2 * var0));
-            field1687[var2] = (int) (16384.0D * Math.cos(var0 * (double) var2));
-        }
+	@Override
+	public Object method2005(class187 var1) {
+		return var1.method1101();
+	}
 
-    }
-
-    class210() throws Throwable {
-    }
-
-    public static int method1002(int var0, int var1) {
-        return (int) Math.round(Math.atan2(var0, var1) * 2607.5945876176133D) & 16383;
-    }
-
-    public static int method1001(int var0) {
-        return field1686[var0 & 16383];
-    }
-
-    public static int method1003(int var0) {
-        return field1687[var0 & 16383];
-    }
+	@Override
+	public void method2006(Object var1, class187 var2) {
+		this.method1263((Long) var1, var2);
+	}
 }

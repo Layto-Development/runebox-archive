@@ -1,23 +1,32 @@
-public class class164 extends class438 {
-    static class372 field1425;
-    // $FF: synthetic field
-    final class423 this$0;
-    byte field1426;
-    int field1427;
+public class class164 implements class228 {
 
-    class164(class423 var1) {
-        this.this$0 = var1;
-        this.field1427 = -1;
-    }
+	static final class164 field1659;
 
-    @Override
-    void method2006(class78 var1) {
-        this.field1427 = var1.method309();
-        this.field1426 = var1.method261();
-    }
+	static final class164 field1660;
 
-    @Override
-    void method2005(class133 var1) {
-        var1.method610(this.field1427, this.field1426);
-    }
+	static final class164 field1663;
+
+	final int field1662;
+
+	public final int field1661;
+
+	static {
+		field1660 = new class164(0, 0);
+		field1663 = new class164(2, 1);
+		field1659 = new class164(1, 2);
+	}
+
+	class164(int var1, int var2) {
+		this.field1661 = var1;
+		this.field1662 = var2;
+	}
+
+	@Override
+	public int method1362() {
+		return this.field1662;
+	}
+
+	static class164[] method964() {
+		return new class164[] { field1660, field1659, field1663 };
+	}
 }

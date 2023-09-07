@@ -1,32 +1,93 @@
-public class class295 implements class330 {
-    static final class295 field2137;
-    static final class295 field2138;
-    static final class295 field2139;
-    static final class295 field2140;
-    static final class295 field2142;
-    public static class536 field2141;
-    static class372 field2136;
+public class class295 {
 
-    static {
-        field2142 = new class295(0);
-        field2137 = new class295(1);
-        field2140 = new class295(2);
-        field2138 = new class295(3);
-        field2139 = new class295(4);
-    }
+	class295() throws Throwable {
+	}
 
-    final int field2143;
+	public static void method1590(String[] var0, short[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var5 = (var3 + var2) / 2;
+			int var6 = var2;
+			String var7 = var0[var5];
+			var0[var5] = var0[var3];
+			var0[var3] = var7;
+			short var8 = var1[var5];
+			var1[var5] = var1[var3];
+			var1[var3] = var8;
+			for (int var9 = var2; var9 < var3; ++var9) {
+				if (var7 == null || null != var0[var9] && var0[var9].compareTo(var7) < (var9 & 1)) {
+					String var10 = var0[var9];
+					var0[var9] = var0[var6];
+					var0[var6] = var10;
+					short var11 = var1[var9];
+					var1[var9] = var1[var6];
+					var1[var6++] = var11;
+				}
+			}
+			var0[var3] = var0[var6];
+			var0[var6] = var7;
+			var1[var3] = var1[var6];
+			var1[var6] = var8;
+			method1590(var0, var1, var2, var6 - 1);
+			method1590(var0, var1, var6 + 1, var3);
+		}
+	}
 
-    class295(int var1) {
-        this.field2143 = var1;
-    }
+	public static void method1591(String[] var0, int[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var5 = (var3 + var2) / 2;
+			int var6 = var2;
+			String var7 = var0[var5];
+			var0[var5] = var0[var3];
+			var0[var3] = var7;
+			int var8 = var1[var5];
+			var1[var5] = var1[var3];
+			var1[var3] = var8;
+			for (int var9 = var2; var9 < var3; ++var9) {
+				if (var7 == null || null != var0[var9] && var0[var9].compareTo(var7) < (var9 & 1)) {
+					String var10 = var0[var9];
+					var0[var9] = var0[var6];
+					var0[var6] = var10;
+					int var11 = var1[var9];
+					var1[var9] = var1[var6];
+					var1[var6++] = var11;
+				}
+			}
+			var0[var3] = var0[var6];
+			var0[var6] = var7;
+			var1[var3] = var1[var6];
+			var1[var6] = var8;
+			method1591(var0, var1, var2, var6 - 1);
+			method1591(var0, var1, var6 + 1, var3);
+		}
+	}
 
-    static class295[] method1320() {
-        return new class295[]{field2140, field2142, field2138, field2137, field2139};
-    }
-
-    @Override
-    public int method1533() {
-        return this.field2143;
-    }
+	public static void method1592(int[] var0, int[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var5 = (var2 + var3) / 2;
+			int var6 = var2;
+			int var7 = var0[var5];
+			var0[var5] = var0[var3];
+			var0[var3] = var7;
+			int var8 = var1[var5];
+			var1[var5] = var1[var3];
+			var1[var3] = var8;
+			int var9 = var7 == Integer.MAX_VALUE ? 0 : 1;
+			for (int var10 = var2; var10 < var3; ++var10) {
+				if (var0[var10] < (var10 & var9) + var7) {
+					int var11 = var0[var10];
+					var0[var10] = var0[var6];
+					var0[var6] = var11;
+					int var12 = var1[var10];
+					var1[var10] = var1[var6];
+					var1[var6++] = var12;
+				}
+			}
+			var0[var3] = var0[var6];
+			var0[var6] = var7;
+			var1[var3] = var1[var6];
+			var1[var6] = var8;
+			method1592(var0, var1, var2, var6 - 1);
+			method1592(var0, var1, var6 + 1, var3);
+		}
+	}
 }

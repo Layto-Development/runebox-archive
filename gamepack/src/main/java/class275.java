@@ -1,123 +1,162 @@
-import java.util.LinkedList;
+public class class275 implements class521 {
 
-public abstract class class275 {
-    boolean field2018;
-    boolean field2019;
-    byte[][][] field2007;
-    byte[][][] field2020;
-    class455[][][][] field2017;
-    int field2006;
-    int field2008;
-    int field2009;
-    int field2010;
-    int field2012;
-    int field2014;
-    int field2015;
-    int field2016;
-    short[][][] field2011;
-    short[][][] field2013;
+	int field2251;
 
-    class275() {
-        this.field2016 = -1;
-        this.field2006 = -1;
-        new LinkedList();
-        this.field2018 = false;
-        this.field2019 = false;
-    }
+	int field2252;
 
-    abstract void method1236(class78 var1);
+	int field2253;
 
-    boolean method1233() {
-        return this.field2018 && this.field2019;
-    }
+	@Override
+	public class432 method2521() {
+		byte var2;
+		if (class156.field1618.startsWith("win")) {
+			var2 = 1;
+		} else if (class156.field1618.startsWith("mac")) {
+			var2 = 2;
+		} else if (class156.field1618.startsWith("linux")) {
+			var2 = 3;
+		} else {
+			var2 = 4;
+		}
+		String var3;
+		try {
+			var3 = System.getProperty("os.arch").toLowerCase();
+		} catch (Exception var31) {
+			var3 = "";
+		}
+		String var4;
+		try {
+			var4 = System.getProperty("os.version").toLowerCase();
+		} catch (Exception var30) {
+			var4 = "";
+		}
+		String var5 = "Unknown";
+		String var6 = "1.1";
+		try {
+			var5 = System.getProperty("java.vendor");
+			var6 = System.getProperty("java.version");
+		} catch (Exception var29) {
+		}
+		boolean var7;
+		if (!var3.startsWith("amd64") && !var3.startsWith("x86_64")) {
+			var7 = false;
+		} else {
+			var7 = true;
+		}
+		byte var8 = 0;
+		if (var2 == 1) {
+			if (var4.indexOf("4.0") != -1) {
+				var8 = 1;
+			} else if (var4.indexOf("4.1") != -1) {
+				var8 = 2;
+			} else if (var4.indexOf("4.9") != -1) {
+				var8 = 3;
+			} else if (var4.indexOf("5.0") != -1) {
+				var8 = 4;
+			} else if (var4.indexOf("5.1") != -1) {
+				var8 = 5;
+			} else if (var4.indexOf("5.2") != -1) {
+				var8 = 8;
+			} else if (var4.indexOf("6.0") != -1) {
+				var8 = 6;
+			} else if (var4.indexOf("6.1") != -1) {
+				var8 = 7;
+			} else if (var4.indexOf("6.2") != -1) {
+				var8 = 9;
+			} else if (var4.indexOf("6.3") != -1) {
+				var8 = 10;
+			} else if (var4.indexOf("10.0") != -1) {
+				var8 = 11;
+			}
+		} else if (var2 == 2) {
+			if (var4.indexOf("10.4") != -1) {
+				var8 = 20;
+			} else if (var4.indexOf("10.5") != -1) {
+				var8 = 21;
+			} else if (var4.indexOf("10.6") != -1) {
+				var8 = 22;
+			} else if (var4.indexOf("10.7") != -1) {
+				var8 = 23;
+			} else if (var4.indexOf("10.8") != -1) {
+				var8 = 24;
+			} else if (var4.indexOf("10.9") != -1) {
+				var8 = 25;
+			} else if (var4.indexOf("10.10") != -1) {
+				var8 = 26;
+			} else if (var4.indexOf("10.11") != -1) {
+				var8 = 27;
+			} else if (var4.indexOf("10.12") != -1) {
+				var8 = 28;
+			} else if (var4.indexOf("10.13") != -1) {
+				var8 = 29;
+			}
+		}
+		byte var9;
+		if (var5.toLowerCase().indexOf("sun") != -1) {
+			var9 = 1;
+		} else if (var5.toLowerCase().indexOf("microsoft") != -1) {
+			var9 = 2;
+		} else if (var5.toLowerCase().indexOf("apple") != -1) {
+			var9 = 3;
+		} else if (var5.toLowerCase().indexOf("oracle") != -1) {
+			var9 = 5;
+		} else {
+			var9 = 4;
+		}
+		this.method1529(var6);
+		boolean var10 = false;
+		int var11 = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
+		int var12;
+		if (this.field2252 > 3) {
+			var12 = Runtime.getRuntime().availableProcessors();
+		} else {
+			var12 = 0;
+		}
+		boolean var13 = false;
+		String var14 = "";
+		String var15 = "";
+		String var16 = "";
+		String var17 = "";
+		String var18 = "";
+		String var19 = "";
+		boolean var20 = false;
+		boolean var21 = false;
+		boolean var22 = false;
+		boolean var23 = false;
+		int[] var24 = new int[3];
+		boolean var25 = false;
+		String var26 = "";
+		String var27 = "";
+		boolean var28 = false;
+		return new class432(var2, var7, var8, var9, this.field2252, this.field2253, this.field2251, false, var11, var12, 0, 0, var14, var15, var16, var17, 0, 0, 0, 0, var18, var19, var24, 0, "", "");
+	}
 
-    void method1234(class68 var1) {
-        if (!this.method1233()) {
-            byte[] var3 = var1.method188(this.field2016, this.field2006);
-            if (var3 != null) {
-                this.method1236(new class78(var3));
-                this.field2018 = true;
-                this.field2019 = true;
-            }
+	void method1529(String var1) {
+		if (var1.startsWith("1.")) {
+			this.method1528(var1);
+		} else {
+			this.method1527(var1);
+		}
+	}
 
-        }
-    }
+	void method1528(String var1) {
+		String[] var3 = var1.split("\\.");
+		try {
+			this.field2252 = Integer.parseInt(var3[1]);
+			var3 = var3[2].split("_");
+			this.field2253 = Integer.parseInt(var3[0]);
+			this.field2251 = Integer.parseInt(var3[1]);
+		} catch (Exception var5) {
+		}
+	}
 
-    void method1235() {
-        this.field2013 = null;
-        this.field2011 = null;
-        this.field2020 = null;
-        this.field2007 = null;
-        this.field2017 = null;
-        this.field2018 = false;
-        this.field2019 = false;
-    }
-
-    void method1238(int var1, int var2, class78 var3) {
-        int var5 = var3.method260();
-        if (var5 != 0) {
-            if ((var5 & 1) != 0) {
-                this.method1237(var1, var2, var3, var5);
-            } else {
-                this.method1241(var1, var2, var3, var5);
-            }
-
-        }
-    }
-
-    void method1237(int var1, int var2, class78 var3, int var4) {
-        boolean var6 = (var4 & 2) != 0;
-        if (var6) {
-            this.field2011[0][var1][var2] = (short) var3.method309();
-        }
-
-        this.field2013[0][var1][var2] = (short) var3.method309();
-    }
-
-    void method1241(int var1, int var2, class78 var3, int var4) {
-        int var6 = ((var4 & 24) >> 3) + 1;
-        boolean var7 = (var4 & 2) != 0;
-        boolean var8 = (var4 & 4) != 0;
-        this.field2013[0][var1][var2] = (short) var3.method309();
-        int var9;
-        int var10;
-        int var12;
-        if (var7) {
-            var9 = var3.method260();
-
-            for (var10 = 0; var10 < var9; ++var10) {
-                int var11 = var3.method309();
-                if (var11 != 0) {
-                    this.field2011[var10][var1][var2] = (short) var11;
-                    var12 = var3.method260();
-                    this.field2020[var10][var1][var2] = (byte) (var12 >> 2);
-                    this.field2007[var10][var1][var2] = (byte) (var12 & 3);
-                }
-            }
-        }
-
-        if (var8) {
-            for (var9 = 0; var9 < var6; ++var9) {
-                var10 = var3.method260();
-                if (var10 != 0) {
-                    class455[] var15 = this.field2017[var9][var1][var2] = new class455[var10];
-
-                    for (var12 = 0; var12 < var10; ++var12) {
-                        int var13 = var3.method308();
-                        int var14 = var3.method260();
-                        var15[var12] = new class455(var13, var14 >> 2, var14 & 3);
-                    }
-                }
-            }
-        }
-
-    }
-
-    int method1239() {
-        return this.field2008;
-    }
-
-    int method1240() {
-        return this.field2015;
-    }
+	void method1527(String var1) {
+		String[] var3 = var1.split("\\.");
+		try {
+			this.field2252 = Integer.parseInt(var3[0]);
+			this.field2253 = Integer.parseInt(var3[1]);
+			this.field2251 = Integer.parseInt(var3[2]);
+		} catch (Exception var5) {
+		}
+	}
 }

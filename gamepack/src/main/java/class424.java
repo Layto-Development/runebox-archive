@@ -1,257 +1,120 @@
-public final class class424 extends class514 {
-    static int field2919;
-    static int field2926;
+public class class424 {
 
-    static {
-        field2919 = 1;
-        field2926 = 1;
-    }
+	public static int field3281;
 
-    class307 field2924;
-    class307 field2925;
-    class345 field2920;
-    class511 field2922;
-    int field2921;
-    String field2923;
+	public static long[] field3283;
 
-    class424() {
-        this.field2923 = "";
-        this.field2921 = 31;
-    }
+	static boolean field3276;
 
-    static void method1963(class26 var0, int var1, int var2) {
-        Object[] var4 = var0.field141;
-        class443 var5;
-        if (class430.method1968(var0.field145)) {
-            class29.field162 = (class16) var4[0];
-            class192 var6 = class192.method893(class29.field162.field63);
-            var5 = class443.method2025(var0.field145, var6.field1562, var6.field1576);
-        } else {
-            int var7 = (Integer) var4[0];
-            var5 = class443.method2022(var7);
-        }
+	static boolean field3278;
 
-        if (var5 != null) {
-            class269.method1185(var0, var5, var1, var2);
-        }
+	static int field3273;
 
-    }
+	static int field3274;
 
-    void method1946(String var1) {
-        this.field2923 = null == var1 ? "" : var1;
-    }
+	static int field3275;
 
-    void method1947(int var1) {
-        this.field2921 = var1;
-    }
+	static int field3277;
 
-    boolean method1948(int var1) {
-        if (var1 >= 0 && var1 <= 4) {
-            return (this.field2921 & 1 << var1) != 0;
-        } else {
-            return true;
-        }
-    }
+	static int field3279;
 
-    String method1949() {
-        if (!this.field2923.isEmpty()) {
-            return this.field2923;
-        } else {
-            class345 var2 = this.field2920;
-            if (var2.field2503 != null) {
-                var2 = var2.method1625();
-                if (null == var2) {
-                    var2 = this.field2920;
-                }
-            }
+	static int field3280;
 
-            return var2.field2475;
-        }
-    }
+	static int field3282;
 
-    void method1950(int var1, class447 var2) {
-        int var4 = super.field4166[0];
-        int var5 = super.field4163[0];
-        if (var1 == 0) {
-            --var4;
-            ++var5;
-        }
+	static {
+		field3278 = false;
+		field3274 = 0;
+		field3277 = 0;
+		field3276 = false;
+		field3281 = 0;
+		field3283 = new long[1000];
+	}
 
-        if (var1 == 1) {
-            ++var5;
-        }
+	class424() throws Throwable {
+	}
 
-        if (var1 == 2) {
-            ++var4;
-            ++var5;
-        }
+	public static long method2133(int var0) {
+		return field3283[var0];
+	}
 
-        if (var1 == 3) {
-            --var4;
-        }
+	public static int method2127(int var0) {
+		long var3 = field3283[var0];
+		int var2 = (int) (var3 >>> 0 & 127L);
+		return var2;
+	}
 
-        if (var1 == 4) {
-            ++var4;
-        }
+	public static int method2126(int var0) {
+		long var3 = field3283[var0];
+		int var2 = (int) (var3 >>> 7 & 127L);
+		return var2;
+	}
 
-        if (var1 == 5) {
-            --var4;
-            --var5;
-        }
+	public static int method2131(long var0) {
+		return (int) (var0 >>> 14 & 3L);
+	}
 
-        if (var1 == 6) {
-            --var5;
-        }
+	public static int method2132(long var0) {
+		return (int) (var0 >>> 17 & 4294967295L);
+	}
 
-        if (var1 == 7) {
-            ++var4;
-            --var5;
-        }
+	public static long method2134(int var0, int var1, int var2, boolean var3, int var4) {
+		long var6 = (long) ((var0 & 127) << 0 | (var1 & 127) << 7 | (var2 & 3) << 14) | ((long) var4 & 4294967295L) << 17;
+		if (var3) {
+			var6 |= 65536L;
+		}
+		return var6;
+	}
 
-        if (super.field4136 != -1 && class124.method575(super.field4136).field1138 == 1) {
-            super.field4136 = -1;
-        }
+	public static final void method2129(int var0, int var1) {
+		field3274 = var0;
+		field3277 = var1;
+		field3278 = true;
+		field3281 = 0;
+		field3276 = false;
+	}
 
-        if (super.field4139 < 9) {
-            ++super.field4139;
-        }
+	public static final void method2130() {
+		field3278 = false;
+		field3281 = 0;
+	}
 
-        for (int var6 = super.field4139; var6 > 0; --var6) {
-            super.field4166[var6] = super.field4166[var6 - 1];
-            super.field4163[var6] = super.field4163[var6 - 1];
-            super.field4164[var6] = super.field4164[var6 - 1];
-        }
+	static final boolean method2128() {
+		return field3278;
+	}
 
-        super.field4166[0] = var4;
-        super.field4163[0] = var5;
-        super.field4164[0] = var2;
-    }
-
-    void method1951(int var1, int var2, boolean var3) {
-        if (super.field4136 != -1 && class124.method575(super.field4136).field1138 == 1) {
-            super.field4136 = -1;
-        }
-
-        if (!var3) {
-            int var5 = var1 - super.field4166[0];
-            int var6 = var2 - super.field4163[0];
-            if (var5 >= -8 && var5 <= 8 && var6 >= -8 && var6 <= 8) {
-                if (super.field4139 < 9) {
-                    ++super.field4139;
-                }
-
-                for (int var7 = super.field4139; var7 > 0; --var7) {
-                    super.field4166[var7] = super.field4166[var7 - 1];
-                    super.field4163[var7] = super.field4163[var7 - 1];
-                    super.field4164[var7] = super.field4164[var7 - 1];
-                }
-
-                super.field4166[0] = var1;
-                super.field4163[0] = var2;
-                super.field4164[0] = class447.field3033;
-                return;
-            }
-        }
-
-        super.field4139 = 0;
-        super.field4155 = 0;
-        super.field4165 = 0;
-        super.field4166[0] = var1;
-        super.field4163[0] = var2;
-        super.field4121 = super.field4095 * 64 + 128 * super.field4166[0];
-        super.field4092 = super.field4163[0] * 128 + super.field4095 * 64;
-    }
-
-    @Override
-    protected class448 method2238() {
-        if (this.field2920 == null) {
-            return null;
-        } else {
-            class124 var2 = super.field4136 != -1 && super.field4153 == 0 ? class124.method575(super.field4136) : null;
-            class124 var3 = super.field4104 != -1 && (super.field4097 != super.field4104 || var2 == null) ? class124.method575(super.field4104) : null;
-            class448 var4 = null;
-            if (this.field2924 != null && this.field2924.field2253) {
-                var4 = class180.field1528.field2054.method156(var2, super.field4137, var3, super.field4091);
-            } else {
-                var4 = this.field2920.method1623(var2, super.field4137, var3, super.field4091, this.field2924);
-            }
-
-            if (null == var4) {
-                return null;
-            } else {
-                var4.method2045();
-                super.field4151 = var4.field3601;
-                int var5 = var4.field3042;
-                var4 = this.method2506(var4);
-                if (this.field2920.field2476 == 1) {
-                    var4.field3043 = true;
-                }
-
-                if (super.field4144 != 0 && Client.field4078 >= super.field4152 && Client.field4078 < super.field4094) {
-                    var4.field3098 = super.field4154;
-                    var4.field3068 = super.field4112;
-                    var4.field3066 = super.field4106;
-                    var4.field3104 = super.field4144;
-                    var4.field3105 = (short) var5;
-                } else {
-                    var4.field3104 = 0;
-                }
-
-                return var4;
-            }
-        }
-    }
-
-    @Override
-	boolean method2501() {
-        return null != this.field2920;
-    }
-
-    int[] method1954() {
-        return null != this.field2922 ? this.field2922.method2301() : this.field2920.method1628();
-    }
-
-    short[] method1961() {
-        return this.field2922 != null ? this.field2922.method2302() : this.field2920.method1630();
-    }
-
-    void method1964(int var1, int var2, short var3) {
-        if (this.field2922 == null) {
-            this.field2922 = new class511(this.field2920);
-        }
-
-        this.field2922.method2303(var1, var2, var3);
-    }
-
-    void method1955(int[] var1, short[] var2) {
-        if (null == this.field2922) {
-            this.field2922 = new class511(this.field2920);
-        }
-
-        this.field2922.method2304(var1, var2);
-    }
-
-    void method1956() {
-        this.field2922 = null;
-    }
-
-    void method1962(class307 var1) {
-        this.field2925 = var1;
-    }
-
-    class307 method1958() {
-        return this.field2925;
-    }
-
-    void method1959(class307 var1) {
-        this.field2924 = var1;
-    }
-
-    void method1957() {
-        this.field2925 = null;
-    }
-
-    void method1960() {
-        this.field2924 = null;
-    }
+	static final void method2125() {
+		if (!field3276) {
+			int var1 = class372.field2983;
+			int var2 = class372.field2984;
+			int var3 = class372.field3017;
+			int var4 = class372.field2985;
+			boolean var5 = true;
+			boolean var6 = true;
+			int var7 = (field3274 - class238.method1389()) * 50 / class238.method1394();
+			int var8 = (field3277 - class238.method1390()) * 50 / class238.method1394();
+			int var9 = (field3274 - class238.method1389()) * 3500 / class238.method1394();
+			int var10 = (field3277 - class238.method1390()) * 3500 / class238.method1394();
+			int var11 = class309.method1670(var8, 50, var2, var1);
+			int var12 = 50 * var2 - var1 * var8 >> 16;
+			var8 = var11;
+			var11 = class309.method1670(var10, 3500, var2, var1);
+			int var13 = 3500 * var2 - var1 * var10 >> 16;
+			var10 = var11;
+			var11 = class309.method1671(var7, var12, var4, var3);
+			int var14 = class309.method1672(var7, var12, var4, var3);
+			var7 = var11;
+			var11 = class309.method1671(var9, var13, var4, var3);
+			int var15 = class309.method1672(var9, var13, var4, var3);
+			field3273 = (var11 + var7) / 2;
+			field3282 = (var8 + var10) / 2;
+			field3279 = (var14 + var15) / 2;
+			class534.field4209 = (var11 - var7) / 2;
+			field3275 = (var10 - var8) / 2;
+			class513.field4088 = (var15 - var14) / 2;
+			field3280 = Math.abs(class534.field4209);
+			class520.field4128 = Math.abs(field3275);
+			class512.field4087 = Math.abs(class513.field4088);
+		}
+	}
 }

@@ -1,43 +1,44 @@
-public final class class104 {
-    class104() throws Throwable {
-    }
+public class class104 {
 
-    public static int method495(CharSequence var0) {
-        int var2 = var0.length();
-        int var3 = 0;
+	class158 field1278;
 
-        for (int var4 = 0; var4 < var2; ++var4) {
-            char var5 = var0.charAt(var4);
-            if (var5 <= 127) {
-                ++var3;
-            } else if (var5 <= 2047) {
-                var3 += 2;
-            } else {
-                var3 += 3;
-            }
-        }
+	class158 field1279;
 
-        return var3;
-    }
+	public class104() {
+		this.field1279 = new class158();
+		this.field1279.field1620 = this.field1279;
+		this.field1279.field1619 = this.field1279;
+	}
 
-    public static int method496(byte[] var0, int var1, CharSequence var2) {
-        int var4 = var2.length();
-        int var5 = var1;
+	public void method640(class158 var1) {
+		if (var1.field1619 != null) {
+			var1.method926();
+		}
+		var1.field1619 = this.field1279.field1619;
+		var1.field1620 = this.field1279;
+		var1.field1619.field1620 = var1;
+		var1.field1620.field1619 = var1;
+	}
 
-        for (int var6 = 0; var6 < var4; ++var6) {
-            char var7 = var2.charAt(var6);
-            if (var7 <= 127) {
-                var0[var5++] = (byte) var7;
-            } else if (var7 <= 2047) {
-                var0[var5++] = (byte) (192 | var7 >> 6);
-                var0[var5++] = (byte) (128 | var7 & '?');
-            } else {
-                var0[var5++] = (byte) (224 | var7 >> '\f');
-                var0[var5++] = (byte) (128 | var7 >> 6 & 63);
-                var0[var5++] = (byte) (128 | var7 & '?');
-            }
-        }
+	public class158 method642() {
+		class158 var1 = this.field1279.field1620;
+		if (var1 == this.field1279) {
+			this.field1278 = null;
+			return null;
+		} else {
+			this.field1278 = var1.field1620;
+			return var1;
+		}
+	}
 
-        return var5 - var1;
-    }
+	public class158 method641() {
+		class158 var1 = this.field1278;
+		if (var1 == this.field1279) {
+			this.field1278 = null;
+			return null;
+		} else {
+			this.field1278 = var1.field1620;
+			return var1;
+		}
+	}
 }

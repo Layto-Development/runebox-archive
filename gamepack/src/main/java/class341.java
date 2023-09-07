@@ -1,13 +1,121 @@
-public class class341 {
-    class529 field2455;
-    int field2454;
-    int field2456;
-    String field2453;
+import java.security.Principal;
+import java.security.cert.Certificate;
+import javax.net.ssl.SSLPeerUnverifiedException;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSessionContext;
+import javax.security.cert.X509Certificate;
 
-    class341(String var1, int var2, int var3, class529 var4) {
-        this.field2453 = var1;
-        this.field2456 = var2;
-        this.field2454 = var3;
-        this.field2455 = var4;
-    }
+class class341 implements SSLSession {
+
+	// $FF: synthetic field
+	final class538 this$1;
+
+	class341(class538 var1) {
+		this.this$1 = var1;
+	}
+
+	@Override
+	public int getApplicationBufferSize() {
+		return 0;
+	}
+
+	@Override
+	public String getCipherSuite() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public long getCreationTime() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public byte[] getId() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public long getLastAccessedTime() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Certificate[] getLocalCertificates() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Principal getLocalPrincipal() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public int getPacketBufferSize() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
+		return null;
+	}
+
+	@Override
+	public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
+		return this.this$1.field4241;
+	}
+
+	@Override
+	public String getPeerHost() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public int getPeerPort() {
+		return 0;
+	}
+
+	@Override
+	public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
+		return null;
+	}
+
+	@Override
+	public String getProtocol() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public SSLSessionContext getSessionContext() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Object getValue(String var1) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public String[] getValueNames() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void invalidate() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public boolean isValid() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void putValue(String var1, Object var2) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void removeValue(String var1) {
+		throw new UnsupportedOperationException();
+	}
 }

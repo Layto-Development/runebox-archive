@@ -1,33 +1,32 @@
-public abstract class class391 extends class70 {
-    class261 field2784;
-    class391 field2781;
-    int field2782;
-    volatile boolean field2783;
+import java.awt.Component;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 
-    protected class391() {
-        this.field2783 = true;
-    }
+public final class class391 implements class403, MouseWheelListener {
 
-    protected abstract class391 method1811();
+	int field3109;
 
-    protected abstract class391 method1812();
+	class391() {
+		this.field3109 = 0;
+	}
 
-    protected abstract int method1809();
+	void method2028(Component var1) {
+		var1.addMouseWheelListener(this);
+	}
 
-    protected abstract void method1813(int var1);
+	void method2030(Component var1) {
+		var1.removeMouseWheelListener(this);
+	}
 
-    protected abstract void method1814(int[] var1, int var2, int var3);
+	@Override
+	public synchronized void mouseWheelMoved(MouseWheelEvent var1) {
+		this.field3109 += var1.getWheelRotation();
+	}
 
-    int method1810() {
-        return 255;
-    }
-
-    final void method1815(int[] var1, int var2, int var3) {
-        if (this.field2783) {
-            this.method1814(var1, var2, var3);
-        } else {
-            this.method1813(var3);
-        }
-
-    }
+	@Override
+	public synchronized int method2064() {
+		int var2 = this.field3109;
+		this.field3109 = 0;
+		return var2;
+	}
 }

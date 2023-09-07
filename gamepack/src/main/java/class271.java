@@ -1,12 +1,25 @@
-import netscape.javascript.JSObject;
-
-import java.applet.Applet;
-
 public class class271 {
-    class271() throws Throwable {
-    }
 
-    public static Object method1215(Applet var0, String var1, Object[] var2) throws Throwable {
-        return JSObject.getWindow(var0).call(var1, var2);
-    }
+	public static int field2226;
+
+	// $FF: synthetic field
+	final class213 this$0;
+
+	public float[] field2223;
+
+	public int field2222;
+
+	public int field2224;
+
+	public int field2225;
+
+	public String field2227;
+
+	class271(class213 var1) {
+		this.this$0 = var1;
+		this.field2223 = new float[4];
+		this.field2224 = 1;
+		this.field2225 = 1;
+		this.field2222 = 0;
+	}
 }

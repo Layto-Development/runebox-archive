@@ -1,42 +1,21 @@
-import org.bouncycastle.crypto.tls.DefaultTlsClient;
-import org.bouncycastle.crypto.tls.TlsAuthentication;
+import java.util.Calendar;
+import java.util.TimeZone;
 
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.util.Hashtable;
+public class class179 {
 
-class class179 extends DefaultTlsClient {
-    static class539[] field1520;
-    static class68 field1519;
-    // $FF: synthetic field
-    final class264 this$1;
+	public static Calendar field1774;
 
-    class179(class264 var1) {
-        this.this$1 = var1;
-    }
+	public static final String[] field1773;
 
-    @Override
-    public Hashtable getClientExtensions() throws IOException {
-        Hashtable var1 = super.getClientExtensions();
-        if (var1 == null) {
-            var1 = new Hashtable();
-        }
+	public static final String[][] field1775;
 
-        byte[] var2 = this.this$1.val$host.getBytes();
-        ByteArrayOutputStream var3 = new ByteArrayOutputStream();
-        DataOutputStream var4 = new DataOutputStream(var3);
-        var4.writeShort(var2.length + 3);
-        var4.writeByte(0);
-        var4.writeShort(var2.length);
-        var4.write(var2);
-        var4.close();
-        var1.put(0, var3.toByteArray());
-        return var1;
-    }
+	static {
+		field1775 = new String[][] { { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }, { "Jan", "Feb", "M\u00e4r", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez" }, { "jan", "f\u00e9v", "mars", "avr", "mai", "juin", "juil", "ao\u00fbt", "sept", "oct", "nov", "d\u00e9c" }, { "jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez" }, { "jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec" }, { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }, { "ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic" } };
+		field1773 = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+		Calendar.getInstance();
+		field1774 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+	}
 
-    @Override
-    public TlsAuthentication getAuthentication() throws IOException {
-        return new class126(this);
-    }
+	class179() throws Throwable {
+	}
 }

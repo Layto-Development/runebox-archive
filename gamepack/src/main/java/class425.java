@@ -1,38 +1,33 @@
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+public class class425 extends class417 {
 
-public class class425 implements Iterator {
-    class252 field2927;
-    int field2928;
-    int field2929;
+	public static short[][] field3287;
 
-    class425(class252 var1) {
-        this.field2928 = 0;
-        this.field2929 = this.field2927.field1909;
-        this.field2927 = var1;
-    }
+	int field3284;
 
-    @Override
-    public boolean hasNext() {
-        return this.field2928 < this.field2927.field1913;
-    }
+	int field3285;
 
-    @Override
-    public Object next() {
-        if (this.field2929 != this.field2927.field1909) {
-            throw new ConcurrentModificationException();
-        } else if (this.field2928 < this.field2927.field1913) {
-            Object var1 = this.field2927.field1911[this.field2928].field616;
-            ++this.field2928;
-            return var1;
-        } else {
-            throw new NoSuchElementException();
-        }
-    }
+	int field3286;
 
-    @Override
-    public void remove() {
-        throw new UnsupportedOperationException();
-    }
+	int field3288;
+
+	// $FF: synthetic field
+	final class400 this$0;
+
+	class425(class400 var1) {
+		this.this$0 = var1;
+		this.field3286 = -1;
+	}
+
+	@Override
+	void method2095(class187 var1) {
+		this.field3286 = var1.method1145();
+		this.field3285 = var1.method1100();
+		this.field3288 = var1.method1096();
+		this.field3284 = var1.method1096();
+	}
+
+	@Override
+	void method2094(class518 var1) {
+		var1.method2508(this.field3286, this.field3285, this.field3288, this.field3284);
+	}
 }

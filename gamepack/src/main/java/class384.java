@@ -1,9 +1,17 @@
-public class class384 {
-    class389 field2762;
-    int field2761;
+public final class class384 {
 
-    class384(int var1, class389 var2) {
-        this.field2761 = var1;
-        this.field2762 = var2;
-    }
+	int field3077;
+
+	int field3078;
+
+	int field3079;
+
+	int field3080;
+
+	// $FF: synthetic field
+	final class396 this$0;
+
+	class384(class396 var1) {
+		this.this$0 = var1;
+	}
 }

@@ -1,54 +1,70 @@
+import java.lang.management.GarbageCollectorMXBean;
+
 public class class186 {
-    static int[] field1534;
 
-    class186() throws Throwable {
-    }
+	static GarbageCollectorMXBean field1820;
 
-    static final void method872(int var0, int var1) {
-        if (var0 < 128) {
-            var0 = 128;
-        } else if (var0 > 383) {
-            var0 = 383;
-        }
+	public int field1818;
 
-        if (class214.field1736 < var0) {
-            class214.field1736 += class192.field1577 * (var0 - class214.field1736) / 1000 + class533.field4246;
-            if (class214.field1736 > var0) {
-                class214.field1736 = var0;
-            }
-        } else if (class214.field1736 > var0) {
-            class214.field1736 -= class533.field4246 + (class214.field1736 - var0) * class192.field1577 / 1000;
-            if (class214.field1736 < var0) {
-                class214.field1736 = var0;
-            }
-        }
+	public int field1819;
 
-        var1 &= 2047;
-        int var3 = var1 - class225.field1779;
-        if (var3 > 1024) {
-            var3 -= 2048;
-        } else if (var3 < -1024) {
-            var3 += 2048;
-        }
+	public int field1821;
 
-        if (var3 > 0) {
-            class225.field1779 += var3 * class192.field1577 / 1000 + class533.field4246;
-            class225.field1779 &= 2047;
-        } else if (var3 < 0) {
-            class225.field1779 -= -var3 * class192.field1577 / 1000 + class533.field4246;
-            class225.field1779 &= 2047;
-        }
+	public int field1822;
 
-        int var4 = var1 - class225.field1779;
-        if (var4 > 1024) {
-            var4 -= 2048;
-        } else if (var4 < -1024) {
-            var4 += 2048;
-        }
+	public int field1823;
 
-        if (var4 < 0 && var3 > 0 || var4 > 0 && var3 < 0) {
-            class225.field1779 = var1;
-        }
+	public int field1824;
 
-    }
+	public int field1825;
+
+	public int field1826;
+
+	public int field1827;
+
+	public int field1828;
+
+	public int field1829;
+
+	public class186() {
+		this.field1829 = -1;
+		this.field1819 = -1;
+		this.field1822 = -1;
+		this.field1821 = -1;
+		this.field1827 = -1;
+		this.field1818 = -1;
+		this.field1824 = -1;
+		this.field1825 = -1;
+		this.field1826 = -1;
+		this.field1823 = -1;
+		this.field1828 = -1;
+	}
+
+	public void method1081(class338 var1) {
+		byte[] var3 = var1.method1769(class303.field2355.field2354);
+		class187 var4 = new class187(var3);
+		while (true) {
+			int var5 = var4.method1096();
+			if (var5 == 0) {
+				return;
+			}
+			switch(var5) {
+				case 1:
+					var4.method1152();
+					break;
+				case 2:
+					this.field1829 = var4.method1144();
+					this.field1819 = var4.method1144();
+					this.field1822 = var4.method1144();
+					this.field1821 = var4.method1144();
+					this.field1827 = var4.method1144();
+					this.field1818 = var4.method1144();
+					this.field1824 = var4.method1144();
+					this.field1825 = var4.method1144();
+					this.field1826 = var4.method1144();
+					this.field1823 = var4.method1144();
+					this.field1828 = var4.method1144();
+			}
+		}
+	}
 }

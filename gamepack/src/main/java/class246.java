@@ -1,81 +1,52 @@
-public class class246 extends class418 {
-    int field1888;
-    int field1889;
-    int field1891;
-    int field1893;
-    long field1890;
-    long[] field1892;
+import java.util.Arrays;
 
-    public class246() {
-        this.field1892 = new long[10];
-        this.field1889 = 256;
-        this.field1891 = 1;
-        this.field1888 = 0;
-        this.field1890 = class206.method982();
+public class class246 {
 
-        for (int var1 = 0; var1 < 10; ++var1) {
-            this.field1892[var1] = this.field1890;
-        }
+	public static final class246 field2090;
 
-    }
+	static final class246 field2088;
 
-    @Override
-    public void method1933() {
-        for (int var2 = 0; var2 < 10; ++var2) {
-            this.field1892[var2] = 0L;
-        }
+	static final class246 field2089;
 
-    }
+	static final class246 field2091;
 
-    @Override
-    public int method1934(int var1, int var2) {
-        int var4 = this.field1889;
-        int var5 = this.field1891;
-        this.field1889 = 300;
-        this.field1891 = 1;
-        this.field1890 = class206.method982();
-        if (0L == this.field1892[this.field1893]) {
-            this.field1889 = var4;
-            this.field1891 = var5;
-        } else if (this.field1890 > this.field1892[this.field1893]) {
-            this.field1889 = (int) ((long) (var1 * 2560L) / (this.field1890 - this.field1892[this.field1893]));
-        }
+	static final class246 field2093;
 
-        if (this.field1889 < 25) {
-            this.field1889 = 25;
-        }
+	static final class246 field2094;
 
-        if (this.field1889 > 256) {
-            this.field1889 = 256;
-            this.field1891 = (int) ((long) var1 - (this.field1890 - this.field1892[this.field1893]) / 10L);
-        }
+	static final class246 field2095;
 
-        if (this.field1891 > var1) {
-            this.field1891 = var1;
-        }
+	static final class246[] field2096;
 
-        this.field1892[this.field1893] = this.field1890;
-        this.field1893 = (1 + this.field1893) % 10;
-        int var6;
-        if (this.field1891 > 1) {
-            for (var6 = 0; var6 < 10; ++var6) {
-                if (0L != this.field1892[var6]) {
-                    this.field1892[var6] += this.field1891;
-                }
-            }
-        }
+	final int field2098;
 
-        if (this.field1891 < var2) {
-            this.field1891 = var2;
-        }
+	public final int field2092;
 
-        class316.method1394(this.field1891);
+	public final int field2097;
 
-        for (var6 = 0; this.field1888 < 256; this.field1888 += this.field1889) {
-            ++var6;
-        }
+	static {
+		field2091 = new class246(6, 8, 8);
+		field2089 = new class246(3, 16, 16);
+		field2090 = new class246(0, 32, 32);
+		field2088 = new class246(2, 48, 48);
+		field2095 = new class246(4, 64, 64);
+		field2093 = new class246(5, 96, 96);
+		field2094 = new class246(1, 128, 128);
+		field2096 = method1430();
+		Arrays.sort(field2096, new class501());
+	}
 
-        this.field1888 &= 255;
-        return var6;
-    }
+	class246(int var1, int var2, int var3) {
+		this.field2098 = var1;
+		this.field2092 = var2;
+		this.field2097 = var3;
+	}
+
+	int method1429() {
+		return this.field2097 * this.field2092;
+	}
+
+	static class246[] method1430() {
+		return new class246[] { field2090, field2094, field2088, field2089, field2095, field2093, field2091 };
+	}
 }

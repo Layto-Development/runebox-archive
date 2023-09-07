@@ -1,40 +1,24 @@
-public class class478 implements class330 {
-    static final class478 field3412;
-    static final class478 field3414;
-    static final class478 field3415;
-    static final class478 field3416;
-    static final class478 field3417;
-    static final class478 field3420;
+import java.util.concurrent.Callable;
 
-    static {
-        field3417 = new class478(0, 0, null, 0);
-        field3420 = new class478(1, 1, null, 9);
-        field3414 = new class478(2, 2, null, 3);
-        field3415 = new class478(3, 3, null, 6);
-        field3416 = new class478(4, 4, null, 1);
-        field3412 = new class478(5, 5, null, 3);
-    }
+public class class478 implements Callable {
 
-    final int field3413;
-    final int field3418;
-    final int field3419;
+	static class13 field3746;
 
-    class478(int var1, int var2, String var3, int var4) {
-        this.field3418 = var1;
-        this.field3419 = var2;
-        this.field3413 = var4;
-    }
+	final class168 field3745;
 
-    static class478[] method2187() {
-        return new class478[]{field3417, field3420, field3414, field3415, field3416, field3412};
-    }
+	final class187 field3747;
 
-    int method2186() {
-        return this.field3413;
-    }
+	// $FF: synthetic field
+	final class520 this$0;
 
-    @Override
-    public int method1533() {
-        return this.field3419;
-    }
+	class478(class520 var1, class187 var2, class168 var3) {
+		this.this$0 = var1;
+		this.field3747 = var2;
+		this.field3745 = var3;
+	}
+
+	@Override
+	public Object call() {
+		return this.field3745.method980(this.field3747);
+	}
 }

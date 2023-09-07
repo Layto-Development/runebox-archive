@@ -1,24 +1,21 @@
-import java.util.Comparator;
+import java.nio.ByteBuffer;
 
-public class class382 implements Comparator {
-    static int field2758;
-    final boolean field2759;
+public class class382 extends class99 {
 
-    public class382(boolean var1) {
-        this.field2759 = var1;
-    }
+	ByteBuffer field3076;
 
-    int method1775(class324 var1, class324 var2) {
-        return this.field2759 ? var1.field2348 - var2.field2348 : var2.field2348 - var1.field2348;
-    }
+	@Override
+	byte[] method625() {
+		byte[] var2 = new byte[this.field3076.capacity()];
+		this.field3076.position(0);
+		this.field3076.get(var2);
+		return var2;
+	}
 
-    @Override
-    public int compare(Object var1, Object var2) {
-        return this.method1775((class324) var1, (class324) var2);
-    }
-
-    @Override
-    public boolean equals(Object var1) {
-        return super.equals(var1);
-    }
+	@Override
+	public void method624(byte[] var1) {
+		this.field3076 = ByteBuffer.allocateDirect(var1.length);
+		this.field3076.position(0);
+		this.field3076.put(var1);
+	}
 }

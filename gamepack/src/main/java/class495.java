@@ -1,19 +1,11 @@
-public class class495 {
-    public static final class495 field3627;
-    static final class495 field3628;
+public abstract class class495 extends class77 {
 
-    static {
-        field3627 = new class495("application/json");
-        field3628 = new class495("text/plain");
-    }
+	int field3987;
 
-    String field3629;
+	class495() throws Throwable {
+	}
 
-    class495(String var1) {
-        this.field3629 = var1;
-    }
+	abstract int method2373(class144 var1);
 
-    public String method2246() {
-        return this.field3629;
-    }
+	abstract void method2372();
 }

@@ -1,552 +1,80 @@
-public class class76 {
-    byte[][][] field694;
-    int field693;
+public class class76 implements class228 {
 
-    class76(int var1) {
-        this.field693 = var1;
-    }
+	static final class76 field763;
 
-    void method244(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-        if (var7 != 0 && this.field693 != 0 && null != this.field694) {
-            var8 = this.method238(var8, var7);
-            var7 = this.method233(var7);
-            class415.method1931(var1, var2, var5, var6, var3, var4, this.field694[var7 - 1][var8], this.field693, true);
-        }
-    }
+	static final class76 field764;
 
-    int method238(int var1, int var2) {
-        if (var2 == 9) {
-            var1 = var1 + 1 & 3;
-        }
+	static final class76 field765;
 
-        if (var2 == 10) {
-            var1 = var1 + 3 & 3;
-        }
+	static final class76 field767;
 
-        if (var2 == 11) {
-            var1 = var1 + 3 & 3;
-        }
+	static final class76 field768;
 
-        return var1;
-    }
+	static final class76 field769;
 
-    int method233(int var1) {
-        if (var1 != 9 && var1 != 10) {
-            return var1 == 11 ? 8 : var1;
-        } else {
-            return 1;
-        }
-    }
+	static final class76 field770;
 
-    void method241() {
-        if (this.field694 == null) {
-            this.field694 = new byte[8][4][];
-            this.method234();
-            this.method240();
-            this.method235();
-            this.method242();
-            this.method237();
-            this.method243();
-            this.method239();
-            this.method236((byte) -68);
-        }
-    }
+	static final class76 field771;
 
-    void method234() {
-        byte[] var2 = new byte[this.field693 * this.field693];
-        int var3 = 0;
+	static final class76 field772;
 
-        int var4;
-        int var5;
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 <= var4) {
-                    var2[var3] = -1;
-                }
+	static final class76 field773;
 
-                ++var3;
-            }
-        }
+	static final class76 field774;
 
-        this.field694[0][0] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
+	static final class76 field775;
 
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 <= var4) {
-                    var2[var3] = -1;
-                }
+	static final class76 field776;
 
-                ++var3;
-            }
-        }
+	static final class76 field777;
 
-        this.field694[0][1] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
+	static final class76 field778;
 
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 >= var4) {
-                    var2[var3] = -1;
-                }
+	static final class76 field779;
 
-                ++var3;
-            }
-        }
+	static final class76 field783;
 
-        this.field694[0][2] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
+	final int field780;
 
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 >= var4) {
-                    var2[var3] = -1;
-                }
+	public final boolean field766;
 
-                ++var3;
-            }
-        }
+	public final boolean field782;
 
-        this.field694[0][3] = var2;
-    }
+	public final int field781;
 
-    void method240() {
-        byte[] var2 = new byte[this.field693 * this.field693];
-        int var3 = 0;
+	static {
+		field767 = new class76(0, -1, true, false, true);
+		field764 = new class76(1, 0, true, true, true);
+		field765 = new class76(2, 1, true, true, false);
+		field770 = new class76(3, 2, false, false, true);
+		field783 = new class76(4, 3, false, false, true);
+		field768 = new class76(5, 10, false, false, true);
+		field773 = new class76(6, 22, false, false, true);
+		field776 = new class76(7, 41, false, false, true);
+		field771 = new class76(8, 42, false, false, true);
+		field772 = new class76(9, 43, false, false, true);
+		field769 = new class76(10, 44, false, false, true);
+		field774 = new class76(11, 45, false, false, true);
+		field775 = new class76(12, 46, false, false, true);
+		field763 = new class76(13, 47, false, false, true);
+		field777 = new class76(14, 48, false, false, true);
+		field778 = new class76(15, 49, false, false, true);
+		field779 = new class76(16, 52, false, false, true);
+	}
 
-        int var4;
-        int var5;
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 <= var4 >> 1) {
-                    var2[var3] = -1;
-                }
+	class76(int var1, int var2, boolean var3, boolean var4, boolean var5) {
+		this.field780 = var1;
+		this.field781 = var2;
+		this.field782 = var4;
+		this.field766 = var5;
+	}
 
-                ++var3;
-            }
-        }
+	@Override
+	public int method1362() {
+		return this.field780;
+	}
 
-        this.field694[1][0] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var3 >= 0 && var3 < var2.length) {
-                    if (var5 >= var4 << 1) {
-                        var2[var3] = -1;
-                    }
-
-                    ++var3;
-                } else {
-                    ++var3;
-                }
-            }
-        }
-
-        this.field694[1][1] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 <= var4 >> 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[1][2] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 >= var4 << 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[1][3] = var2;
-    }
-
-    void method235() {
-        byte[] var2 = new byte[this.field693 * this.field693];
-        int var3 = 0;
-
-        int var4;
-        int var5;
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 <= var4 >> 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[2][0] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 >= var4 << 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[2][1] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 <= var4 >> 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[2][2] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 >= var4 << 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[2][3] = var2;
-    }
-
-    void method242() {
-        byte[] var2 = new byte[this.field693 * this.field693];
-        int var3 = 0;
-
-        int var4;
-        int var5;
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 >= var4 >> 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[3][0] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 <= var4 << 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[3][1] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 >= var4 >> 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[3][2] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 <= var4 << 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[3][3] = var2;
-    }
-
-    void method237() {
-        byte[] var2 = new byte[this.field693 * this.field693];
-        int var3 = 0;
-
-        int var4;
-        int var5;
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 >= var4 >> 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[4][0] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 <= var4 << 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[4][1] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 >= var4 >> 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[4][2] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var3 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 <= var4 << 1) {
-                    var2[var3] = -1;
-                }
-
-                ++var3;
-            }
-        }
-
-        this.field694[4][3] = var2;
-    }
-
-    void method243() {
-        byte[] var2 = new byte[this.field693 * this.field693];
-        boolean var3 = false;
-        var2 = new byte[this.field693 * this.field693];
-        int var6 = 0;
-
-        int var4;
-        int var5;
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 <= this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[5][0] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var6 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var4 <= this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[5][1] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var6 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 >= this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[5][2] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var6 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var4 >= this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[5][3] = var2;
-    }
-
-    void method239() {
-        byte[] var2 = new byte[this.field693 * this.field693];
-        boolean var3 = false;
-        var2 = new byte[this.field693 * this.field693];
-        int var6 = 0;
-
-        int var4;
-        int var5;
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 <= var4 - this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[6][0] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var6 = 0;
-
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 <= var4 - this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[6][1] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var6 = 0;
-
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 <= var4 - this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[6][2] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var6 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 <= var4 - this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[6][3] = var2;
-    }
-
-    void method236(byte var1) {
-        byte[] var2 = new byte[this.field693 * this.field693];
-        boolean var3 = false;
-        var2 = new byte[this.field693 * this.field693];
-        int var6 = 0;
-
-        int var4;
-        int var5;
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 >= var4 - this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[7][0] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var6 = 0;
-
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = 0; var5 < this.field693; ++var5) {
-                if (var5 >= var4 - this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[7][1] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var6 = 0;
-
-        for (var4 = this.field693 - 1; var4 >= 0; --var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 >= var4 - this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[7][2] = var2;
-        var2 = new byte[this.field693 * this.field693];
-        var6 = 0;
-
-        for (var4 = 0; var4 < this.field693; ++var4) {
-            for (var5 = this.field693 - 1; var5 >= 0; --var5) {
-                if (var5 >= var4 - this.field693 / 2) {
-                    var2[var6] = -1;
-                }
-
-                ++var6;
-            }
-        }
-
-        this.field694[7][3] = var2;
-    }
+	public static class76[] method317() {
+		return new class76[] { field769, field783, field763, field765, field764, field774, field772, field770, field767, field779, field778, field777, field768, field775, field773, field776, field771 };
+	}
 }

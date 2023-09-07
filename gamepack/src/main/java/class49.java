@@ -1,28 +1,31 @@
-public class class49 {
-    static String field549;
-    static String field550;
-    static String field551;
-    static String field552;
-    static String field553;
-    static String field554;
-    static String field555;
-    static String field556;
+import java.util.Comparator;
 
-    static {
-        field550 = "true";
-        field553 = ",";
-        field552 = "|";
-        field549 = " (";
-        field551 = ")";
-        field554 = "->";
-        field555 = "<br>";
-        field556 = "</col>";
-    }
+class class49 implements Comparator {
 
-    class49() throws Throwable {
-    }
+	static class338 field235;
 
-    static String method140(int var0) {
-        return "<col=" + Integer.toHexString(var0) + ">";
-    }
+	// $FF: synthetic field
+	final class185 this$0;
+
+	class49(class185 var1) {
+		this.this$0 = var1;
+	}
+
+	int method198(class231 var1, class231 var2) {
+		if (var1.field2009 > var2.field2009) {
+			return 1;
+		} else {
+			return var1.field2009 < var2.field2009 ? -1 : 0;
+		}
+	}
+
+	@Override
+	public int compare(Object var1, Object var2) {
+		return this.method198((class231) var1, (class231) var2);
+	}
+
+	@Override
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

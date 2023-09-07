@@ -1,3 +1,7 @@
-public class class446 implements class9 {
-    static int field3027;
+public class class446 {
+
+	static byte[][][] field3466;
+
+	class446() {
+	}
 }

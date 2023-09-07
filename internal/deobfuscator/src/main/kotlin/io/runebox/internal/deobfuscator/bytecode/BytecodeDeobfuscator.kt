@@ -47,7 +47,6 @@ class BytecodeDeobfuscator(
         register<OverrideAnnotationAdder>()
         register<DeadCodeRemover>()
         register<EmptyClassRemover>()
-        register<ClassVersionUpgrader>()
 
         Logger.info("Registered ${bytecodeTransformers.size} bytecode transformers.")
     }

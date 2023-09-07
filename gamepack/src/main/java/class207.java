@@ -1,88 +1,64 @@
-import java.util.Iterator;
+public class class207 extends class310 {
 
-public class class207 implements Iterable {
-    public class510 field1678;
-    class510 field1677;
+	static class106 field1912;
 
-    public class207() {
-        this.field1678 = new class510();
-        this.field1678.field3769 = this.field1678;
-        this.field1678.field3770 = this.field1678;
-    }
+	public int field1911;
 
-    public static void method984(class510 var0, class510 var1) {
-        if (var0.field3770 != null) {
-            var0.method2300();
-        }
+	static {
+		field1912 = new class106(64);
+	}
 
-        var0.field3770 = var1;
-        var0.field3769 = var1.field3769;
-        var0.field3770.field3769 = var0;
-        var0.field3769.field3770 = var0;
-    }
+	class207() {
+		this.field1911 = 0;
+	}
 
-    public void method989() {
-        while (this.field1678.field3769 != this.field1678) {
-            this.field1678.field3769.method2300();
-        }
+	void method1254(class187 var1) {
+		while (true) {
+			int var3 = var1.method1096();
+			if (var3 == 0) {
+				return;
+			}
+			this.method1255(var1, var3);
+		}
+	}
 
-    }
+	void method1255(class187 var1, int var2) {
+		if (var2 == 2) {
+			this.field1911 = var1.method1145();
+		}
+	}
 
-    public void method983(class510 var1) {
-        if (var1.field3770 != null) {
-            var1.method2300();
-        }
+	public static void method1258(class338 var0) {
+		class8.field27 = var0;
+	}
 
-        var1.field3770 = this.field1678.field3770;
-        var1.field3769 = this.field1678;
-        var1.field3770.field3769 = var1;
-        var1.field3769.field3770 = var1;
-    }
+	public static class207 method1257(int var0) {
+		class207 var2 = (class207) field1912.method648((long) var0);
+		if (null != var2) {
+			return var2;
+		} else {
+			byte[] var3 = class8.field27.method1762(5, var0);
+			var2 = new class207();
+			if (var3 != null) {
+				var2.method1254(new class187(var3));
+			}
+			field1912.method647(var2, (long) var0);
+			return var2;
+		}
+	}
 
-    public class510 method985() {
-        class510 var1 = this.field1678.field3769;
-        if (var1 == this.field1678) {
-            return null;
-        } else {
-            var1.method2300();
-            return var1;
-        }
-    }
-
-    public class510 method986() {
-        return this.method987(null);
-    }
-
-    class510 method987(class510 var1) {
-        class510 var2;
-        if (var1 == null) {
-            var2 = this.field1678.field3769;
-        } else {
-            var2 = var1;
-        }
-
-        if (var2 == this.field1678) {
-            this.field1677 = null;
-            return null;
-        } else {
-            this.field1677 = var2.field3769;
-            return var2;
-        }
-    }
-
-    public class510 method988() {
-        class510 var1 = this.field1677;
-        if (var1 == this.field1678) {
-            this.field1677 = null;
-            return null;
-        } else {
-            this.field1677 = var1.field3769;
-            return var1;
-        }
-    }
-
-    @Override
-    public Iterator iterator() {
-        return new class366(this);
-    }
+	static void method1256() {
+		if (Client.field990) {
+			class354 var1 = class354.method1857(class393.field3126, Client.field1066);
+			if (null != var1 && var1.field2783 != null) {
+				class165 var2 = new class165();
+				var2.field1664 = var1;
+				var2.field1667 = var1.field2783;
+				class221.method1344(var2);
+			}
+			Client.field1032 = -1;
+			Client.field990 = false;
+			Client.method532(var1);
+		}
+	}
 }

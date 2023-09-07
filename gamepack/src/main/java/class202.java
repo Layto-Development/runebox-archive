@@ -1,28 +1,23 @@
-public class class202 extends class438 {
-    static class372 field1656;
-    // $FF: synthetic field
-    final class423 this$0;
-    String field1654;
-    long field1655;
+public class class202 extends class7 {
 
-    class202(class423 var1) {
-        this.this$0 = var1;
-        this.field1655 = -1L;
-        this.field1654 = null;
-    }
+	static class214 field1891;
 
-    @Override
-    void method2006(class78 var1) {
-        if (var1.method260() != 255) {
-            --var1.field697;
-            this.field1655 = var1.method265();
-        }
+	final boolean field1890;
 
-        this.field1654 = var1.method319();
-    }
+	public class202(boolean var1) {
+		this.field1890 = var1;
+	}
 
-    @Override
-    void method2005(class133 var1) {
-        var1.method609(this.field1655, this.field1654, 0);
-    }
+	int method1218(class150 var1, class150 var2) {
+		if (var1.field1577 != 0 && var2.field1577 != 0) {
+			return this.field1890 ? var1.method1195().method321(var2.method1195()) : var2.method1195().method321(var1.method1195());
+		} else {
+			return this.method19(var1, var2);
+		}
+	}
+
+	@Override
+	public int compare(Object var1, Object var2) {
+		return this.method1218((class150) var1, (class150) var2);
+	}
 }

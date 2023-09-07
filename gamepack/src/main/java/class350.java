@@ -1,28 +1,25 @@
-public class class350 implements class330 {
-    static final class350 field2534;
-    static final class350 field2535;
-    static final class350 field2536;
-    static final class350 field2541;
-    static class120 field2540;
-    static int field2539;
+import java.util.Comparator;
 
-    static {
-        field2536 = new class350(2, (byte) 0);
-        field2534 = new class350(3, (byte) 1);
-        field2535 = new class350(1, (byte) 2);
-        field2541 = new class350(0, (byte) 3);
-    }
+public class class350 implements Comparator {
 
-    final byte field2538;
-    final int field2537;
+	public static boolean[] field2638;
 
-    class350(int var1, byte var2) {
-        this.field2537 = var1;
-        this.field2538 = var2;
-    }
+	static int field2639;
 
-    @Override
-    public int method1533() {
-        return this.field2538;
-    }
+	class350() {
+	}
+
+	int method1816(class363 var1, class363 var2) {
+		return var1.field2919 - var2.field2919;
+	}
+
+	@Override
+	public int compare(Object var1, Object var2) {
+		return this.method1816((class363) var1, (class363) var2);
+	}
+
+	@Override
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

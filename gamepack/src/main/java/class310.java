@@ -1,17 +1,17 @@
-import java.util.Comparator;
+public class class310 extends class77 {
 
-final class class310 implements Comparator {
-    int method1367(class142 var1, class142 var2) {
-        return var1.field1248.field1899 < var2.field1248.field1899 ? -1 : (var1.field1248.field1899 == var2.field1248.field1899 ? 0 : 1);
-    }
+	public class310 field2427;
 
-    @Override
-    public int compare(Object var1, Object var2) {
-        return this.method1367((class142) var1, (class142) var2);
-    }
+	public class310 field2428;
 
-    @Override
-    public boolean equals(Object var1) {
-        return super.equals(var1);
-    }
+	public long field2429;
+
+	public void method1674() {
+		if (this.field2428 != null) {
+			this.field2428.field2427 = this.field2427;
+			this.field2427.field2428 = this.field2428;
+			this.field2427 = null;
+			this.field2428 = null;
+		}
+	}
 }

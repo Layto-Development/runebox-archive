@@ -1,23 +1,25 @@
-import java.util.Comparator;
+public final class class19 {
 
-public class class19 implements Comparator {
-    public static boolean[] field66;
-    static int field67;
+	int field102;
 
-    class19() {
-    }
+	int field94;
 
-    int method47(class384 var1, class384 var2) {
-        return var1.field2761 - var2.field2761;
-    }
+	int field95;
 
-    @Override
-    public int compare(Object var1, Object var2) {
-        return this.method47((class384) var1, (class384) var2);
-    }
+	int field96;
 
-    @Override
-    public boolean equals(Object var1) {
-        return super.equals(var1);
-    }
+	int field97;
+
+	int field98;
+
+	public class189 field101;
+
+	public class189 field99;
+
+	public long field100;
+
+	class19() {
+		this.field100 = 0L;
+		this.field102 = 0;
+	}
 }

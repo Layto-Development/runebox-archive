@@ -1,24 +1,30 @@
-public class class99 {
-    static class331[] field941;
-    final class372 field938;
-    final int field939;
-    int field940;
+public abstract class class99 {
 
-    class99(class372 var1, String var2) {
-        this.field940 = 0;
-        this.field938 = var1;
-        this.field939 = var1.method200();
-    }
+	class99() {
+	}
 
-    boolean method430() {
-        this.field940 = 0;
+	abstract byte[] method625();
 
-        for (int var2 = 0; var2 < this.field939; ++var2) {
-            if (!this.field938.method1754(var2) || this.field938.method1753(var2)) {
-                ++this.field940;
-            }
-        }
+	public abstract void method624(byte[] var1);
 
-        return this.field940 >= this.field939;
-    }
+	public static byte[] method626(Object var0, boolean var1) {
+		if (var0 == null) {
+			return null;
+		} else if (var0 instanceof byte[]) {
+			byte[] var7 = (byte[]) (byte[]) var0;
+			if (var1) {
+				int var5 = var7.length;
+				byte[] var6 = new byte[var5];
+				System.arraycopy(var7, 0, var6, 0, var5);
+				return var6;
+			} else {
+				return var7;
+			}
+		} else if (var0 instanceof class99) {
+			class99 var3 = (class99) var0;
+			return var3.method625();
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
 }

@@ -1,11 +1,9 @@
-public abstract class class191 extends class510 {
-    final int field1553;
+import java.util.concurrent.ThreadFactory;
 
-    class191(int var1) {
-        this.field1553 = var1;
-    }
+final class class191 implements ThreadFactory {
 
-    abstract boolean method884();
-
-    abstract Object method885();
+	@Override
+	public Thread newThread(Runnable var1) {
+		return new Thread(var1, "OSRS Maya Anim Load");
+	}
 }

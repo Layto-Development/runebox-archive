@@ -1,39 +1,26 @@
-public class class497 {
-    static final int field3632;
-    static final int field3633;
+import java.util.Comparator;
 
-    static {
-        field3632 = (int) (Math.pow(2.0D, 4.0D) - 1.0D);
-        field3633 = (int) (Math.pow(2.0D, 8.0D) - 1.0D);
-    }
+public class class497 implements Comparator {
 
-    class497() throws Throwable {
-    }
+	static class338 field3994;
 
-    public static int method2249(int var0) {
-        return var0 >>> 12;
-    }
+	final boolean field3993;
 
-    public static int method2250(int var0) {
-        return var0 >>> 4 & field3633;
-    }
+	public class497(boolean var1) {
+		this.field3993 = var1;
+	}
 
-    public static int method2251(int var0) {
-        return (var0 & field3632) - 1;
-    }
+	int method2377(class194 var1, class194 var2) {
+		return this.field3993 ? var1.method1195().method321(var2.method1195()) : var2.method1195().method321(var1.method1195());
+	}
 
-    static Object[] method2248(class78 var0, int[] var1) {
-        int var3 = var0.method307();
-        Object[] var4 = new Object[var3 * var1.length];
+	@Override
+	public int compare(Object var1, Object var2) {
+		return this.method2377((class194) var1, (class194) var2);
+	}
 
-        for (int var5 = 0; var5 < var3; ++var5) {
-            for (int var6 = 0; var6 < var1.length; ++var6) {
-                int var7 = var6 + var1.length * var5;
-                class432 var8 = class406.method1856(var1[var6]);
-                var4[var7] = var8.method1971(var0);
-            }
-        }
-
-        return var4;
-    }
+	@Override
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 }

@@ -1,22 +1,22 @@
-public final class class325 {
-    static class97 field2365;
-    public class490 field2358;
-    public long field2363;
-    int field2351;
-    int field2352;
-    int field2353;
-    int field2354;
-    int field2355;
-    int field2356;
-    int field2357;
-    int field2359;
-    int field2360;
-    int field2361;
-    int field2362;
-    int field2364;
+public class class325 {
 
-    class325() {
-        this.field2363 = 0L;
-        this.field2355 = 0;
-    }
+	protected static boolean field2528;
+
+	static final class325 field2526;
+
+	static final class325 field2527;
+
+	static final class325 field2529;
+
+	static final class325 field2530;
+
+	static {
+		field2527 = new class325();
+		field2530 = new class325();
+		field2526 = new class325();
+		field2529 = new class325();
+	}
+
+	class325() {
+	}
 }

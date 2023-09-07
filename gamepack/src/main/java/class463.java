@@ -1,286 +1,175 @@
-public class class463 implements class200 {
-    boolean field3182;
-    boolean field3184;
-    class97 field3183;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
 
-    public class463() {
-        this.field3183 = null;
-        this.field3182 = false;
-        this.field3184 = false;
-    }
+public abstract class class463 {
 
-    public void method2124(class97 var1) {
-        this.method2123();
-        if (var1 != null) {
-            this.field3183 = var1;
-            class265 var3 = var1.method406();
-            if (null != var3) {
-                var3.field1958.method1443(true);
-                if (var3.field1959 != null) {
-                    class26 var4 = new class26();
-                    var4.method77(var1);
-                    var4.method78(var3.field1959);
-                    Client.method2351().method126(var4);
-                }
-            }
-        }
+	class194[] field3545;
 
-    }
+	int field3548;
 
-    public class97 method2121() {
-        return this.field3183;
-    }
+	Comparator field3550;
 
-    public void method2123() {
-        if (this.field3183 != null) {
-            class265 var2 = this.field3183.method406();
-            class97 var3 = this.field3183;
-            this.field3183 = null;
-            if (var2 != null) {
-                var2.field1958.method1443(false);
-                if (null != var2.field1959) {
-                    class26 var4 = new class26();
-                    var4.method77(var3);
-                    var4.method78(var2.field1959);
-                    Client.method2351().method126(var4);
-                }
+	HashMap field3546;
 
-            }
-        }
-    }
+	HashMap field3549;
 
-    @Override
-    public boolean method965(int var1) {
-        if (this.field3183 == null) {
-            return false;
-        } else {
-            class323 var3 = this.field3183.method395();
-            if (null == var3) {
-                return false;
-            } else {
-                if (var3.method1432(var1)) {
-                    switch (var1) {
-                        case 81:
-                            this.field3184 = true;
-                            break;
-                        case 82:
-                            this.field3182 = true;
-                            break;
-                        default:
-                            if (this.method2122(var1)) {
-                                Client.method2424(this.field3183);
-                            }
-                    }
-                }
+	final int field3547;
 
-                return var3.method1423(var1);
-            }
-        }
-    }
+	class463(int var1) {
+		this.field3548 = 0;
+		this.field3550 = null;
+		this.field3547 = var1;
+		this.field3545 = this.method2276(var1);
+		this.field3546 = new HashMap(var1 / 8);
+		this.field3549 = new HashMap(var1 / 8);
+	}
 
-    @Override
-    public boolean method963(int var1) {
-        switch (var1) {
-            case 81:
-                this.field3184 = false;
-                return false;
-            case 82:
-                this.field3182 = false;
-                return false;
-            default:
-                return false;
-        }
-    }
+	abstract class194 method2282();
 
-    @Override
-    public boolean method964(char var1) {
-        if (this.field3183 == null) {
-            return false;
-        } else {
-            boolean var3;
-            if (var1 >= ' ' && var1 < 127 || var1 > 127 && var1 < 160 || var1 > 160 && var1 <= 255) {
-                var3 = true;
-            } else {
-                label80:
-                {
-                    if (var1 != 0) {
-                        char[] var4 = class209.field1685;
+	abstract class194[] method2276(int var1);
 
-                        for (int var5 = 0; var5 < var4.length; ++var5) {
-                            char var6 = var4[var5];
-                            if (var1 == var6) {
-                                var3 = true;
-                                break label80;
-                            }
-                        }
-                    }
+	public void method2264() {
+		this.field3548 = 0;
+		Arrays.fill(this.field3545, (Object) null);
+		this.field3546.clear();
+		this.field3549.clear();
+	}
 
-                    var3 = false;
-                }
-            }
+	public int method2285() {
+		return this.field3548;
+	}
 
-            if (!var3) {
-                return false;
-            } else {
-                class327 var7 = this.field3183.method419();
-                if (null != var7 && var7.method1485()) {
-                    class323 var8 = this.field3183.method395();
-                    if (null == var8) {
-                        return false;
-                    } else {
-                        if (var8.method1424(var1) && var7.method1502(var1)) {
-                            Client.method2424(this.field3183);
-                        }
+	public boolean method2265() {
+		return this.field3547 == this.field3548;
+	}
 
-                        return var8.method1427(var1);
-                    }
-                } else {
-                    return false;
-                }
-            }
-        }
-    }
+	public boolean method2280(class78 var1) {
+		if (!var1.method323()) {
+			return false;
+		} else {
+			return this.field3546.containsKey(var1) ? true : this.field3549.containsKey(var1);
+		}
+	}
 
-    @Override
-    public boolean method966(boolean var1) {
-        return false;
-    }
+	public class194 method2266(class78 var1) {
+		class194 var3 = this.method2267(var1);
+		return null != var3 ? var3 : this.method2281(var1);
+	}
 
-    boolean method2122(int var1) {
-        if (null == this.field3183) {
-            return false;
-        } else {
-            class327 var3 = this.field3183.method419();
-            if (null != var3 && var3.method1485()) {
-                switch (var1) {
-                    case 13:
-                        this.method2123();
-                        return true;
-                    case 48:
-                        if (this.field3182) {
-                            var3.method1520();
-                        }
+	class194 method2267(class78 var1) {
+		return !var1.method323() ? null : (class194) this.field3546.get(var1);
+	}
 
-                        return true;
-                    case 65:
-                        if (this.field3182) {
-                            var3.method1444(Client.method2467());
-                        }
+	class194 method2281(class78 var1) {
+		return !var1.method323() ? null : (class194) this.field3549.get(var1);
+	}
 
-                        return true;
-                    case 66:
-                        if (this.field3182) {
-                            var3.method1474(Client.method2467());
-                        }
+	public final boolean method2283(class78 var1) {
+		class194 var3 = this.method2267(var1);
+		if (null == var3) {
+			return false;
+		} else {
+			this.method2268(var3);
+			return true;
+		}
+	}
 
-                        return true;
-                    case 67:
-                        if (this.field3182) {
-                            var3.method1475(Client.method2467());
-                        }
+	final void method2268(class194 var1) {
+		int var3 = this.method2275(var1);
+		if (var3 != -1) {
+			this.method2278(var3);
+			this.method2273(var1);
+		}
+	}
 
-                        return true;
-                    case 84:
-                        if (var3.method1488() == 0) {
-                            var3.method1502(10);
-                        } else if (this.field3184 && var3.method1506()) {
-                            var3.method1502(10);
-                        } else {
-                            class265 var4 = this.field3183.method406();
-                            class26 var5 = new class26();
-                            var5.method77(this.field3183);
-                            var5.method78(var4.field1955);
-                            Client.method2351().method126(var5);
-                            this.method2123();
-                        }
+	class194 method2279(class78 var1) {
+		return this.method2269(var1, (class78) null);
+	}
 
-                        return true;
-                    case 85:
-                        if (this.field3182) {
-                            var3.method1459();
-                        } else {
-                            var3.method1457();
-                        }
+	class194 method2269(class78 var1, class78 var2) {
+		if (this.method2267(var1) != null) {
+			throw new IllegalStateException();
+		} else {
+			class194 var4 = this.method2282();
+			var4.method1198(var1, var2);
+			this.method2274(var4);
+			this.method2270(var4);
+			return var4;
+		}
+	}
 
-                        return true;
-                    case 96:
-                        if (this.field3182) {
-                            var3.method1468(this.field3184);
-                        } else {
-                            var3.method1514(this.field3184);
-                        }
+	public final class194 method2272(int var1) {
+		if (var1 >= 0 && var1 < this.field3548) {
+			return this.field3545[var1];
+		} else {
+			throw new ArrayIndexOutOfBoundsException(var1);
+		}
+	}
 
-                        return true;
-                    case 97:
-                        if (this.field3182) {
-                            var3.method1469(this.field3184);
-                        } else {
-                            var3.method1467(this.field3184);
-                        }
+	public final void method2286() {
+		if (this.field3550 == null) {
+			Arrays.sort(this.field3545, 0, this.field3548);
+		} else {
+			Arrays.sort(this.field3545, 0, this.field3548, this.field3550);
+		}
+	}
 
-                        return true;
-                    case 98:
-                        if (this.field3182) {
-                            var3.method1515();
-                        } else {
-                            var3.method1470(this.field3184);
-                        }
+	final void method2271(class194 var1, class78 var2, class78 var3) {
+		this.method2273(var1);
+		var1.method1198(var2, var3);
+		this.method2270(var1);
+	}
 
-                        return true;
-                    case 99:
-                        if (this.field3182) {
-                            var3.method1476();
-                        } else {
-                            var3.method1471(this.field3184);
-                        }
+	final int method2275(class194 var1) {
+		for (int var3 = 0; var3 < this.field3548; ++var3) {
+			if (this.field3545[var3] == var1) {
+				return var3;
+			}
+		}
+		return -1;
+	}
 
-                        return true;
-                    case 101:
-                        if (this.field3182) {
-                            var3.method1480();
-                        } else {
-                            var3.method1458();
-                        }
+	final void method2273(class194 var1) {
+		if (this.field3546.remove(var1.field1858) == null) {
+			throw new IllegalStateException();
+		} else {
+			if (var1.field1859 != null) {
+				this.field3549.remove(var1.field1859);
+			}
+		}
+	}
 
-                        return true;
-                    case 102:
-                        if (this.field3182) {
-                            var3.method1465(this.field3184);
-                        } else {
-                            var3.method1463(this.field3184);
-                        }
+	final void method2274(class194 var1) {
+		this.field3545[++this.field3548 - 1] = var1;
+	}
 
-                        return true;
-                    case 103:
-                        if (this.field3182) {
-                            var3.method1466(this.field3184);
-                        } else {
-                            var3.method1464(this.field3184);
-                        }
+	final void method2270(class194 var1) {
+		this.field3546.put(var1.field1858, var1);
+		if (var1.field1859 != null) {
+			class194 var3 = (class194) this.field3549.put(var1.field1859, var1);
+			if (var3 != null && var3 != var1) {
+				var3.field1859 = null;
+			}
+		}
+	}
 
-                        return true;
-                    case 104:
-                        if (this.field3182) {
-                            var3.method1510(this.field3184);
-                        } else {
-                            var3.method1472(this.field3184);
-                        }
+	final void method2278(int var1) {
+		--this.field3548;
+		if (var1 < this.field3548) {
+			System.arraycopy(this.field3545, var1 + 1, this.field3545, var1, this.field3548 - var1);
+		}
+	}
 
-                        return true;
-                    case 105:
-                        if (this.field3182) {
-                            var3.method1509(this.field3184);
-                        } else {
-                            var3.method1460(this.field3184);
-                        }
+	public final void method2284() {
+		this.field3550 = null;
+	}
 
-                        return true;
-                    default:
-                        return false;
-                }
-            } else {
-                return false;
-            }
-        }
-    }
+	public final void method2277(Comparator var1) {
+		if (null == this.field3550) {
+			this.field3550 = var1;
+		} else if (this.field3550 instanceof class7) {
+			((class7) this.field3550).method18(var1);
+		}
+	}
 }

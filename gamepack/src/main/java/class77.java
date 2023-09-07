@@ -1,18 +1,21 @@
-public final class class77 {
-    class77() throws Throwable {
-    }
+public class class77 {
 
-    static void method245() {
-        if (null != class62.field617) {
-            Client.field3898 = Client.field4078;
-            class62.field617.method1640();
+	public class77 field784;
 
-            for (int var1 = 0; var1 < Client.field3948.length; ++var1) {
-                if (null != Client.field3948[var1]) {
-                    class62.field617.method1639((Client.field3948[var1].field4121 >> 7) + class357.field2573, class5.field28 + (Client.field3948[var1].field4092 >> 7));
-                }
-            }
-        }
+	public class77 field786;
 
-    }
+	public long field785;
+
+	public void method318() {
+		if (this.field786 != null) {
+			this.field786.field784 = this.field784;
+			this.field784.field786 = this.field786;
+			this.field784 = null;
+			this.field786 = null;
+		}
+	}
+
+	public boolean method319() {
+		return this.field786 != null;
+	}
 }

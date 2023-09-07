@@ -1,122 +1,118 @@
-public class class351 {
-    static {
-        new class351(0.0F, 0.0F, 0.0F);
-        new class351(1.0F, 1.0F, 1.0F);
-        new class351(1.0F, 0.0F, 0.0F);
-        new class351(0.0F, 1.0F, 0.0F);
-        new class351(0.0F, 0.0F, 1.0F);
-        method1647(100);
-    }
+public class class351 implements class228 {
 
-    float field2542;
-    float field2543;
-    float field2544;
+	public static final class351 field2641;
 
-    class351(float var1, float var2, float var3) {
-        this.field2543 = var1;
-        this.field2542 = var2;
-        this.field2544 = var3;
-    }
+	public static final class351 field2648;
 
-    static void method1647(int var0) {
-    }
+	public static final class351 field2650;
 
-    static int method1646(int var0, class443 var1, boolean var2) {
-        if (var0 == 6200) {
-            class56.field597 -= 2;
-            Client.field4048 = (short) class269.method1182(class269.field1988[class56.field597]);
-            if (Client.field4048 <= 0) {
-                Client.field4048 = 256;
-            }
+	public static final class351 field2654;
 
-            Client.field3934 = (short) class269.method1182(class269.field1988[class56.field597 + 1]);
-            if (Client.field3934 <= 0) {
-                Client.field3934 = 256;
-            }
+	public static final class351 field2656;
 
-            return 1;
-        } else if (var0 == 6201) {
-            class56.field597 -= 2;
-            Client.field4050 = (short) class269.field1988[class56.field597];
-            if (Client.field4050 <= 0) {
-                Client.field4050 = 256;
-            }
+	public static final class351 field2665;
 
-            Client.field4051 = (short) class269.field1988[1 + class56.field597];
-            if (Client.field4051 <= 0) {
-                Client.field4051 = 320;
-            }
+	public static final class351 field2666;
 
-            return 1;
-        } else if (var0 == 6202) {
-            class56.field597 -= 4;
-            Client.field4052 = (short) class269.field1988[class56.field597];
-            if (Client.field4052 <= 0) {
-                Client.field4052 = 1;
-            }
+	public static final class351 field2667;
 
-            Client.field3884 = (short) class269.field1988[1 + class56.field597];
-            if (Client.field3884 <= 0) {
-                Client.field3884 = 32767;
-            } else if (Client.field3884 < Client.field4052) {
-                Client.field3884 = Client.field4052;
-            }
+	public static final class351 field2669;
 
-            Client.field4054 = (short) class269.field1988[2 + class56.field597];
-            if (Client.field4054 <= 0) {
-                Client.field4054 = 1;
-            }
+	public static final class351 field2670;
 
-            Client.field4055 = (short) class269.field1988[3 + class56.field597];
-            if (Client.field4055 <= 0) {
-                Client.field4055 = 32767;
-            } else if (Client.field4055 < Client.field4054) {
-                Client.field4055 = Client.field4054;
-            }
+	public static final class351 field2671;
 
-            return 1;
-        } else if (var0 == 6203) {
-            if (Client.field4068 != null) {
-                class29.method88(0, 0, Client.field4068.field806, Client.field4068.field783, false);
-                class269.field1988[++class56.field597 - 1] = Client.field3991;
-                class269.field1988[++class56.field597 - 1] = Client.field3866;
-            } else {
-                class269.field1988[++class56.field597 - 1] = -1;
-                class269.field1988[++class56.field597 - 1] = -1;
-            }
+	static String field2673;
 
-            return 1;
-        } else if (var0 == 6204) {
-            class269.field1988[++class56.field597 - 1] = Client.field4050;
-            class269.field1988[++class56.field597 - 1] = Client.field4051;
-            return 1;
-        } else if (var0 == 6205) {
-            class269.field1988[++class56.field597 - 1] = class269.method1201(Client.field4048);
-            class269.field1988[++class56.field597 - 1] = class269.method1201(Client.field3934);
-            return 1;
-        } else if (var0 == 6220) {
-            class269.field1988[++class56.field597 - 1] = 0;
-            return 1;
-        } else if (var0 == 6221) {
-            class269.field1988[++class56.field597 - 1] = 0;
-            return 1;
-        } else if (var0 == 6222) {
-            class269.field1988[++class56.field597 - 1] = class223.field1763;
-            return 1;
-        } else if (var0 == 6223) {
-            class269.field1988[++class56.field597 - 1] = class519.field4188;
-            return 1;
-        } else {
-            return 2;
-        }
-    }
+	static final class351 field2640;
 
-    final float method1645() {
-        return (float) Math.sqrt(this.field2543 * this.field2543 + this.field2542 * this.field2542 + this.field2544 * this.field2544);
-    }
+	static final class351 field2642;
 
-    @Override
-    public String toString() {
-        return this.field2543 + ", " + this.field2542 + ", " + this.field2544;
-    }
+	static final class351 field2643;
+
+	static final class351 field2644;
+
+	static final class351 field2645;
+
+	static final class351 field2646;
+
+	static final class351 field2647;
+
+	static final class351 field2649;
+
+	static final class351 field2651;
+
+	static final class351 field2652;
+
+	static final class351 field2653;
+
+	static final class351 field2655;
+
+	static final class351 field2657;
+
+	static final class351 field2658;
+
+	static final class351 field2659;
+
+	static final class351 field2660;
+
+	static final class351 field2661;
+
+	static final class351 field2662;
+
+	static final class351 field2663;
+
+	static final class351 field2664;
+
+	static final class351 field2668;
+
+	final int field2672;
+
+	static {
+		field2666 = new class351(1);
+		field2641 = new class351(2);
+		field2650 = new class351(4);
+		field2654 = new class351(8);
+		field2660 = new class351(16);
+		field2668 = new class351(32);
+		field2652 = new class351(64, true);
+		field2647 = new class351(128);
+		field2648 = new class351(256, true);
+		field2649 = new class351(512);
+		field2671 = new class351(1024);
+		field2651 = new class351(2048);
+		field2642 = new class351(4096);
+		field2653 = new class351(8192);
+		field2640 = new class351(16384);
+		field2655 = new class351(32768);
+		field2656 = new class351(65536);
+		field2657 = new class351(131072);
+		field2659 = new class351(262144);
+		field2646 = new class351(524288);
+		field2643 = new class351(1048576);
+		field2661 = new class351(2097152);
+		field2662 = new class351(4194304);
+		field2663 = new class351(8388608);
+		field2664 = new class351(16777216);
+		field2665 = new class351(33554432);
+		field2644 = new class351(67108864, true);
+		field2667 = new class351(134217728);
+		field2645 = new class351(268435456);
+		field2669 = new class351(536870912, true);
+		field2670 = new class351(1073741824, true);
+		field2658 = new class351(Integer.MIN_VALUE);
+	}
+
+	class351(int var1, boolean var2) {
+		this.field2672 = var1;
+	}
+
+	class351(int var1) {
+		this(var1, false);
+	}
+
+	@Override
+	public int method1362() {
+		return this.field2672;
+	}
 }

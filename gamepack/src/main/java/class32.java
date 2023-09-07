@@ -1,630 +1,1285 @@
-public class class32 {
-    public static String field173;
-    public static String field174;
-    public static String field175;
-    public static String field176;
-    public static String field177;
-    public static String field178;
-    public static String field179;
-    public static String field180;
-    public static String field181;
-    public static String field182;
-    public static String field183;
-    public static String field184;
-    public static String field185;
-    public static String field186;
-    public static String field187;
-    public static String field188;
-    public static String field189;
-    public static String field190;
-    public static String field191;
-    public static String field192;
-    public static String field193;
-    public static String field194;
-    public static String field195;
-    public static String field196;
-    public static String field197;
-    public static String field198;
-    public static String field199;
-    public static String field200;
-    public static String field201;
-    public static String field202;
-    public static String field203;
-    public static String field204;
-    public static String field205;
-    public static String field206;
-    public static String field207;
-    public static String field208;
-    public static String field209;
-    public static String field210;
-    public static String field211;
-    public static String field212;
-    public static String field213;
-    public static String field214;
-    public static String field215;
-    public static String field216;
-    public static String field217;
-    public static String field218;
-    public static String field219;
-    public static String field220;
-    public static String field221;
-    public static String field222;
-    public static String field223;
-    public static String field224;
-    public static String field225;
-    public static String field226;
-    public static String field227;
-    public static String field228;
-    public static String field229;
-    public static String field230;
-    public static String field231;
-    public static String field232;
-    public static String field233;
-    public static String field234;
-    public static String field235;
-    public static String field236;
-    public static String field237;
-    public static String field238;
-    public static String field239;
-    public static String field240;
-    public static String field241;
-    public static String field242;
-    public static String field243;
-    public static String field244;
-    public static String field245;
-    public static String field246;
-    public static String field247;
-    public static String field248;
-    public static String field249;
-    public static String field250;
-    public static String field251;
-    public static String field252;
-    public static String field253;
-    public static String field254;
-    public static String field255;
-    public static String field256;
-    public static String field257;
-    public static String field258;
-    public static String field259;
-    public static String field260;
-    public static String field261;
-    public static String field262;
-    public static String field263;
-    public static String field264;
-    public static String field265;
-    public static String field266;
-    public static String field267;
-    public static String field268;
-    public static String field269;
-    public static String field270;
-    public static String field271;
-    public static String field272;
-    public static String field273;
-    public static String field274;
-    public static String field275;
-    public static String field276;
-    public static String field277;
-    public static String field278;
-    public static String field279;
-    public static String field280;
-    public static String field281;
-    public static String field282;
-    public static String field283;
-    public static String field284;
-    public static String field285;
-    public static String field286;
-    public static String field287;
-    public static String field288;
-    public static String field289;
-    public static String field290;
-    public static String field291;
-    public static String field292;
-    public static String field293;
-    public static String field294;
-    public static String field295;
-    public static String field296;
-    public static String field297;
-    public static String field298;
-    public static String field299;
-    public static String field300;
-    public static String field301;
-    public static String field302;
-    public static String field303;
-    public static String field304;
-    public static String field305;
-    public static String field306;
-    public static String field307;
-    public static String field308;
-    public static String field309;
-    public static String field310;
-    public static String field311;
-    public static String field312;
-    public static String field313;
-    public static String field314;
-    public static String field315;
-    public static String field316;
-    public static String field317;
-    public static String field318;
-    public static String field319;
-    public static String field320;
-    public static String field321;
-    public static String field322;
-    public static String field323;
-    public static String field324;
-    public static String field325;
-    public static String field326;
-    public static String field327;
-    public static String field329;
-    public static String field330;
-    public static String field331;
-    public static String field332;
-    public static String field333;
-    public static String field334;
-    public static String field335;
-    public static String field336;
-    public static String field337;
-    public static String field338;
-    public static String field339;
-    public static String field340;
-    public static String field341;
-    public static String field342;
-    public static String field343;
-    public static String field344;
-    public static String field345;
-    public static String field346;
-    public static String field347;
-    public static String field348;
-    public static String field349;
-    public static String field350;
-    public static String field351;
-    public static String field352;
-    public static String field353;
-    public static String field354;
-    public static String field355;
-    public static String field356;
-    public static String field357;
-    public static String field358;
-    public static String field359;
-    public static String field360;
-    public static String field361;
-    public static String field362;
-    public static String field363;
-    public static String field364;
-    public static String field365;
-    public static String field366;
-    public static String field367;
-    public static String field368;
-    public static String field369;
-    public static String field370;
-    public static String field371;
-    public static String field372;
-    public static String field373;
-    public static String field374;
-    public static String field375;
-    public static String field376;
-    public static String field377;
-    public static String field378;
-    public static String field379;
-    public static String field380;
-    public static String field381;
-    public static String field382;
-    public static String field383;
-    public static String field384;
-    public static String field385;
-    public static String field386;
-    public static String field387;
-    public static String field388;
-    public static String field389;
-    public static String field390;
-    public static String field391;
-    public static String field392;
-    public static String field393;
-    public static String field394;
-    public static String field395;
-    public static String field396;
-    public static String field397;
-    public static String field398;
-    public static String field399;
-    public static String field400;
-    public static String field401;
-    public static String field402;
-    public static String field403;
-    public static String field404;
-    public static String field405;
-    public static String field406;
-    public static String field407;
-    public static String field408;
-    public static String field409;
-    public static String field410;
-    public static String field411;
-    public static String field412;
-    public static String field413;
-    public static String field414;
-    public static String field415;
-    public static String field416;
-    public static String field417;
-    public static String field418;
-    public static String field419;
-    public static String field420;
-    public static String field421;
-    public static String field422;
-    public static String field423;
-    public static String field424;
-    public static String field425;
-    public static String field426;
-    public static String field427;
-    public static String field428;
-    public static String field429;
-    public static String field430;
-    public static String field431;
-    public static String field432;
-    public static String field433;
-    public static String field434;
-    public static String field435;
-    public static String field436;
-    public static String field437;
-    public static String field438;
-    public static String field439;
-    public static String field440;
-    public static String field441;
-    public static String field442;
-    public static String field443;
-    public static String field444;
-    public static String field445;
-    public static String field446;
-    public static String field447;
-    public static String field448;
-    public static String field449;
-    public static String field450;
-    public static String field451;
-    public static String field452;
-    public static String field453;
-    public static String field454;
-    public static String field455;
-    public static String field456;
-    public static String field457;
-    public static String field458;
-    public static String field459;
-    public static String field460;
-    public static String field461;
-    public static String field462;
-    public static String field463;
-    public static String field464;
-    public static String field465;
-    public static String field466;
-    public static String field467;
-    public static String field468;
-    public static String field469;
-    public static String field470;
-    public static String field471;
-    public static String field472;
-    public static String field473;
-    public static String field474;
-    public static String field475;
-    public static String field476;
-    public static String field477;
-    public static String field478;
-    public static String field479;
-    public static String field480;
-    public static String field481;
-    public static String field482;
-    public static String field483;
-    static String field328;
+public class class32 extends class182 {
 
-    static {
-        field402 = " (Members)";
-        field336 = "Take";
-        field345 = "Drop";
-        field425 = "Hidden";
-        field177 = "Ok";
-        field455 = "Select";
-        field179 = "Continue";
-        field211 = "Discard";
-        field483 = "null";
-        field182 = "Trust this computer";
-        field299 = "for 30 days: ";
-        field184 = "Loading - please wait.";
-        field185 = "Connection lost";
-        field186 = "Please wait - attempting to reestablish";
-        field187 = "Starting game engine...";
-        field188 = "Prepared visibility map";
-        field213 = "Connecting to update server";
-        field190 = "Checking for updates - ";
-        field191 = "Loaded update list";
-        field192 = "Prepared sound engine";
-        field385 = "Loading fonts - ";
-        field194 = "Loaded fonts";
-        field195 = "Loading title screen - ";
-        field196 = "Loaded title screen";
-        field197 = "Loading config - ";
-        field390 = "Loaded config";
-        field199 = "Loading sprites - ";
-        field200 = "Loaded sprites";
-        field201 = "Loading textures - ";
-        field479 = "Loaded textures";
-        field307 = "Loaded input handler";
-        field226 = "Loading wordpack - ";
-        field205 = "Loaded wordpack";
-        field206 = "Loading interfaces - ";
-        field207 = "Loaded interfaces";
-        field208 = "Loading world map - ";
-        field308 = "Loaded world map";
-        field328 = "Please visit the support page for assistance.";
-        field289 = "View Appeal Options";
-        field212 = "Recover Account";
-        field330 = "";
-        field214 = "Please enter a 6-digit PIN.";
-        field293 = "";
-        field216 = "You have only just left another world.";
-        field217 = "Your profile will be transferred in:";
-        field396 = " seconds.";
-        field219 = "Connection timed out.";
-        field220 = "Please try using a different world.";
-        field365 = "";
-        field382 = "Error connecting to server.";
-        field223 = "Please try using a different world.";
-        field224 = "";
-        field225 = "No response from server.";
-        field258 = "Please try using a different world.";
-        field389 = "";
-        field278 = "Your account has been involved";
-        field218 = "in serious rule breaking.";
-        field230 = "";
-        field231 = "Either your account is still logged in, or the last";
-        field232 = "world you were using has become unavailable.";
-        field233 = "Please try again later.";
-        field234 = "RuneScape has been updated!";
-        field235 = "Please reload this page.";
-        field203 = "";
-        field176 = "This world is full.";
-        field238 = "Please use a different world.";
-        field392 = "";
-        field240 = "Unable to connect.";
-        field241 = "Login server offline.";
-        field314 = "";
-        field243 = "Login limit exceeded.";
-        field244 = "Too many connections from your address.";
-        field415 = "";
-        field251 = "Unable to connect.";
-        field247 = "Bad session id.";
-        field248 = "";
-        field249 = "We suspect someone knows your password.";
-        field250 = "Press 'change your password' on front page.";
-        field448 = "";
-        field252 = "You need a members account to login to this world.";
-        field253 = "Please subscribe, or use a different world.";
-        field254 = "";
-        field255 = "Could not complete login.";
-        field333 = "Please try using a different world.";
-        field257 = "";
-        field452 = "The server is being updated.";
-        field259 = "Please wait 1 minute and try again.";
-        field260 = "";
-        field261 = "Too many login attempts.";
-        field262 = "You can use the Jagex Launcher to continue playing.";
-        field391 = "Press the button below to download it now.";
-        field303 = "To access this free world, log into a";
-        field419 = "members world and move your character";
-        field266 = "to a non-members area.";
-        field267 = "Your account has been locked due to";
-        field268 = "suspicious activity.";
-        field269 = "Please recover your account.";
-        field361 = "This world is running a closed Beta.";
-        field304 = "Sorry invited players only.";
-        field272 = "Please use a different world.";
-        field375 = "Invalid loginserver requested.";
-        field274 = "Please try using a different world.";
-        field300 = "";
-        field276 = "Malformed login packet.";
-        field343 = "Please try again.";
-        field362 = "";
-        field279 = "No reply from loginserver.";
-        field280 = "Please wait 1 minute and try again.";
-        field174 = "";
-        field282 = "Error loading your profile.";
-        field283 = "Please contact customer support.";
-        field344 = "";
-        field285 = "Unexpected loginserver response.";
-        field286 = "Please try using a different world.";
-        field287 = "";
-        field288 = "This computers address has been blocked";
-        field265 = "as it was used to break our rules.";
-        field290 = "";
-        field442 = "";
-        field292 = "Service unavailable.";
-        field270 = "";
-        field294 = "";
-        field209 = "Please enter your username/email address.";
-        field296 = "";
-        field297 = "";
-        field298 = "Please enter your password.";
-        field222 = "";
-        field433 = "Your account must have a displayname set";
-        field301 = "in order to play the game.  Please set it";
-        field302 = "via the website, or the main game.";
-        field263 = "The unpaid balance on your account needs";
-        field271 = "to be resolved before you can play.";
-        field305 = field328;
-        field306 = "Your account is currently inaccessible.";
-        field335 = "Please try again in a few minutes.";
-        field450 = "";
-        field309 = "You need to vote to play!";
-        field310 = "Visit runescape.com and vote,";
-        field311 = "and then come back here!";
-        field312 = "Sorry, but your account is not eligible to play.";
-        field354 = "For more information, please take a look at";
-        field323 = "our privacy policy.";
-        field427 = "Privacy Policy";
-        field468 = "Enter the 6-digit code generated by your";
-        field181 = "authenticator app.";
-        field318 = "";
-        field319 = "The code you entered was incorrect.";
-        field320 = "Please try again.";
-        field321 = "";
-        field341 = "Login attempt timed out.";
-        field315 = "Please try again.";
-        field324 = "";
-        field325 = "You were signed out.";
-        field326 = "Please sign in again.";
-        field327 = "";
-        field379 = "Failed to login.";
-        field329 = "Please try again.";
-        field348 = "";
-        field331 = "Unexpected server response";
-        field193 = "Please try using a different world.";
-        field239 = "";
-        field334 = " has logged in.";
-        field228 = " has logged out.";
-        field317 = "Unable to find ";
-        field337 = "Use";
-        field338 = "Examine";
-        field339 = "Attack";
-        field340 = "Choose Option";
-        field204 = " more options";
-        field342 = "Walk here";
-        field183 = "level-";
-        field347 = "skill-";
-        field445 = "Please wait...";
-        field418 = "Close";
-        field221 = " ";
-        field242 = "M";
-        field349 = "M";
-        field350 = "K";
-        field351 = "K";
-        field352 = "World";
-        field353 = "Your friend list is full. Max of 200 for free users, and 400 for members";
-        field175 = " is already on your friend list";
-        field355 = "Your ignore list is full. Max of 100 for free users, and 400 for members";
-        field356 = " is already on your ignore list";
-        field357 = "You can't add yourself to your own friend list";
-        field358 = "You can't add yourself to your own ignore list";
-        field359 = "Please remove ";
-        field360 = " from your ignore list first";
-        field173 = "Please remove ";
-        field332 = " from your friend list first";
-        field273 = "yellow:";
-        field364 = "red:";
-        field275 = "green:";
-        field366 = "cyan:";
-        field245 = "purple:";
-        field368 = "white:";
-        field369 = "flash1:";
-        field180 = "flash2:";
-        field215 = "flash3:";
-        field237 = "glow1:";
-        field281 = "glow2:";
-        field374 = "glow3:";
-        field291 = "rainbow:";
-        field376 = "pattern";
-        field377 = "wave:";
-        field378 = "wave2:";
-        field227 = "shake:";
-        field380 = "scroll:";
-        field264 = "slide:";
-        field363 = "RuneScape is loading - please wait...";
-        field383 = "";
-        field384 = "Enter your username/email & password.";
-        field346 = "";
-        field202 = "Warning!";
-        field387 = "This is a <col=ff0000>PvP<col=ffffff> world.";
-        field388 = "Players can attack each other";
-        field189 = "almost everywhere.";
-        field478 = "This is a <col=ffff00>High Risk<col=ffffff> world.";
-        field412 = "The Protect Item prayer will";
-        field472 = "not work on this world.";
-        field393 = "This is a <col=ffff00>High Risk <col=ff0000>PvP<col=ffffff> world.";
-        field394 = "Players can attack each other almost everywhere";
-        field395 = "and the Protect Item prayer won't work.";
-        field406 = "This is a <col=00ffff>Beta<col=ffffff> world.";
-        field397 = "Your normal account will not be affected.";
-        field398 = "";
-        field399 = "Authenticator";
-        field400 = "";
-        field401 = "Connecting to server...";
-        field386 = "";
-        field403 = "The game servers are currently being updated.";
-        field404 = "Please wait a few minutes and try again.";
-        field405 = "";
-        field420 = "";
-        field407 = "You were disconnected from the server.";
-        field408 = "";
-        field409 = "Login: ";
-        field410 = "Password: ";
-        field411 = "PIN: ";
-        field454 = "Welcome to RuneScape";
-        field413 = "New User";
-        field414 = "Existing User";
-        field370 = "Login";
-        field416 = "Cancel";
-        field417 = "Remember username";
-        field371 = "Hide username";
-        field424 = "Incorrect username or password.";
-        field236 = "If you have upgraded to a Jagex Account, you";
-        field421 = "need to log in using the <u=ffd200><col=ffd200>Jagex Launcher</col></u> instead.";
-        field422 = "Try again";
-        field423 = "Forgotten password?";
-        field373 = "Forgotten your password?";
-        field295 = "Username/email: ";
-        field426 = "Recover";
-        field466 = "Back";
-        field381 = "Can't login? Click here.";
-        field429 = "Still having trouble logging in?";
-        field430 = "Having trouble logging in?";
-        field431 = "";
-        field432 = "Page has opened in the browser.";
-        field316 = "";
-        field434 = "Please enter your username.";
-        field435 = "If you created your account after November";
-        field436 = "2010, this will be the creation email address.";
-        field437 = field431;
-        field438 = field432;
-        field439 = field316;
-        field471 = "";
-        field441 = "Error connecting to server.";
-        field246 = "";
-        field443 = "The part of the website you are trying";
-        field444 = "to connect to is offline at the moment.";
-        field428 = "Please try again later.";
-        field446 = "Sorry, there was an error trying to";
-        field447 = "log you in to this part of the website.";
-        field440 = "Please try again later.";
-        field449 = "";
-        field210 = "Error connecting to server.";
-        field313 = "";
-        field178 = "You must enter a valid login to proceed. For accounts";
-        field453 = "created after 24th November 2010, please use your";
-        field277 = "email address. Otherwise please use your username.";
-        field451 = "Your date of birth isn't set.";
-        field456 = "Please verify your account status by";
-        field457 = "setting your date of birth.";
-        field458 = "Set Date of Birth";
-        field459 = "Your date of birth information is waiting";
-        field460 = "to be reviewed by our staff.";
-        field461 = "It will be processed shortly.";
-        field462 = "Before using this app, please read and accept our";
-        field463 = "<col=ffd200>terms of use</col>, <col=ffd200>privacy policy</col>, and <col=ffd200>end user licence</col>";
-        field464 = "<col=ffd200>agreement (EULA)</col>.";
-        field465 = "By accepting, you agree to these documents.";
-        field229 = "You must accept our terms of use, privacy policy,";
-        field467 = "and end user licence agreement to continue.";
-        field284 = "Accept";
-        field469 = "Decline";
-        field470 = "Select a world";
-        field198 = "Members only world";
-        field256 = "Free world";
-        field473 = "World";
-        field474 = "Players";
-        field475 = "Location";
-        field476 = "Type";
-        field477 = "OFF";
-        field372 = "FULL";
-        field322 = "Loading...";
-        field480 = "Click to switch";
-        field481 = "Download Launcher";
-        field482 = "https://oldschool.runescape.com/launcher";
-        field367 = "https://support.runescape.com/hc/en-gb/articles/360001552065";
-    }
+	boolean field165;
 
-    class32() throws Throwable {
-    }
+	int field152;
+
+	int field153;
+
+	int field154;
+
+	int field155;
+
+	int field156;
+
+	int field157;
+
+	int field158;
+
+	int field159;
+
+	int field160;
+
+	int field161;
+
+	int field162;
+
+	int field163;
+
+	int field164;
+
+	int field166;
+
+	class32(class529 var1, int var2, int var3) {
+		super.field1786 = var1;
+		this.field160 = var1.field4189;
+		this.field161 = var1.field4187;
+		this.field165 = var1.field4191;
+		this.field153 = var2;
+		this.field154 = var3;
+		this.field155 = 8192;
+		this.field162 = 0;
+		this.method150();
+	}
+
+	class32(class529 var1, int var2, int var3, int var4) {
+		super.field1786 = var1;
+		this.field160 = var1.field4189;
+		this.field161 = var1.field4187;
+		this.field165 = var1.field4191;
+		this.field153 = var2;
+		this.field154 = var3;
+		this.field155 = var4;
+		this.field162 = 0;
+		this.method150();
+	}
+
+	@Override
+	int method1065() {
+		int var1 = this.field156 * 3 >> 6;
+		var1 = (var1 ^ var1 >> 31) + (var1 >>> 31);
+		if (this.field159 == 0) {
+			var1 -= var1 * this.field162 / (((class529) super.field1786).field4188.length << 8);
+		} else if (this.field159 >= 0) {
+			var1 -= var1 * this.field160 / ((class529) super.field1786).field4188.length;
+		}
+		return var1 > 255 ? 255 : var1;
+	}
+
+	void method150() {
+		this.field156 = this.field154;
+		this.field164 = method142(this.field154, this.field155);
+		this.field158 = method109(this.field154, this.field155);
+	}
+
+	public synchronized void method113(int var1) {
+		this.field159 = var1;
+	}
+
+	public synchronized void method114(int var1) {
+		this.method115(var1 << 6, this.method117());
+	}
+
+	synchronized void method153(int var1) {
+		this.method115(0, this.method117());
+	}
+
+	synchronized void method115(int var1, int var2) {
+		this.field154 = var1;
+		this.field155 = var2;
+		this.field163 = 0;
+		this.method150();
+	}
+
+	public synchronized int method116() {
+		return this.field154 == Integer.MIN_VALUE ? 0 : this.field154;
+	}
+
+	public synchronized int method117() {
+		return this.field155 < 0 ? -1 : this.field155;
+	}
+
+	public synchronized void method118(int var1) {
+		int var2 = ((class529) super.field1786).field4188.length << 8;
+		if (var1 < -1) {
+			var1 = -1;
+		}
+		if (var1 > var2) {
+			var1 = var2;
+		}
+		this.field162 = var1;
+	}
+
+	public synchronized void method146(boolean var1) {
+		this.field153 = (this.field153 ^ this.field153 >> 31) + (this.field153 >>> 31);
+		this.field153 = -this.field153;
+	}
+
+	void method143() {
+		if (this.field163 != 0) {
+			if (this.field154 == Integer.MIN_VALUE) {
+				this.field154 = 0;
+			}
+			this.field163 = 0;
+			this.method150();
+		}
+	}
+
+	public synchronized void method145(int var1, int var2) {
+		this.method128(var1, var2, this.method117());
+	}
+
+	public synchronized void method128(int var1, int var2, int var3) {
+		if (var1 == 0) {
+			this.method115(var2, var3);
+		} else {
+			int var4 = method142(var2, var3);
+			int var5 = method109(var2, var3);
+			if (this.field164 == var4 && this.field158 == var5) {
+				this.field163 = 0;
+			} else {
+				int var6 = var2 - this.field156;
+				if (this.field156 - var2 > var6) {
+					var6 = this.field156 - var2;
+				}
+				if (var4 - this.field164 > var6) {
+					var6 = var4 - this.field164;
+				}
+				if (this.field164 - var4 > var6) {
+					var6 = this.field164 - var4;
+				}
+				if (var5 - this.field158 > var6) {
+					var6 = var5 - this.field158;
+				}
+				if (this.field158 - var5 > var6) {
+					var6 = this.field158 - var5;
+				}
+				if (var1 > var6) {
+					var1 = var6;
+				}
+				this.field163 = var1;
+				this.field154 = var2;
+				this.field155 = var3;
+				this.field152 = (var2 - this.field156) / var1;
+				this.field157 = (var4 - this.field164) / var1;
+				this.field166 = (var5 - this.field158) / var1;
+			}
+		}
+	}
+
+	public synchronized void method120(int var1) {
+		if (var1 == 0) {
+			this.method153(0);
+			this.method318();
+		} else if (this.field164 == 0 && this.field158 == 0) {
+			this.field163 = 0;
+			this.field154 = 0;
+			this.field156 = 0;
+			this.method318();
+		} else {
+			int var2 = -this.field156;
+			if (this.field156 > var2) {
+				var2 = this.field156;
+			}
+			if (-this.field164 > var2) {
+				var2 = -this.field164;
+			}
+			if (this.field164 > var2) {
+				var2 = this.field164;
+			}
+			if (-this.field158 > var2) {
+				var2 = -this.field158;
+			}
+			if (this.field158 > var2) {
+				var2 = this.field158;
+			}
+			if (var1 > var2) {
+				var1 = var2;
+			}
+			this.field163 = var1;
+			this.field154 = Integer.MIN_VALUE;
+			this.field152 = -this.field156 / var1;
+			this.field157 = -this.field164 / var1;
+			this.field166 = -this.field158 / var1;
+		}
+	}
+
+	public synchronized void method121(int var1) {
+		if (this.field153 < 0) {
+			this.field153 = -var1;
+		} else {
+			this.field153 = var1;
+		}
+	}
+
+	public synchronized int method122() {
+		return this.field153 < 0 ? -this.field153 : this.field153;
+	}
+
+	public boolean method123() {
+		return this.field162 < 0 || this.field162 >= ((class529) super.field1786).field4188.length << 8;
+	}
+
+	public boolean method124() {
+		return this.field163 != 0;
+	}
+
+	@Override
+	protected class182 method1066() {
+		return null;
+	}
+
+	@Override
+	protected class182 method1067() {
+		return null;
+	}
+
+	@Override
+	protected int method1064() {
+		return this.field154 == 0 && this.field163 == 0 ? 0 : 1;
+	}
+
+	@Override
+	public synchronized void method1069(int[] var1, int var2, int var3) {
+		if (this.field154 == 0 && this.field163 == 0) {
+			this.method1068(var3);
+		} else {
+			class529 var4 = (class529) super.field1786;
+			int var5 = this.field160 << 8;
+			int var6 = this.field161 << 8;
+			int var7 = var4.field4188.length << 8;
+			int var8 = var6 - var5;
+			if (var8 <= 0) {
+				this.field159 = 0;
+			}
+			int var9 = var2;
+			var3 += var2;
+			if (this.field162 < 0) {
+				if (this.field153 <= 0) {
+					this.method143();
+					this.method318();
+					return;
+				}
+				this.field162 = 0;
+			}
+			if (this.field162 >= var7) {
+				if (this.field153 >= 0) {
+					this.method143();
+					this.method318();
+					return;
+				}
+				this.field162 = var7 - 1;
+			}
+			if (this.field159 < 0) {
+				if (this.field165) {
+					if (this.field153 < 0) {
+						var9 = this.method130(var1, var2, var5, var3, var4.field4188[this.field160]);
+						if (this.field162 >= var5) {
+							return;
+						}
+						this.field162 = var5 + var5 - 1 - this.field162;
+						this.field153 = -this.field153;
+					}
+					while (true) {
+						var9 = this.method144(var1, var9, var6, var3, var4.field4188[this.field161 - 1]);
+						if (this.field162 < var6) {
+							return;
+						}
+						this.field162 = var6 + var6 - 1 - this.field162;
+						this.field153 = -this.field153;
+						var9 = this.method130(var1, var9, var5, var3, var4.field4188[this.field160]);
+						if (this.field162 >= var5) {
+							return;
+						}
+						this.field162 = var5 + var5 - 1 - this.field162;
+						this.field153 = -this.field153;
+					}
+				} else if (this.field153 < 0) {
+					while (true) {
+						var9 = this.method130(var1, var9, var5, var3, var4.field4188[this.field161 - 1]);
+						if (this.field162 >= var5) {
+							return;
+						}
+						this.field162 = var6 - 1 - (var6 - 1 - this.field162) % var8;
+					}
+				} else {
+					while (true) {
+						var9 = this.method144(var1, var9, var6, var3, var4.field4188[this.field160]);
+						if (this.field162 < var6) {
+							return;
+						}
+						this.field162 = var5 + (this.field162 - var5) % var8;
+					}
+				}
+			} else {
+				if (this.field159 > 0) {
+					if (this.field165) {
+						label131: {
+							if (this.field153 < 0) {
+								var9 = this.method130(var1, var2, var5, var3, var4.field4188[this.field160]);
+								if (this.field162 >= var5) {
+									return;
+								}
+								this.field162 = var5 + var5 - 1 - this.field162;
+								this.field153 = -this.field153;
+								if (--this.field159 == 0) {
+									break label131;
+								}
+							}
+							do {
+								var9 = this.method144(var1, var9, var6, var3, var4.field4188[this.field161 - 1]);
+								if (this.field162 < var6) {
+									return;
+								}
+								this.field162 = var6 + var6 - 1 - this.field162;
+								this.field153 = -this.field153;
+								if (--this.field159 == 0) {
+									break;
+								}
+								var9 = this.method130(var1, var9, var5, var3, var4.field4188[this.field160]);
+								if (this.field162 >= var5) {
+									return;
+								}
+								this.field162 = var5 + var5 - 1 - this.field162;
+								this.field153 = -this.field153;
+							} while (--this.field159 != 0);
+						}
+					} else {
+						int var10;
+						if (this.field153 < 0) {
+							while (true) {
+								var9 = this.method130(var1, var9, var5, var3, var4.field4188[this.field161 - 1]);
+								if (this.field162 >= var5) {
+									return;
+								}
+								var10 = (var6 - 1 - this.field162) / var8;
+								if (var10 >= this.field159) {
+									this.field162 += var8 * this.field159;
+									this.field159 = 0;
+									break;
+								}
+								this.field162 += var8 * var10;
+								this.field159 -= var10;
+							}
+						} else {
+							while (true) {
+								var9 = this.method144(var1, var9, var6, var3, var4.field4188[this.field160]);
+								if (this.field162 < var6) {
+									return;
+								}
+								var10 = (this.field162 - var5) / var8;
+								if (var10 >= this.field159) {
+									this.field162 -= var8 * this.field159;
+									this.field159 = 0;
+									break;
+								}
+								this.field162 -= var8 * var10;
+								this.field159 -= var10;
+							}
+						}
+					}
+				}
+				if (this.field153 < 0) {
+					this.method130(var1, var9, 0, var3, 0);
+					if (this.field162 < 0) {
+						this.field162 = -1;
+						this.method143();
+						this.method318();
+					}
+				} else {
+					this.method144(var1, var9, var7, var3, 0);
+					if (this.field162 >= var7) {
+						this.field162 = var7;
+						this.method143();
+						this.method318();
+					}
+				}
+			}
+		}
+	}
+
+	@Override
+	public synchronized void method1068(int var1) {
+		if (this.field163 > 0) {
+			if (var1 >= this.field163) {
+				if (this.field154 == Integer.MIN_VALUE) {
+					this.field154 = 0;
+					this.field158 = 0;
+					this.field164 = 0;
+					this.field156 = 0;
+					this.method318();
+					var1 = this.field163;
+				}
+				this.field163 = 0;
+				this.method150();
+			} else {
+				this.field156 += this.field152 * var1;
+				this.field164 += this.field157 * var1;
+				this.field158 += this.field166 * var1;
+				this.field163 -= var1;
+			}
+		}
+		class529 var2 = (class529) super.field1786;
+		int var3 = this.field160 << 8;
+		int var4 = this.field161 << 8;
+		int var5 = var2.field4188.length << 8;
+		int var6 = var4 - var3;
+		if (var6 <= 0) {
+			this.field159 = 0;
+		}
+		if (this.field162 < 0) {
+			if (this.field153 <= 0) {
+				this.method143();
+				this.method318();
+				return;
+			}
+			this.field162 = 0;
+		}
+		if (this.field162 >= var5) {
+			if (this.field153 >= 0) {
+				this.method143();
+				this.method318();
+				return;
+			}
+			this.field162 = var5 - 1;
+		}
+		this.field162 += this.field153 * var1;
+		if (this.field159 < 0) {
+			if (!this.field165) {
+				if (this.field153 < 0) {
+					if (this.field162 >= var3) {
+						return;
+					}
+					this.field162 = var4 - 1 - (var4 - 1 - this.field162) % var6;
+				} else {
+					if (this.field162 < var4) {
+						return;
+					}
+					this.field162 = var3 + (this.field162 - var3) % var6;
+				}
+			} else {
+				if (this.field153 < 0) {
+					if (this.field162 >= var3) {
+						return;
+					}
+					this.field162 = var3 + var3 - 1 - this.field162;
+					this.field153 = -this.field153;
+				}
+				while (this.field162 >= var4) {
+					this.field162 = var4 + var4 - 1 - this.field162;
+					this.field153 = -this.field153;
+					if (this.field162 >= var3) {
+						return;
+					}
+					this.field162 = var3 + var3 - 1 - this.field162;
+					this.field153 = -this.field153;
+				}
+			}
+		} else {
+			if (this.field159 > 0) {
+				if (this.field165) {
+					label120: {
+						if (this.field153 < 0) {
+							if (this.field162 >= var3) {
+								return;
+							}
+							this.field162 = var3 + var3 - 1 - this.field162;
+							this.field153 = -this.field153;
+							if (--this.field159 == 0) {
+								break label120;
+							}
+						}
+						do {
+							if (this.field162 < var4) {
+								return;
+							}
+							this.field162 = var4 + var4 - 1 - this.field162;
+							this.field153 = -this.field153;
+							if (--this.field159 == 0) {
+								break;
+							}
+							if (this.field162 >= var3) {
+								return;
+							}
+							this.field162 = var3 + var3 - 1 - this.field162;
+							this.field153 = -this.field153;
+						} while (--this.field159 != 0);
+					}
+				} else {
+					label152: {
+						int var7;
+						if (this.field153 < 0) {
+							if (this.field162 >= var3) {
+								return;
+							}
+							var7 = (var4 - 1 - this.field162) / var6;
+							if (var7 >= this.field159) {
+								this.field162 += var6 * this.field159;
+								this.field159 = 0;
+								break label152;
+							}
+							this.field162 += var6 * var7;
+							this.field159 -= var7;
+						} else {
+							if (this.field162 < var4) {
+								return;
+							}
+							var7 = (this.field162 - var3) / var6;
+							if (var7 >= this.field159) {
+								this.field162 -= var6 * this.field159;
+								this.field159 = 0;
+								break label152;
+							}
+							this.field162 -= var6 * var7;
+							this.field159 -= var7;
+						}
+						return;
+					}
+				}
+			}
+			if (this.field153 < 0) {
+				if (this.field162 < 0) {
+					this.field162 = -1;
+					this.method143();
+					this.method318();
+				}
+			} else if (this.field162 >= var5) {
+				this.field162 = var5;
+				this.method143();
+				this.method318();
+			}
+		}
+	}
+
+	int method144(int[] var1, int var2, int var3, int var4, int var5) {
+		while (true) {
+			if (this.field163 > 0) {
+				int var6 = var2 + this.field163;
+				if (var6 > var4) {
+					var6 = var4;
+				}
+				this.field163 += var2;
+				if (this.field153 == 256 && (this.field162 & 255) == 0) {
+					if (class537.field4232) {
+						var2 = method137(0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field164, this.field158, this.field157, this.field166, 0, var6, var3, this);
+					} else {
+						var2 = method136(((class529) super.field1786).field4188, var1, this.field162, var2, this.field156, this.field152, 0, var6, var3, this);
+					}
+				} else if (class537.field4232) {
+					var2 = method141(0, 0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field164, this.field158, this.field157, this.field166, 0, var6, var3, this, this.field153, var5);
+				} else {
+					var2 = method140(0, 0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field156, this.field152, 0, var6, var3, this, this.field153, var5);
+				}
+				this.field163 -= var2;
+				if (this.field163 != 0) {
+					return var2;
+				}
+				if (!this.method149()) {
+					continue;
+				}
+				return var4;
+			}
+			if (this.field153 == 256 && (this.field162 & 255) == 0) {
+				if (class537.field4232) {
+					return method131(0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field164, this.field158, 0, var4, var3, this);
+				}
+				return method111(((class529) super.field1786).field4188, var1, this.field162, var2, this.field156, 0, var4, var3, this);
+			}
+			if (class537.field4232) {
+				return method134(0, 0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field164, this.field158, 0, var4, var3, this, this.field153, var5);
+			}
+			return method133(0, 0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field156, 0, var4, var3, this, this.field153, var5);
+		}
+	}
+
+	int method130(int[] var1, int var2, int var3, int var4, int var5) {
+		while (true) {
+			if (this.field163 > 0) {
+				int var6 = var2 + this.field163;
+				if (var6 > var4) {
+					var6 = var4;
+				}
+				this.field163 += var2;
+				if (this.field153 == -256 && (this.field162 & 255) == 0) {
+					if (class537.field4232) {
+						var2 = method139(0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field164, this.field158, this.field157, this.field166, 0, var6, var3, this);
+					} else {
+						var2 = method138(((class529) super.field1786).field4188, var1, this.field162, var2, this.field156, this.field152, 0, var6, var3, this);
+					}
+				} else if (class537.field4232) {
+					var2 = method148(0, 0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field164, this.field158, this.field157, this.field166, 0, var6, var3, this, this.field153, var5);
+				} else {
+					var2 = method151(0, 0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field156, this.field152, 0, var6, var3, this, this.field153, var5);
+				}
+				this.field163 -= var2;
+				if (this.field163 != 0) {
+					return var2;
+				}
+				if (!this.method149()) {
+					continue;
+				}
+				return var4;
+			}
+			if (this.field153 == -256 && (this.field162 & 255) == 0) {
+				if (class537.field4232) {
+					return method152(0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field164, this.field158, 0, var4, var3, this);
+				}
+				return method132(((class529) super.field1786).field4188, var1, this.field162, var2, this.field156, 0, var4, var3, this);
+			}
+			if (class537.field4232) {
+				return method135(0, 0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field164, this.field158, 0, var4, var3, this, this.field153, var5);
+			}
+			return method119(0, 0, ((class529) super.field1786).field4188, var1, this.field162, var2, this.field156, 0, var4, var3, this, this.field153, var5);
+		}
+	}
+
+	boolean method149() {
+		int var1 = this.field154;
+		int var2;
+		int var3;
+		if (var1 == Integer.MIN_VALUE) {
+			var3 = 0;
+			var2 = 0;
+			var1 = 0;
+		} else {
+			var2 = method142(var1, this.field155);
+			var3 = method109(var1, this.field155);
+		}
+		if (this.field156 == var1 && this.field164 == var2 && this.field158 == var3) {
+			if (this.field154 == Integer.MIN_VALUE) {
+				this.field154 = 0;
+				this.field158 = 0;
+				this.field164 = 0;
+				this.field156 = 0;
+				this.method318();
+				return true;
+			} else {
+				this.method150();
+				return false;
+			}
+		} else {
+			if (this.field156 < var1) {
+				this.field152 = 1;
+				this.field163 = var1 - this.field156;
+			} else if (this.field156 > var1) {
+				this.field152 = -1;
+				this.field163 = this.field156 - var1;
+			} else {
+				this.field152 = 0;
+			}
+			if (this.field164 < var2) {
+				this.field157 = 1;
+				if (this.field163 == 0 || this.field163 > var2 - this.field164) {
+					this.field163 = var2 - this.field164;
+				}
+			} else if (this.field164 > var2) {
+				this.field157 = -1;
+				if (this.field163 == 0 || this.field163 > this.field164 - var2) {
+					this.field163 = this.field164 - var2;
+				}
+			} else {
+				this.field157 = 0;
+			}
+			if (this.field158 < var3) {
+				this.field166 = 1;
+				if (this.field163 == 0 || this.field163 > var3 - this.field158) {
+					this.field163 = var3 - this.field158;
+				}
+			} else if (this.field158 > var3) {
+				this.field166 = -1;
+				if (this.field163 == 0 || this.field163 > this.field158 - var3) {
+					this.field163 = this.field158 - var3;
+				}
+			} else {
+				this.field166 = 0;
+			}
+			return false;
+		}
+	}
+
+	static int method142(int var0, int var1) {
+		return var1 < 0 ? var0 : (int) ((double) var0 * Math.sqrt((double) (16384 - var1) * 1.220703125E-4D) + 0.5D);
+	}
+
+	static int method109(int var0, int var1) {
+		return var1 < 0 ? -var0 : (int) ((double) var0 * Math.sqrt((double) var1 * 1.220703125E-4D) + 0.5D);
+	}
+
+	public static class32 method147(class529 var0, int var1, int var2) {
+		return var0.field4188 != null && var0.field4188.length != 0 ? new class32(var0, (int) ((long) var0.field4190 * 256L * (long) 100 / (long) (class537.field4217 * 100)), var2 << 6) : null;
+	}
+
+	public static class32 method112(class529 var0, int var1, int var2, int var3) {
+		return var0.field4188 != null && var0.field4188.length != 0 ? new class32(var0, var1, var2, var3) : null;
+	}
+
+	static int method111(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, class32 var8) {
+		var2 >>= 8;
+		var7 >>= 8;
+		var4 <<= 2;
+		if ((var5 = var3 + var7 - var2) > var6) {
+			var5 = var6;
+		}
+		int var10001;
+		for (var5 -= 3; var3 < var5; var1[var10001] += var0[var2++] * var4) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var10001 = var3++;
+		}
+		for (var5 += 3; var3 < var5; var1[var10001] += var0[var2++] * var4) {
+			var10001 = var3++;
+		}
+		var8.field162 = var2 << 8;
+		return var3;
+	}
+
+	static int method131(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, class32 var10) {
+		var3 >>= 8;
+		var9 >>= 8;
+		var5 <<= 2;
+		var6 <<= 2;
+		if ((var7 = var4 + var9 - var3) > var8) {
+			var7 = var8;
+		}
+		var4 <<= 1;
+		var7 <<= 1;
+		int var10001;
+		byte var11;
+		for (var7 -= 6; var4 < var7; var2[var10001] += var11 * var6) {
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+		}
+		for (var7 += 6; var4 < var7; var2[var10001] += var11 * var6) {
+			var11 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+		}
+		var10.field162 = var3 << 8;
+		return var4 >> 1;
+	}
+
+	static int method132(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, class32 var8) {
+		var2 >>= 8;
+		var7 >>= 8;
+		var4 <<= 2;
+		if ((var5 = var3 + var2 - (var7 - 1)) > var6) {
+			var5 = var6;
+		}
+		int var10001;
+		for (var5 -= 3; var3 < var5; var1[var10001] += var0[var2--] * var4) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var10001 = var3++;
+		}
+		for (var5 += 3; var3 < var5; var1[var10001] += var0[var2--] * var4) {
+			var10001 = var3++;
+		}
+		var8.field162 = var2 << 8;
+		return var3;
+	}
+
+	static int method152(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, class32 var10) {
+		var3 >>= 8;
+		var9 >>= 8;
+		var5 <<= 2;
+		var6 <<= 2;
+		if ((var7 = var4 + var3 - (var9 - 1)) > var8) {
+			var7 = var8;
+		}
+		var4 <<= 1;
+		var7 <<= 1;
+		int var10001;
+		byte var11;
+		for (var7 -= 6; var4 < var7; var2[var10001] += var11 * var6) {
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+			var2[var10001] += var11 * var6;
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+		}
+		for (var7 += 6; var4 < var7; var2[var10001] += var11 * var6) {
+			var11 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var11 * var5;
+			var10001 = var4++;
+		}
+		var10.field162 = var3 << 8;
+		return var4 >> 1;
+	}
+
+	static int method133(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, class32 var10, int var11, int var12) {
+		if (var11 == 0 || (var7 = var5 + (var9 - var4 + var11 - 257) / var11) > var8) {
+			var7 = var8;
+		}
+		byte var13;
+		int var10001;
+		while (var5 < var7) {
+			var1 = var4 >> 8;
+			var13 = var2[var1];
+			var10001 = var5++;
+			var3[var10001] += ((var13 << 8) + (var2[var1 + 1] - var13) * (var4 & 255)) * var6 >> 6;
+			var4 += var11;
+		}
+		if (var11 == 0 || (var7 = var5 + (var9 - var4 + var11 - 1) / var11) > var8) {
+			var7 = var8;
+		}
+		for (var1 = var12; var5 < var7; var4 += var11) {
+			var13 = var2[var4 >> 8];
+			var10001 = var5++;
+			var3[var10001] += ((var13 << 8) + (var1 - var13) * (var4 & 255)) * var6 >> 6;
+		}
+		var10.field162 = var4;
+		return var5;
+	}
+
+	static int method134(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class32 var11, int var12, int var13) {
+		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 257) / var12) > var9) {
+			var8 = var9;
+		}
+		var5 <<= 1;
+		byte var14;
+		int var10001;
+		for (var8 <<= 1; var5 < var8; var4 += var12) {
+			var1 = var4 >> 8;
+			var14 = var2[var1];
+			var0 = (var14 << 8) + (var2[var1 + 1] - var14) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+		}
+		if (var12 == 0 || (var8 = (var5 >> 1) + (var10 - var4 + var12 - 1) / var12) > var9) {
+			var8 = var9;
+		}
+		var8 <<= 1;
+		for (var1 = var13; var5 < var8; var4 += var12) {
+			var14 = var2[var4 >> 8];
+			var0 = (var14 << 8) + (var1 - var14) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+		}
+		var11.field162 = var4;
+		return var5 >> 1;
+	}
+
+	static int method119(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, class32 var10, int var11, int var12) {
+		if (var11 == 0 || (var7 = var5 + (var9 + 256 - var4 + var11) / var11) > var8) {
+			var7 = var8;
+		}
+		int var10001;
+		while (var5 < var7) {
+			var1 = var4 >> 8;
+			byte var13 = var2[var1 - 1];
+			var10001 = var5++;
+			var3[var10001] += ((var13 << 8) + (var2[var1] - var13) * (var4 & 255)) * var6 >> 6;
+			var4 += var11;
+		}
+		if (var11 == 0 || (var7 = var5 + (var9 - var4 + var11) / var11) > var8) {
+			var7 = var8;
+		}
+		var0 = var12;
+		for (var1 = var11; var5 < var7; var4 += var1) {
+			var10001 = var5++;
+			var3[var10001] += ((var0 << 8) + (var2[var4 >> 8] - var0) * (var4 & 255)) * var6 >> 6;
+		}
+		var10.field162 = var4;
+		return var5;
+	}
+
+	static int method135(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class32 var11, int var12, int var13) {
+		if (var12 == 0 || (var8 = var5 + (var10 + 256 - var4 + var12) / var12) > var9) {
+			var8 = var9;
+		}
+		var5 <<= 1;
+		int var10001;
+		for (var8 <<= 1; var5 < var8; var4 += var12) {
+			var1 = var4 >> 8;
+			byte var14 = var2[var1 - 1];
+			var0 = (var14 << 8) + (var2[var1] - var14) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+		}
+		if (var12 == 0 || (var8 = (var5 >> 1) + (var10 - var4 + var12) / var12) > var9) {
+			var8 = var9;
+		}
+		var8 <<= 1;
+		for (var1 = var13; var5 < var8; var4 += var12) {
+			var0 = (var1 << 8) + (var2[var4 >> 8] - var1) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+		}
+		var11.field162 = var4;
+		return var5 >> 1;
+	}
+
+	static int method136(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, class32 var9) {
+		var2 >>= 8;
+		var8 >>= 8;
+		var4 <<= 2;
+		var5 <<= 2;
+		if ((var6 = var3 + var8 - var2) > var7) {
+			var6 = var7;
+		}
+		var9.field164 += var9.field157 * (var6 - var3);
+		var9.field158 += var9.field166 * (var6 - var3);
+		int var10001;
+		for (var6 -= 3; var3 < var6; var4 += var5) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+		}
+		for (var6 += 3; var3 < var6; var4 += var5) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2++] * var4;
+		}
+		var9.field156 = var4 >> 2;
+		var9.field162 = var2 << 8;
+		return var3;
+	}
+
+	static int method137(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, class32 var12) {
+		var3 >>= 8;
+		var11 >>= 8;
+		var5 <<= 2;
+		var6 <<= 2;
+		var7 <<= 2;
+		var8 <<= 2;
+		if ((var9 = var4 + var11 - var3) > var10) {
+			var9 = var10;
+		}
+		var12.field156 += var12.field152 * (var9 - var4);
+		var4 <<= 1;
+		var9 <<= 1;
+		byte var13;
+		int var10001;
+		for (var9 -= 6; var4 < var9; var6 += var8) {
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+		}
+		for (var9 += 6; var4 < var9; var6 += var8) {
+			var13 = var1[var3++];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+		}
+		var12.field164 = var5 >> 2;
+		var12.field158 = var6 >> 2;
+		var12.field162 = var3 << 8;
+		return var4 >> 1;
+	}
+
+	static int method138(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, class32 var9) {
+		var2 >>= 8;
+		var8 >>= 8;
+		var4 <<= 2;
+		var5 <<= 2;
+		if ((var6 = var3 + var2 - (var8 - 1)) > var7) {
+			var6 = var7;
+		}
+		var9.field164 += var9.field157 * (var6 - var3);
+		var9.field158 += var9.field166 * (var6 - var3);
+		int var10001;
+		for (var6 -= 3; var3 < var6; var4 += var5) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+			var4 += var5;
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+		}
+		for (var6 += 3; var3 < var6; var4 += var5) {
+			var10001 = var3++;
+			var1[var10001] += var0[var2--] * var4;
+		}
+		var9.field156 = var4 >> 2;
+		var9.field162 = var2 << 8;
+		return var3;
+	}
+
+	static int method139(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, class32 var12) {
+		var3 >>= 8;
+		var11 >>= 8;
+		var5 <<= 2;
+		var6 <<= 2;
+		var7 <<= 2;
+		var8 <<= 2;
+		if ((var9 = var4 + var3 - (var11 - 1)) > var10) {
+			var9 = var10;
+		}
+		var12.field156 += var12.field152 * (var9 - var4);
+		var4 <<= 1;
+		var9 <<= 1;
+		byte var13;
+		int var10001;
+		for (var9 -= 6; var4 < var9; var6 += var8) {
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+			var6 += var8;
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+		}
+		for (var9 += 6; var4 < var9; var6 += var8) {
+			var13 = var1[var3--];
+			var10001 = var4++;
+			var2[var10001] += var13 * var5;
+			var5 += var7;
+			var10001 = var4++;
+			var2[var10001] += var13 * var6;
+		}
+		var12.field164 = var5 >> 2;
+		var12.field158 = var6 >> 2;
+		var12.field162 = var3 << 8;
+		return var4 >> 1;
+	}
+
+	static int method140(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class32 var11, int var12, int var13) {
+		var11.field164 -= var11.field157 * var5;
+		var11.field158 -= var11.field166 * var5;
+		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 257) / var12) > var9) {
+			var8 = var9;
+		}
+		byte var14;
+		int var10001;
+		while (var5 < var8) {
+			var1 = var4 >> 8;
+			var14 = var2[var1];
+			var10001 = var5++;
+			var3[var10001] += ((var14 << 8) + (var2[var1 + 1] - var14) * (var4 & 255)) * var6 >> 6;
+			var6 += var7;
+			var4 += var12;
+		}
+		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 1) / var12) > var9) {
+			var8 = var9;
+		}
+		for (var1 = var13; var5 < var8; var4 += var12) {
+			var14 = var2[var4 >> 8];
+			var10001 = var5++;
+			var3[var10001] += ((var14 << 8) + (var1 - var14) * (var4 & 255)) * var6 >> 6;
+			var6 += var7;
+		}
+		var11.field164 += var11.field157 * var5;
+		var11.field158 += var11.field166 * var5;
+		var11.field156 = var6;
+		var11.field162 = var4;
+		return var5;
+	}
+
+	static int method141(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, class32 var13, int var14, int var15) {
+		var13.field156 -= var13.field152 * var5;
+		if (var14 == 0 || (var10 = var5 + (var12 - var4 + var14 - 257) / var14) > var11) {
+			var10 = var11;
+		}
+		var5 <<= 1;
+		byte var16;
+		int var10001;
+		for (var10 <<= 1; var5 < var10; var4 += var14) {
+			var1 = var4 >> 8;
+			var16 = var2[var1];
+			var0 = (var16 << 8) + (var2[var1 + 1] - var16) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var6 += var8;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+			var7 += var9;
+		}
+		if (var14 == 0 || (var10 = (var5 >> 1) + (var12 - var4 + var14 - 1) / var14) > var11) {
+			var10 = var11;
+		}
+		var10 <<= 1;
+		for (var1 = var15; var5 < var10; var4 += var14) {
+			var16 = var2[var4 >> 8];
+			var0 = (var16 << 8) + (var1 - var16) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var6 += var8;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+			var7 += var9;
+		}
+		var5 >>= 1;
+		var13.field156 += var13.field152 * var5;
+		var13.field164 = var6;
+		var13.field158 = var7;
+		var13.field162 = var4;
+		return var5;
+	}
+
+	static int method151(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, class32 var11, int var12, int var13) {
+		var11.field164 -= var11.field157 * var5;
+		var11.field158 -= var11.field166 * var5;
+		if (var12 == 0 || (var8 = var5 + (var10 + 256 - var4 + var12) / var12) > var9) {
+			var8 = var9;
+		}
+		int var10001;
+		while (var5 < var8) {
+			var1 = var4 >> 8;
+			byte var14 = var2[var1 - 1];
+			var10001 = var5++;
+			var3[var10001] += ((var14 << 8) + (var2[var1] - var14) * (var4 & 255)) * var6 >> 6;
+			var6 += var7;
+			var4 += var12;
+		}
+		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12) / var12) > var9) {
+			var8 = var9;
+		}
+		var0 = var13;
+		for (var1 = var12; var5 < var8; var4 += var1) {
+			var10001 = var5++;
+			var3[var10001] += ((var0 << 8) + (var2[var4 >> 8] - var0) * (var4 & 255)) * var6 >> 6;
+			var6 += var7;
+		}
+		var11.field164 += var11.field157 * var5;
+		var11.field158 += var11.field166 * var5;
+		var11.field156 = var6;
+		var11.field162 = var4;
+		return var5;
+	}
+
+	static int method148(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, class32 var13, int var14, int var15) {
+		var13.field156 -= var13.field152 * var5;
+		if (var14 == 0 || (var10 = var5 + (var12 + 256 - var4 + var14) / var14) > var11) {
+			var10 = var11;
+		}
+		var5 <<= 1;
+		int var10001;
+		for (var10 <<= 1; var5 < var10; var4 += var14) {
+			var1 = var4 >> 8;
+			byte var16 = var2[var1 - 1];
+			var0 = (var16 << 8) + (var2[var1] - var16) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var6 += var8;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+			var7 += var9;
+		}
+		if (var14 == 0 || (var10 = (var5 >> 1) + (var12 - var4 + var14) / var14) > var11) {
+			var10 = var11;
+		}
+		var10 <<= 1;
+		for (var1 = var15; var5 < var10; var4 += var14) {
+			var0 = (var1 << 8) + (var2[var4 >> 8] - var1) * (var4 & 255);
+			var10001 = var5++;
+			var3[var10001] += var0 * var6 >> 6;
+			var6 += var8;
+			var10001 = var5++;
+			var3[var10001] += var0 * var7 >> 6;
+			var7 += var9;
+		}
+		var5 >>= 1;
+		var13.field156 += var13.field152 * var5;
+		var13.field164 = var6;
+		var13.field158 = var7;
+		var13.field162 = var4;
+		return var5;
+	}
 }

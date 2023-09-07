@@ -1,21 +1,21 @@
-public class class177 {
-    static final class177 field1512;
-    static final class177 field1513;
+public class class177 extends class7 {
 
-    static {
-        field1512 = new class177(51, 27, 800, 0, 16, 16);
-        field1513 = new class177(25, 28, 800, 656, 40, 40);
-    }
+	final boolean field1756;
 
-    final int field1510;
-    final int field1511;
+	public class177(boolean var1) {
+		this.field1756 = var1;
+	}
 
-    class177(int var1, int var2, int var3, int var4, int var5, int var6) {
-        this.field1511 = var5;
-        this.field1510 = var6;
-    }
+	int method1049(class150 var1, class150 var2) {
+		if (var2.field1578 != var1.field1578) {
+			return this.field1756 ? var1.field1578 - var2.field1578 : var2.field1578 - var1.field1578;
+		} else {
+			return this.method19(var1, var2);
+		}
+	}
 
-    static class177[] method855() {
-        return new class177[]{field1512, field1513};
-    }
+	@Override
+	public int compare(Object var1, Object var2) {
+		return this.method1049((class150) var1, (class150) var2);
+	}
 }

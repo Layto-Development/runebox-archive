@@ -1,34 +1,29 @@
-public class class427 {
-    public static final class427 field2933;
-    static final class427 field2931;
-    static final class427 field2934;
+public class class427 extends class310 {
 
-    static {
-        field2934 = new class427(0);
-        field2933 = new class427(1);
-        field2931 = new class427(2);
-    }
+	static int[] field3346;
 
-    public final int field2932;
+	public final int field3347;
 
-    class427(int var1) {
-        this.field2932 = var1;
-    }
+	public final int field3348;
 
-    static class427[] method1966() {
-        return new class427[]{field2934, field2931, field2933};
-    }
+	public final int[] field3349;
 
-    public static class427 method1965(int var0) {
-        class427[] var2 = method1966();
+	public final int[] field3350;
 
-        for (int var3 = 0; var3 < var2.length; ++var3) {
-            class427 var4 = var2[var3];
-            if (var4.field2932 == var0) {
-                return var4;
-            }
-        }
+	class427(int var1, int var2, int[] var3, int[] var4, int var5) {
+		this.field3348 = var1;
+		this.field3347 = var2;
+		this.field3349 = var3;
+		this.field3350 = var4;
+	}
 
-        return null;
-    }
+	public boolean method2156(int var1, int var2) {
+		if (var2 >= 0 && var2 < this.field3350.length) {
+			int var4 = this.field3350[var2];
+			if (var1 >= var4 && var1 <= this.field3349[var2] + var4) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

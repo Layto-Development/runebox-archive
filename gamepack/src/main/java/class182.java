@@ -1,54 +1,36 @@
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+public abstract class class182 extends class77 {
 
-public class class182 {
-    static int field1530;
+	class182 field1783;
 
-    class182() throws Throwable {
-    }
+	class423 field1786;
 
-    static class228 method867(int var0) {
-        class228 var2 = (class228) class124.field1126.method1307(var0);
-        if (var2 != null) {
-            return var2;
-        } else {
-            class68 var4 = class397.field2798;
-            class68 var5 = class260.field1938;
-            boolean var6 = true;
-            byte[] var7 = var4.method196(var0 >> 16 & 65535, var0 & 65535);
-            class228 var3;
-            if (var7 == null) {
-                var6 = false;
-                var3 = null;
-            } else {
-                int var8 = (var7[1] & 255) << 8 | var7[2] & 255;
-                byte[] var9 = var5.method196(var8, 0);
-                if (var9 == null) {
-                    var6 = false;
-                }
+	int field1784;
 
-                if (!var6) {
-                    var3 = null;
-                } else {
-                    if (class228.field1788 == null) {
-                        class309.field2256 = Runtime.getRuntime().availableProcessors();
-                        class228.field1788 = new ThreadPoolExecutor(0, class309.field2256, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(100 + class309.field2256 * 100), new class333());
-                    }
+	volatile boolean field1785;
 
-                    try {
-                        var3 = new class228(var4, var5, var0, false);
-                    } catch (Exception var11) {
-                        var3 = null;
-                    }
-                }
-            }
+	protected class182() {
+		this.field1785 = true;
+	}
 
-            if (var3 != null) {
-                class124.field1126.method1306(var3, var0);
-            }
+	protected abstract class182 method1066();
 
-            return var3;
-        }
-    }
+	protected abstract class182 method1067();
+
+	protected abstract int method1064();
+
+	protected abstract void method1068(int var1);
+
+	protected abstract void method1069(int[] var1, int var2, int var3);
+
+	int method1065() {
+		return 255;
+	}
+
+	final void method1070(int[] var1, int var2, int var3) {
+		if (this.field1785) {
+			this.method1069(var1, var2, var3);
+		} else {
+			this.method1068(var3);
+		}
+	}
 }

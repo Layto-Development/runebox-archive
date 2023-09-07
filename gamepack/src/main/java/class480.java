@@ -1,48 +1,30 @@
 public class class480 {
-    byte[] field3458;
-    int field3457;
-    int field3459;
 
-    class480() {
-        this.field3458 = null;
-        this.field3457 = 0;
-        this.field3459 = 0;
-    }
+	static final class480 field3763;
 
-    int method2225(int var1) {
-        int var3 = 0;
+	static final class480 field3764;
 
-        int var4;
-        int var5;
-        for (var4 = 0; var1 >= 8 - this.field3459; var1 -= var5) {
-            var5 = 8 - this.field3459;
-            int var6 = (1 << var5) - 1;
-            var3 += (this.field3458[this.field3457] >> this.field3459 & var6) << var4;
-            this.field3459 = 0;
-            ++this.field3457;
-            var4 += var5;
-        }
+	static final class480 field3765;
 
-        if (var1 > 0) {
-            var5 = (1 << var1) - 1;
-            var3 += (this.field3458[this.field3457] >> this.field3459 & var5) << var4;
-            this.field3459 += var1;
-        }
+	static final class480 field3766;
 
-        return var3;
-    }
+	public final int field3767;
 
-    int method2226() {
-        int var2 = this.field3458[this.field3457] >> this.field3459 & 1;
-        ++this.field3459;
-        this.field3457 += this.field3459 >> 3;
-        this.field3459 &= 7;
-        return var2;
-    }
+	public final String field3762;
 
-    void method2227(byte[] var1, int var2) {
-        this.field3458 = var1;
-        this.field3457 = 0;
-        this.field3459 = 0;
-    }
+	static {
+		field3765 = new class480("LIVE", 0);
+		field3763 = new class480("BUILDLIVE", 3);
+		field3764 = new class480("RC", 1);
+		field3766 = new class480("WIP", 2);
+	}
+
+	class480(String var1, int var2) {
+		this.field3762 = var1;
+		this.field3767 = var2;
+	}
+
+	public static class480[] method2326() {
+		return new class480[] { field3765, field3764, field3766, field3763 };
+	}
 }

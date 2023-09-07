@@ -1,93 +1,146 @@
-public class class486 implements class465 {
-    int field3486;
-    int field3487;
-    int field3488;
-    int field3489;
-    int field3490;
-    int field3491;
-    int field3492;
-    int field3493;
-    int field3494;
-    int field3495;
+import java.io.IOException;
+import java.io.OutputStream;
 
-    class486() {
-    }
+public class class486 implements Runnable {
 
-    static final void method2236() {
-        Client.field3983 = Client.field3777;
-        class405.field2869 = true;
-    }
+	boolean field3900;
 
-    @Override
-    public void method2131(class387 var1) {
-        if (var1.field2771 > this.field3493) {
-            var1.field2771 = this.field3493;
-        }
+	byte[] field3901;
 
-        if (var1.field2765 < this.field3494) {
-            var1.field2765 = this.field3494;
-        }
+	int field3898;
 
-        if (var1.field2773 > this.field3487) {
-            var1.field2773 = this.field3487;
-        }
+	int field3902;
 
-        if (var1.field2767 < this.field3486) {
-            var1.field2767 = this.field3486;
-        }
+	int field3903;
 
-    }
+	IOException field3904;
 
-    @Override
-    public boolean method2126(int var1, int var2, int var3) {
-        if (var1 >= this.field3492 && var1 < this.field3492 + this.field3495) {
-            return var2 >> 6 >= this.field3488 && var2 >> 6 <= this.field3490 && var3 >> 6 >= this.field3489 && var3 >> 6 <= this.field3491;
-        } else {
-            return false;
-        }
-    }
+	OutputStream field3899;
 
-    @Override
-    public boolean method2127(int var1, int var2) {
-        return var1 >> 6 >= this.field3493 && var1 >> 6 <= this.field3494 && var2 >> 6 >= this.field3487 && var2 >> 6 <= this.field3486;
-    }
+	Thread field3905;
 
-    @Override
-    public int[] method2129(int var1, int var2, int var3) {
-        if (!this.method2126(var1, var2, var3)) {
-            return null;
-        } else {
-            int[] var5 = new int[]{this.field3493 * 64 - this.field3488 * 64 + var2, this.field3487 * 64 - this.field3489 * 64 + var3};
-            return var5;
-        }
-    }
+	class486(OutputStream var1, int var2) {
+		this.field3902 = 0;
+		this.field3903 = 0;
+		this.field3899 = var1;
+		this.field3898 = var2 + 1;
+		this.field3901 = new byte[this.field3898];
+		this.field3905 = new Thread(this);
+		this.field3905.setDaemon(true);
+		this.field3905.start();
+	}
 
-    @Override
-    public class258 method2130(int var1, int var2) {
-        if (!this.method2127(var1, var2)) {
-            return null;
-        } else {
-            int var4 = var1 + (this.field3488 * 64 - this.field3493 * 64);
-            int var5 = var2 + (this.field3489 * 64 - this.field3487 * 64);
-            return new class258(this.field3492, var4, var5);
-        }
-    }
+	boolean method2343() {
+		if (this.field3900) {
+			try {
+				this.field3899.close();
+				if (null == this.field3904) {
+					this.field3904 = new IOException("");
+				}
+			} catch (IOException var3) {
+				if (null == this.field3904) {
+					this.field3904 = new IOException(var3);
+				}
+			}
+			return true;
+		} else {
+			return false;
+		}
+	}
 
-    @Override
-    public void method2128(class78 var1) {
-        this.field3492 = var1.method260();
-        this.field3495 = var1.method260();
-        this.field3488 = var1.method309();
-        this.field3489 = var1.method309();
-        this.field3490 = var1.method309();
-        this.field3491 = var1.method309();
-        this.field3493 = var1.method309();
-        this.field3487 = var1.method309();
-        this.field3494 = var1.method309();
-        this.field3486 = var1.method309();
-        this.method2235();
-    }
+	@Override
+	public void run() {
+		do {
+			int var1;
+			synchronized (this) {
+				while (true) {
+					if (this.field3904 != null) {
+						return;
+					}
+					if (this.field3902 <= this.field3903) {
+						var1 = this.field3903 - this.field3902;
+					} else {
+						var1 = this.field3903 + (this.field3898 - this.field3902);
+					}
+					if (var1 > 0) {
+						break;
+					}
+					try {
+						this.field3899.flush();
+					} catch (IOException var10) {
+						this.field3904 = var10;
+						return;
+					}
+					if (this.method2343()) {
+						return;
+					}
+					try {
+						this.wait();
+					} catch (InterruptedException var11) {
+					}
+				}
+			}
+			try {
+				if (var1 + this.field3902 <= this.field3898) {
+					this.field3899.write(this.field3901, this.field3902, var1);
+				} else {
+					int var13 = this.field3898 - this.field3902;
+					this.field3899.write(this.field3901, this.field3902, var13);
+					this.field3899.write(this.field3901, 0, var1 - var13);
+				}
+			} catch (IOException var9) {
+				IOException var2 = var9;
+				synchronized (this) {
+					this.field3904 = var2;
+					return;
+				}
+			}
+			synchronized (this) {
+				this.field3902 = (var1 + this.field3902) % this.field3898;
+			}
+		} while (!this.method2343());
+	}
 
-    void method2235() {
-    }
+	void method2342(byte[] var1, int var2, int var3) throws IOException {
+		if (var3 >= 0 && 0 + var3 <= var1.length) {
+			synchronized (this) {
+				if (this.field3904 != null) {
+					throw new IOException(this.field3904.toString());
+				} else {
+					int var6;
+					if (this.field3902 <= this.field3903) {
+						var6 = this.field3898 - this.field3903 + this.field3902 - 1;
+					} else {
+						var6 = this.field3902 - this.field3903 - 1;
+					}
+					if (var6 < var3) {
+						throw new IOException("");
+					} else {
+						if (this.field3903 + var3 <= this.field3898) {
+							System.arraycopy(var1, 0, this.field3901, this.field3903, var3);
+						} else {
+							int var7 = this.field3898 - this.field3903;
+							System.arraycopy(var1, 0, this.field3901, this.field3903, var7);
+							System.arraycopy(var1, var7 + 0, this.field3901, 0, var3 - var7);
+						}
+						this.field3903 = (this.field3903 + var3) % this.field3898;
+						this.notifyAll();
+					}
+				}
+			}
+		} else {
+			throw new IOException();
+		}
+	}
+
+	void method2341() {
+		synchronized (this) {
+			this.field3900 = true;
+			this.notifyAll();
+		}
+		try {
+			this.field3905.join();
+		} catch (InterruptedException var4) {
+		}
+	}
 }

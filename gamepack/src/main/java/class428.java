@@ -1,9 +1,17 @@
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+public class class428 {
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-public @interface class428 {
+	public static final class428 field3351;
+
+	public static final class428 field3352;
+
+	public static final class428 field3353;
+
+	static {
+		field3353 = new class428();
+		field3352 = new class428();
+		field3351 = new class428();
+	}
+
+	class428() {
+	}
 }

@@ -1,66 +1,51 @@
-import java.applet.Applet;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class class80 extends RuntimeException {
-    public static int field703;
-    public static int field704;
-    public static int field707;
-    public static Applet field701;
-    public static String field700;
-    static int[][] field705;
-    String field702;
-    Throwable field706;
+public class class80 extends class310 {
 
-    class80(Throwable var1, String var2) {
-        this.field702 = var2;
-        this.field706 = var1;
-    }
+	class272[] field800;
 
-    static String method326(Throwable var0) throws IOException {
-        String var2;
-        if (var0 instanceof class80) {
-            class80 var3 = (class80) var0;
-            var2 = var3.field702 + " | ";
-            var0 = var3.field706;
-        } else {
-            var2 = "";
-        }
+	List field801;
 
-        StringWriter var13 = new StringWriter();
-        PrintWriter var4 = new PrintWriter(var13);
-        var0.printStackTrace(var4);
-        var4.close();
-        String var5 = var13.toString();
-        BufferedReader var6 = new BufferedReader(new StringReader(var5));
-        String var7 = var6.readLine();
+	public class80(class338 var1, int var2, int var3) {
+		byte[] var4 = var1.method1762(var2, var3 + 1);
+		this.method324(new class187(var4));
+	}
 
-        while (true) {
-            while (true) {
-                String var8 = var6.readLine();
-                if (var8 == null) {
-                    var2 = var2 + "| " + var7;
-                    return var2;
-                }
+	public class80(class338 var1, int var2) {
+		byte[] var3 = var1.method1762(var2, 0);
+		this.method324(new class187(var3));
+	}
 
-                int var9 = var8.indexOf(40);
-                int var10 = var8.indexOf(41, var9 + 1);
-                if (var9 >= 0 && var10 >= 0) {
-                    String var11 = var8.substring(var9 + 1, var10);
-                    int var12 = var11.indexOf(".java:");
-                    if (var12 >= 0) {
-                        var11 = var11.substring(0, var12) + var11.substring(var12 + 5);
-                        var2 = var2 + var11 + ' ';
-                        continue;
-                    }
+	void method324(class187 var1) {
+		int var3 = var1.method1112();
+		this.field800 = new class272[var3];
+		this.field801 = new ArrayList(var3);
+		for (int var4 = 0; var4 < var3; ++var4) {
+			this.field800[var4] = (class272) class433.method2167(class272.method1518(), var1.method1096());
+			int var5 = var1.method1112();
+			HashMap var6 = new HashMap(var5);
+			while (var5-- > 0) {
+				Object var7 = this.field800[var4].method1517(var1);
+				int var8 = var1.method1112();
+				ArrayList var9 = new ArrayList();
+				while (var8-- > 0) {
+					int var10 = var1.method1112();
+					var9.add(var10);
+				}
+				var6.put(var7, var9);
+			}
+			this.field801.add(var4, var6);
+		}
+	}
 
-                    var8 = var8.substring(0, var9);
-                }
-
-                var8 = var8.trim();
-                var8 = var8.substring(var8.lastIndexOf(32) + 1);
-                var8 = var8.substring(var8.lastIndexOf(9) + 1);
-                var2 = var2 + var8 + ' ';
-            }
-        }
-    }
+	public List method325(Object var1, int var2) {
+		if (var2 < 0) {
+			var2 = 0;
+		}
+		Map var4 = (Map) this.field801.get(var2);
+		return (List) var4.get(var1);
+	}
 }

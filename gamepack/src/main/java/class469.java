@@ -1,68 +1,42 @@
-public class class469 {
-    int field3348;
-    int field3351;
-    int field3352;
-    int field3353;
-    int field3354;
-    int field3355;
-    int field3356;
-    int field3357;
-    int field3358;
-    int[] field3349;
-    int[] field3350;
+public class class469 extends class321 {
 
-    class469() {
-        this.field3353 = 2;
-        this.field3349 = new int[2];
-        this.field3350 = new int[2];
-        this.field3349[0] = 0;
-        this.field3349[1] = 65535;
-        this.field3350[0] = 0;
-        this.field3350[1] = 65535;
-    }
+	class469() {
+	}
 
-    final void method2169(class78 var1) {
-        this.field3352 = var1.method260();
-        this.field3351 = var1.method264();
-        this.field3348 = var1.method264();
-        this.method2170(var1);
-    }
+	@Override
+	protected boolean method1711(int var1, int var2, int var3, class438 var4) {
+		return super.field2511 == var2 && var3 == super.field2510;
+	}
 
-    final void method2170(class78 var1) {
-        this.field3353 = var1.method260();
-        this.field3349 = new int[this.field3353];
-        this.field3350 = new int[this.field3353];
+	static int method2293(int var0, int var1) {
+		if (var0 == -2) {
+			return 12345678;
+		} else if (var0 == -1) {
+			boolean var2 = true;
+			return 31;
+		} else {
+			var1 = (var0 & 127) * 96 / 128;
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
+			}
+			return var1 + (var0 & 65408);
+		}
+	}
 
-        for (int var2 = 0; var2 < this.field3353; ++var2) {
-            this.field3349[var2] = var1.method309();
-            this.field3350[var2] = var1.method309();
-        }
-
-    }
-
-    final void method2168() {
-        this.field3355 = 0;
-        this.field3357 = 0;
-        this.field3356 = 0;
-        this.field3354 = 0;
-        this.field3358 = 0;
-    }
-
-    final int method2167(int var1) {
-        if (this.field3358 >= this.field3355) {
-            this.field3354 = this.field3350[this.field3357++] << 15;
-            if (this.field3357 >= this.field3353) {
-                this.field3357 = this.field3353 - 1;
-            }
-
-            this.field3355 = (int) ((double) this.field3349[this.field3357] / 65536.0D * (double) var1);
-            if (this.field3355 > this.field3358) {
-                this.field3356 = ((this.field3350[this.field3357] << 15) - this.field3354) / (this.field3355 - this.field3358);
-            }
-        }
-
-        this.field3354 += this.field3356;
-        ++this.field3358;
-        return this.field3354 - this.field3356 >> 15;
-    }
+	public static class136 method2292(int var0) {
+		class136 var2 = (class136) class136.field1489.method648((long) var0);
+		if (var2 != null) {
+			return var2;
+		} else {
+			byte[] var3 = class136.field1490.method1762(16, var0);
+			var2 = new class136();
+			if (null != var3) {
+				var2.method865(new class187(var3));
+			}
+			class136.field1489.method647(var2, (long) var0);
+			return var2;
+		}
+	}
 }
