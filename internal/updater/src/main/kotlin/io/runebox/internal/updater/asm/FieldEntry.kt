@@ -6,11 +6,7 @@ import org.objectweb.asm.Opcodes
 import org.objectweb.asm.Type
 import org.objectweb.asm.tree.FieldNode
 
-class FieldEntry(val cls: ClassEntry, val node: FieldNode) : Matchable<FieldEntry>() {
-
-    val pool get() = cls.pool
-    val env get() = pool.env
-    val shared get() = cls.shared
+class FieldEntry(override val cls: ClassEntry, val node: FieldNode) : MemberEntry<FieldEntry>() {
 
     val access = node.access
     val name = node.name

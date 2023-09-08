@@ -2,7 +2,7 @@ package io.runebox.internal.updater.asm
 
 abstract class Matchable<T : Matchable<T>> {
 
-    var isMatchable: Boolean = true
+    var matchable: Boolean = true
     var nameObfuscated: Boolean = false
 
     var match: Matchable<T>? = null

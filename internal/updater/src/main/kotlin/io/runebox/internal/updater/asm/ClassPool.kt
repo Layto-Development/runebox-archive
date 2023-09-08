@@ -6,6 +6,7 @@ import org.objectweb.asm.Type
 import org.objectweb.asm.tree.ClassNode
 import org.objectweb.asm.tree.FieldInsnNode
 import org.objectweb.asm.tree.MethodInsnNode
+import org.objectweb.asm.tree.MultiANewArrayInsnNode
 import org.objectweb.asm.tree.TypeInsnNode
 import org.tinylog.kotlin.Logger
 import java.io.File
@@ -87,16 +88,16 @@ class ClassPool(val env: ClassEnv, val shared: Boolean) {
             emptyArray()
         )
 
-        var targetPool = sharedPool
         val cls = ClassEntry(node).also {
             if(name[0] == '[') {
                 val type = Type.getType(name)
-                targetPool = getCreateClass(type.elementType.internalName).pool
+                it.elementClass = getCreateClass(type.elementType.internalName)
+                it.elementClass!!.arrayClasses.add(it)
             }
         }
         cls.real = false
 
-        if(cls.isArray()) targetPool.addArrayClass(cls) else targetPool.addClass(cls)
+        if(cls.isArray()) cls.elementClass!!.pool.addArrayClass(cls) else sharedPool.addClass(cls)
         return cls
     }
 
@@ -189,10 +190,7 @@ class ClassPool(val env: ClassEnv, val shared: Boolean) {
                 when(insn) {
                     is MethodInsnNode -> {
                         val owner = getCreateClass(insn.owner)
-                        val dst = owner.resolveMethod(insn.name, insn.desc, insn.itf || insn.opcode == INVOKEINTERFACE)
-                        if(dst == null) {
-                            return@insnLoop
-                        }
+                        val dst = owner.resolveMethod(insn.name, insn.desc, insn.itf || insn.opcode == INVOKEINTERFACE) ?: return@insnLoop
 
                         dst.refsIn.add(method)
                         method.refsOut.add(dst)
@@ -202,10 +200,7 @@ class ClassPool(val env: ClassEnv, val shared: Boolean) {
 
                     is FieldInsnNode -> {
                         val owner = getCreateClass(insn.owner)
-                        val dst = owner.resolveField(insn.name, insn.desc)
-                        if(dst == null) {
-                            return@insnLoop
-                        }
+                        val dst = owner.resolveField(insn.name, insn.desc) ?: return@insnLoop
 
                         if(insn.opcode in listOf(GETFIELD, GETSTATIC)) {
                             dst.readRefs.add(method)
@@ -220,6 +215,13 @@ class ClassPool(val env: ClassEnv, val shared: Boolean) {
                     }
 
                     is TypeInsnNode -> {
+                        val dst = getCreateClass(insn.desc)
+
+                        dst.methodTypeRefs.add(method)
+                        method.classRefs.add(dst)
+                    }
+
+                    is MultiANewArrayInsnNode -> {
                         val dst = getCreateClass(insn.desc)
 
                         dst.methodTypeRefs.add(method)

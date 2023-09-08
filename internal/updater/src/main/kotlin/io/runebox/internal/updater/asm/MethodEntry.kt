@@ -5,11 +5,7 @@ import org.objectweb.asm.Opcodes.*
 import org.objectweb.asm.Type
 import org.objectweb.asm.tree.MethodNode
 
-class MethodEntry(val cls: ClassEntry, val node: MethodNode) : Matchable<MethodEntry>() {
-
-    val pool get() = cls.pool
-    val env get() = pool.env
-    val shared get() = cls.shared
+class MethodEntry(override val cls: ClassEntry, val node: MethodNode) : MemberEntry<MethodEntry>() {
 
     val access = node.access
     val name = node.name
