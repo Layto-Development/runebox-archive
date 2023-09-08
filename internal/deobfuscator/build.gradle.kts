@@ -4,9 +4,12 @@ import java.net.URL
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
 import java.util.jar.JarOutputStream
-import java.util.zip.ZipInputStream
 
 val decompiled by configurations.creating
+
+configurations.implementation {
+    extendsFrom(decompiled)
+}
 
 plugins {
     java
@@ -22,13 +25,17 @@ dependencies {
     implementation("com.google.guava:guava:_")
     implementation("org.jgrapht:jgrapht-core:_")
     implementation("com.github.javaparser:javaparser-symbol-solver-core:_")
-    runtimeOnly(project(":runebox-deobfuscator-annotations"))
-    implementation("org.bouncycastle:bcprov-jdk15on:1.52")
-    implementation("org.json:json:20220320")
+    decompiled("org.bouncycastle:bcprov-jdk15on:1.52")
+    decompiled("org.json:json:20220320")
 }
 
-java.sourceSets["main"].java {
-    srcDir("build/deob/decomp")
+java {
+    sourceSets {
+        main {
+            runtimeClasspath += decompiled
+            java.srcDir("build/deob/decomp")
+        }
+    }
 }
 
 tasks {
@@ -37,7 +44,6 @@ tasks {
         group = "internal"
         doLast { downloadGamepack() }
     }
-
 
     val deobfuscateBytecode = create<JavaExec>("deobfuscateBytecode") {
         mainClass.set("io.runebox.internal.deobfuscator.bytecode.BytecodeDeobfuscator")
@@ -70,6 +76,7 @@ tasks {
         destinationDirectory.set(file("build/deob/"))
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
         from(file("build/classes/java/main/"))
+        from(decompiled.map { if(it.isDirectory) it else zipTree(it) })
     }
 
     val deobfuscateGamepack by register("deobfuscateGamepack") {
