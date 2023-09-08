@@ -2,6 +2,7 @@ package io.runebox.internal.updater.asm
 
 import io.runebox.internal.updater.util.isObfuscated
 import org.objectweb.asm.Opcodes.*
+import org.objectweb.asm.Type
 import org.objectweb.asm.tree.MethodNode
 
 class MethodEntry(val cls: ClassEntry, val node: MethodNode) : Matchable<MethodEntry>() {
@@ -23,11 +24,11 @@ class MethodEntry(val cls: ClassEntry, val node: MethodNode) : Matchable<MethodE
     lateinit var retTypeClass: ClassEntry
     val argTypeClasses = mutableListOf<ClassEntry>()
 
-    val refsIn = mutableListOf<MethodEntry>()
-    val refsOut = mutableListOf<MethodEntry>()
-    val fieldReadRefs = mutableListOf<FieldEntry>()
-    val fieldWriteRefs = mutableListOf<FieldEntry>()
-    val classRefs = mutableListOf<ClassEntry>()
+    val refsIn = mutableSetOf<MethodEntry>()
+    val refsOut = mutableSetOf<MethodEntry>()
+    val fieldReadRefs = mutableSetOf<FieldEntry>()
+    val fieldWriteRefs = mutableSetOf<FieldEntry>()
+    val classRefs = mutableSetOf<ClassEntry>()
 
     fun isPrivate() = (access and ACC_PRIVATE) != 0
     fun isPublic() = (access and ACC_PUBLIC) != 0
@@ -36,8 +37,14 @@ class MethodEntry(val cls: ClassEntry, val node: MethodNode) : Matchable<MethodE
 
     fun init() {
         nameObfuscated = name.isObfuscated()
+
         if(shared) {
             match = this
+        }
+
+        retTypeClass = pool.getCreateClass(Type.getReturnType(desc).internalName)
+        Type.getArgumentTypes(desc).forEach { argType ->
+            argTypeClasses.add(pool.getCreateClass(argType.internalName))
         }
     }
 

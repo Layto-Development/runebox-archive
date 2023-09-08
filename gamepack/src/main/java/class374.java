@@ -8,7 +8,7 @@ public class class374 extends class310 {
 
 	class428 field3032;
 
-	class78 field3030;
+	UsernameDisplayName field3030;
 
 	int field3027;
 
@@ -73,7 +73,7 @@ public class class374 extends class310 {
 
 	final void method1995() {
 		if (this.field3029 != null) {
-			this.field3030 = new class78(Client.method527(this.field3029), class267.field2198);
+			this.field3030 = new UsernameDisplayName(Client.method527(this.field3029), class267.field2198);
 		} else {
 			this.field3030 = null;
 		}

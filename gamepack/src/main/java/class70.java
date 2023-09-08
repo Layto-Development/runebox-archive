@@ -30,6 +30,6 @@ public class class70 extends class52 {
 		class162 var3 = (class162) var1.field2614.get(this.field726);
 		var3.field1648 = this.field723;
 		var3.field1649 = this.field724;
-		var3.field1647 = new class78(this.field725);
+		var3.field1647 = new UsernameDisplayName(this.field725);
 	}
 }

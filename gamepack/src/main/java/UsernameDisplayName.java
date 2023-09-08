@@ -1,10 +1,10 @@
-public class class78 implements Comparable {
+public class UsernameDisplayName implements Comparable {
 
 	String field787;
 
 	String field788;
 
-	public class78(String var1) {
+	public UsernameDisplayName(String var1) {
 		this.field788 = var1;
 		class79 var4 = class79.field797;
 		String var3;
@@ -14,9 +14,9 @@ public class class78 implements Comparable {
 			label66: {
 				int var5 = 0;
 				int var6;
-				for (var6 = var1.length(); var5 < var6 && class1.method4(var1.charAt(var5)); ++var5) {
+				for (var6 = var1.length(); var5 < var6 && UsernameTools.isNameSeparator(var1.charAt(var5)); ++var5) {
 				}
-				while (var6 > var5 && class1.method4(var1.charAt(var6 - 1))) {
+				while (var6 > var5 && UsernameTools.isNameSeparator(var1.charAt(var6 - 1))) {
 					--var6;
 				}
 				int var7 = var6 - var5;
@@ -37,8 +37,8 @@ public class class78 implements Comparable {
 						StringBuilder var8 = new StringBuilder(var7);
 						for (int var12 = var5; var12 < var6; ++var12) {
 							char var10 = var1.charAt(var12);
-							if (class1.method2(var10)) {
-								char var11 = class1.method1(var10);
+							if (UsernameTools.isNamePart(var10)) {
+								char var11 = UsernameTools.formatCharacter(var10);
 								if (var11 != 0) {
 									var8.append(var11);
 								}
@@ -58,7 +58,7 @@ public class class78 implements Comparable {
 		this.field787 = var3;
 	}
 
-	public class78(String var1, class79 var2) {
+	public UsernameDisplayName(String var1, class79 var2) {
 		this.field788 = var1;
 		String var4;
 		if (null == var1) {
@@ -67,9 +67,9 @@ public class class78 implements Comparable {
 			label66: {
 				int var5 = 0;
 				int var6;
-				for (var6 = var1.length(); var5 < var6 && class1.method4(var1.charAt(var5)); ++var5) {
+				for (var6 = var1.length(); var5 < var6 && UsernameTools.isNameSeparator(var1.charAt(var5)); ++var5) {
 				}
-				while (var6 > var5 && class1.method4(var1.charAt(var6 - 1))) {
+				while (var6 > var5 && UsernameTools.isNameSeparator(var1.charAt(var6 - 1))) {
 					--var6;
 				}
 				int var7 = var6 - var5;
@@ -90,8 +90,8 @@ public class class78 implements Comparable {
 						StringBuilder var8 = new StringBuilder(var7);
 						for (int var12 = var5; var12 < var6; ++var12) {
 							char var10 = var1.charAt(var12);
-							if (class1.method2(var10)) {
-								char var11 = class1.method1(var10);
+							if (UsernameTools.isNamePart(var10)) {
+								char var11 = UsernameTools.formatCharacter(var10);
 								if (var11 != 0) {
 									var8.append(var11);
 								}
@@ -125,8 +125,8 @@ public class class78 implements Comparable {
 
 	@Override
 	public boolean equals(Object var1) {
-		if (var1 instanceof class78) {
-			class78 var2 = (class78) var1;
+		if (var1 instanceof UsernameDisplayName) {
+			UsernameDisplayName var2 = (UsernameDisplayName) var1;
 			if (null == this.field787) {
 				return null == var2.field787;
 			} else if (null == var2.field787) {
@@ -149,7 +149,7 @@ public class class78 implements Comparable {
 		return this.method322();
 	}
 
-	public int method321(class78 var1) {
+	public int method321(UsernameDisplayName var1) {
 		if (this.field787 == null) {
 			return null == var1.field787 ? 0 : 1;
 		} else {
@@ -159,6 +159,6 @@ public class class78 implements Comparable {
 
 	@Override
 	public int compareTo(Object var1) {
-		return this.method321((class78) var1);
+		return this.method321((UsernameDisplayName) var1);
 	}
 }

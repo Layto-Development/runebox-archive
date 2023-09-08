@@ -23,7 +23,7 @@ public class class107 extends class463 {
 		return new class175[var1];
 	}
 
-	public boolean method651(class78 var1, boolean var2) {
+	public boolean method651(UsernameDisplayName var1, boolean var2) {
 		class175 var4 = (class175) this.method2266(var1);
 		return null != var4;
 	}
@@ -32,8 +32,8 @@ public class class107 extends class463 {
 		while (true) {
 			if (var1.field1832 < var2) {
 				boolean var4 = var1.method1096() == 1;
-				class78 var5 = new class78(var1.method1104(), this.field1291);
-				class78 var6 = new class78(var1.method1104(), this.field1291);
+				UsernameDisplayName var5 = new UsernameDisplayName(var1.method1104(), this.field1291);
+				UsernameDisplayName var6 = new UsernameDisplayName(var1.method1104(), this.field1291);
 				int var7 = var1.method1145();
 				int var8 = var1.method1096();
 				int var9 = var1.method1096();

@@ -104,6 +104,7 @@ class ClassPool(val env: ClassEnv, val shared: Boolean) {
         JarFile(file).use { jar ->
             jar.entries().asSequence().forEach { entry ->
                 if(entry.name.endsWith(".class")) {
+                    if(entry.name.startsWith("org/")) return@forEach
                     val node = readClass(jar.getInputStream(entry).readAllBytes())
                     val cls = ClassEntry(node)
                     addClass(cls)
@@ -190,7 +191,6 @@ class ClassPool(val env: ClassEnv, val shared: Boolean) {
                         val owner = getCreateClass(insn.owner)
                         val dst = owner.resolveMethod(insn.name, insn.desc, insn.itf || insn.opcode == INVOKEINTERFACE)
                         if(dst == null) {
-                            Logger.warn("Could not resolve method: ${insn.owner}.${insn.name}${insn.desc}.")
                             return@insnLoop
                         }
 
@@ -204,7 +204,6 @@ class ClassPool(val env: ClassEnv, val shared: Boolean) {
                         val owner = getCreateClass(insn.owner)
                         val dst = owner.resolveField(insn.name, insn.desc)
                         if(dst == null) {
-                            Logger.warn("Could not resolve field: ${insn.owner}.${insn.name}.")
                             return@insnLoop
                         }
 

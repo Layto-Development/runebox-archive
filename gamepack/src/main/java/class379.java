@@ -34,6 +34,6 @@ public class class379 extends class52 {
 		class162 var3 = (class162) var1.field2614.get(this.field3066);
 		var3.field1648 = this.field3065;
 		var3.field1649 = this.field3064;
-		var3.field1647 = new class78(this.field3067);
+		var3.field1647 = new UsernameDisplayName(this.field3067);
 	}
 }

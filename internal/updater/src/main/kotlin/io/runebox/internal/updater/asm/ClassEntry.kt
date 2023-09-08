@@ -1,5 +1,6 @@
 package io.runebox.internal.updater.asm
 
+import io.runebox.internal.updater.util.identitySetOf
 import io.runebox.internal.updater.util.isObfuscated
 import org.objectweb.asm.Type
 import org.objectweb.asm.tree.ClassNode
@@ -19,15 +20,15 @@ class ClassEntry(val node: ClassNode) : Matchable<ClassEntry>() {
     val name = node.name
 
     var superClass: ClassEntry? = null
-    val subClasses = mutableListOf<ClassEntry>()
-    val interfaceClasses = mutableListOf<ClassEntry>()
-    val implementerClasses = mutableListOf<ClassEntry>()
+    val subClasses = identitySetOf<ClassEntry>()
+    val interfaceClasses = identitySetOf<ClassEntry>()
+    val implementerClasses = identitySetOf<ClassEntry>()
 
-    val arrayClasses = mutableListOf<ClassEntry>()
+    val arrayClasses = identitySetOf<ClassEntry>()
     var outerClass: ClassEntry? = null
-    val innerClasses = mutableListOf<ClassEntry>()
-    val methodTypeRefs = mutableListOf<MethodEntry>()
-    val fieldTypeRefs = mutableListOf<FieldEntry>()
+    val innerClasses = identitySetOf<ClassEntry>()
+    val methodTypeRefs = identitySetOf<MethodEntry>()
+    val fieldTypeRefs = identitySetOf<FieldEntry>()
     val strings = mutableListOf<String>()
     val numbers = mutableListOf<Number>()
 
@@ -36,6 +37,11 @@ class ClassEntry(val node: ClassNode) : Matchable<ClassEntry>() {
 
     val methods get() = methodMap.values
     val fields get() = fieldMap.values
+
+    val memberMethods get() = methods.filter { !it.isStatic() }
+    val memberFields get() = fields.filter { !it.isStatic() }
+    val staticMethods get() = methods.filter { it.isStatic() }
+    val staticFields get() = fields.filter { it.isStatic() }
 
     fun addMethod(method: MethodEntry) {
         if(methodMap.containsKey(method.id)) return

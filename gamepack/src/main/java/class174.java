@@ -1137,6 +1137,6 @@ public class class174 {
 	}
 
 	static void method1046(String var0) {
-		field1736 = class1.method3(var0);
+		field1736 = UsernameTools.method3(var0);
 	}
 }

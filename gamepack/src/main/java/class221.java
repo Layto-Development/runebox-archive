@@ -2718,7 +2718,7 @@ public class class221 {
 				} else if (var0 == 3609) {
 					var10 = field1969[--class421.field3247];
 					var10 = Client.method527(var10);
-					field1982[++class439.field3437 - 1] = class147.field1555.method943(new class78(var10, class267.field2198), false) ? 1 : 0;
+					field1982[++class439.field3437 - 1] = class147.field1555.method943(new UsernameDisplayName(var10, class267.field2198), false) ? 1 : 0;
 					return 1;
 				} else if (var0 == 3611) {
 					if (class366.field2930 != null) {
@@ -2796,7 +2796,7 @@ public class class221 {
 				} else if (var0 == 3623) {
 					var10 = field1969[--class421.field3247];
 					var10 = Client.method527(var10);
-					field1982[++class439.field3437 - 1] = class147.field1555.method944(new class78(var10, class267.field2198)) ? 1 : 0;
+					field1982[++class439.field3437 - 1] = class147.field1555.method944(new UsernameDisplayName(var10, class267.field2198)) ? 1 : 0;
 					return 1;
 				} else if (var0 == 3624) {
 					var4 = field1982[--class439.field3437];

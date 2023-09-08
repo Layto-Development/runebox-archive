@@ -23,6 +23,8 @@ class Updater(
          * After initialization, run the matcher.
          */
         matcher.run()
+
+        Logger.info("Updater completed successfully.")
     }
 
     companion object {

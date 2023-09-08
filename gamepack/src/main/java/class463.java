@@ -44,7 +44,7 @@ public abstract class class463 {
 		return this.field3547 == this.field3548;
 	}
 
-	public boolean method2280(class78 var1) {
+	public boolean method2280(UsernameDisplayName var1) {
 		if (!var1.method323()) {
 			return false;
 		} else {
@@ -52,20 +52,20 @@ public abstract class class463 {
 		}
 	}
 
-	public class194 method2266(class78 var1) {
+	public class194 method2266(UsernameDisplayName var1) {
 		class194 var3 = this.method2267(var1);
 		return null != var3 ? var3 : this.method2281(var1);
 	}
 
-	class194 method2267(class78 var1) {
+	class194 method2267(UsernameDisplayName var1) {
 		return !var1.method323() ? null : (class194) this.field3546.get(var1);
 	}
 
-	class194 method2281(class78 var1) {
+	class194 method2281(UsernameDisplayName var1) {
 		return !var1.method323() ? null : (class194) this.field3549.get(var1);
 	}
 
-	public final boolean method2283(class78 var1) {
+	public final boolean method2283(UsernameDisplayName var1) {
 		class194 var3 = this.method2267(var1);
 		if (null == var3) {
 			return false;
@@ -83,11 +83,11 @@ public abstract class class463 {
 		}
 	}
 
-	class194 method2279(class78 var1) {
-		return this.method2269(var1, (class78) null);
+	class194 method2279(UsernameDisplayName var1) {
+		return this.method2269(var1, (UsernameDisplayName) null);
 	}
 
-	class194 method2269(class78 var1, class78 var2) {
+	class194 method2269(UsernameDisplayName var1, UsernameDisplayName var2) {
 		if (this.method2267(var1) != null) {
 			throw new IllegalStateException();
 		} else {
@@ -115,7 +115,7 @@ public abstract class class463 {
 		}
 	}
 
-	final void method2271(class194 var1, class78 var2, class78 var3) {
+	final void method2271(class194 var1, UsernameDisplayName var2, UsernameDisplayName var3) {
 		this.method2273(var1);
 		var1.method1198(var2, var3);
 		this.method2270(var1);

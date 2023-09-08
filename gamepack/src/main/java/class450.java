@@ -21,7 +21,7 @@ public class class450 extends class463 {
 		while (var1.field1832 < var2) {
 			int var4 = var1.method1096();
 			if (var4 == 4) {
-				class78 var10 = new class78(var1.method1104(), this.field3469);
+				UsernameDisplayName var10 = new UsernameDisplayName(var1.method1104(), this.field3469);
 				if (!var10.method323()) {
 					throw new IllegalStateException();
 				}
@@ -29,8 +29,8 @@ public class class450 extends class463 {
 				class147.field1555.method949(var10.method322(), false);
 			} else {
 				boolean var5 = (var4 & 1) != 0;
-				class78 var6 = new class78(var1.method1104(), this.field3469);
-				class78 var7 = new class78(var1.method1104(), this.field3469);
+				UsernameDisplayName var6 = new UsernameDisplayName(var1.method1104(), this.field3469);
+				UsernameDisplayName var7 = new UsernameDisplayName(var1.method1104(), this.field3469);
 				var1.method1104();
 				if (!var6.method323()) {
 					throw new IllegalStateException();

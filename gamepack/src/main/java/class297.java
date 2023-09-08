@@ -1,4 +1,4 @@
 public interface class297 {
 
-	class78 method1594();
+	UsernameDisplayName method1594();
 }

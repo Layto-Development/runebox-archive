@@ -10,8 +10,7 @@ dependencies {
 tasks {
 
     val updateGamepack by register<JavaExec>("updateGamepack") {
-        dependsOn(":runebox-deobfuscator:compileDecompiledDeobSources")
-        dependsOn(":runebox-gamepack:jar")
+        dependsOn(":runebox-gamepack:build")
         group = "internal"
         mainClass.set("io.runebox.internal.updater.Updater")
         classpath = sourceSets["main"].runtimeClasspath

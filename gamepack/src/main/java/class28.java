@@ -85,7 +85,7 @@ public class class28 extends class463 {
 			int var11 = var9;
 			this.method2264();
 			for (int var16 = 0; var16 < var11; ++var16) {
-				class65 var17 = (class65) this.method2279(new class78(var1.method1104(), this.field136));
+				class65 var17 = (class65) this.method2279(new UsernameDisplayName(var1.method1104(), this.field136));
 				int var14 = var1.method1145();
 				var17.method905(var14, ++this.field137 - 1);
 				var17.field1578 = var1.method1097();
@@ -96,7 +96,7 @@ public class class28 extends class463 {
 	}
 
 	public final void method83(class187 var1, byte var2) {
-		class78 var3 = new class78(var1.method1104(), this.field136);
+		UsernameDisplayName var3 = new UsernameDisplayName(var1.method1104(), this.field136);
 		int var4 = var1.method1145();
 		byte var5 = var1.method1097();
 		boolean var6 = false;

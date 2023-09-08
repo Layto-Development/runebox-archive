@@ -31,7 +31,7 @@ public class class527 extends class52 {
 	@Override
 	void method208(class345 var1) {
 		class162 var3 = new class162();
-		var3.field1647 = new class78(this.field4175);
+		var3.field1647 = new UsernameDisplayName(this.field4175);
 		var3.field1649 = this.field4173;
 		var3.field1648 = this.field4174;
 		var1.method1798(var3);

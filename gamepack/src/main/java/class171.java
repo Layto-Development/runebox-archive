@@ -46,7 +46,7 @@ public class class171 {
 		int var3 = class274.field2240;
 		int[] var4 = class274.field2241;
 		boolean var5 = false;
-		class78 var6 = new class78(var1, class267.field2198);
+		UsernameDisplayName var6 = new UsernameDisplayName(var1, class267.field2198);
 		for (int var7 = 0; var7 < var3; ++var7) {
 			class82 var8 = Client.field1071[var4[var7]];
 			if (null != var8 && class431.field3378 != var8 && var8.field822 != null && var8.field822.equals(var6)) {

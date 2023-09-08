@@ -2,14 +2,14 @@ public class class194 implements Comparable {
 
 	static int field1860;
 
-	class78 field1858;
+	UsernameDisplayName field1858;
 
-	class78 field1859;
+	UsernameDisplayName field1859;
 
 	class194() {
 	}
 
-	public class78 method1195() {
+	public UsernameDisplayName method1195() {
 		return this.field1858;
 	}
 
@@ -21,7 +21,7 @@ public class class194 implements Comparable {
 		return this.field1859 == null ? "" : this.field1859.method322();
 	}
 
-	void method1198(class78 var1, class78 var2) {
+	void method1198(UsernameDisplayName var1, UsernameDisplayName var2) {
 		if (var1 == null) {
 			throw new NullPointerException();
 		} else {

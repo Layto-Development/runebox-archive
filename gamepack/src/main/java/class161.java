@@ -62,7 +62,7 @@ public class class161 {
 		this.field1643.method2264();
 	}
 
-	final boolean method943(class78 var1, boolean var2) {
+	final boolean method943(UsernameDisplayName var1, boolean var2) {
 		if (null == var1) {
 			return false;
 		} else if (var1.equals(class431.field3378.field822)) {
@@ -72,7 +72,7 @@ public class class161 {
 		}
 	}
 
-	final boolean method944(class78 var1) {
+	final boolean method944(UsernameDisplayName var1) {
 		if (null == var1) {
 			return false;
 		} else {
@@ -82,7 +82,7 @@ public class class161 {
 
 	final void method945(String var1) {
 		if (var1 != null) {
-			class78 var3 = new class78(var1, this.field1641);
+			UsernameDisplayName var3 = new UsernameDisplayName(var1, this.field1641);
 			if (var3.method323()) {
 				if (this.method946()) {
 					method955(class55.field499);
@@ -105,7 +105,7 @@ public class class161 {
 
 	final void method947(String var1) {
 		if (null != var1) {
-			class78 var3 = new class78(var1, this.field1641);
+			UsernameDisplayName var3 = new UsernameDisplayName(var1, this.field1641);
 			if (var3.method323()) {
 				if (this.method950()) {
 					method955(class55.field501);
@@ -131,7 +131,7 @@ public class class161 {
 
 	final void method948(String var1) {
 		if (null != var1) {
-			class78 var3 = new class78(var1, this.field1641);
+			UsernameDisplayName var3 = new UsernameDisplayName(var1, this.field1641);
 			if (var3.method323()) {
 				if (this.field1644.method2283(var3)) {
 					Client.method499();
@@ -158,7 +158,7 @@ public class class161 {
 
 	public final void method949(String var1, boolean var2) {
 		if (null != var1) {
-			class78 var4 = new class78(var1, this.field1641);
+			UsernameDisplayName var4 = new UsernameDisplayName(var1, this.field1641);
 			if (var4.method323()) {
 				if (this.field1643.method2283(var4)) {
 					Client.method499();
@@ -174,7 +174,7 @@ public class class161 {
 		}
 	}
 
-	final boolean method952(class78 var1) {
+	final boolean method952(UsernameDisplayName var1) {
 		class175 var3 = (class175) this.field1644.method2266(var1);
 		return null != var3 && var3.method907();
 	}

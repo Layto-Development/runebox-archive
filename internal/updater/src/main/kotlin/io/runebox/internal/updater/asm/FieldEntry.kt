@@ -1,7 +1,9 @@
 package io.runebox.internal.updater.asm
 
+import io.runebox.internal.updater.util.identitySetOf
 import io.runebox.internal.updater.util.isObfuscated
 import org.objectweb.asm.Opcodes
+import org.objectweb.asm.Type
 import org.objectweb.asm.tree.FieldNode
 
 class FieldEntry(val cls: ClassEntry, val node: FieldNode) : Matchable<FieldEntry>() {
@@ -18,9 +20,10 @@ class FieldEntry(val cls: ClassEntry, val node: FieldNode) : Matchable<FieldEntr
     val id = "$name $desc"
     var real: Boolean = cls.real
 
-    val readRefs = mutableListOf<MethodEntry>()
-    val writeRefs = mutableListOf<MethodEntry>()
-    val classRefs = mutableListOf<ClassEntry>()
+    lateinit var typeClass: ClassEntry
+
+    val readRefs = identitySetOf<MethodEntry>()
+    val writeRefs = identitySetOf<MethodEntry>()
 
     fun isPrivate() = (access and Opcodes.ACC_PRIVATE) != 0
     fun isPublic() = (access and Opcodes.ACC_PUBLIC) != 0
@@ -32,6 +35,8 @@ class FieldEntry(val cls: ClassEntry, val node: FieldNode) : Matchable<FieldEntr
         if(shared) {
             match = this
         }
+
+        typeClass = pool.getCreateClass(Type.getType(desc).internalName)
     }
 
     override fun toString(): String {

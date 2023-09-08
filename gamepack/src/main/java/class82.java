@@ -18,7 +18,7 @@ public final class class82 extends class54 {
 
 	class506 field806;
 
-	class78 field822;
+	UsernameDisplayName field822;
 
 	int field805;
 
@@ -161,7 +161,7 @@ public final class class82 extends class54 {
 		if (super.field312 == 65535) {
 			super.field312 = -1;
 		}
-		this.field822 = new class78(var1.method1104(), class267.field2198);
+		this.field822 = new UsernameDisplayName(var1.method1104(), class267.field2198);
 		this.method331();
 		this.method334();
 		this.method343();

@@ -3302,7 +3302,7 @@ public final class Client extends class522 implements class297, OAuthApi, class2
 						var16 = 0;
 						while (true) {
 							if (var16 >= 100) {
-								if (var61.field766 && class147.field1555.method944(new class78(var6, class267.field2198))) {
+								if (var61.field766 && class147.field1555.method944(new UsernameDisplayName(var6, class267.field2198))) {
 									var57 = true;
 								}
 								break;
@@ -3970,7 +3970,7 @@ public final class Client extends class522 implements class297, OAuthApi, class2
 							break;
 						}
 					}
-					if (class147.field1555.method944(new class78(var29, class267.field2198))) {
+					if (class147.field1555.method944(new UsernameDisplayName(var29, class267.field2198))) {
 						var13 = true;
 					}
 					if (!var13 && field1023 == 0) {
@@ -4079,7 +4079,7 @@ public final class Client extends class522 implements class297, OAuthApi, class2
 					boolean var39 = false;
 					if (var60) {
 						var55 = var4.method1104();
-						if (class147.field1555.method944(new class78(var55, class267.field2198))) {
+						if (class147.field1555.method944(new UsernameDisplayName(var55, class267.field2198))) {
 							var39 = true;
 						}
 					}
@@ -4206,7 +4206,7 @@ public final class Client extends class522 implements class297, OAuthApi, class2
 							break;
 						}
 					}
-					if (var46.field766 && class147.field1555.method944(new class78(var29, class267.field2198))) {
+					if (var46.field766 && class147.field1555.method944(new UsernameDisplayName(var29, class267.field2198))) {
 						var15 = true;
 					}
 					if (!var15 && field1023 == 0) {
@@ -4845,7 +4845,7 @@ public final class Client extends class522 implements class297, OAuthApi, class2
 	}
 
 	@Override
-	public class78 method1594() {
+	public UsernameDisplayName method1594() {
 		return null != class431.field3378 ? class431.field3378.field822 : null;
 	}
 

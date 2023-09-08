@@ -97,7 +97,7 @@ public class class345 extends class77 {
 					var1.method1101();
 				}
 				if (this.field2613) {
-					var7.field1647 = new class78(var1.method1104());
+					var7.field1647 = new UsernameDisplayName(var1.method1104());
 				}
 				var7.field1648 = var1.method1097();
 				var7.field1649 = var1.method1145();

@@ -6,7 +6,7 @@ public class class162 {
 
 	public byte field1648;
 
-	public class78 field1647;
+	public UsernameDisplayName field1647;
 
 	public int field1649;
 
