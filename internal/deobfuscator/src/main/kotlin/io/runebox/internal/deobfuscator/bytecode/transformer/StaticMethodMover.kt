@@ -95,7 +95,8 @@ class StaticMethodMover : BytecodeTransformer {
         when(it) {
             is FieldInsnNode -> "${it.owner}.${it.name}:${it.opcode}"
             is MethodInsnNode -> "${it.opcode}:${it.owner}.${it.name}"
-            is InsnNode -> it.opcode.toString()
+            is JumpInsnNode -> "${it.opcode}"
+            is TypeInsnNode -> it.desc
             else -> null
         }
     }.toSet().hashCode()

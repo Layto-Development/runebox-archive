@@ -31,7 +31,7 @@ class TestClient(private val file: File, private val vanillaFile: File) {
             }
         }
 
-        val classloader = URLClassLoader(arrayOf(file.toURI().toURL(), vanillaFile.toURI().toURL()), TestClient::class.java.classLoader)
+        val classloader = URLClassLoader(arrayOf(file.toURI().toURL()), TestClient::class.java.classLoader)
         val main = params["initial_class"]!!.replace(".class", "").replaceFirstChar { it.uppercase() }
         val applet = classloader.loadClass(main).newInstance() as Applet
 

@@ -23,7 +23,7 @@ class BytecodeDeobfuscator(
         /**
          * Register bytecode deob transformers in the order they will run.
          */
-        register<StaticFieldMover>()
+        register<StaticFieldOwnerFixer>()
         register<RuntimeExceptionRemover>()
         register<DeadCodeRemover>()
         register<IllegalStateExceptionRemover>()
@@ -47,6 +47,7 @@ class BytecodeDeobfuscator(
         register<OverrideAnnotationAdder>()
         register<DeadCodeRemover>()
         register<EmptyClassRemover>()
+        //register<StaticFieldMover>()
 
         Logger.info("Registered ${bytecodeTransformers.size} bytecode transformers.")
     }

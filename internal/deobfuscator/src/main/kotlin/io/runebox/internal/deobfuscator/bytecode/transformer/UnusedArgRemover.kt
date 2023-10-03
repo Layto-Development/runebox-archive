@@ -96,7 +96,7 @@ class UnusedArgRemover : BytecodeTransformer {
     }
 
     private fun String.isObfuscatedName(): Boolean {
-        return arrayOf("class", "method", "field").any { this.startsWith(it) }
+        return arrayOf("class", "method", "field").any { this.startsWith(it) } || ((this.length <= 2) || (this.length == 3 && this !in listOf("add", "run", "put", "set", "get")))
     }
 
     private fun ClassPool.findOverride(owner: String, name: String, desc: String, methods: Set<String>): String? {

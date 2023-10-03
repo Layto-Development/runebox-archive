@@ -77,9 +77,6 @@ tasks {
     }
 
     deobfuscateGamepack.finalizedBy(deobfuscateBytecode)
-    deobfuscateBytecode.finalizedBy(decompileDeobGamepack)
-    decompileDeobGamepack.finalizedBy(deobfuscateAst)
-    deobfuscateAst.finalizedBy(compileDecompiledDeobSources)
 }
 
 fun downloadGamepack() {
