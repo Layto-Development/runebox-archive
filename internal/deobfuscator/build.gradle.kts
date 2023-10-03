@@ -10,6 +10,8 @@ val decompiled by configurations.creating
 
 plugins {
     java
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+    application
 }
 
 dependencies {
@@ -22,7 +24,7 @@ dependencies {
     implementation("com.google.guava:guava:_")
     implementation("org.jgrapht:jgrapht-core:_")
     implementation("com.github.javaparser:javaparser-symbol-solver-core:_")
-    runtimeOnly(project(":runebox-deobfuscator-annotations"))
+    implementation(project(":runebox-deobfuscator-annotations"))
     implementation("org.bouncycastle:bcprov-jdk15on:1.52")
     implementation("org.json:json:20220320")
 }
@@ -78,6 +80,11 @@ tasks {
 
     deobfuscateGamepack.finalizedBy(deobfuscateBytecode)
 }
+
+application {
+    mainClass.set("io.runebox.internal.deobfuscator.bytecode.BytecodeDeobfuscator")
+}
+
 
 fun downloadGamepack() {
     println("Downloading latest gamepack.jar...")

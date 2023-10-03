@@ -587,28 +587,28 @@ class MultiplierRemover : BytecodeTransformer {
                 if (e == null) e = mulX.asMap().entries.first()
                 val (f, ms) = e
                 val unfoldedNumber = unfold(ms)
-                if(unfoldedNumber == Int.MAX_VALUE) {
+                if(unfoldedNumber == null) {
                     Logger.warn("Failed to calculate multiplier decoder value. Field: $f, Multipliers: ${e.value.joinToString(", ") { it.n.toString() + ":" + it.decoder }}.")
                     mulX.removeAll(f)
                 } else {
-                    decoders[f] = unfold(ms)
+                    decoders[f] = unfold(ms)!!
                     mulX.removeAll(f)
                 }
             }
 
-            private fun unfold(ms: Collection<Mul>): Number {
+            private fun unfold(ms: Collection<Mul>): Number? {
                 val distinct = ms.distinct()
                 if (distinct.size == 1) return distinct.single().decoder
                 val pairs = distinct.filter { a -> a.dec && distinct.any { b -> !b.dec && a.decoder == b.decoder } }
-                if (pairs.isNotEmpty()) return pairs.single().decoder
+                if (pairs.isNotEmpty()) return pairs.singleOrNull()?.decoder
                 val fs = distinct.filter { f -> distinct.all { isFactor(it, f) } }
-                if (fs.size == 1) return fs.single().decoder
+                if (fs.size == 1) return fs.singleOrNull()?.decoder
                 if(fs.isEmpty()) {
                     distinct.forEach { mul ->
 
                     }
                 }
-                return fs.first { it.dec }.decoder
+                return fs.firstOrNull { it.dec }?.decoder
             }
 
             private fun isFactor(product: Mul, factor: Mul) = div(product, factor).toLong().absoluteValue <= 0xff
